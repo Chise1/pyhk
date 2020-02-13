@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1581506815 source:/home/cs/Documents/pyhk/pyhk/py_hk.cpp
+1581564974 source:/home/cs/Documents/pyhk/pyhk/py_hk.cpp
 	<iostream>
 	<time.h>
 	<cstdio>
@@ -13,11 +13,12 @@
 	<winsock2.h>
 	<windows.h>
 
-1581506931 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
+1581565321 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
 	<stdexcept>
+	"HCNetSDK.h"
 	"py_hk.h"
 
 1573123442 /usr/include/python3.6/Python.h
@@ -316,5 +317,20 @@
 	<setjmp.h>
 	<math.h>
 
-1581506828 /home/cs/Documents/pyhk/pyhk/py_hk.h
+1581565362 /home/cs/Documents/pyhk/pyhk/py_hk.h
+	"HCNetSDK.h"
+
+1581564033 source:/home/cs/Documents/pyhk/pyhk/HCNetSDK.cpp
+	"HCNetSDK.h"
+
+1581565009 /home/cs/Documents/pyhk/pyhk/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+
+1581563877 source:/home/cs/Documents/pyhk/pyhk/HCNetSDK_wrap.cxx
+	<Python.h>
+	<Python.h>
+	<string.h>
+	<stdexcept>
+	"HCNetSDK.h"
 

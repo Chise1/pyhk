@@ -95,6 +95,48 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
+class NET_DVR_TIME(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NET_DVR_TIME, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NET_DVR_TIME, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["dwYear"] = _pyhk.NET_DVR_TIME_dwYear_set
+    __swig_getmethods__["dwYear"] = _pyhk.NET_DVR_TIME_dwYear_get
+    if _newclass:
+        dwYear = _swig_property(_pyhk.NET_DVR_TIME_dwYear_get, _pyhk.NET_DVR_TIME_dwYear_set)
+    __swig_setmethods__["dwMonth"] = _pyhk.NET_DVR_TIME_dwMonth_set
+    __swig_getmethods__["dwMonth"] = _pyhk.NET_DVR_TIME_dwMonth_get
+    if _newclass:
+        dwMonth = _swig_property(_pyhk.NET_DVR_TIME_dwMonth_get, _pyhk.NET_DVR_TIME_dwMonth_set)
+    __swig_setmethods__["dwDay"] = _pyhk.NET_DVR_TIME_dwDay_set
+    __swig_getmethods__["dwDay"] = _pyhk.NET_DVR_TIME_dwDay_get
+    if _newclass:
+        dwDay = _swig_property(_pyhk.NET_DVR_TIME_dwDay_get, _pyhk.NET_DVR_TIME_dwDay_set)
+    __swig_setmethods__["dwHour"] = _pyhk.NET_DVR_TIME_dwHour_set
+    __swig_getmethods__["dwHour"] = _pyhk.NET_DVR_TIME_dwHour_get
+    if _newclass:
+        dwHour = _swig_property(_pyhk.NET_DVR_TIME_dwHour_get, _pyhk.NET_DVR_TIME_dwHour_set)
+    __swig_setmethods__["dwMinute"] = _pyhk.NET_DVR_TIME_dwMinute_set
+    __swig_getmethods__["dwMinute"] = _pyhk.NET_DVR_TIME_dwMinute_get
+    if _newclass:
+        dwMinute = _swig_property(_pyhk.NET_DVR_TIME_dwMinute_get, _pyhk.NET_DVR_TIME_dwMinute_set)
+    __swig_setmethods__["dwSecond"] = _pyhk.NET_DVR_TIME_dwSecond_set
+    __swig_getmethods__["dwSecond"] = _pyhk.NET_DVR_TIME_dwSecond_get
+    if _newclass:
+        dwSecond = _swig_property(_pyhk.NET_DVR_TIME_dwSecond_get, _pyhk.NET_DVR_TIME_dwSecond_set)
+
+    def __init__(self):
+        this = _pyhk.new_NET_DVR_TIME()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _pyhk.delete_NET_DVR_TIME
+    __del__ = lambda self: None
+NET_DVR_TIME_swigregister = _pyhk.NET_DVR_TIME_swigregister
+NET_DVR_TIME_swigregister(NET_DVR_TIME)
+
 
 def init(ip: 'char *', usr: 'char *', password: 'char *') -> "void":
     return _pyhk.init(ip, usr, password)
@@ -103,6 +145,10 @@ init = _pyhk.init
 def release() -> "void":
     return _pyhk.release()
 release = _pyhk.release
+
+def test(x: 'NET_DVR_TIME') -> "void":
+    return _pyhk.test(x)
+test = _pyhk.test
 # This file is compatible with both classic and new-style classes.
 
 

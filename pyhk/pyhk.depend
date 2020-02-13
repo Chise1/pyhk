@@ -9,17 +9,20 @@
 	<unistd.h>
 	<pthread.h>
 
-1581501868 /home/cs/Documents/pyhk/pyhk/include/HCNetSDK.h
+1581559696 /home/cs/Documents/pyhk/pyhk/include/HCNetSDK.h
 	<winsock2.h>
 	<windows.h>
 
-1581565321 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
+1581566447 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
 	<stdexcept>
 	"HCNetSDK.h"
 	"py_hk.h"
+	<limits.h>
+	<float.h>
+	<math.h>
 
 1573123442 /usr/include/python3.6/Python.h
 	"patchlevel.h"
@@ -317,7 +320,7 @@
 	<setjmp.h>
 	<math.h>
 
-1581565362 /home/cs/Documents/pyhk/pyhk/py_hk.h
+1581579735 /home/cs/Documents/pyhk/pyhk/py_hk.h
 	"HCNetSDK.h"
 
 1581564033 source:/home/cs/Documents/pyhk/pyhk/HCNetSDK.cpp

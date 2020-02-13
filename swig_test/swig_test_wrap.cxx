@@ -3747,7 +3747,7 @@ int binary_op_wrapper(int a, int b, BinaryOp *handler) {
  * C++ director class methods
  * --------------------------------------------------- */
 
-#include "test_callback_wrap.h"
+#include "swig_test_wrap.h"
 
 SwigDirector_BinaryOp::SwigDirector_BinaryOp(PyObject *self): BinaryOp(), Swig::Director(self) {
   SWIG_DIRECTOR_RGTR((BinaryOp *)this, this); 

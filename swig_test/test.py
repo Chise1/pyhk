@@ -4,7 +4,6 @@ test callback
 import swig_test as example
 
 
-
 # PythonBinaryOp class is defined and derived from C++ class BinaryOp
 class PythonBinaryOp(example.BinaryOp):
 

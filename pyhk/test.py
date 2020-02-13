@@ -6,3 +6,4 @@ pyhk.init(ip, name, pw)
 x=pyhk.NET_DVR_TIME()
 pyhk.test(x)
 print(x.dwHour)
+pyhk.

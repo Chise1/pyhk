@@ -1,14 +1,15 @@
-% define DOCSTRING "本模块主要用于海康威视的接口封装"% enddef
+%define DOCSTRING "本模块主要用于海康威视的接口封装"
+%enddef
 
- % module(docstring = DOCSTRING) pyhk
- % feature("autodoc", "2"); //生成自动的接口注释代码
-% header % {
+%module(docstring = DOCSTRING) pyhk
+%feature("autodoc", "2"); //生成自动的接口注释代码
+%header %{
 /*  Includes the header in the wrapper code */
 #include "HCNetSDK.h"
 #include "py_hk.h"
 
- % } //typedof 重新命名参数
- % inline %{
+%} //typedof 重新命名参数
+%inline %{
 #define BOOL int
     typedef unsigned int DWORD;
     typedef unsigned short WORD;
@@ -95,50 +96,16 @@ typedef struct
     BYTE byMainProto;                 //主码流传输协议类型 0-private, 1-rtsp,2-同时支持private和rtsp
     BYTE bySubProto;                  //子码流传输协议类型0-private, 1-rtsp,2-同时支持private和rtsp
     BYTE bySupport;                   //能力，位与结果为0表示不支持，1表示支持，
-    //bySupport & 0x1, 表示是否支持智能搜索
-    //bySupport & 0x2, 表示是否支持备份
-    //bySupport & 0x4, 表示是否支持压缩参数能力获取
-    //bySupport & 0x8, 表示是否支持多网卡
-    //bySupport & 0x10, 表示支持远程SADP
-    //bySupport & 0x20, 表示支持Raid卡功能
-    //bySupport & 0x40, 表示支持IPSAN 目录查找
-    //bySupport & 0x80, 表示支持rtp over rtsp
-    BYTE bySupport1; // 能力集扩充，位与结果为0表示不支持，1表示支持
-    //bySupport1 & 0x1, 表示是否支持snmp v30
-    //bySupport1 & 0x2, 支持区分回放和下载
-    //bySupport1 & 0x4, 是否支持布防优先级
-    //bySupport1 & 0x8, 智能设备是否支持布防时间段扩展
-    //bySupport1 & 0x10, 表示是否支持多磁盘数（超过33个）
-    //bySupport1 & 0x20, 表示是否支持rtsp over http
-    //bySupport1 & 0x80, 表示是否支持车牌新报警信息2012-9-28, 且还表示是否支持NET_DVR_IPPARACFG_V40结构体
-    BYTE bySupport2; /*能力，位与结果为0表示不支持，非0表示支持                            
-                     bySupport2 & 0x1, 表示解码器是否支持通过URL取流解码
-                     bySupport2 & 0x2,  表示支持FTPV40
-                     bySupport2 & 0x4,  表示支持ANR
-                     bySupport2 & 0x8,  表示支持CCD的通道参数配置
-                     bySupport2 & 0x10,  表示支持布防报警回传信息（仅支持抓拍机报警 新老报警结构）
-                     bySupport2 & 0x20,  表示是否支持单独获取设备状态子项
-    bySupport2 & 0x40,  表示是否是码流加密设备*/
+    BYTE bySupport1; 
+    BYTE bySupport2; 
     WORD wDevType;   //设备型号
-    BYTE bySupport3; //能力集扩展，位与结果为0表示不支持，1表示支持
-    //bySupport3 & 0x1, 表示是否支持批量配置多码流参数
-    // bySupport3 & 0x4 表示支持按组配置， 具体包含 通道图像参数、报警输入参数、IP报警输入、输出接入参数、
-    // 用户参数、设备工作状态、JPEG抓图、定时和时间抓图、硬盘盘组管理
-    //bySupport3 & 0x8为1 表示支持使用TCP预览、UDP预览、多播预览中的"延时预览"字段来请求延时预览（后续都将使用这种方式请求延时预览）。而当bySupport3 & 0x8为0时，将使用 "私有延时预览"协议。
-    //bySupport3 & 0x10 表示支持"获取报警主机主要状态（V40）"。
-    //bySupport3 & 0x20 表示是否支持通过DDNS域名解析取流
-
+    BYTE bySupport3; 
     BYTE byMultiStreamProto; //是否支持多码流,按位表示,0-不支持,1-支持,bit1-码流3,bit2-码流4,bit7-主码流，bit-8子码流
     BYTE byStartDChan;       //起始数字通道号,0表示无效
     BYTE byStartDTalkChan;   //起始数字对讲通道号，区别于模拟对讲通道号，0表示无效
     BYTE byHighDChanNum;     //数字通道个数，高位
     BYTE bySupport4;         //能力集扩展，位与结果为0表示不支持，1表示支持
-    //bySupport4 & 0x4表示是否支持拼控统一接口
-    // bySupport4 & 0x80 支持设备上传中心报警使能。表示判断调用接口是 NET_DVR_PDC_RULE_CFG_V42还是 NET_DVR_PDC_RULE_CFG_V41
-    BYTE byLanguageType; // 支持语种能力,按位表示,每一位0-不支持,1-支持
-    //  byLanguageType 等于0 表示 老设备
-    //  byLanguageType & 0x1表示支持中文
-    //  byLanguageType & 0x2表示支持英文
+   BYTE byLanguageType; // 支持语种能力,按位表示,每一位0-不支持,1-支持
     BYTE byVoiceInChanNum;     //音频输入通道数
     BYTE byStartVoiceInChanNo; //音频输入起始通道号 0表示无效
     BYTE bySupport5;           //按位表示,0-不支持,1-支持,bit0-支持多码流
@@ -170,8 +137,8 @@ typedef struct
 } NET_DVR_DEVICEINFO_V30, *LPNET_DVR_DEVICEINFO_V30;
 
 //回调函数的抽象集合
-% feature("director") CallbackStruct; //启动导演功能，注册一个可以被python继承的类
-% inline%{
+%feature("director") CallbackStruct; //启动导演功能，注册一个可以被python继承的类
+%inline%{
     struct CallbackStruct
     {
         //NET_DVR_SetExceptionCallBack_V30的回调函数
@@ -189,7 +156,7 @@ typedef struct
         return C_callback->fExceptionCallBack(dwType, lUserID, lHandle, pUser);
     }
 %}
-% inline% {//封装成新的函数
+%inline%{//封装成新的函数
             BOOL NET_DVR_SetExceptionCallBack_V30_wrapper(UINT nMessage, HWND hWnd, CallbackStruct *cbExceptionCallBack, void *pUser){handler_ptr = cbExceptionCallBack;
 BOOL result = NET_DVR_SetExceptionCallBack_V30(nMessage, hWnd, &fExceptionCallBack_helper, pUser);
 cbExceptionCallBack = NULL;
@@ -206,4 +173,4 @@ BOOL NET_DVR_GetDVRConfig(  LONG     lUserID,  DWORD    dwCommand,  LONG     lCh
   LPDWORD  lpBytesReturned);
 BOOL NET_DVR_SetDVRConfig(LONG  lUserID,  DWORD  dwCommand,LONG lChannel,  LPVOID lpInBuffer,  DWORD    dwInBufferSize);
 
-% include "py_hk.h"
+%include "py_hk.h"

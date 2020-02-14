@@ -95,7 +95,48 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
+try:
+    import weakref
+    weakref_proxy = weakref.proxy
+except __builtin__.Exception:
+    weakref_proxy = lambda x: x
+
+
+TRUE = _pyhk.TRUE
+FALSE = _pyhk.FALSE
+NULL = _pyhk.NULL
+class INITINFO(_object):
+    """Proxy of C++ tagInitInfo class."""
+
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, INITINFO, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, INITINFO, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["uWidth"] = _pyhk.INITINFO_uWidth_set
+    __swig_getmethods__["uWidth"] = _pyhk.INITINFO_uWidth_get
+    if _newclass:
+        uWidth = _swig_property(_pyhk.INITINFO_uWidth_get, _pyhk.INITINFO_uWidth_set)
+    __swig_setmethods__["uHeight"] = _pyhk.INITINFO_uHeight_set
+    __swig_getmethods__["uHeight"] = _pyhk.INITINFO_uHeight_get
+    if _newclass:
+        uHeight = _swig_property(_pyhk.INITINFO_uHeight_get, _pyhk.INITINFO_uHeight_set)
+
+    def __init__(self):
+        """__init__(self) -> INITINFO"""
+        this = _pyhk.new_INITINFO()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _pyhk.delete_INITINFO
+    __del__ = lambda self: None
+INITINFO_swigregister = _pyhk.INITINFO_swigregister
+INITINFO_swigregister(INITINFO)
+
 class NET_DVR_TIME(_object):
+    """Proxy of C++ NET_DVR_TIME class."""
+
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, NET_DVR_TIME, name, value)
     __swig_getmethods__ = {}
@@ -127,6 +168,7 @@ class NET_DVR_TIME(_object):
         dwSecond = _swig_property(_pyhk.NET_DVR_TIME_dwSecond_get, _pyhk.NET_DVR_TIME_dwSecond_set)
 
     def __init__(self):
+        """__init__(self) -> NET_DVR_TIME"""
         this = _pyhk.new_NET_DVR_TIME()
         try:
             self.this.append(this)
@@ -137,18 +179,282 @@ class NET_DVR_TIME(_object):
 NET_DVR_TIME_swigregister = _pyhk.NET_DVR_TIME_swigregister
 NET_DVR_TIME_swigregister(NET_DVR_TIME)
 
+class NET_DVR_DEVICEINFO_V30(_object):
+    """Proxy of C++ NET_DVR_DEVICEINFO_V30 class."""
 
-def init(ip: 'char *', usr: 'char *', password: 'char *') -> "void":
-    return _pyhk.init(ip, usr, password)
-init = _pyhk.init
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NET_DVR_DEVICEINFO_V30, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NET_DVR_DEVICEINFO_V30, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["sSerialNumber"] = _pyhk.NET_DVR_DEVICEINFO_V30_sSerialNumber_set
+    __swig_getmethods__["sSerialNumber"] = _pyhk.NET_DVR_DEVICEINFO_V30_sSerialNumber_get
+    if _newclass:
+        sSerialNumber = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_sSerialNumber_get, _pyhk.NET_DVR_DEVICEINFO_V30_sSerialNumber_set)
+    __swig_setmethods__["byAlarmInPortNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byAlarmInPortNum_set
+    __swig_getmethods__["byAlarmInPortNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byAlarmInPortNum_get
+    if _newclass:
+        byAlarmInPortNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byAlarmInPortNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byAlarmInPortNum_set)
+    __swig_setmethods__["byAlarmOutPortNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byAlarmOutPortNum_set
+    __swig_getmethods__["byAlarmOutPortNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byAlarmOutPortNum_get
+    if _newclass:
+        byAlarmOutPortNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byAlarmOutPortNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byAlarmOutPortNum_set)
+    __swig_setmethods__["byDiskNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byDiskNum_set
+    __swig_getmethods__["byDiskNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byDiskNum_get
+    if _newclass:
+        byDiskNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byDiskNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byDiskNum_set)
+    __swig_setmethods__["byDVRType"] = _pyhk.NET_DVR_DEVICEINFO_V30_byDVRType_set
+    __swig_getmethods__["byDVRType"] = _pyhk.NET_DVR_DEVICEINFO_V30_byDVRType_get
+    if _newclass:
+        byDVRType = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byDVRType_get, _pyhk.NET_DVR_DEVICEINFO_V30_byDVRType_set)
+    __swig_setmethods__["byChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byChanNum_set
+    __swig_getmethods__["byChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byChanNum_get
+    if _newclass:
+        byChanNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byChanNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byChanNum_set)
+    __swig_setmethods__["byStartChan"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartChan_set
+    __swig_getmethods__["byStartChan"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartChan_get
+    if _newclass:
+        byStartChan = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byStartChan_get, _pyhk.NET_DVR_DEVICEINFO_V30_byStartChan_set)
+    __swig_setmethods__["byAudioChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byAudioChanNum_set
+    __swig_getmethods__["byAudioChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byAudioChanNum_get
+    if _newclass:
+        byAudioChanNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byAudioChanNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byAudioChanNum_set)
+    __swig_setmethods__["byIPChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byIPChanNum_set
+    __swig_getmethods__["byIPChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byIPChanNum_get
+    if _newclass:
+        byIPChanNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byIPChanNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byIPChanNum_set)
+    __swig_setmethods__["byZeroChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byZeroChanNum_set
+    __swig_getmethods__["byZeroChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byZeroChanNum_get
+    if _newclass:
+        byZeroChanNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byZeroChanNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byZeroChanNum_set)
+    __swig_setmethods__["byMainProto"] = _pyhk.NET_DVR_DEVICEINFO_V30_byMainProto_set
+    __swig_getmethods__["byMainProto"] = _pyhk.NET_DVR_DEVICEINFO_V30_byMainProto_get
+    if _newclass:
+        byMainProto = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byMainProto_get, _pyhk.NET_DVR_DEVICEINFO_V30_byMainProto_set)
+    __swig_setmethods__["bySubProto"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySubProto_set
+    __swig_getmethods__["bySubProto"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySubProto_get
+    if _newclass:
+        bySubProto = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySubProto_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySubProto_set)
+    __swig_setmethods__["bySupport"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport_set
+    __swig_getmethods__["bySupport"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport_get
+    if _newclass:
+        bySupport = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport_set)
+    __swig_setmethods__["bySupport1"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport1_set
+    __swig_getmethods__["bySupport1"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport1_get
+    if _newclass:
+        bySupport1 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport1_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport1_set)
+    __swig_setmethods__["bySupport2"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport2_set
+    __swig_getmethods__["bySupport2"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport2_get
+    if _newclass:
+        bySupport2 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport2_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport2_set)
+    __swig_setmethods__["wDevType"] = _pyhk.NET_DVR_DEVICEINFO_V30_wDevType_set
+    __swig_getmethods__["wDevType"] = _pyhk.NET_DVR_DEVICEINFO_V30_wDevType_get
+    if _newclass:
+        wDevType = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_wDevType_get, _pyhk.NET_DVR_DEVICEINFO_V30_wDevType_set)
+    __swig_setmethods__["bySupport3"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport3_set
+    __swig_getmethods__["bySupport3"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport3_get
+    if _newclass:
+        bySupport3 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport3_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport3_set)
+    __swig_setmethods__["byMultiStreamProto"] = _pyhk.NET_DVR_DEVICEINFO_V30_byMultiStreamProto_set
+    __swig_getmethods__["byMultiStreamProto"] = _pyhk.NET_DVR_DEVICEINFO_V30_byMultiStreamProto_get
+    if _newclass:
+        byMultiStreamProto = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byMultiStreamProto_get, _pyhk.NET_DVR_DEVICEINFO_V30_byMultiStreamProto_set)
+    __swig_setmethods__["byStartDChan"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartDChan_set
+    __swig_getmethods__["byStartDChan"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartDChan_get
+    if _newclass:
+        byStartDChan = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byStartDChan_get, _pyhk.NET_DVR_DEVICEINFO_V30_byStartDChan_set)
+    __swig_setmethods__["byStartDTalkChan"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartDTalkChan_set
+    __swig_getmethods__["byStartDTalkChan"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartDTalkChan_get
+    if _newclass:
+        byStartDTalkChan = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byStartDTalkChan_get, _pyhk.NET_DVR_DEVICEINFO_V30_byStartDTalkChan_set)
+    __swig_setmethods__["byHighDChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byHighDChanNum_set
+    __swig_getmethods__["byHighDChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byHighDChanNum_get
+    if _newclass:
+        byHighDChanNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byHighDChanNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byHighDChanNum_set)
+    __swig_setmethods__["bySupport4"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport4_set
+    __swig_getmethods__["bySupport4"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport4_get
+    if _newclass:
+        bySupport4 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport4_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport4_set)
+    __swig_setmethods__["byLanguageType"] = _pyhk.NET_DVR_DEVICEINFO_V30_byLanguageType_set
+    __swig_getmethods__["byLanguageType"] = _pyhk.NET_DVR_DEVICEINFO_V30_byLanguageType_get
+    if _newclass:
+        byLanguageType = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byLanguageType_get, _pyhk.NET_DVR_DEVICEINFO_V30_byLanguageType_set)
+    __swig_setmethods__["byVoiceInChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byVoiceInChanNum_set
+    __swig_getmethods__["byVoiceInChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byVoiceInChanNum_get
+    if _newclass:
+        byVoiceInChanNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byVoiceInChanNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byVoiceInChanNum_set)
+    __swig_setmethods__["byStartVoiceInChanNo"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartVoiceInChanNo_set
+    __swig_getmethods__["byStartVoiceInChanNo"] = _pyhk.NET_DVR_DEVICEINFO_V30_byStartVoiceInChanNo_get
+    if _newclass:
+        byStartVoiceInChanNo = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byStartVoiceInChanNo_get, _pyhk.NET_DVR_DEVICEINFO_V30_byStartVoiceInChanNo_set)
+    __swig_setmethods__["bySupport5"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport5_set
+    __swig_getmethods__["bySupport5"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport5_get
+    if _newclass:
+        bySupport5 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport5_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport5_set)
+    __swig_setmethods__["bySupport6"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport6_set
+    __swig_getmethods__["bySupport6"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport6_get
+    if _newclass:
+        bySupport6 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport6_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport6_set)
+    __swig_setmethods__["byMirrorChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byMirrorChanNum_set
+    __swig_getmethods__["byMirrorChanNum"] = _pyhk.NET_DVR_DEVICEINFO_V30_byMirrorChanNum_get
+    if _newclass:
+        byMirrorChanNum = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byMirrorChanNum_get, _pyhk.NET_DVR_DEVICEINFO_V30_byMirrorChanNum_set)
+    __swig_setmethods__["wStartMirrorChanNo"] = _pyhk.NET_DVR_DEVICEINFO_V30_wStartMirrorChanNo_set
+    __swig_getmethods__["wStartMirrorChanNo"] = _pyhk.NET_DVR_DEVICEINFO_V30_wStartMirrorChanNo_get
+    if _newclass:
+        wStartMirrorChanNo = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_wStartMirrorChanNo_get, _pyhk.NET_DVR_DEVICEINFO_V30_wStartMirrorChanNo_set)
+    __swig_setmethods__["bySupport7"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport7_set
+    __swig_getmethods__["bySupport7"] = _pyhk.NET_DVR_DEVICEINFO_V30_bySupport7_get
+    if _newclass:
+        bySupport7 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_bySupport7_get, _pyhk.NET_DVR_DEVICEINFO_V30_bySupport7_set)
+    __swig_setmethods__["byRes2"] = _pyhk.NET_DVR_DEVICEINFO_V30_byRes2_set
+    __swig_getmethods__["byRes2"] = _pyhk.NET_DVR_DEVICEINFO_V30_byRes2_get
+    if _newclass:
+        byRes2 = _swig_property(_pyhk.NET_DVR_DEVICEINFO_V30_byRes2_get, _pyhk.NET_DVR_DEVICEINFO_V30_byRes2_set)
 
-def release() -> "void":
-    return _pyhk.release()
-release = _pyhk.release
+    def __init__(self):
+        """__init__(self) -> NET_DVR_DEVICEINFO_V30"""
+        this = _pyhk.new_NET_DVR_DEVICEINFO_V30()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _pyhk.delete_NET_DVR_DEVICEINFO_V30
+    __del__ = lambda self: None
+NET_DVR_DEVICEINFO_V30_swigregister = _pyhk.NET_DVR_DEVICEINFO_V30_swigregister
+NET_DVR_DEVICEINFO_V30_swigregister(NET_DVR_DEVICEINFO_V30)
 
-def test(x: 'NET_DVR_TIME') -> "void":
-    return _pyhk.test(x)
-test = _pyhk.test
+class CallbackStruct(_object):
+    """Proxy of C++ CallbackStruct class."""
+
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, CallbackStruct, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, CallbackStruct, name)
+    __repr__ = _swig_repr
+
+    def fExceptionCallBack(self, dwType: 'DWORD', lUserID: 'LONG', lHandle: 'LONG', pUser: 'void *') -> "void":
+        """
+        fExceptionCallBack(self, dwType, lUserID, lHandle, pUser)
+
+        Parameters
+        ----------
+        dwType: DWORD
+        lUserID: LONG
+        lHandle: LONG
+        pUser: void *
+
+        """
+        return _pyhk.CallbackStruct_fExceptionCallBack(self, dwType, lUserID, lHandle, pUser)
+
+    __swig_destroy__ = _pyhk.delete_CallbackStruct
+    __del__ = lambda self: None
+
+    def __init__(self):
+        """
+        __init__(self) -> CallbackStruct
+
+        Parameters
+        ----------
+        self: PyObject *
+
+        """
+        if self.__class__ == CallbackStruct:
+            _self = None
+        else:
+            _self = self
+        this = _pyhk.new_CallbackStruct(_self, )
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    def __disown__(self):
+        self.this.disown()
+        _pyhk.disown_CallbackStruct(self)
+        return weakref_proxy(self)
+CallbackStruct_swigregister = _pyhk.CallbackStruct_swigregister
+CallbackStruct_swigregister(CallbackStruct)
+
+
+def NET_DVR_SetExceptionCallBack_V30_wrapper(nMessage: 'UINT', hWnd: 'HWND', cbExceptionCallBack: 'CallbackStruct', pUser: 'void *') -> "int":
+    """
+    NET_DVR_SetExceptionCallBack_V30_wrapper(nMessage, hWnd, cbExceptionCallBack, pUser) -> int
+
+    Parameters
+    ----------
+    nMessage: UINT
+    hWnd: HWND
+    cbExceptionCallBack: CallbackStruct *
+    pUser: void *
+
+    """
+    return _pyhk.NET_DVR_SetExceptionCallBack_V30_wrapper(nMessage, hWnd, cbExceptionCallBack, pUser)
+
+def NET_DVR_Init() -> "BOOL":
+    """NET_DVR_Init() -> BOOL"""
+    return _pyhk.NET_DVR_Init()
+
+def NET_DVR_SetConnectTime(dwWaitTime: 'DWORD', dwTryTimes: 'DWORD') -> "BOOL":
+    """
+    NET_DVR_SetConnectTime(dwWaitTime, dwTryTimes) -> BOOL
+
+    Parameters
+    ----------
+    dwWaitTime: DWORD
+    dwTryTimes: DWORD
+
+    """
+    return _pyhk.NET_DVR_SetConnectTime(dwWaitTime, dwTryTimes)
+
+def NET_DVR_GetLastError() -> "DWORD":
+    """NET_DVR_GetLastError() -> DWORD"""
+    return _pyhk.NET_DVR_GetLastError()
+
+def NET_DVR_Login_V30(sDVRIP: 'char *', wDVRPort: 'WORD', sUserName: 'char *', sPassword: 'char *', lpDeviceInfo: 'NET_DVR_DEVICEINFO_V30') -> "LONG":
+    """
+    NET_DVR_Login_V30(sDVRIP, wDVRPort, sUserName, sPassword, lpDeviceInfo) -> LONG
+
+    Parameters
+    ----------
+    sDVRIP: char *
+    wDVRPort: WORD
+    sUserName: char *
+    sPassword: char *
+    lpDeviceInfo: LPNET_DVR_DEVICEINFO_V30
+
+    """
+    return _pyhk.NET_DVR_Login_V30(sDVRIP, wDVRPort, sUserName, sPassword, lpDeviceInfo)
+
+def NET_DVR_GetDVRConfig(lUserID: 'LONG', dwCommand: 'DWORD', lChannel: 'LONG', lpOutBuffer: 'LPVOID', dwOutBufferSize: 'DWORD', lpBytesReturned: 'LPDWORD') -> "BOOL":
+    """
+    NET_DVR_GetDVRConfig(lUserID, dwCommand, lChannel, lpOutBuffer, dwOutBufferSize, lpBytesReturned) -> BOOL
+
+    Parameters
+    ----------
+    lUserID: LONG
+    dwCommand: DWORD
+    lChannel: LONG
+    lpOutBuffer: LPVOID
+    dwOutBufferSize: DWORD
+    lpBytesReturned: LPDWORD
+
+    """
+    return _pyhk.NET_DVR_GetDVRConfig(lUserID, dwCommand, lChannel, lpOutBuffer, dwOutBufferSize, lpBytesReturned)
+
+def NET_DVR_SetDVRConfig(lUserID: 'LONG', dwCommand: 'DWORD', lChannel: 'LONG', lpInBuffer: 'LPVOID', dwInBufferSize: 'DWORD') -> "BOOL":
+    """
+    NET_DVR_SetDVRConfig(lUserID, dwCommand, lChannel, lpInBuffer, dwInBufferSize) -> BOOL
+
+    Parameters
+    ----------
+    lUserID: LONG
+    dwCommand: DWORD
+    lChannel: LONG
+    lpInBuffer: LPVOID
+    dwInBufferSize: DWORD
+
+    """
+    return _pyhk.NET_DVR_SetDVRConfig(lUserID, dwCommand, lChannel, lpInBuffer, dwInBufferSize)
 # This file is compatible with both classic and new-style classes.
 
 

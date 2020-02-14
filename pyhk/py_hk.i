@@ -1,14 +1,13 @@
-% define DOCSTRING "本模块主要用于海康威视的接口封装"% enddef
-
- % module(docstring = DOCSTRING) pyhk
- % feature("autodoc", "2"); //生成自动的接口注释代码
-% header % {
+%module(directors="1") pyhk
+ %feature("autodoc", "2"); //生成自动的接口注释代码
+%header %{
 /*  Includes the header in the wrapper code */
 #include "HCNetSDK.h"
 #include "py_hk.h"
-
- % } //typedof 重新命名参数
- % inline %{
+ %}
+  //typedof 重新命名参数
+//  %include "HCNetSDK.h"
+ %inline %{
 #define BOOL int
     typedef unsigned int DWORD;
     typedef unsigned short WORD;
@@ -170,8 +169,8 @@ typedef struct
 } NET_DVR_DEVICEINFO_V30, *LPNET_DVR_DEVICEINFO_V30;
 
 //回调函数的抽象集合
-% feature("director") CallbackStruct; //启动导演功能，注册一个可以被python继承的类
-% inline%{
+%feature("director") CallbackStruct; //启动导演功能，注册一个可以被python继承的类
+%inline %{
     struct CallbackStruct
     {
         //NET_DVR_SetExceptionCallBack_V30的回调函数
@@ -189,7 +188,7 @@ typedef struct
         return C_callback->fExceptionCallBack(dwType, lUserID, lHandle, pUser);
     }
 %}
-% inline% {//封装成新的函数
+%inline%{//封装成新的函数
             BOOL NET_DVR_SetExceptionCallBack_V30_wrapper(UINT nMessage, HWND hWnd, CallbackStruct *cbExceptionCallBack, void *pUser){handler_ptr = cbExceptionCallBack;
 BOOL result = NET_DVR_SetExceptionCallBack_V30(nMessage, hWnd, &fExceptionCallBack_helper, pUser);
 cbExceptionCallBack = NULL;
@@ -206,4 +205,4 @@ BOOL NET_DVR_GetDVRConfig(  LONG     lUserID,  DWORD    dwCommand,  LONG     lCh
   LPDWORD  lpBytesReturned);
 BOOL NET_DVR_SetDVRConfig(LONG  lUserID,  DWORD  dwCommand,LONG lChannel,  LPVOID lpInBuffer,  DWORD    dwInBufferSize);
 
-% include "py_hk.h"
+%include "py_hk.h"

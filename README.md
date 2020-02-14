@@ -23,4 +23,5 @@ swig hk to python
 |   ├── stl #存放需要使用的stl容器
 |   ├── HCNetSDK #存放已经封装的海康接口，目前只考虑HCNetSDK.h头文件的东西
 |   ├── tools #存放一些其他可能使用的工具
+|   ├── test #存放一些swig的测试内容
 |   └── create_point #存放需要封装的指针，比如int *等内置类型指针

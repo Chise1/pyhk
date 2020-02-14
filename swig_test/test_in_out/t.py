@@ -97,7 +97,7 @@ except __builtin__.Exception:
 
 
 def add(a: 'int *', b: 'int *') -> "int":
-    """add(int * a, int * b) -> int"""
+    """ceshizhushi """
     return _t.add(a, b)
 
 def mul(a: 'int', b: 'int', result: 'int *') -> "void":

@@ -3548,7 +3548,7 @@ fail:
 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
-	 { (char *)"add", _wrap_add, METH_VARARGS, (char *)"add(int * a, int * b) -> int"},
+	 { (char *)"add", _wrap_add, METH_VARARGS, (char *)"ceshizhushi "},
 	 { (char *)"mul", _wrap_mul, METH_VARARGS, (char *)"mul(int a, int b, int * result)"},
 	 { (char *)"str_add", _wrap_str_add, METH_VARARGS, (char *)"str_add(char * a, char * b) -> char const *"},
 	 { NULL, NULL, 0, NULL }

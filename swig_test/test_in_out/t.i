@@ -1,5 +1,6 @@
 %module t
 %feature("autodoc","1");
+%feature("autodoc","ceshizhushi ") add;
 %header %{
     #include "t.h"
 %}

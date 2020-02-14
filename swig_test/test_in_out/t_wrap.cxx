@@ -13,7 +13,6 @@
 #define SWIGPYTHON
 #endif
 
-#define SWIG_DIRECTORS
 #define SWIG_PYTHON_DIRECTOR_NO_VTABLE
 
 
@@ -3001,455 +3000,11 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIG_contract_assert(expr, msg) if (!(expr)) { SWIG_Error(SWIG_RuntimeError, msg); SWIG_fail; } else 
 
 
-/* -----------------------------------------------------------------------------
- * director_common.swg
- *
- * This file contains support for director classes which is common between
- * languages.
- * ----------------------------------------------------------------------------- */
-
-/*
-  Use -DSWIG_DIRECTOR_STATIC if you prefer to avoid the use of the
-  'Swig' namespace. This could be useful for multi-modules projects.
-*/
-#ifdef SWIG_DIRECTOR_STATIC
-/* Force anonymous (static) namespace */
-#define Swig
-#endif
-/* -----------------------------------------------------------------------------
- * director.swg
- *
- * This file contains support for director classes so that Python proxy
- * methods can be called from C++.
- * ----------------------------------------------------------------------------- */
-
-#ifndef SWIG_DIRECTOR_PYTHON_HEADER_
-#define SWIG_DIRECTOR_PYTHON_HEADER_
-
-#include <string>
-#include <iostream>
-#include <exception>
-#include <vector>
-#include <map>
-
-
-/*
-  Use -DSWIG_PYTHON_DIRECTOR_NO_VTABLE if you don't want to generate a 'virtual
-  table', and avoid multiple GetAttr calls to retrieve the python
-  methods.
-*/
-
-#ifndef SWIG_PYTHON_DIRECTOR_NO_VTABLE
-#ifndef SWIG_PYTHON_DIRECTOR_VTABLE
-#define SWIG_PYTHON_DIRECTOR_VTABLE
-#endif
-#endif
-
-
-
-/*
-  Use -DSWIG_DIRECTOR_NO_UEH if you prefer to avoid the use of the
-  Undefined Exception Handler provided by swig.
-*/
-#ifndef SWIG_DIRECTOR_NO_UEH
-#ifndef SWIG_DIRECTOR_UEH
-#define SWIG_DIRECTOR_UEH
-#endif
-#endif
-
-
-/*
-  Use -DSWIG_DIRECTOR_NORTTI if you prefer to avoid the use of the
-  native C++ RTTI and dynamic_cast<>. But be aware that directors
-  could stop working when using this option.
-*/
-#ifdef SWIG_DIRECTOR_NORTTI
-/*
-   When we don't use the native C++ RTTI, we implement a minimal one
-   only for Directors.
-*/
-# ifndef SWIG_DIRECTOR_RTDIR
-# define SWIG_DIRECTOR_RTDIR
-
-namespace Swig {
-  class Director;
-  SWIGINTERN std::map<void *, Director *>& get_rtdir_map() {
-    static std::map<void *, Director *> rtdir_map;
-    return rtdir_map;
-  }
-
-  SWIGINTERNINLINE void set_rtdir(void *vptr, Director *rtdir) {
-    get_rtdir_map()[vptr] = rtdir;
-  }
-
-  SWIGINTERNINLINE Director *get_rtdir(void *vptr) {
-    std::map<void *, Director *>::const_iterator pos = get_rtdir_map().find(vptr);
-    Director *rtdir = (pos != get_rtdir_map().end()) ? pos->second : 0;
-    return rtdir;
-  }
-}
-# endif /* SWIG_DIRECTOR_RTDIR */
-
-# define SWIG_DIRECTOR_CAST(ARG) Swig::get_rtdir(static_cast<void *>(ARG))
-# define SWIG_DIRECTOR_RGTR(ARG1, ARG2) Swig::set_rtdir(static_cast<void *>(ARG1), ARG2)
-
-#else
-
-# define SWIG_DIRECTOR_CAST(ARG) dynamic_cast<Swig::Director *>(ARG)
-# define SWIG_DIRECTOR_RGTR(ARG1, ARG2)
-
-#endif /* SWIG_DIRECTOR_NORTTI */
-
-extern "C" {
-  struct swig_type_info;
-}
-
-namespace Swig {
-
-  /* memory handler */
-  struct GCItem {
-    virtual ~GCItem() {}
-
-    virtual int get_own() const {
-      return 0;
-    }
-  };
-
-  struct GCItem_var {
-    GCItem_var(GCItem *item = 0) : _item(item) {
-    }
-
-    GCItem_var& operator=(GCItem *item) {
-      GCItem *tmp = _item;
-      _item = item;
-      delete tmp;
-      return *this;
-    }
-
-    ~GCItem_var() {
-      delete _item;
-    }
-
-    GCItem * operator->() const {
-      return _item;
-    }
-
-  private:
-    GCItem *_item;
-  };
-
-  struct GCItem_Object : GCItem {
-    GCItem_Object(int own) : _own(own) {
-    }
-
-    virtual ~GCItem_Object() {
-    }
-
-    int get_own() const {
-      return _own;
-    }
-
-  private:
-    int _own;
-  };
-
-  template <typename Type>
-  struct GCItem_T : GCItem {
-    GCItem_T(Type *ptr) : _ptr(ptr) {
-    }
-
-    virtual ~GCItem_T() {
-      delete _ptr;
-    }
-
-  private:
-    Type *_ptr;
-  };
-
-  template <typename Type>
-  struct GCArray_T : GCItem {
-    GCArray_T(Type *ptr) : _ptr(ptr) {
-    }
-
-    virtual ~GCArray_T() {
-      delete[] _ptr;
-    }
-
-  private:
-    Type *_ptr;
-  };
-
-  /* base class for director exceptions */
-  class DirectorException : public std::exception {
-  protected:
-    std::string swig_msg;
-  public:
-    DirectorException(PyObject *error, const char *hdr ="", const char *msg ="") : swig_msg(hdr) {
-      SWIG_PYTHON_THREAD_BEGIN_BLOCK;
-      if (msg[0]) {
-        swig_msg += " ";
-        swig_msg += msg;
-      }
-      if (!PyErr_Occurred()) {
-        PyErr_SetString(error, what());
-      }
-      SWIG_PYTHON_THREAD_END_BLOCK;
-    }
-
-    virtual ~DirectorException() throw() {
-    }
-
-    /* Deprecated, use what() instead */
-    const char *getMessage() const {
-      return what();
-    }
-
-    const char *what() const throw() {
-      return swig_msg.c_str();
-    }
-
-    static void raise(PyObject *error, const char *msg) {
-      throw DirectorException(error, msg);
-    }
-
-    static void raise(const char *msg) {
-      raise(PyExc_RuntimeError, msg);
-    }
-  };
-
-  /* unknown exception handler  */
-  class UnknownExceptionHandler {
-#ifdef SWIG_DIRECTOR_UEH
-    static void handler() {
-      try {
-        throw;
-      } catch (DirectorException& e) {
-        std::cerr << "SWIG Director exception caught:" << std::endl
-                  << e.what() << std::endl;
-      } catch (std::exception& e) {
-        std::cerr << "std::exception caught: "<< e.what() << std::endl;
-      } catch (...) {
-        std::cerr << "Unknown exception caught." << std::endl;
-      }
-
-      std::cerr << std::endl
-                << "Python interpreter traceback:" << std::endl;
-      PyErr_Print();
-      std::cerr << std::endl;
-
-      std::cerr << "This exception was caught by the SWIG unexpected exception handler." << std::endl
-                << "Try using %feature(\"director:except\") to avoid reaching this point." << std::endl
-                << std::endl
-                << "Exception is being re-thrown, program will likely abort/terminate." << std::endl;
-      throw;
-    }
-
-  public:
-
-    std::unexpected_handler old;
-    UnknownExceptionHandler(std::unexpected_handler nh = handler) {
-      old = std::set_unexpected(nh);
-    }
-
-    ~UnknownExceptionHandler() {
-      std::set_unexpected(old);
-    }
-#endif
-  };
-
-  /* type mismatch in the return value from a python method call */
-  class DirectorTypeMismatchException : public DirectorException {
-  public:
-    DirectorTypeMismatchException(PyObject *error, const char *msg="")
-      : DirectorException(error, "SWIG director type mismatch", msg) {
-    }
-
-    DirectorTypeMismatchException(const char *msg="")
-      : DirectorException(PyExc_TypeError, "SWIG director type mismatch", msg) {
-    }
-
-    static void raise(PyObject *error, const char *msg) {
-      throw DirectorTypeMismatchException(error, msg);
-    }
-
-    static void raise(const char *msg) {
-      throw DirectorTypeMismatchException(msg);
-    }
-  };
-
-  /* any python exception that occurs during a director method call */
-  class DirectorMethodException : public DirectorException {
-  public:
-    DirectorMethodException(const char *msg = "")
-      : DirectorException(PyExc_RuntimeError, "SWIG director method error.", msg) {
-    }
-
-    static void raise(const char *msg) {
-      throw DirectorMethodException(msg);
-    }
-  };
-
-  /* attempt to call a pure virtual method via a director method */
-  class DirectorPureVirtualException : public DirectorException {
-  public:
-    DirectorPureVirtualException(const char *msg = "")
-      : DirectorException(PyExc_RuntimeError, "SWIG director pure virtual method called", msg) {
-    }
-
-    static void raise(const char *msg) {
-      throw DirectorPureVirtualException(msg);
-    }
-  };
-
-
-#if defined(SWIG_PYTHON_THREADS)
-/*  __THREAD__ is the old macro to activate some thread support */
-# if !defined(__THREAD__)
-#   define __THREAD__ 1
-# endif
-#endif
-
-#ifdef __THREAD__
-# include "pythread.h"
-  class Guard {
-    PyThread_type_lock &mutex_;
-
-  public:
-    Guard(PyThread_type_lock & mutex) : mutex_(mutex) {
-      PyThread_acquire_lock(mutex_, WAIT_LOCK);
-    }
-
-    ~Guard() {
-      PyThread_release_lock(mutex_);
-    }
-  };
-# define SWIG_GUARD(mutex) Guard _guard(mutex)
-#else
-# define SWIG_GUARD(mutex)
-#endif
-
-  /* director base class */
-  class Director {
-  private:
-    /* pointer to the wrapped python object */
-    PyObject *swig_self;
-    /* flag indicating whether the object is owned by python or c++ */
-    mutable bool swig_disown_flag;
-
-    /* decrement the reference count of the wrapped python object */
-    void swig_decref() const {
-      if (swig_disown_flag) {
-        SWIG_PYTHON_THREAD_BEGIN_BLOCK;
-        Py_DECREF(swig_self);
-        SWIG_PYTHON_THREAD_END_BLOCK;
-      }
-    }
-
-  public:
-    /* wrap a python object. */
-    Director(PyObject *self) : swig_self(self), swig_disown_flag(false) {
-    }
-
-    /* discard our reference at destruction */
-    virtual ~Director() {
-      swig_decref();
-    }
-
-    /* return a pointer to the wrapped python object */
-    PyObject *swig_get_self() const {
-      return swig_self;
-    }
-
-    /* acquire ownership of the wrapped python object (the sense of "disown" is from python) */
-    void swig_disown() const {
-      if (!swig_disown_flag) {
-        swig_disown_flag=true;
-        swig_incref();
-      }
-    }
-
-    /* increase the reference count of the wrapped python object */
-    void swig_incref() const {
-      if (swig_disown_flag) {
-        Py_INCREF(swig_self);
-      }
-    }
-
-    /* methods to implement pseudo protected director members */
-    virtual bool swig_get_inner(const char * /* swig_protected_method_name */) const {
-      return true;
-    }
-
-    virtual void swig_set_inner(const char * /* swig_protected_method_name */, bool /* swig_val */) const {
-    }
-
-  /* ownership management */
-  private:
-    typedef std::map<void *, GCItem_var> swig_ownership_map;
-    mutable swig_ownership_map swig_owner;
-#ifdef __THREAD__
-    static PyThread_type_lock swig_mutex_own;
-#endif
-
-  public:
-    template <typename Type>
-    void swig_acquire_ownership_array(Type *vptr) const {
-      if (vptr) {
-        SWIG_GUARD(swig_mutex_own);
-        swig_owner[vptr] = new GCArray_T<Type>(vptr);
-      }
-    }
-
-    template <typename Type>
-    void swig_acquire_ownership(Type *vptr) const {
-      if (vptr) {
-        SWIG_GUARD(swig_mutex_own);
-        swig_owner[vptr] = new GCItem_T<Type>(vptr);
-      }
-    }
-
-    void swig_acquire_ownership_obj(void *vptr, int own) const {
-      if (vptr && own) {
-        SWIG_GUARD(swig_mutex_own);
-        swig_owner[vptr] = new GCItem_Object(own);
-      }
-    }
-
-    int swig_release_ownership(void *vptr) const {
-      int own = 0;
-      if (vptr) {
-        SWIG_GUARD(swig_mutex_own);
-        swig_ownership_map::iterator iter = swig_owner.find(vptr);
-        if (iter != swig_owner.end()) {
-          own = iter->second->get_own();
-          swig_owner.erase(iter);
-        }
-      }
-      return own;
-    }
-
-    template <typename Type>
-    static PyObject *swig_pyobj_disown(PyObject *pyobj, PyObject *SWIGUNUSEDPARM(args)) {
-      SwigPyObject *sobj = (SwigPyObject *)pyobj;
-      sobj->own = 0;
-      Director *d = SWIG_DIRECTOR_CAST(reinterpret_cast<Type *>(sobj->ptr));
-      if (d)
-        d->swig_disown();
-      return PyWeakref_NewProxy(pyobj, NULL);
-    }
-  };
-
-#ifdef __THREAD__
-  PyThread_type_lock Director::swig_mutex_own = PyThread_allocate_lock();
-#endif
-}
-
-#endif
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_BinaryOp swig_types[0]
-#define SWIGTYPE_p_char swig_types[1]
+#define SWIGTYPE_p_char swig_types[0]
+#define SWIGTYPE_p_int swig_types[1]
 static swig_type_info *swig_types[3];
 static swig_module_info swig_module = {swig_types, 2, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
@@ -3464,16 +3019,16 @@ static swig_module_info swig_module = {swig_types, 2, 0, 0, 0, 0};
 #endif
 
 /*-----------------------------------------------
-              @(target):= _swig_test.so
+              @(target):= _t.so
   ------------------------------------------------*/
 #if PY_VERSION_HEX >= 0x03000000
-#  define SWIG_init    PyInit__swig_test
+#  define SWIG_init    PyInit__t
 
 #else
-#  define SWIG_init    init_swig_test
+#  define SWIG_init    init_t
 
 #endif
-#define SWIG_name    "_swig_test"
+#define SWIG_name    "_t"
 
 #define SWIGVERSION 0x030012 
 #define SWIG_VERSION SWIGVERSION
@@ -3556,15 +3111,14 @@ namespace swig {
 }
 
 
-int binary_op(int a, int b, int (*op)(int, int)) {
-  return op(a, b);
+    #include "t.h"
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_int  (int value)
+{
+  return PyInt_FromLong((long) value);
 }
-
-
-struct BinaryOp {
-  virtual int handle(int a, int b) = 0;
-  virtual ~BinaryOp() {}
-};
 
 
 #include <limits.h>
@@ -3718,128 +3272,197 @@ SWIG_AsVal_int (PyObject * obj, int *val)
 }
 
 
-SWIGINTERNINLINE PyObject*
-  SWIG_From_int  (int value)
+SWIGINTERN swig_type_info*
+SWIG_pchar_descriptor(void)
 {
-  return PyInt_FromLong((long) value);
-}
-
-
-static BinaryOp *handler_ptr = NULL;
-static int handler_helper(int a, int b) {
-  // Make the call up to the target language when handler_ptr
-  // is an instance of a target language director class
-  return handler_ptr->handle(a, b);
-}
-// If desired, handler_ptr above could be changed to a thread-local variable in order to make thread-safe
-
-
-int binary_op_wrapper(int a, int b, BinaryOp *handler) {
-  handler_ptr = handler;
-  int result = binary_op(a, b, &handler_helper);
-  handler = NULL;
-  return result;
-}
-
-
-
-/* ---------------------------------------------------
- * C++ director class methods
- * --------------------------------------------------- */
-
-#include "swig_test_wrap.h"
-
-SwigDirector_BinaryOp::SwigDirector_BinaryOp(PyObject *self): BinaryOp(), Swig::Director(self) {
-  SWIG_DIRECTOR_RGTR((BinaryOp *)this, this); 
-}
-
-
-
-
-int SwigDirector_BinaryOp::handle(int a, int b) {
-  int c_result;
-  swig::SwigVar_PyObject obj0;
-  obj0 = SWIG_From_int(static_cast< int >(a));
-  swig::SwigVar_PyObject obj1;
-  obj1 = SWIG_From_int(static_cast< int >(b));
-  if (!swig_get_self()) {
-    Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call BinaryOp.__init__.");
+  static int init = 0;
+  static swig_type_info* info = 0;
+  if (!init) {
+    info = SWIG_TypeQuery("_p_char");
+    init = 1;
   }
-#if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
-  const size_t swig_method_index = 0;
-  const char *const swig_method_name = "handle";
-  PyObject *method = swig_get_method(swig_method_index, swig_method_name);
-  swig::SwigVar_PyObject result = PyObject_CallFunction(method, (char *)"(OO)" ,(PyObject *)obj0,(PyObject *)obj1);
+  return info;
+}
+
+
+SWIGINTERN int
+SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
+{
+#if PY_VERSION_HEX>=0x03000000
+#if defined(SWIG_PYTHON_STRICT_BYTE_CHAR)
+  if (PyBytes_Check(obj))
 #else
-  swig::SwigVar_PyObject result = PyObject_CallMethod(swig_get_self(), (char *)"handle", (char *)"(OO)" ,(PyObject *)obj0,(PyObject *)obj1);
+  if (PyUnicode_Check(obj))
 #endif
-  if (!result) {
-    PyObject *error = PyErr_Occurred();
-    if (error) {
-      Swig::DirectorMethodException::raise("Error detected when calling 'BinaryOp.handle'");
+#else  
+  if (PyString_Check(obj))
+#endif
+  {
+    char *cstr; Py_ssize_t len;
+#if PY_VERSION_HEX>=0x03000000
+#if !defined(SWIG_PYTHON_STRICT_BYTE_CHAR)
+    if (!alloc && cptr) {
+        /* We can't allow converting without allocation, since the internal
+           representation of string in Python 3 is UCS-2/UCS-4 but we require
+           a UTF-8 representation.
+           TODO(bhy) More detailed explanation */
+        return SWIG_RuntimeError;
+    }
+    obj = PyUnicode_AsUTF8String(obj);
+    if(alloc) *alloc = SWIG_NEWOBJ;
+#endif
+    PyBytes_AsStringAndSize(obj, &cstr, &len);
+#else
+    PyString_AsStringAndSize(obj, &cstr, &len);
+#endif
+    if (cptr) {
+      if (alloc) {
+	/* 
+	   In python the user should not be able to modify the inner
+	   string representation. To warranty that, if you define
+	   SWIG_PYTHON_SAFE_CSTRINGS, a new/copy of the python string
+	   buffer is always returned.
+
+	   The default behavior is just to return the pointer value,
+	   so, be careful.
+	*/ 
+#if defined(SWIG_PYTHON_SAFE_CSTRINGS)
+	if (*alloc != SWIG_OLDOBJ) 
+#else
+	if (*alloc == SWIG_NEWOBJ) 
+#endif
+	{
+	  *cptr = reinterpret_cast< char* >(memcpy(new char[len + 1], cstr, sizeof(char)*(len + 1)));
+	  *alloc = SWIG_NEWOBJ;
+	} else {
+	  *cptr = cstr;
+	  *alloc = SWIG_OLDOBJ;
+	}
+      } else {
+#if PY_VERSION_HEX>=0x03000000
+#if defined(SWIG_PYTHON_STRICT_BYTE_CHAR)
+	*cptr = PyBytes_AsString(obj);
+#else
+	assert(0); /* Should never reach here with Unicode strings in Python 3 */
+#endif
+#else
+	*cptr = SWIG_Python_str_AsChar(obj);
+#endif
+      }
+    }
+    if (psize) *psize = len + 1;
+#if PY_VERSION_HEX>=0x03000000 && !defined(SWIG_PYTHON_STRICT_BYTE_CHAR)
+    Py_XDECREF(obj);
+#endif
+    return SWIG_OK;
+  } else {
+#if defined(SWIG_PYTHON_2_UNICODE)
+#if defined(SWIG_PYTHON_STRICT_BYTE_CHAR)
+#error "Cannot use both SWIG_PYTHON_2_UNICODE and SWIG_PYTHON_STRICT_BYTE_CHAR at once"
+#endif
+#if PY_VERSION_HEX<0x03000000
+    if (PyUnicode_Check(obj)) {
+      char *cstr; Py_ssize_t len;
+      if (!alloc && cptr) {
+        return SWIG_RuntimeError;
+      }
+      obj = PyUnicode_AsUTF8String(obj);
+      if (PyString_AsStringAndSize(obj, &cstr, &len) != -1) {
+        if (cptr) {
+          if (alloc) *alloc = SWIG_NEWOBJ;
+          *cptr = reinterpret_cast< char* >(memcpy(new char[len + 1], cstr, sizeof(char)*(len + 1)));
+        }
+        if (psize) *psize = len + 1;
+
+        Py_XDECREF(obj);
+        return SWIG_OK;
+      } else {
+        Py_XDECREF(obj);
+      }
+    }
+#endif
+#endif
+
+    swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
+    if (pchar_descriptor) {
+      void* vptr = 0;
+      if (SWIG_ConvertPtr(obj, &vptr, pchar_descriptor, 0) == SWIG_OK) {
+	if (cptr) *cptr = (char *) vptr;
+	if (psize) *psize = vptr ? (strlen((char *)vptr) + 1) : 0;
+	if (alloc) *alloc = SWIG_OLDOBJ;
+	return SWIG_OK;
+      }
     }
   }
-  int swig_val;
-  int swig_res = SWIG_AsVal_int(result, &swig_val);
-  if (!SWIG_IsOK(swig_res)) {
-    Swig::DirectorTypeMismatchException::raise(SWIG_ErrorType(SWIG_ArgError(swig_res)), "in output value of type '""int""'");
-  }
-  c_result = static_cast< int >(swig_val);
-  return (int) c_result;
+  return SWIG_TypeError;
 }
 
 
-SwigDirector_BinaryOp::~SwigDirector_BinaryOp() {
+
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_FromCharPtrAndSize(const char* carray, size_t size)
+{
+  if (carray) {
+    if (size > INT_MAX) {
+      swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
+      return pchar_descriptor ? 
+	SWIG_InternalNewPointerObj(const_cast< char * >(carray), pchar_descriptor, 0) : SWIG_Py_Void();
+    } else {
+#if PY_VERSION_HEX >= 0x03000000
+#if defined(SWIG_PYTHON_STRICT_BYTE_CHAR)
+      return PyBytes_FromStringAndSize(carray, static_cast< Py_ssize_t >(size));
+#else
+#if PY_VERSION_HEX >= 0x03010000
+      return PyUnicode_DecodeUTF8(carray, static_cast< Py_ssize_t >(size), "surrogateescape");
+#else
+      return PyUnicode_FromStringAndSize(carray, static_cast< Py_ssize_t >(size));
+#endif
+#endif
+#else
+      return PyString_FromStringAndSize(carray, static_cast< Py_ssize_t >(size));
+#endif
+    }
+  } else {
+    return SWIG_Py_Void();
+  }
+}
+
+
+SWIGINTERNINLINE PyObject * 
+SWIG_FromCharPtr(const char *cptr)
+{ 
+  return SWIG_FromCharPtrAndSize(cptr, (cptr ? strlen(cptr) : 0));
 }
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-SWIGINTERN PyObject *_wrap_BinaryOp_handle(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  BinaryOp *arg1 = (BinaryOp *) 0 ;
-  int arg2 ;
-  int arg3 ;
+  int *arg1 = (int *) 0 ;
+  int *arg2 = (int *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  Swig::Director *director = 0;
-  bool upcall = false;
   int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOO:BinaryOp_handle",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BinaryOp, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_int, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "BinaryOp_handle" "', argument " "1"" of type '" "BinaryOp *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "add" "', argument " "1"" of type '" "int *""'"); 
   }
-  arg1 = reinterpret_cast< BinaryOp * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "BinaryOp_handle" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "BinaryOp_handle" "', argument " "3"" of type '" "int""'");
-  } 
-  arg3 = static_cast< int >(val3);
-  director = SWIG_DIRECTOR_CAST(arg1);
-  upcall = (director && (director->swig_get_self()==obj0));
-  try {
-    if (upcall) {
-      Swig::DirectorPureVirtualException::raise("BinaryOp::handle");
-    } else {
-      result = (int)(arg1)->handle(arg2,arg3);
-    }
-  } catch (Swig::DirectorException&) {
-    SWIG_fail;
+  arg1 = reinterpret_cast< int * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_int, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "add" "', argument " "2"" of type '" "int *""'"); 
   }
+  arg2 = reinterpret_cast< int * >(argp2);
+  result = (int)add(arg1,arg2);
   resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
@@ -3847,87 +3470,11 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_delete_BinaryOp(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  BinaryOp *arg1 = (BinaryOp *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_BinaryOp",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BinaryOp, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_BinaryOp" "', argument " "1"" of type '" "BinaryOp *""'"); 
-  }
-  arg1 = reinterpret_cast< BinaryOp * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_BinaryOp(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  PyObject *arg1 = (PyObject *) 0 ;
-  PyObject * obj0 = 0 ;
-  BinaryOp *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:new_BinaryOp",&obj0)) SWIG_fail;
-  arg1 = obj0;
-  if ( arg1 != Py_None ) {
-    /* subclassed */
-    result = (BinaryOp *)new SwigDirector_BinaryOp(arg1); 
-  } else {
-    SWIG_SetErrorMsg(PyExc_RuntimeError,"accessing abstract class or protected constructor"); 
-    SWIG_fail;
-  }
-  
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_BinaryOp, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_disown_BinaryOp(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  BinaryOp *arg1 = (BinaryOp *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:disown_BinaryOp",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BinaryOp, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "disown_BinaryOp" "', argument " "1"" of type '" "BinaryOp *""'"); 
-  }
-  arg1 = reinterpret_cast< BinaryOp * >(argp1);
-  {
-    Swig::Director *director = SWIG_DIRECTOR_CAST(arg1);
-    if (director) director->swig_disown();
-  }
-  
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *BinaryOp_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_BinaryOp, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_binary_op_wrapper(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_mul(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   int arg1 ;
   int arg2 ;
-  BinaryOp *arg3 = (BinaryOp *) 0 ;
+  int *arg3 = (int *) 0 ;
   int val1 ;
   int ecode1 = 0 ;
   int val2 ;
@@ -3937,60 +3484,93 @@ SWIGINTERN PyObject *_wrap_binary_op_wrapper(PyObject *SWIGUNUSEDPARM(self), PyO
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
-  int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOO:binary_op_wrapper",&obj0,&obj1,&obj2)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OOO:mul",&obj0,&obj1,&obj2)) SWIG_fail;
   ecode1 = SWIG_AsVal_int(obj0, &val1);
   if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "binary_op_wrapper" "', argument " "1"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "mul" "', argument " "1"" of type '" "int""'");
   } 
   arg1 = static_cast< int >(val1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "binary_op_wrapper" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "mul" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = static_cast< int >(val2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_BinaryOp, 0 |  0 );
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_int, 0 |  0 );
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "binary_op_wrapper" "', argument " "3"" of type '" "BinaryOp *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "mul" "', argument " "3"" of type '" "int *""'"); 
   }
-  arg3 = reinterpret_cast< BinaryOp * >(argp3);
-  result = (int)binary_op_wrapper(arg1,arg2,arg3);
-  resultobj = SWIG_From_int(static_cast< int >(result));
+  arg3 = reinterpret_cast< int * >(argp3);
+  mul(arg1,arg2,arg3);
+  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
 }
 
 
+SWIGINTERN PyObject *_wrap_str_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  char *arg1 = (char *) 0 ;
+  char *arg2 = (char *) 0 ;
+  int res1 ;
+  char *buf1 = 0 ;
+  int alloc1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:str_add",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "str_add" "', argument " "1"" of type '" "char *""'");
+  }
+  arg1 = reinterpret_cast< char * >(buf1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "str_add" "', argument " "2"" of type '" "char *""'");
+  }
+  arg2 = reinterpret_cast< char * >(buf2);
+  result = (char *)str_add(arg1,arg2);
+  resultobj = SWIG_FromCharPtr((const char *)result);
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
-	 { (char *)"BinaryOp_handle", _wrap_BinaryOp_handle, METH_VARARGS, NULL},
-	 { (char *)"delete_BinaryOp", _wrap_delete_BinaryOp, METH_VARARGS, NULL},
-	 { (char *)"new_BinaryOp", _wrap_new_BinaryOp, METH_VARARGS, NULL},
-	 { (char *)"disown_BinaryOp", _wrap_disown_BinaryOp, METH_VARARGS, NULL},
-	 { (char *)"BinaryOp_swigregister", BinaryOp_swigregister, METH_VARARGS, NULL},
-	 { (char *)"binary_op_wrapper", _wrap_binary_op_wrapper, METH_VARARGS, NULL},
+	 { (char *)"add", _wrap_add, METH_VARARGS, (char *)"add(int * a, int * b) -> int"},
+	 { (char *)"mul", _wrap_mul, METH_VARARGS, (char *)"mul(int a, int b, int * result)"},
+	 { (char *)"str_add", _wrap_str_add, METH_VARARGS, (char *)"str_add(char * a, char * b) -> char const *"},
 	 { NULL, NULL, 0, NULL }
 };
 
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
-static swig_type_info _swigt__p_BinaryOp = {"_p_BinaryOp", "BinaryOp *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
-  &_swigt__p_BinaryOp,
   &_swigt__p_char,
+  &_swigt__p_int,
 };
 
-static swig_cast_info _swigc__p_BinaryOp[] = {  {&_swigt__p_BinaryOp, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
-  _swigc__p_BinaryOp,
   _swigc__p_char,
+  _swigc__p_int,
 };
 
 

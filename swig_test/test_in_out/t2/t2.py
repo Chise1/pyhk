@@ -9,12 +9,12 @@ if _swig_python_version_info >= (2, 7, 0):
     def swig_import_helper():
         import importlib
         pkg = __name__.rpartition('.')[0]
-        mname = '.'.join((pkg, '_example')).lstrip('.')
+        mname = '.'.join((pkg, '_t2')).lstrip('.')
         try:
             return importlib.import_module(mname)
         except ImportError:
-            return importlib.import_module('_example')
-    _example = swig_import_helper()
+            return importlib.import_module('_t2')
+    _t2 = swig_import_helper()
     del swig_import_helper
 elif _swig_python_version_info >= (2, 6, 0):
     def swig_import_helper():
@@ -22,20 +22,20 @@ elif _swig_python_version_info >= (2, 6, 0):
         import imp
         fp = None
         try:
-            fp, pathname, description = imp.find_module('_example', [dirname(__file__)])
+            fp, pathname, description = imp.find_module('_t2', [dirname(__file__)])
         except ImportError:
-            import _example
-            return _example
+            import _t2
+            return _t2
         try:
-            _mod = imp.load_module('_example', fp, pathname, description)
+            _mod = imp.load_module('_t2', fp, pathname, description)
         finally:
             if fp is not None:
                 fp.close()
         return _mod
-    _example = swig_import_helper()
+    _t2 = swig_import_helper()
     del swig_import_helper
 else:
-    import _example
+    import _t2
 del _swig_python_version_info
 
 try:
@@ -95,46 +95,26 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
-try:
-    import weakref
-    weakref_proxy = weakref.proxy
-except __builtin__.Exception:
-    weakref_proxy = lambda x: x
 
+def new_intp() -> "int *":
+    return _t2.new_intp()
+new_intp = _t2.new_intp
 
-class BinaryOp(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, BinaryOp, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, BinaryOp, name)
-    __repr__ = _swig_repr
+def copy_intp(value: 'int') -> "int *":
+    return _t2.copy_intp(value)
+copy_intp = _t2.copy_intp
 
-    def handle(self, a: 'int', b: 'int') -> "int":
-        return _example.BinaryOp_handle(self, a, b)
-    __swig_destroy__ = _example.delete_BinaryOp
-    __del__ = lambda self: None
+def delete_intp(obj: 'int *') -> "void":
+    return _t2.delete_intp(obj)
+delete_intp = _t2.delete_intp
 
-    def __init__(self):
-        if self.__class__ == BinaryOp:
-            _self = None
-        else:
-            _self = self
-        this = _example.new_BinaryOp(_self, )
-        try:
-            self.this.append(this)
-        except __builtin__.Exception:
-            self.this = this
-    def __disown__(self):
-        self.this.disown()
-        _example.disown_BinaryOp(self)
-        return weakref_proxy(self)
-BinaryOp_swigregister = _example.BinaryOp_swigregister
-BinaryOp_swigregister(BinaryOp)
+def intp_assign(obj: 'int *', value: 'int') -> "void":
+    return _t2.intp_assign(obj, value)
+intp_assign = _t2.intp_assign
 
-
-def binary_op_wrapper(a: 'int', b: 'int', handler: 'BinaryOp') -> "int":
-    return _example.binary_op_wrapper(a, b, handler)
-binary_op_wrapper = _example.binary_op_wrapper
+def intp_value(obj: 'int *') -> "int":
+    return _t2.intp_value(obj)
+intp_value = _t2.intp_value
 # This file is compatible with both classic and new-style classes.
 
 

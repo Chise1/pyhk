@@ -9,12 +9,12 @@ if _swig_python_version_info >= (2, 7, 0):
     def swig_import_helper():
         import importlib
         pkg = __name__.rpartition('.')[0]
-        mname = '.'.join((pkg, '_swig_test')).lstrip('.')
+        mname = '.'.join((pkg, '_t')).lstrip('.')
         try:
             return importlib.import_module(mname)
         except ImportError:
-            return importlib.import_module('_swig_test')
-    _swig_test = swig_import_helper()
+            return importlib.import_module('_t')
+    _t = swig_import_helper()
     del swig_import_helper
 elif _swig_python_version_info >= (2, 6, 0):
     def swig_import_helper():
@@ -22,20 +22,20 @@ elif _swig_python_version_info >= (2, 6, 0):
         import imp
         fp = None
         try:
-            fp, pathname, description = imp.find_module('_swig_test', [dirname(__file__)])
+            fp, pathname, description = imp.find_module('_t', [dirname(__file__)])
         except ImportError:
-            import _swig_test
-            return _swig_test
+            import _t
+            return _t
         try:
-            _mod = imp.load_module('_swig_test', fp, pathname, description)
+            _mod = imp.load_module('_t', fp, pathname, description)
         finally:
             if fp is not None:
                 fp.close()
         return _mod
-    _swig_test = swig_import_helper()
+    _t = swig_import_helper()
     del swig_import_helper
 else:
-    import _swig_test
+    import _t
 del _swig_python_version_info
 
 try:
@@ -95,46 +95,18 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
-try:
-    import weakref
-    weakref_proxy = weakref.proxy
-except __builtin__.Exception:
-    weakref_proxy = lambda x: x
 
+def add(a: 'int *', b: 'int *') -> "int":
+    """add(int * a, int * b) -> int"""
+    return _t.add(a, b)
 
-class BinaryOp(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, BinaryOp, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, BinaryOp, name)
-    __repr__ = _swig_repr
+def mul(a: 'int', b: 'int', result: 'int *') -> "void":
+    """mul(int a, int b, int * result)"""
+    return _t.mul(a, b, result)
 
-    def handle(self, a: 'int', b: 'int') -> "int":
-        return _swig_test.BinaryOp_handle(self, a, b)
-    __swig_destroy__ = _swig_test.delete_BinaryOp
-    __del__ = lambda self: None
-
-    def __init__(self):
-        if self.__class__ == BinaryOp:
-            _self = None
-        else:
-            _self = self
-        this = _swig_test.new_BinaryOp(_self, )
-        try:
-            self.this.append(this)
-        except __builtin__.Exception:
-            self.this = this
-    def __disown__(self):
-        self.this.disown()
-        _swig_test.disown_BinaryOp(self)
-        return weakref_proxy(self)
-BinaryOp_swigregister = _swig_test.BinaryOp_swigregister
-BinaryOp_swigregister(BinaryOp)
-
-
-def binary_op_wrapper(a: 'int', b: 'int', handler: 'BinaryOp') -> "int":
-    return _swig_test.binary_op_wrapper(a, b, handler)
-binary_op_wrapper = _swig_test.binary_op_wrapper
+def str_add(a: 'char *', b: 'char *') -> "char const *":
+    """str_add(char * a, char * b) -> char const *"""
+    return _t.str_add(a, b)
 # This file is compatible with both classic and new-style classes.
 
 

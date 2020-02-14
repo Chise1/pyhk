@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "hcnetsdk.h": "c"
+        "hcnetsdk.h": "c",
+        "vector": "cpp",
+        "stl.h": "c"
     },
     "python.pythonPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
 }

@@ -1,3 +1,8 @@
+%module(package="base_define") base_define
+%header %{
+#include "base.h"
+%}
+
 #ifndef _WINDOWS_
     #if (defined(_WIN32) || defined(_WIN64))
         #include <winsock2.h>
@@ -82,35 +87,17 @@
             typedef void* HDC;
         #endif
     #endif
-
+%inline%{
     typedef struct tagInitInfo
     {
         int uWidth;
         int uHeight;
     }INITINFO;
+    %}
 #endif
 
-typedef struct
-{
-    float x;
-    float y;
-}POINTER,*LPPOINTER;
-typedef struct{
-    float x;
-    float y;
-    float vector_length;
-}VECTOR;
-typedef struct
-{
-    DWORD dwYear;   //年
-    DWORD dwMonth;  //月
-    DWORD dwDay;    //日
-    DWORD dwHour;   //时
-    DWORD dwMinute; //分
-    DWORD dwSecond; //秒
-} NET_DVR_TIME, *LPNET_DVR_TIME;
-typedef int (CALLBACK *callback) (POINTER x,  POINTER y , VECTOR * vector_length);
-
-NET_DVR_API void callback_get_result(POINTER x, POINTER y,callback fun,VECTOR *vector_length);
-NET_DVR_API void get_length(POINTER a,POINTER b,float *result);
-NET_DVR_API BOOL test_init();
+%inline%{
+int add(int a,int b){
+    return a+b;
+}
+%}

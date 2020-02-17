@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1581738768 source:/home/cs/Documents/pyhk/comprehensive_test/base.cpp
+	"base.h"
+	<math.h>
+
+1581738944 /home/cs/Documents/pyhk/comprehensive_test/base.h
+	<winsock2.h>
+	<windows.h>
+
+1581738768 source:/home/cs/Documents/pyhk/comprehensive_test/comprehensive_test/base.cpp
+	"base.h"
+	<math.h>
+
+1581739630 /home/cs/Documents/pyhk/comprehensive_test/comprehensive_test/base.h
+	<winsock2.h>
+	<windows.h>
+
+1581738552 source:/home/cs/Documents/pyhk/comprehensive_test/BaseCallback/base_callback.cpp
+	"base_callback.h"
+
+1581740150 /home/cs/Documents/pyhk/comprehensive_test/BaseCallback/base_callback.h
+	"base.h"
+

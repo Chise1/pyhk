@@ -1,11 +1,12 @@
-%module base
+%module(package="base_define") base_define
 %header %{
 #include "base.h"
 %}
+
 #ifndef _WINDOWS_
     #if (defined(_WIN32) || defined(_WIN64))
         #include <winsock2.h>
-        #include <windows.h>    
+        #include <windows.h>
     #endif
 #endif
 
@@ -14,17 +15,17 @@
 #endif
 
 #if defined(__LP64__)
-    #define OS_POSIX64    1 
+    #define OS_POSIX64    1
 #endif
 
 #ifndef __PLAYRECT_defined
     #define __PLAYRECT_defined
     typedef struct __PLAYRECT
     {
-        int x;                               
-        int y;                                  
-        int uWidth;                            
-        int uHeight;                            
+        int x;
+        int y;
+        int uWidth;
+        int uHeight;
     }PLAYRECT;
 #endif
 
@@ -43,7 +44,7 @@
     typedef  unsigned int       UINT;
     typedef  void*              LPVOID;
     typedef  void*              HANDLE;
-    typedef  unsigned int*      LPDWORD; 
+    typedef  unsigned int*      LPDWORD;
     typedef  unsigned long long UINT64;
     typedef  signed long long   INT64;
 
@@ -57,8 +58,8 @@
         #define NULL 0
     #endif
 
-    #define __stdcall 
-    #define CALLBACK  
+    #define __stdcall
+    #define CALLBACK
 
     #define NET_DVR_API extern "C"
     typedef unsigned int   COLORKEY;
@@ -86,10 +87,17 @@
             typedef void* HDC;
         #endif
     #endif
-
+%inline%{
     typedef struct tagInitInfo
     {
-        int uWidth; 
-        int uHeight; 
-    }INITINFO; 
+        int uWidth;
+        int uHeight;
+    }INITINFO;
+    %}
 #endif
+
+%inline%{
+int add(int a,int b){
+    return a+b;
+}
+%}

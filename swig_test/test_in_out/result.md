@@ -1,0 +1,1 @@
+python can not import over 1 swig file.

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1581709031 source:/home/cs/Documents/pyhk/swig_test/test_void_function/test_void/test_void.cpp
+	"test_void.h"
+
+1581708544 /home/cs/Documents/pyhk/swig_test/test_void_function/test_void/test_void.h
+	<iostream>
+	<cstdio>
+

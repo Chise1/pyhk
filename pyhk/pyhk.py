@@ -98,6 +98,16 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
+<<<<<<< HEAD
+=======
+try:
+    import weakref
+    weakref_proxy = weakref.proxy
+except __builtin__.Exception:
+    weakref_proxy = lambda x: x
+
+
+>>>>>>> dev
 TRUE = _pyhk.TRUE
 FALSE = _pyhk.FALSE
 NULL = _pyhk.NULL
@@ -327,14 +337,18 @@ class CallbackStruct(_object):
     __setattr__ = lambda self, name, value: _swig_setattr(self, CallbackStruct, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, CallbackStruct, name)
+<<<<<<< HEAD
 
     def __init__(self, *args, **kwargs):
         raise AttributeError("No constructor defined - class is abstract")
+=======
+>>>>>>> dev
     __repr__ = _swig_repr
 
     def fExceptionCallBack(self, dwType: 'DWORD', lUserID: 'LONG', lHandle: 'LONG', pUser: 'void *') -> "void":
         """
         fExceptionCallBack(self, dwType, lUserID, lHandle, pUser)
+<<<<<<< HEAD
 
         Parameters
         ----------
@@ -421,6 +435,117 @@ def NET_DVR_SetDVRConfig(lUserID: 'LONG', dwCommand: 'DWORD', lChannel: 'LONG', 
     """
     NET_DVR_SetDVRConfig(lUserID, dwCommand, lChannel, lpInBuffer, dwInBufferSize) -> BOOL
 
+=======
+
+        Parameters
+        ----------
+        dwType: DWORD
+        lUserID: LONG
+        lHandle: LONG
+        pUser: void *
+
+        """
+        return _pyhk.CallbackStruct_fExceptionCallBack(self, dwType, lUserID, lHandle, pUser)
+
+    __swig_destroy__ = _pyhk.delete_CallbackStruct
+    __del__ = lambda self: None
+
+    def __init__(self):
+        """
+        __init__(self) -> CallbackStruct
+
+        Parameters
+        ----------
+        self: PyObject *
+
+        """
+        if self.__class__ == CallbackStruct:
+            _self = None
+        else:
+            _self = self
+        this = _pyhk.new_CallbackStruct(_self, )
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    def __disown__(self):
+        self.this.disown()
+        _pyhk.disown_CallbackStruct(self)
+        return weakref_proxy(self)
+CallbackStruct_swigregister = _pyhk.CallbackStruct_swigregister
+CallbackStruct_swigregister(CallbackStruct)
+
+
+def NET_DVR_SetExceptionCallBack_V30_wrapper(nMessage: 'UINT', hWnd: 'HWND', cbExceptionCallBack: 'CallbackStruct', pUser: 'void *') -> "int":
+    """
+    NET_DVR_SetExceptionCallBack_V30_wrapper(nMessage, hWnd, cbExceptionCallBack, pUser) -> int
+
+    Parameters
+    ----------
+    nMessage: UINT
+    hWnd: HWND
+    cbExceptionCallBack: CallbackStruct *
+    pUser: void *
+
+    """
+    return _pyhk.NET_DVR_SetExceptionCallBack_V30_wrapper(nMessage, hWnd, cbExceptionCallBack, pUser)
+
+def NET_DVR_Init() -> "BOOL":
+    """NET_DVR_Init() -> BOOL"""
+    return _pyhk.NET_DVR_Init()
+
+def NET_DVR_SetConnectTime(dwWaitTime: 'DWORD', dwTryTimes: 'DWORD') -> "BOOL":
+    """
+    NET_DVR_SetConnectTime(dwWaitTime, dwTryTimes) -> BOOL
+
+    Parameters
+    ----------
+    dwWaitTime: DWORD
+    dwTryTimes: DWORD
+
+    """
+    return _pyhk.NET_DVR_SetConnectTime(dwWaitTime, dwTryTimes)
+
+def NET_DVR_GetLastError() -> "DWORD":
+    """NET_DVR_GetLastError() -> DWORD"""
+    return _pyhk.NET_DVR_GetLastError()
+
+def NET_DVR_Login_V30(sDVRIP: 'char *', wDVRPort: 'WORD', sUserName: 'char *', sPassword: 'char *', lpDeviceInfo: 'NET_DVR_DEVICEINFO_V30') -> "LONG":
+    """
+    NET_DVR_Login_V30(sDVRIP, wDVRPort, sUserName, sPassword, lpDeviceInfo) -> LONG
+
+    Parameters
+    ----------
+    sDVRIP: char *
+    wDVRPort: WORD
+    sUserName: char *
+    sPassword: char *
+    lpDeviceInfo: LPNET_DVR_DEVICEINFO_V30
+
+    """
+    return _pyhk.NET_DVR_Login_V30(sDVRIP, wDVRPort, sUserName, sPassword, lpDeviceInfo)
+
+def NET_DVR_GetDVRConfig(lUserID: 'LONG', dwCommand: 'DWORD', lChannel: 'LONG', lpOutBuffer: 'LPVOID', dwOutBufferSize: 'DWORD', lpBytesReturned: 'LPDWORD') -> "BOOL":
+    """
+    NET_DVR_GetDVRConfig(lUserID, dwCommand, lChannel, lpOutBuffer, dwOutBufferSize, lpBytesReturned) -> BOOL
+
+    Parameters
+    ----------
+    lUserID: LONG
+    dwCommand: DWORD
+    lChannel: LONG
+    lpOutBuffer: LPVOID
+    dwOutBufferSize: DWORD
+    lpBytesReturned: LPDWORD
+
+    """
+    return _pyhk.NET_DVR_GetDVRConfig(lUserID, dwCommand, lChannel, lpOutBuffer, dwOutBufferSize, lpBytesReturned)
+
+def NET_DVR_SetDVRConfig(lUserID: 'LONG', dwCommand: 'DWORD', lChannel: 'LONG', lpInBuffer: 'LPVOID', dwInBufferSize: 'DWORD') -> "BOOL":
+    """
+    NET_DVR_SetDVRConfig(lUserID, dwCommand, lChannel, lpInBuffer, dwInBufferSize) -> BOOL
+
+>>>>>>> dev
     Parameters
     ----------
     lUserID: LONG
@@ -428,6 +553,7 @@ def NET_DVR_SetDVRConfig(lUserID: 'LONG', dwCommand: 'DWORD', lChannel: 'LONG', 
     lChannel: LONG
     lpInBuffer: LPVOID
     dwInBufferSize: DWORD
+<<<<<<< HEAD
 
     """
     return _pyhk.NET_DVR_SetDVRConfig(lUserID, dwCommand, lChannel, lpInBuffer, dwInBufferSize)
@@ -442,6 +568,11 @@ def test(x: 'NET_DVR_TIME') -> "void":
 
     """
     return _pyhk.test(x)
+=======
+
+    """
+    return _pyhk.NET_DVR_SetDVRConfig(lUserID, dwCommand, lChannel, lpInBuffer, dwInBufferSize)
+>>>>>>> dev
 # This file is compatible with both classic and new-style classes.
 
 

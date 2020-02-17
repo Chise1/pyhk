@@ -1,0 +1,1 @@
+import hk_struct_test

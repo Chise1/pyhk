@@ -15,6 +15,9 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-fPIC" />
+					<Add directory="/usr/include/python3.6" />
+					<Add directory="/usr/include/boost" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -36,7 +39,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="../dll_two/dll_one.cpp" />
+		<Unit filename="../dll_two/dll_one.h" />
+		<Unit filename="../dll_two/dll_two_wrap.cxx" />
 		<Extensions>
 			<code_completion />
 			<debugger />

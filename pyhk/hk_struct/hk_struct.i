@@ -8224,7 +8224,7 @@ typedef struct tagNET_DVR_ALARMINFO_FIXED_HEADER
  30-缺少SD卡*/
  DWORD dwAlarmType;
 NET_DVR_TIME_EX struAlarmTime;
-/*
+
 union
  {
  BYTE byUnionLen[116];
@@ -38803,5 +38803,5 @@ const unsigned int G726_ENC_OUT_SIZE = 160;
 #define DISP_CMD_ENLARGE_WINDOW 1 
 #define DISP_CMD_RENEW_WINDOW 2 
 #define DISP_CMD_OPENAUDIO 3 
-#define DISP_CMD_CLOSEAUDIO 4  */
+#define DISP_CMD_CLOSEAUDIO 4  
 #endif %}

@@ -1,2 +1,3 @@
+linux:
 g++ -Wall -fexceptions -g -fPIC -I/usr/include/python3.6 -c /home/cs/Documents/pyhk/pyhk/hk_struct/hk_struct_test/hk_struct_test_wrap.cxx -o obj/Debug/hk_struct_test_wrap.o
 g++ -shared  obj/Debug/hk_struct_test_wrap.o  -o bin/Debug/liblibhk_struct_test.so -lpthread  /usr/lib/x86_64-linux-gnu/libpthread.a

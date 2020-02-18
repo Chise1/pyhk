@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "hcnetsdk.h": "c",
-        "windows.h": "c"
-    }
-}

@@ -1,5 +1,6 @@
 # pyhk
 swig hk to python
+通过swig封装海康威视的sdk到python，实现python的调用。HIKVISION
 只支持linux使用
 通过swig的方法，把c++接口封装为python可使用的接口。
 目前需要注意的是：swig封装的接口里面使用多线程，会不会依然阻塞python的运行。
@@ -28,3 +29,6 @@ swig hk to python
 |   ├── test #存放一些swig的测试内容
 |   └── pointer #存放需要封装的指针，比如int *等内置类型指针
 ```
+
+工作量真是大得惊人，我会优先封装我需要的接口，回调函数的接口会根据需求进行封装，如果有需要的，建议直接在issue里面提。
+另，现在有部分嵌套结构体未处理，尚不确定是否为swig自动处理而不用我再修改.

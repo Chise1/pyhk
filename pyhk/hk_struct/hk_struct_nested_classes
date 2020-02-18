@@ -9030,53 +9030,54 @@ typedef struct
 
 
 
-typedef struct tagNET_DVR_ALARMINFO_FIXED_HEADER
-{
-    /*0-信号量报警,1-硬盘满,2-信号丢失，3－移动侦测，4－硬盘未格式化,5-写硬盘出错,6-遮挡报警，
-    7-制式不匹配, 8-非法访问，9-视频信号异常，10-录像异常，11-智能场景变化，12-阵列异常，13-前端/录像分辨率不匹配, 
-    14-申请解码资源失败,15-智能侦测报警, 16-热备异常，17-录播主机报警，18-语音对讲请求报警,19-音频丢失，20-开启录像，
-    21-关闭录像，22-车辆检测算法异常，23-脉冲报警,24-人脸库硬盘异常,25-人脸库变更,26-人脸库图片变更,27-POC异常,28-相机视角异常，
-    30-缺少SD卡*/
-    DWORD dwAlarmType;//报警类型
-    NET_DVR_TIME_EX struAlarmTime;    //发生报警的时间
-    union
-    {
-        BYTE    byUnionLen[116];  //分出去8个字节用于扩展时区
-        struct
+
+
+struct
         {
             DWORD    dwAlarmInputNo;        //发生报警的报警输入通道号，一次只有一个
             DWORD    dwTrigerAlarmOutNum;    /*触发的报警输出个数，用于后面计算变长数据部分中所有触发的报警输出通道号，四字节表示一个*/
             DWORD    dwTrigerRecordChanNum;    /*触发的录像通道个数，用于后面计算变长数据部分中所有触发的录像通道号，四字节表示一个*/
-        }struIOAlarm;    // 报警类型dwAlarmType为0时有效
-        struct
+        }_struIOAlarm;    // 报警类型dwAlarmType为0时有效
+struct
         {
             DWORD    dwAlarmChanNum;    /*发生报警通道数据个数，用于后面计算变长数据部分中所有发生的报警通道号，四字节表示一个*/
-        }struAlarmChannel;    // dwAlarmType为2，3，6，9，10、13或28时有效
-        struct
+        }_struAlarmChannel; 
+struct
         {
             DWORD    dwAlarmHardDiskNum;    /*发生报警的硬盘数据长度，用于后面计算变长数据部分中所有发生报警的硬盘号，四节表示一个*/
-        }struAlarmHardDisk;    // dwAlarmType为1,4,5时有效
-        struct
+        }_struAlarmHardDisk;    // dwAlarmType为1,4,5时有效
+struct
         {
             BYTE       bySubAlarmType;  //报警子类型，1-一键延迟录像； 
             BYTE       byRes1[3]; //保留
             NET_DVR_TIME_EX  struRecordEndTime; //录播结束时间
-        }struRecordingHost;  //录播主机专用报警
-        struct
+        }_struRecordingHost;  //录播主机专用报警
+		struct
         {
             float	       fVoltageValue;//电源电压值,单位V,精确到0.1
             BYTE       byVoltageAlarmType;  //电源电压报警类型，0-电源电压过高，1-电源电压过低 
             BYTE       byRes1[123]; //保留
-        }struVoltageInstable;  //dwAlarmType=31时有效
-
-    }uStruAlarm;
+        }_struVoltageInstable;  //dwAlarmType=31时有效
+union
+    {
+        BYTE    byUnionLen[116];  //分出去8个字节用于扩展时区
+        _struIOAlarm struIOAlarm;    // 报警类型dwAlarmType为0时有效
+        _struAlarmChannel struAlarmChannel;    // dwAlarmType为2，3，6，9，10、13或28时有效
+        _struAlarmHardDisk struAlarmHardDisk;    // dwAlarmType为1,4,5时有效
+        _struRecordingHost struRecordingHost;  //录播主机专用报警
+        _struVoltageInstable struVoltageInstable;
+    }_uStruAlarm;
+typedef struct tagNET_DVR_ALARMINFO_FIXED_HEADER
+{
+    DWORD dwAlarmType;//报警类型
+    NET_DVR_TIME_EX struAlarmTime;    //发生报警的时间
+    _uStruAlarm uStruAlarm;
     DWORD*  pRes;    //用于兼容64位下结构体字节不对齐问题
     BYTE    byTimeDiffFlag;      /*时差字段是否有效  0-时差无效， 1-时差有效 */
     char    cTimeDifferenceH;         /*与UTC的时差（小时），-12 ... +14， +表示东区,，byTimeDiffFlag为1时有效*/
     char    cTimeDifferenceM;      	/*与UTC的时差（分钟），-30, 30, 45， +表示东区，byTimeDiffFlag为1时有效*/
     BYTE    byRes2[5]; //保留
 }NET_DVR_ALRAM_FIXED_HEADER, *LPNET_DVR_ALARM_FIXED_HEADER;
-
 //上传报警信息(256路NVR扩展)
 typedef struct NET_DVR_ALARMINFO_V40
 {
@@ -10637,26 +10638,54 @@ typedef struct
     NET_DVR_PORTINFO struTransPortInfo[MAX_TRANSPARENTNUM]; /* 数组0表示232 数组1表示485 */
 }NET_DVR_PORTCFG, *LPNET_DVR_PORTCFG;
 /* 控制网络文件回放 */
-typedef struct 
-{
-    DWORD dwSize;
-    char sDecoderIP[16];        /* DVR IP地址 */
-    WORD wDecoderPort;            /* 端口号 */
-    WORD wLoadMode;                /* 回放下载模式 1－按名字 2－按时间 */
-    union
-    {
-        BYTE byFile[100];        /* 回放的文件名 */
-        struct
+
+struct
         {
             DWORD dwChannel;
             BYTE sUserName[NAME_LEN];    /*请求视频用户名*/
             BYTE sPassword[PASSWD_LEN];    /* 密码 */
             NET_DVR_TIME struStartTime;    /* 按时间回放的开始时间 */
             NET_DVR_TIME struStopTime;    /* 按时间回放的结束时间 */
-        }bytime;
-    }mode_size;
+        }_bytime;
+union
+    {
+        BYTE byFile[100];        /* 回放的文件名 */
+        _bytime bytime;
+    }_mode_size;
+typedef struct 
+{
+    DWORD dwSize;
+    char sDecoderIP[16];        /* DVR IP地址 */
+    WORD wDecoderPort;            /* 端口号 */
+    WORD wLoadMode;                /* 回放下载模式 1－按名字 2－按时间 */
+    _mode_size mode_size;
 }NET_DVR_PLAYREMOTEFILE, *LPNET_DVR_PLAYREMOTEFILE;
 /*当前设备解码连接状态*/
+
+ struct
+        {
+            BYTE sUserName[NAME_LEN];    /*请求视频用户名*/
+            BYTE sPassword[PASSWD_LEN];    /* 密码 */
+            char cReserve[52];
+        }_userInfo;
+        struct
+        {
+            BYTE   fileName[100];
+        }_fileInfo;
+        struct
+        {
+            DWORD    dwChannel;
+            BYTE    sUserName[NAME_LEN];    /*请求视频用户名*/
+            BYTE    sPassword[PASSWD_LEN];    /* 密码 */
+            NET_DVR_TIME struStartTime;        /* 按时间回放的开始时间 */
+            NET_DVR_TIME struStopTime;        /* 按时间回放的结束时间 */
+        }_timeInfo;
+union
+    {
+       _userInfo userInfo;
+       _fileInfo fileInfo;
+    _timeInfo timeInfo;
+    }_objectInfo;
 typedef struct 
 {
     DWORD dwWorkType;        /*工作方式：1：轮巡、2：动态连接解码、3：文件回放下载 4：按时间回放下载*/
@@ -10665,27 +10694,7 @@ typedef struct
     BYTE byChannel;            /* 通道号 */
     BYTE byLinkMode;        /* 连接模式 */
     DWORD    dwLinkType;        /*连接类型 0－主码流 1－子码流*/
-    union
-    {
-        struct
-        {
-            BYTE sUserName[NAME_LEN];    /*请求视频用户名*/
-            BYTE sPassword[PASSWD_LEN];    /* 密码 */
-            char cReserve[52];
-        }userInfo;
-        struct
-        {
-            BYTE   fileName[100];
-        }fileInfo;
-        struct
-        {
-            DWORD    dwChannel;
-            BYTE    sUserName[NAME_LEN];    /*请求视频用户名*/
-            BYTE    sPassword[PASSWD_LEN];    /* 密码 */
-            NET_DVR_TIME struStartTime;        /* 按时间回放的开始时间 */
-            NET_DVR_TIME struStopTime;        /* 按时间回放的结束时间 */
-        }timeInfo;
-    }objectInfo;
+    _objectInfo objectInfo;
 }NET_DVR_DECCHANSTATUS, *LPNET_DVR_DECCHANSTATUS;
 typedef struct 
 {
@@ -10724,23 +10733,30 @@ typedef struct
 /*
 EMAIL参数结构
 */
+
+
+struct
+    {
+        BYTE    sName[NAME_LEN];                /* 发件人姓名 */
+        BYTE    sAddress[MAX_EMAIL_ADDR_LEN];        /* 发件人地址 */
+    }_struSender;
+    struct
+    {
+        BYTE    sName[NAME_LEN];                /* 收件人姓名 */
+        BYTE    sAddress[MAX_EMAIL_ADDR_LEN];        /* 收件人地址 */
+    }_struReceiver;                            /* 最多可以设置3个收件人 */
+
+
 typedef struct
 {        
     DWORD        dwSize;
     BYTE        sAccount[NAME_LEN];                /* 账号*/ 
     BYTE        sPassword[MAX_EMAIL_PWD_LEN];            /*密码 */
-    struct
-    {
-        BYTE    sName[NAME_LEN];                /* 发件人姓名 */
-        BYTE    sAddress[MAX_EMAIL_ADDR_LEN];        /* 发件人地址 */
-    }struSender;
+    _struSender struSender;
     BYTE        sSmtpServer[MAX_EMAIL_ADDR_LEN];    /* smtp服务器 */
     BYTE        sPop3Server[MAX_EMAIL_ADDR_LEN];    /* pop3服务器 */
     struct
-    {
-        BYTE    sName[NAME_LEN];                /* 收件人姓名 */
-        BYTE    sAddress[MAX_EMAIL_ADDR_LEN];        /* 收件人地址 */
-    }struReceiver[3];                            /* 最多可以设置3个收件人 */
+    _struReceiver struReceiver[3];                            /* 最多可以设置3个收件人 */
     BYTE        byAttachment;                    /* 是否带附件 */
     BYTE        bySmtpServerVerify;                /* 发送服务器要求身份验证 */
     BYTE        byMailInterval;                 /* mail interval */
@@ -10855,13 +10871,8 @@ typedef struct
     BYTE byRes[16];
 }NET_DVR_DDNSPARA_EX, *LPNET_DVR_DDNSPARA_EX;
 //9000扩展
-//9000扩展
-typedef struct
-{
-    BYTE byEnableDDNS;
-    BYTE byHostIndex;/*0-IPServer 1－Dyndns 2－PeanutHull(花生壳)，3- NO-IP, 4- hiDDNS*/
-    BYTE byRes1[2];
-    struct
+
+struct
     {    
         BYTE sUsername[NAME_LEN];            /* DDNS账号用户名*/
         BYTE sPassword[PASSWD_LEN];            /* 密码 */
@@ -10869,29 +10880,17 @@ typedef struct
         BYTE sServerName[MAX_DOMAIN_NAME];    /* DDNS协议对应的服务器地址，可以是IP地址或域名 */
         WORD wDDNSPort;                        /* 端口号 */
         WORD    wCountryID;        //国家编号，仅在byHostIndex = 4时有效，0表示默认
-                                BYTE byStatus;                      /* DDNS运行状态（只读），
-                                                                    0-无意义
-                                                                    1-连接服务器失败(connServerfail)、
-                                                                    2-解析服务器消息失败(solveServerMesFail)、
-                                                                    3-连接心跳服务器失败(connHeartSrvfail)、
-                                                                    4-解析心跳服务器消息失败(solveHeartSrvMesFail)、
-                                                                    5-连接域名服务器失败(connHostSrvfail)、
-                                                                    6-解析域名服务器消息失败(solveHostSrvMesFail)、
-                                                                    7-DDNS状态正常(updateSuccess)、
-                                                                    8-未启用(disable)、
-                                                                    9-注册域名成功(registHostSuccess)、
-                                                                    10-DNS服务器配置错误(DNSSrvError)、
-                                                                    11-域名被占用(DomainConflict)、
-                                                                    12-别名(域名)不合法(invalidAlias)、
-                                                                    13-鉴权失败(authenticationFail)
-                                                                    14-注册服务器错误(registServerError)
-                                                                    15-注册失败(registFail)
-                                */
+                                BYTE byStatus;                      
                                 BYTE byRes[7];
-    } struDDNS[MAX_DDNS_NUMS];
+    } _struDDNS;
+typedef struct
+{
+    BYTE byEnableDDNS;
+    BYTE byHostIndex;/*0-IPServer 1－Dyndns 2－PeanutHull(花生壳)，3- NO-IP, 4- hiDDNS*/
+    BYTE byRes1[2];
+    _struDDNS struDDNS[MAX_DDNS_NUMS];
     BYTE byRes2[16];
 }NET_DVR_DDNSPARA_V30, *LPNET_DVR_DDNSPARA_V30;
-
 //email
 typedef struct 
 {
@@ -11288,6 +11287,20 @@ typedef enum
         VS_PAL = 2
 }VIDEO_STANDARD;
 
+struct
+        {
+            BYTE     byJoinDecoderId[MAX_WINDOWS];
+        }_struVideoPlatform;
+        struct
+        {
+            BYTE     byRes[16];
+        }_struNotVideoPlatform;
+union
+    {
+        BYTE byRes[16];
+        _struVideoPlatform struVideoPlatform;
+       _struNotVideoPlatform struNotVideoPlatform;
+    }_struDiff;
 typedef struct tagNET_DVR_VGA_DISP_CHAN_CFG
 {        
     DWORD    dwSize; 
@@ -11299,24 +11312,10 @@ typedef struct tagNET_DVR_VGA_DISP_CHAN_CFG
     BYTE    byJoinDecChan[MAX_WINDOWS];/*各个子窗口关联的解码通道*/
     BYTE    byEnlargeStatus;          /*是否处于放大状态，0：不放大，1：放大*/
     BYTE    byEnlargeSubWindowIndex;//放大的子窗口号
-    union
-    {
-        BYTE byRes[16];
-        struct
-        {
-            /*各个子窗口对应解码通道所对应的解码子系统的槽位号(对于视频综合平台中解码子系统有效)*/
-            BYTE     byJoinDecoderId[MAX_WINDOWS];
-        }struVideoPlatform;
-        struct
-        {
-            BYTE     byRes[16];
-        }struNotVideoPlatform;
-    }struDiff;
-    /*区分共用体，0-视频综合平台内部解码器显示通道配置，1-其他解码器显示通道配置*/
+    _struDiff struDiff;
     BYTE        byUnionType;
     BYTE        byScale; /*显示模式，0---真实显示，1---缩放显示( 针对BNC )*/
 }NET_DVR_VGA_DISP_CHAN_CFG,*LPNET_DVR_VGA_DISP_CHAN_CFG;
-
 #define NET_DVR_MAX_DISPREGION 16 /*每个显示通道最多可以显示的窗口*/
 typedef struct
 {
@@ -11914,22 +11913,14 @@ typedef struct tagNET_DVR_WIFIETHERNET
     BYTE   bRes2[8];
 }NET_DVR_WIFIETHERNET,*LPNET_DVR_WIFIETHERNET;
 
-typedef struct tagNET_DVR_WIFI_CFG_EX
-{
-    NET_DVR_WIFIETHERNET struEtherNet;        /*wifi网口*/
-    char sEssid[IW_ESSID_MAX_SIZE];     /*SSID*/
-    DWORD dwMode;      /* 0 mange 模式;1 ad-hoc模式，参见*/
-    DWORD dwSecurity; /*0-不加密;1-WEP加密;2-WPA-personal; 3-WPA-enterprise;4-WPA2-personal;5-WPA2-enterprise */
-    union 
-    {
-        struct 
+struct 
         {
             DWORD dwAuthentication;/*0 -开放式 1-共享式*/
             DWORD dwKeyLength;/* 0 -64位；1- 128位；2-152位*/
             DWORD dwKeyType;/*0 16进制;1 ASCI */
             DWORD dwActive;/*0 索引：0---3表示用哪一个密钥*/
             char sKeyInfo[WIFI_WEP_MAX_KEY_COUNT][WIFI_WEP_MAX_KEY_LENGTH];
-        }wep;
+        }_wep;
         struct 
         {
             DWORD dwKeyLength;/*8-63个ASCII字符*/
@@ -11940,48 +11931,63 @@ typedef struct tagNET_DVR_WIFI_CFG_EX
             //密钥类型；0 ~ 老密钥类型（只支持8-63个ASCII字符），1 ~新密钥类型（支持8-63个ASCII字符以及64个十六制字符密钥）
             BYTE byKeyType; 
             BYTE byRes[7];
-        }wpa_psk;
-        struct 
+        }_wpa_psk;
+struct 
+	{
+		BYTE byEapolVersion; //EAPOL版本，0-版本1，1-版本2
+		BYTE byAuthType; //内部认证方式，0-PAP，1-MSCHAPV2
+		BYTE byRes1[2];
+		BYTE byAnonyIdentity [NAME_LEN]; //匿名身份
+		BYTE byUserName[NAME_LEN]; //用户名
+		BYTE byPassword[NAME_LEN]; //密码
+		BYTE byRes[44];
+	}_EAP_TTLS; //WPA-enterprise/WPA2-enterpris模式适用
+	struct 
+	{
+		BYTE byEapolVersion; //EAPOL版本，0-版本1，1-版本2
+		BYTE byAuthType; //内部认证方式，0-GTC，1-MD5，2-MSCHAPV2
+		BYTE byPeapVersion; //PEAP版本，0-版本0，1-版本1
+		BYTE byPeapLabel; //PEAP标签，0-老标签，1-新标签
+		BYTE byAnonyIdentity[NAME_LEN]; //匿名身份
+		BYTE byUserName[NAME_LEN]; //用户名
+		BYTE byPassword[NAME_LEN]; //密码
+		BYTE byRes[44]; 
+	}_EAP_PEAP; //WPA-enterprise/WPA2-enterpris模式适用
+	struct 
+	{
+		BYTE byEapolVersion; //EAPOL版本，0-版本1，1-版本2
+		BYTE byRes1[3]; 
+		BYTE byIdentity[NAME_LEN]; //身份
+		BYTE byPrivateKeyPswd[NAME_LEN]; //私钥密码
+		BYTE byRes[76]; 
+	}_EAP_TLS; 
+	union
+            {
+                _EAP_TTLS EAP_TTLS; //WPA-enterprise/WPA2-enterpris模式适用
+                _EAP_PEAP EAP_PEAP; //WPA-enterprise/WPA2-enterpris模式适用
+                _EAP_TLS EAP_TLS; 
+            }_auth_param;
+struct 
         {
             BYTE byEncryptType;  /*加密类型,0-AES, 1-TKIP*/
             BYTE byAuthType; //认证类型，0-EAP_TTLS,1-EAP_PEAP,2-EAP_TLS
             BYTE byRes[2];
-            union
-            {
-                struct 
-                {
-                    BYTE byEapolVersion; //EAPOL版本，0-版本1，1-版本2
-                    BYTE byAuthType; //内部认证方式，0-PAP，1-MSCHAPV2
-                    BYTE byRes1[2];
-                    BYTE byAnonyIdentity [NAME_LEN]; //匿名身份
-                    BYTE byUserName[NAME_LEN]; //用户名
-                    BYTE byPassword[NAME_LEN]; //密码
-                    BYTE byRes[44];
-                }EAP_TTLS; //WPA-enterprise/WPA2-enterpris模式适用
-                struct 
-                {
-                    BYTE byEapolVersion; //EAPOL版本，0-版本1，1-版本2
-                    BYTE byAuthType; //内部认证方式，0-GTC，1-MD5，2-MSCHAPV2
-                    BYTE byPeapVersion; //PEAP版本，0-版本0，1-版本1
-                    BYTE byPeapLabel; //PEAP标签，0-老标签，1-新标签
-                    BYTE byAnonyIdentity[NAME_LEN]; //匿名身份
-                    BYTE byUserName[NAME_LEN]; //用户名
-                    BYTE byPassword[NAME_LEN]; //密码
-                    BYTE byRes[44]; 
-                }EAP_PEAP; //WPA-enterprise/WPA2-enterpris模式适用
-                struct 
-                {
-                    BYTE byEapolVersion; //EAPOL版本，0-版本1，1-版本2
-                    BYTE byRes1[3]; 
-                    BYTE byIdentity[NAME_LEN]; //身份
-                    BYTE byPrivateKeyPswd[NAME_LEN]; //私钥密码
-                    BYTE byRes[76]; 
-                }EAP_TLS; 
-            }auth_param;
-        }wpa_wpa2; //WPA-enterprise/WPA2-enterpris模式适用
-    }key;    
+            _auth_param auth_param;
+        }_wpa_wpa2; //WPA-enterprise/WPA2-enterpris模式适用
+		union 
+    {
+        _wep wep;
+        _wpa_psk wpa_psk;
+        _wpa_wpa2 wpa_wpa2; //WPA-enterprise/WPA2-enterpris模式适用
+    }_key; 
+typedef struct tagNET_DVR_WIFI_CFG_EX
+{
+    NET_DVR_WIFIETHERNET struEtherNet;        /*wifi网口*/
+    char sEssid[IW_ESSID_MAX_SIZE];     /*SSID*/
+    DWORD dwMode;      /* 0 mange 模式;1 ad-hoc模式，参见*/
+    DWORD dwSecurity; /*0-不加密;1-WEP加密;2-WPA-personal; 3-WPA-enterprise;4-WPA2-personal;5-WPA2-enterprise */
+    _key key;    
 }NET_DVR_WIFI_CFG_EX,*LPNET_DVR_WIFI_CFG_EX;
-
 //wifi配置结构
 typedef struct tagNET_DVR_WIFI_CFG
 {
@@ -13384,17 +13390,18 @@ typedef struct tagNET_DVR_MANUAL_CTRL_INFO
     BYTE  byRes[8];
 }NET_DVR_MANUAL_CTRL_INFO, *LPNET_DVR_MANUAL_CTRL_INFO ;
 //跟踪模式结构
+union
+    {
+        DWORD dwULen[4];
+        NET_DVR_MANUAL_CTRL_INFO  struManualCtrl;//手动跟踪结构
+    }_uModeParam;
 typedef struct tagNET_DVR_TRACK_MODE
 {
     DWORD dwSize;        //结构长度
     BYTE byTrackMode;   //跟踪模式
     BYTE byRuleConfMode;   //规则配置跟踪模式0-本地配置跟踪，1-远程配置跟踪
     BYTE byRes[2];   //保留，置0
-    union
-    {
-        DWORD dwULen[4];
-        NET_DVR_MANUAL_CTRL_INFO  struManualCtrl;//手动跟踪结构
-    }uModeParam;
+   _uModeParam uModeParam;
 }NET_DVR_TRACK_MODE,*LPNET_DVR_TRACK_MODE;
 typedef struct tagNET_DVR_ALARM_JPEG
 {
@@ -13419,6 +13426,22 @@ typedef struct tagNET_DVR_SLAVECAMERA_COND
     BYTE             byRes[56];
 }NET_DVR_SLAVECAMERA_COND, *LPNET_DVR_SLAVECAMERA_COND;
 
+struct
+        {
+            BYTE            szDomain[MAX_DOMAIN_NAME/*64*/];//服务器地址，域名 
+            BYTE            byRes1[80];
+        }_struDomain;
+        struct
+        {
+            NET_DVR_IPADDR     struIp;/*IP地址*/        //IPv4 IPv6地址, 144字节
+        } _struAddrIP;
+
+union
+    {
+       _struDomain struDomain;
+        _struAddrIP struAddrIP;
+    }_unionServer;  //使用联合体结构，通过byAddressType字段表示是IP地址还是域名 64    
+   
 typedef struct tagNET_DVR_SLAVECAMERA_CFG
 {
     DWORD            dwSize;
@@ -13426,23 +13449,11 @@ typedef struct tagNET_DVR_SLAVECAMERA_CFG
     // 控制unionServer是使用实际地址还是域名
     WORD                wPort;            /*端口*/
     BYTE               byLoginStatus; /*从设备的登陆状态 0-logout,1-login*/
-    union
-    {
-        struct
-        {
-            BYTE            szDomain[MAX_DOMAIN_NAME/*64*/];//服务器地址，域名 
-            BYTE            byRes1[80];
-        }struDomain;
-        struct
-        {
-            NET_DVR_IPADDR     struIp;/*IP地址*/        //IPv4 IPv6地址, 144字节
-        } struAddrIP;
-    }unionServer;  //使用联合体结构，通过byAddressType字段表示是IP地址还是域名 64    
+    _unionServer unionServer;  //使用联合体结构，通过byAddressType字段表示是IP地址还是域名 64    
     BYTE                szUserName[NAME_LEN/*32*/];        /*用户名*/
     BYTE                szPassWord[PASSWD_LEN/*16*/];        /*密码*/
     BYTE        byRes1[128];
 }NET_DVR_SLAVECAMERA_CFG, *LPNET_DVR_SLAVECAMERA_CFG;
-
 typedef struct tagNET_DVR_SLAVECAMERA_PARAM
 {
     BYTE             byLinkStatus ;//连接状态 0- 未连接，1-连接
@@ -13867,55 +13878,45 @@ typedef enum _STREAM_INFO_MINOR_TYPE_
 #define     CHIEF_JUDGE_RET_LEN    24
 #define  NET_SDK_CASETYPE_LEN      32
 //事件搜索条件
-typedef struct tagNET_DVR_SEARCH_EVENT_PARAM
-{
-    WORD wMajorType;            //0-移动侦测，1-报警输入, 2-智能事件
-    WORD wMinorType;            //搜索次类型- 根据主类型变化，0xffff表示全部
-    NET_DVR_TIME struStartTime;    //搜索的开始时间，停止时间: 同时为(0, 0) 表示从最早的时间开始，到最后，最前面的4000个事件
-    NET_DVR_TIME struEndTime;    //
-    BYTE            byLockType;        // 0xff-全部，0-未锁，1-锁定
-    BYTE             byValue;            //0-按位表示，1-按值表示
-    BYTE             byRes[130];        // 保留
-    union    
-    {
-        BYTE byLen[SEARCH_EVENT_INFO_LEN];          
-        struct//报警输入
+
+
+struct//报警输入
         {
             BYTE byAlarmInNo[MAX_ALARMIN_V30];    //报警输入号，byAlarmInNo[0]若置1则表示查找由报警输入1触发的事件
             BYTE byRes[SEARCH_EVENT_INFO_LEN - MAX_ALARMIN_V30];
-        }struAlarmParam;
+        }_struAlarmParam;
         
         struct//报警输入--按值
         {
             WORD wAlarmInNo[128];     /*报警输入号，按值表示,采用紧凑型排列*/
             BYTE byRes[44]; //保留
-        }struAlarmParamByValue;
+        }_struAlarmParamByValue;
         
         struct//移动侦测
         {
             BYTE byMotDetChanNo[MAX_CHANNUM_V30];//移动侦测通道，byMotDetChanNo[0]若置1则表示查找由通道1发生移动侦测触发的事件
             BYTE byRes[SEARCH_EVENT_INFO_LEN - MAX_CHANNUM_V30];
-        }struMotionParam;
+        }_struMotionParam;
         
         struct//移动侦测--按值
         {
             WORD wMotDetChanNo[64];        /* 移动侦测通道，按值表示 ,采用紧凑型排列*/
             BYTE byRes[172];                /*保留*/
-        }struMotionParamByValue;
+        }_struMotionParamByValue;
         
         struct//行为分析
         {
             BYTE byChanNo[MAX_CHANNUM_V30];    //触发事件的通道
             BYTE byRuleID;                    //规则ID，0xff表示全部
             BYTE byRes1[43];                //保留
-        }struVcaParam;
+        }_struVcaParam;
         
         struct //行为分析--按值方式查找 
         {
             WORD wChanNo[64];     //行为分析对应的通道，按值表示,采用紧凑型排列
             BYTE byRuleID;      //行为分析类型，规则0xff表示全部，从0开始
             BYTE byRes[171];     /*保留*/           
-        }struVcaParamByValue;
+        }_struVcaParamByValue;
         
         struct//审讯事件搜索条件
         {            
@@ -13923,25 +13924,25 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM
             BYTE byRes1[3];
             BYTE sInquestInfo[INQUEST_CASE_LEN];
             BYTE byRes2[232];     //保留
-        } struInquestParam;
+        }_struInquestParam;
         struct  //智能侦测查找条件
         {
             BYTE byChan [256];//触发智能侦测的通道号，按数组下标表示，byChan[0]若置1则表示查找由通道1发生移动侦测触发的事件 
-        }struVCADetectByBit;
+        }_struVCADetectByBit;
         
         struct//智能侦测查找条件 ，通道号按值表示
         {
             DWORD dwChanNo[MAX_CHANNUM_V30-1];// 触发通道号,按值表示，0xffffffff无效，且后续数据也表示无效值
             BYTE byAll;//0-表示不是全部，1-表示全部。
             BYTE byres[3];
-        }struVCADetectByValue;
+        }_struVCADetectByValue;
         struct
         {
             NET_DVR_STREAM_INFO struIDInfo; // 流id信息，72字节长
             DWORD                dwCmdType;  // 外部触发类型，NVR接入云存储使用
             BYTE                byBackupVolumeNum; //存档卷号，CVR使用
             BYTE                byRes[223];
-        }struStreamIDParam;
+        }_struStreamIDParam;
         struct
         {
             BYTE    byCaseNo[SEARCH_CASE_NO_LEN];  //案件编号
@@ -13951,65 +13952,76 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM
             BYTE    byChiefJudge[SEARCH_CHIEF_JUDGE_LEN];//审判长
             BYTE    byCaseType; //案件类型；0-全部、1-刑事案件、2-民事案件
             BYTE    byRes[47];
-        }struTrialParam;
-    }uSeniorParam;
-}NET_DVR_SEARCH_EVENT_PARAM, *LPNET_DVR_SEARCH_EVENT_PARAM;
-
-#define  MAX_POS_KEYWORDS_NUM               3          //支持关键字查找条数
-#define  MAX_POS_KEYWORD_LEN                128         //每条关键字长度
-#define  SEARCH_EVENT_INFO_LEN_V40             800
-
-//事件搜索条件
-typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V40
+        }_struTrialParam;
+ union    
+    {
+        BYTE byLen[SEARCH_EVENT_INFO_LEN];          
+        _struAlarmParam struAlarmParam;
+        
+        _struAlarmParamByValue struAlarmParamByValue;
+        
+       _struMotionParam struMotionParam;
+        
+        _struMotionParamByValue struMotionParamByValue;
+        
+       _struVcaParam struVcaParam;
+        
+        _struVcaParamByValue struVcaParamByValue;
+        _struInquestParam         struInquestParam;
+       _struVCADetectByBit struVCADetectByBit;
+        
+        _struVCADetectByValue struVCADetectByValue;
+        _struStreamIDParam struStreamIDParam;
+        _struTrialParam struTrialParam;
+    }_uSeniorParam;
+typedef struct tagNET_DVR_SEARCH_EVENT_PARAM
 {
-    WORD wMajorType;            //0-移动侦测，1-报警输入, 2-智能事件 5-pos录像 7-门禁事件
+    WORD wMajorType;            //0-移动侦测，1-报警输入, 2-智能事件
     WORD wMinorType;            //搜索次类型- 根据主类型变化，0xffff表示全部
     NET_DVR_TIME struStartTime;    //搜索的开始时间，停止时间: 同时为(0, 0) 表示从最早的时间开始，到最后，最前面的4000个事件
     NET_DVR_TIME struEndTime;    //
     BYTE            byLockType;        // 0xff-全部，0-未锁，1-锁定
-    BYTE            byQuickSearch;        // 是否启用快速查询，0-不启用，1-启用（快速查询不会返回文件大小，仅对设备数据库进行查询，避免频繁唤醒硬盘）
+    BYTE             byValue;            //0-按位表示，1-按值表示
     BYTE             byRes[130];        // 保留
-    union    
-    {
-        BYTE byLen[SEARCH_EVENT_INFO_LEN_V40/*800*/];          
-        struct//报警输入
+    _uSeniorParam uSeniorParam;
+}NET_DVR_SEARCH_EVENT_PARAM, *LPNET_DVR_SEARCH_EVENT_PARAM;
+#define  MAX_POS_KEYWORDS_NUM               3          //支持关键字查找条数
+#define  MAX_POS_KEYWORD_LEN                128         //每条关键字长度
+#define  SEARCH_EVENT_INFO_LEN_V40             800
+//事件搜索条件
+ struct//报警输入
         {
-            /*报警输入号，按值表示,采用紧凑型排列，0xffff表示后续无效*/
-            WORD wAlarmInNo[128];     
-            BYTE byRes[544]; //保留
-        }struAlarmParam;
-        
-        struct//移动侦测
+       /*报警输入号，按值表示,采用紧凑型排列，0xffff表示后续无效*/
+       WORD wAlarmInNo[128];     
+       BYTE byRes[544]; //保留
+        }__4struAlarmParam;
+struct//移动侦测
         {
             /* 移动侦测通道，按值表示 ,采用紧凑型排列，0xffff表示后续无效*/
             WORD wMotDetChanNo[MAX_CHANNUM_V30];        
             BYTE byRes[672];                /*保留*/
-        }struMotionParam;
-        
-        struct //行为分析 
+        }__4struMotionParam;
+struct //行为分析 
         {
             //行为分析对应的通道，按值表示,采用紧凑型排列，0xffff表示后续无效
             WORD wChanNo[MAX_CHANNUM_V30];
             BYTE byRuleID;      //行为分析类型，规则0xff表示全部，从0开始
             BYTE byRes[671];     /*保留*/           
-        }struVcaParam;
-        
-        struct//审讯事件搜索条件
+        }__4struVcaParam;
+struct//审讯事件搜索条件
         {            
             BYTE byRoomIndex;    //审讯室编号,从1开始
             BYTE byRes[799];     //保留
-        } struInquestParam;
-        
-        struct//智能侦测查找条件 ，通道号按值表示
+        } __4struInquestParam;
+struct//智能侦测查找条件 ，通道号按值表示
         {
             BYTE byAll;                //查找全部通道，0-否，此时dwChanNo参数有效，
             //1-查找全部通道，此时dwChanNo参数无效。
             BYTE byRes1[3];
             WORD wChanNo[MAX_CHANNUM_V30];// 触发通道号,按值表示，0xffff无效，且后续数据也表示无效值
             BYTE byRes[668];
-        }struVCADetect;
-        
-        struct
+        }__4struVCADetect;
+struct
         {
             NET_DVR_STREAM_INFO struIDInfo; // 流id信息，72字节长
             DWORD                dwCmdType;  // 外部触发类型，NVR接入云存储使用
@@ -14017,7 +14029,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V40
             BYTE                byRes1[3];
             BYTE                byArchiveLabel[64]; //存档标签，CVR使用
             BYTE                byRes[656];
-        }struStreamIDParam;
+        }__4struStreamIDParam;
         
         struct //pos录像
         {
@@ -14029,7 +14041,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V40
             char     sKeyWord[MAX_POS_KEYWORDS_NUM][MAX_POS_KEYWORD_LEN]; 
                                              //关键字查找时的条件
             BYTE    byRes[284];          //保留
-        }struPosAlarm;
+        }__4struPosAlarm;
         
         struct
         {
@@ -14040,8 +14052,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V40
             BYTE    byChiefJudge[SEARCH_CHIEF_JUDGE_LEN];   //审判长
             BYTE    byCaseType;
             BYTE    byRes[47];
-        }struTrialParam;
-
+        }__4struTrialParam;
         struct //门禁事件搜索条件
         {
             DWORD dwMajor; //报警主类型（与事件上传主类型一致，0代表全部）
@@ -14050,51 +14061,63 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V40
             BYTE byName[NAME_LEN/*32*/]; //姓名
             BYTE byMACAddr[MACADDR_LEN]; //物理MAC地址
             BYTE byRes[722];
-        }struACSAlarm;
-    }uSeniorParam;
-}NET_DVR_SEARCH_EVENT_PARAM_V40, *LPNET_DVR_SEARCH_EVENT_PARAM_V40;
-
-//事件搜索条件
-typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
-{
-    WORD wMajorType;            //0-移动侦测，1-报警输入, 2-智能事件 5-pos录像 7-门禁事件, 8-非视频联动事件
-    WORD wMinorType;            //搜索次类型- 根据主类型变化，0xffff表示全部
-    NET_DVR_TIME_SEARCH_COND struStartTime;    //搜索的开始时间，停止时间: 同时为(0, 0) 表示从最早的时间开始，到最后，最前面的4000个事件
-    NET_DVR_TIME_SEARCH_COND struEndTime;    //搜索的结束时间
-    BYTE            byLockType;        // 0xff-全部，0-未锁，1-锁定
-    BYTE            byQuickSearch;        // 是否启用快速查询，0-不启用，1-启用（快速查询不会返回文件大小，仅对设备数据库进行查询，避免频繁唤醒硬盘）
-    BYTE             byRes[254];        // 保留
-    union
+        }__4struACSAlarm;
+union    
     {
-        BYTE byLen[SEARCH_EVENT_INFO_LEN_V40/*800*/];
-        struct//报警输入
+        BYTE byLen[SEARCH_EVENT_INFO_LEN_V40/*800*/];     
+        __4struAlarmParam struAlarmParam;
+        
+        __4struMotionParam struMotionParam;
+        
+        __4struVcaParam struVcaParam;
+        
+       __4struInquestParam struInquestParam;
+        
+        __4struVCADetect struVCADetect;
+        
+        __4struStreamIDParam struStreamIDParam;
+        
+       __4struPosAlarm struPosAlarm;
+        
+        __4struTrialParam struTrialParam;
+        __4struACSAlarm struACSAlarm;
+    }__4uSeniorParam;
+typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V40
+{
+    WORD wMajorType;  //0-移动侦测，1-报警输入, 2-智能事件 5-pos录像 7-门禁事件
+    WORD wMinorType;  //搜索次类型- 根据主类型变化，0xffff表示全部
+    NET_DVR_TIME struStartTime;    //搜索的开始时间，停止时间: 同时为(0, 0) 表示从最早的时间开始，到最后，最前面的4000个事件
+    NET_DVR_TIME struEndTime;    //
+    BYTE  byLockType;   // 0xff-全部，0-未锁，1-锁定
+    BYTE  byQuickSearch;   // 是否启用快速查询，0-不启用，1-启用（快速查询不会返回文件大小，仅对设备数据库进行查询，避免频繁唤醒硬盘）
+    BYTE   byRes[130];        // 保留
+    __4uSeniorParam uSeniorParam;
+}NET_DVR_SEARCH_EVENT_PARAM_V40, *LPNET_DVR_SEARCH_EVENT_PARAM_V40;
+//事件搜索条件
+struct//报警输入
         {
             /*报警输入号，按值表示,采用紧凑型排列，0xffff表示后续无效*/
             WORD wAlarmInNo[128];
             BYTE byRes[544]; //保留
-        }struAlarmParam;
-
+        }__5struAlarmParam;
         struct//移动侦测
         {
             /* 移动侦测通道，按值表示 ,采用紧凑型排列，0xffff表示后续无效*/
             WORD wMotDetChanNo[MAX_CHANNUM_V30];
             BYTE byRes[672];                /*保留*/
-        }struMotionParam;
-
+        }__5struMotionParam;
         struct //行为分析 
         {
             //行为分析对应的通道，按值表示,采用紧凑型排列，0xffff表示后续无效
             WORD wChanNo[MAX_CHANNUM_V30];
             BYTE byRuleID;      //行为分析类型，规则0xff表示全部，从0开始
             BYTE byRes[671];     /*保留*/
-        }struVcaParam;
-
+        }__5struVcaParam;
         struct//审讯事件搜索条件
         {
             BYTE byRoomIndex;    //审讯室编号,从1开始
             BYTE byRes[799];     //保留
-        } struInquestParam;
-
+        }__5struInquestParam;
         struct//智能侦测查找条件 ，通道号按值表示
         {
             BYTE byAll;                //查找全部通道，0-否，此时dwChanNo参数有效，
@@ -14102,8 +14125,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
             BYTE byRes1[3];
             WORD wChanNo[MAX_CHANNUM_V30];// 触发通道号,按值表示，0xffff无效，且后续数据也表示无效值
             BYTE byRes[668];
-        }struVCADetect;
-
+        }__5struVCADetect;
         struct
         {
             NET_DVR_STREAM_INFO struIDInfo; // 流id信息，72字节长
@@ -14112,8 +14134,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
             BYTE                byRes1[3];
             BYTE                byArchiveLabel[64]; //存档标签，CVR使用
             BYTE                byRes[656];
-        }struStreamIDParam;
-
+        }__5struStreamIDParam;
         struct //pos录像
         {
             WORD   wChannel[MAX_CHANNUM_V30];        //通道，按值表示,紧凑型排列，遇到0xffff时表示数组后续值无效
@@ -14124,8 +14145,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
             char     sKeyWord[MAX_POS_KEYWORDS_NUM][MAX_POS_KEYWORD_LEN];
             //关键字查找时的条件
             BYTE    byRes[284];          //保留
-        }struPosAlarm;
-
+        }__5struPosAlarm;
         struct
         {
             BYTE    byCaseNo[SEARCH_CASE_NO_LEN];
@@ -14135,8 +14155,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
             BYTE    byChiefJudge[SEARCH_CHIEF_JUDGE_LEN];
             BYTE    byCaseType;
             BYTE    byRes[547];
-        }struTrialParam;
-
+        }__5struTrialParam;
         struct //门禁事件搜索条件
         {
             DWORD dwMajor; //报警主类型（与事件上传主类型一致，0代表全部）
@@ -14145,7 +14164,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
             BYTE byName[NAME_LEN/*32*/]; //姓名
             BYTE byMACAddr[MACADDR_LEN]; //物理MAC地址
             BYTE byRes[722];
-        }struACSAlarm;
+        }__5struACSAlarm;
         struct //非视频联动事件搜索条件
         {
             WORD      wDeviceType;            //设备类型,0-海康门禁主机，1-海康可视对讲设备, 2-海康报警主机（预留） 3-GJD报警主机 4-Luminite报警主机, 5-OPTEX报警主机,6-cameraDetector模拟相机传感器设备
@@ -14158,33 +14177,44 @@ typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
             char      sKeyWord[MAX_POS_KEYWORDS_NUM/*3*/][MAX_POS_KEYWORD_LEN/*128*/];//关键字查找时的条件
             WORD      wZoneNo;      //防区号，仅当设备类型为海康报警主机，次类型为防区（wEventType为1）时有效
             BYTE      byRes[278];   //保留
-        }struIOTAlarm;
-    }uSeniorParam;
-}NET_DVR_SEARCH_EVENT_PARAM_V50, *LPNET_DVR_SEARCH_EVENT_PARAM_V50;
-
-
-//查找返回结果
-typedef struct tagNET_DVR_SEARCH_EVENT_RET
-{
-    WORD wMajorType;            //主类型
-    WORD wMinorType;            //次类型
-    NET_DVR_TIME struStartTime;    //事件开始的时间
-    NET_DVR_TIME struEndTime;   //事件停止的时间，脉冲事件时和开始时间一样
-    BYTE byChan[MAX_CHANNUM_V30];    
-    BYTE byChanEx[32];   //关联通道，按位表示，使用该字段后byChan可以不使用
-    BYTE byRes[4];
-    union        
+        }__5struIOTAlarm;
+union
     {
-        struct//报警输入结果
+        BYTE byLen[SEARCH_EVENT_INFO_LEN_V40/*800*/];
+        __5struAlarmParam     struAlarmParam;
+		__5struMotionParam     struMotionParam;
+		__5struVcaParam     struVcaParam;
+		__5struInquestParam     struInquestParam;
+		__5struVCADetect     struVCADetect;
+		__5struStreamIDParam     struStreamIDParam;
+		__5struPosAlarm     struPosAlarm;
+		__5struTrialParam     struTrialParam;
+		__5struACSAlarm     struACSAlarm;
+		__5struIOTAlarm     struIOTAlarm;
+    }__5uSeniorParam;
+typedef struct tagNET_DVR_SEARCH_EVENT_PARAM_V50
+{
+    WORD wMajorType;            //0-移动侦测，1-报警输入, 2-智能事件 5-pos录像 7-门禁事件, 8-非视频联动事件
+    WORD wMinorType;            //搜索次类型- 根据主类型变化，0xffff表示全部
+    NET_DVR_TIME_SEARCH_COND struStartTime;    //搜索的开始时间，停止时间: 同时为(0, 0) 表示从最早的时间开始，到最后，最前面的4000个事件
+    NET_DVR_TIME_SEARCH_COND struEndTime;    //搜索的结束时间
+    BYTE            byLockType;        // 0xff-全部，0-未锁，1-锁定
+    BYTE            byQuickSearch;        // 是否启用快速查询，0-不启用，1-启用（快速查询不会返回文件大小，仅对设备数据库进行查询，避免频繁唤醒硬盘）
+    BYTE             byRes[254];        // 保留
+    __5uSeniorParam uSeniorParam;
+}NET_DVR_SEARCH_EVENT_PARAM_V50, *LPNET_DVR_SEARCH_EVENT_PARAM_V50;
+//查找返回结果
+
+struct//报警输入结果
         {
             DWORD dwAlarmInNo;     //报警输入号
             BYTE byRes[SEARCH_EVENT_INFO_LEN];
-        }struAlarmRet;
+        }_struAlarmRet;
         struct//移动侦测结果
         {
             DWORD dwMotDetNo;    //移动侦测通道
             BYTE byRes[SEARCH_EVENT_INFO_LEN];
-        }struMotionRet;
+        }_struMotionRet;
         struct//行为分析结果  
         {
             DWORD dwChanNo;                    //触发事件的通道号
@@ -14192,7 +14222,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET
             BYTE byRes1[3];                    //保留
             BYTE byRuleName[NAME_LEN];        //规则名称
             NET_VCA_EVENT_UNION uEvent;     //行为事件参数
-        }struVcaRet;
+        }_struVcaRet;
         struct//审讯事件
         {
             BYTE  byRoomIndex;     //审讯室编号,从1开始
@@ -14202,7 +14232,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET
             WORD  wSegmetSize;     //本片断的大小, 单位M 
             WORD  wSegmentState;   //本片断状态 0 刻录正常，1 刻录异常，2 不刻录审讯
             BYTE  byRes2[288];     //保留
-        }struInquestRet;
+        }_struInquestRet;
         struct //流id录像查询结果
         {
             DWORD dwRecordType;    /*录像类型 0-定时录像,1-移动侦测,2-报警触发,3-报警|移动侦测, 4-报警&移动侦测,5-命令触发,6-手动录像,7-震动报警,8-环境触发报警, 
@@ -14215,7 +14245,7 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET
             BYTE  byFileName[NAME_LEN];     //文件名
             DWORD dwFileIndex;            // 存档卷上的文件索引
             BYTE  byRes[256];
-        }struStreamIDRet;
+        }_struStreamIDRet;
         struct
         {
             BYTE    byRoomIndex;     //审讯室编号,从1开始
@@ -14231,10 +14261,28 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET
             BYTE    byLitigant2[LITIGANT_RET_LEN]; //当事人2；
             BYTE    byChiefJudge[CHIEF_JUDGE_RET_LEN];//审判长
             BYTE    byRes1[104];
-        }struTrialRet;
-    }uSeniorRet;
-}NET_DVR_SEARCH_EVENT_RET, *LPNET_DVR_SEARCH_EVENT_RET;
+        }_struTrialRet;
+union        
+    {
+        _struAlarmRet		struAlarmRet;
+        _struMotionRet		        struMotionRet;
+        _struVcaRet		        struVcaRet;
+        _struInquestRet		        struInquestRet;
+        _struStreamIDRet		        struStreamIDRet;
+        _struTrialRet		        struTrialRet;
 
+    }_uSeniorRet;
+typedef struct tagNET_DVR_SEARCH_EVENT_RET
+{
+    WORD wMajorType;            //主类型
+    WORD wMinorType;            //次类型
+    NET_DVR_TIME struStartTime;    //事件开始的时间
+    NET_DVR_TIME struEndTime;   //事件停止的时间，脉冲事件时和开始时间一样
+    BYTE byChan[MAX_CHANNUM_V30];    
+    BYTE byChanEx[32];   //关联通道，按位表示，使用该字段后byChan可以不使用
+    BYTE byRes[4];
+    _uSeniorRet uSeniorRet;
+}NET_DVR_SEARCH_EVENT_RET, *LPNET_DVR_SEARCH_EVENT_RET;
 #define NET_SDK_MAX_TAPE_INDEX_LEN  32  //磁带编号最大长度
 #define NET_SDK_MAX_FILE_LEN        256  //文件名最大长度
 //查找返回结果
@@ -14319,7 +14367,6 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET_V40
         }struTrialRet;
     }uSeniorRet;
 }NET_DVR_SEARCH_EVENT_RET_V40, *LPNET_DVR_SEARCH_EVENT_RET_V40;
-
 //查找返回结果
 typedef struct tagNET_DVR_SEARCH_EVENT_RET_V50
 {
@@ -14352,7 +14399,6 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET_V50
             NET_VCA_EVENT_UNION uEvent;     //行为事件参数
             BYTE byRes[668];                    //保留
         }struVcaRet;
-
         struct//审讯事件
         {
             BYTE  byRoomIndex;     //审讯室编号,从1开始
@@ -14363,7 +14409,6 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET_V50
             WORD  wSegmentState;   //本片断状态 0 刻录正常，1 刻录异常，2 不刻录审讯
             BYTE  byRes2[784];     //保留
         }struInquestRet;
-
         struct //流id录像查询结果
         {
             DWORD dwRecordType;    //录像类型 0-定时录像 1-移动侦测 2-报警录像 3-报警|移动侦测 4-报警&移动侦测 5-命令触发 6-手动录像 7-震动报警 8-环境触发 9-智能报警 10-回传录像
@@ -14378,13 +14423,11 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET_V50
             BYTE  byFileNameEx[NET_SDK_MAX_FILE_LEN/*256*/]; //文件名扩展
             BYTE  byRes[464];
         }struStreamIDRet;
-
         struct//POS录像查询结果
         {
             DWORD dwChanNo;        //触发产生pos事件的通道
             BYTE byRes[796];
         }struPosRet;
-
         struct
         {
             BYTE    byRoomIndex;     //审讯室编号,从1开始
@@ -14408,7 +14451,6 @@ typedef struct tagNET_DVR_SEARCH_EVENT_RET_V50
         }struIOTRet;
     }uSeniorRet;
 }NET_DVR_SEARCH_EVENT_RET_V50, *LPNET_DVR_SEARCH_EVENT_RET_V50;
-
 //SDK_V35  2009-10-26
 // 标定配置类型
 typedef enum tagCALIBRATE_TYPE

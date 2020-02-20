@@ -1,2 +1,2 @@
-import hk_struct_test
-hk_struct_test.
+import hk_struct
+x=hk_struct.NET_DVR_DEVICEINFO_V30()

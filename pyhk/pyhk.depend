@@ -13,16 +13,22 @@
 	<winsock2.h>
 	<windows.h>
 
-1581566447 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
+1582106098 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
+	<string>
+	<iostream>
+	<exception>
+	<vector>
+	<map>
+	"pythread.h"
 	<stdexcept>
 	"HCNetSDK.h"
-	"py_hk.h"
 	<limits.h>
 	<float.h>
 	<math.h>
+	"py_hk_wrap.h"
 
 1573123442 /usr/include/python3.6/Python.h
 	"patchlevel.h"
@@ -336,4 +342,31 @@
 	<string.h>
 	<stdexcept>
 	"HCNetSDK.h"
+
+1582103897 source:/home/cs/Documents/pyhk/pyhk/hk_callback/hk_callback_wrap.cxx
+	<Python.h>
+	<Python.h>
+	<string.h>
+	<string>
+	<iostream>
+	<exception>
+	<vector>
+	<map>
+	"pythread.h"
+	<stdexcept>
+	<winsock2.h>
+	<windows.h>
+	"hk_callback_wrap.h"
+
+1581479467 /usr/include/boost/exception
+
+1573123442 /usr/include/python3.6/pythread.h
+
+1582103897 /home/cs/Documents/pyhk/pyhk/hk_callback/hk_callback_wrap.h
+	<map>
+	<string>
+
+1582106098 /home/cs/Documents/pyhk/pyhk/py_hk_wrap.h
+	<map>
+	<string>
 

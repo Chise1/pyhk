@@ -15,12 +15,12 @@
 #include <string>
 
 
-struct SwigDirector_CallbackStruct : public CallbackStruct, public Swig::Director {
+struct SwigDirector_MSGCallBackOp : public MSGCallBackOp, public Swig::Director {
 
 public:
-    SwigDirector_CallbackStruct(PyObject *self);
-    virtual void fExceptionCallBack(DWORD dwType, LONG lUserID, LONG lHandle, void *pUser);
-    virtual ~SwigDirector_CallbackStruct();
+    SwigDirector_MSGCallBackOp(PyObject *self);
+    virtual void MSGCallBack(LONG lCommand, NET_DVR_ALARMER *pAlarmer, char *pAlarmInfo, DWORD dwBufLen, void *pUser);
+    virtual ~SwigDirector_MSGCallBackOp();
 
 /* Internal director utilities */
 public:
@@ -42,7 +42,7 @@ private:
         swig::SwigVar_PyObject name = SWIG_Python_str_FromChar(method_name);
         method = PyObject_GetAttr(swig_get_self(), name);
         if (!method) {
-          std::string msg = "Method in class CallbackStruct doesn't exist, undefined ";
+          std::string msg = "Method in class MSGCallBackOp doesn't exist, undefined ";
           msg += method_name;
           Swig::DirectorMethodException::raise(msg.c_str());
         }

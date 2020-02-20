@@ -20,6 +20,7 @@
 					<Add directory="/usr/local/include" />
 					<Add directory="/usr/include/python3.6" />
 					<Add directory="/usr/include/boost" />
+					<Add directory="hk_callback" />
 				</Compiler>
 				<Linker>
 					<Add library="lib/libz.so" />
@@ -78,9 +79,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="py_hk.cpp" />
-		<Unit filename="py_hk.h" />
+		<Unit filename="hk_callback/hk_callback_wrap.cxx" />
+		<Unit filename="hk_callback/hk_callback_wrap.h" />
 		<Unit filename="py_hk_wrap.cxx" />
+		<Unit filename="py_hk_wrap.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

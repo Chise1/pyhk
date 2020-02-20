@@ -46,8 +46,9 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "cinttypes": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "hk_callback_wrap.h": "c"
     },
-    "python.pythonPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.pythonPath": "/usr/bin/python3",
     "C_Cpp.errorSquiggles": "Disabled"
 }

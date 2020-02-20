@@ -358,10 +358,98 @@ class NET_DVR_ALARMER(_object):
 NET_DVR_ALARMER_swigregister = _pyhk.NET_DVR_ALARMER_swigregister
 NET_DVR_ALARMER_swigregister(NET_DVR_ALARMER)
 
+class NET_DVR_SETUPALARM_PARAM(_object):
+    """Proxy of C++ tagNET_DVR_SETUPALARM_PARAM class."""
+
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NET_DVR_SETUPALARM_PARAM, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NET_DVR_SETUPALARM_PARAM, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["dwSize"] = _pyhk.NET_DVR_SETUPALARM_PARAM_dwSize_set
+    __swig_getmethods__["dwSize"] = _pyhk.NET_DVR_SETUPALARM_PARAM_dwSize_get
+    if _newclass:
+        dwSize = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_dwSize_get, _pyhk.NET_DVR_SETUPALARM_PARAM_dwSize_set)
+    __swig_setmethods__["byLevel"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byLevel_set
+    __swig_getmethods__["byLevel"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byLevel_get
+    if _newclass:
+        byLevel = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byLevel_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byLevel_set)
+    __swig_setmethods__["byAlarmInfoType"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmInfoType_set
+    __swig_getmethods__["byAlarmInfoType"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmInfoType_get
+    if _newclass:
+        byAlarmInfoType = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmInfoType_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmInfoType_set)
+    __swig_setmethods__["byRetAlarmTypeV40"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRetAlarmTypeV40_set
+    __swig_getmethods__["byRetAlarmTypeV40"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRetAlarmTypeV40_get
+    if _newclass:
+        byRetAlarmTypeV40 = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byRetAlarmTypeV40_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byRetAlarmTypeV40_set)
+    __swig_setmethods__["byRetDevInfoVersion"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRetDevInfoVersion_set
+    __swig_getmethods__["byRetDevInfoVersion"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRetDevInfoVersion_get
+    if _newclass:
+        byRetDevInfoVersion = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byRetDevInfoVersion_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byRetDevInfoVersion_set)
+    __swig_setmethods__["byRetVQDAlarmType"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRetVQDAlarmType_set
+    __swig_getmethods__["byRetVQDAlarmType"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRetVQDAlarmType_get
+    if _newclass:
+        byRetVQDAlarmType = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byRetVQDAlarmType_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byRetVQDAlarmType_set)
+    __swig_setmethods__["byFaceAlarmDetection"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byFaceAlarmDetection_set
+    __swig_getmethods__["byFaceAlarmDetection"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byFaceAlarmDetection_get
+    if _newclass:
+        byFaceAlarmDetection = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byFaceAlarmDetection_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byFaceAlarmDetection_set)
+    __swig_setmethods__["bySupport"] = _pyhk.NET_DVR_SETUPALARM_PARAM_bySupport_set
+    __swig_getmethods__["bySupport"] = _pyhk.NET_DVR_SETUPALARM_PARAM_bySupport_get
+    if _newclass:
+        bySupport = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_bySupport_get, _pyhk.NET_DVR_SETUPALARM_PARAM_bySupport_set)
+    __swig_setmethods__["byBrokenNetHttp"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byBrokenNetHttp_set
+    __swig_getmethods__["byBrokenNetHttp"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byBrokenNetHttp_get
+    if _newclass:
+        byBrokenNetHttp = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byBrokenNetHttp_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byBrokenNetHttp_set)
+    __swig_setmethods__["wTaskNo"] = _pyhk.NET_DVR_SETUPALARM_PARAM_wTaskNo_set
+    __swig_getmethods__["wTaskNo"] = _pyhk.NET_DVR_SETUPALARM_PARAM_wTaskNo_get
+    if _newclass:
+        wTaskNo = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_wTaskNo_get, _pyhk.NET_DVR_SETUPALARM_PARAM_wTaskNo_set)
+    __swig_setmethods__["byDeployType"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byDeployType_set
+    __swig_getmethods__["byDeployType"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byDeployType_get
+    if _newclass:
+        byDeployType = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byDeployType_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byDeployType_set)
+    __swig_setmethods__["byRes1"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRes1_set
+    __swig_getmethods__["byRes1"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byRes1_get
+    if _newclass:
+        byRes1 = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byRes1_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byRes1_set)
+    __swig_setmethods__["byAlarmTypeURL"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmTypeURL_set
+    __swig_getmethods__["byAlarmTypeURL"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmTypeURL_get
+    if _newclass:
+        byAlarmTypeURL = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmTypeURL_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byAlarmTypeURL_set)
+    __swig_setmethods__["byCustomCtrl"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byCustomCtrl_set
+    __swig_getmethods__["byCustomCtrl"] = _pyhk.NET_DVR_SETUPALARM_PARAM_byCustomCtrl_get
+    if _newclass:
+        byCustomCtrl = _swig_property(_pyhk.NET_DVR_SETUPALARM_PARAM_byCustomCtrl_get, _pyhk.NET_DVR_SETUPALARM_PARAM_byCustomCtrl_set)
+
+    def __init__(self):
+        """__init__(self) -> NET_DVR_SETUPALARM_PARAM"""
+        this = _pyhk.new_NET_DVR_SETUPALARM_PARAM()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _pyhk.delete_NET_DVR_SETUPALARM_PARAM
+    __del__ = lambda self: None
+NET_DVR_SETUPALARM_PARAM_swigregister = _pyhk.NET_DVR_SETUPALARM_PARAM_swigregister
+NET_DVR_SETUPALARM_PARAM_swigregister(NET_DVR_SETUPALARM_PARAM)
+
 
 def NET_DVR_Init() -> "int":
     """NET_DVR_Init() -> int"""
     return _pyhk.NET_DVR_Init()
+
+def NET_DVR_Logout(lUserID: 'LONG') -> "int":
+    """
+    NET_DVR_Logout(lUserID) -> int
+
+    Parameters
+    ----------
+    lUserID: LONG
+
+    """
+    return _pyhk.NET_DVR_Logout(lUserID)
 
 def NET_DVR_Cleanup() -> "int":
     """NET_DVR_Cleanup() -> int"""
@@ -409,6 +497,29 @@ def NET_DVR_Login_V30(sDVRIP: 'char *', wDVRPort: 'WORD', sUserName: 'char *', s
 def NET_DVR_GetLastError() -> "DWORD":
     """NET_DVR_GetLastError() -> DWORD"""
     return _pyhk.NET_DVR_GetLastError()
+
+def NET_DVR_SetupAlarmChan_V41(lUserID: 'LONG', lpSetupParam: 'NET_DVR_SETUPALARM_PARAM') -> "LONG":
+    """
+    NET_DVR_SetupAlarmChan_V41(lUserID, lpSetupParam) -> LONG
+
+    Parameters
+    ----------
+    lUserID: LONG
+    lpSetupParam: LPNET_DVR_SETUPALARM_PARAM
+
+    """
+    return _pyhk.NET_DVR_SetupAlarmChan_V41(lUserID, lpSetupParam)
+
+def NET_DVR_SetupAlarmChan_V30(lUserID: 'LONG') -> "LONG":
+    """
+    NET_DVR_SetupAlarmChan_V30(lUserID) -> LONG
+
+    Parameters
+    ----------
+    lUserID: LONG
+
+    """
+    return _pyhk.NET_DVR_SetupAlarmChan_V30(lUserID)
 class MSGCallBackOp(_object):
     """Proxy of C++ MSGCallBackOp class."""
 

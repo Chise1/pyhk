@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="test_login" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/test_login" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-fPIC" />
+					<Add directory="../../pyhk/include" />
+				</Compiler>
+				<Linker>
+					<Add library="../../pyhk/lib/libAudioRender.so" />
+					<Add library="../../pyhk/lib/libHCAlarm.so" />
+					<Add library="../../pyhk/lib/libHCCore.so" />
+					<Add library="../../pyhk/lib/libHCCoreDevCfg.so" />
+					<Add library="../../pyhk/lib/libHCDisplay.so" />
+					<Add library="../../pyhk/lib/libHCGeneralCfgMgr.so" />
+					<Add library="../../pyhk/lib/libHCIndustry.so" />
+					<Add library="../../pyhk/lib/libHCPlayBack.so" />
+					<Add library="../../pyhk/lib/libHCPreview.so" />
+					<Add library="../../pyhk/lib/libHCVoiceTalk.so" />
+					<Add library="../../pyhk/lib/libNPQos.so" />
+					<Add library="../../pyhk/lib/libPlayCtrl.so" />
+					<Add library="../../pyhk/lib/libStreamTransClient.so" />
+					<Add library="../../pyhk/lib/libSuperRender.so" />
+					<Add library="../../pyhk/lib/libSystemTransform.so" />
+					<Add library="../../pyhk/lib/libanalyzedata.so" />
+					<Add library="../../pyhk/lib/libcrypto.so" />
+					<Add library="../../pyhk/lib/libhcnetsdk.so" />
+					<Add library="../../pyhk/lib/libhpr.so" />
+					<Add library="../../pyhk/lib/libiconv2.so" />
+					<Add library="../../pyhk/lib/libssl.so" />
+					<Add library="../../pyhk/lib/libz.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCAlarm.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCCoreDevCfg.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCDisplay.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCGeneralCfgMgr.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCIndustry.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCPlayBack.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCPreview.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libHCVoiceTalk.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libStreamTransClient.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libSystemTransform.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libanalyzedata.so" />
+					<Add library="../../pyhk/lib/HCNetSDKCom/libiconv2.so" />
+					<Add directory="../../pyhk/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/test_login" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

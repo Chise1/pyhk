@@ -79,7 +79,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="hk_callback/hk_callback_wrap.cxx" />
 		<Unit filename="hk_callback/hk_callback_wrap.h" />
 		<Unit filename="py_hk_wrap.cxx" />
 		<Unit filename="py_hk_wrap.h" />

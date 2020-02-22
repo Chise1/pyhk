@@ -2,7 +2,6 @@
 #include "HCNetSDK.h"
 #include <stdio.h>
 using namespace std;
-
 void CALLBACK MSesGCallback(LONG lCommand, NET_DVR_ALARMER *pAlarmer, char *pAlarmInfo, DWORD dwBufLen, void *pUser)
 {
     cout<<"回调成功"<<endl;
@@ -27,8 +26,8 @@ int main()
     {
         printf("Login error, %d\n", NET_DVR_GetLastError());
         NET_DVR_Cleanup();
-
         return 0;
+
     }
     else{
         cout<<"login success.";

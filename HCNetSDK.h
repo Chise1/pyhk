@@ -49753,11 +49753,11 @@ NET_DVR_API BOOL __stdcall NET_DVR_StopListen();
 
 NET_DVR_API LONG __stdcall NET_DVR_StartListen_V30(char *sLocalIP, WORD wLocalPort, MSGCallBack DataCallback, void* pUserData = NULL);
 NET_DVR_API BOOL __stdcall NET_DVR_StopListen_V30(LONG lListenHandle);
-NET_DVR_API LONG __stdcall NET_DVR_Login(char *sDVRIP,WORD wDVRPort,char *sUserName,char *sPassword,LPNET_DVR_DEVICEINFO lpDeviceInfo);
-NET_DVR_API LONG __stdcall NET_DVR_Login_V30(char *sDVRIP, WORD wDVRPort, char *sUserName, char *sPassword, LPNET_DVR_DEVICEINFO_V30 lpDeviceInfo);
+NET_DVR_API LONG __stdcall NET_DVR_Login(char *sDVRIP,WORD wDVRPort,char *sUserName,char *sPassword,NET_DVR_DEVICEINFO *lpDeviceInfo );
+NET_DVR_API LONG __stdcall NET_DVR_Login_V30(char *sDVRIP, WORD wDVRPort, char *sUserName, char *sPassword, NET_DVR_DEVICEINFO_V30 *lpDeviceInfo );
 
-NET_DVR_API LONG __stdcall NET_DVR_Login_V40(LPNET_DVR_USER_LOGIN_INFO pLoginInfo,LPNET_DVR_DEVICEINFO_V40 lpDeviceInfo);
-NET_DVR_API BOOL __stdcall NET_DVR_Login_Check(char *sDVRIP, WORD wDVRPort, char *sUserName, char *sPassword, LPNET_DVR_DEVICEINFO_V30 lpDeviceInfo);
+NET_DVR_API LONG __stdcall NET_DVR_Login_V40(NET_DVR_USER_LOGIN_INFO *pLoginInfo,NET_DVR_DEVICEINFO_V40 *lpDeviceInfo);
+NET_DVR_API BOOL __stdcall NET_DVR_Login_Check(char *sDVRIP, WORD wDVRPort, char *sUserName, char *sPassword, NET_DVR_DEVICEINFO_V30 *lpDeviceInfo);
 NET_DVR_API BOOL __stdcall NET_DVR_Logout(LONG lUserID);
 NET_DVR_API BOOL __stdcall NET_DVR_Logout_V30(LONG lUserID);
 NET_DVR_API DWORD __stdcall NET_DVR_GetLastError();
@@ -49768,10 +49768,9 @@ NET_DVR_API BOOL  __stdcall NET_DVR_GetDVRIPByResolveSvr_EX(char *sServerIP, WOR
 NET_DVR_API BOOL __stdcall NET_DVR_GetDVRNAMEByResolveSvr(char const *sServerIP, WORD wServerPort, char const *sIP, char *sDVRName);
 
 //预览相关接口
-NET_DVR_API LONG __stdcall NET_DVR_PlayDirect(char *sDVRIP, char *sUserName, char *sPassword, \
-                                              LPNET_DVR_CLIENTINFO lpClientInfo, void(CALLBACK *fRealDataCallBack_V30) (LONG lRealHandle, DWORD dwDataType, BYTE *pBuffer, DWORD dwBufSize, void* pUser) = NULL, void* pUser = NULL, BOOL bBlocked = FALSE);
-NET_DVR_API LONG __stdcall NET_DVR_RealPlay(LONG lUserID,LPNET_DVR_CLIENTINFO lpClientInfo);
-NET_DVR_API LONG __stdcall NET_DVR_RealPlay_V30(LONG lUserID, LPNET_DVR_CLIENTINFO lpClientInfo, void(CALLBACK *fRealDataCallBack_V30) (LONG lRealHandle, DWORD dwDataType, BYTE *pBuffer, DWORD dwBufSize, void* pUser) = NULL, void* pUser = NULL, BOOL bBlocked = FALSE);
+NET_DVR_API LONG __stdcall NET_DVR_PlayDirect(char *sDVRIP, char *sUserName, char *sPassword,NET_DVR_CLIENTINFO *lpClientInfo, void(CALLBACK *fRealDataCallBack_V30) (LONG lRealHandle, DWORD dwDataType, BYTE *pBuffer, DWORD dwBufSize, void* pUser) = NULL, void* pUser = NULL, BOOL bBlocked = FALSE);
+NET_DVR_API LONG __stdcall NET_DVR_RealPlay(LONG lUserID,NET_DVR_CLIENTINFO *lpClientInfo);
+NET_DVR_API LONG __stdcall NET_DVR_RealPlay_V30(LONG lUserID,NET_DVR_CLIENTINFO *lpClientInfo, void(CALLBACK *fRealDataCallBack_V30) (LONG lRealHandle, DWORD dwDataType, BYTE *pBuffer, DWORD dwBufSize, void* pUser) = NULL, void* pUser = NULL, BOOL bBlocked = FALSE);
 NET_DVR_API BOOL __stdcall NET_DVR_StopRealPlay(LONG lRealHandle);
 NET_DVR_API BOOL __stdcall NET_DVR_StopPlayDirect(LONG lRealHandle);
 NET_DVR_API BOOL __stdcall NET_DVR_RigisterDrawFun(LONG lRealHandle,void (CALLBACK* fDrawFun)(LONG lRealHandle,HDC hDc,DWORD dwUser),DWORD dwUser);
@@ -49816,16 +49815,16 @@ NET_DVR_API BOOL __stdcall NET_DVR_PTZTrack_EX(LONG lRealHandle, DWORD dwPTZTrac
 NET_DVR_API BOOL __stdcall NET_DVR_PTZControlWithSpeed(LONG lRealHandle, DWORD dwPTZCommand, DWORD dwStop, DWORD dwSpeed);
 NET_DVR_API BOOL __stdcall NET_DVR_PTZControlWithSpeed_Other(LONG lUserID, LONG lChannel, DWORD dwPTZCommand, DWORD dwStop, DWORD dwSpeed);
 NET_DVR_API BOOL __stdcall NET_DVR_PTZControlWithSpeed_EX(LONG lRealHandle, DWORD dwPTZCommand, DWORD dwStop, DWORD dwSpeed);
-NET_DVR_API BOOL __stdcall NET_DVR_GetPTZCruise(LONG lUserID,LONG lChannel,LONG lCruiseRoute, LPNET_DVR_CRUISE_RET lpCruiseRet);
+NET_DVR_API BOOL __stdcall NET_DVR_GetPTZCruise(LONG lUserID,LONG lChannel,LONG lCruiseRoute,NET_DVR_CRUISE_RET *lpCruiseRet);
 
 
 //文件查找与回放
-NET_DVR_API LONG __stdcall NET_DVR_FindFile(LONG lUserID,LONG lChannel,DWORD dwFileType, LPNET_DVR_TIME lpStartTime, LPNET_DVR_TIME lpStopTime);
-NET_DVR_API LONG __stdcall NET_DVR_FindNextFile(LONG lFindHandle,LPNET_DVR_FIND_DATA lpFindData);
-NET_DVR_API LONG __stdcall NET_DVR_FindNextFile_Card(LONG lFindHandle, LPNET_DVR_FINDDATA_CARD lpFindData);
+NET_DVR_API LONG __stdcall NET_DVR_FindFile(LONG lUserID,LONG lChannel,DWORD dwFileType,NET_DVR_TIME *lpStartTime,NET_DVR_TIME *lpStopTime);
+NET_DVR_API LONG __stdcall NET_DVR_FindNextFile(LONG lFindHandle,NET_DVR_FIND_DATA *lpFindData);
+NET_DVR_API LONG __stdcall NET_DVR_FindNextFile_Card(LONG lFindHandle,NET_DVR_FINDDATA_CARD *lpFindData);
 NET_DVR_API BOOL __stdcall NET_DVR_FindClose(LONG lFindHandle);
-NET_DVR_API LONG __stdcall NET_DVR_FindNextFile_V30(LONG lFindHandle, LPNET_DVR_FINDDATA_V30 lpFindData);
-NET_DVR_API LONG __stdcall NET_DVR_FindNextFile_V40(LONG lFindHandle, LPNET_DVR_FINDDATA_V40 lpFindData);
+NET_DVR_API LONG __stdcall NET_DVR_FindNextFile_V30(LONG lFindHandle,NET_DVR_FINDDATA_V30 *lpFindData);
+NET_DVR_API LONG __stdcall NET_DVR_FindNextFile_V40(LONG lFindHandle,NET_DVR_FINDDATA_V40 *lpFindData);
 NET_DVR_API LONG __stdcall NET_DVR_FindNextFile_V50(LONG lFindHandle, LPNET_DVR_FINDDATA_V50 lpFindData);
 NET_DVR_API LONG __stdcall NET_DVR_FindFile_V30(LONG lUserID, LPNET_DVR_FILECOND pFindCond);
 NET_DVR_API LONG __stdcall NET_DVR_FindFile_V50(LONG lUserID, LPNET_DVR_FILECOND_V50 pFindCond);

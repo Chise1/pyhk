@@ -47,7 +47,8 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "hk_callback_wrap.h": "c"
+        "hk_callback_wrap.h": "c",
+        "swig_example.h": "c"
     },
     "python.pythonPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
     "C_Cpp.errorSquiggles": "Disabled"

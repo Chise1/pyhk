@@ -1,4 +1,1 @@
-#include "HCNetSDK.h"
-
-
-// void test(LPNET_DVR_TIME x);
+void void_to_struct(void *dest,const void *src ,int n);//dest 起始指针，要复制的结构体的指针，

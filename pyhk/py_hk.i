@@ -1,9 +1,10 @@
 %module(package="pyhk",directors="1") pyhk
 %feature("autodoc","2");
+
 %{
-#include "HCNetSDK.h"
+    #include "HCNetSDK.h"
 %}
-// %include "hk_callback/hk_callback.i"
+#define DLL_EXPORT
 #define BOOL int
 typedef unsigned int DWORD;
 typedef unsigned short WORD;
@@ -40,11 +41,15 @@ typedef void* HWND;
  #endif
  #endif
 
-
-
 #define SERIALNO_LEN           48     
 #define NAME_LEN                32      //用户名长度
 #define MACADDR_LEN                6       //mac地址长度
+#define MAX_ANALOG_CHANNUM      32      //最大32个模拟通道
+#define MAX_ANALOG_ALARMOUT     32      //最大32路模拟报警输出 
+#define MAX_ANALOG_ALARMIN      32      //最大32路模拟报警输入
+#define MAX_IP_ALARMOUT         64      //允许加入的最多报警输出数
+
+#define MAX_ALARMOUT_V30              ( MAX_ANALOG_ALARMOUT + MAX_IP_ALARMOUT )//96
 typedef struct
 {
     BYTE sSerialNumber[SERIALNO_LEN];  
@@ -134,7 +139,11 @@ typedef struct tagNET_DVR_SETUPALARM_PARAM
     //bit3 - 行为分析(报警类型为COMM_ALARM_RULE)中图片数据上传类型：0 - 二进制传输，1 - URL传输，本字段设备是否支持，对应软硬件能力集中<isSupportBehaviorUploadByCloudStorageURL>节点是否返回且为true
     BYTE  byCustomCtrl;//Bit0- 表示支持副驾驶人脸子图上传: 0-不上传,1-上传
 }NET_DVR_SETUPALARM_PARAM, *LPNET_DVR_SETUPALARM_PARAM;
-
+//报警输出状态(9000扩展)
+typedef struct 
+{
+    BYTE Output[MAX_ALARMOUT_V30];
+}NET_DVR_ALARMOUTSTATUS_V30, *LPNET_DVR_ALARMOUTSTATUS_V30;
 
 
 
@@ -143,12 +152,16 @@ NET_DVR_API BOOL __stdcall NET_DVR_Logout(LONG lUserID);
 NET_DVR_API BOOL __stdcall NET_DVR_Cleanup();
 NET_DVR_API BOOL __stdcall NET_DVR_SetConnectTime(DWORD dwWaitTime = 3000, DWORD dwTryTimes = 3);
 NET_DVR_API BOOL __stdcall NET_DVR_SetReconnect(DWORD dwInterval = 30000, BOOL bEnableRecon = TRUE);
-NET_DVR_API LONG __stdcall NET_DVR_Login_V30(char *sDVRIP, WORD wDVRPort, char *sUserName, char *sPassword, LPNET_DVR_DEVICEINFO_V30 lpDeviceInfo);
+NET_DVR_API LONG __stdcall NET_DVR_Login_V30(char *sDVRIP, WORD wDVRPort, char *sUserName, char *sPassword, NET_DVR_DEVICEINFO_V30 *lpDeviceInfo);
 NET_DVR_API DWORD __stdcall NET_DVR_GetLastError();
-NET_DVR_API LONG __stdcall NET_DVR_SetupAlarmChan_V41(LONG lUserID, LPNET_DVR_SETUPALARM_PARAM lpSetupParam);
+NET_DVR_API LONG __stdcall NET_DVR_SetupAlarmChan_V41(LONG lUserID, NET_DVR_SETUPALARM_PARAM *lpSetupParam);
 NET_DVR_API LONG __stdcall NET_DVR_SetupAlarmChan_V30(LONG lUserID);
-
-
+NET_DVR_API BOOL __stdcall NET_DVR_StopListen_V30(LONG lListenHandle);
+NET_DVR_API BOOL __stdcall NET_DVR_GetDVRConfig(LONG lUserID, DWORD dwCommand,LONG lChannel, LPVOID lpOutBuffer, DWORD dwOutBufferSize, LPDWORD lpBytesReturned);
+NET_DVR_API BOOL __stdcall NET_DVR_SetDVRConfig(LONG lUserID, DWORD dwCommand,LONG lChannel, LPVOID lpInBuffer, DWORD dwInBufferSize);
+NET_DVR_API BOOL __stdcall NET_DVR_GetDeviceConfig(LONG lUserID, DWORD dwCommand, DWORD dwCount, LPVOID lpInBuffer, DWORD dwInBufferSize, LPVOID lpStatusList, LPVOID lpOutBuffer, DWORD dwOutBufferSize);
+NET_DVR_API BOOL __stdcall NET_DVR_SetDeviceConfig(LONG lUserID, DWORD dwCommand, DWORD dwCount, LPVOID lpInBuffer, DWORD dwInBufferSize, LPVOID lpStatusList, LPVOID lpInParamBuffer, DWORD dwInParamBufferSize);
+NET_DVR_API BOOL __stdcall NET_DVR_GetAlarmOut_V30(LONG lUserID, NET_DVR_ALARMOUTSTATUS_V30* lpAlarmOutState);
 
 
 
@@ -171,9 +184,17 @@ static void MSGCallBack_helper(LONG lCommand, NET_DVR_ALARMER *pAlarmer, char *p
 %inline%{
 NET_DVR_API BOOL __stdcall NET_DVR_SetDVRMessageCallBack_V30_wrapper(MSGCallBackOp *fMessageCallBack, void* pUser=NULL){
     MSGCallBackOp_ptr=fMessageCallBack;
-     BOOL result= NET_DVR_SetDVRMessageCallBack_V30(&MSGCallBack_helper,  pUser);
-     fMessageCallBack=NULL;
-     return result;}
+    BOOL result= NET_DVR_SetDVRMessageCallBack_V30(&MSGCallBack_helper,  pUser);
+    fMessageCallBack=NULL;
+    return result;}
+
+NET_DVR_API LONG __stdcall NET_DVR_StartListen_V30_wrapper(char *sLocalIP, WORD wLocalPort, MSGCallBackOp *DataCallback, void* pUserData = NULL){
+    MSGCallBackOp_ptr=DataCallback;
+    LONG result= NET_DVR_StartListen_V30(sLocalIP,  wLocalPort, &MSGCallBack_helper, pUserData );
+    DataCallback=NULL;
+    return result;}
+
+}
 %} 
 
 

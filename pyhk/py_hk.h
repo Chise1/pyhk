@@ -1,1 +1,2 @@
-void void_to_struct(void *dest,const void *src ,int n);//dest 起始指针，要复制的结构体的指针，
+#include "HCNetSDK.h"
+int test();

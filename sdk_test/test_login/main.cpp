@@ -2,6 +2,7 @@
 #include "HCNetSDK.h"
 #include <stdio.h>
 using namespace std;
+
 void CALLBACK MSesGCallback(LONG lCommand, NET_DVR_ALARMER *pAlarmer, char *pAlarmInfo, DWORD dwBufLen, void *pUser)
 {
     cout<<"回调成功"<<endl;

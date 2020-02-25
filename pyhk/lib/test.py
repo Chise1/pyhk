@@ -18,6 +18,6 @@ class cb(MSGCallBackOp):
 handler=cb()
 NET_DVR_SetDVRMessageCallBack_V30_wrapper(handler,NULL)
 import time
-time.sleep(5000)
+time.sleep(5)
 # NET_DVR_Logout(lUserID)
 NET_DVR_Cleanup()

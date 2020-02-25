@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1582632559 source:/home/cs/Desktop/pyhk/sdk_test/test2/main.cpp
+	<stdio.h>
+	<iostream>
+	"string.h"
+	"HCNetSDK.h"
+	<unistd.h>
+	"bitset"
+
+1582377750 /home/cs/Desktop/pyhk/sdk_test/test_login/incCn/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+
+1582438319 /home/cs/Desktop/pyhk/sdk_test/test2/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+

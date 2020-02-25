@@ -49,6 +49,48 @@ typedef void* HWND;
 #define MAX_IP_ALARMOUT         64      //允许加入的最多报警输出数
 
 #define MAX_ALARMOUT_V30              ( MAX_ANALOG_ALARMOUT + MAX_IP_ALARMOUT )//96
+//报警输入参数配置(256路NVR扩展)
+typedef struct tagNET_DVR_ALARMINCFG_V40
+{
+    DWORD dwSize;
+    BYTE sAlarmInName[NAME_LEN];    /* 名称 */
+    BYTE byAlarmType;                //报警器类型,0：常开,1：常闭
+    BYTE byAlarmInHandle;            /* 是否处理 0-不处理 1-处理*/
+    BYTE byChannel;                 // 报警输入触发智能识别通道
+    BYTE byInputType;                //输入类型  0-开关量方式  1-信号量方式
+    DWORD   dwHandleType;        //异常处理,异常处理方式的"或"结果   
+    /*0x00: 无响应*/
+    /*0x01: 监视器上警告*/
+    /*0x02: 声音警告*/
+    /*0x04: 上传中心*/
+    /*0x08: 触发报警输出*/
+    /*0x10: 触发JPRG抓图并上传Email*/
+    /*0x20: 无线声光报警器联动*/
+    /*0x40: 联动电子地图(目前只有PCNVR支持)*/
+    /*0x200: 抓图并上传FTP*/ 
+    /*0x1000:抓图上传到云*/
+    /*0x2000:短信报警*/
+    DWORD   dwMaxRelAlarmOutChanNum ; //触发的报警输出通道数（只读）最大支持数量
+    DWORD   dwRelAlarmOutChanNum; //触发的报警输出通道数 实际支持数
+    DWORD   dwRelAlarmOut[MAX_ALARMOUT_V40]; //触发报警通道
+    NET_DVR_SCHEDTIME struAlarmTime[MAX_DAYS][MAX_TIMESEGMENT_V30];//布防时间
+    /*触发的录像通道*/
+    DWORD   dwMaxRecordChanNum;   //设备支持的最大关联录像通道数-只读
+    DWORD   dwCurRecordChanNum;    //当前实际已配置的关联录像通道数
+    DWORD   dwRelRecordChan[MAX_CHANNUM_V40];     /* 实际触发录像通道，按值表示,采用紧凑型排列，从下标0 - dwCurRecordChanNum -1有效，如果中间遇到0xffffffff,则后续无效*/ 
+    DWORD   dwMaxEnablePtzCtrlNun; //最大可启用的云台控制总数(只读)
+    DWORD   dwEnablePresetChanNum;  //当前已启用预置点的数目
+    NET_DVR_PRESETCHAN_INFO struPresetChanInfo[MAX_CHANNUM_V40]; //启用的预置点信息
+    BYTE    byPresetDurationTime[MAX_CHANNUM_V40];//预置点停留时间 范围0-20s，默认10s；
+    BYTE    byRes2[4];                    /*保留*/
+    DWORD   dwEnableCruiseChanNum;  //当前已启用巡航的通道数目
+    NET_DVR_CRUISECHAN_INFO struCruiseChanInfo[MAX_CHANNUM_V40]; //启用巡航功能通道的信息
+    DWORD   dwEnablePtzTrackChanNum;  //当前已启用巡航的通道数目
+    NET_DVR_PTZTRACKCHAN_INFO struPtzTrackInfo[MAX_CHANNUM_V40]; //调用云台轨迹的通道信息
+    WORD   wEventType[NET_SDK_MAX_EVENT_NUM/*64*/]; /*组合事件类型，每一个位对应一个事件类型*/
+    BYTE    byRes[128];
+}NET_DVR_ALARMINCFG_V40;
+
 typedef struct
 {
     BYTE sSerialNumber[SERIALNO_LEN];  
@@ -193,7 +235,6 @@ NET_DVR_API LONG __stdcall NET_DVR_StartListen_V30_wrapper(char *sLocalIP, WORD 
     DataCallback=NULL;
     return result;}
 
-}
 %} 
 
 

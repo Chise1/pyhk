@@ -3450,19 +3450,25 @@ namespace Swig {
 
 #define SWIGTYPE_p_MSGCallBackOp swig_types[0]
 #define SWIGTYPE_p_NET_DVR_ALARMER swig_types[1]
-#define SWIGTYPE_p_NET_DVR_DEVICEINFO_V30 swig_types[2]
-#define SWIGTYPE_p_char swig_types[3]
-#define SWIGTYPE_p_int swig_types[4]
-#define SWIGTYPE_p_long_long swig_types[5]
-#define SWIGTYPE_p_short swig_types[6]
-#define SWIGTYPE_p_tagNET_DVR_SETUPALARM_PARAM swig_types[7]
-#define SWIGTYPE_p_unsigned_char swig_types[8]
-#define SWIGTYPE_p_unsigned_int swig_types[9]
-#define SWIGTYPE_p_unsigned_long_long swig_types[10]
-#define SWIGTYPE_p_unsigned_short swig_types[11]
-#define SWIGTYPE_p_void swig_types[12]
-static swig_type_info *swig_types[14];
-static swig_module_info swig_module = {swig_types, 13, 0, 0, 0, 0};
+#define SWIGTYPE_p_NET_DVR_ALARMOUTSTATUS_V30 swig_types[2]
+#define SWIGTYPE_p_NET_DVR_CRUISECHAN_INFO swig_types[3]
+#define SWIGTYPE_p_NET_DVR_DEVICEINFO_V30 swig_types[4]
+#define SWIGTYPE_p_NET_DVR_PRESETCHAN_INFO swig_types[5]
+#define SWIGTYPE_p_NET_DVR_PTZTRACKCHAN_INFO swig_types[6]
+#define SWIGTYPE_p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME swig_types[7]
+#define SWIGTYPE_p_char swig_types[8]
+#define SWIGTYPE_p_int swig_types[9]
+#define SWIGTYPE_p_long_long swig_types[10]
+#define SWIGTYPE_p_short swig_types[11]
+#define SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40 swig_types[12]
+#define SWIGTYPE_p_tagNET_DVR_SETUPALARM_PARAM swig_types[13]
+#define SWIGTYPE_p_unsigned_char swig_types[14]
+#define SWIGTYPE_p_unsigned_int swig_types[15]
+#define SWIGTYPE_p_unsigned_long_long swig_types[16]
+#define SWIGTYPE_p_unsigned_short swig_types[17]
+#define SWIGTYPE_p_void swig_types[18]
+static swig_type_info *swig_types[20];
+static swig_module_info swig_module = {swig_types, 19, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3567,7 +3573,7 @@ namespace swig {
 }
 
 
-#include "HCNetSDK.h"
+    #include "HCNetSDK.h"
 
 
 SWIGINTERNINLINE PyObject*
@@ -3718,6 +3724,29 @@ SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val)
 
 
 SWIGINTERN int
+SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v > UINT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< unsigned int >(v);
+    }
+  }  
+  return res;
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_unsigned_SS_int  (unsigned int value)
+{
+  return PyInt_FromSize_t((size_t) value);
+}
+
+
+SWIGINTERN int
 SWIG_AsVal_unsigned_SS_char (PyObject * obj, unsigned char *val)
 {
   unsigned long v;
@@ -3830,29 +3859,6 @@ SWIG_AsVal_int (PyObject * obj, int *val)
     }
   }  
   return res;
-}
-
-
-SWIGINTERN int
-SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
-{
-  unsigned long v;
-  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v > UINT_MAX)) {
-      return SWIG_OverflowError;
-    } else {
-      if (val) *val = static_cast< unsigned int >(v);
-    }
-  }  
-  return res;
-}
-
-
-SWIGINTERNINLINE PyObject*
-  SWIG_From_unsigned_SS_int  (unsigned int value)
-{
-  return PyInt_FromSize_t((size_t) value);
 }
 
 
@@ -4066,11 +4072,18 @@ static void MSGCallBack_helper(LONG lCommand, NET_DVR_ALARMER *pAlarmer, char *p
     return MSGCallBackOp_ptr->MSGCallBack(lCommand, pAlarmer, pAlarmInfo, dwBufLen, pUser);}
 
 
-NET_DVR_API BOOL __stdcall NET_DVR_SetDVRMessageCallBack_V30_wrapper(MSGCallBackOp *fMessageCallBack, void* pUser){
+NET_DVR_API BOOL __stdcall NET_DVR_SetDVRMessageCallBack_V30_wrapper(MSGCallBackOp *fMessageCallBack, void* pUser=NULL){
     MSGCallBackOp_ptr=fMessageCallBack;
-     BOOL result= NET_DVR_SetDVRMessageCallBack_V30(&MSGCallBack_helper,  pUser);
-     fMessageCallBack=NULL;
-     return result;}
+    BOOL result= NET_DVR_SetDVRMessageCallBack_V30(&MSGCallBack_helper,  pUser);
+    fMessageCallBack=NULL;
+    return result;}
+
+NET_DVR_API LONG __stdcall NET_DVR_StartListen_V30_wrapper(char *sLocalIP, WORD wLocalPort, MSGCallBackOp *DataCallback, void* pUserData = NULL){
+    MSGCallBackOp_ptr=DataCallback;
+    LONG result= NET_DVR_StartListen_V30(sLocalIP,  wLocalPort, &MSGCallBack_helper, pUserData );
+    DataCallback=NULL;
+    return result;}
+
 
 
 
@@ -4127,6 +4140,1431 @@ SwigDirector_MSGCallBackOp::~SwigDirector_MSGCallBackOp() {
 #ifdef __cplusplus
 extern "C" {
 #endif
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwSize_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwSize_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwSize_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwSize_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwSize = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwSize_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwSize_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwSize_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwSize);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_sAlarmInName_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_sAlarmInName_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_sAlarmInName_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_sAlarmInName_set" "', argument " "2"" of type '" "BYTE [32]""'"); 
+  } 
+  arg2 = reinterpret_cast< BYTE * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)32; ++ii) *(BYTE *)&arg1->sAlarmInName[ii] = *((BYTE *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""sAlarmInName""' of type '""BYTE [32]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_sAlarmInName_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_sAlarmInName_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_sAlarmInName_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE *)(BYTE *) ((arg1)->sAlarmInName);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_char, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byAlarmType_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_byAlarmType_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byAlarmType_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_byAlarmType_set" "', argument " "2"" of type '" "BYTE""'");
+  } 
+  arg2 = static_cast< BYTE >(val2);
+  if (arg1) (arg1)->byAlarmType = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byAlarmType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_byAlarmType_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byAlarmType_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE) ((arg1)->byAlarmType);
+  resultobj = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byAlarmInHandle_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_byAlarmInHandle_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byAlarmInHandle_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_byAlarmInHandle_set" "', argument " "2"" of type '" "BYTE""'");
+  } 
+  arg2 = static_cast< BYTE >(val2);
+  if (arg1) (arg1)->byAlarmInHandle = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byAlarmInHandle_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_byAlarmInHandle_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byAlarmInHandle_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE) ((arg1)->byAlarmInHandle);
+  resultobj = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byChannel_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_byChannel_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byChannel_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_byChannel_set" "', argument " "2"" of type '" "BYTE""'");
+  } 
+  arg2 = static_cast< BYTE >(val2);
+  if (arg1) (arg1)->byChannel = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byChannel_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_byChannel_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byChannel_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE) ((arg1)->byChannel);
+  resultobj = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byInputType_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_byInputType_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byInputType_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_byInputType_set" "', argument " "2"" of type '" "BYTE""'");
+  } 
+  arg2 = static_cast< BYTE >(val2);
+  if (arg1) (arg1)->byInputType = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byInputType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_byInputType_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byInputType_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE) ((arg1)->byInputType);
+  resultobj = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwHandleType_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwHandleType_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwHandleType_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwHandleType_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwHandleType = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwHandleType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwHandleType_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwHandleType_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwHandleType);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwMaxRelAlarmOutChanNum = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwMaxRelAlarmOutChanNum);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwRelAlarmOutChanNum = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwRelAlarmOutChanNum);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_int, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_set" "', argument " "2"" of type '" "DWORD [MAX_ALARMOUT_V40]""'"); 
+  } 
+  arg2 = reinterpret_cast< DWORD * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)MAX_ALARMOUT_V40; ++ii) *(DWORD *)&arg1->dwRelAlarmOut[ii] = *((DWORD *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""dwRelAlarmOut""' of type '""DWORD [MAX_ALARMOUT_V40]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD *)(DWORD *) ((arg1)->dwRelAlarmOut);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_int, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struAlarmTime_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  NET_DVR_SCHEDTIME (*arg2)[MAX_TIMESEGMENT_V30] ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_struAlarmTime_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struAlarmTime_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_struAlarmTime_set" "', argument " "2"" of type '" "NET_DVR_SCHEDTIME [MAX_DAYS][MAX_TIMESEGMENT_V30]""'"); 
+  } 
+  arg2 = reinterpret_cast< NET_DVR_SCHEDTIME (*)[MAX_TIMESEGMENT_V30] >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)MAX_DAYS; ++ii) {
+        if (arg2[ii]) {
+          size_t jj = 0;
+          for (; jj < (size_t)MAX_TIMESEGMENT_V30; ++jj) arg1->struAlarmTime[ii][jj] = arg2[ii][jj];
+        } else {
+          SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""struAlarmTime""' of type '""NET_DVR_SCHEDTIME [MAX_DAYS][MAX_TIMESEGMENT_V30]""'");
+        }
+      }
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""struAlarmTime""' of type '""NET_DVR_SCHEDTIME [MAX_DAYS][MAX_TIMESEGMENT_V30]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struAlarmTime_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  NET_DVR_SCHEDTIME (*result)[MAX_TIMESEGMENT_V30] = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_struAlarmTime_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struAlarmTime_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (NET_DVR_SCHEDTIME (*)[MAX_TIMESEGMENT_V30])(NET_DVR_SCHEDTIME (*)[MAX_TIMESEGMENT_V30]) ((arg1)->struAlarmTime);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwMaxRecordChanNum = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwMaxRecordChanNum);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwCurRecordChanNum = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwCurRecordChanNum);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwRelRecordChan_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwRelRecordChan_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelRecordChan_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_int, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelRecordChan_set" "', argument " "2"" of type '" "DWORD [MAX_CHANNUM_V40]""'"); 
+  } 
+  arg2 = reinterpret_cast< DWORD * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)MAX_CHANNUM_V40; ++ii) *(DWORD *)&arg1->dwRelRecordChan[ii] = *((DWORD *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""dwRelRecordChan""' of type '""DWORD [MAX_CHANNUM_V40]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwRelRecordChan_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwRelRecordChan_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwRelRecordChan_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD *)(DWORD *) ((arg1)->dwRelRecordChan);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_int, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwMaxEnablePtzCtrlNun = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwMaxEnablePtzCtrlNun);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwEnablePresetChanNum = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwEnablePresetChanNum);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struPresetChanInfo_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  NET_DVR_PRESETCHAN_INFO *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_struPresetChanInfo_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struPresetChanInfo_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_NET_DVR_PRESETCHAN_INFO, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_struPresetChanInfo_set" "', argument " "2"" of type '" "NET_DVR_PRESETCHAN_INFO [MAX_CHANNUM_V40]""'"); 
+  } 
+  arg2 = reinterpret_cast< NET_DVR_PRESETCHAN_INFO * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)MAX_CHANNUM_V40; ++ii) *(NET_DVR_PRESETCHAN_INFO *)&arg1->struPresetChanInfo[ii] = *((NET_DVR_PRESETCHAN_INFO *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""struPresetChanInfo""' of type '""NET_DVR_PRESETCHAN_INFO [MAX_CHANNUM_V40]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struPresetChanInfo_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  NET_DVR_PRESETCHAN_INFO *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_struPresetChanInfo_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struPresetChanInfo_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (NET_DVR_PRESETCHAN_INFO *)(NET_DVR_PRESETCHAN_INFO *) ((arg1)->struPresetChanInfo);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_NET_DVR_PRESETCHAN_INFO, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byPresetDurationTime_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_byPresetDurationTime_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byPresetDurationTime_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_byPresetDurationTime_set" "', argument " "2"" of type '" "BYTE [MAX_CHANNUM_V40]""'"); 
+  } 
+  arg2 = reinterpret_cast< BYTE * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)MAX_CHANNUM_V40; ++ii) *(BYTE *)&arg1->byPresetDurationTime[ii] = *((BYTE *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""byPresetDurationTime""' of type '""BYTE [MAX_CHANNUM_V40]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byPresetDurationTime_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_byPresetDurationTime_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byPresetDurationTime_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE *)(BYTE *) ((arg1)->byPresetDurationTime);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_char, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byRes2_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_byRes2_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byRes2_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_byRes2_set" "', argument " "2"" of type '" "BYTE [4]""'"); 
+  } 
+  arg2 = reinterpret_cast< BYTE * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)4; ++ii) *(BYTE *)&arg1->byRes2[ii] = *((BYTE *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""byRes2""' of type '""BYTE [4]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byRes2_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_byRes2_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byRes2_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE *)(BYTE *) ((arg1)->byRes2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_char, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwEnableCruiseChanNum = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwEnableCruiseChanNum);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  NET_DVR_CRUISECHAN_INFO *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_NET_DVR_CRUISECHAN_INFO, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_set" "', argument " "2"" of type '" "NET_DVR_CRUISECHAN_INFO [MAX_CHANNUM_V40]""'"); 
+  } 
+  arg2 = reinterpret_cast< NET_DVR_CRUISECHAN_INFO * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)MAX_CHANNUM_V40; ++ii) *(NET_DVR_CRUISECHAN_INFO *)&arg1->struCruiseChanInfo[ii] = *((NET_DVR_CRUISECHAN_INFO *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""struCruiseChanInfo""' of type '""NET_DVR_CRUISECHAN_INFO [MAX_CHANNUM_V40]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  NET_DVR_CRUISECHAN_INFO *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (NET_DVR_CRUISECHAN_INFO *)(NET_DVR_CRUISECHAN_INFO *) ((arg1)->struCruiseChanInfo);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_NET_DVR_CRUISECHAN_INFO, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  DWORD arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_set" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  if (arg1) (arg1)->dwEnablePtzTrackChanNum = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  DWORD result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (DWORD) ((arg1)->dwEnablePtzTrackChanNum);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  NET_DVR_PTZTRACKCHAN_INFO *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_NET_DVR_PTZTRACKCHAN_INFO, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_set" "', argument " "2"" of type '" "NET_DVR_PTZTRACKCHAN_INFO [MAX_CHANNUM_V40]""'"); 
+  } 
+  arg2 = reinterpret_cast< NET_DVR_PTZTRACKCHAN_INFO * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)MAX_CHANNUM_V40; ++ii) *(NET_DVR_PTZTRACKCHAN_INFO *)&arg1->struPtzTrackInfo[ii] = *((NET_DVR_PTZTRACKCHAN_INFO *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""struPtzTrackInfo""' of type '""NET_DVR_PTZTRACKCHAN_INFO [MAX_CHANNUM_V40]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  NET_DVR_PTZTRACKCHAN_INFO *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (NET_DVR_PTZTRACKCHAN_INFO *)(NET_DVR_PTZTRACKCHAN_INFO *) ((arg1)->struPtzTrackInfo);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_NET_DVR_PTZTRACKCHAN_INFO, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_wEventType_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  WORD *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_wEventType_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_wEventType_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_short, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_wEventType_set" "', argument " "2"" of type '" "WORD [NET_SDK_MAX_EVENT_NUM]""'"); 
+  } 
+  arg2 = reinterpret_cast< WORD * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)NET_SDK_MAX_EVENT_NUM; ++ii) *(WORD *)&arg1->wEventType[ii] = *((WORD *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""wEventType""' of type '""WORD [NET_SDK_MAX_EVENT_NUM]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_wEventType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  WORD *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_wEventType_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_wEventType_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (WORD *)(WORD *) ((arg1)->wEventType);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_short, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byRes_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  BYTE *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMINCFG_V40_byRes_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byRes_set" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMINCFG_V40_byRes_set" "', argument " "2"" of type '" "BYTE [128]""'"); 
+  } 
+  arg2 = reinterpret_cast< BYTE * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)128; ++ii) *(BYTE *)&arg1->byRes[ii] = *((BYTE *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""byRes""' of type '""BYTE [128]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMINCFG_V40_byRes_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMINCFG_V40_byRes_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMINCFG_V40_byRes_get" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  result = (BYTE *)(BYTE *) ((arg1)->byRes);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_char, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_NET_DVR_ALARMINCFG_V40(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_NET_DVR_ALARMINCFG_V40")) SWIG_fail;
+  result = (tagNET_DVR_ALARMINCFG_V40 *)new tagNET_DVR_ALARMINCFG_V40();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_NET_DVR_ALARMINCFG_V40(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tagNET_DVR_ALARMINCFG_V40 *arg1 = (tagNET_DVR_ALARMINCFG_V40 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_NET_DVR_ALARMINCFG_V40",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_NET_DVR_ALARMINCFG_V40" "', argument " "1"" of type '" "tagNET_DVR_ALARMINCFG_V40 *""'"); 
+  }
+  arg1 = reinterpret_cast< tagNET_DVR_ALARMINCFG_V40 * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *NET_DVR_ALARMINCFG_V40_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_tagNET_DVR_ALARMINCFG_V40, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_NET_DVR_DEVICEINFO_V30_sSerialNumber_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   NET_DVR_DEVICEINFO_V30 *arg1 = (NET_DVR_DEVICEINFO_V30 *) 0 ;
@@ -7745,6 +9183,106 @@ SWIGINTERN PyObject *NET_DVR_SETUPALARM_PARAM_swigregister(PyObject *SWIGUNUSEDP
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMOUTSTATUS_V30_Output_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NET_DVR_ALARMOUTSTATUS_V30 *arg1 = (NET_DVR_ALARMOUTSTATUS_V30 *) 0 ;
+  BYTE *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_ALARMOUTSTATUS_V30_Output_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NET_DVR_ALARMOUTSTATUS_V30, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMOUTSTATUS_V30_Output_set" "', argument " "1"" of type '" "NET_DVR_ALARMOUTSTATUS_V30 *""'"); 
+  }
+  arg1 = reinterpret_cast< NET_DVR_ALARMOUTSTATUS_V30 * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_ALARMOUTSTATUS_V30_Output_set" "', argument " "2"" of type '" "BYTE [(32+64)]""'"); 
+  } 
+  arg2 = reinterpret_cast< BYTE * >(argp2);
+  {
+    if (arg2) {
+      size_t ii = 0;
+      for (; ii < (size_t)(32+64); ++ii) *(BYTE *)&arg1->Output[ii] = *((BYTE *)arg2 + ii);
+    } else {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""Output""' of type '""BYTE [(32+64)]""'");
+    }
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_ALARMOUTSTATUS_V30_Output_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NET_DVR_ALARMOUTSTATUS_V30 *arg1 = (NET_DVR_ALARMOUTSTATUS_V30 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  BYTE *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_ALARMOUTSTATUS_V30_Output_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NET_DVR_ALARMOUTSTATUS_V30, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_ALARMOUTSTATUS_V30_Output_get" "', argument " "1"" of type '" "NET_DVR_ALARMOUTSTATUS_V30 *""'"); 
+  }
+  arg1 = reinterpret_cast< NET_DVR_ALARMOUTSTATUS_V30 * >(argp1);
+  result = (BYTE *)(BYTE *) ((arg1)->Output);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_unsigned_char, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_NET_DVR_ALARMOUTSTATUS_V30(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NET_DVR_ALARMOUTSTATUS_V30 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_NET_DVR_ALARMOUTSTATUS_V30")) SWIG_fail;
+  result = (NET_DVR_ALARMOUTSTATUS_V30 *)new NET_DVR_ALARMOUTSTATUS_V30();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_NET_DVR_ALARMOUTSTATUS_V30, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_NET_DVR_ALARMOUTSTATUS_V30(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NET_DVR_ALARMOUTSTATUS_V30 *arg1 = (NET_DVR_ALARMOUTSTATUS_V30 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_NET_DVR_ALARMOUTSTATUS_V30",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NET_DVR_ALARMOUTSTATUS_V30, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_NET_DVR_ALARMOUTSTATUS_V30" "', argument " "1"" of type '" "NET_DVR_ALARMOUTSTATUS_V30 *""'"); 
+  }
+  arg1 = reinterpret_cast< NET_DVR_ALARMOUTSTATUS_V30 * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *NET_DVR_ALARMOUTSTATUS_V30_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_NET_DVR_ALARMOUTSTATUS_V30, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_NET_DVR_Init(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   int result;
@@ -7869,7 +9407,7 @@ SWIGINTERN PyObject *_wrap_NET_DVR_Login_V30(PyObject *SWIGUNUSEDPARM(self), PyO
   WORD arg2 ;
   char *arg3 = (char *) 0 ;
   char *arg4 = (char *) 0 ;
-  LPNET_DVR_DEVICEINFO_V30 arg5 = (LPNET_DVR_DEVICEINFO_V30) 0 ;
+  NET_DVR_DEVICEINFO_V30 *arg5 = (NET_DVR_DEVICEINFO_V30 *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
   int alloc1 = 0 ;
@@ -7913,9 +9451,9 @@ SWIGINTERN PyObject *_wrap_NET_DVR_Login_V30(PyObject *SWIGUNUSEDPARM(self), PyO
   arg4 = reinterpret_cast< char * >(buf4);
   res5 = SWIG_ConvertPtr(obj4, &argp5,SWIGTYPE_p_NET_DVR_DEVICEINFO_V30, 0 |  0 );
   if (!SWIG_IsOK(res5)) {
-    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "NET_DVR_Login_V30" "', argument " "5"" of type '" "LPNET_DVR_DEVICEINFO_V30""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "NET_DVR_Login_V30" "', argument " "5"" of type '" "NET_DVR_DEVICEINFO_V30 *""'"); 
   }
-  arg5 = reinterpret_cast< LPNET_DVR_DEVICEINFO_V30 >(argp5);
+  arg5 = reinterpret_cast< NET_DVR_DEVICEINFO_V30 * >(argp5);
   result = (LONG)NET_DVR_Login_V30(arg1,arg2,arg3,arg4,arg5);
   resultobj = SWIG_From_int(static_cast< int >(result));
   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
@@ -7946,7 +9484,7 @@ fail:
 SWIGINTERN PyObject *_wrap_NET_DVR_SetupAlarmChan_V41(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   LONG arg1 ;
-  LPNET_DVR_SETUPALARM_PARAM arg2 = (LPNET_DVR_SETUPALARM_PARAM) 0 ;
+  NET_DVR_SETUPALARM_PARAM *arg2 = (NET_DVR_SETUPALARM_PARAM *) 0 ;
   int val1 ;
   int ecode1 = 0 ;
   void *argp2 = 0 ;
@@ -7963,9 +9501,9 @@ SWIGINTERN PyObject *_wrap_NET_DVR_SetupAlarmChan_V41(PyObject *SWIGUNUSEDPARM(s
   arg1 = static_cast< LONG >(val1);
   res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_tagNET_DVR_SETUPALARM_PARAM, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_SetupAlarmChan_V41" "', argument " "2"" of type '" "LPNET_DVR_SETUPALARM_PARAM""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_SetupAlarmChan_V41" "', argument " "2"" of type '" "NET_DVR_SETUPALARM_PARAM *""'"); 
   }
-  arg2 = reinterpret_cast< LPNET_DVR_SETUPALARM_PARAM >(argp2);
+  arg2 = reinterpret_cast< NET_DVR_SETUPALARM_PARAM * >(argp2);
   result = (LONG)NET_DVR_SetupAlarmChan_V41(arg1,arg2);
   resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
@@ -7989,6 +9527,338 @@ SWIGINTERN PyObject *_wrap_NET_DVR_SetupAlarmChan_V30(PyObject *SWIGUNUSEDPARM(s
   } 
   arg1 = static_cast< LONG >(val1);
   result = (LONG)NET_DVR_SetupAlarmChan_V30(arg1);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_StopListen_V30(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LONG arg1 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NET_DVR_StopListen_V30",&obj0)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "NET_DVR_StopListen_V30" "', argument " "1"" of type '" "LONG""'");
+  } 
+  arg1 = static_cast< LONG >(val1);
+  result = (int)NET_DVR_StopListen_V30(arg1);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_GetDVRConfig(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LONG arg1 ;
+  DWORD arg2 ;
+  LONG arg3 ;
+  LPVOID arg4 = (LPVOID) 0 ;
+  DWORD arg5 ;
+  LPDWORD arg6 = (LPDWORD) 0 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int res4 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  void *argp6 = 0 ;
+  int res6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:NET_DVR_GetDVRConfig",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "NET_DVR_GetDVRConfig" "', argument " "1"" of type '" "LONG""'");
+  } 
+  arg1 = static_cast< LONG >(val1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_GetDVRConfig" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "NET_DVR_GetDVRConfig" "', argument " "3"" of type '" "LONG""'");
+  } 
+  arg3 = static_cast< LONG >(val3);
+  res4 = SWIG_ConvertPtr(obj3,SWIG_as_voidptrptr(&arg4), 0, 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "NET_DVR_GetDVRConfig" "', argument " "4"" of type '" "LPVOID""'"); 
+  }
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "NET_DVR_GetDVRConfig" "', argument " "5"" of type '" "DWORD""'");
+  } 
+  arg5 = static_cast< DWORD >(val5);
+  res6 = SWIG_ConvertPtr(obj5, &argp6,SWIGTYPE_p_unsigned_int, 0 |  0 );
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "NET_DVR_GetDVRConfig" "', argument " "6"" of type '" "LPDWORD""'"); 
+  }
+  arg6 = reinterpret_cast< LPDWORD >(argp6);
+  result = (int)NET_DVR_GetDVRConfig(arg1,arg2,arg3,arg4,arg5,arg6);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_SetDVRConfig(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LONG arg1 ;
+  DWORD arg2 ;
+  LONG arg3 ;
+  LPVOID arg4 = (LPVOID) 0 ;
+  DWORD arg5 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int res4 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOO:NET_DVR_SetDVRConfig",&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "NET_DVR_SetDVRConfig" "', argument " "1"" of type '" "LONG""'");
+  } 
+  arg1 = static_cast< LONG >(val1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_SetDVRConfig" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "NET_DVR_SetDVRConfig" "', argument " "3"" of type '" "LONG""'");
+  } 
+  arg3 = static_cast< LONG >(val3);
+  res4 = SWIG_ConvertPtr(obj3,SWIG_as_voidptrptr(&arg4), 0, 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "NET_DVR_SetDVRConfig" "', argument " "4"" of type '" "LPVOID""'"); 
+  }
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "NET_DVR_SetDVRConfig" "', argument " "5"" of type '" "DWORD""'");
+  } 
+  arg5 = static_cast< DWORD >(val5);
+  result = (int)NET_DVR_SetDVRConfig(arg1,arg2,arg3,arg4,arg5);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_GetDeviceConfig(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LONG arg1 ;
+  DWORD arg2 ;
+  DWORD arg3 ;
+  LPVOID arg4 = (LPVOID) 0 ;
+  DWORD arg5 ;
+  LPVOID arg6 = (LPVOID) 0 ;
+  LPVOID arg7 = (LPVOID) 0 ;
+  DWORD arg8 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  int res4 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  int res6 ;
+  int res7 ;
+  unsigned int val8 ;
+  int ecode8 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOO:NET_DVR_GetDeviceConfig",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "1"" of type '" "LONG""'");
+  } 
+  arg1 = static_cast< LONG >(val1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "3"" of type '" "DWORD""'");
+  } 
+  arg3 = static_cast< DWORD >(val3);
+  res4 = SWIG_ConvertPtr(obj3,SWIG_as_voidptrptr(&arg4), 0, 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "4"" of type '" "LPVOID""'"); 
+  }
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "5"" of type '" "DWORD""'");
+  } 
+  arg5 = static_cast< DWORD >(val5);
+  res6 = SWIG_ConvertPtr(obj5,SWIG_as_voidptrptr(&arg6), 0, 0);
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "6"" of type '" "LPVOID""'"); 
+  }
+  res7 = SWIG_ConvertPtr(obj6,SWIG_as_voidptrptr(&arg7), 0, 0);
+  if (!SWIG_IsOK(res7)) {
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "7"" of type '" "LPVOID""'"); 
+  }
+  ecode8 = SWIG_AsVal_unsigned_SS_int(obj7, &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "NET_DVR_GetDeviceConfig" "', argument " "8"" of type '" "DWORD""'");
+  } 
+  arg8 = static_cast< DWORD >(val8);
+  result = (int)NET_DVR_GetDeviceConfig(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_SetDeviceConfig(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LONG arg1 ;
+  DWORD arg2 ;
+  DWORD arg3 ;
+  LPVOID arg4 = (LPVOID) 0 ;
+  DWORD arg5 ;
+  LPVOID arg6 = (LPVOID) 0 ;
+  LPVOID arg7 = (LPVOID) 0 ;
+  DWORD arg8 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  int res4 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  int res6 ;
+  int res7 ;
+  unsigned int val8 ;
+  int ecode8 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOO:NET_DVR_SetDeviceConfig",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "1"" of type '" "LONG""'");
+  } 
+  arg1 = static_cast< LONG >(val1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "2"" of type '" "DWORD""'");
+  } 
+  arg2 = static_cast< DWORD >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "3"" of type '" "DWORD""'");
+  } 
+  arg3 = static_cast< DWORD >(val3);
+  res4 = SWIG_ConvertPtr(obj3,SWIG_as_voidptrptr(&arg4), 0, 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "4"" of type '" "LPVOID""'"); 
+  }
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "5"" of type '" "DWORD""'");
+  } 
+  arg5 = static_cast< DWORD >(val5);
+  res6 = SWIG_ConvertPtr(obj5,SWIG_as_voidptrptr(&arg6), 0, 0);
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "6"" of type '" "LPVOID""'"); 
+  }
+  res7 = SWIG_ConvertPtr(obj6,SWIG_as_voidptrptr(&arg7), 0, 0);
+  if (!SWIG_IsOK(res7)) {
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "7"" of type '" "LPVOID""'"); 
+  }
+  ecode8 = SWIG_AsVal_unsigned_SS_int(obj7, &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "NET_DVR_SetDeviceConfig" "', argument " "8"" of type '" "DWORD""'");
+  } 
+  arg8 = static_cast< DWORD >(val8);
+  result = (int)NET_DVR_SetDeviceConfig(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NET_DVR_GetAlarmOut_V30(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LONG arg1 ;
+  NET_DVR_ALARMOUTSTATUS_V30 *arg2 = (NET_DVR_ALARMOUTSTATUS_V30 *) 0 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_GetAlarmOut_V30",&obj0,&obj1)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "NET_DVR_GetAlarmOut_V30" "', argument " "1"" of type '" "LONG""'");
+  } 
+  arg1 = static_cast< LONG >(val1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_NET_DVR_ALARMOUTSTATUS_V30, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_GetAlarmOut_V30" "', argument " "2"" of type '" "NET_DVR_ALARMOUTSTATUS_V30 *""'"); 
+  }
+  arg2 = reinterpret_cast< NET_DVR_ALARMOUTSTATUS_V30 * >(argp2);
+  result = (int)NET_DVR_GetAlarmOut_V30(arg1,arg2);
   resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
@@ -8162,15 +10032,17 @@ SWIGINTERN PyObject *_wrap_NET_DVR_SetDVRMessageCallBack_V30_wrapper(PyObject *S
   PyObject * obj1 = 0 ;
   int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:NET_DVR_SetDVRMessageCallBack_V30_wrapper",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O|O:NET_DVR_SetDVRMessageCallBack_V30_wrapper",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_MSGCallBackOp, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_SetDVRMessageCallBack_V30_wrapper" "', argument " "1"" of type '" "MSGCallBackOp *""'"); 
   }
   arg1 = reinterpret_cast< MSGCallBackOp * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1,SWIG_as_voidptrptr(&arg2), 0, 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_SetDVRMessageCallBack_V30_wrapper" "', argument " "2"" of type '" "void *""'"); 
+  if (obj1) {
+    res2 = SWIG_ConvertPtr(obj1,SWIG_as_voidptrptr(&arg2), 0, 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NET_DVR_SetDVRMessageCallBack_V30_wrapper" "', argument " "2"" of type '" "void *""'"); 
+    }
   }
   result = (int)NET_DVR_SetDVRMessageCallBack_V30_wrapper(arg1,arg2);
   resultobj = SWIG_From_int(static_cast< int >(result));
@@ -8180,8 +10052,495 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_NET_DVR_StartListen_V30_wrapper(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  char *arg1 = (char *) 0 ;
+  WORD arg2 ;
+  MSGCallBackOp *arg3 = (MSGCallBackOp *) 0 ;
+  void *arg4 = (void *) 0 ;
+  int res1 ;
+  char *buf1 = 0 ;
+  int alloc1 = 0 ;
+  unsigned short val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int res4 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  LONG result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO|O:NET_DVR_StartListen_V30_wrapper",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NET_DVR_StartListen_V30_wrapper" "', argument " "1"" of type '" "char *""'");
+  }
+  arg1 = reinterpret_cast< char * >(buf1);
+  ecode2 = SWIG_AsVal_unsigned_SS_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NET_DVR_StartListen_V30_wrapper" "', argument " "2"" of type '" "WORD""'");
+  } 
+  arg2 = static_cast< WORD >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_MSGCallBackOp, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "NET_DVR_StartListen_V30_wrapper" "', argument " "3"" of type '" "MSGCallBackOp *""'"); 
+  }
+  arg3 = reinterpret_cast< MSGCallBackOp * >(argp3);
+  if (obj3) {
+    res4 = SWIG_ConvertPtr(obj3,SWIG_as_voidptrptr(&arg4), 0, 0);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "NET_DVR_StartListen_V30_wrapper" "', argument " "4"" of type '" "void *""'"); 
+    }
+  }
+  result = (LONG)NET_DVR_StartListen_V30_wrapper(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwSize_set", _wrap_NET_DVR_ALARMINCFG_V40_dwSize_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwSize_set(self, dwSize)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwSize: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwSize_get", _wrap_NET_DVR_ALARMINCFG_V40_dwSize_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwSize_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_sAlarmInName_set", _wrap_NET_DVR_ALARMINCFG_V40_sAlarmInName_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_sAlarmInName_set(self, sAlarmInName)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"sAlarmInName: BYTE [32]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_sAlarmInName_get", _wrap_NET_DVR_ALARMINCFG_V40_sAlarmInName_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_sAlarmInName_get(self) -> BYTE [32]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byAlarmType_set", _wrap_NET_DVR_ALARMINCFG_V40_byAlarmType_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byAlarmType_set(self, byAlarmType)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"byAlarmType: BYTE\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byAlarmType_get", _wrap_NET_DVR_ALARMINCFG_V40_byAlarmType_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byAlarmType_get(self) -> BYTE\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byAlarmInHandle_set", _wrap_NET_DVR_ALARMINCFG_V40_byAlarmInHandle_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byAlarmInHandle_set(self, byAlarmInHandle)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"byAlarmInHandle: BYTE\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byAlarmInHandle_get", _wrap_NET_DVR_ALARMINCFG_V40_byAlarmInHandle_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byAlarmInHandle_get(self) -> BYTE\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byChannel_set", _wrap_NET_DVR_ALARMINCFG_V40_byChannel_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byChannel_set(self, byChannel)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"byChannel: BYTE\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byChannel_get", _wrap_NET_DVR_ALARMINCFG_V40_byChannel_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byChannel_get(self) -> BYTE\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byInputType_set", _wrap_NET_DVR_ALARMINCFG_V40_byInputType_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byInputType_set(self, byInputType)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"byInputType: BYTE\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byInputType_get", _wrap_NET_DVR_ALARMINCFG_V40_byInputType_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byInputType_get(self) -> BYTE\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwHandleType_set", _wrap_NET_DVR_ALARMINCFG_V40_dwHandleType_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwHandleType_set(self, dwHandleType)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwHandleType: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwHandleType_get", _wrap_NET_DVR_ALARMINCFG_V40_dwHandleType_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwHandleType_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_set", _wrap_NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_set(self, dwMaxRelAlarmOutChanNum)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwMaxRelAlarmOutChanNum: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_get", _wrap_NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwMaxRelAlarmOutChanNum_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_set", _wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_set(self, dwRelAlarmOutChanNum)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwRelAlarmOutChanNum: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_get", _wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwRelAlarmOutChanNum_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_set", _wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_set(self, dwRelAlarmOut)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwRelAlarmOut: DWORD [MAX_ALARMOUT_V40]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_get", _wrap_NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwRelAlarmOut_get(self) -> DWORD [MAX_ALARMOUT_V40]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struAlarmTime_set", _wrap_NET_DVR_ALARMINCFG_V40_struAlarmTime_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struAlarmTime_set(self, struAlarmTime)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"struAlarmTime: NET_DVR_SCHEDTIME [MAX_DAYS][MAX_TIMESEGMENT_V30]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struAlarmTime_get", _wrap_NET_DVR_ALARMINCFG_V40_struAlarmTime_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struAlarmTime_get(self) -> NET_DVR_SCHEDTIME [MAX_DAYS][MAX_TIMESEGMENT_V30]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_set", _wrap_NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_set(self, dwMaxRecordChanNum)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwMaxRecordChanNum: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_get", _wrap_NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwMaxRecordChanNum_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_set", _wrap_NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_set(self, dwCurRecordChanNum)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwCurRecordChanNum: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_get", _wrap_NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwCurRecordChanNum_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwRelRecordChan_set", _wrap_NET_DVR_ALARMINCFG_V40_dwRelRecordChan_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwRelRecordChan_set(self, dwRelRecordChan)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwRelRecordChan: DWORD [MAX_CHANNUM_V40]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwRelRecordChan_get", _wrap_NET_DVR_ALARMINCFG_V40_dwRelRecordChan_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwRelRecordChan_get(self) -> DWORD [MAX_CHANNUM_V40]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_set", _wrap_NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_set(self, dwMaxEnablePtzCtrlNun)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwMaxEnablePtzCtrlNun: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_get", _wrap_NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwMaxEnablePtzCtrlNun_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_set", _wrap_NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_set(self, dwEnablePresetChanNum)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwEnablePresetChanNum: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_get", _wrap_NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwEnablePresetChanNum_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struPresetChanInfo_set", _wrap_NET_DVR_ALARMINCFG_V40_struPresetChanInfo_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struPresetChanInfo_set(self, struPresetChanInfo)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"struPresetChanInfo: NET_DVR_PRESETCHAN_INFO [MAX_CHANNUM_V40]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struPresetChanInfo_get", _wrap_NET_DVR_ALARMINCFG_V40_struPresetChanInfo_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struPresetChanInfo_get(self) -> NET_DVR_PRESETCHAN_INFO [MAX_CHANNUM_V40]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byPresetDurationTime_set", _wrap_NET_DVR_ALARMINCFG_V40_byPresetDurationTime_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byPresetDurationTime_set(self, byPresetDurationTime)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"byPresetDurationTime: BYTE [MAX_CHANNUM_V40]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byPresetDurationTime_get", _wrap_NET_DVR_ALARMINCFG_V40_byPresetDurationTime_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byPresetDurationTime_get(self) -> BYTE [MAX_CHANNUM_V40]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byRes2_set", _wrap_NET_DVR_ALARMINCFG_V40_byRes2_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byRes2_set(self, byRes2)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"byRes2: BYTE [4]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byRes2_get", _wrap_NET_DVR_ALARMINCFG_V40_byRes2_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byRes2_get(self) -> BYTE [4]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_set", _wrap_NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_set(self, dwEnableCruiseChanNum)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwEnableCruiseChanNum: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_get", _wrap_NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwEnableCruiseChanNum_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_set", _wrap_NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_set(self, struCruiseChanInfo)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"struCruiseChanInfo: NET_DVR_CRUISECHAN_INFO [MAX_CHANNUM_V40]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_get", _wrap_NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struCruiseChanInfo_get(self) -> NET_DVR_CRUISECHAN_INFO [MAX_CHANNUM_V40]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_set", _wrap_NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_set(self, dwEnablePtzTrackChanNum)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"dwEnablePtzTrackChanNum: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_get", _wrap_NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_dwEnablePtzTrackChanNum_get(self) -> DWORD\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_set", _wrap_NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_set(self, struPtzTrackInfo)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"struPtzTrackInfo: NET_DVR_PTZTRACKCHAN_INFO [MAX_CHANNUM_V40]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_get", _wrap_NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_struPtzTrackInfo_get(self) -> NET_DVR_PTZTRACKCHAN_INFO [MAX_CHANNUM_V40]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_wEventType_set", _wrap_NET_DVR_ALARMINCFG_V40_wEventType_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_wEventType_set(self, wEventType)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"wEventType: WORD [NET_SDK_MAX_EVENT_NUM]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_wEventType_get", _wrap_NET_DVR_ALARMINCFG_V40_wEventType_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_wEventType_get(self) -> WORD [NET_SDK_MAX_EVENT_NUM]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byRes_set", _wrap_NET_DVR_ALARMINCFG_V40_byRes_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byRes_set(self, byRes)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"byRes: BYTE [128]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_byRes_get", _wrap_NET_DVR_ALARMINCFG_V40_byRes_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMINCFG_V40_byRes_get(self) -> BYTE [128]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"new_NET_DVR_ALARMINCFG_V40", _wrap_new_NET_DVR_ALARMINCFG_V40, METH_VARARGS, (char *)"new_NET_DVR_ALARMINCFG_V40() -> NET_DVR_ALARMINCFG_V40"},
+	 { (char *)"delete_NET_DVR_ALARMINCFG_V40", _wrap_delete_NET_DVR_ALARMINCFG_V40, METH_VARARGS, (char *)"\n"
+		"delete_NET_DVR_ALARMINCFG_V40(self)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: tagNET_DVR_ALARMINCFG_V40 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMINCFG_V40_swigregister", NET_DVR_ALARMINCFG_V40_swigregister, METH_VARARGS, NULL},
 	 { (char *)"NET_DVR_DEVICEINFO_V30_sSerialNumber_set", _wrap_NET_DVR_DEVICEINFO_V30_sSerialNumber_set, METH_VARARGS, (char *)"\n"
 		"NET_DVR_DEVICEINFO_V30_sSerialNumber_set(self, sSerialNumber)\n"
 		"\n"
@@ -9334,6 +11693,33 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"NET_DVR_SETUPALARM_PARAM_swigregister", NET_DVR_SETUPALARM_PARAM_swigregister, METH_VARARGS, NULL},
+	 { (char *)"NET_DVR_ALARMOUTSTATUS_V30_Output_set", _wrap_NET_DVR_ALARMOUTSTATUS_V30_Output_set, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMOUTSTATUS_V30_Output_set(self, Output)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: NET_DVR_ALARMOUTSTATUS_V30 *\n"
+		"Output: BYTE [(32+64)]\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMOUTSTATUS_V30_Output_get", _wrap_NET_DVR_ALARMOUTSTATUS_V30_Output_get, METH_VARARGS, (char *)"\n"
+		"NET_DVR_ALARMOUTSTATUS_V30_Output_get(self) -> BYTE [(32+64)]\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: NET_DVR_ALARMOUTSTATUS_V30 *\n"
+		"\n"
+		""},
+	 { (char *)"new_NET_DVR_ALARMOUTSTATUS_V30", _wrap_new_NET_DVR_ALARMOUTSTATUS_V30, METH_VARARGS, (char *)"new_NET_DVR_ALARMOUTSTATUS_V30() -> NET_DVR_ALARMOUTSTATUS_V30"},
+	 { (char *)"delete_NET_DVR_ALARMOUTSTATUS_V30", _wrap_delete_NET_DVR_ALARMOUTSTATUS_V30, METH_VARARGS, (char *)"\n"
+		"delete_NET_DVR_ALARMOUTSTATUS_V30(self)\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"self: NET_DVR_ALARMOUTSTATUS_V30 *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_ALARMOUTSTATUS_V30_swigregister", NET_DVR_ALARMOUTSTATUS_V30_swigregister, METH_VARARGS, NULL},
 	 { (char *)"NET_DVR_Init", _wrap_NET_DVR_Init, METH_VARARGS, (char *)"NET_DVR_Init() -> int"},
 	 { (char *)"NET_DVR_Logout", _wrap_NET_DVR_Logout, METH_VARARGS, (char *)"\n"
 		"NET_DVR_Logout(lUserID) -> int\n"
@@ -9371,7 +11757,7 @@ static PyMethodDef SwigMethods[] = {
 		"wDVRPort: WORD\n"
 		"sUserName: char *\n"
 		"sPassword: char *\n"
-		"lpDeviceInfo: LPNET_DVR_DEVICEINFO_V30\n"
+		"lpDeviceInfo: NET_DVR_DEVICEINFO_V30 *\n"
 		"\n"
 		""},
 	 { (char *)"NET_DVR_GetLastError", _wrap_NET_DVR_GetLastError, METH_VARARGS, (char *)"NET_DVR_GetLastError() -> DWORD"},
@@ -9381,7 +11767,7 @@ static PyMethodDef SwigMethods[] = {
 		"Parameters\n"
 		"----------\n"
 		"lUserID: LONG\n"
-		"lpSetupParam: LPNET_DVR_SETUPALARM_PARAM\n"
+		"lpSetupParam: NET_DVR_SETUPALARM_PARAM *\n"
 		"\n"
 		""},
 	 { (char *)"NET_DVR_SetupAlarmChan_V30", _wrap_NET_DVR_SetupAlarmChan_V30, METH_VARARGS, (char *)"\n"
@@ -9390,6 +11776,78 @@ static PyMethodDef SwigMethods[] = {
 		"Parameters\n"
 		"----------\n"
 		"lUserID: LONG\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_StopListen_V30", _wrap_NET_DVR_StopListen_V30, METH_VARARGS, (char *)"\n"
+		"NET_DVR_StopListen_V30(lListenHandle) -> int\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"lListenHandle: LONG\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_GetDVRConfig", _wrap_NET_DVR_GetDVRConfig, METH_VARARGS, (char *)"\n"
+		"NET_DVR_GetDVRConfig(lUserID, dwCommand, lChannel, lpOutBuffer, dwOutBufferSize, lpBytesReturned) -> int\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"lUserID: LONG\n"
+		"dwCommand: DWORD\n"
+		"lChannel: LONG\n"
+		"lpOutBuffer: LPVOID\n"
+		"dwOutBufferSize: DWORD\n"
+		"lpBytesReturned: LPDWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_SetDVRConfig", _wrap_NET_DVR_SetDVRConfig, METH_VARARGS, (char *)"\n"
+		"NET_DVR_SetDVRConfig(lUserID, dwCommand, lChannel, lpInBuffer, dwInBufferSize) -> int\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"lUserID: LONG\n"
+		"dwCommand: DWORD\n"
+		"lChannel: LONG\n"
+		"lpInBuffer: LPVOID\n"
+		"dwInBufferSize: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_GetDeviceConfig", _wrap_NET_DVR_GetDeviceConfig, METH_VARARGS, (char *)"\n"
+		"NET_DVR_GetDeviceConfig(lUserID, dwCommand, dwCount, lpInBuffer, dwInBufferSize, lpStatusList, lpOutBuffer, dwOutBufferSize) -> int\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"lUserID: LONG\n"
+		"dwCommand: DWORD\n"
+		"dwCount: DWORD\n"
+		"lpInBuffer: LPVOID\n"
+		"dwInBufferSize: DWORD\n"
+		"lpStatusList: LPVOID\n"
+		"lpOutBuffer: LPVOID\n"
+		"dwOutBufferSize: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_SetDeviceConfig", _wrap_NET_DVR_SetDeviceConfig, METH_VARARGS, (char *)"\n"
+		"NET_DVR_SetDeviceConfig(lUserID, dwCommand, dwCount, lpInBuffer, dwInBufferSize, lpStatusList, lpInParamBuffer, dwInParamBufferSize) -> int\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"lUserID: LONG\n"
+		"dwCommand: DWORD\n"
+		"dwCount: DWORD\n"
+		"lpInBuffer: LPVOID\n"
+		"dwInBufferSize: DWORD\n"
+		"lpStatusList: LPVOID\n"
+		"lpInParamBuffer: LPVOID\n"
+		"dwInParamBufferSize: DWORD\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_GetAlarmOut_V30", _wrap_NET_DVR_GetAlarmOut_V30, METH_VARARGS, (char *)"\n"
+		"NET_DVR_GetAlarmOut_V30(lUserID, lpAlarmOutState) -> int\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"lUserID: LONG\n"
+		"lpAlarmOutState: NET_DVR_ALARMOUTSTATUS_V30 *\n"
 		"\n"
 		""},
 	 { (char *)"MSGCallBackOp_MSGCallBack", _wrap_MSGCallBackOp_MSGCallBack, METH_VARARGS, (char *)"\n"
@@ -9424,12 +11882,23 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"disown_MSGCallBackOp", _wrap_disown_MSGCallBackOp, METH_VARARGS, NULL},
 	 { (char *)"MSGCallBackOp_swigregister", MSGCallBackOp_swigregister, METH_VARARGS, NULL},
 	 { (char *)"NET_DVR_SetDVRMessageCallBack_V30_wrapper", _wrap_NET_DVR_SetDVRMessageCallBack_V30_wrapper, METH_VARARGS, (char *)"\n"
-		"NET_DVR_SetDVRMessageCallBack_V30_wrapper(fMessageCallBack, pUser) -> int\n"
+		"NET_DVR_SetDVRMessageCallBack_V30_wrapper(fMessageCallBack, pUser=None) -> int\n"
 		"\n"
 		"Parameters\n"
 		"----------\n"
 		"fMessageCallBack: MSGCallBackOp *\n"
 		"pUser: void *\n"
+		"\n"
+		""},
+	 { (char *)"NET_DVR_StartListen_V30_wrapper", _wrap_NET_DVR_StartListen_V30_wrapper, METH_VARARGS, (char *)"\n"
+		"NET_DVR_StartListen_V30_wrapper(sLocalIP, wLocalPort, DataCallback, pUserData=None) -> LONG\n"
+		"\n"
+		"Parameters\n"
+		"----------\n"
+		"sLocalIP: char *\n"
+		"wLocalPort: WORD\n"
+		"DataCallback: MSGCallBackOp *\n"
+		"pUserData: void *\n"
 		"\n"
 		""},
 	 { NULL, NULL, 0, NULL }
@@ -9440,14 +11909,20 @@ static PyMethodDef SwigMethods[] = {
 
 static swig_type_info _swigt__p_MSGCallBackOp = {"_p_MSGCallBackOp", "MSGCallBackOp *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_NET_DVR_ALARMER = {"_p_NET_DVR_ALARMER", "NET_DVR_ALARMER *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_NET_DVR_DEVICEINFO_V30 = {"_p_NET_DVR_DEVICEINFO_V30", "LPNET_DVR_DEVICEINFO_V30|NET_DVR_DEVICEINFO_V30 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_NET_DVR_ALARMOUTSTATUS_V30 = {"_p_NET_DVR_ALARMOUTSTATUS_V30", "NET_DVR_ALARMOUTSTATUS_V30 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_NET_DVR_CRUISECHAN_INFO = {"_p_NET_DVR_CRUISECHAN_INFO", "NET_DVR_CRUISECHAN_INFO *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_NET_DVR_DEVICEINFO_V30 = {"_p_NET_DVR_DEVICEINFO_V30", "NET_DVR_DEVICEINFO_V30 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_NET_DVR_PRESETCHAN_INFO = {"_p_NET_DVR_PRESETCHAN_INFO", "NET_DVR_PRESETCHAN_INFO *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_NET_DVR_PTZTRACKCHAN_INFO = {"_p_NET_DVR_PTZTRACKCHAN_INFO", "NET_DVR_PTZTRACKCHAN_INFO *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME = {"_p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME", "NET_DVR_SCHEDTIME (*)[MAX_TIMESEGMENT_V30]", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *|LONG *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_long_long = {"_p_long_long", "INT64 *|long long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_short = {"_p_short", "short *|SHORT *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_tagNET_DVR_SETUPALARM_PARAM = {"_p_tagNET_DVR_SETUPALARM_PARAM", "LPNET_DVR_SETUPALARM_PARAM|tagNET_DVR_SETUPALARM_PARAM *|NET_DVR_SETUPALARM_PARAM *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_tagNET_DVR_ALARMINCFG_V40 = {"_p_tagNET_DVR_ALARMINCFG_V40", "tagNET_DVR_ALARMINCFG_V40 *|NET_DVR_ALARMINCFG_V40 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_tagNET_DVR_SETUPALARM_PARAM = {"_p_tagNET_DVR_SETUPALARM_PARAM", "tagNET_DVR_SETUPALARM_PARAM *|NET_DVR_SETUPALARM_PARAM *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *|BYTE *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "DWORD *|UINT *|unsigned int *|COLORREF *|COLORKEY *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "LPDWORD|DWORD *|UINT *|unsigned int *|COLORREF *|COLORKEY *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_long_long = {"_p_unsigned_long_long", "UINT64 *|unsigned long long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "WORD *|unsigned short *|USHORT *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
@@ -9455,11 +11930,17 @@ static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_MSGCallBackOp,
   &_swigt__p_NET_DVR_ALARMER,
+  &_swigt__p_NET_DVR_ALARMOUTSTATUS_V30,
+  &_swigt__p_NET_DVR_CRUISECHAN_INFO,
   &_swigt__p_NET_DVR_DEVICEINFO_V30,
+  &_swigt__p_NET_DVR_PRESETCHAN_INFO,
+  &_swigt__p_NET_DVR_PTZTRACKCHAN_INFO,
+  &_swigt__p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME,
   &_swigt__p_char,
   &_swigt__p_int,
   &_swigt__p_long_long,
   &_swigt__p_short,
+  &_swigt__p_tagNET_DVR_ALARMINCFG_V40,
   &_swigt__p_tagNET_DVR_SETUPALARM_PARAM,
   &_swigt__p_unsigned_char,
   &_swigt__p_unsigned_int,
@@ -9470,11 +11951,17 @@ static swig_type_info *swig_type_initial[] = {
 
 static swig_cast_info _swigc__p_MSGCallBackOp[] = {  {&_swigt__p_MSGCallBackOp, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_NET_DVR_ALARMER[] = {  {&_swigt__p_NET_DVR_ALARMER, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_NET_DVR_ALARMOUTSTATUS_V30[] = {  {&_swigt__p_NET_DVR_ALARMOUTSTATUS_V30, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_NET_DVR_CRUISECHAN_INFO[] = {  {&_swigt__p_NET_DVR_CRUISECHAN_INFO, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_NET_DVR_DEVICEINFO_V30[] = {  {&_swigt__p_NET_DVR_DEVICEINFO_V30, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_NET_DVR_PRESETCHAN_INFO[] = {  {&_swigt__p_NET_DVR_PRESETCHAN_INFO, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_NET_DVR_PTZTRACKCHAN_INFO[] = {  {&_swigt__p_NET_DVR_PTZTRACKCHAN_INFO, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME[] = {  {&_swigt__p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_long_long[] = {  {&_swigt__p_long_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_short[] = {  {&_swigt__p_short, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_tagNET_DVR_ALARMINCFG_V40[] = {  {&_swigt__p_tagNET_DVR_ALARMINCFG_V40, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_tagNET_DVR_SETUPALARM_PARAM[] = {  {&_swigt__p_tagNET_DVR_SETUPALARM_PARAM, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
@@ -9485,11 +11972,17 @@ static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0,
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_MSGCallBackOp,
   _swigc__p_NET_DVR_ALARMER,
+  _swigc__p_NET_DVR_ALARMOUTSTATUS_V30,
+  _swigc__p_NET_DVR_CRUISECHAN_INFO,
   _swigc__p_NET_DVR_DEVICEINFO_V30,
+  _swigc__p_NET_DVR_PRESETCHAN_INFO,
+  _swigc__p_NET_DVR_PTZTRACKCHAN_INFO,
+  _swigc__p_a_MAX_TIMESEGMENT_V30__NET_DVR_SCHEDTIME,
   _swigc__p_char,
   _swigc__p_int,
   _swigc__p_long_long,
   _swigc__p_short,
+  _swigc__p_tagNET_DVR_ALARMINCFG_V40,
   _swigc__p_tagNET_DVR_SETUPALARM_PARAM,
   _swigc__p_unsigned_char,
   _swigc__p_unsigned_int,
@@ -10192,6 +12685,11 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "SERIALNO_LEN",SWIG_From_int(static_cast< int >(48)));
   SWIG_Python_SetConstant(d, "NAME_LEN",SWIG_From_int(static_cast< int >(32)));
   SWIG_Python_SetConstant(d, "MACADDR_LEN",SWIG_From_int(static_cast< int >(6)));
+  SWIG_Python_SetConstant(d, "MAX_ANALOG_CHANNUM",SWIG_From_int(static_cast< int >(32)));
+  SWIG_Python_SetConstant(d, "MAX_ANALOG_ALARMOUT",SWIG_From_int(static_cast< int >(32)));
+  SWIG_Python_SetConstant(d, "MAX_ANALOG_ALARMIN",SWIG_From_int(static_cast< int >(32)));
+  SWIG_Python_SetConstant(d, "MAX_IP_ALARMOUT",SWIG_From_int(static_cast< int >(64)));
+  SWIG_Python_SetConstant(d, "MAX_ALARMOUT_V30",SWIG_From_int(static_cast< int >((32+64))));
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

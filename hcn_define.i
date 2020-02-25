@@ -1,4 +1,7 @@
 %module define
+%{
+#include "hcn_define.h"
+%}
 %inline%{
 #ifndef _WINDOWS_
 #if (defined(_WIN32) || defined(_WIN64))
@@ -79,5919 +82,8 @@
         int uHeight; 
     }INITINFO; 
 #endif
-#define MAX_NAMELEN                16        
-#define MAX_RIGHT                32        
-#define NAME_LEN                32      
-#define MIN_PASSWD_LEN          8          
-#define PASSWD_LEN                16      
-#define STREAM_PASSWD_LEN         12      
-#define MAX_PASSWD_LEN_EX            64      
-#define GUID_LEN                16      
-#define DEV_TYPE_NAME_LEN        24      
-#define SERIALNO_LEN            48      
-#define MACADDR_LEN                6       
-#define MAC_ADDRESS_NUM         48      
-#define MAX_SENCE_NUM           16      
-#define RULE_REGION_MAX         128      
-#define MAX_ETHERNET            2       
-#define MAX_NETWORK_CARD        4       
-#define MAX_NETWORK_CARD_EX     12      
-#define PATHNAME_LEN            128     
-#define MAX_PRESET_V13          16      
-#define MAX_TEST_COMMAND_NUM   32      
-#define MAX_NUMBER_LEN            32        
-#define MAX_NAME_LEN            128        
-#define MAX_INDEX_LED           8       
-#define    MAX_CUSTOM_DIR            64      
-#define URL_LEN_V40             256        
-#define CLOUD_NAME_LEN          48      
-#define CLOUD_PASSWD_LEN        48      
-#define MAX_SENSORNAME_LEN      64      
-#define MAX_SENSORCHAN_LEN      32      
-#define MAX_DESCRIPTION_LEN     32      
-#define MAX_DEVNAME_LEN_EX      64      
-#define NET_SDK_MAX_FILE_PATH   256     
-#define MAX_TMEVOICE_LEN        64      
-#define ISO_8601_LEN            32      
-#define MODULE_INFO_LEN            32    
-#define VERSION_INFO_LEN        32    
-#define MAX_NUM_INPUT_BOARD     512     
-#define MAX_SHIPSDETE_REGION_NUM    8 
-#define MAX_RES_NUM_ONE_VS_INPUT_CHAN  8  
-#define MAX_VS_INPUT_CHAN_NUM  16  
-#define NET_SDK_MAX_FDID_LEN 256
-#define NET_SDK_MAX_PICID_LEN 256 
-#define NET_SDK_FDPIC_CUSTOM_INFO_LEN 96 
-#define NET_DVR_MAX_FACE_ANALYSIS_NUM      32   
-#define NET_DVR_MAX_FACE_SEARCH_NUM      5   
-#define NET_SDK_SECRETKEY_LEN      128   
-#define NET_SDK_CUSTOM_LEN                  512 
-#define NET_SDK_CHECK_CODE_LEN          128
-#define RELATIVE_CHANNEL_LEN        2
-#define  MAX_LEN_TEXT_CONTENT    128  
-#define  MAX_NUM_INPUT_SOURCE_TEXT    32    
-#define  MAX_NUM_OUTPUT_CHANNEL  512  
-#define MAX_LEN_OSD_CONTENT  256  
-#define MAX_NUM_OSD_ONE_SUBWND  8  
-#define MAX_NUM_SPLIT_WND  64 
-#define MAX_NUM_OSD 8
-#define MAX_DEVNAME_LEN         32      
-#define MAX_LED_INFO            256     
-#define MAX_TIME_LEN            32      
-#define MAX_CARD_LEN            24      
-#define MAX_OPERATORNAME_LEN    32      
-#define THERMOMETRY_ALARMRULE_NUM 40     
-#define MAX_THERMOMETRY_REGION_NUM  40  
-#define MAX_THERMOMETRY_DIFFCOMPARISON_NUM  40 
-#define MAX_SHIPS_NUM           20      
-#define KEY_WORD_NUM             3 
-#define KEY_WORD_LEN            128  
-#define ASYN_LOGIN_SUCC            1        
-#define ASYN_LOGIN_FAILED        0        
-#define NET_SDK_MAX_VERIFICATION_CODE_LEN  32        
-#define NET_SDK_MAX_OPERATE_CODE_LEN  64        
-#define MAX_TIMESEGMENT_V30        8       
-#define MAX_TIMESEGMENT            4       
-#define MAX_ICR_NUM             8       
-#define MAX_VEHICLEFLOW_INFO                       24       
-#define MAX_SHELTERNUM            4       
-#define MAX_DAYS                7       
-#define PHONENUMBER_LEN            32      
-#define MAX_ACCESSORY_CARD      256      
-#define MAX_DISKNUM_V30            33        
-#define NET_SDK_DISK_LOCATION_LEN  16      
-#define NET_SDK_SUPPLIER_NAME_LEN  32      
-#define NET_SDK_DISK_MODEL_LEN     64      
-#define NET_SDK_MAX_DISK_VOLUME    33      
-#define NET_SDK_DISK_VOLUME_LEN    36      
-#define MAX_DISKNUM                16      
-#define MAX_DISKNUM_V10            8       
-#define CARD_READER_DESCRIPTION    32            
-#define MAX_FACE_NUM               2             
-#define MAX_WINDOW_V30            32      
-#define MAX_WINDOW_V40            64      
-#define MAX_WINDOW                16      
-#define MAX_VGA_V30                4       
-#define MAX_VGA                    1       
-#define MAX_USERNUM_V30            32      
-#define MAX_USERNUM                16      
-#define MAX_EXCEPTIONNUM_V30    32      
-#define MAX_EXCEPTIONNUM        16      
-#define MAX_LINK                6       
-#define MAX_ITC_EXCEPTIONOUT    32      
-#define MAX_SCREEN_DISPLAY_LEN            512    
-#define MAX_DECPOOLNUM            4       
-#define MAX_DECNUM                4       
-#define MAX_TRANSPARENTNUM        2       
-#define MAX_CYCLE_CHAN            16      
-#define MAX_CYCLE_CHAN_V30      64      
-#define MAX_DIRNAME_LENGTH        80      
-#define MAX_WINDOWS                16      
-#define MAX_STRINGNUM_V30        8        
-#define MAX_STRINGNUM            4       
-#define MAX_STRINGNUM_EX        8       
-#define MAX_AUXOUT_V30            16      
-#define MAX_AUXOUT                4       
-#define MAX_HD_GROUP            16      
-#define MAX_HD_GROUP_V40        32      
-#define MAX_NFS_DISK            8       
-#define NET_SDK_VERSION_LIST_LEN 64 
-#define IW_ESSID_MAX_SIZE        32      
-#define IW_ENCODING_TOKEN_MAX    32      
-#define MAX_SERIAL_NUM            64        
-#define MAX_DDNS_NUMS            10      
-#define MAX_DOMAIN_NAME            64        
-#define MAX_EMAIL_ADDR_LEN        48      
-#define MAX_EMAIL_PWD_LEN        32      
-#define MAX_SLAVECAMERA_NUM     8       
-#define MAX_CALIB_NUM           6       
-#define MAX_CALIB_NUM_EX        20      
-#define MAX_LEDDISPLAYINFO_LEN  1024    
-#define MAX_PEOPLE_DETECTION_NUM    8  
-#define MAXPROGRESS                100     
-#define MAX_SERIALNUM            2       
-#define CARDNUM_LEN                20      
-#define PATIENTID_LEN              64
-#define CARDNUM_LEN_OUT            32      
-#define MAX_VIDEOOUT_V30        4       
-#define MAX_VIDEOOUT            2       
-#define MAX_PRESET_V30            256        
-#define MAX_TRACK_V30            256        
-#define MAX_CRUISE_V30            256        
-#define MAX_PRESET                128        
-#define MAX_TRACK                128        
-#define MAX_CRUISE                128        
-#define MAX_PRESET_V40            300        
-#define MAX_CRUISE_POINT_NUM    128     
-#define MAX_CRUISEPOINT_NUM_V50 256     
-#define CRUISE_MAX_PRESET_NUMS    32         
-#define MAX_FACE_PIC_NUM        30      
-#define LOCKGATE_TIME_NUM       4       
-#define MAX_SERIAL_PORT         8       
-#define MAX_PREVIEW_MODE        8       
-#define MAX_MATRIXOUT           16      
-#define LOG_INFO_LEN            11840   
-#define DESC_LEN                16      
-#define PTZ_PROTOCOL_NUM        200     
-#define IPC_PROTOCOL_NUM        50   
-#define MAX_AUDIO                1       
-#define MAX_AUDIO_V30            2       
-#define MAX_CHANNUM                16      
-#define MAX_ALARMIN                16      
-#define MAX_ALARMOUT            4       
-#define MAX_ANALOG_CHANNUM      32      
-#define MAX_ANALOG_ALARMOUT     32      
-#define MAX_ANALOG_ALARMIN      32      
-#define MAX_IP_DEVICE           32      
-#define MAX_IP_DEVICE_V40       64      
-#define MAX_IP_CHANNEL          32      
-#define MAX_IP_ALARMIN          128     
-#define MAX_IP_ALARMOUT         64      
-#define MAX_IP_ALARMIN_V40      4096    
-#define MAX_IP_ALARMOUT_V40     4096    
-#define MAX_RECORD_FILE_NUM     20      
-#define MAX_ACTION_TYPE            12        
-#define MAX_ATM_PROTOCOL_NUM    256   
-#define ATM_CUSTOM_PROTO        1025   
-#define ATM_PROTOCOL_SORT       4       
-#define ATM_DESC_LEN            32      
-#define MAX_IPV6_LEN              64   
-#define MAX_EVENTID_LEN         64   
-#define INVALID_VALUE_UINT32    0xffffffff   
-#define MAX_CHANNUM_V40         512
-#define MAX_MULTI_AREA_NUM      24
-#define COURSE_NAME_LEN                32    
-#define INSTRUCTOR_NAME_LEN            16    
-#define COURSE_DESCRIPTION_LEN        256    
-#define MAX_TIMESEGMENT_V40            16    
-#define MAX_MIX_CHAN_NUM        16    
-#define MAX_LINE_IN_CHAN_NUM    16    
-#define MAX_MIC_CHAN_NUM        16    
-#define INQUEST_CASE_NO_LEN        64    
-#define INQUEST_CASE_NAME_LEN    64    
-#define CUSTOM_INFO_LEN            64    
-#define INQUEST_CASE_LEN        64    
-#define MAX_FILE_ID_LEN         128    
-#define MAX_PIC_NAME_LEN        128 
-#define MAX_CHANNUM_V30               ( MAX_ANALOG_CHANNUM + MAX_IP_CHANNEL )
-#define MAX_ALARMOUT_V40             (MAX_IP_ALARMOUT_V40 +MAX_ANALOG_ALARMOUT) 
-#define MAX_ALARMOUT_V30              ( MAX_ANALOG_ALARMOUT + MAX_IP_ALARMOUT )
-#define MAX_ALARMIN_V30               ( MAX_ANALOG_ALARMIN + MAX_IP_ALARMIN )
-#define MAX_ALARMIN_V40             (MAX_IP_ALARMIN_V40 +MAX_ANALOG_ALARMOUT) 
-#define MAX_ANALOG_ALARM_WITH_VOLT_LIMIT    16 
-#define MAX_ROIDETECT_NUM       8    
-#define MAX_LANERECT_NUM        5    
-#define MAX_FORTIFY_NUM         10   
-#define MAX_INTERVAL_NUM        4    
-#define MAX_CHJC_NUM            3    
-#define MAX_VL_NUM              5    
-#define MAX_DRIVECHAN_NUM       16   
-#define MAX_COIL_NUM            3    
-#define MAX_SIGNALLIGHT_NUM     6   
-#define LEN_16                    16
-#define LEN_32                    32
-#define LEN_64                    64
-#define LEN_31                    31 
-#define	MAX_LINKAGE_CHAN_NUM      16  
-#define MAX_CABINET_COUNT       8    
-#define MAX_ID_LEN              48
-#define MAX_PARKNO_LEN          16
-#define MAX_ALARMREASON_LEN     32
-#define MAX_UPGRADE_INFO_LEN    48 
-#define MAX_CUSTOMDIR_LEN       32 
-#define MAX_LED_INFO_LEN        512
-#define MAX_VOICE_INFO_LEN      128
-#define MAX_LITLE_INFO_LEN      64 
-#define MAX_CUSTOM_INFO_LEN     64 
-#define MAX_PHONE_NUM_LEN       16 
-#define MAX_APP_SERIALNUM_LEN   32 
-#define AUDIOTALKTYPE_G722       0
-#define AUDIOTALKTYPE_G711_MU    1
-#define AUDIOTALKTYPE_G711_A     2
-#define AUDIOTALKTYPE_MP2L2      5
-#define AUDIOTALKTYPE_G726         6
-#define AUDIOTALKTYPE_AAC         7
-#define AUDIOTALKTYPE_PCM         8
-#define AUDIOTALKTYPE_G722C       9
-#define AUDIOTALKTYPE_MP3         15
-#define FILE_HEAD            0 
-#define VIDEO_I_FRAME        1 
-#define VIDEO_B_FRAME        2 
-#define VIDEO_P_FRAME        3 
-#define AUDIO_PACKET        10 
-#define PRIVT_PACKET        11 
-#define HIK_H264_E_FRAME    (1 << 6)   
-#define MAX_TRANSPARENT_CHAN_NUM      4   
-#define MAX_TRANSPARENT_ACCESS_NUM    4   
-#define MAX_PARKING_STATUS       8    
-#define MAX_PARKING_NUM             4    
-#define MAX_ITS_SCENE_NUM        16   
-#define MAX_SCENE_TIMESEG_NUM    16   
-#define MAX_IVMS_IP_CHANNEL      128  
-#define DEVICE_ID_LEN            48   
-#define MONITORSITE_ID_LEN       48   
-#define MAX_AUXAREA_NUM          16   
-#define MAX_SLAVE_CHANNEL_NUM    16   
-#define MAX_DEVDESC_LEN          64   
-#define ILLEGAL_LEN       32      
-#define MAX_TRUCK_AXLE_NUM      10      
-#define MAX_CATEGORY_LEN        8       
-#define SERIAL_NO_LEN           16      
-#define MAX_SECRETKEY_LEN           512     
-#define MAX_INDEX_CODE_LEN          64      
-#define MAX_ILLEGAL_LEN          64     
-#define CODE_LEN        64  
-#define ALIAS_LEN       32  
-#define MAX_SCH_TASKS_NUM        10
-#define MAX_SERVERID_LEN            64 
-#define MAX_SERVERDOMAIN_LEN        128 
-#define MAX_AUTHENTICATEID_LEN      64 
-#define MAX_AUTHENTICATEPASSWD_LEN  32 
-#define MAX_SERVERNAME_LEN          64 
-#define MAX_COMPRESSIONID_LEN       64 
-#define MAX_SIPSERVER_ADDRESS_LEN   128 
-#define MAX_PlATE_NO_LEN            32   
-#define UPNP_PORT_NUM                12      
-#define MAX_PEOPLE_DETECTION_NUM    8  
-#define MAX_NOTICE_NUMBER_LEN       32   
-#define MAX_NOTICE_THEME_LEN        64   
-#define MAX_NOTICE_DETAIL_LEN       1024 
-#define MAX_NOTICE_PIC_NUM          6    
-#define MAX_DEV_NUMBER_LEN          32   
-#define LOCK_NAME_LEN                   32  
-#define HOLIDAY_GROUP_NAME_LEN          32  
-#define MAX_HOLIDAY_PLAN_NUM            16  
-#define TEMPLATE_NAME_LEN               32  
-#define MAX_HOLIDAY_GROUP_NUM           16   
-#define DOOR_NAME_LEN                   32  
-#define STRESS_PASSWORD_LEN             8   
-#define SUPER_PASSWORD_LEN              8   
-#define GROUP_NAME_LEN                  32  
-#define GROUP_COMBINATION_NUM           8   
-#define MULTI_CARD_GROUP_NUM            4   
-#define ACS_CARD_NO_LEN                 32  
-#define NET_SDK_EMPLOYEE_NO_LEN         32  
-#define NET_SDK_UUID_LEN                36  
-#define NET_SDK_EHOME_KEY_LEN           32  
-#define CARD_PASSWORD_LEN               8   
-#define MAX_DOOR_NUM                    32  
-#define MAX_CARD_RIGHT_PLAN_NUM         4   
-#define MAX_GROUP_NUM_128               128 
-#define MAX_CARD_READER_NUM             64  
-#define MAX_SNEAK_PATH_NODE             8   
-#define MAX_MULTI_DOOR_INTERLOCK_GROUP  8   
-#define MAX_INTER_LOCK_DOOR_NUM         8   
-#define MAX_CASE_SENSOR_NUM             8   
-#define MAX_DOOR_NUM_256                256 
-#define MAX_READER_ROUTE_NUM            16  
-#define MAX_FINGER_PRINT_NUM            10  
-#define MAX_CARD_READER_NUM_512            512 
-#define NET_SDK_MULTI_CARD_GROUP_NUM_20     20   
-#define ERROR_MSG_LEN      32 
-#define MAX_DOOR_CODE_LEN               8 
-#define MAX_LOCK_CODE_LEN               8 
-#define PER_RING_PORT_NUM                2   
-#define SENSORNAME_LEN                  32  
-#define MAX_SENSORDESCR_LEN             64  
-#define MAX_DNS_SERVER_NUM              2 
-#define SENSORUNIT_LEN                  32 
-#define WEP_KEY_MAX_SIZE                32 
-#define WEP_KEY_MAX_NUM                 4  
-#define WPA_KEY_MAX_SIZE                64 
-#define MAX_SINGLE_FTPPICNAME_LEN       20 
-#define MAX_CAMNAME_LEN                 32 
-#define MAX_FTPNAME_NUM                 12 
-#define MAX_IDCODE_LEN      128 
-#define MAX_VERSIIN_LEN     64  
-#define MAX_IDCODE_NUM      32  
-#define SDK_LEN_2048        2048
-#define SDK_MAX_IP_LEN 48
-#define RECT_POINT_NUM                    4    
-#define MAX_PUBLIC_KEY_LEN 512 
-#define CHIP_SERIALNO_LEN 32 
-#define ENCRYPT_DEV_ID_LEN        20  
-#define MAX_SEARCH_ID_LEN               36  
-#define TERMINAL_NAME_LEN               64  
-#define MAX_URL_LEN                     512 
-#define REGISTER_NAME_LEN               64 
-#define MAX_PORT_NUM            64  
-#define MAX_SINGLE_CARD_PORT_NO 4   
-#define MAX_FUNC_CARD_NUM       32  
-#define MAX_FC_CARD_NUM         33  
-#define MAX_REMARKS_LEN         128 
-#define MAX_OUTPUT_PORT_NUM                32    
-#define MAX_SINGLE_PORT_RECVCARD_NUM    64    
-#define MAX_GAMMA_X_VALUE                256    
-#define NET_DEV_NAME_LEN        64  
-#define NET_DEV_TYPE_NAME_LEN  64  
-#define ABNORMAL_INFO_NUM               4        
-#define PLAYLIST_NAME_LEN                64            
-#define PLAYLIST_ITEM_NUM                64            
-#define NET_SDK_MAX_LOGIN_PASSWORD_LEN           128 
-#define NET_SDK_MAX_ANSWER_LEN                   256 
-#define NET_SDK_MAX_QUESTION_LIST_LEN            32
-#define  MAX_SCREEN_AREA_NUM  128  
-#define NET_SDK_MAX_THERMOMETRYALGNAME           128
-#define NET_SDK_MAX_SHIPSALGNAME                 128
-#define NET_SDK_MAX_FIRESALGNAME                 128
-#define MAX_PASSPORT_NUM_LEN          16     
-#define MAX_PASSPORT_INFO_LEN         128    
-#define MAX_PASSPORT_NAME_LEN         64     
-#define MAX_PASSPORT_MONITOR_LEN      1024   
-#define MAX_NATIONALITY_LEN           16     
-#define MAX_PASSPORT_TYPE_LEN         4      
-#define NET_DVR_NOERROR                     0    
-#define NET_DVR_PASSWORD_ERROR                 1    
-#define NET_DVR_NOENOUGHPRI                 2    
-#define NET_DVR_NOINIT                         3    
-#define NET_DVR_CHANNEL_ERROR                 4    
-#define NET_DVR_OVER_MAXLINK                 5    
-#define NET_DVR_VERSIONNOMATCH                6    
-#define NET_DVR_NETWORK_FAIL_CONNECT        7    
-#define NET_DVR_NETWORK_SEND_ERROR            8    
-#define NET_DVR_NETWORK_RECV_ERROR            9    
-#define NET_DVR_NETWORK_RECV_TIMEOUT        10    
-#define NET_DVR_NETWORK_ERRORDATA            11    
-#define NET_DVR_ORDER_ERROR                    12    
-#define NET_DVR_OPERNOPERMIT                13    
-#define NET_DVR_COMMANDTIMEOUT                14    
-#define NET_DVR_ERRORSERIALPORT                15    
-#define NET_DVR_ERRORALARMPORT                16    
-#define NET_DVR_PARAMETER_ERROR             17  
-#define NET_DVR_CHAN_EXCEPTION                18    
-#define NET_DVR_NODISK                        19    
-#define NET_DVR_ERRORDISKNUM                20    
-#define NET_DVR_DISK_FULL                    21    
-#define NET_DVR_DISK_ERROR                    22    
-#define NET_DVR_NOSUPPORT                    23    
-#define NET_DVR_BUSY                        24    
-#define NET_DVR_MODIFY_FAIL                    25    
-#define NET_DVR_PASSWORD_FORMAT_ERROR        26    
-#define NET_DVR_DISK_FORMATING                27    
-#define NET_DVR_DVRNORESOURCE                28    
-#define    NET_DVR_DVROPRATEFAILED                29  
-#define NET_DVR_OPENHOSTSOUND_FAIL             30  
-#define NET_DVR_DVRVOICEOPENED                 31  
-#define    NET_DVR_TIMEINPUTERROR                32  
-#define    NET_DVR_NOSPECFILE                    33  
-#define NET_DVR_CREATEFILE_ERROR            34    
-#define    NET_DVR_FILEOPENFAIL                35  
-#define    NET_DVR_OPERNOTFINISH                36  
-#define    NET_DVR_GETPLAYTIMEFAIL                37  
-#define    NET_DVR_PLAYFAIL                    38  
-#define NET_DVR_FILEFORMAT_ERROR            39  
-#define NET_DVR_DIR_ERROR                    40    
-#define NET_DVR_ALLOC_RESOURCE_ERROR        41  
-#define NET_DVR_AUDIO_MODE_ERROR            42    
-#define NET_DVR_NOENOUGH_BUF                43    
-#define NET_DVR_CREATESOCKET_ERROR             44    
-#define NET_DVR_SETSOCKET_ERROR                45    
-#define NET_DVR_MAX_NUM                        46    
-#define NET_DVR_USERNOTEXIST                47    
-#define NET_DVR_WRITEFLASHERROR                48  
-#define NET_DVR_UPGRADEFAIL                    49  
-#define NET_DVR_CARDHAVEINIT                50  
-#define NET_DVR_PLAYERFAILED                51    
-#define NET_DVR_MAX_USERNUM                    52  
-#define NET_DVR_GETLOCALIPANDMACFAIL        53  
-#define NET_DVR_NOENCODEING                    54    
-#define NET_DVR_IPMISMATCH                    55    
-#define NET_DVR_MACMISMATCH                    56    
-#define NET_DVR_UPGRADELANGMISMATCH            57    
-#define NET_DVR_MAX_PLAYERPORT                58    
-#define NET_DVR_NOSPACEBACKUP                59    
-#define NET_DVR_NODEVICEBACKUP                60    
-#define NET_DVR_PICTURE_BITS_ERROR            61    
-#define NET_DVR_PICTURE_DIMENSION_ERROR        62    
-#define NET_DVR_PICTURE_SIZ_ERROR            63    
-#define NET_DVR_LOADPLAYERSDKFAILED            64    
-#define NET_DVR_LOADPLAYERSDKPROC_ERROR        65    
-#define NET_DVR_LOADDSSDKFAILED                66    
-#define NET_DVR_LOADDSSDKPROC_ERROR            67    
-#define NET_DVR_DSSDK_ERROR                    68    
-#define NET_DVR_VOICEMONOPOLIZE                69    
-#define NET_DVR_JOINMULTICASTFAILED            70    
-#define NET_DVR_CREATEDIR_ERROR                71    
-#define NET_DVR_BINDSOCKET_ERROR            72    
-#define NET_DVR_SOCKETCLOSE_ERROR            73    
-#define NET_DVR_USERID_ISUSING                74    
-#define NET_DVR_SOCKETLISTEN_ERROR            75    
-#define NET_DVR_PROGRAM_EXCEPTION            76    
-#define NET_DVR_WRITEFILE_FAILED            77    
-#define NET_DVR_FORMAT_READONLY                78  
-#define NET_DVR_WITHSAMEUSERNAME            79  
-#define NET_DVR_DEVICETYPE_ERROR            80  
-#define NET_DVR_LANGUAGE_ERROR              81  
-#define NET_DVR_PARAVERSION_ERROR           82  
-#define NET_DVR_IPCHAN_NOTALIVE             83  
-#define NET_DVR_RTSP_SDK_ERROR                84    
-#define NET_DVR_CONVERT_SDK_ERROR            85    
-#define NET_DVR_IPC_COUNT_OVERFLOW            86  
-#define NET_DVR_MAX_ADD_NUM                 87  
-#define NET_DVR_PARAMMODE_ERROR             88 
-#define NET_DVR_CODESPITTER_OFFLINE            89 
-#define NET_DVR_BACKUP_COPYING                90  
-#define NET_DVR_CHAN_NOTSUPPORT             91  
-#define NET_DVR_CALLINEINVALID              92  
-#define NET_DVR_CALCANCELCONFLICT           93  
-#define NET_DVR_CALPOINTOUTRANGE            94     
-#define NET_DVR_FILTERRECTINVALID           95  
-#define NET_DVR_DDNS_DEVOFFLINE             96  
-#define NET_DVR_DDNS_INTER_ERROR            97  
-#define NET_DVR_FUNCTION_NOT_SUPPORT_OS     98  
-#define NET_DVR_DEC_CHAN_REBIND             99  
-#define NET_DVR_INTERCOM_SDK_ERROR          100 
-#define NET_DVR_NO_CURRENT_UPDATEFILE       101 
-#define NET_DVR_USER_NOT_SUCC_LOGIN         102  
-#define NET_DVR_USE_LOG_SWITCH_FILE            103  
-#define NET_DVR_POOL_PORT_EXHAUST            104  
-#define    NET_DVR_PACKET_TYPE_NOT_SUPPORT        105    
-#define NET_DVR_IPPARA_IPID_ERROR           106  
-#define NET_DVR_LOAD_HCPREVIEW_SDK_ERROR           107         
-#define NET_DVR_LOAD_HCVOICETALK_SDK_ERROR         108         
-#define NET_DVR_LOAD_HCALARM_SDK_ERROR             109         
-#define NET_DVR_LOAD_HCPLAYBACK_SDK_ERROR          110         
-#define NET_DVR_LOAD_HCDISPLAY_SDK_ERROR           111         
-#define NET_DVR_LOAD_HCINDUSTRY_SDK_ERROR          112         
-#define NET_DVR_LOAD_HCGENERALCFGMGR_SDK_ERROR     113         
-#define NET_DVR_LOAD_HCCOREDEVCFG_SDK_ERROR        114         
-#define NET_DVR_LOAD_HCNETUTILS_SDK_ERROR          115         
-#define NET_DVR_CORE_VER_MISMATCH                  121    
-#define NET_DVR_CORE_VER_MISMATCH_HCPREVIEW        122    
-#define NET_DVR_CORE_VER_MISMATCH_HCVOICETALK      123    
-#define NET_DVR_CORE_VER_MISMATCH_HCALARM          124    
-#define NET_DVR_CORE_VER_MISMATCH_HCPLAYBACK       125    
-#define NET_DVR_CORE_VER_MISMATCH_HCDISPLAY        126    
-#define NET_DVR_CORE_VER_MISMATCH_HCINDUSTRY       127    
-#define NET_DVR_CORE_VER_MISMATCH_HCGENERALCFGMGR  128    
-#define NET_DVR_COM_VER_MISMATCH_HCPREVIEW         136    
-#define NET_DVR_COM_VER_MISMATCH_HCVOICETALK       137    
-#define NET_DVR_COM_VER_MISMATCH_HCALARM           138    
-#define NET_DVR_COM_VER_MISMATCH_HCPLAYBACK        139    
-#define NET_DVR_COM_VER_MISMATCH_HCDISPLAY         140    
-#define NET_DVR_COM_VER_MISMATCH_HCINDUSTRY        141    
-#define NET_DVR_COM_VER_MISMATCH_HCGENERALCFGMGR   142    
-#define NET_ERR_CONFIG_FILE_IMPORT_FAILED          145  
-#define NET_ERR_CONFIG_FILE_EXPORT_FAILED          146  
-#define NET_DVR_CERTIFICATE_FILE_ERROR      147  
-#define NET_DVR_LOAD_SSL_LIB_ERROR          148  
-#define NET_DVR_SSL_VERSION_NOT_MATCH       149  
-#define NET_DVR_ALIAS_DUPLICATE                150    
-#define    NET_DVR_INVALID_COMMUNICATION        151    
-#define    NET_DVR_USERNAME_NOT_EXIST            152    
-#define    NET_DVR_USER_LOCKED                    153 
-#define NET_DVR_INVALID_USERID              154 
-#define NET_DVR_LOW_LOGIN_VERSION           155 
-#define NET_DVR_LOAD_LIBEAY32_DLL_ERROR     156 
-#define NET_DVR_LOAD_SSLEAY32_DLL_ERROR     157 
-#define NET_ERR_LOAD_LIBICONV           158 
-#define NET_ERR_SSL_CONNECT_FAILED      159 
-#define NET_ERR_MCAST_ADDRESS_ERROR      160 
-#define NET_ERR_LOAD_ZLIB                   161 
-#define NET_ERR_OPENSSL_NO_INIT             162 
-#define NET_DVR_SERVER_NOT_EXIST         164 
-#define NET_DVR_TEST_SERVER_FAIL_CONNECT            165    
-#define NET_DVR_NAS_SERVER_INVALID_DIR                166    
-#define NET_DVR_NAS_SERVER_NOENOUGH_PRI                167    
-#define NET_DVR_EMAIL_SERVER_NOT_CONFIG_DNS            168    
-#define    NET_DVR_EMAIL_SERVER_NOT_CONFIG_GATEWAY        169    
-#define    NET_DVR_TEST_SERVER_PASSWORD_ERROR            170    
-#define    NET_DVR_EMAIL_SERVER_CONNECT_EXCEPTION_WITH_SMTP    171    
-#define    NET_DVR_FTP_SERVER_FAIL_CREATE_DIR            172    
-#define    NET_DVR_FTP_SERVER_NO_WRITE_PIR                173    
-#define    NET_DVR_IP_CONFLICT                            174    
-#define NET_DVR_INSUFFICIENT_STORAGEPOOL_SPACE      175  
-#define NET_DVR_STORAGEPOOL_INVALID      176  
-#define NET_DVR_EFFECTIVENESS_REBOOT     177  
-#define NET_ERR_ANR_ARMING_EXIST         178  
-#define NET_ERR_UPLOADLINK_EXIST         179  
-#define NET_ERR_INCORRECT_FILE_FORMAT    180  
-#define NET_ERR_INCORRECT_FILE_CONTENT   181  
-#define NET_ERR_MAX_HRUDP_LINK           182 
-#define NET_SDK_ERR_MAX_PORT_MULTIPLEX     183   
-#define NET_SDK_ERR_CREATE_PORT_MULTIPLEX    184 
-#define NET_DVR_NONBLOCKING_CAPTURE_NOTSUPPORT   185 
-#define NET_SDK_ERR_FUNCTION_INVALID   186  
-#define RAID_ERROR_INDEX                    200
-#define NET_DVR_NAME_NOT_ONLY               (RAID_ERROR_INDEX + 0)  
-#define NET_DVR_OVER_MAX_ARRAY              (RAID_ERROR_INDEX + 1 ) 
-#define NET_DVR_OVER_MAX_VD                 (RAID_ERROR_INDEX + 2 ) 
-#define NET_DVR_VD_SLOT_EXCEED              (RAID_ERROR_INDEX + 3 ) 
-#define NET_DVR_PD_STATUS_INVALID           (RAID_ERROR_INDEX + 4 ) 
-#define NET_DVR_PD_BE_DEDICATE_SPARE        (RAID_ERROR_INDEX + 5 ) 
-#define NET_DVR_PD_NOT_FREE                 (RAID_ERROR_INDEX + 6 ) 
-#define NET_DVR_CANNOT_MIG2NEWMODE          (RAID_ERROR_INDEX + 7 ) 
-#define NET_DVR_MIG_PAUSE                   (RAID_ERROR_INDEX + 8 ) 
-#define NET_DVR_MIG_CANCEL                  (RAID_ERROR_INDEX + 9 ) 
-#define NET_DVR_EXIST_VD                    (RAID_ERROR_INDEX + 10) 
-#define NET_DVR_TARGET_IN_LD_FUNCTIONAL     (RAID_ERROR_INDEX + 11) 
-#define NET_DVR_HD_IS_ASSIGNED_ALREADY      (RAID_ERROR_INDEX + 12) 
-#define NET_DVR_INVALID_HD_COUNT            (RAID_ERROR_INDEX + 13) 
-#define NET_DVR_LD_IS_FUNCTIONAL            (RAID_ERROR_INDEX + 14) 
-#define NET_DVR_BGA_RUNNING                 (RAID_ERROR_INDEX + 15) 
-#define NET_DVR_LD_NO_ATAPI                 (RAID_ERROR_INDEX + 16) 
-#define NET_DVR_MIGRATION_NOT_NEED          (RAID_ERROR_INDEX + 17) 
-#define NET_DVR_HD_TYPE_MISMATCH            (RAID_ERROR_INDEX + 18) 
-#define NET_DVR_NO_LD_IN_DG                 (RAID_ERROR_INDEX + 19) 
-#define NET_DVR_NO_ROOM_FOR_SPARE           (RAID_ERROR_INDEX + 20) 
-#define NET_DVR_SPARE_IS_IN_MULTI_DG        (RAID_ERROR_INDEX + 21) 
-#define NET_DVR_DG_HAS_MISSING_PD           (RAID_ERROR_INDEX + 22) 
-#define NET_DVR_NAME_EMPTY                    (RAID_ERROR_INDEX + 23) 
-#define NET_DVR_INPUT_PARAM                    (RAID_ERROR_INDEX + 24) 
-#define NET_DVR_PD_NOT_AVAILABLE            (RAID_ERROR_INDEX + 25) 
-#define NET_DVR_ARRAY_NOT_AVAILABLE            (RAID_ERROR_INDEX + 26) 
-#define NET_DVR_PD_COUNT                    (RAID_ERROR_INDEX + 27) 
-#define NET_DVR_VD_SMALL                    (RAID_ERROR_INDEX + 28) 
-#define NET_DVR_NO_EXIST                    (RAID_ERROR_INDEX + 29) 
-#define NET_DVR_NOT_SUPPORT                    (RAID_ERROR_INDEX + 30) 
-#define NET_DVR_NOT_FUNCTIONAL                 (RAID_ERROR_INDEX + 31) 
-#define NET_DVR_DEV_NODE_NOT_FOUND            (RAID_ERROR_INDEX + 32) 
-#define NET_DVR_SLOT_EXCEED                    (RAID_ERROR_INDEX + 33) 
-#define NET_DVR_NO_VD_IN_ARRAY                (RAID_ERROR_INDEX + 34) 
-#define NET_DVR_VD_SLOT_INVALID                (RAID_ERROR_INDEX + 35) 
-#define NET_DVR_PD_NO_ENOUGH_SPACE            (RAID_ERROR_INDEX + 36) 
-#define NET_DVR_ARRAY_NONFUNCTION            (RAID_ERROR_INDEX + 37) 
-#define NET_DVR_ARRAY_NO_ENOUGH_SPACE        (RAID_ERROR_INDEX + 38) 
-#define NET_DVR_STOPPING_SCANNING_ARRAY        (RAID_ERROR_INDEX + 39) 
-#define NET_DVR_NOT_SUPPORT_16T             (RAID_ERROR_INDEX + 40) 
-#define NET_DVR_ARRAY_FORMATING             (RAID_ERROR_INDEX + 41) 
-#define NET_DVR_QUICK_SETUP_PD_COUNT        (RAID_ERROR_INDEX + 42) 
-#define    NET_DVR_ERROR_DEVICE_NOT_ACTIVATED    250
-#define  NET_DVR_ERROR_RISK_PASSWORD          251 
-#define    NET_DVR_ERROR_DEVICE_HAS_ACTIVATED    252
-#define VCA_ERROR_INDEX                     300 
-#define NET_DVR_ID_ERROR                    (VCA_ERROR_INDEX + 0)   
-#define NET_DVR_POLYGON_ERROR               (VCA_ERROR_INDEX + 1)   
-#define NET_DVR_RULE_PARAM_ERROR            (VCA_ERROR_INDEX + 2)   
-#define NET_DVR_RULE_CFG_CONFLICT           (VCA_ERROR_INDEX + 3)   
-#define NET_DVR_CALIBRATE_NOT_READY         (VCA_ERROR_INDEX + 4)   
-#define NET_DVR_CAMERA_DATA_ERROR           (VCA_ERROR_INDEX + 5)   
-#define NET_DVR_CALIBRATE_DATA_UNFIT        (VCA_ERROR_INDEX + 6)    
-#define NET_DVR_CALIBRATE_DATA_CONFLICT     (VCA_ERROR_INDEX + 7)    
-#define NET_DVR_CALIBRATE_CALC_FAIL         (VCA_ERROR_INDEX + 8)    
-#define    NET_DVR_CALIBRATE_LINE_OUT_RECT        (VCA_ERROR_INDEX + 9)    
-#define NET_DVR_ENTER_RULE_NOT_READY        (VCA_ERROR_INDEX + 10)    
-#define NET_DVR_AID_RULE_NO_INCLUDE_LANE    (VCA_ERROR_INDEX + 11)    
-#define NET_DVR_LANE_NOT_READY                (VCA_ERROR_INDEX + 12)    
-#define NET_DVR_RULE_INCLUDE_TWO_WAY        (VCA_ERROR_INDEX + 13)    
-#define NET_DVR_LANE_TPS_RULE_CONFLICT      (VCA_ERROR_INDEX + 14)  
-#define NET_DVR_NOT_SUPPORT_EVENT_TYPE      (VCA_ERROR_INDEX + 15)  
-#define NET_DVR_LANE_NO_WAY                 (VCA_ERROR_INDEX + 16)  
-#define NET_DVR_SIZE_FILTER_ERROR           (VCA_ERROR_INDEX + 17)  
-#define NET_DVR_LIB_FFL_NO_FACE             (VCA_ERROR_INDEX + 18) 
-#define NET_DVR_LIB_FFL_IMG_TOO_SMALL       (VCA_ERROR_INDEX + 19) 
-#define NET_DVR_LIB_FD_IMG_NO_FACE          (VCA_ERROR_INDEX + 20) 
-#define NET_DVR_LIB_FACE_TOO_SMALL          (VCA_ERROR_INDEX + 21) 
-#define NET_DVR_LIB_FACE_QUALITY_TOO_BAD    (VCA_ERROR_INDEX + 22) 
-#define NET_DVR_KEY_PARAM_ERR               (VCA_ERROR_INDEX + 23) 
-#define NET_DVR_CALIBRATE_DATA_ERR          (VCA_ERROR_INDEX + 24) 
-#define NET_DVR_CALIBRATE_DISABLE_FAIL      (VCA_ERROR_INDEX + 25) 
-#define NET_DVR_VCA_LIB_FD_SCALE_OUTRANGE   (VCA_ERROR_INDEX + 26) 
-#define NET_DVR_LIB_FD_REGION_TOO_LARGE     (VCA_ERROR_INDEX + 27) 
-#define NET_DVR_TRIAL_OVERDUE               (VCA_ERROR_INDEX + 28) 
-#define NET_DVR_CONFIG_FILE_CONFLICT        (VCA_ERROR_INDEX + 29) 
-#define NET_DVR_FR_FPL_FAIL                 (VCA_ERROR_INDEX + 30)   
-#define NET_DVR_FR_IQA_FAIL                 (VCA_ERROR_INDEX + 31)   
-#define NET_DVR_FR_FEM_FAIL                 (VCA_ERROR_INDEX + 32)   
-#define NET_DVR_FPL_DT_CONF_TOO_LOW         (VCA_ERROR_INDEX + 33)   
-#define NET_DVR_FPL_CONF_TOO_LOW            (VCA_ERROR_INDEX + 34)   
-#define NET_DVR_E_DATA_SIZE                 (VCA_ERROR_INDEX + 35)  
-#define NET_DVR_FR_MODEL_VERSION_ERR        (VCA_ERROR_INDEX + 36)  
-#define NET_DVR_FR_FD_FAIL                  (VCA_ERROR_INDEX + 37)  
-#define NET_DVR_FA_NORMALIZE_ERR            (VCA_ERROR_INDEX + 38)  
-#define NET_DVR_DOG_PUSTREAM_NOT_MATCH      (VCA_ERROR_INDEX + 39)  
-#define NET_DVR_DEV_PUSTREAM_NOT_MATCH      (VCA_ERROR_INDEX + 40)  
-#define NET_DVR_PUSTREAM_ALREADY_EXISTS     (VCA_ERROR_INDEX + 41)  
-#define NET_DVR_SEARCH_CONNECT_FAILED       (VCA_ERROR_INDEX + 42)  
-#define NET_DVR_INSUFFICIENT_DISK_SPACE     (VCA_ERROR_INDEX + 43)  
-#define NET_DVR_DATABASE_CONNECTION_FAILED  (VCA_ERROR_INDEX + 44)  
-#define NET_DVR_DATABASE_ADM_PW_ERROR       (VCA_ERROR_INDEX + 45)  
-#define NET_DVR_DECODE_YUV                  (VCA_ERROR_INDEX + 46)  
-#define NET_DVR_IMAGE_RESOLUTION_ERROR      (VCA_ERROR_INDEX + 47)  
-#define NET_DVR_CHAN_WORKMODE_ERROR         (VCA_ERROR_INDEX + 48)  
-#define NET_DVR_RTSP_ERROR_NOENOUGHPRI          401  
-#define NET_DVR_RTSP_ERROR_ALLOC_RESOURCE       402  
-#define NET_DVR_RTSP_ERROR_PARAMETER            403  
-#define NET_DVR_RTSP_ERROR_NO_URL               404  
-#define NET_DVR_RTSP_ERROR_FORCE_STOP           406  
-#define NET_DVR_RTSP_GETPORTFAILED                407  
-#define NET_DVR_RTSP_DESCRIBERROR                410  
-#define NET_DVR_RTSP_DESCRIBESENDTIMEOUT        411  
-#define NET_DVR_RTSP_DESCRIBESENDERROR            412  
-#define NET_DVR_RTSP_DESCRIBERECVTIMEOUT        413  
-#define NET_DVR_RTSP_DESCRIBERECVDATALOST        414  
-#define NET_DVR_RTSP_DESCRIBERECVERROR            415  
-#define NET_DVR_RTSP_DESCRIBESERVERERR            416  
-#define NET_DVR_RTSP_SETUPERROR                    420  
-#define NET_DVR_RTSP_SETUPSENDTIMEOUT            421  
-#define NET_DVR_RTSP_SETUPSENDERROR                422  
-#define NET_DVR_RTSP_SETUPRECVTIMEOUT            423  
-#define NET_DVR_RTSP_SETUPRECVDATALOST            424  
-#define NET_DVR_RTSP_SETUPRECVERROR                425  
-#define NET_DVR_RTSP_OVER_MAX_CHAN                426  
-#define NET_DVR_RTSP_SETUPSERVERERR                427  
-#define NET_DVR_RTSP_PLAYERROR                    430  
-#define NET_DVR_RTSP_PLAYSENDTIMEOUT            431  
-#define NET_DVR_RTSP_PLAYSENDERROR                432  
-#define NET_DVR_RTSP_PLAYRECVTIMEOUT            433  
-#define NET_DVR_RTSP_PLAYRECVDATALOST            434  
-#define NET_DVR_RTSP_PLAYRECVERROR                435  
-#define NET_DVR_RTSP_PLAYSERVERERR                436  
-#define NET_DVR_RTSP_TEARDOWNERROR                440  
-#define NET_DVR_RTSP_TEARDOWNSENDTIMEOUT        441  
-#define NET_DVR_RTSP_TEARDOWNSENDERROR            442  
-#define NET_DVR_RTSP_TEARDOWNRECVTIMEOUT        443  
-#define NET_DVR_RTSP_TEARDOWNRECVDATALOST        444  
-#define NET_DVR_RTSP_TEARDOWNRECVERROR            445  
-#define NET_DVR_RTSP_TEARDOWNSERVERERR            446  
-#define  NET_PLAYM4_NOERROR                        500    
-#define     NET_PLAYM4_PARA_OVER                    501    
-#define  NET_PLAYM4_ORDER_ERROR                    502    
-#define     NET_PLAYM4_TIMER_ERROR                    503    
-#define  NET_PLAYM4_DEC_VIDEO_ERROR                504    
-#define  NET_PLAYM4_DEC_AUDIO_ERROR                505    
-#define     NET_PLAYM4_ALLOC_MEMORY_ERROR            506    
-#define  NET_PLAYM4_OPEN_FILE_ERROR                507    
-#define  NET_PLAYM4_CREATE_OBJ_ERROR            508    
-#define  NET_PLAYM4_CREATE_DDRAW_ERROR            509    
-#define  NET_PLAYM4_CREATE_OFFSCREEN_ERROR      510    
-#define  NET_PLAYM4_BUF_OVER                    511    
-#define  NET_PLAYM4_CREATE_SOUND_ERROR            512    
-#define     NET_PLAYM4_SET_VOLUME_ERROR            513    
-#define  NET_PLAYM4_SUPPORT_FILE_ONLY            514    
-#define  NET_PLAYM4_SUPPORT_STREAM_ONLY            515    
-#define  NET_PLAYM4_SYS_NOT_SUPPORT                516    
-#define  NET_PLAYM4_FILEHEADER_UNKNOWN          517    
-#define  NET_PLAYM4_VERSION_INCORRECT            518    
-#define  NET_PALYM4_INIT_DECODER_ERROR          519    
-#define  NET_PLAYM4_CHECK_FILE_ERROR            520    
-#define  NET_PLAYM4_INIT_TIMER_ERROR            521    
-#define     NET_PLAYM4_BLT_ERROR                    522    
-#define  NET_PLAYM4_UPDATE_ERROR                523    
-#define  NET_PLAYM4_OPEN_FILE_ERROR_MULTI       524   
-#define  NET_PLAYM4_OPEN_FILE_ERROR_VIDEO       525   
-#define  NET_PLAYM4_JPEG_COMPRESS_ERROR         526   
-#define  NET_PLAYM4_EXTRACT_NOT_SUPPORT         527    
-#define  NET_PLAYM4_EXTRACT_DATA_ERROR          528    
-#define  NET_CONVERT_ERROR_NOT_SUPPORT          581  
-#define  NET_AUDIOINTERCOM_OK                   600  
-#define  NET_AUDIOINTECOM_ERR_NOTSUPORT         601 
-#define  NET_AUDIOINTECOM_ERR_ALLOC_MEMERY      602 
-#define  NET_AUDIOINTECOM_ERR_PARAMETER            603 
-#define  NET_AUDIOINTECOM_ERR_CALL_ORDER        604 
-#define  NET_AUDIOINTECOM_ERR_FIND_DEVICE       605 
-#define  NET_AUDIOINTECOM_ERR_OPEN_DEVICE       606 
-#define  NET_AUDIOINTECOM_ERR_NO_CONTEXT        607 
-#define  NET_AUDIOINTECOM_ERR_NO_WAVFILE        608 
-#define  NET_AUDIOINTECOM_ERR_INVALID_TYPE      609 
-#define  NET_AUDIOINTECOM_ERR_ENCODE_FAIL       610 
-#define  NET_AUDIOINTECOM_ERR_DECODE_FAIL       611 
-#define  NET_AUDIOINTECOM_ERR_NO_PLAYBACK       612 
-#define  NET_AUDIOINTECOM_ERR_DENOISE_FAIL      613 
-#define  NET_AUDIOINTECOM_ERR_UNKOWN            619 
-#define NET_QOS_OK                                 700                    
-#define NET_QOS_ERROR                             (NET_QOS_OK - 1)        
-#define NET_QOS_ERR_INVALID_ARGUMENTS             (NET_QOS_OK - 2)        
-#define NET_QOS_ERR_SESSION_NOT_FOUND             (NET_QOS_OK - 3)        
-#define NET_QOS_ERR_LIB_NOT_INITIALIZED          (NET_QOS_OK - 4)        
-#define NET_QOS_ERR_OUTOFMEM                     (NET_QOS_OK - 5)        
-#define NET_QOS_ERR_PACKET_UNKNOW                (NET_QOS_OK - 10)        
-#define NET_QOS_ERR_PACKET_VERSION               (NET_QOS_OK - 11)        
-#define NET_QOS_ERR_PACKET_LENGTH                (NET_QOS_OK - 12)        
-#define NET_QOS_ERR_PACKET_TOO_BIG               (NET_QOS_OK - 13)        
-#define NET_QOS_ERR_SCHEDPARAMS_INVALID_BANDWIDTH (NET_QOS_OK - 20)        
-#define NET_QOS_ERR_SCHEDPARAMS_BAD_FRACTION      (NET_QOS_OK - 21)        
-#define NET_QOS_ERR_SCHEDPARAMS_BAD_MINIMUM_INTERVAL (NET_QOS_OK - 22)    
-#define NET_ERROR_TRUNK_LINE                        711 
-#define NET_ERROR_MIXED_JOINT                        712 
-#define NET_ERROR_DISPLAY_SWITCH                    713 
-#define NET_ERROR_USED_BY_BIG_SCREEN                714 
-#define NET_ERROR_USE_OTHER_DEC_RESOURCE            715 
-#define NET_ERROR_DISP_MODE_SWITCH                  716 
-#define NET_ERROR_SCENE_USING                        717    
-#define NET_ERR_NO_ENOUGH_DEC_RESOURCE              718 
-#define NET_ERR_NO_ENOUGH_FREE_SHOW_RESOURCE        719 
-#define NET_ERR_NO_ENOUGH_VIDEO_MEMORY              720 
-#define NET_ERR_MAX_VIDEO_NUM                       721 
-#define NET_ERR_WIN_COVER_FREE_SHOW_AND_NORMAL      722 
-#define NET_ERR_FREE_SHOW_WIN_SPLIT                 723 
-#define NET_ERR_INAPPROPRIATE_WIN_FREE_SHOW         724 
-#define NET_DVR_TRANSPARENT_WIN_NOT_SUPPORT_SPLIT   725 
-#define NET_DVR_SPLIT_WIN_NOT_SUPPORT_TRANSPARENT   726 
-#define NET_ERR_MAX_LOGO_NUM                        727 
-#define NET_ERR_MAX_WIN_LOOP_NUM                    728 
-#define NET_ERR_VIRTUAL_LED_VERTICAL_CROSS          729 
-#define NET_ERR_MAX_VIRTUAL_LED_HEIGHT              730 
-#define NET_ERR_VIRTUAL_LED_ILLEGAL_CHARACTER       731 
-#define NET_ERR_BASEMAP_NOT_EXIST                   732 
-#define NET_ERR_LED_NOT_SUPPORT_VIRTUAL_LED         733 
-#define NET_ERR_LED_RESOLUTION_NOT_SUPPORT          734 
-#define NET_ERR_PLAN_OVERDUE                        735 
-#define NET_ERR_PROCESSER_MAX_SCREEN_BLK            736 
-#define NET_ERR_WND_SIZE_TOO_SMALL                  737 
-#define NET_ERR_WND_SPLIT_NOT_SUPPORT_ROAM          738 
-#define NET_ERR_OUTPUT_ONE_BOARD_ONE_WALL           739 
-#define NET_ERR_WND_CANNOT_LCD_AND_LED_OUTPUT       740 
-#define NET_ERR_MAX_OSD_NUM                         741 
-#define NET_SDK_CANCEL_WND_TOPKEEP_ATTR_FIRST       751 
-#define NET_SDK_ERR_LED_SCREEN_CHECKING             752 
-#define NET_SDK_ERR_NOT_SUPPORT_SINGLE_RESOLUTION   753 
-#define NET_SDK_ERR_LED_RESOLUTION_MISMATCHED       754 
-#define NET_SDK_ERR_MAX_VIRTUAL_LED_WIDTH           755 
-#define NET_SDK_ERR_MAX_VIRTUAL_LED_IN_SCREEN       756 
-#define NET_SDK_ERR_MAX_VIRTUAL_LED_IN_WALL         757 
-#define NET_SDK_ERR_VIRTUAL_LED_OVERLAP             758 
-#define NET_SDK_ERR_VIRTUAL_LED_TYPE                759 
-#define NET_SDK_ERR_VIRTUAL_LED_COLOUR              760 
-#define NET_SDK_ERR_VIRTUAL_LED_MOVE_DIRECTION      761 
-#define NET_SDK_ERR_VIRTUAL_LED_MOVE_MODE           762 
-#define NET_SDK_ERR_VIRTUAL_LED_MOVE_SPEED          763 
-#define NET_SDK_ERR_VIRTUAL_LED_DISP_MODE           764 
-#define NET_SDK_ERR_VIRTUAL_LED_NO                  765 
-#define NET_SDK_ERR_VIRTUAL_LED_PARA                766 
-#define NET_SDK_ERR_BASEMAP_POSITION                767 
-#define NET_SDK_ERR_BASEMAP_PICTURE_LEN             768 
-#define NET_SDK_ERR_BASEMAP_PICTURE_RESOLUTION      769 
-#define NET_SDK_ERR_BASEMAP_PICTURE_FORMAT          770 
-#define NET_SDK_ERR_MAX_VIRTUAL_LED_NUM             771 
-#define NET_SDK_ERR_MAX_TIME_VIRTUAL_LED_IN_WALL    772 
-#define NET_ERR_TERMINAL_BUSY                        780    
-#define NET_ERR_DATA_RETURNED_ILLEGAL               790 
-#define NET_DVR_FUNCTION_RESOURCE_USAGE_ERROR       791 
-#define    NET_DVR_ERR_IMPORT_EMPTY_FILE           792    
-#define    NET_DVR_ERR_IMPORT_TOO_LARGE_FILE       793    
-#define    NET_DVR_ERR_BAD_IPV4_ADDRESS            794    
-#define    NET_DVR_ERR_BAD_NET_MASK                795    
-#define    NET_DVR_ERR_INVALID_NET_GATE_ADDRESS    796    
-#define    NET_DVR_ERR_BAD_DNS                     797    
-#define    NET_DVR_ERR_ILLEGAL_PASSWORD            798    
-#define NET_DVR_DEV_NET_OVERFLOW                    800    
-#define NET_DVR_STATUS_RECORDFILE_WRITING_NOT_LOCK  801 
-#define NET_DVR_STATUS_CANT_FORMAT_LITTLE_DISK      802 
-#define NET_SDK_ERR_REMOTE_DISCONNECT                803 
-#define NET_SDK_ERR_RD_ADD_RD                        804 
-#define NET_SDK_ERR_BACKUP_DISK_EXCEPT                805 
-#define NET_SDK_ERR_RD_LIMIT                        806 
-#define NET_SDK_ERR_ADDED_RD_IS_WD                    807 
-#define NET_SDK_ERR_ADD_ORDER_WRONG                    808 
-#define NET_SDK_ERR_WD_ADD_WD                        809 
-#define NET_SDK_ERR_WD_SERVICE_EXCETP                810 
-#define NET_SDK_ERR_RD_SERVICE_EXCETP                811 
-#define NET_SDK_ERR_ADDED_WD_IS_RD                    812 
-#define NET_SDK_ERR_PERFORMANCE_LIMIT                813 
-#define NET_SDK_ERR_ADDED_DEVICE_EXIST                814 
-#define NET_SDK_ERR_INQUEST_RESUMING                815 
-#define NET_SDK_ERR_RECORD_BACKUPING                816 
-#define NET_SDK_ERR_DISK_PLAYING                    817 
-#define NET_SDK_ERR_INQUEST_STARTED                    818 
-#define NET_SDK_ERR_LOCAL_OPERATING                    819 
-#define NET_SDK_ERR_INQUEST_NOT_START                820 
-#define NET_SDK_ERR_CHAN_AUDIO_BIND                 821  
-#define NET_DVR_N_PLUS_ONE_MODE                     822 
-#define NET_DVR_CLOUD_STORAGE_OPENED                823 
-#define NET_DVR_ERR_OPER_NOT_ALLOWED                824   
-#define NET_DVR_ERR_NEED_RELOCATE                    825   
-#define NET_SDK_ERR_IR_PORT_ERROR                   830 
-#define NET_SDK_ERR_IR_CMD_ERROR                    831 
-#define NET_SDK_ERR_NOT_INQUESTING                  832 
-#define NET_SDK_ERR_INQUEST_NOT_PAUSED              833 
-#define NET_DVR_CHECK_PASSWORD_MISTAKE_ERROR        834 
-#define NET_DVR_CHECK_PASSWORD_NULL_ERROR           835 
-#define NET_DVR_UNABLE_CALIB_ERROR                  836  
-#define NET_DVR_PLEASE_CALIB_ERROR                  837  
-#define NET_DVR_ERR_PANORAMIC_CAL_EMPTY             838 
-#define NET_DVR_ERR_CALIB_FAIL_PLEASEAGAIN          839 
-#define NET_DVR_ERR_DETECTION_LINE                  840 
-#define NET_DVR_ERR_TURN_OFF_IMAGE_PARA             841 
-#define NET_DVR_EXCEED_FACE_IMAGES_ERROR            843  
-#define NET_DVR_ANALYSIS_FACE_IMAGES_ERROR          844  
-#define NET_ERR_ALARM_INPUT_OCCUPIED                845  
-#define NET_DVR_FACELIB_DATABASE_ERROR              846  
-#define NET_DVR_FACELIB_DATA_ERROR                  847  
-#define NET_DVR_FACE_DATA_ID_ERROR                  848  
-#define NET_DVR_FACELIB_ID_ERROR                    849  
-#define NET_DVR_EXCEED_FACE_LIBARY_ERROR            850  
-#define NET_DVR_PIC_ANALYSIS_NO_TARGET_ERROR           851  
-#define NET_DVR_SUBPIC_ANALYSIS_MODELING_ERROR         852  
-#define NET_DVR_PIC_ANALYSIS_NO_RESOURCE_ERROR         853  
-#define NET_DVR_ANALYSIS_ENGINES_NO_RESOURCE_ERROR                 854
-#define NET_DVR_ANALYSIS_ENGINES_USAGE_EXCEED_ERROR                855
-#define NET_DVR_EXCEED_HUMANMISINFO_FILTER_ENABLED_ERROR           856  
-#define NET_DVR_NAME_ERROR                                         857  
-#define NET_DVR_NAME_EXIST_ERROR                                   858  
-#define NET_DVR_FACELIB_PIC_IMPORTING_ERROR                        859  
-#define NET_DVR_ERR_CALIB_POSITION                  860 
-#define NET_DVR_ERR_DELETE                          861 
-#define NET_DVR_ERR_SCENE_ID                        862 
-#define NET_DVR_ERR_CALIBING                        863 
-#define NET_DVR_PIC_FORMAT_ERROR                                   864  
-#define NET_DVR_PIC_RESOLUTION_INVALID_ERROR                       865  
-#define NET_DVR_PIC_SIZE_EXCEED_ERROR                              866  
-#define NET_DVR_PIC_ANALYSIS_TARGRT_NUM_EXCEED_ERROR               867  
-#define NET_DVR_ANALYSIS_ENGINES_LOADING_ERROR                     868
-#define NET_DVR_ANALYSIS_ENGINES_ABNORMA_ERROR                     869
-#define NET_DVR_ANALYSIS_ENGINES_FACELIB_IMPORTING                 870
-#define NET_DVR_NO_DATA_FOR_MODELING_ERROR         871  
-#define NET_DVR_FACE_DATA_MODELING_ERROR           872 
-#define NET_ERR_FACELIBDATA_OVERLIMIT              873  
-#define NET_DVR_ANALYSIS_ENGINES_ASSOCIATED_CHANNEL  874
-#define NET_DVR_ERR_CUSTOMID_LEN                     875 
-#define NET_DVR_ERR_CUSTOMFACELIBID_REPEAT           876 
-#define NET_DVR_ERR_CUSTOMHUMANID_REPEAT             877 
-#define NET_DVR_ERR_URL_DOWNLOAD_FAIL                878 
-#define NET_DVR_ERR_URL_DOWNLOAD_NOTSTART            879 
-#define NET_DVR_CFG_FILE_SECRETKEY_ERROR         880  
-#define NET_DVR_WDR_NOTDISABLE_ERROR             881  
-#define NET_DVR_HLC_NOTDISABLE_ERROR             882  
-#define NET_DVR_THERMOMETRY_REGION_OVERSTEP_ERROR         883  
-#define NET_DVR_ERR_MODELING_DEVICEINTERNAL     884 
-#define NET_DVR_ERR_MODELING_FACE               885 
-#define NET_DVR_ERR_MODELING_FACEGRADING        886 
-#define NET_DVR_ERR_MODELING_FACEGFEATURE       887 
-#define NET_DVR_ERR_MODELING_FACEGANALYZING     888 
-#define NET_DVR_ERR_STREAM_LIMIT                889 
-#define NET_DVR_ERR_STREAM_DESCRIPTION          890 
-#define NET_DVR_ERR_STREAM_DELETE               891 
-#define NET_DVR_ERR_CUSTOMSTREAM_NAME           892 
-#define NET_DVR_ERR_CUSTOMSTREAM_NOTEXISTED     893 
-#define NET_DVR_ERR_TOO_SHORT_CALIBRATING_TIME     894 
-#define NET_DVR_ERR_AUTO_CALIBRATE_FAILED     895 
-#define NET_DVR_ERR_VERIFICATION_FAILED     896 
-#define NET_DVR_NO_TEMP_SENSOR_ERROR         897  
-#define NET_DVR_PUPIL_DISTANCE_OVERSIZE_ERROR         898  
-#define NET_DVR_ERR_UNOPENED_FACE_SNAP           899 
-#define  NET_ERR_CUT_INPUTSTREAM_OVERLIMIT           900 
-#define  NET_ERR_WINCHAN_IDX                        901    
-#define  NET_ERR_WIN_LAYER                            902    
-#define  NET_ERR_WIN_BLK_NUM                        903    
-#define  NET_ERR_OUTPUT_RESOLUTION                    904    
-#define  NET_ERR_LAYOUT                                905    
-#define  NET_ERR_INPUT_RESOLUTION                    906 
-#define  NET_ERR_SUBDEVICE_OFFLINE                  907 
-#define  NET_ERR_NO_DECODE_CHAN                     908 
-#define  NET_ERR_MAX_WINDOW_ABILITY                 909 
-#define  NET_ERR_ORDER_ERROR                        910 
-#define  NET_ERR_PLAYING_PLAN                        911 
-#define  NET_ERR_DECODER_USED                        912 
-#define     NET_ERR_OUTPUT_BOARD_DATA_OVERFLOW            913    
-#define     NET_ERR_SAME_USER_NAME                        914    
-#define     NET_ERR_INVALID_USER_NAME                    915    
-#define     NET_ERR_MATRIX_USING                        916    
-#define     NET_ERR_DIFFERENT_CHAN_TYPE                917    
-#define     NET_ERR_INPUT_CHAN_BINDED                    918    
-#define     NET_ERR_BINDED_OUTPUT_CHAN_OVERFLOW        919    
-#define     NET_ERR_MAX_SIGNAL_NUM                        920    
-#define  NET_ERR_INPUT_CHAN_USING                    921    
-#define  NET_ERR_MANAGER_LOGON                         922    
-#define  NET_ERR_USERALREADY_LOGON                     923    
-#define  NET_ERR_LAYOUT_INIT                         924    
-#define     NET_ERR_BASEMAP_SIZE_NOT_MATCH                925    
-#define  NET_ERR_WINDOW_OPERATING                    926    
-#define  NET_ERR_SIGNAL_UPLIMIT                        927 
-#define  NET_ERR_SIGNAL_MAX_ENLARGE_TIMES           928 
-#define  NET_ERR_ONE_SIGNAL_MULTI_CROSS             929 
-#define  NET_ERR_ULTRA_HD_SIGNAL_MULTI_WIN          930 
-#define  NET_ERR_MAX_VIRTUAL_LED_WIDTH              931 
-#define  NET_ERR_MAX_VIRTUAL_LED_WORD_LEN           932 
-#define     NET_ERR_SINGLE_OUTPUTPARAM_CONFIG            933
-#define  NET_ERR_MULTI_WIN_BE_COVER                 934
-#define  NET_ERR_WIN_NOT_EXIST                        935 
-#define  NET_ERR_WIN_MAX_SIGNALSOURCE                936
-#define  NET_ERR_MULTI_WIN_MOVE                        937
-#define  NET_ERR_MULTI_WIN_YPBPR_SDI                938 
-#define  NET_ERR_DIFF_TYPE_OUTPUT_MIXUSE            939  
-#define  NET_ERR_SPLIT_WIN_CROSS                    940
-#define  NET_ERR_SPLIT_WIN_NOT_FULL_SCREEN            941  
-#define  NET_ERR_SPLIT_WIN_MANY_WIN                    942  
-#define  NET_ERR_WINDOW_SIZE_OVERLIMIT              943   
-#define  NET_ERR_INPUTSTREAM_ALREADY_JOINT           944    
-#define  NET_ERR_JOINT_INPUTSTREAM_OVERLIMIT          945    
-#define  NET_ERR_LED_RESOLUTION                        946  
-#define  NET_ERR_JOINT_SCALE_OVERLIMIT              947  
-#define  NET_ERR_INPUTSTREAM_ALREADY_DECODE            948  
-#define  NET_ERR_INPUTSTREAM_NOTSUPPORT_CAPTURE     949  
-#define  NET_ERR_JOINT_NOTSUPPORT_SPLITWIN            950  
-#define NET_ERR_MAX_WIN_OVERLAP                        951 
-#define NET_ERR_STREAMID_CHAN_BOTH_VALID            952 
-#define NET_ERR_NO_ZERO_CHAN                        953 
-#define NEED_RECONNECT                                955 
-#define NET_ERR_NO_STREAM_ID                        956 
-#define NET_DVR_TRANS_NOT_START                        957 
-#define NET_ERR_MAXNUM_STREAM_ID                    958 
-#define NET_ERR_WORKMODE_MISMATCH                    959 
-#define NET_ERR_MODE_IS_USING                        960 
-#define NET_ERR_DEV_PROGRESSING                        961 
-#define NET_ERR_PASSIVE_TRANSCODING                    962 
-#define NET_ERR_RING_NOT_CONFIGURE                 964 
-#define NET_ERR_CLOSE_WINDOW_FIRST                    971  
-#define NET_ERR_SPLIT_WINDOW_NUM_NOT_SUPPORT        972  
-#define NET_ERR_REACH_ONE_SIGNAL_PREVIEW_MAX_LINK   973  
-#define NET_ERR_ONLY_SPLITWND_SUPPORT_AMPLIFICATION  974  
-#define NET_DVR_ERR_WINDOW_SIZE_PLACE  975  
-#define NET_DVR_ERR_RGIONAL_RESTRICTIONS  976  
-#define NET_ERR_WNDZOOM_NOT_SUPPORT  977  
-#define NET_ERR_LED_SCREEN_SIZE  978  
-#define NET_ERR_OPEN_WIN_IN_ERROR_AREA  979  
-#define NET_ERR_TITLE_WIN_NOT_SUPPORT_MOVE  980  
-#define NET_ERR_TITLE_WIN_NOT_SUPPORT_COVER  981  
-#define NET_ERR_TITLE_WIN_NOT_SUPPORT_SPLIT  982  
-#define NET_DVR_LED_WINDOWS_ALREADY_CLOSED  983  
-#define NET_DVR_ERR_CLOSE_WINDOWS  984  
-#define NET_DVR_ERR_MATRIX_LOOP_ABILITY            985 
-#define NET_DVR_ERR_MATRIX_LOOP_TIME           986 
-#define NET_DVR_ERR_LINKED_OUT_ABILITY           987 
-#define NET_ERR_REACH_SCENE_MAX_NUM         988 
-#define NET_ERR_SCENE_MEM_NOT_ENOUGH        989 
-#define NET_ERR_RESOLUTION_NOT_SUPPORT_ODD_VOUT     990     
-#define NET_ERR_RESOLUTION_NOT_SUPPORT_EVEN_VOUT    991     
-#define NET_DVR_CANCEL_WND_OPENKEEP_ATTR_FIRST    992     
-#define NET_SDK_LED_MODE_NOT_SUPPORT_SPLIT        993     
-#define NET_ERR_VOICETALK_ONLY_SUPPORT_ONE_TALK   994     
-#define NET_ERR_WND_POSITION_ADJUSTED             995     
-#define NET_SDK_ERR_STARTTIME_CANNOT_LESSTHAN_CURTIME   996     
-#define NET_SDK_ERR_NEED_ADJUST_PLAN            997     
-#define NET_ERR_UnitConfig_Failed     998 
-#define XML_ABILITY_NOTSUPPORT                      1000  
-#define    XML_ANALYZE_NOENOUGH_BUF                    1001        
-#define    XML_ANALYZE_FIND_LOCALXML_ERROR                1002        
-#define    XML_ANALYZE_LOAD_LOCALXML_ERROR                1003        
-#define    XML_NANLYZE_DVR_DATA_FORMAT_ERROR            1004        
-#define    XML_ANALYZE_TYPE_ERROR                        1005        
-#define    XML_ANALYZE_XML_NODE_ERROR                    1006        
-#define XML_INPUT_PARAM_ERROR                       1007  
-#define NET_DVR_ERR_RETURNED_XML_DATA  1008  
-#define NET_ERR_LEDAREA_EXIST_WINDOW        1051 
-#define NET_ERR_AUDIO_EXIST                 1052 
-#define NET_ERR_MATERIAL_NAME_EXIST                1053 
-#define NET_ERR_MATERIAL_APPROVE_STATE             1054 
-#define NET_ERR_DATAHD_SIGNAL_FORMAT               1055 
-#define NET_ERR_SCENE_SWITCHING             1056 
-#define NER_ERR_DATA_TRANSFER               1057 
-#define NET_ERR_DATA_RESTORE                1058 
-#define NET_ERR_CHECK_NOT_ENABLE            1059  
-#define NET_ERR_AREA_OFFLINE                1060  
-#define NET_ERR_SCREEN_TYPE                 1061 
-#define NET_ERR_MIN_OPERATE_UNIT            1062 
-#define NET_ERR_MAINHD_NOT_BACKUP           1063 
-#define NET_ERR_ONE_BACKUP_HD               1064 
-#define NET_ERR_CONNECT_SUB_SYSTEM_ABNORMAL     1065  
-#define NET_ERR_SERIAL_PORT_VEST             1066     
-#define NET_ERR_WHITE_LIST_FULL        1067           
-#define NET_ERR_NOT_MATCH_SOURCE    1068         
-#define NET_ERR_CLOCK_VIRTUAL_LED_FULL    1069        
-#define NET_ERR_MAX_WIN_SIGNAL_LOOP_NUM   1070      
-#define NET_ERR_RESOLUTION_NO_MATCH_FRAME 1071   
-#define NET_ERR_NOT_UPDATE_LOW_VERSION    1072   
-#define NET_ERR_NO_CUSTOM_TO_UPDATE       1073   
-#define NET_ERR_CHAN_RESOLUTION_NOT_SUPPORT_SPLIT  1074   
-#define NET_ERR_HIGH_DEFINITION_NOT_SUPPORT_SPLIT  1075    
-#define NET_ERR_MIRROR_IMAGE_BY_VIDEO_WALL         1076    
-#define NET_ERR_MAX_OSD_FONT_SIZE                  1077    
-#define NET_ERR_HIGH_DEFINITION_NOT_SUPPORT_VIDEO_SET  1078  
-#define NET_ERR_TILE_MODE_NOT_SUPPORT_JOINT        1079  
-#define NET_ERR_ADD_AUDIO_MATRIX_FAILED         1080  
-#define NET_ERR_ONE_VIRTUAL_LED_AREA_BIND_ONE_AUDIO_AREA   1081  
-#define NET_ERR_NAT_NOT_MODIFY_SERVER_NETWORK_PARAM   1082  
-#define NET_ERR_ORIGINAL_CHECH_DATA_ERROR       1083     
-#define NET_ERR_INPUT_BOARD_SPLICED_IN_DIFFERENT_NETWORKAREAS        1084  
-#define NET_ERR_SPLICINGSOURCE_ONWALL_IN_DIFFERENT_NETWORKAREAS        1085  
-#define NET_ERR_ONWALL_OUTPUTBOARD_MODIFY_NETWORKAREAS   1086  
-#define NET_ERR_LAN_AND_WAN_CANNOT_SAME_NET_SEGMENT   1087     
-#define NET_ERR_USERNAME_REPETITIVE        1088  
-#define NET_ERR_ASSOCIATED_SAMEWALL_IN_DIFFERENT_NETWORKAREAS   1089  
-#define NET_ERR_BASEMAP_ROAM_IN_LED_AREA   1090     
-#define NET_ERR_VIRTUAL_LED_NOT_SUPPORT_4K_OUTPUT     1091    
-#define NET_ERR_BASEMAP_NOT_SUPPORT_4K_OUTPUT         1092    
-#define NET_ERR_MIN_BLOCK_IN_VIRTUAL_LED_AND_OUTPUT   1093   
-#define NET_ERR_485FIlE_VERSION_INVALID               1094   
-#define NET_ERR_485FIlE_CHECK_ERROR                   1095   
-#define NET_ERR_485FIlE_ABNORMAL_SIZE                 1096   
-#define NET_ERR_MODIFY_SUBBOARD_NETCFG_IN_NAT         1097   
-#define NET_ERR_OSD_CONTENT_WITH_ILLEGAL_CHARACTERS   1098   
-#define NET_ERR_NON_SLAVE_DEVICE_INSERT_SYNC_LINE     1099   
-#define NET_ERR_PLT_USERID                          1100 
-#define NET_ERR_TRANS_CHAN_START                    1101 
-#define NET_ERR_DEV_UPGRADING                        1102 
-#define NET_ERR_MISMATCH_UPGRADE_PACK_TYPE          1103 
-#define NET_ERR_DEV_FORMATTING                      1104 
-#define NET_ERR_MISMATCH_UPGRADE_PACK_VERSION       1105 
-#define NET_ERR_PT_LOCKED                           1106 
-#define NET_DVR_LOGO_OVERLAY_WITHOUT_UPLOAD_PIC     1110 
-#define NET_DVR_ERR_ILLEGAL_VERIFICATION_CODE        1111 
-#define NET_DVR_ERR_LACK_VERIFICATION_CODE            1112 
-#define NET_DVR_ERR_FORBIDDEN_IP                    1113 
-#define NET_DVR_ERR_UNLOCKPTZ                       1114 
-#define NET_DVR_ERR_COUNTAREA_LARGE                 1116 
-#define NET_DVR_ERR_LABEL_ID_EXCEED                 1117
-#define NET_DVR_ERR_LABEL_TYPE                      1118
-#define NET_DVR_ERR_LABEL_FULL                      1119
-#define NET_DVR_ERR_LABEL_DISABLED                  1120
-#define NET_DVR_ERR_DOME_PT_TRANS_TO_DOME_XY        1121
-#define NET_DVR_ERR_DOME_PT_TRANS_TO_PANORAMA_XY    1122
-#define NET_DVR_ERR_PANORAMA_XY_TRANS_TO_DOME_PT    1123
-#define NET_DVR_ERR_SCENE_DUR_TIME_LESS_THAN_INTERV_TIME 1124
-#define NET_DVR_ERR_HTTP_BKN_EXCEED_ONE            1125
-#define NET_DVR_ERR_DELETING_FAILED_TURN_OFF_HTTPS_ESDK_WEBSOCKETS_FIRST    1126
-#define NET_DVR_ERR_DELETING_FAILED_TURN_OFF_HTTPS_ESDK_FIRST    1127
-#define NET_DVR_ERR_PTZ_OCCUPIED_PRIORITY          1128
-#define NET_DVR_ERR_INCORRECT_VIDEOAUDIO_ID        1129
-#define NET_DVR_ERR_REPETITIONTIME_OVER_MAXIMUM          1130
-#define NET_DVR_ERR_FORMATTING_FAILED                 1131
-#define NET_DVR_ERR_ENCRYPTED_FORMATTING_FAILED       1132
-#define NET_DVR_ERR_WRONG_PASSWORD                    1133
-#define NET_DVR_ERR_EXPOSURE_SYNC                     1134
-#define NET_ERR_SEARCHING_MODULE                    1201 
-#define NET_ERR_REGISTERING_MODULE                  1202 
-#define NET_ERR_GETTING_ZONES                        1203 
-#define NET_ERR_GETTING_TRIGGERS                    1204 
-#define NET_ERR_ARMED_STATUS                        1205 
-#define    NET_ERR_PROGRAM_MODE_STATUS                    1206 
-#define    NET_ERR_WALK_TEST_MODE_STATUS                1207 
-#define    NET_ERR_BYPASS_STATUS                        1208 
-#define NET_ERR_DISABLED_MODULE_STATUS                1209 
-#define    NET_ERR_NOT_SUPPORT_OPERATE_ZONE            1210 
-#define NET_ERR_NOT_SUPPORT_MOD_MODULE_ADDR            1211 
-#define NET_ERR_UNREGISTERED_MODULE                    1212 
-#define NET_ERR_PUBLIC_SUBSYSTEM_ASSOCIATE_SELF        1213 
-#define NET_ERR_EXCEEDS_ASSOCIATE_SUBSYSTEM_NUM        1214 
-#define NET_ERR_BE_ASSOCIATED_BY_PUBLIC_SUBSYSTEM    1215 
-#define    NET_ERR_ZONE_FAULT_STATUS                    1216 
-#define NET_ERR_SAME_EVENT_TYPE                    1217 
-#define NET_ERR_ZONE_ALARM_STATUS                    1218 
-#define NET_ERR_EXPANSION_BUS_SHORT_CIRCUIT            1219 
-#define NET_ERR_PWD_CONFLICT                        1220  
-#define NET_ERR_DETECTOR_GISTERED_BY_OTHER_ZONE     1221    
-#define NET_ERR_DETECTOR_GISTERED_BY_OTHER_PU       1222    
-#define NET_ERR_DETECTOR_DISCONNECT                 1223    
-#define NET_ERR_CALL_BUSY                           1224    
-#define NET_DVR_ERR_ZONE_TAMPER_STAUS                1225    
-#define NET_DVR_ERR_WIRELESS_DEV_REGISTER             1226    
-#define NET_DVR_ERR_WIRELESS_DEV_ADDED                1227   
-#define NET_DVR_ERR_WIRELESS_DEV_OFFLINE              1228  
-#define NET_DVR_ERR_WIRELESS_DEV_TAMPER_STATUS         1229  
-#define NET_DVR_ERR_GPRS_PHONE_CONFLICT    1230   
-#define NET_ERR_GET_ALL_RETURN_OVER                    1300  
-#define NET_ERR_RESOURCE_USING                      1301  
-#define NET_ERR_FILE_SIZE_OVERLIMIT                    1302  
-#define NET_ERR_MATERIAL_NAME                       1303  
-#define NET_ERR_MATERIAL_NAME_LEN                   1304  
-#define NET_ERR_MATERIAL_REMARK                     1305  
-#define NET_ERR_MATERIAL_REMARK_LEN                 1306  
-#define NET_ERR_MATERIAL_SHARE_PROPERTY             1307  
-#define NET_ERR_UNSUPPORT_MATERIAL_TYPE             1308  
-#define NET_ERR_MATERIAL_NOT_EXIST                  1309  
-#define NET_ERR_READ_FROM_DISK                      1310  
-#define NET_ERR_WRITE_TO_DISK                       1311  
-#define NET_ERR_WRITE_DATA_BASE                     1312  
-#define NET_ERR_NO_APPROVED_NOT_EXPORT              1313  
-#define NET_ERR_MATERIAL_EXCEPTION                  1314  
-#define NET_ERR_NO_MISINFO                          1315  
-#define    NET_ERR_MAX_SCREEN_CTRL_NUM                    1351    
-#define    NET_ERR_FILE_NOT_EXIST                        1352    
-#define NET_ERR_THUMBNAIL_NOT_EXIST                    1353    
-#define NET_ERR_DEV_OPEN_FILE_FAIL                    1354    
-#define NET_ERR_SERVER_READ_FILE_FAIL                1355    
-#define NET_ERR_FILE_SIZE                            1356    
-#define    NET_ERR_FILE_NAME                            1357    
-#define NET_ERR_BROADCAST_BUSY                     1358     
-#define NET_DVR_ERR_LANENUM_EXCEED                  1400  
-#define NET_DVR_ERR_PRAREA_EXCEED                   1401  
-#define NET_DVR_ERR_LIGHT_PARAM                     1402  
-#define NET_DVR_ERR_LANE_LINE_INVALID               1403  
-#define NET_DVR_ERR_STOP_LINE_INVALID               1404  
-#define NET_DVR_ERR_LEFTORRIGHT_LINE_INVALID        1405  
-#define NET_DVR_ERR_LANE_NO_REPEAT                  1406  
-#define NET_DVR_ERR_PRAREA_INVALID                  1407  
-#define NET_DVR_ERR_LIGHT_NUM_EXCEED                1408  
-#define NET_DVR_ERR_SUBLIGHT_NUM_INVALID            1409  
-#define NET_DVR_ERR_LIGHT_AREASIZE_INVALID          1410  
-#define NET_DVR_ERR_LIGHT_COLOR_INVALID             1411  
-#define NET_DVR_ERR_LIGHT_DIRECTION_INVALID         1412  
-#define NET_DVR_ERR_LACK_IOABLITY                    1413  
-#define NET_DVR_ERR_FTP_PORT                        1414  
-#define NET_DVR_ERR_FTP_CATALOGUE                   1415  
-#define NET_DVR_ERR_FTP_UPLOAD_TYPE                 1416  
-#define NET_DVR_ERR_FLASH_PARAM_WRITE               1417  
-#define NET_DVR_ERR_FLASH_PARAM_READ                1418  
-#define NET_DVR_ERR_PICNAME_DELIMITER               1419  
-#define NET_DVR_ERR_PICNAME_ITEM                    1420  
-#define NET_DVR_ERR_PLATE_RECOGNIZE_TYPE            1421  
-#define NET_DVR_ERR_CAPTURE_TIMES                   1422  
-#define NET_DVR_ERR_LOOP_DISTANCE                   1423  
-#define NET_DVR_ERR_LOOP_INPUT_STATUS               1424  
-#define NET_DVR_ERR_RELATE_IO_CONFLICT              1425  
-#define NET_DVR_ERR_INTERVAL_TIME                   1426  
-#define NET_DVR_ERR_SIGN_SPEED                      1427  
-#define NET_DVR_ERR_PIC_FLIP                        1428  
-#define NET_DVR_ERR_RELATE_LANE_NUMBER              1429  
-#define NET_DVR_ERR_TRIGGER_MODE                    1430  
-#define NET_DVR_ERR_DELAY_TIME                      1431  
-#define NET_DVR_ERR_EXCEED_RS485_COUNT              1432  
-#define NET_DVR_ERR_RADAR_TYPE                      1433  
-#define NET_DVR_ERR_RADAR_ANGLE                     1434  
-#define NET_DVR_ERR_RADAR_SPEED_VALID_TIME          1435  
-#define NET_DVR_ERR_RADAR_LINE_CORRECT              1436  
-#define NET_DVR_ERR_RADAR_CONST_CORRECT             1437  
-#define NET_DVR_ERR_RECORD_PARAM                    1438  
-#define NET_DVR_ERR_LIGHT_WITHOUT_COLOR_AND_DIRECTION 1439   
-#define NET_DVR_ERR_LIGHT_WITHOUT_DETECTION_REGION   1440   
-#define NET_DVR_ERR_RECOGNIZE_PROVINCE_PARAM         1441   
-#define NET_DVR_ERR_SPEED_TIMEOUT                 1442    
-#define NET_DVR_ERR_NTP_TIMEZONE                  1443    
-#define NET_DVR_ERR_NTP_INTERVAL_TIME             1444    
-#define NET_DVR_ERR_NETWORK_CARD_NUM              1445    
-#define NET_DVR_ERR_DEFAULT_ROUTE                 1446    
-#define NET_DVR_ERR_BONDING_WORK_MODE             1447    
-#define NET_DVR_ERR_SLAVE_CARD                    1448    
-#define NET_DVR_ERR_PRIMARY_CARD                  1449    
-#define NET_DVR_ERR_DHCP_PPOE_WORK                1450    
-#define NET_DVR_ERR_NET_INTERFACE                 1451    
-#define NET_DVR_ERR_MTU                           1452    
-#define NET_DVR_ERR_NETMASK                       1453    
-#define NET_DVR_ERR_IP_INVALID                    1454    
-#define NET_DVR_ERR_MULTICAST_IP_INVALID          1455    
-#define NET_DVR_ERR_GATEWAY_INVALID               1456    
-#define NET_DVR_ERR_DNS_INVALID                   1457    
-#define NET_DVR_ERR_ALARMHOST_IP_INVALID          1458    
-#define NET_DVR_ERR_IP_CONFLICT                   1459    
-#define NET_DVR_ERR_NETWORK_SEGMENT               1460    
-#define NET_DVR_ERR_NETPORT                       1461    
-#define NET_DVR_ERR_PPPOE_NOSUPPORT               1462  
-#define NET_DVR_ERR_DOMAINNAME_NOSUPPORT          1463  
-#define NET_DVR_ERR_NO_SPEED                      1464  
-#define NET_DVR_ERR_IOSTATUS_INVALID              1465  
-#define NET_DVR_ERR_BURST_INTERVAL_INVALID        1466  
-#define NET_DVR_ERR_RESERVE_MODE                  1467  
-#define NET_DVR_ERR_LANE_NO                       1468  
-#define NET_DVR_ERR_COIL_AREA_TYPE                1469  
-#define NET_DVR_ERR_TRIGGER_AREA_PARAM            1470  
-#define NET_DVR_ERR_SPEED_LIMIT_PARAM             1471  
-#define NET_DVR_ERR_LANE_PROTOCOL_TYPE            1472  
-#define NET_DVR_ERR_INTERVAL_TYPE                 1473  
-#define NET_DVR_ERR_INTERVAL_DISTANCE             1474  
-#define NET_DVR_ERR_RS485_ASSOCIATE_DEVTYPE       1475  
-#define NET_DVR_ERR_RS485_ASSOCIATE_LANENO        1476  
-#define NET_DVR_ERR_LANENO_ASSOCIATE_MULTIRS485   1477  
-#define NET_DVR_ERR_LIGHT_DETECTION_REGION        1478  
-#define NET_DVR_ERR_DN2D_NOSUPPORT            1479  
-#define NET_DVR_ERR_IRISMODE_NOSUPPORT        1480  
-#define NET_DVR_ERR_WB_NOSUPPORT              1481  
-#define NET_DVR_ERR_IO_EFFECTIVENESS          1482  
-#define NET_DVR_ERR_LIGHTNO_MAX               1483  
-#define NET_DVR_ERR_LIGHTNO_CONFLICT          1484  
-#define NET_DVR_ERR_CANCEL_LINE                1485  
-#define NET_DVR_ERR_STOP_LINE               1486  
-#define NET_DVR_ERR_RUSH_REDLIGHT_LINE      1487  
-#define NET_DVR_ERR_IOOUTNO_MAX             1488  
-#define NET_DVR_ERR_IOOUTNO_AHEADTIME_MAX    1489  
-#define NET_DVR_ERR_IOOUTNO_IOWORKTIME      1490  
-#define NET_DVR_ERR_IOOUTNO_FREQMULTI       1491  
-#define NET_DVR_ERR_IOOUTNO_DUTYRATE        1492  
-#define NET_DVR_ERR_VIDEO_WITH_EXPOSURE     1493  
-#define NET_DVR_ERR_PLATE_BRIGHTNESS_WITHOUT_FLASHDET   1494  
-#define NET_DVR_ERR_RECOGNIZE_TYPE_PARAM            1495 
-#define NET_DVR_ERR_PALTE_RECOGNIZE_AREA_PARAM      1496 
-#define NET_DVR_ERR_PORT_CONFLICT                   1497 
-#define NET_DVR_ERR_LOOP_IP                         1498 
-#define NET_DVR_ERR_DRIVELINE_SENSITIVE             1499 
-#define NET_ERR_VQD_TIME_CONFLICT                    1500 
-#define NET_ERR_VQD_PLAN_NO_EXIST                    1501 
-#define NET_ERR_VQD_CHAN_NO_EXIST                    1502 
-#define NET_ERR_VQD_CHAN_MAX                        1503 
-#define NET_ERR_VQD_TASK_MAX                        1504 
-#define NET_SDK_GET_INPUTSTREAMCFG                  1551  
-#define NET_SDK_AUDIO_SWITCH_CONTROL                1552 
-#define NET_SDK_GET_VIDEOWALLDISPLAYNO              1553  
-#define NET_SDK_GET_ALLSUBSYSTEM_BASIC_INFO         1554
-#define NET_SDK_SET_ALLSUBSYSTEM_BASIC_INFO         1555 
-#define NET_SDK_GET_AUDIO_INFO                      1556
-#define NET_SDK_GET_MATRIX_STATUS_V50               1557 
-#define NET_SDK_DELETE_MONITOR_INFO                 1558
-#define NET_SDK_DELETE_CAMERA_INFO                  1559
-#define NET_DVR_ERR_EXCEED_MAX_CAPTURE_TIMES        1600 
-#define NET_DVR_ERR_REDAR_TYPE_CONFLICT             1601 
-#define NET_DVR_ERR_LICENSE_PLATE_NULL              1602 
-#define NET_DVR_ERR_WRITE_DATABASE                  1603 
-#define NET_DVR_ERR_LICENSE_EFFECTIVE_TIME          1604 
-#define NET_DVR_ERR_PRERECORDED_STARTTIME_LONG      1605 
-#define NET_DVR_ERR_TRIGGER_RULE_LINE               1606 
-#define NET_DVR_ERR_LEFTRIGHT_TRIGGERLINE_NOTVERTICAL 1607 
-#define NET_DVR_ERR_FLASH_LAMP_MODE                 1608 
-#define NET_DVR_ERR_ILLEGAL_SNAPSHOT_NUM            1609 
-#define NET_DVR_ERR_ILLEGAL_DETECTION_TYPE          1610 
-#define NET_DVR_ERR_POSITIVEBACK_TRIGGERLINE_HIGH   1611 
-#define NET_DVR_ERR_MIXEDMODE_CAPTYPE_ALLTARGETS    1612 
-#define NET_DVR_ERR_CARSIGNSPEED_GREATERTHAN_LIMITSPEED  1613
-#define NET_DVR_ERR_BIGCARSIGNSPEED_GREATERTHAN_LIMITSPEED  1614
-#define NET_DVR_ERR_BIGCARSIGNSPEED_GREATERTHAN_CARSIGNSPEED  1615
-#define NET_DVR_ERR_BIGCARLIMITSPEED_GREATERTHAN_CARLIMITSPEED  1616
-#define NET_DVR_ERR_BIGCARLOWSPEEDLIMIT_GREATERTHAN_CARLOWSPEEDLIMIT  1617
-#define NET_DVR_ERR_CARLIMITSPEED_GREATERTHAN_EXCEPHIGHSPEED  1618
-#define NET_DVR_ERR_BIGCARLIMITSPEED_GREATERTHAN_EXCEPHIGHSPEED  1619
-#define NET_DVR_ERR_STOPLINE_MORETHAN_TRIGGERLINE  1620
-#define NET_DVR_ERR_YELLOWLIGHTTIME_INVALID        1621
-#define NET_DVR_ERR_TRIGGERLINE1_FOR_NOT_YIELD_TO_PEDESTRIAN_CANNOT_EXCEED_TRIGGERLINE2 1622
-#define NET_DVR_ERR_TRIGGERLINE2_FOR_NOT_YIELD_TO_PEDESTRIAN_CANNOT_EXCEED_TRIGGERLINE1 1623
-#define NET_ERR_TIME_OVERLAP                        1900 
-#define NET_ERR_HOLIDAY_PLAN_OVERLAP                1901 
-#define NET_ERR_CARDNO_NOT_SORT                     1902 
-#define NET_ERR_CARDNO_NOT_EXIST                    1903 
-#define NET_ERR_ILLEGAL_CARDNO                      1904 
-#define NET_ERR_ZONE_ALARM                          1905 
-#define NET_ERR_ZONE_OPERATION_NOT_SUPPORT          1906 
-#define NET_ERR_INTERLOCK_ANTI_CONFLICT             1907 
-#define NET_ERR_DEVICE_CARD_FULL                    1908 
-#define NET_ERR_HOLIDAY_GROUP_DOWNLOAD              1909 
-#define NET_ERR_LOCAL_CONTROL_OFF                    1910 
-#define NET_ERR_LOCAL_CONTROL_DISADD                1911 
-#define NET_ERR_LOCAL_CONTROL_HASADD                1912 
-#define NET_ERR_LOCAL_CONTROL_DOORNO_CONFLICT        1913 
-#define NET_ERR_LOCAL_CONTROL_COMMUNICATION_FAIL    1914 
-#define NET_ERR_OPERAND_INEXISTENCE                  1915 
-#define NET_ERR_LOCAL_CONTROL_OVER_LIMIT              1916 
-#define NET_ERR_DOOR_OVER_LIMIT                         1917 
-#define NET_ERR_ALARM_OVER_LIMIT                         1918 
-#define NET_ERR_LOCAL_CONTROL_ADDRESS_INCONFORMITY_TYPE      1919 
-#define NET_ERR_NOT_SUPPORT_ONE_MORE_CARD           1920 
-#define NET_ERR_DELETE_NO_EXISTENCE_FACE            1921 
-#define NET_ERR_DOOR_SPECIAL_PASSWORD_REPEAT        1922 
-#define NET_ERR_AUTH_CODE_REPEAT                    1923 
-#define NET_ERR_DEPLOY_EXCEED_MAX                   1924 
-#define NET_ERR_NOT_SUPPORT_DEL_FP_BY_ID            1925 
-#define NET_ERR_TIME_RANGE                          1926 
-#define NET_ERR_CAPTURE_TIMEOUT                     1927 
-#define NET_ERR_LOW_SCORE                           1928 
-#define NET_ERR_OFFLINE_CAPTURING                   1929 
-#define NET_DVR_ERR_OUTDOOR_COMMUNICATION            1950 
-#define NET_DVR_ERR_ROOMNO_UNDEFINED                1951 
-#define NET_DVR_ERR_NO_CALLING                        1952 
-#define NET_DVR_ERR_RINGING                            1953 
-#define NET_DVR_ERR_IS_CALLING_NOW                    1954 
-#define NET_DVR_ERR_LOCK_PASSWORD_WRONG             1955
-#define NET_DVR_ERR_CONTROL_LOCK_FAILURE            1956
-#define NET_DVR_ERR_CONTROL_LOCK_OVERTIME           1957
-#define NET_DVR_ERR_LOCK_DEVICE_BUSY                1958
-#define NET_DVR_ERR_UNOPEN_REMOTE_LOCK_FUNCTION     1959
-#define NET_DVR_ERR_FILE_NOT_COMPLETE               2100    
-#define NET_DVR_ERR_IPC_EXIST                       2101    
-#define NET_DVR_ERR_ADD_IPC                         2102    
-#define NET_DVR_ERR_OUT_OF_RES                      2103    
-#define NET_DVR_ERR_CONFLICT_TO_LOCALIP             2104    
-#define NET_DVR_ERR_IP_SET                          2105    
-#define NET_DVR_ERR_PORT_SET                        2106    
-#define NET_ERR_WAN_NOTSUPPORT                      2107     
-#define NET_ERR_MUTEX_FUNCTION                      2108     
-#define NET_ERR_QUESTION_CONFIGNUM                  2109     
-#define NET_ERR_FACECHAN_NORESOURCE                 2110     
-#define NET_ERR_DATA_CALLBACK                       2111     
-#define NET_ERR_ATM_VCA_CHAN_IS_RELATED             2112     
-#define NET_ERR_ATM_VCA_CHAN_IS_OVERLAPED           2113     
-#define NET_ERR_FACE_CHAN_UNOVERLAP_EACH_OTHER      2114     
-#define NET_ERR_ACHIEVE_MAX_CHANNLE_LIMIT           2115     
-#define NET_DVR_SMD_ENCODING_NORESOURSE             2116  
-#define NET_DVR_SMD_DECODING_NORESOURSE             2117  
-#define NET_DVR_FACELIB_DATA_PROCESSING             2118  
-#define NET_DVR_ERR_LARGE_TIME_DIFFRENCE            2119  
-#define NET_DVR_NO_SUPPORT_WITH_PLAYBACK            2120  
-#define NET_DVR_CHANNEL_NO_SUPPORT_WITH_SMD         2121  
-#define NET_DVR_CHANNEL_NO_SUPPORT_WITH_FD          2122  
-#define NET_DVR_ILLEGAL_PHONE_NUMBER                2123  
-#define NET_DVR_ILLEGAL_CERITIFICATE_NUMBER         2124  
-#define NET_DVR_ERR_CHANNEL_RESOLUTION_NO_SUPPORT   2125  
-#define NET_DVR_ERR_CHANNEL_COMPRESSION_NO_SUPPORT  2126  
-#define NET_DVR_ERR_CLUSTER_DEVICE_TOO_LESS                 2127  
-#define NET_DVR_ERR_CLUSTER_DEL_DEVICE_CM_PLAYLOAD          2128  
-#define NET_DVR_ERR_CLUSTER_DEVNUM_OVER_UPPER_LIMIT         2129  
-#define NET_DVR_ERR_CLUSTER_DEVICE_TYPE_INCONFORMITY        2130  
-#define NET_DVR_ERR_CLUSTER_DEVICE_VERSION_INCONFORMITY     2131  
-#define NET_DVR_ERR_CLUSTER_IP_CONFLICT                     2132  
-#define NET_DVR_ERR_CLUSTER_IP_INVALID                      2133  
-#define NET_DVR_ERR_CLUSTER_PORT_CONFLICT                   2134  
-#define NET_DVR_ERR_CLUSTER_PORT_INVALID                    2135  
-#define NET_DVR_ERR_CLUSTER_USERNAEM_OR_PASSWORD_INVALID    2136  
-#define NET_DVR_ERR_CLUSTER_DEVICE_ALREADY_EXIST            2137  
-#define NET_DVR_ERR_CLUSTER_DEVICE_NOT_EXIST                2138  
-#define NET_DVR_ERR_CLUSTER_NON_CLUSTER_MODE                2139  
-#define NET_DVR_ERR_CLUSTER_IP_NOT_SAME_LAN                 2140  
-#define NET_DVR_ERR_CAPTURE_PACKAGE_FAILED                  2141  
-#define NET_DVR_ERR_CAPTURE_PACKAGE_PROCESSING              2142  
-#define NET_DVR_ERR_SAFETY_HELMET_NO_RESOURCE               2143  
-#define NET_DVR_NO_SUPPORT_WITH_ABSTRACT                    2144  
-#define NET_DVR_ERR_TAPE_LIB_NEED_STOP_ARCHIVE              2145  
-#define NET_DVR_INSUFFICIENT_DEEP_LEARNING_RESOURCES        2146  
-#define NET_DVR_ERR_IDENTITY_KEY                            2147  
-#define NET_DVR_MISSING_IDENTITY_KEY                        2148  
-#define NET_DVR_NO_SUPPORT_WITH_PERSON_DENSITY_DETECT       2149  
-#define NET_DVR_IPC_RESOLUTION_OVERFLOW                     2150  
-#define NET_DVR_IPC_BITRATE_OVERFLOW                        2151  
-#define NET_DVR_ERR_INVALID_TASKID                          2152  
-#define NET_DVR_PANEL_MODE_NOT_CONFIG                       2153  
-#define NET_DVR_NO_HUMAN_ENGINES_RESOURCE                   2154  
-#define NET_DVR_ERR_TASK_NUMBER_OVERFLOW                    2155  
-#define NET_DVR_ERR_COLLISION_TIME_OVERFLOW                 2156  
-#define NET_DVR_ERR_CAPTURE_PACKAGE_NO_USB                  2157  
-#define NET_DVR_ERR_NO_SET_SECURITY_EMAIL                   2158  
-#define NET_DVR_ERR_EVENT_NOTSUPPORT                        2159  
-#define NET_DVR_ERR_PASSWORD_FORMAT                         2160  
-#define NET_DVR_ACCESS_FRONT_DEVICE_PARAM_FAILURE           2161  
-#define NET_DVR_ACCESS_FRONT_DEVICE_STREAM_FAILURE          2162  
-#define NET_DVR_ERR_USERNAME_FORMAT                         2163  
-#define NET_DVR_ERR_UNOPENED_HIGH_RESOLUTION_MODE           2164  
-#define NET_DVR_ERR_TOO_SMALL_QUATO                         2165  
-#define NET_DVR_ERR_EMAIL_FORMAT                            2166  
-#define NET_DVR_ERR_SECURITY_CODE_FORMAT                    2167  
-#define NET_DVR_PD_SPACE_TOO_SMALL                          2168  
-#define NET_DVR_PD_NUM_TOO_BIG                              2169  
-#define NET_DVR_ERR_USB_IS_FULL                             2170  
-#define NET_DVR_EXCEED_MAX_SMD_TYPE                         2171  
-#define NET_DVR_CHANNEL_NO_SUPPORT_WITH_BEHAVIOR            2172  
-#define NET_DVR_NO_BEHAVIOR_ENGINES_RESOURCE                2173  
-#define NET_DVR_NO_RETENTION_ENGINES_RESOURCE               2174  
-#define NET_DVR_NO_LEAVE_POSITION_ENGINES_RESOURCE          2175  
-#define NET_DVR_NO_PEOPLE_NUM_CHANGE_ENGINES_RESOURCE       2176  
-#define NET_DVR_PANEL_MODE_NUM_OVER_LIMIT                   2177  
-#define NET_DVR_SURROUND_MODE_NUM_OVER_LIMIT                2178  
-#define NET_DVR_FACE_MODE_NUM_OVER_LIMIT                    2179  
-#define NET_DVR_SAFETYCABIN_MODE_NUM_OVER_LIMIT             2180  
-#define NET_DVR_DETECT_REGION_RANGE_INVALID                 2181  
-#define NET_DVR_CHANNEL_CAPTURE_PICTURE_FAILURE             2182  
-#define NET_DVR_VCACHAN_IS_NORESOURCE                       2183  
-#define NET_DVR_IPC_NUM_REACHES_LIMIT                       2184  
-#define NET_DVR_IOT_NUM_REACHES_LIMIT                       2185  
-#define NET_DVR_IOT_CHANNEL_DEVICE_EXIST                    2186  
-#define NET_DVR_IOT_CHANNEL_DEVICE_NOT_EXIST                2187  
-#define NET_DVR_INVALID_IOT_PROTOCOL_TYPE                   2188  
-#define NET_DVR_INVALID_EZVIZ_SECRET_KEY                    2189  
-#define NET_DVR_DUPLICATE_IOT_DEVICE                        2190  
-#define NET_DVR_SADP_MODIFY_FALIURE                         2191  
-#define NET_DVR_IPC_NETWORK_ABNORMAL                        2192  
-#define NET_DVR_IPC_PASSWORD_ERROR                          2193  
-#define NET_DVR_ERROR_IPC_TYPE                              2194  
-#define NET_DVR_ERROR_IPC_LIST_NOT_EMPTY                    2195  
-#define NET_DVR_ERROR_IPC_LIST_NOT_MATCH_PAIRING            2196  
-#define NET_DVR_ERROR_IPC_BAD_LANGUAGE                      2197  
-#define NET_DVR_ERROR_IPC_IS_LOCKING                        2198  
-#define NET_DVR_ERROR_IPC_NOT_ACTIVATED                     2199  
-#define NET_DVR_FIELD_CODING_NOT_SUPPORT                    2200  
-#define NET_DVR_ERROR_H323_NOT_SUPPORT_H265                 2201  
-#define NET_DVR_ERROR_EXPOSURE_TIME_TOO_BIG_IN_MODE_P       2202  
-#define NET_DVR_ERROR_EXPOSURE_TIME_TOO_BIG_IN_MODE_N       2203  
-#define NET_DVR_ERROR_PING_PROCESSING                       2204  
-#define NET_DVR_ERROR_PING_NOT_START                        2205  
-#define NET_DVR_ERROR_NEED_DOUBLE_VERIFICATION              2206  
-#define NET_DVR_NO_DOUBLE_VERIFICATION_USER                 2207  
-#define NET_DVR_CHANNEL_OFFLINE                             2208  
-#define NET_DVR_TIMESPAN_NUM_OVER_LIMIT                     2209  
-#define NET_DVR_CHANNEL_NUM_OVER_LIMIT                      2210  
-#define NET_DVR_NO_SEARCH_ID_RESOURCE                       2211  
-#define NET_DVR_ERROR_ONEKEY_EXPORT                         2212  
-#define NET_DVR_NO_CITY_MANAGEMENT_ENGINES_RESOURCE         2213  
-#define NET_DVR_NO_SITUATION_ANALYSIS_ENGINES_RESOURCE      2214  
-#define NET_DVR_INTELLIGENT_ANALYSIS_IPC_CANNT_DELETE       2215  
-#define NET_DVR_NOSUPPORT_RESET_PASSWORD                    2216  
-#define NET_DVR_ERROR_IPC_NEED_ON_LAN                       2217  
-#define NET_DVR_CHANNEL_NO_SUPPORT_WITH_SAFETY_HELMET       2218  
-#define NET_DVR_ERROR_GET_RESETPASSWORDTYPE_IS_ABNORMAL     2219  
-#define NET_DVR_ERROR_IPC_NOSUPPORT_RESET_PASSWORD          2220  
-#define NET_DVR_ERROR_IP_IS_NOT_ONLY_ONE                    2221  
-#define NET_DVR_NO_SUPPORT_WITH_SMD_OR_SCD                  2222  
-#define NET_DVR_NO_SUPPORT_WITH_FD                          2223  
-#define NET_DVR_NO_FD_ENGINES_RESOURCE                      2224  
-#define NET_DVR_ERROR_ONEKEY_REMOVE                         2225  
-#define NET_DVR_FACE_PIP_BACKGROUND_CHANNEL_OVERFLOW        2226  
-#define NET_DVR_MICIN_CHANNEL_OCCUPIED                      2227  
-#define NET_DVR_IPC_CHANNEL_IS_IN_PIP                       2228  
-#define NET_DVR_CHANNEL_NO_SUPPORT_WITH_FACE_CONTRAST       2229  
-#define NET_DVR_INVALID_RECHARGE_CARD                       2230 
-#define NET_DVR_CLOUD_PLATFORM_SERVER_EXCEPTION             2231 
-#define NET_DVR_OPERATION_FAILURE_WITHOUT_LOGIN             2232 
-#define NET_DVR_INVALID_ASSOCIATED_SERIAL_NUMBER            2233 
-#define NET_DVR_CLOUD_PLATFORM_ACCOUNT_NOT_EXIST            2234 
-#define NET_DVR_DEVICE_SERIAL_NUMBER_REGISTERED             2235 
-#define NET_DVR_CONFERENCE_ROOM_NOT_EXIST                   2236 
-#define NET_DVR_NEED_DISABLED_ANALOG_CHANNEL                2237
-#define NET_DVR_STUDENT_ROLL_CALL_FAILURE                   2238
-#define NET_DVR_SUB_DEVICE_NOT_ENABLE_INDIVIDUAL_BEHAVIOR   2239
-#define NET_DVR_SUB_DEVICE_CHANNEL_CONTROL_FAILED           2240
-#define NET_DVR_DEVICE_NOT_IN_CONFERENCE                    2241
-#define NET_DVR_ALREADY_EXIST_CONFERENCE                    2242
-#define NET_DVR_NO_SUPPORT_WITH_VIDEO_CONFERENCE            2243
-#define NET_DVR_START_INTERACTION_FAILURE                   2244
-#define NET_DVR_ASK_QUESTION_STARTED                        2245
-#define NET_DVR_ASK_QUESTION_CLOSED                         2246
-#define NET_DVR_UNABLE_OPERATE_BY_HOST                      2247
-#define NET_DVR_REPEATED_ASK_QUESTION                       2248
-#define NET_DVR_SWITCH_TIMEDIFF_LESS_LIMIT                         2249
-#define NET_DVR_CHANNEL_DEVICE_EXIST                        2250  
-#define NET_DVR_CHANNEL_DEVICE_NOT_EXIST                    2251  
-#define NET_DVR_ERROR_ADJUSTING_RESOLUTION                  2252  
-#define NET_DVR_SSD_FILE_SYSTEM_IS_UPGRADING                2253  
-#define NET_DVR_SSD_FILE_SYSTEM_IS_FORMAT                   2254  
-#define NET_DVR_CHANNEL_IS_CONNECTING                       2255  
-#define NET_DVR_CHANNEL_STREAM_TYPE_NOT_SUPPORT             2257  
-#define NET_DVR_CHANNEL_USERNAME_NOT_EXIST                  2258  
-#define NET_DVR_CHANNEL_ACCESS_PARAM_FAILURE                2259  
-#define NET_DVR_CHANNEL_GET_STREAM_FAILURE                  2260  
-#define NET_DVR_CHANNEL_RISK_PASSWORD                       2261  
-#define NET_DVR_NO_SUPPORT_DELETE_STRANGER_LIB              2262  
-#define NET_DVR_NO_SUPPORT_CREATE_STRANGER_LIB              2263  
-#define NET_DVR_NETWORK_PORT_CONFLICT                       2264  
-#define NET_DVR_TRANSCODE_NO_RESOURCES                      2265  
-#define NET_DVR_SSD_FILE_SYSTEM_ERROR                       2266  
-#define NET_DVR_INSUFFICIENT_SSD__FOR_FPD                   2267  
-#define NET_DVR_ASSOCIATED_FACELIB_OVER_LIMIT               2268  
-#define NET_DVR_ERR_NOTSUPPORT_DEICING    3001    
-#define NET_DVR_ERR_THERMENABLE_CLOSE     3002    
-#define NET_DVR_ERR_NOTMEET_DEICING       3003    
-#define NET_DVR_ERR_PANORAMIC_LIMIT_OPERATED   3004    
-#define NET_DVR_ERR_SMARTH264_ROI_OPERATED   3005    
-#define NET_DVR_ERR_RULENUM_LIMIT   3006    
-#define NET_DVR_ERR_LASER_DEICING_OPERATED   3007    
-#define NET_DVR_ERR_OFFDIGITALZOOM_OR_MINZOOMLIMIT   3008    
-#define NET_DVR_ERR_FIREWAITING 3009 
-#define NET_DVR_SYNCHRONIZEFOV_ERROR 3010 
-#define NET_DVR_CERTIFICATE_VALIDATION_ERROR 3011 
-#define NET_DVR_CERTIFICATES_NUM_EXCEED_ERROR 3012 
-#define NET_DVR_ERR_NO_SAFETY_HELMET_REGION            3501  
-#define NET_DVR_ERR_UNCLOSED_SAFETY_HELMET             3502  
-#define NET_ERR_NPQ_BASE_INDEX    8000    
-#define NET_ERR_NPQ_PARAM       (NET_ERR_NPQ_BASE_INDEX + 1)        
-#define NET_ERR_NPQ_SYSTEM      (NET_ERR_NPQ_BASE_INDEX + 2)        
-#define NET_ERR_NPQ_GENRAL      (NET_ERR_NPQ_BASE_INDEX + 3)        
-#define NET_ERR_NPQ_PRECONDITION    (NET_ERR_NPQ_BASE_INDEX + 4)        
-#define NET_ERR_NPQ_NOTSUPPORT        (NET_ERR_NPQ_BASE_INDEX + 5)        
-#define NET_ERR_NPQ_NOTCALLBACK    (NET_ERR_NPQ_BASE_INDEX + 100)   
-#define NET_ERR_NPQ_LOADLIB (NET_ERR_NPQ_BASE_INDEX + 101)   
-#define NET_ERR_NPQ_STEAM_CLOSE (NET_ERR_NPQ_BASE_INDEX + 104) 
-#define NET_ERR_NPQ_MAX_LINK (NET_ERR_NPQ_BASE_INDEX + 110) 
-#define NET_ERR_NPQ_STREAM_CFG (NET_ERR_NPQ_BASE_INDEX + 111) 
-#define NET_DVR_SUPPORT_DDRAW            0x01
-#define NET_DVR_SUPPORT_BLT                0x02
-#define NET_DVR_SUPPORT_BLTFOURCC        0x04
-#define NET_DVR_SUPPORT_BLTSHRINKX        0x08
-#define NET_DVR_SUPPORT_BLTSHRINKY        0x10
-#define NET_DVR_SUPPORT_BLTSTRETCHX        0x20
-#define NET_DVR_SUPPORT_BLTSTRETCHY        0x40
-#define NET_DVR_SUPPORT_SSE                0x80
-#define NET_DVR_SUPPORT_MMX                0x100
-#define LIGHT_PWRON        2    
-#define WIPER_PWRON        3    
-#define FAN_PWRON        4    
-#define HEATER_PWRON    5    
-#define AUX_PWRON1        6    
-#define AUX_PWRON2        7    
-#define SET_PRESET        8    
-#define CLE_PRESET        9    
-#define ZOOM_IN            11    
-#define ZOOM_OUT        12    
-#define FOCUS_NEAR      13  
-#define FOCUS_FAR       14  
-#define IRIS_OPEN       15  
-#define IRIS_CLOSE      16  
-#define TILT_UP            21    
-#define TILT_DOWN        22    
-#define PAN_LEFT        23    
-#define PAN_RIGHT        24    
-#define UP_LEFT            25    
-#define UP_RIGHT        26    
-#define DOWN_LEFT        27    
-#define DOWN_RIGHT        28    
-#define PAN_AUTO        29    
-#define FILL_PRE_SEQ    30    
-#define SET_SEQ_DWELL    31    
-#define SET_SEQ_SPEED    32    
-#define CLE_PRE_SEQ        33    
-#define STA_MEM_CRUISE    34    
-#define STO_MEM_CRUISE    35    
-#define RUN_CRUISE        36    
-#define RUN_SEQ            37    
-#define STOP_SEQ        38    
-#define GOTO_PRESET        39    
-#define DEL_SEQ         43  
-#define STOP_CRUISE        44    
-#define DELETE_CRUISE    45    
-#define DELETE_ALL_CRUISE 46
-#define PAN_CIRCLE      50   
-#define DRAG_PTZ        51   
-#define LINEAR_SCAN     52   
-#define CLE_ALL_PRESET  53   
-#define CLE_ALL_SEQ     54   
-#define CLE_ALL_CRUISE  55   
-#define POPUP_MENU      56   
-#define TILT_DOWN_ZOOM_IN    58    
-#define TILT_DOWN_ZOOM_OUT  59  
-#define PAN_LEFT_ZOOM_IN    60  
-#define PAN_LEFT_ZOOM_OUT   61  
-#define PAN_RIGHT_ZOOM_IN    62  
-#define PAN_RIGHT_ZOOM_OUT  63  
-#define UP_LEFT_ZOOM_IN     64  
-#define UP_LEFT_ZOOM_OUT    65  
-#define UP_RIGHT_ZOOM_IN    66  
-#define UP_RIGHT_ZOOM_OUT   67  
-#define DOWN_LEFT_ZOOM_IN   68  
-#define DOWN_LEFT_ZOOM_OUT  69  
-#define DOWN_RIGHT_ZOOM_IN    70  
-#define DOWN_RIGHT_ZOOM_OUT    71  
-#define TILT_UP_ZOOM_IN        72    
-#define TILT_UP_ZOOM_OUT    73    
-#define DVR_VEHICLE_CONTROL_LIST   0x1 
-#define NET_DVR_PLAYSTART        1
-#define NET_DVR_PLAYSTOP        2
-#define NET_DVR_PLAYPAUSE        3
-#define NET_DVR_PLAYRESTART        4
-#define NET_DVR_PLAYFAST        5
-#define NET_DVR_PLAYSLOW        6
-#define NET_DVR_PLAYNORMAL        7
-#define NET_DVR_PLAYFRAME        8
-#define NET_DVR_PLAYSTARTAUDIO    9
-#define NET_DVR_PLAYSTOPAUDIO    10
-#define NET_DVR_PLAYAUDIOVOLUME    11
-#define NET_DVR_PLAYSETPOS        12
-#define NET_DVR_PLAYGETPOS        13
-#define NET_DVR_PLAYGETTIME        14
-#define NET_DVR_PLAYGETFRAME    15
-#define NET_DVR_GETTOTALFRAMES  16
-#define NET_DVR_GETTOTALTIME    17
-#define NET_DVR_THROWBFRAME        20
-#define NET_DVR_SETSPEED        24
-#define NET_DVR_KEEPALIVE        25
-#define NET_DVR_PLAYSETTIME        26
-#define NET_DVR_PLAYGETTOTALLEN    27
-#define NET_DVR_PLAYSETTIME_V50    28
-#define NET_DVR_PLAY_FORWARD    29 
-#define NET_DVR_PLAY_REVERSE    30 
-#define NET_DVR_SET_DECODEFFRAMETYPE 31 
-#define NET_DVR_SET_TRANS_TYPE    32 
-#define NET_DVR_PLAY_CONVERT    33 
-#define NET_DVR_START_DRAWFRAME 34 
-#define NET_DVR_STOP_DRAWFRAME  35 
-#define NET_DVR_CHANGEWNDRESOLUTION   36    
-#define NET_DVR_RESETBUFFER	    37  
-#define NET_DVR_VOD_DRAG_ING    38 
-#define NET_DVR_VOD_DRAG_END    39 
-#define NET_DVR_VOD_RESET_PLAYTIME    40 
-#define PLAYM4_DECODE_NORMAIL              0   
-#define PLAYM4_DECODE_KEY_FRAME            1   
-#define PLAYM4_DECODE_NONE                 2   
-#define PLAYM4_DECODE_TEMPORAL_LAYER_0     3   
-#define PLAYM4_DECODE_TEMPORAL_LAYER_1     4   
-#define KEY_CODE_1      1
-#define KEY_CODE_2      2
-#define KEY_CODE_3      3
-#define KEY_CODE_4      4
-#define KEY_CODE_5      5
-#define KEY_CODE_6      6
-#define KEY_CODE_7      7
-#define KEY_CODE_8      8
-#define KEY_CODE_9      9
-#define KEY_CODE_0      10
-#define KEY_CODE_POWER  11
-#define KEY_CODE_MENU   12
-#define KEY_CODE_ENTER  13
-#define KEY_CODE_CANCEL 14
-#define KEY_CODE_UP     15
-#define KEY_CODE_DOWN   16
-#define KEY_CODE_LEFT   17
-#define KEY_CODE_RIGHT  18
-#define KEY_CODE_EDIT   19
-#define KEY_CODE_ADD    20
-#define KEY_CODE_MINUS  21
-#define KEY_CODE_PLAY   22
-#define KEY_CODE_REC    23
-#define KEY_CODE_PAN    24
-#define KEY_CODE_M      25
-#define KEY_CODE_A      26
-#define KEY_CODE_F1     27
-#define KEY_CODE_F2     28
-#define KEY_PTZ_UP_START        KEY_CODE_UP
-#define KEY_PTZ_UP_STOP         32
-#define KEY_PTZ_DOWN_START      KEY_CODE_DOWN
-#define KEY_PTZ_DOWN_STOP       33
-#define KEY_PTZ_LEFT_START      KEY_CODE_LEFT
-#define KEY_PTZ_LEFT_STOP       34
-#define KEY_PTZ_RIGHT_START     KEY_CODE_RIGHT
-#define KEY_PTZ_RIGHT_STOP      35
-#define KEY_PTZ_AP1_START       KEY_CODE_EDIT 
-#define KEY_PTZ_AP1_STOP        36
-#define KEY_PTZ_AP2_START       KEY_CODE_PAN 
-#define KEY_PTZ_AP2_STOP        37
-#define KEY_PTZ_FOCUS1_START    KEY_CODE_A 
-#define KEY_PTZ_FOCUS1_STOP     38
-#define KEY_PTZ_FOCUS2_START    KEY_CODE_M 
-#define KEY_PTZ_FOCUS2_STOP     39
-#define KEY_PTZ_B1_START        40 
-#define KEY_PTZ_B1_STOP         41
-#define KEY_PTZ_B2_START        42 
-#define KEY_PTZ_B2_STOP         43
-#define KEY_CODE_11             44
-#define KEY_CODE_12             45
-#define KEY_CODE_13             46
-#define KEY_CODE_14             47
-#define KEY_CODE_15             48
-#define KEY_CODE_16             49
-#define NET_DVR_GET_DEVICECFG        100        
-#define NET_DVR_SET_DEVICECFG        101        
-#define NET_DVR_GET_NETCFG            102        
-#define NET_DVR_SET_NETCFG            103        
-#define NET_DVR_GET_PICCFG            104        
-#define NET_DVR_SET_PICCFG            105        
-#define NET_DVR_GET_COMPRESSCFG        106        
-#define NET_DVR_SET_COMPRESSCFG        107        
-#define NET_DVR_GET_RECORDCFG        108        
-#define NET_DVR_SET_RECORDCFG        109        
-#define NET_DVR_GET_DECODERCFG        110        
-#define NET_DVR_SET_DECODERCFG        111        
-#define NET_DVR_GET_RS232CFG         112        
-#define NET_DVR_SET_RS232CFG        113        
-#define NET_DVR_GET_ALARMINCFG         114        
-#define NET_DVR_SET_ALARMINCFG        115        
-#define NET_DVR_GET_ALARMOUTCFG     116        
-#define NET_DVR_SET_ALARMOUTCFG        117        
-#define NET_DVR_GET_TIMECFG         118        
-#define NET_DVR_SET_TIMECFG            119        
-#define NET_DVR_GET_PREVIEWCFG         120        
-#define NET_DVR_SET_PREVIEWCFG        121        
-#define NET_DVR_GET_VIDEOOUTCFG     122        
-#define NET_DVR_SET_VIDEOOUTCFG        123        
-#define NET_DVR_GET_USERCFG         124        
-#define NET_DVR_SET_USERCFG            125        
-#define NET_DVR_GET_EXCEPTIONCFG     126        
-#define NET_DVR_SET_EXCEPTIONCFG    127        
-#define NET_DVR_GET_ZONEANDDST        128        
-#define NET_DVR_SET_ZONEANDDST        129        
-#define NET_DVR_GET_SHOWSTRING        130        
-#define NET_DVR_SET_SHOWSTRING        131        
-#define NET_DVR_GET_EVENTCOMPCFG    132        
-#define NET_DVR_SET_EVENTCOMPCFG    133        
-#define NET_DVR_GET_FTPCFG            134        
-#define NET_DVR_SET_FTPCFG            135        
-#define NET_DVR_GET_AUXOUTCFG        140        
-#define NET_DVR_SET_AUXOUTCFG        141        
-#define NET_DVR_GET_PREVIEWCFG_AUX     142        
-#define NET_DVR_SET_PREVIEWCFG_AUX    143        
-#define NET_DVR_GET_PASSWORD_MANAGE_CFG 144        
-#define NET_DVR_SET_PASSWORD_MANAGE_CFG    145        
-#define NET_DVR_UNLOCK_USER             146        
-#define NET_DVR_GET_SECURITY_CFG         147        
-#define NET_DVR_SET_SECURITY_CFG         148        
-#define    NET_DVR_GET_LOCKED_INFO_LIST    149        
-#define NET_DVR_SET_RULECFG            152    
-#define NET_DVR_GET_RULECFG            153    
-#define NET_DVR_SET_TRACK_CFG       160
-#define NET_DVR_GET_TRACK_CFG       161
-#define NET_DVR_SET_IVMS_STREAMCFG    162        
-#define NET_DVR_GET_IVMS_STREAMCFG    163        
-#define NET_DVR_SET_VCA_CTRLCFG        164     
-#define NET_DVR_GET_VCA_CTRLCFG        165     
-#define NET_DVR_SET_VCA_MASK_REGION    166     
-#define NET_DVR_GET_VCA_MASK_REGION    167     
-#define NET_DVR_SET_VCA_ENTER_REGION 168     
-#define NET_DVR_GET_VCA_ENTER_REGION 169     
-#define NET_DVR_SET_VCA_LINE_SEGMENT 170     
-#define NET_DVR_GET_VCA_LINE_SEGMENT 171     
-#define NET_DVR_SET_IVMS_MASK_REGION 172     
-#define NET_DVR_GET_IVMS_MASK_REGION 173     
-#define NET_DVR_SET_IVMS_ENTER_REGION 174     
-#define NET_DVR_GET_IVMS_ENTER_REGION 175     
-#define NET_DVR_SET_IVMS_BEHAVIORCFG  176    
-#define NET_DVR_GET_IVMS_BEHAVIORCFG  177    
-#define NET_DVR_IVMS_SET_SEARCHCFG        178    
-#define NET_DVR_IVMS_GET_SEARCHCFG        179    
-#define NET_DVR_SET_POSITION_TRACK      180     
-#define NET_DVR_GET_POSITION_TRACK      181     
-#define NET_DVR_SET_CALIBRATION         182    
-#define NET_DVR_GET_CALIBRATION         183    
-#define NET_DVR_SET_PDC_RULECFG         184    
-#define NET_DVR_GET_PDC_RULECFG         185    
-#define NET_DVR_SET_PU_STREAMCFG        186     
-#define NET_DVR_GET_PU_STREAMCFG        187     
-#define NET_VCA_SET_IVMS_BEHAVIOR_CFG        192  
-#define NET_VCA_GET_IVMS_BEHAVIOR_CFG        193  
-#define NET_VCA_SET_SIZE_FILTER         194     
-#define NET_VCA_GET_SIZE_FILTER         195     
-#define NET_DVR_SET_TRACK_PARAMCFG      196     
-#define NET_DVR_GET_TRACK_PARAMCFG      197     
-#define NET_DVR_SET_DOME_MOVEMENT_PARAM 198     
-#define NET_DVR_GET_DOME_MOVEMENT_PARAM 199     
-#define NET_DVR_GET_PICCFG_EX        200        
-#define NET_DVR_SET_PICCFG_EX        201        
-#define NET_DVR_GET_USERCFG_EX         202        
-#define NET_DVR_SET_USERCFG_EX        203        
-#define NET_DVR_GET_COMPRESSCFG_EX    204        
-#define NET_DVR_SET_COMPRESSCFG_EX    205        
-#define NET_DVR_GET_NETAPPCFG        222        
-#define NET_DVR_SET_NETAPPCFG        223        
-#define NET_DVR_GET_NTPCFG            224        
-#define NET_DVR_SET_NTPCFG            225        
-#define NET_DVR_GET_DDNSCFG            226        
-#define NET_DVR_SET_DDNSCFG            227        
-#define NET_DVR_GET_EMAILCFG        228        
-#define NET_DVR_SET_EMAILCFG        229        
-#define NET_DVR_GET_NFSCFG            230        
-#define NET_DVR_SET_NFSCFG            231        
-#define NET_DVR_GET_SHOWSTRING_EX    238        
-#define NET_DVR_SET_SHOWSTRING_EX    239        
-#define NET_DVR_GET_NETCFG_OTHER    244        
-#define NET_DVR_SET_NETCFG_OTHER    245        
-#define NET_DVR_GET_EMAILPARACFG    250        
-#define NET_DVR_SET_EMAILPARACFG    251        
-#define NET_DVR_GET_DDNSCFG_EX        274    
-#define NET_DVR_SET_DDNSCFG_EX        275    
-#define    NET_DVR_SET_PTZPOS            292        
-#define    NET_DVR_GET_PTZPOS            293        
-#define    NET_DVR_GET_PTZSCOPE        294        
-#define NET_DVR_GET_AP_INFO_LIST    305
-#define NET_DVR_SET_WIFI_CFG        306    
-#define NET_DVR_GET_WIFI_CFG        307    
-#define NET_DVR_SET_WIFI_WORKMODE    308    
-#define NET_DVR_GET_WIFI_WORKMODE    309    
-#define    NET_DVR_GET_WIFI_STATUS        310    
-#define NET_DVR_GET_REFERENCE_REGION            400      
-#define NET_DVR_SET_REFERENCE_REGION            401      
-#define NET_DVR_GET_TRAFFIC_MASK_REGION         402     
-#define NET_DVR_SET_TRAFFIC_MASK_REGION         403     
-#define NET_DVR_SET_AID_RULECFG                 404     
-#define NET_DVR_GET_AID_RULECFG                 405     
-#define NET_DVR_SET_TPS_RULECFG                 406     
-#define NET_DVR_GET_TPS_RULECFG                 407     
-#define NET_DVR_SET_LANECFG                        408        
-#define    NET_DVR_GET_LANECFG                        409        
-#define NET_DVR_GET_VCA_RULE_COLOR_CFG          410     
-#define NET_DVR_SET_VCA_RULE_COLOR_CFG          411     
-#define NET_DVR_GET_SWITCH_LAMP_CFG             412     
-#define NET_DVR_SET_SWITCH_LAMP_CFG             413     
-#define NET_DVR_SET_FACEDETECT_RULECFG          420         
-#define NET_DVR_GET_FACEDETECT_RULECFG          421         
-#define NET_DVR_SET_VEHICLE_RECOG_TASK          422      
-#define NET_DVR_GET_VEHICLE_RECOG_TASK          423      
-#define NET_DVR_SET_TIMECORRECT                    432      
-#define    NET_DVR_GET_CONNECT_LIST                433         
-#define NET_DVR_GET_NETCFG_V30                    1000        
-#define NET_DVR_SET_NETCFG_V30                    1001        
-#define NET_DVR_GET_PICCFG_V30                    1002        
-#define NET_DVR_SET_PICCFG_V30                    1003        
-#define NET_DVR_GET_RECORDCFG_V30                1004        
-#define NET_DVR_SET_RECORDCFG_V30                1005        
-#define NET_DVR_GET_USERCFG_V30                 1006        
-#define NET_DVR_SET_USERCFG_V30                    1007        
-#define NET_DVR_GET_RECORDCFG_V40                1008        
-#define NET_DVR_SET_RECORDCFG_V40                1009        
-#define     NET_DVR_GET_DDNSCFG_V30                1010        
-#define     NET_DVR_SET_DDNSCFG_V30                1011        
-#define NET_DVR_GET_EMAILCFG_V30                1012     
-#define NET_DVR_SET_EMAILCFG_V30                1013     
-#define NET_DVR_GET_NETCFG_V50     1015    
-#define NET_DVR_SET_NETCFG_V50     1016    
-#define NET_GET_CRUISEPOINT_V40                    1018     
-#define     NET_DVR_GET_CRUISE                    1020        
-#define     NET_DVR_SET_CRUISE                    1021        
-#define     NET_DVR_GET_ALARMINCFG_V30            1024        
-#define     NET_DVR_SET_ALARMINCFG_V30            1025
-#define     NET_DVR_GET_ALARMOUTCFG_V30            1026        
-#define     NET_DVR_SET_ALARMOUTCFG_V30            1027
-#define     NET_DVR_GET_VIDEOOUTCFG_V30            1028        
-#define     NET_DVR_SET_VIDEOOUTCFG_V30            1029
-#define     NET_DVR_GET_SHOWSTRING_V30            1030        
-#define     NET_DVR_SET_SHOWSTRING_V30            1031
-#define     NET_DVR_GET_EXCEPTIONCFG_V30        1034        
-#define     NET_DVR_SET_EXCEPTIONCFG_V30        1035
-#define     NET_DVR_GET_RS232CFG_V30            1036        
-#define     NET_DVR_SET_RS232CFG_V30            1037
-#define        NET_DVR_GET_NET_DISKCFG                1038        
-#define        NET_DVR_SET_NET_DISKCFG                1039        
-#define     NET_DVR_GET_COMPRESSCFG_V30            1040        
-#define     NET_DVR_SET_COMPRESSCFG_V30            1041        
-#define     NET_DVR_GET_DECODERCFG_V30            1042        
-#define     NET_DVR_SET_DECODERCFG_V30            1043        
-#define     NET_DVR_GET_PREVIEWCFG_V30            1044        
-#define     NET_DVR_SET_PREVIEWCFG_V30            1045        
-#define     NET_DVR_GET_PREVIEWCFG_AUX_V30        1046        
-#define     NET_DVR_SET_PREVIEWCFG_AUX_V30        1047        
-#define     NET_DVR_GET_IPPARACFG               1048        
-#define     NET_DVR_SET_IPPARACFG               1049        
-#define     NET_DVR_GET_IPALARMINCFG            1050        
-#define     NET_DVR_SET_IPALARMINCFG            1051        
-#define     NET_DVR_GET_IPALARMOUTCFG           1052        
-#define     NET_DVR_SET_IPALARMOUTCFG           1053        
-#define     NET_DVR_GET_HDCFG                    1054        
-#define     NET_DVR_SET_HDCFG                    1055        
-#define     NET_DVR_GET_HDGROUP_CFG                1056        
-#define     NET_DVR_SET_HDGROUP_CFG                1057        
-#define     NET_DVR_GET_COMPRESSCFG_AUD         1058        
-#define     NET_DVR_SET_COMPRESSCFG_AUD         1059        
-#define     NET_DVR_GET_IPPARACFG_V31           1060        
-#define     NET_DVR_SET_IPPARACFG_V31           1061        
-#define NET_DVR_GET_IPPARACFG_V40               1062        
-#define NET_DVR_SET_IPPARACFG_V40               1063        
-#define NET_DVR_GET_CCDPARAMCFG                 1067       
-#define NET_DVR_SET_CCDPARAMCFG                 1068       
-#define NET_DVR_GET_IOINCFG                        1070    
-#define NET_DVR_SET_IOINCFG                        1071     
-#define NET_DVR_GET_IOOUTCFG                    1072    
-#define NET_DVR_SET_IOOUTCFG                    1073     
-#define NET_DVR_GET_FLASHCFG                    1074    
-#define NET_DVR_SET_FLASHCFG                    1075     
-#define NET_DVR_GET_LIGHTSNAPCFG                1076    
-#define NET_DVR_SET_LIGHTSNAPCFG                1077     
-#define NET_DVR_GET_MEASURESPEEDCFG                1078    
-#define NET_DVR_SET_MEASURESPEEDCFG                1079     
-#define NET_DVR_GET_IMAGEOVERLAYCFG                1080
-#define NET_DVR_SET_IMAGEOVERLAYCFG                1081
-#define NET_DVR_GET_SNAPCFG                        1082
-#define NET_DVR_SET_SNAPCFG                        1083
-#define NET_DVR_GET_VTPPARAM                    1084
-#define NET_DVR_SET_VTPPARAM                    1085
-#define NET_DVR_GET_SNAPENABLECFG                1086
-#define NET_DVR_SET_SNAPENABLECFG                1087
-#define NET_DVR_GET_POSTEPOLICECFG              1088
-#define NET_DVR_SET_POSTEPOLICECFG              1089
-#define NET_DVR_GET_JPEGCFG_V30                    1090
-#define NET_DVR_SET_JPEGCFG_V30                    1091
-#define NET_DVR_GET_SPRCFG                        1092
-#define NET_DVR_SET_SPRCFG                        1093
-#define NET_DVR_GET_PLCCFG                      1094
-#define NET_DVR_SET_PLCCFG                      1095
-#define NET_DVR_GET_DEVICESTATECFG              1096
-#define NET_DVR_SET_CALIBRATE_TIME              1097
-#define NET_DVR_GET_CALIBRATE_TIME              1098
-#define NET_DVR_GET_DEVICECFG_V40                1100
-#define NET_DVR_SET_DEVICECFG_V40                1101
-#define NET_DVR_GET_ZEROCHANCFG                   1102    
-#define NET_DVR_SET_ZEROCHANCFG                  1103    
-#define NET_DVR_GET_ZERO_PREVIEWCFG_V30         1104    
-#define NET_DVR_SET_ZERO_PREVIEWCFG_V30         1105    
-#define NET_DVR_SET_ZERO_ZOOM                    1106     
-#define NET_DVR_GET_ZERO_ZOOM                    1107     
-#define    NET_DVR_NATASSOCIATECFG_GET                1110    
-#define    NET_DVR_NATASSOCIATECFG_SET                1111     
-#define NET_DVR_GET_SNMPCFG                       1112    
-#define NET_DVR_SET_SNMPCFG                      1113    
-#define NET_DVR_GET_SNMPCFG_V30                   1114        
-#define NET_DVR_SET_SNMPCFG_V30                  1115        
-#define    NET_DVR_VIDEOPLATFORMALARMCFG_GET        1130  
-#define    NET_DVR_VIDEOPLATFORMALARMCFG_SET        1131  
-#define NET_DVR_GET_RAID_ADAPTER_INFO           1134    
-#define NET_DVR_SET_RAID_ADAPTER_INFO           1135    
-#define    NET_DVR_MATRIX_BIGSCREENCFG_GET            1140
-#define    NET_DVR_MATRIX_BIGSCREENCFG_SET            1141
-#define NET_DVR_GET_MB_PLATFORMPARA                1145 
-#define NET_DVR_SET_MB_PLATFORMPARA                1146 
-#define NET_DVR_GET_MB_DEVSTATUS                1147 
-#define  NET_DVR_GET_DECODER_JOINT_CHAN            1151
-#define  NET_DVR_SET_DECODER_JOINT_CHAN            1152
-#define NET_DVR_GET_NETCFG_MULTI                1161        
-#define NET_DVR_SET_NETCFG_MULTI                1162        
-#define NET_DVR_GET_NETCFG_MULTI_V50            1163        
-#define NET_DVR_SET_NETCFG_MULTI_V50            1164        
-#define NET_DVR_GET_CMSPARA                        1170
-#define NET_DVR_SET_CMSPARA                        1171
-#define NET_DVR_GET_DIALSTATUS                    1172
-#define NET_DVR_GET_SMSRELATIVEPARA                1173
-#define NET_DVR_SET_SMSRELATIVEPARA                1174
-#define NET_DVR_GET_PINSTATUS                    1175
-#define NET_DVR_SET_PINCMD                        1176
-#define NET_DVR_SET_SENSOR_CFG                    1180
-#define NET_DVR_GET_SENSOR_CFG                    1181
-#define NET_DVR_SET_ALARMIN_PARAM                1182
-#define NET_DVR_GET_ALARMIN_PARAM                1183
-#define NET_DVR_SET_ALARMOUT_PARAM                1184
-#define NET_DVR_GET_ALARMOUT_PARAM                1185
-#define NET_DVR_SET_SIREN_PARAM                    1186
-#define NET_DVR_GET_SIREN_PARAM                    1187
-#define NET_DVR_SET_ALARM_RS485CFG                1188
-#define NET_DVR_GET_ALARM_RS485CFG                1189
-#define NET_DVR_GET_ALARMHOST_MAIN_STATUS        1190
-#define NET_DVR_GET_ALARMHOST_OTHER_STATUS        1191
-#define NET_DVR_SET_ALARMHOST_ENABLECFG            1192
-#define NET_DVR_GET_ALARMHOST_ENABLECFG            1193
-#define NET_DVR_SET_ALARM_CAMCFG                1194
-#define NET_DVR_GET_ALARM_CAMCFG                1195
-#define NET_DVR_GET_GATEWAY_CFG                 1196
-#define NET_DVR_SET_GATEWAY_CFG                 1197
-#define NET_DVR_GET_ALARMDIALMODECFG            1198
-#define NET_DVR_SET_ALARMDIALMODECFG            1199
-#define NET_DVR_SET_ALARMIN_PARAM_V50            1200        
-#define NET_DVR_GET_ALARMIN_PARAM_V50            1201            
-#define    NET_DVR_SET_WINCFG                        1202
-#define NET_DVR_GET_ALARMHOSTDIALSETUPMODE        1204
-#define NET_DVR_SET_ALARMHOSTDIALSETUPMODE        1205
-#define NET_DVR_SET_SUBSYSTEM_ALARM                1210    
-#define NET_DVR_GET_SUBSYSTEM_ALARM                1211    
-#define NET_DVR_GET_WHITELIST_ALARM                1215    
-#define NET_DVR_SET_WHITELIST_ALARM                1216    
-#define    NET_DVR_GET_ALARMHOST_MODULE_LIST        1222    
-#define NET_DVR_SET_PRIOR_ALARM                    1223    
-#define NET_DVR_GET_PRIOR_ALARM                    1224    
-#define NET_DVR_SET_TAMPER_ALARMIN_PARAM        1225    
-#define NET_DVR_GET_TAMPER_ALARMIN_PARAM        1226    
-#define NET_DVR_GET_HOLIDAY_PARAM_CFG           1240
-#define NET_DVR_SET_HOLIDAY_PARAM_CFG           1241
-#define NET_DVR_GET_MOTION_HOLIDAY_HANDLE       1242
-#define NET_DVR_SET_MOTION_HOLIDAY_HANDLE       1243
-#define NET_DVR_GET_VILOST_HOLIDAY_HANDLE       1244
-#define NET_DVR_SET_VILOST_HOLIDAY_HANDLE       1245
-#define NET_DVR_GET_HIDE_HOLIDAY_HANDLE         1246
-#define NET_DVR_SET_HIDE_HOLIDAY_HANDLE         1247
-#define NET_DVR_GET_ALARMIN_HOLIDAY_HANDLE      1248
-#define NET_DVR_SET_ALARMIN_HOLIDAY_HANDLE      1249
-#define NET_DVR_GET_ALARMOUT_HOLIDAY_HANDLE     1250
-#define NET_DVR_SET_ALARMOUT_HOLIDAY_HANDLE     1251
-#define NET_DVR_GET_HOLIDAY_RECORD              1252
-#define NET_DVR_SET_HOLIDAY_RECORD              1253
-#define NET_DVR_GET_NETWORK_BONDING             1254
-#define NET_DVR_SET_NETWORK_BONDING             1255
-#define NET_DVR_GET_LINK_STATUS                 1256
-#define NET_DVR_GET_DISK_QUOTA_CFG              1278
-#define NET_DVR_SET_DISK_QUOTA_CFG              1279
-#define NET_DVR_GET_JPEG_CAPTURE_CFG            1280
-#define NET_DVR_SET_JPEG_CAPTURE_CFG            1281
-#define NET_DVR_GET_SCHED_CAPTURECFG            1282
-#define NET_DVR_SET_SCHED_CAPTURECFG            1283
-#define NET_DVR_GET_VGA_PREVIEWCFG              1284
-#define NET_DVR_SET_VGA_PREVIEWCFG              1285
-#define NET_DVR_GET_VIDEO_INPUT_EFFECT          1286
-#define NET_DVR_SET_VIDEO_INPUT_EFFECT          1287
-#define NET_DVR_GET_STORAGE_SERVER_SWITCH        1290
-#define NET_DVR_SET_STORAGE_SERVER_SWITCH        1291
-#define NET_DVR_GET_DISK_QUOTA_CFG_V60          1292
-#define NET_DVR_SET_DISK_QUOTA_CFG_V60          1293
-#define NET_DVR_GET_OPTICAL_CHANNEL                1300
-#define NET_DVR_SET_OPTICAL_CHANNEL                1301
-#define NET_DVR_GET_FIBER_CASCADE                1302
-#define NET_DVR_SET_FIBER_CASCADE                1303
-#define NET_DVR_GET_SPARTAN_STATUS                1304
-#define NET_DVR_SET_SPARTAN_STATUS                1305
-#define NET_DVR_GET_ETHERNET_CHANNEL            1306
-#define NET_DVR_SET_ETHERMET_CHANNEL            1307
-#define NET_DVR_OPTICAL_REBOOT                    1320
-#define NET_DVR_SET_AUDIOCHAN_CFG                1321
-#define NET_DVR_GET_AUDIOCHAN_CFG                1322
-#define NET_DVR_SET_MATRIX_BASE_CFG             1332 
-#define NET_DVR_GET_MATRIX_BASE_CFG             1333 
-#define NET_DVR_SWITCH_MATRIX_IO                1334 
-#define NET_DVR_GET_MATRIX_IO_RELATION          1335 
-#define    NET_DVR_V6PSUBSYSTEMARAM_GET            1501
-#define    NET_DVR_V6PSUBSYSTEMARAM_SET            1502
-#define    NET_DVR_GET_ALLWINCFG                    1503 
-#define    NET_DVR_BIGSCREENASSOCIATECFG_GET        1511 
-#define    NET_DVR_BIGSCREENASSOCIATECFG_SET        1512 
-#define    NET_DVR_GETSCREENINFO                    1601 
-#define    NET_DVR_SETSCREENINFO                    1602 
-#define    NET_DVR_GET_SCREEN_WINCFG                1603
-#define    NET_DVR_LAYOUTLIST_GET                     1605
-#define    NET_DVR_SET_LAYOUTCFG                    1606 
-#define    NET_DVR_LAYOUTCTRL                        1607
-#define    NET_DVR_INPUTLIST_GET                    1608 
-#define    NET_DVR_SET_INPUTSTREAMCFG                1609 
-#define    NET_DVR_OUTPUT_SET                        1610 
-#define    NET_DVR_OUTPUT_GET                        1611 
-#define    NET_DVR_SET_OSDCFG                        1612 
-#define    NET_DVR_GET_OSDCFG                        1613 
-#define    NET_DVR_BIGSCREEN_GETSERIAL             1614
-#define    NET_DVR_GET_PLANLIST                    1615
-#define    NET_DVR_SET_PLAN                        1616
-#define    NET_DVR_CTRL_PLAN                        1617
-#define    NET_DVR_GET_DEVICE_RUN_STATUS           1618
-#define NET_DVR_GET_EXTERNAL_MATRIX_CFG            1619
-#define    NET_DVR_SET_EXTERNAL_MATRIX_CFG            1620
-#define    NET_DVR_GET_OUTPUT_SCREEN_RELATION        1621
-#define    NET_DVR_SET_OUTPUT_SCREEN_RELATION        1622
-#define NET_DVR_GET_VCS_USER_CFG                1623
-#define    NET_DVR_SET_VCS_USER_CFG                1624
-#define    NET_DVR_CONTROL_SCREEN                    1625
-#define    NET_DVR_GET_EXTERNAL_MATRIX_CFG_V50        1626    
-#define    NET_DVR_SET_EXTERNAL_MATRIX_CFG_V50        1627    
-#define NET_DVR_GET_DEV_BASEINFO                1650
-#define NET_DVR_SET_DEV_BASEINFO                1651
-#define NET_DVR_GET_DEV_NETINFO                    1652
-#define NET_DVR_SET_DEV_NETINFO                    1653
-#define NET_DVR_GET_SIGNAL_SOURCE_INFO            1654
-#define NET_DVR_SET_SIGNAL_SOURCE_INFO            1655
-#define NET_DVR_ADJUST_PIC_V40                    1656
-#define NET_DVR_RESTORE_V40                        1657
-#define    NET_DVR_SET_NET_SIGNAL                    1658
-#define NET_DVR_REBOOT_V40                        1659
-#define NET_DVR_CONTROL_PICTURE_V41                1660
-#define NET_DVR_GET_AUTO_REBOOT_CFG             1710
-#define NET_DVR_SET_AUTO_REBOOT_CFG             1711
-#define NET_DVR_GET_TRUNK_USE_STATE             1713
-#define NET_DVR_SET_PTZ_CTRL_INFO                 1714
-#define NET_DVR_GET_PTZ_CTRL_INFO                 1715
-#define NET_DVR_GET_PTZ_STATUS                     1716
-#define    NET_DVR_GET_DISP_ROUTE_LIST                1717
-#define NET_DVR_GET_DEC_RESOURCE_LIST            1720
-#define NET_DVR_SET_DEC_RESOURCE_LIST            1721
-#define NET_DVR_GET_DEC_YUV                        1722
-#define NET_DVR_SET_DEC_YUV                        1723
-#define NET_DVR_GET_DEC_RESOUCE                    1724
-#define NET_DVR_FREE_DEC_RESOURCE                1725
-#define NET_DVR_SET_VIDEOWALLDISPLAYMODE        1730
-#define NET_DVR_GET_VIDEOWALLDISPLAYMODE        1731
-#define NET_DVR_GET_VIDEOWALLDISPLAYNO          1732
-#define    NET_DVR_SET_VIDEOWALLDISPLAYPOSITION    1733
-#define    NET_DVR_GET_VIDEOWALLDISPLAYPOSITION    1734
-#define NET_DVR_GET_VIDEOWALLWINDOWPOSITION     1735
-#define NET_DVR_SET_VIDEOWALLWINDOWPOSITION     1736
-#define    NET_DVR_VIDEOWALLWINDOW_CLOSEALL        1737
-#define    NET_DVR_SET_VIRTUALLED                    1738
-#define    NET_DVR_GET_VIRTUALLED                    1739
-#define NET_DVR_GET_IMAGE_CUT_MODE              1740
-#define NET_DVR_SET_IMAGE_CUT_MODE              1741
-#define NET_DVR_GET_USING_SERIALPORT            1742
-#define NET_DVR_SET_USING_SERIALPORT            1743
-#define NET_DVR_SCENE_CONTROL                   1744
-#define NET_DVR_GET_CURRENT_SCENE               1745
-#define NET_DVR_GET_VW_SCENE_PARAM              1746
-#define NET_DVR_SET_VW_SCENE_PARAM              1747
-#define NET_DVR_DISPLAY_CHANNO_CONTROL          1748
-#define NET_DVR_GET_WIN_DEC_INFO                1749
-#define NET_DVR_RESET_VIDEOWALLDISPLAYPOSITION  1750  
-#define NET_DVR_SET_VW_AUDIO_CFG                1752    
-#define    NET_DVR_GET_VW_AUDIO_CFG                1753    
-#define NET_DVR_GET_GBT28181_DECCHANINFO_CFG    1754    
-#define NET_DVR_SET_GBT28181_DECCHANINFO_CFG    1755    
-#define    NET_DVR_SET_MAINBOARD_SERIAL            1756  
-#define    NET_DVR_GET_MAINBOARD_SERIAL            1757  
-#define NET_DVR_GET_SUBBOARD_INFO               1758  
-#define NET_DVR_GET_SUBBOARD_EXCEPTION          1759  
-#define NET_DVR_GET_CAMERACHAN_SERIALCFG    1760   
-#define NET_DVR_SET_CAMERACHAN_SERIALCFG    1761   
-#define NET_DVR_GET_MATRIX_STATUS            1762   
-#define    NET_SET_MULTIFUNCTION_SERIALCFG     1763  
-#define    NET_GET_MULTIFUNCTION_SERIALCFG        1764  
-#define NET_DVR_PTZ_3D_SPEED                1765  
-#define  NET_DVR_GET_SIGNAL_JOINT            1766   
-#define  NET_DVR_SET_SIGNAL_JOINT            1767   
-#define  NET_DVR_SIGNAL_CUT                    1768   
-#define  NET_DVR_DYNAMIC_DECODE_BATCH        1769     
-#define  NET_DVR_DECSWITCH_SET_BATCH        1770    
-#define  NET_DVR_DECSWITCH_GET_BATCH        1771    
-#define  NET_DVR_GET_ALL_SIGNAL_JOINT        1772   
-#define     NET_DVR_GET_PLAYING_PLAN            1773    
-#define  NET_DVR_WALL_RELATION_GET            1774   
-#define  NET_DVR_WALL_RELATION_SET            1775   
-#define     NET_DVR_SET_INPUTSTREAMCFG_V40        1776   
-#define  NET_DVR_PTZCFG_INPUTSTREAM_GET        1777  
-#define  NET_DVR_PTZCFG_INPUTSTREAM_SET        1778  
-#define  NET_DVR_SIGNAL_CUTPARAM_GET        1779  
-#define NET_DVR_GET_SUBSYSTEM_NETCFG            1780    
-#define NET_DVR_SET_SUBSYSTEM_NETCFG              1781    
-#define    NET_DVR_DEL_SIGNAL_JOINT                1782    
-#define NET_DVR_GET_PICTURE_INFO                1783     
-#define NET_DVR_SET_PICTURE_INFO                1784     
-#define NET_DVR_GET_VIDEO_INFO                    1785     
-#define NET_DVR_SET_VIDEO_INFO                    1786     
-#define NET_DVR_SET_PLAYLIST                    1787     
-#define NET_DVR_GET_PLAYLIST                    1788     
-#define NET_DVR_GET_ALL_PLAYLIST                1789     
-#define NET_DVR_PLAYITEM_CONTROL                1790     
-#define NET_DVR_SET_PLAYPLAN_TEMPLATE            1791     
-#define NET_DVR_GET_PLAYPLAN_TEMPLATE            1792     
-#define NET_DVR_GET_ALL_PLAYPLAN_TEMPLATE        1793     
-#define NET_DVR_SET_WINDOW_PLAYPLAN                1794     
-#define NET_DVR_GET_WINDOW_PLAYPLAN                1795     
-#define NET_DVR_TOPLAY_ITEM                        1796     
-#define NET_DVR_DEVICE_PLAY_CONTROL                1797     
-#define NET_DVR_GET_PLAY_INFO                    1798     
-#define NET_DVR_GET_ALL_PICTURE_INFO            1799     
-#define NET_DVR_GET_ALL_VIDEO_INFO                1800     
-#define NET_DVR_DELETE_VIDEO_FILE                1801     
-#define NET_DVR_GET_ALARMHOSTSUBSYSTEM_CFG        2001
-#define NET_DVR_SET_ALARMHOSTSUBSYSTEM_CFG        2002
-#define NET_DVR_GETEXTENDALARMININFO            2003
-#define NET_DVR_MODIFYALARMINNO                 2004
-#define NET_DVR_GET_ALARMHOST_WIRELESS_NETWORK_CFG    2005
-#define    NET_DVR_SET_ALARMHOST_WIRELESS_NETWORK_CFG    2006
-#define    NET_DVR_GET_ALARMHOST_NETCFG            2007
-#define    NET_DVR_SET_ALARMHOST_NETCFG            2008
-#define NET_DVR_GET_LED_SCREEN_CFG                2009
-#define NET_DVR_SET_LED_SCREEN_CFG                2010
-#define NET_DVR_GET_LED_CONTENT_CFG                2011
-#define    NET_DVR_SET_LED_CONTENT_CFG                2012
-#define NET_DVR_TURNON_LED                        2013
-#define NET_DVR_TURNOFF_LED                        2014
-#define NET_DVR_GET_LED_TIMER_SWITCH            2015
-#define NET_DVR_SET_LED_TIMER_SWITCH            2016
-#define NET_DVR_SET_LED_BRIGHTNESS                2017
-#define NET_DVR_GET_LED_TIMER_BRIGHTNESS            2018
-#define NET_DVR_SET_LED_TIMER_BRIGHTNESS            2019
-#define NET_DVR_LED_CHECKTIME                        2020
-#define NET_DVR_GET_ALARMHOST_AUDIO_ASSOCIATE_ALARM    2021
-#define NET_DVR_SET_ALARMHOST_AUDIO_ASSOCIATE_ALARM    2022
-#define    NET_DVR_GET_LED_STATUS                        2023
-#define NET_DVR_CLOSE_SUBSYSTEM_FAULT_ALARM         2027
-#define NET_DVR_SET_SUBSYSTEM_BYPASS                2028
-#define NET_DVR_CANCEL_SUBSYSTEM_BYPASS                2029
-#define NET_DVR_GET_ALARMHOST_SUBSYSTEM_CFG_EX        2030
-#define    NET_DVR_SET_ALARMHOST_SUBSYSTEM_CFG_EX        2031
-#define NET_DVR_GET_ALARMHOST_PRINTER_CFG            2032
-#define    NET_DVR_SET_ALARMHOST_PRINTER_CFG            2033
-#define    NET_DVR_GET_ALARMHOST_ZONE_LIST_IN_SUBSYSTEM 2034
-#define    NET_DVR_GET_ALARMHOST_TRIGGER_LIST            2035
-#define    NET_DVR_ARM_ALARMHOST_SUBSYSTEM                2036
-#define    NET_DVR_GET_ALARMHOST_EVENT_TRIG_ALARMOUT_CFG 2037
-#define NET_DVR_SET_ALARMHOST_EVENT_TRIG_ALARMOUT_CFG 2038
-#define    NET_DVR_GET_ALARMHOST_FAULT_CFG                2039
-#define NET_DVR_SET_ALARMHOST_FAULT_CFG                2040
-#define NET_DVR_SEARCH_ARMHOST_EXTERNAL_MODULE         2041
-#define    NET_DVR_REGISTER_ALARMHOST_EXTERNAL_MODULE    2042
-#define NET_DVR_CLOSE_ALARMHOST_OVERALL_FAULT_ALARM 2043
-#define NET_DVR_GET_SAFETYCABIN_WORK_MODE            2044 
-#define NET_DVR_SET_SAFETYCABIN_WORK_MODE            2045 
-#define NET_DVR_GET_SAFETYCABIN_PERSON_SIGNAL_CFG   2046 
-#define NET_DVR_SET_SAFETYCABIN_PERSON_SIGNAL_CFG   2047 
-#define  NET_DVR_GET_ALARMHOST_MODULE_CFG            2048
-#define     NET_DVR_GET_ALARMHOST_EXTERNAL_DEVICE_STATE        2050
-#define  NET_DVR_SET_ALARMHOST_EXTERNAL_DEVICE_LIMIT_VALUE  2051
-#define  NET_DVR_GET_ALARMHOST_EXTERNAL_DEVICE_LIMIT_VALUE  2052
-#define  NET_DVR_GET_ALARMHOST_SENSOR_JOINT_CFG                2053
-#define  NET_DVR_SET_ALARMHOST_SENSOR_JOINT_CFG                2054
-#define     NET_DVR_SET_ALARMHOST_RS485_SLOT_CFG                2055
-#define  NET_DVR_GET_ALARMHOST_RS485_SLOT_CFG                2056
-#define NET_DVR_GET_ALL_VARIABLE_INFO      2057   
-#define NET_DVR_GET_ALARM_POINT_CFG       2058   
-#define NET_DVR_SET_ALARM_POINT_CFG       2059   
-#define NET_DVR_GET_HISTORY_VALUE          2060   
-#define NET_DVR_GET_ALARMHOST_ALARM_MODE  2061   
-#define NET_DVR_SET_ALARMHOST_ALARM_MODE  2062   
-#define NET_DVR_GET_ALARMHOST_SENSOR_VALUE 2063   
-#define NET_DVR_GET_ALARMHOST_REPORT_CENTER_V40    2064   
-#define NET_DVR_SET_ALARMHOST_REPORT_CENTER_V40    2065   
-#define NET_DVR_GET_OUTPUT_SCHEDULE_RULECFG        2068   
-#define NET_DVR_SET_OUTPUT_SCHEDULE_RULECFG     2069   
-#define NET_DVR_GET_CMS_CFG                     2070
-#define    NET_DVR_SET_CMS_CFG                        2071
-#define NET_DVR_GET_PASSTHROUGH_CAP  2073  
-#define NET_DVR_GET_ALARMHOST_MAIN_STATUS_V40    2072   
-#define NET_DVR_GET_ALARMHOST_MAIN_STATUS_V51    2083   
-#define NET_DVR_GET_ALARM_CAPTRUE_CFG                 2074    
-#define    NET_DVR_SET_ALARM_CAPTRUE_CFG                2075    
-#define NET_DVR_GET_ONE_OUTPUT_SCH_RULECFG_V40        2078   
-#define NET_DVR_SET_ONE_OUTPUT_SCH_RULECFG_V40        2079   
-#define NET_DVR_GET_OUTPUT_SCHEDULE_RULECFG_V40        2080   
-#define NET_DVR_SET_OUTPUT_SCHEDULE_RULECFG_V40     2081   
-#define  NET_DVR_ALARMHOST_CLOSE_SUBSYSTEM  2082  
-#define NET_DVR_GET_WEEK_PLAN_CFG               2100    
-#define NET_DVR_SET_WEEK_PLAN_CFG               2101    
-#define NET_DVR_GET_DOOR_STATUS_HOLIDAY_PLAN    2102    
-#define NET_DVR_SET_DOOR_STATUS_HOLIDAY_PLAN    2103    
-#define NET_DVR_GET_DOOR_STATUS_HOLIDAY_GROUP   2104    
-#define NET_DVR_SET_DOOR_STATUS_HOLIDAY_GROUP   2105    
-#define NET_DVR_GET_DOOR_STATUS_PLAN_TEMPLATE   2106    
-#define NET_DVR_SET_DOOR_STATUS_PLAN_TEMPLATE   2107    
-#define NET_DVR_GET_DOOR_CFG                    2108    
-#define NET_DVR_SET_DOOR_CFG                    2109    
-#define NET_DVR_GET_DOOR_STATUS_PLAN            2110    
-#define NET_DVR_SET_DOOR_STATUS_PLAN            2111    
-#define NET_DVR_GET_GROUP_CFG                   2112    
-#define NET_DVR_SET_GROUP_CFG                   2113    
-#define NET_DVR_GET_MULTI_CARD_CFG              2114    
-#define NET_DVR_SET_MULTI_CARD_CFG              2115    
-#define NET_DVR_GET_CARD_CFG                    2116    
-#define NET_DVR_SET_CARD_CFG                    2117    
-#define NET_DVR_CLEAR_ACS_PARAM                    2118    
-#define NET_DVR_GET_SNEAK_CFG                    2119    
-#define NET_DVR_SET_SNEAK_CFG                   2120    
-#define NET_DVR_GET_MULTI_DOOR_INTERLOCK_CFG    2121    
-#define NET_DVR_SET_MULTI_DOOR_INTERLOCK_CFG    2122    
-#define NET_DVR_GET_ACS_WORK_STATUS                2123    
-#define NET_DVR_GET_VERIFY_WEEK_PLAN            2124    
-#define NET_DVR_SET_VERIFY_WEEK_PLAN            2125    
-#define NET_DVR_GET_CARD_RIGHT_WEEK_PLAN        2126    
-#define NET_DVR_SET_CARD_RIGHT_WEEK_PLAN        2127    
-#define NET_DVR_GET_VERIFY_HOLIDAY_PLAN         2128    
-#define NET_DVR_SET_VERIFY_HOLIDAY_PLAN         2129    
-#define NET_DVR_GET_CARD_RIGHT_HOLIDAY_PLAN     2130    
-#define NET_DVR_SET_CARD_RIGHT_HOLIDAY_PLAN     2131    
-#define NET_DVR_GET_VERIFY_HOLIDAY_GROUP        2132    
-#define NET_DVR_SET_VERIFY_HOLIDAY_GROUP        2133    
-#define NET_DVR_GET_CARD_RIGHT_HOLIDAY_GROUP    2134    
-#define NET_DVR_SET_CARD_RIGHT_HOLIDAY_GROUP    2135    
-#define NET_DVR_GET_VERIFY_PLAN_TEMPLATE        2136    
-#define NET_DVR_SET_VERIFY_PLAN_TEMPLATE        2137    
-#define NET_DVR_GET_CARD_RIGHT_PLAN_TEMPLATE    2138    
-#define NET_DVR_SET_CARD_RIGHT_PLAN_TEMPLATE    2139    
-#define NET_DVR_GET_CARD_READER_CFG                2140    
-#define NET_DVR_SET_CARD_READER_CFG             2141    
-#define NET_DVR_GET_CARD_READER_PLAN            2142    
-#define NET_DVR_SET_CARD_READER_PLAN            2143    
-#define NET_DVR_GET_CASE_SENSOR_CFG                2144    
-#define NET_DVR_SET_CASE_SENSOR_CFG             2145    
-#define NET_DVR_GET_CARD_READER_ANTI_SNEAK_CFG  2146    
-#define NET_DVR_SET_CARD_READER_ANTI_SNEAK_CFG  2147    
-#define NET_DVR_GET_PHONE_DOOR_RIGHT_CFG        2148    
-#define NET_DVR_SET_PHONE_DOOR_RIGHT_CFG        2149    
-#define NET_DVR_GET_FINGERPRINT_CFG             2150    
-#define NET_DVR_SET_FINGERPRINT_CFG             2151    
-#define NET_DVR_DEL_FINGERPRINT_CFG             2152    
-#define NET_DVR_GET_EVENT_CARD_LINKAGE_CFG      2153    
-#define NET_DVR_SET_EVENT_CARD_LINKAGE_CFG      2154    
-#define NET_DVR_GET_ANTI_SNEAK_HOST_CFG            2155    
-#define NET_DVR_SET_ANTI_SNEAK_HOST_CFG         2156    
-#define NET_DVR_GET_READER_ANTI_SNEAK_HOST_CFG  2157    
-#define NET_DVR_SET_READER_ANTI_SNEAK_HOST_CFG  2158    
-#define NET_DVR_GET_ACS_CFG                     2159    
-#define NET_DVR_SET_ACS_CFG                     2160    
-#define NET_DVR_GET_CARD_PASSWD_CFG                2161    
-#define NET_DVR_SET_CARD_PASSWD_CFG             2162    
-#define NET_DVR_GET_CARD_USERINFO_CFG           2163    
-#define NET_DVR_SET_CARD_USERINFO_CFG           2164    
-#define NET_DVR_GET_ACS_EXTERNAL_DEV_CFG        2165    
-#define NET_DVR_SET_ACS_EXTERNAL_DEV_CFG        2166    
-#define NET_DVR_GET_PERSONNEL_CHANNEL_CFG       2167    
-#define NET_DVR_SET_PERSONNEL_CHANNEL_CFG       2168    
-#define NET_DVR_SET_PLATFORM_VERIFY_CFG         2169    
-#define NET_DVR_GET_PERSON_STATISTICS_CFG        2170   
-#define NET_DVR_SET_PERSON_STATISTICS_CFG        2171   
-#define NET_DVR_GET_ACS_SCREEN_DISPLAY_CFG        2172   
-#define NET_DVR_SET_ACS_SCREEN_DISPLAY_CFG        2173   
-#define NET_DVR_GET_GATE_TIME_CFG               2174  
-#define NET_DVR_SET_GATE_TIME_CFG               2175  
-#define NET_DVR_GET_LOCAL_CONTROLLER_STATUS     2176    
-#define NET_DVR_GET_ONLINE_LOCAL_CONTROLLER     2177    
-#define NET_DVR_GET_CARD_CFG_V50                2178    
-#define NET_DVR_SET_CARD_CFG_V50                2179    
-#define NET_DVR_GET_ACS_WORK_STATUS_V50         2180    
-#define NET_DVR_GET_EVENT_CARD_LINKAGE_CFG_V50  2181    
-#define NET_DVR_SET_EVENT_CARD_LINKAGE_CFG_V50  2182    
-#define NET_DVR_GET_FINGERPRINT_CFG_V50         2183    
-#define NET_DVR_SET_FINGERPRINT_CFG_V50         2184    
-#define NET_DVR_GET_SAFETYCABIN_STATE            2197    
-#define NET_DVR_GET_RS485_CASCADE_CFG            2198   
-#define NET_DVR_SET_RS485_CASCADE_CFG            2199   
-#define NET_DVR_GET_REMOTECONTROLLER_PERMISION_CFG        2200    
-#define NET_DVR_SET_REMOTECONTROLLER_PERMISION_CFG        2201    
-#define NET_DVR_GET_KEYBOARD_CFG                        2202    
-#define NET_DVR_SET_KEYBOARD_CFG                        2203    
-#define    NET_DVR_GET_ALARMHOST_WIRELESS_BUSINNESS_INFO    2204    
-#define    NET_DVR_GET_ALL_REMOTECONTROLLER_LIST            2205    
-#define    NET_DVR_GET_PREVIEW_DELAY_CFG                    2206    
-#define    NET_DVR_SET_PREVIEW_DELAY_CFG                    2207    
-#define NET_DVR_GET_ZONE_CHANNEL_LINKAGE_CFG            2208    
-#define NET_DVR_SET_ZONE_CHANNEL_LINKAGE_CFG            2209    
-#define NET_DVR_GET_CENTER_SERVER_CFG                    2210    
-#define NET_DVR_SET_CENTER_SERVER_CFG                    2211    
-#define NET_DVR_GET_EMERGENCE_ALARM_PRODUCT_CAP            2212    
-#define NET_DVR_GET_CALL_WAITTING_CFG_CAP                2213    
-#define NET_DVR_GET_CALL_WAITTING_CFG                    2214    
-#define NET_DVR_SET_CALL_WAITTING_CFG                    2215    
-#define NET_DVR_GET_ALARM_LAMP_CFG_CAP                    2216    
-#define NET_DVR_GET_ALARM_LAMP_CFG                        2217    
-#define NET_DVR_SET_ALARM_LAMP_CFG                        2218    
-#define NET_DVR_GET_VOICE_PROMPTION_CFG_CAP                2219    
-#define NET_DVR_GET_VOICE_PROMPTION_CFG                    2220    
-#define NET_DVR_SET_VOICE_PROMPTION_CFG                    2221    
-#define NET_DVR_GET_EMERGENCE_ALARM_RESPONSE_CAP        2222    
-#define NET_DVR_EMERGENCE_ALARM_RESPONSE_CTRL            2223    
-#define NET_DVR_GET_ALARMHOST_NETCFG_V50                2224    
-#define NET_DVR_SET_ALARMHOST_NETCFG_V50                2225    
-#define    NET_DVR_REGISTER_ALARM_RS485                    2226    
-#define NET_DVR_GET_ALARMIN_PARAM_LIST                    2227    
-#define NET_DVR_GET_ALARMHOST_OTHER_STATUS_V50            2228    
-#define NET_DVR_GET_ALARMHOST_OTHER_STATUS_V51            2236    
-#define NET_DVR_GET_ALARMIN_ASSOCIATED_CHAN_LIST        2229    
-#define NET_DVR_GET_ALARMIN_TRIGGER                     2230    
-#define NET_DVR_SET_ALARMIN_TRIGGER                     2231    
-#define NET_DVR_GET_EMERGENCY_CALL_HELP_TRIGGER         2232    
-#define NET_DVR_SET_EMERGENCY_CALL_HELP_TRIGGER         2233    
-#define NET_DVR_GET_CONSULT_TRIGGER                     2234    
-#define NET_DVR_SET_CONSULT_TRIGGER                     2235    
-#define NET_DVR_GET_ALARMIN_PARAM_LIST_V50              2237    
-#define NET_DVR_GET_CARD_RIGHT_WEEK_PLAN_V50    2304  
-#define NET_DVR_SET_CARD_RIGHT_WEEK_PLAN_V50    2305  
-#define NET_DVR_GET_CARD_RIGHT_HOLIDAY_PLAN_V50    2310  
-#define NET_DVR_SET_CARD_RIGHT_HOLIDAY_PLAN_V50    2311  
-#define NET_DVR_GET_CARD_RIGHT_HOLIDAY_GROUP_V50      2316 
-#define NET_DVR_SET_CARD_RIGHT_HOLIDAY_GROUP_V50      2317 
-#define NET_DVR_GET_CARD_RIGHT_PLAN_TEMPLATE_V50     2322 
-#define NET_DVR_SET_CARD_RIGHT_PLAN_TEMPLATE_V50     2323
-#define NET_DVR_GET_SCHEDULE_INFO                       2500    
-#define NET_DVR_GET_ATTENDANCE_SUMMARY_INFO             2501    
-#define NET_DVR_GET_ATTENDANCE_RECORD_INFO              2502    
-#define NET_DVR_GET_ABNORMAL_INFO                       2503    
-#define NET_DVR_CAPTURE_FINGERPRINT_INFO                2504    
-#define NET_DVR_BULK_UPLOAD_BLACK_LIST_PICTURE          2520       
-#define NET_DVR_BULK_UPLOAD_ID_BLACK_LIST        2521        
-#define NET_DVR_GET_FAILED_FACE_INFO             2522        
-#define NET_DVR_GET_FACE_AND_TEMPLATE            2523        
-#define NET_DVR_SET_FACE_AND_TEMPLATE            2524        
-#define NET_DVR_GET_CARD_READER_CFG_V50                    2505    
-#define NET_DVR_SET_CARD_READER_CFG_V50                 2506    
-#define NET_DVR_GET_FACE_PARAM_CFG                      2507    
-#define NET_DVR_SET_FACE_PARAM_CFG                      2508    
-#define NET_DVR_DEL_FACE_PARAM_CFG                      2509    
-#define    NET_DVR_CAPTURE_FACE_INFO                        2510    
-#define NET_DVR_GET_REGISTER_INFO                       2511    
-#define NET_DVR_GET_SMSRELATIVEPARA_V50                    2512    
-#define NET_DVR_SET_SMSRELATIVEPARA_V50                    2513    
-#define NET_DVR_GET_ACS_EVENT                           2514    
-#define NET_DVR_GET_MULTI_CARD_CFG_V50                  2515    
-#define NET_DVR_SET_MULTI_CARD_CFG_V50                  2516    
-#define NET_DVR_DEL_FINGERPRINT_CFG_V50                 2517    
-#define NET_DVR_GET_EVENT_CARD_LINKAGE_CFG_V51          2518    
-#define NET_DVR_SET_EVENT_CARD_LINKAGE_CFG_V51          2519    
-#define NET_DVR_SET_EXAM_INFO                           2530    
-#define NET_DVR_SET_EXAMINEE_INFO                       2531    
-#define NET_DVR_SEARCH_EXAM_COMPARE_RESULT              2532    
-#define NET_DVR_BULK_CHECK_FACE_PICTURE                 2533    
-#define NET_DVR_JSON_CONFIG                         2550    
-#define NET_DVR_FACE_DATA_RECORD                        2551    
-#define NET_DVR_FACE_DATA_SEARCH                        2552    
-#define NET_DVR_FACE_DATA_MODIFY                        2553    
-#define NET_DVR_CAPTURE_DATA_SEARCH                 2554    
-#define NET_DVR_GET_CARD                 2560
-#define NET_DVR_SET_CARD                 2561
-#define NET_DVR_DEL_CARD                 2562
-#define NET_DVR_GET_FINGERPRINT          2563
-#define NET_DVR_SET_FINGERPRINT          2564
-#define NET_DVR_DEL_FINGERPRINT          2565
-#define NET_DVR_GET_FACE                 2566
-#define NET_DVR_SET_FACE                 2567
-#define NET_DVR_GET_ALL_ALARM_RS485CFG            2705    
-#define NET_DVR_GET_ALL_ALARMHOST_RS485_SLOT_CFG        2706        
-#define NET_DVR_GET_DEVICE_SELF_CHECK_STATE        2707    
-#define NET_DVR_GET_ALL_ALARM_POINT_CFG            2708    
-#define NET_DVR_GET_ALL_ALARM_SENSOR_CFG        2709    
-#define NET_DVR_GET_ALL_ALARM_SENSOR_JOINT        2710    
-#define NET_DVR_GET_AIR_CONDITION_PARAM            2711    
-#define NET_DVR_GET_OUT_SCALE_CFG                2712        
-#define NET_DVR_SET_OUT_SCALE_CFG                2713        
-#define NET_DVR_GET_ALARM_CHAN_ABLITITY            2714        
-#define NET_DVR_GET_ALARMCENTER_NETCFG            2715        
-#define NET_DVR_SET_ALARMCENTER_NETCFG            2716        
-#define NET_ITC_GET_TRIGGERCFG                  3003  
-#define NET_ITC_SET_TRIGGERCFG                  3004  
-#define NET_ITC_GET_IOOUT_PARAM_CFG                3005  
-#define NET_ITC_SET_IOOUT_PARAM_CFG                3006  
-#define NET_DVR_GET_CAMERA_SETUPCFG                3007  
-#define NET_DVR_SET_CAMERA_SETUPCFG                3008  
-#define NET_ITC_GET_TRIGGER_DEFAULTCFG          3013  
-#define NET_DVR_GET_STATUS_DETECTCFG            3015  
-#define NET_DVR_SET_STATUS_DETECTCFG            3016  
-#define NET_ITC_GET_VIDEO_TRIGGERCFG            3017  
-#define NET_ITC_SET_VIDEO_TRIGGERCFG            3018  
-#define NET_DVR_GET_TPS_ALARMCFG                3019  
-#define NET_DVR_SET_TPS_ALARMCFG                3020  
-#define NET_DVR_GET_REDAREACFG                  3100   
-#define NET_DVR_SET_REDAREACFG                  3101   
-#define    NET_DVR_GET_TEST_SPOT                    3102   
-#define    NET_DVR_SET_TEST_SPOT                    3103   
-#define NET_DVR_GET_CABINETCFG                    3104   
-#define NET_DVR_SET_CABINETCFG                    3105   
-#define NET_DVR_VEHICLE_CHECK_START                3106   
-#define NET_DVR_SET_CAPTUREPIC_CFG                3107   
-#define NET_DVR_GET_CAPTUREPIC_CFG                3108   
-#define NET_DVR_SET_MOBILEPLATE_RECOG_CFG        3109   
-#define NET_DVR_GET_MOBILEPLATE_RECOG_CFG        3110   
-#define NET_DVR_SET_MOBILE_RADAR_CFG            3111   
-#define NET_DVR_GET_MOBILE_RADAR_CFG            3112   
-#define NET_DVR_SET_MOBILE_LOCALPLATECHK_CFG    3113   
-#define NET_DVR_GET_MOBILE_LOCALPLATECHK_CFG    3114   
-#define  NET_ITC_GET_ICRCFG                        3115   
-#define  NET_ITC_SET_ICRCFG                        3116   
-#define  NET_ITC_GET_RS485_ACCESSINFO            3117   
-#define  NET_ITC_SET_RS485_ACCESSINFO            3118   
-#define  NET_ITC_GET_EXCEPTIONCFG                 3119   
-#define  NET_ITC_SET_EXCEPTIONCFG                3120   
-#define  NET_ITC_GET_FTPCFG                        3121   
-#define  NET_ITC_SET_FTPCFG                        3122   
-#define  NET_DVR_VEHICLE_CONTROL_LIST_START     3123   
-#define  NET_DVR_GET_ALL_VEHICLE_CONTROL_LIST   3124   
-#define  NET_DVR_VEHICLE_DELINFO_CTRL           3125   
-#define  NET_DVR_GET_ENTRANCE_PARAMCFG            3126   
-#define  NET_DVR_SET_ENTRANCE_PARAMCFG            3127   
-#define  NET_DVR_BARRIERGATE_CTRL               3128   
-#define  NET_DVR_GATELAMP_CTRL                  3129   
-#define  NET_DVR_GET_CURTRIGGERMODE             3130   
-#define  NET_DVR_GET_GPSDATACFG                    3131   
-#define  NET_DVR_SET_GPSDATACFG                    3132   
-#define  NET_DVR_VEHICLELIST_CTRL_START            3133   
-#define  NET_DVR_GET_GUARDCFG                   3134   
-#define  NET_DVR_SET_GUARDCFG                   3135   
-#define  NET_DVR_GET_SNAPINFO_CFG               3136   
-#define  NET_DVR_SET_SNAPINFO_CFG               3137   
-#define  NET_DVR_GET_SNAPINFO_CFG_V40           3138   
-#define  NET_DVR_SET_SNAPINFO_CFG_V40           3139   
-#define  NET_DVR_SET_CURTRIGGERMODE                3140   
-#define     NET_DVR_GET_TRAFFIC_DATA                3141   
-#define     NET_DVR_GET_TRAFFIC_FLOW                3142   
-#define  NET_DVR_PARKING_VEHICLE_SEND           3143   
-#define  NET_DVR_PARKING_CARD_SEND              3144   
-#define     NET_DVR_PARKING_CARD_CTRL                3145   
-#define    NET_DVR_GET_ALARMCTRL_CAPABILITIES        3146   
-#define    NET_DVR_SET_ALARMCTRL_CFG                3147   
-#define    NET_DVR_GET_ALARMCTRL_CFG                3148   
-#define NET_DVR_GET_AUDIO_INPUT                 3201   
-#define NET_DVR_SET_AUDIO_INPUT                 3202  
-#define NET_DVR_GET_CAMERA_DEHAZE_CFG           3203   
-#define NET_DVR_SET_CAMERA_DEHAZE_CFG           3204  
-#define NET_DVR_REMOTECONTROL_ALARM             3205  
-#define NET_DVR_REMOTECONTROL_DISALARM          3206  
-#define NET_DVR_REMOTECONTROL_STUDY             3207  
-#define NET_DVR_WIRELESS_ALARM_STUDY            3208  
-#define NET_IPC_GET_AUX_ALARMCFG                3209   
-#define NET_IPC_SET_AUX_ALARMCFG                3210  
-#define NET_DVR_GET_PREVIEW_DISPLAYCFG            3211  
-#define NET_DVR_SET_PREVIEW_DISPLAYCFG             3212  
-#define NET_DVR_REMOTECONTROL_PTZ                3213  
-#define NET_DVR_REMOTECONTROL_PRESETPOINT       3214   
-#define NET_DVR_REMOTECONTROL_CRUISE             3215   
-#define NET_DVR_GET_MULTI_STREAM_COMPRESSIONCFG  3216 
-#define NET_DVR_SET_MULTI_STREAM_COMPRESSIONCFG  3217 
-#define NET_DVR_GET_WPSCFG                        3218  
-#define NET_DVR_SET_WPSCFG                        3219  
-#define NET_DVR_WPS_CONNECT                     3220  
-#define NET_DVR_GET_DEVICE_PIN                  3221  
-#define NET_DVR_UPDATE_PIN                      3223  
-#define NET_DVR_GET_PRESETCFG                   3224  
-#define NET_DVR_GET_PTZCRUISECFG                3225  
-#define NET_DVR_GET_PRESET_NUM                    3226  
-#define NET_DVR_GET_PTZCRUISE_NUM                3227  
-#define NET_DVR_GET_MOTION_TRACK_CFG            3228  
-#define NET_DVR_SET_MOTION_TRACK_CFG            3229  
-#define NET_DVR_CLEAR_IPC_PARAM                    3230  
-#define NET_DVR_GET_IPADDR_FILTERCFG            3232  
-#define NET_DVR_SET_IPADDR_FILTERCFG            3233  
-#define NET_DVR_GET_LOGO_OVERLAYCFG                3234  
-#define NET_DVR_SET_LOGO_OVERLAYCFG                3235  
-#define NET_DVR_GET_IPV6_LIST                   3236  
-#define NET_DVR_GET_AUDIOOUT_VOLUME             3237  
-#define NET_DVR_SET_AUDIOOUT_VOLUME             3238  
-#define NET_DVR_GET_FUZZY_UPGRADE               3239  
-#define NET_DVR_GET_BV_CORRECT_PARAM            3240  
-#define NET_DVR_SET_BV_CORRECT_PARAM            3241  
-#define NET_DVR_GET_OUTPUT_VIDEO_TYPE           3242  
-#define NET_DVR_SET_OUTPUT_VIDEO_TYPE           3243  
-#define NET_DVR_FISHEYE_CFG                     3244  
-#define NET_DVR_GET_PTZ_POINT                   3245  
-#define NET_DVR_SET_PTZ_POINT                   3246  
-#define NET_DVR_REMOTECONTROL_DEV_PARAM         3247  
-#define NET_DVR_GET_FISHEYE_STREAM_STATUS       3248  
-#define NET_DVR_GET_GBT28181_ACCESS_CFG            3249  
-#define NET_DVR_SET_GBT28181_ACCESS_CFG            3250  
-#define NET_DVR_GET_GBT28181_CHANINFO_CFG        3251  
-#define NET_DVR_SET_GBT28181_CHANINFO_CFG        3252  
-#define NET_DVR_GET_GBT28181_ALARMINCFG            3253  
-#define NET_DVR_SET_GBT28181_ALARMINCFG            3254  
-#define NET_DVR_GET_ISP_CAMERAPARAMCFG            3255  
-#define NET_DVR_SET_ISP_CAMERAPARAMCFG            3256  
-#define NET_DVR_GET_DEVSERVER_CFG                3257  
-#define NET_DVR_SET_DEVSERVER_CFG                3258  
-#define    NET_DVR_GET_WIPERINFO_CFG                3259     
-#define    NET_DVR_SET_WIPERINFO_CFG                3260     
-#define NET_DVR_GET_TRACK_DEV_PARAM             3261   
-#define NET_DVR_SET_TRACK_DEV_PARAM             3262   
-#define NET_DVR_GET_PTZ_TRACK_PARAM             3263   
-#define NET_DVR_SET_PTZ_TRACK_PARAM             3264   
-#define NET_DVR_GET_CENTER_POINT_CFG            3265   
-#define NET_DVR_SET_CENTER_POINT_CFG            3266   
-#define NET_DVR_GET_CENTER_POINT_CFG_CAPABILITIES        3267    
-#define NET_DVR_GET_FISHEYE_CAPABILITIES        3268        
-#define NET_DVR_GET_BASICPARAMCFG                3270 
-#define NET_DVR_SET_BASICPARAMCFG                3271 
-#define NET_DVR_GET_PTZOSDCFG                    3272 
-#define NET_DVR_SET_PTZOSDCFG                    3273 
-#define NET_DVR_GET_POWEROFFMEMCFG                3274 
-#define NET_DVR_SET_POWEROFFMEMCFG                3275 
-#define NET_DVR_GET_LIMITCFG                    3276 
-#define NET_DVR_SET_LIMITCFG                    3277 
-#define NET_DVR_PTZLIMIT_CTRL                    3278 
-#define NET_DVR_PTZ_CLEARCTRL                    3279 
-#define NET_DVR_GET_PRIORITIZECFG                3281 
-#define NET_DVR_SET_PRIORITIZECFG                3282 
-#define NET_DVR_PTZ_INITIALPOSITIONCTRL            3283 
-#define NET_DVR_GET_PRIVACY_MASKSCFG            3285 
-#define NET_DVR_SET_PRIVACY_MASKSCFG            3286 
-#define NET_DVR_GET_PTZLOCKCFG                    3287 
-#define NET_DVR_SET_PTZLOCKCFG                    3288 
-#define NET_DVR_PTZ_ZOOMRATIOCTRL                3289 
-#define NET_DVR_GET_PTZLOCKINFO                    3290 
-#define NET_DVR_GET_PRIVACY_MASKS_ENABLECFG        3291 
-#define NET_DVR_SET_PRIVACY_MASKS_ENABLECFG        3292 
-#define NET_DVR_GET_SMARTTRACKCFG                3293 
-#define NET_DVR_SET_SMARTTRACKCFG                3294 
-#define NET_DVR_GET_EPTZ_CFG                    3295 
-#define NET_DVR_SET_EPTZ_CFG                    3296 
-#define NET_DVR_GET_EPTZ_CFG_CAPABILITIES        3297 
-#define NET_DVR_GET_LOW_LIGHTCFG                3303
-#define NET_DVR_SET_LOW_LIGHTCFG                3304
-#define NET_DVR_GET_FOCUSMODECFG                3305
-#define NET_DVR_SET_FOCUSMODECFG                3306
-#define NET_DVR_GET_INFRARECFG                  3307
-#define NET_DVR_SET_INFRARECFG                  3308
-#define NET_DVR_GET_AEMODECFG                   3309
-#define NET_DVR_SET_AEMODECFG                   3310
-#define NET_DVR_CONTROL_RESTORE_SUPPORT         3311 
-#define NET_DVR_CONTROL_RESTART_SUPPORT         3312 
-#define NET_DVR_CONTROL_PTZ_PATTERN             3313
-#define NET_DVR_GET_PTZ_PARKACTION_CFG          3314
-#define NET_DVR_SET_PTZ_PARKACTION_CFG          3315
-#define NET_DVR_CONTROL_PTZ_MANUALTRACE         3316
-#define NET_DVR_GET_ROI_DETECT_NUM                3349 
-#define NET_DVR_GET_ROI_DETECT                    3350 
-#define NET_DVR_SET_ROI_DETECT                    3351 
-#define NET_DVR_GET_FACE_DETECT                    3352 
-#define NET_DVR_SET_FACE_DETECT                    3353 
-#define NET_DVR_GET_CORRIDOR_MODE                3354 
-#define NET_DVR_SET_CORRIDOR_MODE                3355 
-#define NET_DVR_GET_SCENECHANGE_DETECTIONCFG    3356 
-#define NET_DVR_SET_SCENECHANGE_DETECTIONCFG    3357 
-#define NET_DVR_GET_TRAVERSE_PLANE_DETECTION    3360 
-#define NET_DVR_SET_TRAVERSE_PLANE_DETECTION    3361 
-#define NET_DVR_GET_FIELD_DETECTION                3362 
-#define NET_DVR_SET_FIELD_DETECTION                3363 
-#define NET_DVR_GET_DEFOCUSPARAM                3364 
-#define NET_DVR_SET_DEFOCUSPARAM                3365 
-#define NET_DVR_GET_AUDIOEXCEPTIONPARAM            3366 
-#define NET_DVR_SET_AUDIOEXCEPTIONPARAM            3367 
-#define NET_DVR_GET_CCDPARAMCFG_EX              3368 
-#define NET_DVR_SET_CCDPARAMCFG_EX              3369 
-#define NET_DVR_START_GET_INPUTVOLUME            3370
-#define NET_DVR_SET_SCH_TASK                    3380 
-#define NET_DVR_GET_SCH_TASK                    3381  
-#define NET_DVR_SET_PRESET_NAME                    3382 
-#define NET_DVR_GET_PRESET_NAME                    3383 
-#define NET_DVR_SET_AUDIO_NAME                    3384 
-#define NET_DVR_GET_AUDIO_NAME                    3385  
-#define NET_DVR_RESUME_INITRACKPOS              3386  
-#define NET_DVR_NTP_SERVER_TEST                    3387    
-#define    NET_DVR_NAS_SERVER_TEST                    3388    
-#define    NET_DVR_EMAIL_SERVER_TEST                3389    
-#define    NET_DVR_FTP_SERVER_TEST                    3390    
-#define    NET_DVR_IP_TEST                            3391    
-#define NET_DVR_GET_NET_DISKCFG_V40             3392 
-#define NET_DVR_SET_NET_DISKCFG_V40                3393 
-#define    NET_DVR_GET_IOOUT_CFG                    3394
-#define    NET_DVR_SET_IOOUT_CFG                    3395
-#define    NET_DVR_GET_SIGNAL_SYNC                    3396
-#define    NET_DVR_SET_SIGNAL_SYNC                    3397
-#define    NET_DVR_GET_EZVIZ_ACCESS_CFG            3398
-#define    NET_DVR_SET_EZVIZ_ACCESS_CFG            3399
-#define    NET_DVR_GET_SCHEDULE_AUTO_TRACK_CFG        3400
-#define    NET_DVR_SET_SCHEDULE_AUTO_TRACK_CFG        3401
-#define    NET_DVR_MAKE_I_FRAME                    3402
-#define NET_DVR_GET_ALARM_RELATE                3403
-#define NET_DVR_SET_ALARM_RELATE                3404
-#define NET_DVR_GET_PDC_RULECFG_V42             3405  
-#define NET_DVR_SET_PDC_RULECFG_V42             3406  
-#define NET_DVR_GET_HEATMAP_CFG                 3407  
-#define NET_DVR_SET_HEATMAP_CFG                 3408  
-#define NET_DVR_REMOTECONTROL_LINEARSCAN        3409   
-#define NET_DVR_DPC_CTRL                        3410
-#define NET_DVR_FFC_MANUAL_CTRL                 3411
-#define NET_DVR_FFC_BACKCOMP_CTRL               3412
-#define NET_DVR_GET_FOCUSING_POSITION_STATE     3413
-#define NET_DVR_GET_PRIVATE_PROTOCOL_CFG        3414   
-#define NET_DVR_SET_PRIVATE_PROTOCOL_CFG        3415   
-#define NET_DVR_COMPLETE_RESTORE_CTRL           3420    
-#define NET_DVR_CLOUDSTORAGE_SERVER_TEST        3421  
-#define NET_DVR_PHONE_NUM_TEST                  3422  
-#define NET_DVR_GET_REMOTECONTROL_STATUS        3423  
-#define NET_DVR_GET_MONITOR_LOCATION_INFO        3424  
-#define NET_DVR_SET_MONITOR_LOCATION_INFO        3425  
-#define    NET_DVR_GET_SMART_CAPABILITIES                3500    
-#define    NET_DVR_GET_EVENT_TRIGGERS_CAPABILITIES        3501    
-#define    NET_DVR_GET_REGION_ENTRANCE_CAPABILITIES    3502    
-#define    NET_DVR_GET_REGION_ENTR_DETECTION            3503    
-#define    NET_DVR_SET_REGION_ENTR_DETECTION            3504    
-#define    NET_DVR_GET_REGION_ENTR_REGION                3505    
-#define    NET_DVR_SET_REGION_ENTR_REGION                3506    
-#define    NET_DVR_GET_REGION_ENTR_TRIGGER                3507    
-#define    NET_DVR_SET_REGION_ENTR_TRIGGER                3508    
-#define    NET_DVR_GET_REGION_ENTR_SCHEDULE            3509    
-#define    NET_DVR_SET_REGION_ENTR_SCHEDULE            3510    
-#define    NET_DVR_GET_REGION_EXITINT_CAPABILITIES        3511    
-#define    NET_DVR_GET_REGION_EXITING_DETECTION        3512    
-#define    NET_DVR_SET_REGION_EXITING_DETECTION        3513    
-#define    NET_DVR_GET_REGION_EXITING_REGION            3514    
-#define    NET_DVR_SET_REGION_EXITING_REGION            3515    
-#define    NET_DVR_GET_REGION_EXIT_TRIGGER                3516    
-#define    NET_DVR_SET_REGION_EXIT_TRIGGER                3517    
-#define    NET_DVR_GET_REGION_EXIT_SCHEDULE            3518    
-#define    NET_DVR_SET_REGION_EXIT_SCHEDULE            3519    
-#define    NET_DVR_GET_LOITERING_CAPABILITIES            3520    
-#define    NET_DVR_GET_LOITERING_DETECTION                3521    
-#define    NET_DVR_SET_LOITERING_DETECTION                3522    
-#define    NET_DVR_GET_LOITERING_REGION                3523    
-#define    NET_DVR_SET_LOITERING_REGION                3524    
-#define    NET_DVR_GET_LOITERING_TRIGGER                3525    
-#define    NET_DVR_SET_LOITERING_TRIGGER                3526    
-#define    NET_DVR_GET_LOITERING_SCHEDULE                3527    
-#define    NET_DVR_SET_LOITERING_SCHEDULE                3528    
-#define    NET_DVR_GET_GROUPDETECTION_CAPABILITIES        3529    
-#define    NET_DVR_GET_GROUP_DETECTION                    3530    
-#define    NET_DVR_SET_GROUP_DETECTION                    3531    
-#define    NET_DVR_GET_GROUPDETECTION_REGION            3532    
-#define    NET_DVR_SET_GROUPDETECTION_REGION            3533    
-#define    NET_DVR_GET_GROUPDETECTION_TRIGGER            3534    
-#define    NET_DVR_SET_GROUPDETECTION_TRIGGER            3535    
-#define    NET_DVR_GET_GROUPDETECTION_SCHEDULE            3536    
-#define    NET_DVR_SET_GROUPDETECTION_SCHEDULE            3537    
-#define    NET_DVR_GET_RAPIDMOVE_CAPABILITIES            3538    
-#define    NET_DVR_GET_RAPIDMOVE_DETECTION                3539    
-#define    NET_DVR_SET_RAPIDMOVE_DETECTION                3540    
-#define    NET_DVR_GET_RAPIDMOVE_REGION                3541    
-#define    NET_DVR_SET_RAPIDMOVE_REGION                3542    
-#define    NET_DVR_GET_RAPIDMOVE_TRIGGER                3543    
-#define    NET_DVR_SET_RAPIDMOVE_TRIGGER                3544    
-#define    NET_DVR_GET_RAPIDMOVE_SCHEDULE                3545    
-#define    NET_DVR_SET_RAPIDMOVE_SCHEDULE                3546    
-#define    NET_DVR_GET_PATKING_CAPABILITIES            3547    
-#define    NET_DVR_GET_PARKING_DETECTION               3548    
-#define    NET_DVR_SET_PARKING_DETECTION                3549    
-#define    NET_DVR_GET_PARKING_REGION                    3550    
-#define    NET_DVR_SET_PARKING_REGION                    3551    
-#define    NET_DVR_GET_PARKING_TRIGGER                    3552    
-#define    NET_DVR_SET_PARKING_TRIGGER                    3553    
-#define    NET_DVR_GET_PARKING_SCHEDULE                3554    
-#define    NET_DVR_SET_PARKING_SCHEDULE                3555    
-#define    NET_DVR_GET_UNATTENDED_BAGGAGE_CAPABILITIES    3556    
-#define    NET_DVR_GET_UNATTENDED_BAGGAGE_DETECTION    3557    
-#define    NET_DVR_SET_UNATTENDED_BAGGAGE_DETECTION    3558    
-#define    NET_DVR_GET_UNATTENDED_BAGGAGE_REGION        3559    
-#define    NET_DVR_SET_UNATTENDED_BAGGAGE_REGION        3560    
-#define    NET_DVR_GET_UNATTENDED_BAGGAGE_TRIGGER        3561    
-#define    NET_DVR_SET_UNATTENDED_BAGGAGE_TRIGGER        3562    
-#define    NET_DVR_GET_UNATTENDED_BAGGAGE_SCHEDULE        3563    
-#define    NET_DVR_SET_UNATTENDED_BAGGAGE_SCHEDULE        3564    
-#define    NET_DVR_GET_ATTENDEDBAGGAGE_CAPABILITIES    3565    
-#define    NET_DVR_GET_ATTENDEDBAGGAGE_DETECTION        3566    
-#define    NET_DVR_SET_ATTENDEDBAGGAGE_DETECTION        3567    
-#define    NET_DVR_GET_ATTENDEDBAGGAGE_REGION            3568    
-#define    NET_DVR_SET_ATTENDEDBAGGAGE_REGION            3569    
-#define    NET_DVR_GET_ATTENDEDBAGGAGE_TRIGGER            3570    
-#define    NET_DVR_SET_ATTENDEDBAGGAGE_TRIGGER            3571    
-#define    NET_DVR_GET_ATTENDEDBAGGAGE_SCHEDULE        3572    
-#define    NET_DVR_SET_ATTENDEDBAGGAGE_SCHEDULE        3573    
-#define    NET_DVR_GET_REGIONCLIP_CAPABILITIES            3574    
-#define    NET_DVR_GET_REGION_CLIP                     3575    
-#define    NET_DVR_SET_REGION_CLIP                     3576    
-#define    NET_DVR_GET_NETWORK_CAPABILITIES            3577    
-#define    NET_DVR_GET_WIRELESS_DIAL                     3578    
-#define    NET_DVR_SET_WIRELESS_DIAL                     3579    
-#define    NET_DVR_GET_WIRELESSDIAL_CAPABILITIES        3580    
-#define    NET_DVR_GET_WIRELESSDIAL_SCHEDULE            3581    
-#define    NET_DVR_SET_WIRELESSDIAL_SCHEDULE            3582    
-#define    NET_DVR_GET_WIRELESSDIAL_STATUS             3583    
-#define    NET_DVR_GET_REGION_ENTRANCE_SCHEDULE_CAPABILITIES    3584    
-#define    NET_DVR_GET_REGION_EXITING_SCHEDULE_CAPABILITIES    3585    
-#define    NET_DVR_GET_LOITERING_SCHEDULE_CAPABILITIES    3586    
-#define    NET_DVR_GET_GROUP_SCHEDULE_CAPABILITIES    3587    
-#define    NET_DVR_GET_RAPIDMOVE_SCHEDULE_CAPABILITIES    3588    
-#define    NET_DVR_GET_PARKING_SCHEDULE_CAPABILITIES    3589    
-#define    NET_DVR_GET_UNATTENDEDBAGGAGE_SCHEDULE_CAPABILITIES    3590    
-#define    NET_DVR_GET_ATTENDEDBAGGAGE_SCHEDULE_CAPABILITIES    3591    
-#define    NET_DVR_GET_WIRELESSDIAL_SCHEDULE_CAPABILITIES    3592    
-#define    NET_DVR_WIRELESSDIAL_CONNECT    3593    
-#define    NET_DVR_GET_LITESTORAGE                    3594    
-#define    NET_DVR_SET_LITESTORAGE                    3595    
-#define    NET_DVR_GET_LITESTORAGE_CAPABILITIES    3596    
-#define    NET_DVR_GET_VEHICLE_CAPABILITIES    3597    
-#define    NET_DVR_GET_VEHICLE_CALIBRATION     3598    
-#define    NET_DVR_GET_SLAVECAMERA_CAPABILITIES    3599    
-#define    NET_DVR_GET_SLAVECAMERA                    3600    
-#define    NET_DVR_SET_SLAVECAMERA                    3601    
-#define    NET_DVR_GET_SLAVECAMERA_STATUS            3602    
-#define    NET_DVR_GET_SLAVECAMERA_CALIB_CAPABILITIES    3603  
-#define    NET_DVR_GET_SLAVECAMERA_CALIB            3604    
-#define    NET_DVR_SET_SLAVECAMERA_CALIB            3605    
-#define NET_DVR_GET_PHY_RATIO                    3606    
-#define NET_DVR_SET_PHY_RATIO                    3607    
-#define NET_DVR_GET_MASTERSLAVETRACKING_CAPABILITIES   3608  
-#define    NET_DVR_SET_TRACKINGRATIO                3610    
-#define    NET_DVR_GET_TRACKING                    3611    
-#define    NET_DVR_SET_TRACKING                    3612    
-#define    NET_DVR_GET_TRACKING_CAPABILITIES        3613    
-#define    NET_DVR_GET_SLAVECAMERA_CALIB_V50        3614    
-#define    NET_DVR_SET_SLAVECAMERA_CALIB_V50        3615    
-#define    NET_DVR_SET_TRACKINGRATIO_MANUAL        3616    
-#define    NET_DVR_GET_TRACKINGRATIO_MANUAL        3617    
-#define    NET_DVR_SET_TRACK_INITPOSTION            3618    
-#define    NET_DVR_GET_PTZ_CAPABILITIES            3619    
-#define    NET_DVR_GET_THERMOMETRY_BASICPARAM_CAPABILITIES    3620 
-#define    NET_DVR_GET_THERMOMETRY_BASICPARAM      3621    
-#define    NET_DVR_SET_THERMOMETRY_BASICPARAM        3622    
-#define    NET_DVR_GET_THERMOMETRY_SCENE_CAPABILITIES    3623 
-#define    NET_DVR_GET_THERMOMETRY_PRESETINFO      3624    
-#define    NET_DVR_SET_THERMOMETRY_PRESETINFO        3625    
-#define    NET_DVR_GET_THERMOMETRY_ALARMRULE_CAPABILITIES    3626
-#define    NET_DVR_GET_THERMOMETRY_ALARMRULE       3627    
-#define    NET_DVR_SET_THERMOMETRY_ALARMRULE        3628    
-#define    NET_DVR_GET_REALTIME_THERMOMETRY        3629    
-#define    NET_DVR_GET_THERMOMETRY_DIFFCOMPARISON  3630    
-#define    NET_DVR_SET_THERMOMETRY_DIFFCOMPARISON    3631    
-#define    NET_DVR_GET_THERMOMETRY_TRIGGER            3632    
-#define    NET_DVR_SET_THERMOMETRY_TRIGGER            3633    
-#define    NET_DVR_GET_THERMAL_CAPABILITIES        3634    
-#define    NET_DVR_GET_FIREDETECTION_CAPABILITIES    3635    
-#define    NET_DVR_GET_FIREDETECTION               3636    
-#define    NET_DVR_SET_FIREDETECTION               3637    
-#define    NET_DVR_GET_FIREDETECTION_TRIGGER       3638    
-#define    NET_DVR_SET_FIREDETECTION_TRIGGER        3639    
-#define NET_DVR_GET_OIS_CAPABILITIES            3640    
-#define NET_DVR_GET_OIS_CFG                     3641    
-#define NET_DVR_SET_OIS_CFG                     3642    
-#define NET_DVR_GET_MACFILTER_CAPABILITIES      3643    
-#define NET_DVR_GET_MACFILTER_CFG               3644    
-#define NET_DVR_SET_MACFILTER_CFG               3645    
-#define NET_DVR_GET_EAGLEFOCUS_CALCFG_CAPABILITIES   3646    
-#define NET_DVR_GET_EAGLEFOCUSING_CALCFG        3647    
-#define NET_DVR_SET_EAGLEFOCUSING_CALCFG        3648    
-#define NET_DVR_GET_EAGLEFOCUSING_CFG_CAPABILITIES   3649   
-#define NET_DVR_GET_EAGLEFOCUSING_CTRL          3650    
-#define NET_DVR_SET_EAGLEFOCUSING_CTRL          3651    
-#define    NET_DVR_GET_PXOFFLINE_CAPABILITIES      3652    
-#define    NET_DVR_SET_PXOFFLINE_CFG                3653    
-#define    NET_DVR_GET_PXOFFLINE_CFG                3654    
-#define    NET_DVR_GET_PAPERCHARGEINFO_CAPABILITIES  3655  
-#define    NET_DVR_SET_PAPERCHARGEINFO                3656    
-#define    NET_DVR_GET_PARKINGSAPCE_CAPABILITIES    3657    
-#define    NET_DVR_SET_PARKINGSAPCE_INFO            3658    
-#define    NET_DVR_GET_PXMULTICTRL_CAPABILITIES    3659    
-#define    NET_DVR_GET_CHARGEACCOUNT_CAPABILITIES    3661    
-#define    NET_DVR_SET_CHARGE_ACCOUNTINFO          3662    
-#define    NET_DVR_SET_PXMULTICTRL_CFG                3663    
-#define    NET_DVR_GET_PXMULTICTRL_CFG                3664    
-#define    NET_DVR_GET_TME_CHARGERULE              3665    
-#define    NET_DVR_SET_TME_CHARGERULE                3666    
-#define    NET_DVR_GET_TME_CHARGERULE_CAPABILITIES 3667    
-#define    NET_DVR_GET_ILLEGALCARDFILTERING_CAPABILITIES  3668    
-#define    NET_DVR_GET_ILLEGALCARDFILTERING_CFG    3669    
-#define    NET_DVR_SET_ILLEGALCARDFILTERING_CFG    3670    
-#define    NET_DVR_GET_LEDDISPLAY_CAPABILITIES        3671    
-#define    NET_DVR_SET_LEDDISPLAY_CFG              3672    
-#define    NET_DVR_GET_LEDDISPLAY_CFG              3673    
-#define    NET_DVR_GET_VOICEBROADCAST_CAPABILITIES    3674    
-#define    NET_DVR_SET_VOICEBROADCAST_CFG          3675    
-#define    NET_DVR_GET_PAPERPRINTFORMAT_CAPABILITIES    3676
-#define    NET_DVR_GET_PAPERPRINTFORMAT_CFG        3677    
-#define    NET_DVR_SET_PAPERPRINTFORMAT_CFG        3678    
-#define    NET_DVR_GET_LOCkGATE_CAPABILITIES       3679    
-#define    NET_DVR_GET_LOCKGATE_CFG                3680    
-#define    NET_DVR_SET_LOCKGATE_CFG                3681    
-#define NET_DVR_GET_PARKING_DATASTATE            3682    
-#define NET_DVR_SET_PARKING_DATASTATE           3683    
-#define    NET_DVR_GET_TME_CAPABILITIES            3684    
-#define    NET_DVR_GET_TMEVOICE_CAPABILITIES       3686    
-#define    NET_DVR_SET_TMEVOICE_CFG                3687    
-#define    NET_DVR_GET_TMEVOICE_CFG                3688    
-#define    NET_DVR_DEL_TMEVOICE_CFG                3689    
-#define    NET_DVR_GET_POSITION                    3698    
-#define    NET_DVR_SET_POSITION                    3699    
-#define    NET_DVR_GET_CENTRALIZEDCTRL_CAPABILITIES    3700
-#define    NET_DVR_GET_CENTRALIZEDCTRL                3701
-#define    NET_DVR_SET_CENTRALIZEDCTRL              3702
-#define    NET_DVR_GET_COMPASS_CAPABILITIES        3703
-#define    NET_DVR_GET_VANDALPROOFALARM              3704
-#define    NET_DVR_SET_VANDALPROOFALARM            3705
-#define    NET_DVR_COMPASS_CALIBRATE_CTRL            3706
-#define    NET_DVR_COMPASS_NORTH_CTRL                3707
-#define    NET_DVR_GET_AZIMUTHINFO                    3708
-#define    NET_DVR_GET_SATELLITETIME                3709
-#define    NET_DVR_SET_SATELLITETIME                3710
-#define    NET_DVR_GET_GISINFO                     3711
-#define    NET_DVR_GET_STREAMING_CAPABILITIES        3712
-#define    NET_DVR_GET_REFRESHFRAME_CAPABILITIES    3713
-#define    NET_DVR_STREAMING_REFRESH_FRAME            3714
-#define    NET_DVR_FACECAPTURE_STATISTICS            3715
-#define    NET_DVR_GET_WIRELESSSERVER_CAPABILITIES    3716    
-#define    NET_DVR_GET_WIRELESSSERVER                3717    
-#define    NET_DVR_SET_WIRELESSSERVER                3718    
-#define    NET_DVR_GET_CONNECT_LIST_CAPABILITIES    3719    
-#define    NET_DVR_GET_THSCREEN_CAPABILITIES        3720 
-#define    NET_DVR_GET_THSCREEN                    3721 
-#define    NET_DVR_GET_EXTERNALDEVICE_CAPABILITIES    3722
-#define    NET_DVR_GET_EXTERNALDEVICE              3723
-#define    NET_DVR_SET_EXTERNALDEVICE                3724
-#define    NET_DVR_GET_LEDDISPLAYINFO_CAPABILITIES     3725   
-#define    NET_DVR_SET_LEDDISPLAYINFO                 3726   
-#define    NET_DVR_GET_SUPPLEMENTLIGHT_CAPABILITIES 3727   
-#define    NET_DVR_GET_SUPPLEMENTLIGHT                 3728    
-#define    NET_DVR_SET_SUPPLEMENTLIGHT                 3729    
-#define    NET_DVR_SET_THSCREEN                     3730 
-#define    NET_DVR_GET_LOWPOWER_CAPABILITIES        3731   
-#define    NET_DVR_GET_LOWPOWER                     3732    
-#define    NET_DVR_SET_LOWPOWER                     3733    
-#define    NET_DVR_GET_ZOOMLINKAGE_CAPABILITIES     3734   
-#define    NET_DVR_GET_ZOOMLINKAGE                     3735    
-#define    NET_DVR_SET_ZOOMLINKAGE                     3736    
-#define    NET_DVR_THSCREEN_TIMING                     3737    
-#define NET_DVR_GET_OSD_BATTERY_POWER_CFG        3741        
-#define NET_DVR_SET_OSD_BATTERY_POWER_CFG        3742        
-#define    NET_DVR_GET_OSD_BATTERY_POWER_CFG_CAPABILITIES    3743
-#define    NET_DVR_GET_VANDALPROOFALARM_TRIGGER    3744    
-#define    NET_DVR_SET_VANDALPROOFALARM_TRIGGER    3745    
-#define    NET_DVR_GET_PANORAMAIMAGE_CAPABILITIES    3746    
-#define    NET_DVR_GET_PANORAMAIMAGE                3747    
-#define    NET_DVR_SET_PANORAMAIMAGE                3748    
-#define    NET_DVR_GET_STREAMENCRYPTION            3749    
-#define    NET_DVR_SET_STREAMENCRYPTION            3750    
-#define    NET_DVR_GET_STREAMENCRYPTION_CAPABILITIES 3751  
-#define    NET_DVR_GET_REVISE_GPS_CAPABILITIES     3752    
-#define    NET_DVR_GET_REVISE_GPS                  3753    
-#define    NET_DVR_SET_REVISE_GPS                  3754    
-#define NET_DVR_GET_PDC_RECOMMEND                3755    
-#define NET_DVR_REMOVE_FLASHSTORAGE                3756    
-#define    NET_DVR_GET_COUNTING_CAPABILITIES        3757    
-#define    NET_DVR_SET_SENSOR_ADJUSTMENT            3758    
-#define    NET_DVR_GET_SENSOR_ADJUSTMENT_CAPABILITIES        3759    
-#define    NET_DVR_GET_WIRELESSSERVER_FULLVERSION_CFG         3760    
-#define    NET_DVR_SET_WIRELESSSERVER_FULLVERSION_CFG         3761    
-#define    NET_DVR_GET_ONLINEUSER_INFO                3762    
-#define    NET_DVR_GET_SENSOR_ADJUSTMENT_INFO        3763    
-#define NET_DVR_SENSOR_RESET_CTRL               3764    
-#define    NET_DVR_GET_POSTRADAR_CAPABILITIES        3765    
-#define    NET_DVR_GET_POSTRADARSPEED_CFG          3766    
-#define    NET_DVR_SET_POSTRADARSPEED_CFG          3767    
-#define    NET_DVR_GET_POSTRADARSPEED_RECOM_CFG    3768    
-#define    NET_DVR_GET_POSTRADARPARAM_CFG          3769    
-#define    NET_DVR_SET_POSTRADARPARAM_CFG          3770    
-#define    NET_DVR_GET_POSTRADARPARAM_RECOM_CFG    3771    
-#define NET_DVR_GET_ENCRYPT_DEVICE_INFO        3772   
-#define NET_DVR_GET_ANR_ARMING_HOST            3773  
-#define NET_DVR_GET_FIRMWARE_VERSION    3776    
-#define    NET_DVR_GET_FTP_CAPABILITIES            3782    
-#define    NET_DVR_GET_FTPUPLOAD_CFG                3783    
-#define    NET_DVR_SET_FTPUPLOAD_CFG                3784    
-#define NET_DVR_GET_VEHICLE_INFORMATION             3785 
-#define    NET_DVR_GET_DDNS_COUNTRY_ABILITY        3800
-#define NET_DVR_GET_DEVICECFG_V50    3801    
-#define NET_DVR_SET_DEVICECFG_V50    3802    
-#define  NET_DVR_SET_VEHICLE_RECOG_TASK_V50    3851  
-#define NET_DVR_GET_SMARTCALIBRATION_CAPABILITIES    3900
-#define NET_DVR_GET_TEMPERATURE_TRIGGER              3903    
-#define NET_DVR_SET_TEMPERATURE_TRIGGER              3904    
-#define    NET_DVR_GET_SMARTCALIBRATION_CFG             3910 
-#define    NET_DVR_SET_SMARTCALIBRATION_CFG             3911  
-#define NET_DVR_POST_SETUP_CALIB                     3912  
-#define NET_DVR_SET_POS_INFO_OVERLAY                 3913
-#define NET_DVR_GET_POS_INFO_OVERLAY                 3914
-#define NET_DVR_GET_CAMERA_WORK_MODE                 3915  
-#define NET_DVR_SET_CAMERA_WORK_MODE                 3916  
-#define NET_DVR_GET_RESOLUTION_SWITCH_CAPABILITIES   3917  
-#define NET_DVR_GET_RESOLUTION_SWITCH                3918    
-#define NET_DVR_SET_RESOLUTION_SWITCH                3919     
-#define NET_DVR_GET_CONFIRM_MECHANISM_CAPABILITIES   3920    
-#define NET_DVR_CONFIRM_MECHANISM_CTRL               3921    
-#define NET_DVR_GET_VEHICLLE_RESULT_CAPABILITIES     3951   
-#define NET_DVR_GET_CALIB_CAPABILITIES               3952
-#define NET_DVR_GET_POSINFO_OVERLAY_CAPABILITIES     3953
-#define NET_SDK_FINDMEDICALFILE      3954    
-#define NET_SDK_FINDMEDICALPICTURE   3955    
-#define NET_DVR_SET_POSINFO_OVERLAY                  3960
-#define NET_DVR_GET_POSINFO_OVERLAY                  3961
-#define NET_DVR_GET_FACELIB_TRIGGER                  3962   
-#define NET_DVR_SET_FACELIB_TRIGGER                  3963   
-#define NET_DVR_GET_FACECONTRAST_TRIGGER             3965
-#define NET_DVR_SET_FACECONTRAST_TRIGGER             3966
-#define NET_DVR_GET_FACECONTRAST_SCHEDULE_CAPABILITIES 3967 
-#define NET_DVR_GET_FACECONTRAST_SCHEDULE            3968
-#define NET_DVR_SET_FACECONTRAST_SCHEDULE            3969
-#define NET_DVR_GET_FACELIB_SCHEDULE_CAPABILITIES    3970 
-#define NET_DVR_GET_VCA_VERSION_LIST                 3973
-#define NET_DVR_GET_SETUP_CALIB                      3974
-#define NET_DVR_GET_PANORAMA_LINKAGE                 3975
-#define NET_DVR_SET_PANORAMA_LINKAGE                 3976
-#define NET_DVR_GET_FACELIB_SCHEDULE                 3977 
-#define NET_DVR_SET_FACELIB_SCHEDULE                 3978 
-#define NET_DVR_GET_SOFTWARE_SERVICE_CAPABILITIES    3980
-#define NET_DVR_GET_SOFTWARE_SERVICE                 3981
-#define NET_DVR_SET_SOFTWARE_SERVICE                 3982
-#define NET_DVR_GET_PREVIEW_MODE_CAPABILITIES        3983
-#define NET_DVR_SET_EAGLE_FOCUS_GOTOSCENE            3984
-#define NET_DVR_EAGLE_FOCUS_SCENE_DEL                3985
-#define NET_DVR_GET_SAFETY_HELMET_TRIGGER            3986   
-#define NET_DVR_SET_SAFETY_HELMET_TRIGGER            3987  
-#define NET_DVR_GET_SAFETY_HELMET_SCHEDULE_CAPABILITIES 3988 
-#define NET_DVR_GET_SAFETY_HELMET_SCHEDULE           3989
-#define NET_DVR_SET_SAFETY_HELMET_SCHEDULE           3990
-#define NET_DVR_GET_SIGN_ABNORMAL_TRIGGER            4150   
-#define NET_DVR_SET_SIGN_ABNORMAL_TRIGGER            4151   
-#define NET_DVR_ONE_KEY_CONFIG_SAN_V50               4152  
-#define NET_DVR_GET_HDCFG_V50                        4153  
-#define NET_DVR_SET_HDCFG_V50                        4154  
-#define NET_DVR_GET_HDVOLUME_CFG                     4155  
-#define NET_DVR_SET_HDVOLUME_CFG                     4156  
-#define NET_DVR_GET_POWER_SUPPLY_CABINET_TRIGGER     4157  
-#define NET_DVR_SET_POWER_SUPPLY_CABINET_TRIGGER     4158  
-#define NET_DVR_GET_SENSOR_TRIGGER                   4159  
-#define NET_DVR_SET_SENSOR_TRIGGER                   4160  
-#define	NET_DVR_GET_FACESNAP_TRIGGER                 4161  
-#define	NET_DVR_SET_FACESNAP_TRIGGER	             4162  
-#define NET_DVR_GET_FACESNAP_SCHEDULE_CAPABILITIES   4163  
-#define NET_DVR_GET_FACESNAP_SCHEDULE                4164  
-#define NET_DVR_SET_FACESNAP_SCHEDULE                4165  
-#define NET_DVR_SET_SCREEN_SWITCH                    4171  
-#define NET_DVR_GET_BV_CALIB_PIC                     4172  
-#define NET_DVR_GET_BV_CALIB_RESULT                  4173  
-#define NET_DVR_GET_BV_HCORRECTION                   4174  
-#define NET_DVR_DEL_BV_CALIB_PIC                     4175  
-#define NET_DVR_GET_TV_SCREEN_CFG                    4176  
-#define NET_DVR_SET_TV_SCREEN_CFG                    4177  
-#define NET_DVR_ADJUST_BV_CALIB                      4178 
-#define NET_DVR_GET_HUMAN_CALIB                      4179 
-#define NET_DVR_SET_HUMAN_CALIB                      4180 
-#define NET_DVR_GET_USERCFG_V51                      4181    
-#define NET_DVR_SET_USERCFG_V51                      4182    
-#define NET_DVR_GET_SOFTIO_TRIGGER                   4183   
-#define NET_DVR_SET_SOFTIO_TRIGGER                   4184   
-#define NET_DVR_GET_SOFTIO_SCHEDULE_CAPABILITIES     4185 
-#define NET_DVR_GET_SOFTIO_SCHEDULE                  4186 
-#define NET_DVR_SET_SOFTIO_SCHEDULE                  4187 
-#define NET_DVR_GET_HFPD_TRIGGER                     4188 
-#define NET_DVR_SET_HFPD_TRIGGER                     4189 
-#define NET_DVR_GET_HFPD_SCHEDULE_CAPABILITIES       4190 
-#define NET_DVR_GET_HFPD_SCHEDULE                    4191 
-#define NET_DVR_SET_HFPD_SCHEDULE                    4192 
-#define	NET_DVR_GET_ALARM_INFO                       4193	
-#define NET_DVR_GET_USERCFG_V52                      4194    
-#define NET_DVR_SET_USERCFG_V52                      4195    
-#define NET_DVR_GET_MUTEX_FUNCTION              4353  
-#define NET_DVR_GET_SINGLE_CHANNELINFO          4360  
-#define NET_DVR_GET_CHANNELINFO                 4361  
-#define NET_DVR_CHECK_LOGIN_PASSWORDCFG                 4362  
-#define NET_DVR_GET_SINGLE_SECURITY_QUESTION_CFG        4363    
-#define NET_DVR_SET_SINGLE_SECURITY_QUESTION_CFG        4364    
-#define NET_DVR_GET_SECURITY_QUESTION_CFG       4365    
-#define NET_DVR_SET_SECURITY_QUESTION_CFG       4366    
-#define NET_DVR_GET_ONLINEUSERLIST_SC           4367  
-#define NET_DVR_GET_BLACKLIST_FACECONTRAST_TRIGGER   4368   
-#define NET_DVR_SET_BLACKLIST_FACECONTRAST_TRIGGER   4369   
-#define NET_DVR_GET_WHITELIST_FACECONTRAST_TRIGGER   4370   
-#define NET_DVR_SET_WHITELIST_FACECONTRAST_TRIGGER   4371   
-#define NET_DVR_GET_BLACKLIST_FACECONTRAST_SCHEDULE_CAPABILITIES 4372 
-#define NET_DVR_GET_BLACKLIST_FACECONTRAST_SCHEDULE  4373   
-#define NET_DVR_SET_BLACKLIST_FACECONTRAST_SCHEDULE  4374   
-#define NET_DVR_GET_WHITELIST_FACECONTRAST_SCHEDULE_CAPABILITIES 4375 
-#define NET_DVR_GET_WHITELIST_FACECONTRAST_SCHEDULE  4376 
-#define NET_DVR_SET_WHITELIST_FACECONTRAST_SCHEDULE  4377 
-#define NET_DVR_GET_HUMAN_RECOGNITION_SCHEDULE_CAPABILITIES 4378 
-#define NET_DVR_GET_HUMAN_RECOGNITION_SCHEDULE 4379 
-#define NET_DVR_SET_HUMAN_RECOGNITION_SCHEDULE 4380 
-#define NET_DVR_GET_HUMAN_RECOGNITION_TRIGGER               4381 
-#define NET_DVR_SET_HUMAN_RECOGNITION_TRIGGER               4382 
-#define NET_DVR_GET_GBT28181_AUDIO_OUTPUT_CFG               4383 
-#define NET_DVR_SET_GBT28181_AUDIO_OUTPUT_CFG               4384 
-#define NET_DVR_GET_STUDENTS_STOODUP_TRIGGER         4386   
-#define NET_DVR_SET_STUDENTS_STOODUP_TRIGGER         4387   
-#define NET_DVR_GET_FRAMES_PEOPLE_COUNTING_SCHEDULE_CAPABILITIES    4388 
-#define NET_DVR_GET_FRAMES_PEOPLE_COUNTING_SCHEDULE  4389    
-#define NET_DVR_SET_FRAMES_PEOPLE_COUNTING_SCHEDULE  4390    
-#define NET_DVR_GET_FRAMES_PEOPLE_COUNTING_TRIGGER   4391   
-#define NET_DVR_SET_FRAMES_PEOPLE_COUNTING_TRIGGER   4392   
-#define NET_DVR_GET_PERSONDENSITY_TRIGGER   4393   
-#define NET_DVR_SET_PERSONDENSITY_TRIGGER   4394   
-#define NET_DVR_GET_PERSONDENSITY_SCHEDULE_CAPABILITIES 4395 
-#define NET_DVR_GET_PERSONDENSITY_SCHEDULE 4396 
-#define NET_DVR_SET_PERSONDENSITY_SCHEDULE 4397 
-#define NET_DVR_GET_STUDENTS_STOODUP_SCHEDULE_CAPABILITIES  4398 
-#define NET_DVR_GET_STUDENTS_STOODUP_SCHEDULE        4399    
-#define NET_DVR_SET_STUDENTS_STOODUP_SCHEDULE        4400    
-#define NET_DVR_SET_FACE_THERMOMETRY_TRIGGER         4401 
-#define NET_DVR_GET_FACE_THERMOMETRY_SCHEDULE_CAPABILITIES 4402 
-#define NET_DVR_GET_FACE_THERMOMETRY_SCHEDULE        4403 
-#define NET_DVR_SET_FACE_THERMOMETRY_SCHEDULE        4404 
-#define NET_DVR_GET_FACE_THERMOMETRY_TRIGGER         4405 
-#define	NET_DVR_GET_PERSONQUEUE_TRIGGER   4406   
-#define	NET_DVR_SET_PERSONQUEUE_TRIGGER	  4407   
-#define	NET_DVR_GET_PERSONQUEUE_SCHEDULE_CAPABILITIES	4408 
-#define	NET_DVR_GET_PERSONQUEUE_SCHEDULE	4409	
-#define	NET_DVR_SET_PERSONQUEUE_SCHEDULE	4410	
-#define NET_DVR_GET_FACESNAPCFG                 5001  
-#define NET_DVR_SET_FACESNAPCFG                 5002  
-#define NET_DVR_GET_DEVACCESS_CFG               5005  
-#define NET_DVR_SET_DEVACCESS_CFG               5006  
-#define NET_DVR_GET_SAVE_PATH_CFG               5007  
-#define NET_DVR_SET_SAVE_PATH_CFG               5008  
-#define NET_VCA_GET_RULECFG_V41                    5011  
-#define NET_VCA_SET_RULECFG_V41                    5012  
-#define NET_DVR_GET_AID_RULECFG_V41             5013  
-#define NET_DVR_SET_AID_RULECFG_V41             5014  
-#define NET_DVR_GET_TPS_RULECFG_V41             5015  
-#define NET_DVR_SET_TPS_RULECFG_V41             5016  
-#define NET_VCA_GET_FACEDETECT_RULECFG_V41      5017  
-#define NET_VCA_SET_FACEDETECT_RULECFG_V41      5018  
-#define NET_DVR_GET_PDC_RULECFG_V41             5019  
-#define NET_DVR_SET_PDC_RULECFG_V41             5020  
-#define NET_DVR_GET_TRIAL_VERSION_CFG           5021  
-#define NET_DVR_GET_VCA_CTRLINFO_CFG            5022  
-#define NET_DVR_SET_VCA_CTRLINFO_CFG            5023  
-#define NET_DVR_SYN_CHANNEL_NAME                5024  
-#define NET_DVR_GET_RESET_COUNTER               5025  
-#define NET_DVR_SET_RESET_COUNTER               5026  
-#define NET_DVR_GET_OBJECT_COLOR                5027  
-#define NET_DVR_SET_OBJECT_COLOR                5028  
-#define NET_DVR_GET_AUX_AREA                    5029  
-#define NET_DVR_SET_AUX_AREA                    5030  
-#define NET_DVR_GET_CHAN_WORKMODE               5031  
-#define NET_DVR_SET_CHAN_WORKMODE               5032  
-#define NET_DVR_GET_SLAVE_CHANNEL               5033  
-#define NET_DVR_SET_SLAVE_CHANNEL               5034  
-#define NET_DVR_GET_VQD_EVENT_RULE              5035  
-#define NET_DVR_SET_VQD_EVENT_RULE              5036  
-#define NET_DVR_GET_BASELINE_SCENE              5037  
-#define NET_DVR_SET_BASELINE_SCENE              5038  
-#define NET_DVR_CONTROL_BASELINE_SCENE          5039  
-#define NET_DVR_SET_VCA_DETION_CFG                5040  
-#define NET_DVR_GET_VCA_DETION_CFG                5041  
-#define NET_DVR_GET_STREAM_ATTACHINFO_CFG       5042  
-#define NET_DVR_SET_STREAM_ATTACHINFO_CFG       5043  
-#define NET_DVR_GET_BV_CALIB_TYPE               5044  
-#define NET_DVR_CONTROL_BV_SAMPLE_CALIB         5045  
-#define NET_DVR_GET_BV_SAMPLE_CALIB_CFG         5046  
-#define NET_DVR_GET_RULECFG_V42                    5049  
-#define NET_DVR_SET_RULECFG_V42                    5050  
-#define NET_DVR_SET_VCA_DETION_CFG_V40            5051  
-#define NET_DVR_GET_VCA_DETION_CFG_V40          5052  
-#define NET_DVR_SET_FLASH_CFG                   5110  
-#define    NET_DVR_GET_T1TEST_CFG   5053     
-#define    NET_DVR_SET_T1TEST_CFG   5054     
-#define NET_ITS_GET_OVERLAP_CFG_V50                5055  
-#define NET_ITS_SET_OVERLAP_CFG_V50                5056  
-#define NET_DVR_GET_PARKLAMP_STATE                5057  
-#define NET_DVR_GET_CLOUDSTORAGE_CFG            5058  
-#define NET_DVR_SET_CLOUDSTORAGE_CFG            5059  
-#define NET_ITS_GET_BASE_INFO                    5060  
-#define NET_DVR_GET_SENSOR_INFO                 5061  
-#define    NET_DVR_SET_SENSOR_SWITCH                5062  
-#define NET_ITS_GET_IMGMERGE_CFG                5063  
-#define NET_ITS_SET_IMGMERGE_CFG                5064  
-#define NET_ITS_GET_UPLOAD_CFG                    5065  
-#define NET_ITS_SET_UPLOAD_CFG                    5066  
-#define    NET_DVR_GET_SENSOR_PORT_CAPABILITIES    5067  
-#define NET_ITS_GET_WORKSTATE                    5069  
-#define NET_ITS_GET_IPC_CHAN_CFG                5070  
-#define NET_ITS_SET_IPC_CHAN_CFG                5071  
-#define NET_ITS_GET_OVERLAP_CFG                    5072  
-#define NET_ITS_SET_OVERLAP_CFG                    5073  
-#define NET_DVR_GET_TRIGGEREX_CFG               5074  
-#define NET_DVR_SET_TRIGGEREX_CFG               5075  
-#define NET_ITS_GET_ROAD_INFO                    5076  
-#define NET_ITS_REMOTE_DEVICE_CONTROL            5077
-#define NET_ITS_GET_GATEIPC_CHAN_CFG            5078
-#define NET_ITS_SET_GATEIPC_CHAN_CFG            5079
-#define NET_ITS_TRANSCHAN_START                    5080
-#define NET_ITS_GET_ECTWORKSTATE                5081
-#define NET_ITS_GET_ECT_CHAN_INFO                5082
-#define NET_DVR_GET_HEATMAP_RESULT              5083
-#define NET_DVR_SET_ITS_EXDEVCFG                5084 
-#define NET_DVR_GET_ITS_EXDEVCFG                5085 
-#define NET_DVR_GET_ITS_EXDEVSTATUS                5086 
-#define NET_DVR_SET_ITS_ENDEVCMD                5087 
-#define NET_DVR_SET_ENISSUED_DATADEL            5088 
-#define NET_DVR_GET_PDC_RESULT                  5089
-#define NET_ITS_GET_LAMP_CTRLCFG                5090  
-#define NET_ITS_SET_LAMP_CTRLCFG                5091  
-#define NET_ITS_GET_PARKSPACE_ATTRIBUTE_CFG     5092  
-#define NET_ITS_SET_PARKSPACE_ATTRIBUTE_CFG     5093  
-#define NET_ITS_SET_LAMP_EXTERNAL_CFG            5095  
-#define NET_ITS_SET_COMPEL_CAPTURE                5096  
-#define NET_DVR_SET_TIMESIGN_CFG                5097  
-#define NET_DVR_GET_TIMESIGN_CFG                5098  
-#define NET_DVR_GET_SIGNALLAMP_STATUS           5099  
-#define NET_DVR_GET_MONITOR_PLAN_VQD            5100  
-#define NET_DVR_GET_MONITORID_VQD               5101  
-#define NET_DVR_SET_MONITOR_INFO                5102  
-#define NET_DVR_DEL_MONITOR_PLAN_VQD            5103  
-#define NET_DVR_GET_MONITOR_VQD_STATUS          5104  
-#define NET_DVR_GET_RECORD_INFO                 5105  
-#define NET_DVR_GET_MONITOR_VQDCFG              5106  
-#define NET_DVR_SET_MONITOR_VQDCFG              5107  
-#define NET_DVR_SET_MONITOR_PLAN_VQDCFG         5108  
-#define NET_DVR_SCENE_CHANGE_UPDATE                5109   
-#define NET_DVR_GET_CALIBRATE_POINT             5153  
-#define NET_DVR_GET_SCENE_CFG                   5201  
-#define NET_DVR_SET_SCENE_CFG                   5202  
-#define NET_DVR_GET_SCENE_REFERENCE_REGION      5203  
-#define NET_DVR_SET_SCENE_REFERENCE_REGION      5204  
-#define NET_DVR_GET_SCENE_CALIBRATION           5205  
-#define NET_DVR_SET_SCENE_CALIBRATION           5206  
-#define NET_DVR_GET_SCENE_MASK_REGION           5207  
-#define NET_DVR_SET_SCENE_MASK_REGION           5208  
-#define    NET_DVR_GET_SCENE_LANECFG                5209  
-#define NET_DVR_SET_SCENE_LANECFG                5210  
-#define NET_DVR_GET_SCENE_AID_RULECFG           5211  
-#define NET_DVR_SET_SCENE_AID_RULECFG           5212  
-#define NET_DVR_GET_SCENE_TPS_RULECFG           5213  
-#define NET_DVR_SET_SCENE_TPS_RULECFG           5214  
-#define NET_DVR_GET_SCENE_TIME_CFG              5215  
-#define NET_DVR_SET_SCENE_TIME_CFG              5216  
-#define NET_DVR_GET_FORENSICS_MODE              5217  
-#define NET_DVR_SET_FORENSICS_MODE              5218  
-#define NET_DVR_FORCESTOP_FORENSICS_CTRL        5219  
-#define NET_DVR_GET_ALARM_PROCESS_CFG           5220   
-#define NET_DVR_SET_ALARM_PROCESS_CFG           5221   
-#define NET_DVR_GET_BLACKLIST_ALARM_INFO        5222   
-#define NET_DVR_GET_STORAGE_RESOURCE_CFG        5225   
-#define NET_DVR_SET_STORAGE_RESOURCE_CFG        5226   
-#define NET_DVR_DEL_BLACKLIST_ALARM_RECORD        5227   
-#define NET_DVR_SET_BLACKLIST_GROUP_INFO        5229   
-#define NET_DVR_DEL_BLACKLIST_GROUP_INFO        5230   
-#define NET_DVR_GET_BLACKLIST_GROUP_INFO        5231   
-#define NET_DVR_SET_BLACKLIST_GROUP_RECORD_CFG    5232   
-#define NET_DVR_GET_BLACKLIST_GROUP_RECORD_CFG    5234   
-#define NET_DVR_DEL_BLACKLIST_GROUP_RECORD_CFG    5235   
-#define    NET_DVR_GET_AREA_MONITOR_CFG            5236   
-#define    NET_DVR_SET_AREA_MONITOR_CFG            5237   
-#define    NET_DVR_DEL_AREA_MONITOR_CFG            5238   
-#define NET_DVR_RETRIEVAL_SNAP_RECORD            5240   
-#define NET_DVR_GET_ALARMLIST                    5241   
-#define NET_DVR_DETECT_IMAGE                    5242   
-#define NET_DVR_GET_SNAP_RECORD                 5243   
-#define NET_DVR_DEL_SNAP_RECORD                 5244   
-#define NET_DVR_GET_FACE_RECORD                 5245   
-#define NET_DVR_SET_FACE_RECORD                    5246   
-#define NET_DVR_DEL_FACE_RECORD                    5247   
-#define NET_DVR_GET_FACE_DATABASE                5248   
-#define NET_DVR_SET_FACE_DATABASE                5249   
-#define NET_DVR_DEL_FACE_DATABASE                5250   
-#define NET_DVR_RETRIEVAL_FACE_DATABASE            5251   
-#define NET_DVR_SET_BLACKLIST_REL_DEV_CFG        5252   
-#define NET_DVR_DEL_BLACKLIST_REL_DEV            5253   
-#define NET_DVR_GET_DISK_RAID_INFO              6001  
-#define NET_DVR_SET_DISK_RAID_INFO              6002  
-#define NET_DVR_GET_DVR_SYNCHRONOUS_IPC         6005  
-#define NET_DVR_SET_DVR_SYNCHRONOUS_IPC         6006  
-#define NET_DVR_SET_DVR_IPC_PASSWD              6008  
-#define NET_DVR_GET_DEVICE_NET_USING_INFO       6009  
-#define NET_DVR_SET_DVR_IPC_NET                 6012  
-#define NET_DVR_GET_RECORD_CHANNEL_INFO         6013  
-#define NET_DVR_SET_RECORD_CHANNEL_INFO         6014  
-#define NET_DVR_MOUNT_DISK                        6015     
-#define NET_DVR_UNMOUNT_DISK                    6016     
-#define NET_DVR_GET_STREAM_SRC_INFO                6017  
-#define NET_DVR_SET_STREAM_SRC_INFO                6018  
-#define NET_DVR_GET_STREAM_RECORD_INFO            6019  
-#define NET_DVR_SET_STREAM_RECORD_INFO            6020  
-#define NET_DVR_GET_STREAM_RECORD_STATUS        6021  
-#define NET_DVR_SET_STREAM_RECORD_STATUS        6022  
-#define NET_DVR_GET_STREAM_INFO                    6023  
-#define NET_DVR_GET_STREAM_SRC_INFO_V40            6024  
-#define NET_DVR_SET_STREAM_SRC_INFO_V40          6025  
-#define NET_DVR_GET_RELOCATE_INFO               6026  
-#define NET_DVR_START_GOP_INFO_PASSBACK         6032  
-#define NET_DVR_GET_CHANS_RECORD_STATUS_CFG     6035    
-#define NET_DVR_SET_CHANS_RECORD_STATUS_CFG     6036    
-#define NET_DVR_GET_IP_ALARM_GROUP_NUM          6100  
-#define NET_DVR_GET_IP_ALARM_IN                 6101  
-#define NET_DVR_GET_IP_ALARM_OUT                6102  
-#define NET_DVR_GET_FTPCFG_SECOND                6103      
-#define NET_DVR_SET_FTPCFG_SECOND                6104      
-#define NET_DVR_GET_DEFAULT_VIDEO_EFFECT        6105       
-#define NET_DVR_SET_VIDEO_EFFECT                6106       
-#define NET_DVR_DEL_INVALID_DISK                6107       
-#define NET_DVR_GET_DRAWFRAME_DISK_QUOTA_CFG    6109    
-#define NET_DVR_SET_DRAWFRAME_DISK_QUOTA_CFG    6110    
-#define NET_DVR_GET_NAT_CFG                     6111     
-#define NET_DVR_SET_NAT_CFG                     6112     
-#define NET_DVR_GET_AES_KEY                     6113     
-#define NET_DVR_GET_POE_CFG                     6114     
-#define NET_DVR_SET_POE_CFG                     6115     
-#define NET_DVR_GET_CUSTOM_PRO_CFG              6116     
-#define NET_DVR_SET_CUSTOM_PRO_CFG              6117     
-#define NET_DVR_GET_STREAM_CABAC                6118     
-#define NET_DVR_SET_STREAM_CABAC                6119     
-#define NET_DVR_GET_ESATA_MINISAS_USAGE_CFG        6120  
-#define NET_DVR_SET_ESATA_MINISAS_USAGE_CFG        6121  
-#define NET_DVR_GET_HDCFG_V40                    6122  
-#define NET_DVR_SET_HDCFG_V40                    6123  
-#define NET_DVR_GET_POE_CHANNEL_ADD_MODE        6124     
-#define NET_DVR_SET_POE_CHANNEL_ADD_MODE        6125     
-#define NET_DVR_GET_DIGITAL_CHANNEL_STATE       6126     
-#define   NET_DVR_GET_BONJOUR_CFG               6127 
-#define   NET_DVR_SET_BONJOUR_CFG               6128 
-#define NET_DVR_GET_SOCKS_CFG                    6130
-#define NET_DVR_SET_SOCKS_CFG                      6131
-#define    NET_DVR_GET_QOS_CFG                        6132
-#define NET_DVR_SET_QOS_CFG                        6133
-#define NET_DVR_GET_HTTPS_CFG                    6134
-#define NET_DVR_SET_HTTPS_CFG                    6135
-#define NET_DVR_GET_WD1_CFG                     6136
-#define NET_DVR_SET_WD1_CFG                     6137
-#define NET_DVR_CREATE_CERT                     6138
-#define NET_DVR_DELETE_CERT                     6139
-#define NET_DVR_GET_RECORD_LOCK_PERCENTAGE        6140  
-#define NET_DVR_SET_RECORD_LOCK_PERCENTAGE      6141  
-#define NET_DVR_CMD_TRIGGER_PERIOD_RECORD        6144 
-#define NET_DVR_UPLOAD_CERT                     6145    
-#define NET_DVR_DOWNLOAD_CERT                   6146     
-#define NET_DVR_GET_CERT                        6147     
-#define NET_DVR_GET_POS_FILTER_CFG                6148    
-#define NET_DVR_SET_POS_FILTER_CFG                6149    
-#define NET_DVR_GET_CONNECT_POS_CFG                6150    
-#define NET_DVR_SET_CONNECT_POS_CFG                6151    
-#define NET_DVR_GET_CHAN_FILTER_CFG                6152    
-#define NET_DVR_SET_CHAN_FILTER_CFG                6153    
-#define NET_DVR_GET_FTPCFG_V40                    6162    
-#define NET_DVR_SET_FTPCFG_V40                    6163    
-#define NET_DVR_GET_MONTHLY_RECORD_DISTRIBUTION 6164   
-#define NET_DVR_GET_ACCESS_DEVICE_CHANNEL_INFO  6165   
-#define NET_DVR_GET_PREVIEW_SWITCH_CFG            6166   
-#define NET_DVR_SET_PREVIEW_SWITCH_CFG            6167   
-#define NET_DVR_GET_N_PLUS_ONE_WORK_MODE            6168    
-#define NET_DVR_SET_N_PLUS_ONE_WORK_MODE            6169    
-#define NET_DVR_GET_HD_STATUS                         6170    
-#define NET_DVR_SET_HD_STATUS                         6171    
-#define NET_DVR_IMPORT_IPC_CFG_FILE                    6172    
-#define NET_DVR_EXPORT_IPC_CFG_FILE                    6173    
-#define NET_DVR_UPGRADE_IPC                            6174    
-#define NET_DVR_GET_RAID_BACKGROUND_TASK_SPEED        6175    
-#define NET_DVR_SET_RAID_BACKGROUND_TASK_SPEED        6176    
-#define NET_DVR_GET_EXCEPTIONCFG_V40                6177    
-#define NET_DVR_SET_EXCEPTIONCFG_V40                6178    
-#define NET_DVR_GET_PICCFG_V40                      6179    
-#define NET_DVR_SET_PICCFG_V40                      6180    
-#define NET_DVR_GET_ALARMINCFG_V40                  6181    
-#define NET_DVR_SET_ALARMINCFG_V40                  6182    
-#define NET_DVR_GET_IPALARMINCFG_V40                6183    
-#define NET_DVR_GET_IPALARMOUTCFG_V40               6185    
-#define NET_DVR_GET_USERCFG_V40                     6187    
-#define NET_DVR_SET_USERCFG_V40                     6188    
-#define NET_DVR_GET_WORK_STATUS                     6189    
-#define NET_DVR_GET_JPEG_CAPTURE_CFG_V40            6190    
-#define NET_DVR_SET_JPEG_CAPTURE_CFG_V40            6191    
-#define NET_DVR_GET_HDGROUP_CFG_V40                 6192    
-#define NET_DVR_SET_HDGROUP_CFG_V40                 6193    
-#define NET_DVR_GET_SMD_HOLIDAY_HANDLE              6194    
-#define NET_DVR_SET_SMD_HOLIDAY_HANDLE              6195    
-#define NET_DVR_GET_PIC_MODEL_CFG                   6196    
-#define NET_DVR_SET_PIC_MODEL_CFG                   6197    
-#define NET_DVR_START_LOCAL_MOUSE_EVENT             6198    
-#define NET_DVR_START_SIMULARE_MOUSE_EVENT          6199    
-#define  NET_DVR_GET_WORK_STATUS_V50                6200    
-#define NET_DVR_GET_ACCESS_CAMERA_INFO          6201 
-#define NET_DVR_SET_ACCESS_CAMERA_INFO          6202 
-#define NET_DVR_PULL_DISK                        6203 
-#define NET_DVR_SCAN_RAID                        6204 
-#define NET_DVR_GET_USER_RIGHT_CFG                6210        
-#define NET_DVR_SET_USER_RIGHT_CFG                6211        
-#define NET_DVR_ONE_KEY_CONFIG                    6212        
-#define NET_DVR_RESTART_SERVICE                    6213        
-#define NET_DVR_GET_MAX_MACHINE_NUM_CFG            6214        
-#define NET_DVR_SET_MAX_MACHINE_NUM_CFG            6215        
-#define NET_DVR_ADD_DEVICE                        6216        
-#define NET_DVR_DEL_DEVICE                        6217        
-#define NET_DVR_GET_DATA_CALLBACK_CFG            6218        
-#define NET_DVR_SET_DATA_CALLBACK_CFG            6219        
-#define NET_DVR_CLONE_LUN                        6220    
-#define NET_DVR_EXPAND_LUN                        6221    
-#define NET_DVR_GET_N_PLUS_ONE_DEVICE_INFO        6222    
-#define NET_DVR_MODIFY_DVR_NET_DISK                6223    
-#define NET_DVR_CREATE_NAS                        6225    
-#define NET_DVR_DELETE_NAS                        6226    
-#define NET_DVR_OPEN_ISCSI                         6227    
-#define NET_DVR_CLOSE_ISCSI                        6228    
-#define NET_DVR_GET_FC                            6229    
-#define NET_DVR_OPEN_FC                             6230    
-#define NET_DVR_CLOSE_FC                         6231    
-#define NET_DVR_ONE_KEY_CONFIG_SAN                6232   
-#define NET_DVR_RECORD_CHECK                        6233  
-#define NET_DVR_ADD_RECORD_PASSBACK_TASK_MANUAL        6234  
-#define NET_DVR_GET_ALL_RECORD_PASSBACK_TASK_MANUAL    6235  
-#define NET_DVR_RECORD_PASSBACK_TASK_MANUAL_CTRL    6236  
-#define NET_DVR_DEL_RECORD_PASSBACK_TASK_MANUAL        6237  
-#define NET_DVR_GET_RECORD_PASSBACK_PLAN_CFG        6238  
-#define NET_DVR_SET_RECORD_PASSBACK_PLAN_CFG        6239  
-#define NET_DVR_GET_DEV_STORAGE_CFG                    6240  
-#define NET_DVR_GET_ONLINE_USER_CFG                    6241  
-#define NET_DVR_GET_RECORD_SEGMENT_CFG                6242  
-#define NET_DVR_GET_REC_PASSBACK_TASK_EXECUTABLE    6243    
-#define NET_DVR_GET_STREAM_MEDIA_CFG                6244    
-#define NET_DVR_SET_STREAM_MEDIA_CFG                6245    
-#define NET_DVR_GET_USERCFG_V50                     6246  
-#define NET_DVR_SET_USERCFG_V50                     6247  
-#define NET_DVR_GET_RECORD_PASSBACK_BASIC_CFG_CAP    6248  
-#define NET_DVR_GET_RECORD_PASSBACK_BASIC_CFG        6249  
-#define NET_DVR_SET_RECORD_PASSBACK_BASIC_CFG        6250  
-#define NET_DVR_ONE_KEY_CONFIG_V50                    6251  
-#define NET_DVR_GET_RACM_CAP                        6252  
-#define NET_DVR_GET_THUMBNAILS                        6253  
-#define NET_DVR_ADD_RECORD_PASSBACK_TASK_MANUAL_V50        6254  
-#define NET_DVR_GET_RECORD_PASSBACK_HISTORY_PLAN_CFG_CAP    6255  
-#define NET_DVR_GET_RECORD_PASSBACK_HISTORY_PLAN_CFG        6256  
-#define NET_DVR_SET_RECORD_PASSBACK_HISTORY_PLAN_CFG        6257  
-#define NET_DVR_ONE_KEY_CONFIG_V51                          6258  
-#define NET_DVR_GET_RECORD_PACK                    6301    
-#define NET_DVR_SET_RECORD_PACK                    6302    
-#define NET_DVR_GET_CLOUD_STORAGE_CFG           6303     
-#define NET_DVR_SET_CLOUD_STORAGE_CFG           6304    
-#define NET_DVR_GET_GOP_INFO                    6305    
-#define NET_DVR_GET_PHY_DISK_INFO               6306     
-#define NET_DVR_GET_RECORDING_AUTO_TRACK_CFG    6307    
-#define NET_DVR_SET_RECORDING_AUTO_TRACK_CFG    6308    
-#define NET_DVR_GET_RECORDING_PUBLISH_CFG        6309  
-#define NET_DVR_SET_RECORDING_PUBLISH_CFG        6310  
-#define NET_DVR_RECORDING_ONEKEY_CONTROL        6311  
-#define NET_DVR_GET_RECORDING_END_TIME    6312  
-#define NET_DVR_RECORDING_PUBLISH                6313  
-#define NET_DVR_GET_CURRICULUM_CFG            6314    
-#define NET_DVR_SET_CURRICULUM_CFG            6315  
-#define NET_DVR_GET_COURSE_INDEX_CFG        6316    
-#define NET_DVR_SET_COURSE_INDEX_CFG        6317  
-#define    NET_DVR_GET_PPT_CHANNEL                6318    
-#define    NET_DVR_GET_PPT_DETECT_CFG            6319    
-#define    NET_DVR_SET_PPT_DETECT_CFG            6320    
-#define NET_DVR_GET_RECORDINGHOST_CFG            6321    
-#define NET_DVR_SET_RECORDINGHOST_CFG            6322    
-#define NET_DVR_GET_BACKUP_RECORD_CFG           6323    
-#define NET_DVR_SET_BACKUP_RECORD_CFG           6324    
-#define NET_DVR_GET_AUDIO_ACTIVATION_CFG        6326    
-#define NET_DVR_SET_AUDIO_ACTIVATION_CFG        6327    
-#define NET_DVR_GET_DECODERCFG_V40              6328    
-#define NET_DVR_SET_DECODERCFG_V40                6329    
-#define NET_DVR_INFRARED_OUTPUT_CONTROL         6330   
-#define NET_DVR_GET_INFRARED_CMD_NAME_CFG       6331   
-#define NET_DVR_SET_INFRARED_CMD_NAME_CFG       6332   
-#define NET_DVR_START_INFRARED_LEARN            6333   
-#define NET_DVR_GET_TRIAL_SYSTEM_CFG            6334   
-#define NET_DVR_SET_CASE_INFO                    6335    
-#define NET_DVR_GET_TRIAL_MICROPHONE_STATUS        6336  
-#define NET_DVR_SET_TRIAL_MICROPHONE_STATUS        6337  
-#define NET_DVR_GET_TRIAL_HOST_STATUS            6338  
-#define NET_DVR_GET_LAMP_OUT                    6339  
-#define NET_DVR_SET_LAMP_OUT                    6340  
-#define NET_DVR_LAMP_REMOTE_CONTROL                6341  
-#define NET_DVR_REMOTE_CONTROL_PLAY                6342  
-#define NET_DVR_GET_LOCAL_INPUT_CFG                6343  
-#define NET_DVR_SET_LOCAL_INPUT_CFG                6344  
-#define NET_DVR_GET_CASE_INFO                    6345  
-#define NET_DVR_INQUEST_GET_CDW_STATUS             6350  
-#define NET_DVR_GET_MIX_AUDIOIN_CFG             6351  
-#define NET_DVR_SET_MIX_AUDIOIN_CFG             6352  
-#define NET_DVR_GET_MIX_AUDIOOUT_CFG            6353  
-#define NET_DVR_SET_MIX_AUDIOOUT_CFG            6354  
-#define NET_DVR_GET_AUDIOIN_VOLUME_CFG          6355  
-#define NET_DVR_SET_AUDIOIN_VOLUME_CFG          6356  
-#define NET_DVR_GET_AREA_MASK_CFG               6357  
-#define NET_DVR_SET_AREA_MASK_CFG               6358  
-#define NET_DVR_GET_AUDIO_DIACRITICAL_CFG       6359  
-#define NET_DVR_SET_AUDIO_DIACRITICAL_CFG       6360  
-#define NET_DVR_GET_WIFI_DHCP_ADDR_CFG          6361  
-#define NET_DVR_SET_WIFI_DHCP_ADDR_CFG          6362  
-#define NET_DVR_GET_WIFI_CLIENT_LIST_INFO       6363  
-#define NET_DVR_REMOTECONTROL_POWER_ON            6364  
-#define NET_DVR_GET_MULTISTREAM_RELATION_CHAN_CFG      6365  
-#define NET_DVR_SET_MULTISTREAM_RELATION_CHAN_CFG     6366  
-#define NET_DVR_GET_VIDEOOUT_RESOLUTION_CFG        6367  
-#define NET_DVR_SET_VIDEOOUT_RESOLUTION_CFG        6368  
-#define NET_DVR_GET_AUDIOOUT_VOLUME_CFG         6369  
-#define NET_DVR_SET_AUDIOOUT_VOLUME_CFG         6370  
-#define NET_DVR_INQUEST_PAUSE_CDW               6371  
-#define NET_DVR_INQUEST_RESUME_CDW              6372  
-#define NET_DVR_GET_INPUT_CHAN_CFG              6373  
-#define NET_DVR_SET_INPUT_CHAN_CFG              6374  
-#define  NET_DVR_GET_INQUEST_MIX_AUDIOIN_CFG    6375    
-#define  NET_DVR_SET_INQUEST_MIX_AUDIOIN_CFG    6376    
-#define     NET_DVR_CASE_INFO_CTRL                    6377    
-#define  NET_DVR_GET_INQUEST_USER_RIGHT            6378    
-#define  NET_DVR_SET_INQUEST_USER_RIGHT            6379    
-#define NET_DVR_GET_INQUEST_CASE_INFO            6380    
-#define NET_DVR_SET_INQUEST_CASE_INFO            6381    
-#define    NET_DVR_GET_FILM_MODE_CFG               6387    
-#define    NET_DVR_SET_FILM_MODE_CFG               6388    
-#define    NET_DVR_GET_FILM_MODE_CFG_CAP            6389    
-#define    NET_DVR_GET_DIRECTED_STRATEGY_CFG       6390    
-#define    NET_DVR_SET_DIRECTED_STRATEGY_CFG        6391    
-#define    NET_DVR_GET_DIRECTED_STRATEGY_CFG_CAP    6392    
-#define    NET_DVR_GET_FRAME_CFG                    6393    
-#define    NET_DVR_SET_FRAME_CFG                    6394    
-#define    NET_DVR_GET_FRAME_CFG_CAP                6395    
-#define    NET_DVR_GET_AUDIO_EFFECTIVE_CFG            6396    
-#define    NET_DVR_SET_AUDIO_EFFECTIVE_CFG            6397    
-#define    NET_DVR_GET_AUDIO_EFFECTIVE_CFG_CAP        6398    
-#define    NET_DVR_GET_RECORD_VIDEO_CFG              6399    
-#define    NET_DVR_SET_RECORD_VIDEO_CFG            6400    
-#define NET_DVR_GET_OUTPUT_CFG                  6401        
-#define NET_DVR_SET_OUTPUT_CFG                  6402        
-#define NET_DVR_CODER_DISPLAY_START             6403        
-#define NET_DVR_CODER_DISPLAY_STOP              6404        
-#define NET_DVR_GET_WINDOW_STATUS               6405        
-#define NET_DVR_GET_VQD_LOOP_DIAGNOSE_CFG       6406        
-#define NET_DVR_SET_VQD_LOOP_DIAGNOSE_CFG       6407        
-#define NET_DVR_GET_VQD_DIAGNOSE_INFO           6408        
-#define    NET_DVR_RECORDING_PUBLISH_FILE            6421        
-#define    NET_DVR_GET_RECORDING_PUBLISH_FILE_CAP    6422        
-#define    NET_DVR_GET_PUBLISH_PROGRESS            6423           
-#define    NET_DVR_GET_RECORD_VIDEO_CFG_CAP        6424        
-#define    NET_DVR_GET_RTMP_CFG                    6425        
-#define    NET_DVR_SET_RTMP_CFG                    6426        
-#define    NET_DVR_GET_RTMP_CFG_CAP                  6427        
-#define    NET_DVR_DEL_BACKGROUND_PIC                6428        
-#define    NET_DVR_GET_BACKGROUND_PIC_CFG            6429        
-#define    NET_DVR_GET_BACKGROUND_PIC_INFO            6430        
-#define    NET_DVR_SET_BACKGROUND_PIC_INFO            6431        
-#define    NET_DVR_GET_BACKGROUND_PIC_INFO_CAP      6432           
-#define    NET_DVR_GET_RECORD_HOST_CAP                6433        
-#define NET_DVR_GET_COURSE_LIST                 6434    
-#define    NET_DVR_GET_RECORD_STATUS                6435 
-#define    NET_DVR_MANUAL_CURRICULUM_CONTROL        6436    
-#define    NET_DVR_GET_IMAGE_DIFF_DETECTION_CFG        6437    
-#define    NET_DVR_SET_IMAGE_DIFF_DETECTION_CFG        6438    
-#define    NET_DVR_GET_IMAGE_DIFF_DETECTION_CFG_CAP    6439    
-#define    NET_DVR_GET_RECORDING_PUBLISH_FILE_INFO    6440    
-#define    NET_DVR_SET_RECORDING_PUBLISH_FILE_INFO    6441    
-#define    NET_DVR_GET_RECORDING_PUBLISH_FILE_INFO_CAP        6442    
-#define    NET_DVR_MANUAL_CURRICULUM_CONTROL_CAP        6443    
-#define NET_DVR_GET_STATISTIC_DATA_LIST             6444    
-#define    NET_DVR_GET_DEVICE_LAN_ENCODE            6501        
-#define NET_DVR_GET_GBT28181_SERVICE_CFG        6503        
-#define NET_DVR_SET_GBT28181_SERVICE_CFG        6504        
-#define NET_DVR_GET_GBT28181_SERVICE_CAPABILITIES 6505      
-#define NET_DVR_GET_CLOUD_URL               6506    
-#define NET_DVR_GET_CLOUD_URL_CAP           6507    
-#define NET_DVR_GET_CLOUD_CFG               6508    
-#define NET_DVR_SET_CLOUD_CFG               6509    
-#define NET_DVR_GET_CLOUD_CFG_CAP           6510    
-#define NET_DVR_GET_CLOUD_UPLOADSTRATEGY    6511    
-#define NET_DVR_SET_CLOUD_UPLOADSTRATEGY    6512    
-#define NET_DVR_GET_CLOUDSTORAGE_UPLOADSTRATEGY_CAP     6513    
-#define    NET_DVR_GET_VIDEO_IMAGE_DB_CFG        6601        
-#define    NET_DVR_SET_VIDEO_IMAGE_DB_CFG        6602        
-#define    NET_DVR_GET_VIDEO_IMAGE_DB_CFG_CAP    6603        
-#define    NET_DVR_GET_FILE_INFO_BY_ID            6604        
-#define    NET_DVR_QUERY_FILE_INFO_CAP            6605        
-#define    NET_DVR_DEL_FILE_FROM_DB            6606        
-#define    NET_DVR_GET_VIDEO_IMAGE_DB_CAP        6607        
-#define NET_DVR_GET_FIGURE                    6610       
-#define    NET_DVR_SYNC_IPC_PASSWD                  6621        
-#define    NET_DVR_GET_VEHICLE_BLACKLST_SCHEDULE 6622    
-#define    NET_DVR_SET_VEHICLE_BLACKLST_SCHEDULE 6623    
-#define    NET_DVR_GET_VEHICLE_WHITELST_SCHEDULE 6624    
-#define    NET_DVR_SET_VEHICLE_WHITELST_SCHEDULE 6625    
-#define    NET_DVR_GET_VEHICLE_BLACKLIST_EVENT_TRIGGER     6626    
-#define    NET_DVR_SET_VEHICLE_BLACKLIST_EVENT_TRIGGER     6627    
-#define    NET_DVR_GET_VEHICLE_WHITELIST_EVENT_TRIGGER     6628    
-#define    NET_DVR_SET_VEHICLE_WHITELIST_EVENT_TRIGGER     6629    
-#define    NET_DVR_GET_TRAFFIC_CAP    6630    
-#define    NET_DVR_GET_VEHICLE_ALLLIST_EVENT_TRIGGER     6631    
-#define    NET_DVR_SET_VEHICLE_ALLLIST_EVENT_TRIGGER     6632    
-#define    NET_DVR_GET_VEHICLE_OTHERLIST_EVENT_TRIGGER     6633    
-#define    NET_DVR_SET_VEHICLE_OTHERLIST_EVENT_TRIGGER     6634    
-#define    NET_DVR_GET_STORAGEDETECTION_EVENT_TRIGGER     6635    
-#define    NET_DVR_SET_STORAGEDETECTION_EVENT_TRIGGER     6636    
-#define    NET_DVR_GET_STORAGEDETECTION_SCHEDULE_CAPABILITIES    6637    
-#define    NET_DVR_GET_STORAGEDETECTION_SCHEDULE         6638    
-#define    NET_DVR_SET_STORAGEDETECTION_SCHEDULE         6639    
-#define    NET_DVR_GET_STORAGEDETECTION_STATE             6640    
-#define    NET_DVR_GET_STORAGEDETECTION_RWLOCK             6646    
-#define    NET_DVR_GET_STORAGEDETECTION_RWLOCK_CAPABILITIES    6647    
-#define    NET_DVR_SET_STORAGEDETECTION_RWLOCK             6648    
-#define    NET_DVR_GET_PTZTRACKSTATUS                     6649    
-#define    NET_DVR_SET_STORAGEDETECTION_UNLOCK             6653    
-#define    NET_DVR_GET_STORAGEDETECTION_UNLOCK_CAPABILITIES    6654    
-#define    NET_DVR_SET_SHIPSDETECTION_CFG                 6655    
-#define    NET_DVR_GET_SHIPSDETECTION_CFG                 6656    
-#define    NET_DVR_GET_SHIPSDETECTION_CAPABILITIES         6657    
-#define    NET_DVR_GET_SHIPSDETECTION_COUNT               6658    
-#define    NET_DVR_SHIPSCOUNT_DELETE_CTRL                  6659   
-#define    NET_DVR_GET_BAREDATAOVERLAY_CAPABILITIES     6660   
-#define    NET_DVR_SET_BAREDATAOVERLAY_CFG                 6661    
-#define    NET_DVR_GET_BAREDATAOVERLAY_CFG                 6662    
-#define    NET_DVR_GET_SHIPSDETECTION_SCHEDULE             6663    
-#define    NET_DVR_SET_SHIPSDETECTION_SCHEDULE             6664    
-#define    NET_DVR_GET_SHIPSDETECTION_EVENT_TRIGGER     6665    
-#define    NET_DVR_SET_SHIPSDETECTION_EVENT_TRIGGER     6666    
-#define    NET_DVR_GET_SHIPSDETECTION_SCHEDULE_CAPABILITIES    6667    
-#define    NET_DVR_FIRE_FOCUSZOOM_CTRL         6670        
-#define    NET_DVR_GET_FIREDETECTION_SCHEDULE_CAPABILITIES    6671 
-#define    NET_DVR_GET_FIREDETECTION_SCHEDULE    6672    
-#define    NET_DVR_SET_FIREDETECTION_SCHEDULE    6673    
-#define    NET_DVR_GET_MANUALRANGING_CAPABILITIES    6675    
-#define    NET_DVR_SET_MANUALRANGING           6677        
-#define    NET_DVR_GET_MANUALDEICING_CAPABILITIES    6678
-#define    NET_DVR_SET_MANUALDEICING           6679        
-#define    NET_DVR_GET_MANUALDEICING           6680        
-#define    NET_DVR_GET_THERMALPOWER_CAPABILITIES   6689    
-#define    NET_DVR_GET_THERMALPOWER                6690    
-#define    NET_DVR_SET_THERMALPOWER                6691    
-#define    NET_DVR_GET_PTZABSOLUTEEX_CAPABILITIES  6695    
-#define    NET_DVR_GET_PTZABSOLUTEEX               6696    
-#define    NET_DVR_SET_PTZABSOLUTEEX               6697    
-#define    NET_DVR_GET_CRUISE_CAPABILITIES              6698    
-#define    NET_DVR_GET_CRUISE_INFO                      6699    
-#define    NET_DVR_GET_TEMP_HUMI_CAPABILITIES           6700    
-#define NET_DVR_GET_TEMP_HUMI_INFO                   6701   
-#define    NET_DVR_GET_MANUALTHERM_INFO                 6706   
-#define    NET_DVR_GET_MANUALTHERM_CAPABILITIES         6707   
-#define    NET_DVR_SET_MANUALTHERM                      6708     
-#define    NET_DVR_GET_ACCESSORY_CARD_INFO_CAPABILITIES    6709 
-#define    NET_DVR_GET_ACCESSORY_CARD_INFO                    6710 
-#define    NET_DVR_GET_THERMINTELL_CAPABILITIES    6711         
-#define    NET_DVR_GET_THERMINTELL                 6712         
-#define    NET_DVR_SET_THERMINTELL                 6713         
-#define NET_GET_CRUISEPOINT_V50                      6714 
-#define    NET_DVR_GET_MANUALTHERM_BASIC_CAPABILITIES     6715   
-#define    NET_DVR_SET_MANUALTHERM_BASICPARAM           6716     
-#define    NET_DVR_GET_MANUALTHERM_BASICPARAM           6717     
-#define    NET_DVR_GET_FIRESHIELDMASK_CAPABILITIES            6718   
-#define NET_DVR_GET_HIDDEN_INFORMATION_CAPABILITIES    6720 
-#define NET_DVR_GET_HIDDEN_INFORMATION                 6721 
-#define NET_DVR_SET_HIDDEN_INFORMATION                 6722 
-#define    NET_DVR_SET_FIRESHIELDMASK_CFG                  6723    
-#define    NET_DVR_GET_FIRESHIELDMASK_CFG                  6724     
-#define    NET_DVR_GET_SMOKESHIELDMASK_CAPABILITIES            6725   
-#define    NET_DVR_SET_SMOKESHIELDMASK_CFG                     6726     
-#define    NET_DVR_GET_SMOKESHIELDMASK_CFG                     6727        
-#define    NET_DVR_GET_AREASCAN_CAPABILITIES                  6728   
-#define    NET_DVR_GET_AREASCAN_CFG                          6730        
-#define    NET_DVR_DEL_AREASCAN_CFG                          6731        
-#define    NET_DVR_AREASCAN_INIT_CTRL                        6732        
-#define    NET_DVR_AREASCAN_CONFIRM_CTRL                     6733        
-#define    NET_DVR_AREASCAN_STOP_CTRL                        6734        
-#define    NET_DVR_SAVE_SCANZOOM_CTRL                        6735        
-#define    NET_DVR_GET_SCANZOOM_CTRL                         6736        
-#define    NET_DVR_DEL_FIRESHIELDMASK_CTRL                   6737        
-#define    NET_DVR_DEL_SMOKESHIELDMASK_CTRL                  6738        
-#define    NET_DVR_GET_DENSEFOG_EVENT_TRIGGER                6740     
-#define    NET_DVR_SET_DENSEFOG_EVENT_TRIGGER                6741     
-#define    NET_DVR_SET_DENSEFOGDETECTION_CFG                 6742     
-#define    NET_DVR_GET_DENSEFOGDETECTION_CFG                 6743     
-#define    NET_DVR_GET_DENSEFOGDETECTION_CAPABILITIES        6744     
-#define    NET_DVR_GET_THERMOMETRY_SCHEDULE_CAPABILITIES     6750     
-#define    NET_DVR_GET_THERMOMETRY_SCHEDULE                  6751     
-#define    NET_DVR_SET_THERMOMETRY_SCHEDULE                  6752     
-#define    NET_DVR_GET_TEMPERTURE_SCHEDULE_CAPABILITIES      6753     
-#define    NET_DVR_GET_TEMPERTURE_SCHEDULE                   6754     
-#define    NET_DVR_SET_TEMPERTURE_SCHEDULE                   6755     
-#define NET_DVR_GET_SEARCH_LOG_CAPABILITIES               6756     
-#define    NET_DVR_GET_VEHICLEFLOW                           6758     
-#define NET_DVR_GET_IPADDR_FILTERCFG_V50                  6759     
-#define NET_DVR_SET_IPADDR_FILTERCFG_V50                  6760     
-#define    NET_DVR_GET_TEMPHUMSENSOR_CAPABILITIES            6761     
-#define    NET_DVR_GET_TEMPHUMSENSOR                         6762     
-#define    NET_DVR_SET_TEMPHUMSENSOR                         6763     
-#define    NET_DVR_GET_THERMOMETRY_MODE_CAPABILITIES  6764  
-#define    NET_DVR_GET_THERMOMETRY_MODE               6765  
-#define    NET_DVR_SET_THERMOMETRY_MODE               6766  
-#define    NET_DVR_GET_THERMAL_PIP_CAPABILITIES    6767    
-#define    NET_DVR_GET_THERMAL_PIP   6768    
-#define    NET_DVR_SET_THERMAL_PIP   6769    
-#define    NET_DVR_GET_THERMAL_INTELRULEDISPLAY_CAPABILITIES    6770    
-#define    NET_DVR_GET_THERMAL_INTELRULE_DISPLAY   6771    
-#define    NET_DVR_SET_THERMAL_INTELRULE_DISPLAY   6772    
-#define    NET_DVR_GET_THERMAL_ALGVERSION   6773   
-#define    NET_DVR_GET_CURRENT_LOCK_CAPABILITIES    6774    
-#define    NET_DVR_GET_CURRENT_LOCK   6775    
-#define    NET_DVR_SET_CURRENT_LOCK   6776    
-#define    NET_DVR_DEL_MANUALTHERM_RULE                      6778     
-#define NET_DVR_GET_UPGRADE_INFO    6779    
-#define    NET_DVR_SWITCH_TRANSFER  7000  
-#define NET_DVR_GET_MB_POWERCTRLPARA            8000
-#define    NET_DVR_SET_MB_POWERCTRLPARA            8001 
-#define NET_DVR_GET_AUTOBACKUPPARA                8002
-#define NET_DVR_SET_AUTOBACKUPPARA                8003 
-#define NET_DVR_GET_MB_GPSPARA                    8004
-#define NET_DVR_SET_MB_GPSPARA                    8005 
-#define NET_DVR_GET_MB_SENSORINPARA                8006
-#define NET_DVR_SET_MB_SENSORINPARA                8007 
-#define NET_DVR_GET_GSENSORPARA                    8008
-#define NET_DVR_SET_GSENSORPARA                    8009 
-#define NET_DVR_GET_MB_DOWNLOADSVRPARA            8010
-#define NET_DVR_SET_MB_DOWNLOADSVRPARA            8011
-#define NET_DVR_GET_PLATERECOG_PARA                8012
-#define NET_DVR_SET_PLATERECOG_PARA                8013
-#define NET_DVR_GET_ENFORCESYS_PARA                8014
-#define NET_DVR_SET_ENFORCESYS_PARA                8015
-#define NET_DVR_GET_GPS_DATA                    8016 
-#define NET_DVR_GET_ANALOG_ALARMINCFG            8017
-#define NET_DVR_SET_ANALOG_ALARMINCFG            8018
-#define NET_DVR_GET_SYSTEM_CAPABILITIES         8100 
-#define NET_DVR_GET_EAGLEEYE_CAPABILITIES       8101 
-#define NET_DVR_GET_SLAVECAMERA_CALIB_V51       8102    
-#define NET_DVR_SET_SLAVECAMERA_CALIB_V51       8103    
-#define NET_DVR_SET_GOTOSCENE                   8105  
-#define NET_DVR_GET_PTZ_NOTIFICATION        8201
-#define NET_DVR_SET_PTZ_NOTIFICATION        8202
-#define    NET_DVR_MATRIX_WALL_SET                    9001  
-#define    NET_DVR_MATRIX_WALL_GET                    9002  
-#define    NET_DVR_WALLWIN_GET                        9003  
-#define    NET_DVR_WALLWIN_SET                        9004  
-#define    NET_DVR_WALLWINPARAM_SET                9005  
-#define    NET_DVR_WALLWINPARAM_GET                9006  
-#define NET_DVR_WALLSCENEPARAM_GET                9007  
-#define NET_DVR_WALLSCENEPARAM_SET                9008  
-#define NET_DVR_MATRIX_GETWINSTATUS             9009  
-#define    NET_DVR_GET_WINASSOCIATEDDEVINFO        9010  
-#define    NET_DVR_WALLOUTPUT_GET                    9011  
-#define    NET_DVR_WALLOUTPUT_SET                    9012  
-#define NET_DVR_GET_UNITEDMATRIXSYSTEM          9013  
-#define NET_DVR_GET_WALL_CFG                    9014  
-#define NET_DVR_SET_WALL_CFG                    9015  
-#define NET_DVR_CLOSE_ALL_WND                    9016  
-#define NET_DVR_SWITCH_WIN_TOP                  9017  
-#define NET_DVR_SWITCH_WIN_BOTTOM               9018  
-#define    NET_DVR_CLOSE_ALL_WND_V41                9019  
-#define    NET_DVR_GET_WALL_WINDOW_V41                9020  
-#define    NET_DVR_SET_WALL_WINDOW_V41                9021  
-#define    NET_DVR_GET_CURRENT_SCENE_V41            9022  
-#define    NET_DVR_GET_WALL_SCENE_PARAM_V41        9023  
-#define    NET_DVR_SET_WALL_SCENE_PARAM_V41        9024  
-#define NET_DVR_GET_MATRIX_LOGO_CFG             9025  
-#define NET_DVR_SET_MATRIX_LOGO_CFG             9026  
-#define NET_DVR_GET_WIN_LOGO_CFG                9027  
-#define NET_DVR_SET_WIN_LOGO_CFG                9028  
-#define NET_DVR_DELETE_LOGO                     9029  
-#define NET_DVR_SET_DISPLAY_EFFECT_CFG            9030  
-#define NET_DVR_GET_DISPLAY_EFFECT_CFG            9031  
-#define NET_DVR_DEC_PLAY_REMOTE_FILE            9032  
-#define NET_DVR_DEC_PLAY_REMOTE_FILE_V50        9314  
-#define NET_DVR_GET_WIN_ZOOM_STATUS             9033  
-#define NET_DVR_GET_ALL_MATRIX_LOGOCFG          9034  
-#define NET_DVR_SIMULATE_REMOTE_CONTROL         9035    
-#define NET_DVR_SET_SCREEN_SIGNAL_CFG            9036    
-#define    NET_DVR_GET_SCREEN_SIGNAL_CFG            9037    
-#define NET_DVR_SET_SCREEN_SPLICE_CFG              9038    
-#define    NET_DVR_GET_SCREEN_SPLICE_CFG            9039    
-#define NET_DVR_GET_SCREEN_FAN_WORK_MODE         9040    
-#define NET_DVR_SET_SCREEN_FAN_WORK_MODE         9041    
-#define NET_DVR_SHOW_SCREEN_WORK_STATUS          9044    
-#define NET_DVR_GET_VGA_CFG                      9045    
-#define NET_DVR_SET_VGA_CFG                      9046    
-#define NET_DVR_GET_SCREEN_MENU_CFG                9048   
-#define NET_DVR_SET_SCREEN_MENU_CFG              9049    
-#define NET_DVR_SET_SCREEN_DISPLAY_CFG          9050    
-#define    NET_DVR_GET_SCREEN_DISPLAY_CFG            9051    
-#define NET_DVR_SET_FUSION_CFG                    9052    
-#define NET_DVR_GET_FUSION_CFG                    9053    
-#define NET_DVR_SET_PIP_CFG                      9060    
-#define    NET_DVR_GET_PIP_CFG                        9061    
-#define NET_DVR_SET_DEFOG_LCD                      9073    
-#define    NET_DVR_GET_DEFOG_LCD                    9074    
-#define NET_DVR_SHOW_IP                          9075    
-#define NET_DVR_SCREEN_MAINTENANCE_WALL            9076    
-#define NET_DVR_SET_SCREEN_POS                  9077    
-#define    NET_DVR_GET_SCREEN_POS                    9078    
-#define    NET_DVR_SCREEN_INDEX_SET                9079    
-#define    NET_DVR_SCREEN_INDEX_GET                9080    
-#define NET_DVR_SCREEN_SPLICE_SET               9081    
-#define NET_DVR_SCREEN_SPLICE_GET               9082    
-#define NET_DVR_SET_SCREEN_PARAM                9083    
-#define NET_DVR_GET_SCREEN_PARAM                9084    
-#define NET_DVR_SET_SWITCH_CFG                  9085    
-#define NET_DVR_GET_SWITCH_CFG                  9086    
-#define NET_DVR_SET_POWERON_DELAY_CFG           9087    
-#define NET_DVR_GET_POWERON_DELAY_CFG           9088    
-#define    NET_DVR_SET_SCREEN_POSITION                9089    
-#define    NET_DVR_GET_SCREEN_POSITION                9090    
-#define NET_DVR_SCREEN_SCENE_CONTROL            9091    
-#define NET_DVR_GET_CURRENT_SCREEN_SCENE        9092    
-#define NET_DVR_GET_SCREEN_SCENE_PARAM          9093    
-#define NET_DVR_SET_SCREEN_SCENE_PARAM          9094    
-#define NET_DVR_GET_EXTERNAL_MATRIX_RELATION    9095    
-#define NET_DVR_GET_LCD_AUDIO_CFG                9096     
-#define NET_DVR_SET_LCD_AUDIO_CFG                9097     
-#define NET_DVR_GET_LCD_WORK_STATE                9098     
-#define NET_DVR_GET_BOOT_LOGO_CFG                9099    
-#define NET_DVR_SET_BOOT_LOGO_CFG                9100    
-#define NET_DVR_GET_STREAM_DST_COMPRESSIONINFO    9101  
-#define NET_DVR_SET_STREAM_DST_COMPRESSIONINFO  9102  
-#define NET_DVR_GET_STREAM_TRANS_STATUS            9103  
-#define NET_DVR_GET_DEVICE_TRANS_STATUS            9104  
-#define NET_DVR_GET_ALLSTREAM_SRC_INFO          9105  
-#define NET_DVR_GET_BIG_SCREEN_AUDIO            9106  
-#define NET_DVR_SET_BIG_SCREEN_AUDIO            9107  
-#define NET_DVR_GET_DEV_WORK_MODE                9108  
-#define NET_DVR_SET_DEV_WORK_MODE                9109  
-#define NET_DVR_APPLY_TRANS_CHAN                9110  
-#define NET_DVR_GET_DISPCHAN_CFG                9111  
-#define NET_DVR_SET_DISPCHAN_CFG                9112  
-#define NET_DVR_GET_DEC_CHAN_STATUS                9113  
-#define NET_DVR_GET_DISP_CHAN_STATUS            9114  
-#define NET_DVR_GET_ALARMIN_STATUS                9115  
-#define NET_DVR_GET_ALARMOUT_STATUS                9116  
-#define NET_DVR_GET_AUDIO_CHAN_STATUS            9117  
-#define    NET_DVR_GET_VIDEO_AUDIOIN_CFG            9118   
-#define NET_DVR_SET_VIDEO_AUDIOIN_CFG            9119   
-#define    NET_DVR_SET_BASEMAP_CFG                    9120  
-#define NET_DVR_GET_BASEMAP_CFG                    9121  
-#define NET_DVR_GET_VIRTUAL_SCREEN_CFG          9122  
-#define NET_DVR_SET_VIRTUAL_SCREEN_CFG          9123  
-#define NET_DVR_GET_BASEMAP_WIN_CFG                9124  
-#define NET_DVR_SET_BASEMAP_WIN_CFG                9125  
-#define NET_DVR_DELETE_PICTURE                    9126  
-#define NET_DVR_GET_BASEMAP_PIC_INFO            9127  
-#define    NET_DVR_SET_BASEMAP_WIN_CFG_V40         9128  
-#define NET_DVR_GET_BASEMAP_WIN_CFG_V40         9129  
-#define NET_DVR_GET_DEC_VCA_CFG                    9130    
-#define NET_DVR_SET_DEC_VCA_CFG                    9131    
-#define NET_DVR_SET_VS_INPUT_CHAN_INIT_ALL  9132  
-#define NET_DVR_GET_VS_INPUT_CHAN_INIT_ALL  9133  
-#define NET_DVR_GET_VS_INPUT_CHAN_INIT 9134  
-#define NET_DVR_GET_VS_INPUT_CHAN_CFG  9135  
-#define NET_DVR_GET_TERMINAL_CONFERENCE_STATUS    9136    
-#define NET_DVR_GET_TERMINAL_INPUT_CFG_CAP        9137    
-#define NET_DVR_GET_TERMINAL_INPUT_CFG            9138    
-#define NET_DVR_SET_TERMINAL_INPUT_CFG            9139    
-#define NET_DVR_GET_CONFERENCE_REGION_CAP        9140    
-#define NET_DVR_GET_CONFERENCE_REGION            9141    
-#define NET_DVR_SET_CONFERENCE_REGION            9142    
-#define NET_DVR_GET_TERMINAL_CALL_CFG_CAP        9143    
-#define NET_DVR_GET_TERMINAL_CALL_CFG            9144    
-#define NET_DVR_SET_TERMINAL_CALL_CFG            9145    
-#define NET_DVR_GET_TERMINAL_CTRL_CAP            9146    
-#define NET_DVR_TERMINAL_CTRL                    9147    
-#define    NET_DVR_GET_CALL_QUERY_CAP                9148    
-#define NET_DVR_GET_CALLINFO_BY_COND            9149    
-#define    NET_DVR_SET_FUSION_SCALE                9150    
-#define NET_DVR_GET_FUSION_SCALE                9151    
-#define NET_DVR_GET_VCS_CAP                        9152    
-#define NET_DVR_GET_TERMINAL_GK_CFG_CAP            9153    
-#define NET_DVR_GET_TERMINAL_GK_CFG                9154    
-#define NET_DVR_SET_TERMINAL_GK_CFG                9155    
-#define NET_DVR_GET_MCU_CONFERENCESEARCH_CAP    9156    
-#define NET_DVR_SET_VS_INPUT_CHAN_CFG  9157  
-#define NET_DVR_GET_VS_NETSRC_CFG      9158  
-#define NET_DVR_SET_VS_NETSRC_CFG      9159  
-#define    NET_DVR_GET_LLDP_CFG                    9160    
-#define    NET_DVR_SET_LLDP_CFG                    9161    
-#define NET_DVR_GET_LLDP_CAP                    9162    
-#define    NET_DVR_GET_FIBER_CONVERT_BASIC_INFO    9163    
-#define    NET_DVR_GET_FIBER_CONVERT_WORK_STATE    9164    
-#define    NET_DVR_GET_FIBER_CONVERT_TOPOLOGY      9165    
-#define    NET_DVR_GET_FC_PORT_REMARKS                9166    
-#define    NET_DVR_SET_FC_PORT_REMARKS                9167    
-#define NET_DVR_GET_PORT_REMARKS_CAP            9168    
-#define NET_DVR_GET_MCU_CONFERENCECONTROL_CAP   9169    
-#define NET_DVR_GET_MCU_TERMINALCONTROL_CAP     9170    
-#define NET_DVR_GET_MCU_TERIMINALGROUP_CAP      9171    
-#define NET_DVR_GET_MCU_TERMINAL_CAP            9174    
-#define NET_DVR_GET_MCU_CONFERENCE_CAP          9175    
-#define NET_DVR_GET_MCU_GK_CFG_CAP              9176    
-#define NET_DVR_GET_MCU_GK_SERVER_CAP           9177    
-#define NET_DVR_GET_EDID_CFG_FILE_INFO  9178  
-#define NET_DVR_GET_EDID_CFG_FILE_INFO_LIST  9179  
-#define NET_DVR_SET_EDID_CFG_FILE_INFO  9180  
-#define NET_DVR_DEL_EDID_CFG_FILE_INFO  9181  
-#define NET_DVR_GET_EDID_CFG_FILE_INFO_CAP  9182  
-#define NET_DVR_GET_SUBWND_DECODE_OSD  9183  
-#define NET_DVR_GET_SUBWND_DECODE_OSD_ALL  9184  
-#define NET_DVR_SET_SUBWND_DECODE_OSD  9185  
-#define NET_DVR_GET_SUBWND_DECODE_OSD_CAP  9186  
-#define NET_DVR_GET_DECODE_CHANNEL_OSD  9187  
-#define NET_DVR_SET_DECODE_CHANNEL_OSD  9188  
-#define NET_DVR_GET_OUTPUT_PIC_INFO             9200    
-#define NET_DVR_SET_OUTPUT_PIC_INFO             9201    
-#define NET_DVR_GET_OUTPUT_PIC_WIN_CFG          9202    
-#define NET_DVR_SET_OUTPUT_PIC_WIN_CFG          9203    
-#define NET_DVR_GET_OUTPUT_ALL_PIC_WIN_CFG      9204    
-#define NET_DVR_DELETE_OUPUT_PIC                9205    
-#define NET_DVR_GET_OUTPUT_OSD_CFG              9206    
-#define NET_DVR_SET_OUTPUT_OSD_CFG              9207    
-#define NET_DVR_GET_OUTPUT_ALL_OSD_CFG          9208    
-#define NET_DVR_GET_CHAN_RELATION               9209    
-#define NET_DVR_SET_CHAN_RELATION               9210    
-#define NET_DVR_GET_ALL_CHAN_RELATION           9211    
-#define NET_DVR_GET_NS_RING_CFG                    9212    
-#define NET_DVR_SET_NS_RING_CFG                   9213    
-#define NET_DVR_GET_NS_RING_STATUS              9214    
-#define NET_DVR_GET_OPTICAL_PORT_INFO            9220    
-#define NET_DVR_SET_OPTICAL_PORT_INFO            9221    
-#define NET_DVR_GET_OPTICAL_CHAN_RELATE_CFG        9222    
-#define NET_DVR_SET_OPTICAL_CHAN_RELATE_CFG        9223    
-#define  NET_DVR_GET_WIN_ROAM_SWITCH_CFG        9224    
-#define  NET_DVR_SET_WIN_ROAM_SWITCH_CFG        9225    
-#define    NET_DVR_START_SCREEN_CRTL                9226    
-#define    NET_DVR_GET_SCREEN_FLIE_LIST            9227    
-#define    NET_DVR_GET_SCREEN_FILEINFO                9228    
-#define    NET_DVR_SET_SCREEN_FILEINFO             9229    
-#define NET_DVR_GET_LED_OUTPUT_CFG                9230    
-#define NET_DVR_SET_LED_OUTPUT_CFG                9231    
-#define NET_DVR_GET_LED_OUTPUT_PORT_CFG            9232    
-#define NET_DVR_SET_LED_OUTPUT_PORT_CFG            9233    
-#define NET_DVR_GET_LED_DISPLAY_AREA_CFG        9234    
-#define NET_DVR_SET_LED_DISPLAY_AREA_CFG        9235    
-#define NET_DVR_GET_LED_PORT_CFG                9236    
-#define NET_DVR_SET_LED_PORT_CFG                9237    
-#define NET_DVR_GET_LED_DISPLAY_CFG                9238    
-#define NET_DVR_SET_LED_DISPLAY_CFG                9239    
-#define NET_DVR_GET_ALL_LED_PORT_CFG            9240    
-#define NET_DVR_SAVE_LED_CONFIGURATION            9241    
-#define NET_DVR_GET_LED_TEST_SIGNAL_CFG            9242    
-#define NET_DVR_SET_LED_TEST_SIGNAL_CFG            9243    
-#define NET_DVR_GET_LED_NOSIGNAL_CFG            9244    
-#define NET_DVR_SET_LED_NOSIGNAL_CFG            9245    
-#define NET_DVR_GET_LED_INPUT_CFG                9246    
-#define NET_DVR_SET_LED_INPUT_CFG                9247    
-#define NET_DVR_GET_LED_RECV_GAMMA_CFG            9248    
-#define NET_DVR_SET_LED_RECV_GAMMA_CFG            9249    
-#define NET_DVR_GET_LED_RECV_CFG                9250    
-#define NET_DVR_SET_LED_RECV_CFG                9251    
-#define NET_DVR_GET_LED_RECV_ADVANCED_CFG        9252    
-#define NET_DVR_SET_LED_RECV_ADVANCED_CFG        9253    
-#define NET_DVR_GET_LED_SCREEN_DISPLAY_CFG        9254    
-#define NET_DVR_SET_LED_SCREEN_DISPLAY_CFG        9255    
-#define NET_DVR_GET_INSERTPLAY_PROGRESS            9273    
-#define    NET_DVR_GET_SCREEN_CONFIG               9260    
-#define    NET_DVR_SET_SCREEN_CONFIG               9261    
-#define NET_DVR_GET_SCREEN_CONFIG_CAP              9262    
-#define    NET_DVR_GET_SCHEDULE_PUBLISH_PROGRESS    9271    
-#define    NET_DVR_GET_PUBLISH_UPGRADE_PROGRESS    9272    
-#define NET_DVR_GET_INPUT_BOARD_CFG                9281    
-#define NET_DVR_GET_INPUT_BOARD_CFG_LIST        9282    
-#define NET_DVR_SET_INPUT_BOARD_CFG                9283    
-#define NET_DVR_GET_INPUT_SOURCE_TEXT_CAP    9284            
-#define NET_DVR_GET_INPUT_SOURCE_TEXT_CFG    9285            
-#define NET_DVR_GET_INPUT_SOURCE_TEXT_CFG_LSIT 9286        
-#define NET_DVR_SET_INPUT_SOURCE_TEXT_CFG    9287            
-#define NET_DVR_SET_INPUT_SOURCE_TEXT_CFG_LIST 9288        
-#define NET_DVR_GET_INPUT_SOURCE_RESOLUTION_CAP    9289    
-#define NET_DVR_GET_INPUT_SOURCE_RESOLUTION_CFG    9290    
-#define NET_DVR_GET_INPUT_SOURCE_RESOLUTION_CFG_LIST    9291 
-#define NET_DVR_SET_INPUT_SOURCE_RESOLUTION_CFG    9292    
-#define NET_DVR_SET_INPUT_SOURCE_RESOLUTION_CFG_LIST  9293  
-#define NET_DVR_GET_LED_AREA_INFO_LIST  9295  
-#define NET_DVR_GET_DISPINPUT_CFG  9296  
-#define NET_DVR_GET_DISPINPUT_CFG_LIST  9297  
-#define NET_DVR_SET_DISPINPUT_CFG  9298  
-#define NET_DVR_GET_DISPINPUT_CFG_CAP  9299  
-#define NET_DVR_GET_CURRENT_VALID_PORT          9300    
-#define    NET_DVR_SET_ONLINE_UPGRADE                9301    
-#define NET_DVR_GET_ONLINEUPGRADE_PROGRESS      9302    
-#define    NET_DVR_GET_FIRMWARECODE                9303    
-#define NET_DVR_GET_ONLINEUPGRADE_SERVER        9304    
-#define NET_DVR_GET_ONLINEUPGRADE_VERSION       9305    
-#define NET_DVR_GET_RECOMMEN_VERSION            9306    
-#define NET_DVR_GET_ONLINEUPGRADE_ABILITY       9309    
-#define    NET_DVR_GET_FIBER_CONVERT_BASIC_INFO_V50     9310    
-#define    NET_DVR_GET_FIBER_CONVERT_WORK_STATE_V50     9311    
-#define NET_SDK_LED_SCREEN_CHECK            9312    
-#define NET_SDK_GENERATE_OUTPUT_CONTROL	    9315    
-#define  NET_SDK_GET_MATRIX_STATUS_V51   9313    
-#define  NET_DVR_GET_ALARM_LINKAGE_CFG    9316    
-#define  NET_DVR_SET_ALARM_LINKAGE_CFG    9317    
-#define NET_DVR_GET_RS485_WORK_MODE             10001 
-#define NET_DVR_SET_RS485_WORK_MODE             10002 
-#define NET_DVR_GET_SPLITTER_TRANS_CHAN_CFG     10003 
-#define NET_DVR_SET_SPLITTER_TRANS_CHAN_CFG     10004 
-#define NET_DVR_GET_RS485_PROTOCOL_VERSION              10301       
-#define	 NET_DVR_ALARMHOST_REGISTER_DETECTOR  10302			
-#define  NET_DVR_GET_SIP_CFG                    11001   
-#define  NET_DVR_SET_SIP_CFG                    11002   
-#define  NET_DVR_GET_IP_VIEW_DEVCFG                11003   
-#define  NET_DVR_SET_IP_VIEW_DEVCFG                11004   
-#define  NET_DVR_GET_IP_VIEW_AUDIO_CFG            11005   
-#define  NET_DVR_SET_IP_VIEW_AUDIO_CFG            11006   
-#define     NET_DVR_GET_IP_VIEW_CALL_CFG            11007   
-#define  NET_DVR_SET_IP_VIEW_CALL_CFG            11008   
-#define     NET_DVR_GET_AUDIO_LIMIT_ALARM_CFG        11009    
-#define     NET_DVR_SET_AUDIO_LIMIT_ALARM_CFG        11010    
-#define     NET_DVR_GET_BUTTON_DOWN_ALARM_CFG        11011    
-#define     NET_DVR_SET_BUTTON_DOWN_ALARM_CFG        11012    
-#define  NET_DVR_GET_ISCSI_CFG                  11070   
-#define  NET_DVR_SET_ISCSI_CFG                  11071   
-#define NET_DVR_GET_SECURITYMODE                12004   
-#define  NET_DVR_GET_TEMP_HUMI                  12005
-#define  NET_DVR_SET_ALARMSOUNDMODE             12006   
-#define  NET_DVR_GET_ALARMSOUNDMODE             12007   
-#define    NET_DVR_SET_IPDEVICE_ACTIVATED       13000
-#define NET_DVR_GET_DIGITAL_CHAN_SECURITY_STATUS    13001   
-#define    NET_DVR_GET_ACTIVATE_IPC_ABILITY     13003    
-#define NET_DVR_GET_VIDEO_INTERCOM_DEVICEID_CFG  16001  
-#define NET_DVR_SET_VIDEO_INTERCOM_DEVICEID_CFG  16002  
-#define NET_DVR_SET_PRIVILEGE_PASSWORD           16003  
-#define NET_DVR_GET_OPERATION_TIME_CFG           16004  
-#define NET_DVR_SET_OPERATION_TIME_CFG           16005  
-#define NET_DVR_GET_VIDEO_INTERCOM_RELATEDEV_CFG 16006  
-#define NET_DVR_SET_VIDEO_INTERCOM_RELATEDEV_CFG 16007  
-#define NET_DVR_REMOTECONTROL_NOTICE_DATA        16008  
-#define NET_DVR_REMOTECONTROL_GATEWAY            16009  
-#define NET_DVR_REMOTECONTROL_OPERATION_AUTH     16010  
-#define NET_DVR_GET_VIDEO_INTERCOM_IOIN_CFG      16016  
-#define NET_DVR_SET_VIDEO_INTERCOM_IOIN_CFG      16017  
-#define NET_DVR_GET_VIDEO_INTERCOM_IOOUT_CFG     16018  
-#define NET_DVR_SET_VIDEO_INTERCOM_IOOUT_CFG     16019  
-#define NET_DVR_GET_ELEVATORCONTROL_CFG          16020  
-#define NET_DVR_SET_ELEVATORCONTROL_CFG          16021  
-#define NET_DVR_GET_VIDEOINTERCOM_STREAM         16022  
-#define NET_DVR_SET_VIDEOINTERCOM_STREAM         16023  
-#define NET_DVR_GET_WDR_CFG                      16024  
-#define NET_DVR_SET_WDR_CFG                      16025  
-#define NET_DVR_GET_VIS_DEVINFO                  16026  
-#define NET_DVR_GET_VIS_REGISTER_INFO            16027  
-#define NET_DVR_GET_ELEVATORCONTROL_CFG_V40      16028  
-#define NET_DVR_SET_ELEVATORCONTROL_CFG_V40      16029  
-#define NET_DVR_GET_CALL_ROOM_CFG                 16030  
-#define NET_DVR_SET_CALL_ROOM_CFG                 16031  
-#define NET_DVR_VIDEO_CALL_SIGNAL_PROCESS        16032  
-#define NET_DVR_GET_CALLER_INFO                  16033  
-#define NET_DVR_GET_CALL_STATUS                  16034  
-#define NET_DVR_GET_SERVER_DEVICE_INFO           16035  
-#define NET_DVR_SET_CALL_SIGNAL                  16036  
-#define NET_DVR_GET_VIDEO_INTERCOM_ALARM_CFG       16037    
-#define NET_DVR_SET_VIDEO_INTERCOM_ALARM_CFG       16038    
-#define NET_DVR_GET_RING_LIST                    16039    
-#define NET_DVR_GET_ROOM_CUSTOM_CFG             16040  
-#define NET_DVR_SET_ROOM_CUSTOM_CFG             16041  
-#define NET_DVR_GET_ELEVATORCONTROL_CFG_V50     16042  
-#define NET_DVR_SET_ELEVATORCONTROL_CFG_V50     16043  
-#define NET_DVR_GET_SIP_CFG_V50                 16044   
-#define NET_DVR_SET_SIP_CFG_V50                 16045   
-#define NET_DVR_GET_NOTICE_VIDEO_DATA           16050  
-#define    NET_DVR_DEBUGINFO_START                     18000    
-#define    NET_DVR_AUTO_TEST_START                     18001    
-#define NET_DVR_GET_SELFCHECK_RESULT        20000    
-#define NET_DVR_SET_TEST_COMMAND            20001    
-#define NET_DVR_SET_TEST_DEVMODULE          20002    
-#define NET_DVR_GET_TEST_DEVMODULE          20003    
-#define NET_DVR_SET_AUTOFOCUS_TEST          20004    
-#define NET_DVR_CHECK_USER_STATUS           20005    
-#define NET_DVR_GET_TEST_COMMAND            20010    
-#define NET_DVR_GET_DIAL_SWITCH_CFG         20200    
-#define NET_DVR_SET_AGING_TRICK_SCAN          20201  
-#define NET_DVR_GET_ECCENTRIC_CORRECT_STATE   20202  
-#define	NET_DVR_GET_THERMOMETRYRULE_TEMPERATURE_INFO   23001	
-#define NET_DVR_T1_TEST_CMD                    131073 
-#define NET_DVR_GET_MEMU_OUTPUT_MODE            155649            
-#define NET_DVR_SET_MEMU_OUTPUT_MODE            155650            
-#define NET_DVR_GET_DEV_LOGIN_RET_INFO      16777200  
-#define NET_DVR_GET_TEST_VERSION_HEAD           268435441   
-#define NET_DVR_SET_TEST_VERSION_HEAD           268435442   
-#define NET_DVR_GET_TEST_VERSION_HEAD_V1        268435443   
-#define NET_DVR_SET_TEST_VERSION_HEAD_V1        268435444   
-#define NET_DVR_GET_TEST_VERSION_HEAD_V2        268435445   
-#define NET_DVR_SET_TEST_VERSION_HEAD_V2        268435446   
-#define NET_DVR_GET_TEST_VERSION_HEAD_ONLY_0    268435447   
-#define NET_DVR_SET_TEST_VERSION_HEAD_ONLY_0    268435448   
-#define MAX_LOCAL_ADDR_LEN             96        
-#define    MAX_COUNTRY_NAME_LEN          4        
-#define MAJOR_ALARM                        0x1
-#define MINOR_ALARM_IN                    0x1        
-#define MINOR_ALARM_OUT                    0x2        
-#define MINOR_MOTDET_START                0x3        
-#define MINOR_MOTDET_STOP                0x4        
-#define MINOR_HIDE_ALARM_START            0x5        
-#define MINOR_HIDE_ALARM_STOP            0x6        
-#define MINOR_VCA_ALARM_START            0x7        
-#define MINOR_VCA_ALARM_STOP            0x8        
-#define MINOR_ITS_ALARM_START           0x09    
-#define MINOR_ITS_ALARM_STOP            0x0A    
-#define MINOR_NETALARM_START            0x0b    
-#define MINOR_NETALARM_STOP             0x0c    
-#define MINOR_NETALARM_RESUME            0x0d    
-#define MINOR_WIRELESS_ALARM_START      0x0e  
-#define MINOR_WIRELESS_ALARM_STOP          0x0f 
-#define MINOR_PIR_ALARM_START           0x10  
-#define MINOR_PIR_ALARM_STOP               0x11  
-#define MINOR_CALLHELP_ALARM_START      0x12  
-#define MINOR_CALLHELP_ALARM_STOP          0x13  
-#define MINOR_IPCHANNEL_ALARMIN_START   0x14  
-#define MINOR_IPCHANNEL_ALARMIN_STOP    0x15  
-#define MINOR_DETECTFACE_ALARM_START    0x16  
-#define MINOR_DETECTFACE_ALARM_STOP      0x17  
-#define MINOR_VQD_ALARM_START           0x18  
-#define MINOR_VQD_ALARM_STOP            0x19  
-#define MINOR_VCA_SECNECHANGE_DETECTION 0x1a  
-#define MINOR_SMART_REGION_EXITING_BEGIN            0x1b  
-#define MINOR_SMART_REGION_EXITING_END              0x1c  
-#define MINOR_SMART_LOITERING_BEGIN                 0x1d  
-#define MINOR_SMART_LOITERING_END                   0x1e  
-#define MINOR_VCA_ALARM_LINE_DETECTION_BEGIN        0x20  
-#define MINOR_VCA_ALARM_LINE_DETECTION_END          0x21  
-#define MINOR_VCA_ALARM_INTRUDE_BEGIN                0x22  
-#define MINOR_VCA_ALARM_INTRUDE_END                       0x23  
-#define MINOR_VCA_ALARM_AUDIOINPUT                    0x24   
-#define MINOR_VCA_ALARM_AUDIOABNORMAL                 0x25   
-#define MINOR_VCA_DEFOCUS_DETECTION_BEGIN           0x26  
-#define MINOR_VCA_DEFOCUS_DETECTION_END                0x27  
-#define MINOR_EXT_ALARM                             0x28
-#define MINOR_VCA_FACE_ALARM_BEGIN                    0x29    
-#define MINOR_SMART_REGION_ENTRANCE_BEGIN           0x2a  
-#define MINOR_SMART_REGION_ENTRANCE_END             0x2b  
-#define MINOR_SMART_PEOPLE_GATHERING_BEGIN          0x2c  
-#define MINOR_SMART_PEOPLE_GATHERING_END            0x2d  
-#define MINOR_SMART_FAST_MOVING_BEGIN               0x2e  
-#define MINOR_SMART_FAST_MOVING_END                 0x2f  
-#define MINOR_VCA_FACE_ALARM_END                    0x30    
-#define MINOR_VCA_SCENE_CHANGE_ALARM_BEGIN            0x31   
-#define MINOR_VCA_SCENE_CHANGE_ALARM_END            0x32   
-#define MINOR_VCA_ALARM_AUDIOINPUT_BEGIN            0x33   
-#define MINOR_VCA_ALARM_AUDIOINPUT_END                0x34   
-#define MINOR_VCA_ALARM_AUDIOABNORMAL_BEGIN            0x35  
-#define MINOR_VCA_ALARM_AUDIOABNORMAL_END            0x36  
-#define MINOR_VCA_LECTURE_DETECTION_BEGIN           0x37  
-#define MINOR_VCA_LECTURE_DETECTION_END             0x38  
-#define MINOR_VCA_ALARM_AUDIOSTEEPDROP              0x39  
-#define MINOR_VCA_ANSWER_DETECTION_BEGIN            0x3a  
-#define MINOR_VCA_ANSWER_DETECTION_END              0x3b  
-#define MINOR_SMART_PARKING_BEGIN                   0x3c   
-#define MINOR_SMART_PARKING_END                     0x3d   
-#define MINOR_SMART_UNATTENDED_BAGGAGE_BEGIN        0x3e   
-#define MINOR_SMART_UNATTENDED_BAGGAGE_END          0x3f   
-#define MINOR_SMART_OBJECT_REMOVAL_BEGIN            0x40   
-#define MINOR_SMART_OBJECT_REMOVAL_END              0x41   
-#define MINOR_SMART_VEHICLE_ALARM_START             0x46   
-#define MINOR_SMART_VEHICLE_ALARM_STOP              0x47   
-#define MINOR_THERMAL_FIREDETECTION                 0x48   
-#define MINOR_THERMAL_FIREDETECTION_END             0x49   
-#define MINOR_SMART_VANDALPROOF_BEGIN               0x50   
-#define MINOR_SMART_VANDALPROOF_END                 0x51   
-#define MINOR_FACESNAP_MATCH_ALARM_START            0x55  
-#define MINOR_FACESNAP_MATCH_ALARM_STOP             0x56  
-#define MINOR_WHITELIST_FACESNAP_MATCH_ALARM_START  0x57  
-#define MINOR_WHITELIST_FACESNAP_MATCH_ALARM_STOP   0x58  
-#define MINOR_THERMAL_SHIPSDETECTION                0x5a   
-#define MINOR_THERMAL_THERMOMETRY_EARLYWARNING_BEGIN 0x5b  
-#define MINOR_THERMAL_THERMOMETRY_EARLYWARNING_END  0x5c   
-#define MINOR_THERMAL_THERMOMETRY_ALARM_BEGIN       0x5d   
-#define MINOR_THERMAL_THERMOMETRY_ALARM_END         0x5e   
-#define MINOR_THERMAL_THERMOMETRY_DIFF_ALARM_BEGIN  0x5f   
-#define MINOR_THERMAL_THERMOMETRY_DIFF_ALARM_END    0x60   
-#define MINOR_FACE_THERMOMETRY_ALARM                0x63   
-#define MINOR_SMART_DENSEFOGDETECTION_BEGIN         0x6e   
-#define MINOR_SMART_DENSEFOGDETECTION_END           0x6f   
-#define MINOR_RUNNING_ALARM                         0x70   
-#define MINOR_RETENTION_ALARM                       0x71   
-#define MINOR_SAFETY_HELMET_ALARM_START             0x72  
-#define MINOR_SAFETY_HELMET_ALARM_STOP              0x73  
-#define MINOR_HFPD_ALARM_START                      0x74  
-#define MINOR_HFPD_ALARM_STOP                       0x75  
-#define MINOR_MIXED_TARGET_ALARM_START              0x76  
-#define MINOR_MIXED_TARGET_ALARM_STOP               0x77  
-#define MINOR_VCA_PLAY_CELLPHONE_ALARM_BEGIN  0x78  
-#define MINOR_VCA_PLAY_CELLPHONE_ALARM_END    0x79   
-#define MINOR_VCA_GET_UP_ALARM_BEGIN                0x80   
-#define MINOR_VCA_GET_UP_ALARM_END                  0x81   
-#define MINOR_VCA_ADV_REACH_HEIGHT_ALARM_BEGIN      0x82   
-#define MINOR_VCA_ADV_REACH_HEIGHT_ALARM_END        0x83   
-#define MINOR_VCA_TOILET_TARRY_ALARM_BEGIN          0x84   
-#define MINOR_VCA_TOILET_TARRY_ALARM_END            0x85   
-#define MINOR_HUMAN_RECOGNITION_ALARM_BEGIN         0x86   
-#define MINOR_HUMAN_RECOGNITION_ALARM_END           0x87   
-#define MINOR_STUDENTS_STOODUP_ALARM_BEGIN          0x88   
-#define MINOR_STUDENTS_STOODUP_ALARM_END            0x89   
-#define MINOR_FRAMES_PEOPLE_COUNTING_ALARM          0x8a   
-#define MINOR_FACE_SNAP_ALARM_BEGIN                 0x8b   
-#define MINOR_FACE_SNAP_ALARM_END                   0x8c   
-#define MINOR_TEACHER_BEHAVIOR_DETECT_ALARM_BEGIN   0x8d   
-#define MINOR_TEACHER_BEHAVIOR_DETECT_ALARM_END     0x8e   
-#define MINOR_PERIMETER_CAPTURE_ALARM_BEGIN         0x8f   
-#define MINOR_PERIMETER_CAPTURE_ALARM_END           0x90   
-#define MINOR_UNREGISTERED_STREET_VENDOR_ALARM      0x91  
-#define MINOR_PERSON_QUEUE_TIME_ALARM_BEGIN         0x92   
-#define MINOR_PERSON_QUEUE_TIME_ALARM_END           0x93   
-#define MINOR_PERSON_QUEUE_COUNTING_ALARM_BEGIN     0x94   
-#define MINOR_PERSON_QUEUE_COUNTING_ALARM_END       0x95   
-#define MINOR_FACE_SNAP_MATCH_FAILURE_ALARM_START   0x96   
-#define MINOR_FACE_SNAP_MATCH_FAILURE_ALARM_END     0x97   
-#define MINOR_ACCESS_CONTROLLER_EVENT               0x100  
-#define MINOR_VIDEO_INTERCOM_EVENT                  0x101  
-#define MINOR_GJD_EVENT                             0x102  
-#define MINOR_LUMINITE_EVENT                        0x103  
-#define MINOR_OPTEX_EVENT                           0x104  
-#define MINOR_CAMERA_DETECTOR_EVENT                 0x105  
-#define MINOR_SECURITY_CONTROL_PANEL_EVENT          0x106  
-#define MINOR_VCA_SPACE_CHANGE_START                0x10c 
-#define MINOR_VCA_SPACE_CHANGE_STOP                 0x10d 
-#define MINOR_MANUAL_ALARM                          0x10e 
-#define MINOR_DETECTOR_ALARM                        0x10f 
-#define MINOR_LINKAGE_ALARM                         0x110 
-#define MINOR_VCA_SITUATION_ANALYSIS_START          0x111 
-#define MINOR_VCA_SITUATION_ANALYSIS_STOP           0x112 
-#define MINOR_FIRE_ALARM                            0x113 
-#define MINOR_SUPERVISE_ALARM                       0x114 
-#define MINOR_SHIELD_ALARM                          0x115 
-#define MINOR_ABNORMAL_ALARM                        0x116 
-#define MINOR_RESIDUAL_CURRENT_ALARM                0x117 
-#define MINOR_TEMPERATURE_ALARM                     0x118 
-#define MINOR_ARC_ALARM                             0x119 
-#define MINOR_VCA_YARD_TARRY_ALARM_BEGIN      0x11a   
-#define MINOR_VCA_YARD_TARRY_ALARM_END      0x11b   
-#define MINOR_VCA_KEY_PERSON_GET_UP_ALARM_BEGIN   0x11c     
-#define MINOR_VCA_KEY_PERSON_GET_UP_ALARM_END   0x11d     
-#define MINOR_VCA_SIT_QUIETLY_ALARM_BEGIN     0x11e     
-#define MINOR_VCA_SIT_QUIETLY_ALARM_END     0x11f     
-#define MINOR_VCA_STAND_UP_ALARM_BEGIN     0x120     
-#define MINOR_VCA_STAND_UP_ALARM_END     0x121     
-#define MINOR_VCA_REACH_HIGHT_ALARM_BEGIN    0x122     
-#define MINOR_VCA_REACH_HIGHT_ALARM_END    0x123     
-#define MINOR_LFPD_ALARM_START                      0x124  
-#define MINOR_LFPD_ALARM_STOP                       0x125  
-#define MINOR_DREDGERDETECTION_ALARM                0x126
-#define MINOR_ALARMIN_SHORT_CIRCUIT                 0x400  
-#define MINOR_ALARMIN_BROKEN_CIRCUIT                0x401  
-#define MINOR_ALARMIN_EXCEPTION                     0x402  
-#define MINOR_ALARMIN_RESUME                        0x403  
-#define MINOR_HOST_DESMANTLE_ALARM                  0x404  
-#define MINOR_HOST_DESMANTLE_RESUME                 0x405  
-#define MINOR_CARD_READER_DESMANTLE_ALARM           0x406  
-#define MINOR_CARD_READER_DESMANTLE_RESUME          0x407  
-#define MINOR_CASE_SENSOR_ALARM                     0x408  
-#define MINOR_CASE_SENSOR_RESUME                    0x409  
-#define MINOR_STRESS_ALARM                          0x40a  
-#define MINOR_OFFLINE_ECENT_NEARLY_FULL             0x40b  
-#define MINOR_CARD_MAX_AUTHENTICATE_FAIL            0x40c  
-#define MINOR_SD_CARD_FULL                          0x40d  
-#define MINOR_LINKAGE_CAPTURE_PIC                   0x40e  
-#define MINOR_SECURITY_MODULE_DESMANTLE_ALARM        0x40f  
-#define MINOR_SECURITY_MODULE_DESMANTLE_RESUME        0x410  
-#define MINOR_POS_START_ALARM                       0x411  
-#define MINOR_POS_END_ALARM                         0x412  
-#define MINOR_FACE_IMAGE_QUALITY_LOW                0x413  
-#define MINOR_FINGE_RPRINT_QUALITY_LOW              0x414  
-#define MINOR_FIRE_IMPORT_SHORT_CIRCUIT             0x415  
-#define MINOR_FIRE_IMPORT_BROKEN_CIRCUIT            0x416  
-#define MINOR_FIRE_IMPORT_RESUME                    0x417  
-#define MINOR_FIRE_BUTTON_TRIGGER                   0x418  
-#define MINOR_FIRE_BUTTON_RESUME                    0x419  
-#define MINOR_MAINTENANCE_BUTTON_TRIGGER            0x41a  
-#define MINOR_MAINTENANCE_BUTTON_RESUME             0x41b  
-#define MINOR_EMERGENCY_BUTTON_TRIGGER              0x41c  
-#define MINOR_EMERGENCY_BUTTON_RESUME               0x41d  
-#define MINOR_DISTRACT_CONTROLLER_ALARM             0x41e  
-#define MINOR_DISTRACT_CONTROLLER_RESUME            0x41f  
-#define MINOR_PERSON_DENSITY_DETECTION_START        0x420  
-#define MINOR_PERSON_DENSITY_DETECTION_END          0x421  
-#define MINOR_CHANNEL_CONTROLLER_DESMANTLE_ALARM    0x422  
-#define MINOR_CHANNEL_CONTROLLER_DESMANTLE_RESUME   0x423  
-#define MINOR_CHANNEL_CONTROLLER_FIRE_IMPORT_ALARM  0x424  
-#define MINOR_CHANNEL_CONTROLLER_FIRE_IMPORT_RESUME 0x425  
-#define MINOR_HEART_RATE_ABNORMAL_BEGIN             0x426    
-#define MINOR_HEART_RATE_ABNORMAL_END               0x427    
-#define MINOR_BLOOD_OXYGEN_ABNORMAL_BEGIN           0x428    
-#define MINOR_BLOOD_OXYGEN_ABNORMAL_END             0x429    
-#define MINOR_SYSTOLIC_BLOOD_PRESSURE_ABNORMAL_BEGIN   0x42a    
-#define MINOR_SYSTOLIC_BLOOD_PRESSURE_ABNORMAL_END     0x42b    
-#define MINOR_DIASTOLIC_BLOOD_PRESSURE_ABNORMAL_BEGIN  0x42c    
-#define MINOR_DIASTOLIC_BLOOD_PRESSURE_ABNORMAL_END    0x42d    
-#define MINOR_VCA_LEAVE_POSITION_START              0x42e
-#define MINOR_VCA_LEAVE_POSITION_STOP               0x42f
-#define MINOR_VCA_STOOODUP_START                    0x430
-#define MINOR_VCA_STOOODUP_STOP                     0x431
-#define MINOR_VCA_PEOPLENUM_CHANGE_START            0x434
-#define MINOR_VCA_PEOPLENUM_CHANGE_STOP             0x435
-#define MINOR_VCA_RUNNING_START                     0x438
-#define MINOR_VCA_RUNNING_STOP                      0x439
-#define MINOR_VCA_VIOLENT_MOTION_START              0x43a
-#define MINOR_VCA_VIOLENT_MOTION_STOP               0x43b
-#define MINOR_VCA_FAIL_DOWN_START                   0x43c
-#define MINOR_VCA_FAIL_DOWN_STOP                    0x43d
-#define MINOR_VCA_RETENTION_START                   0x43e
-#define MINOR_VCA_RETENTION_STOP                    0x43f
-#define MINOR_PRINTER_OUT_OF_PAPER               0x440   
-#define MINOR_LEGAL_EVENT_NEARLY_FULL            0x442   
-#define MINOR_ALARM_CUSTOM1                         0x900  
-#define MINOR_ALARM_CUSTOM2                         0x901  
-#define MINOR_ALARM_CUSTOM3                         0x902  
-#define MINOR_ALARM_CUSTOM4                         0x903  
-#define MINOR_ALARM_CUSTOM5                         0x904  
-#define MINOR_ALARM_CUSTOM6                         0x905  
-#define MINOR_ALARM_CUSTOM7                         0x906  
-#define MINOR_ALARM_CUSTOM8                         0x907  
-#define MINOR_ALARM_CUSTOM9                         0x908  
-#define MINOR_ALARM_CUSTOM10                        0x909  
-#define MINOR_ALARM_CUSTOM11                        0x90a  
-#define MINOR_ALARM_CUSTOM12                        0x90b  
-#define MINOR_ALARM_CUSTOM13                        0x90c  
-#define MINOR_ALARM_CUSTOM14                        0x90d  
-#define MINOR_ALARM_CUSTOM15                        0x90e  
-#define MINOR_ALARM_CUSTOM16                        0x90f  
-#define MINOR_ALARM_CUSTOM17                        0x910  
-#define MINOR_ALARM_CUSTOM18                        0x911  
-#define MINOR_ALARM_CUSTOM19                        0x912  
-#define MINOR_ALARM_CUSTOM20                        0x913  
-#define MINOR_ALARM_CUSTOM21                        0x914  
-#define MINOR_ALARM_CUSTOM22                        0x915  
-#define MINOR_ALARM_CUSTOM23                        0x916  
-#define MINOR_ALARM_CUSTOM24                        0x917  
-#define MINOR_ALARM_CUSTOM25                        0x918  
-#define MINOR_ALARM_CUSTOM26                        0x919  
-#define MINOR_ALARM_CUSTOM27                        0x91a  
-#define MINOR_ALARM_CUSTOM28                        0x91b  
-#define MINOR_ALARM_CUSTOM29                        0x91c  
-#define MINOR_ALARM_CUSTOM30                        0x91d  
-#define MINOR_ALARM_CUSTOM31                        0x91e  
-#define MINOR_ALARM_CUSTOM32                        0x91f  
-#define MINOR_ALARM_CUSTOM33                        0x920  
-#define MINOR_ALARM_CUSTOM34                        0x921  
-#define MINOR_ALARM_CUSTOM35                        0x922  
-#define MINOR_ALARM_CUSTOM36                        0x923  
-#define MINOR_ALARM_CUSTOM37                        0x924  
-#define MINOR_ALARM_CUSTOM38                        0x925  
-#define MINOR_ALARM_CUSTOM39                        0x926  
-#define MINOR_ALARM_CUSTOM40                        0x927  
-#define MINOR_ALARM_CUSTOM41                        0x928  
-#define MINOR_ALARM_CUSTOM42                        0x929  
-#define MINOR_ALARM_CUSTOM43                        0x92a  
-#define MINOR_ALARM_CUSTOM44                        0x92b  
-#define MINOR_ALARM_CUSTOM45                        0x92c  
-#define MINOR_ALARM_CUSTOM46                        0x92d  
-#define MINOR_ALARM_CUSTOM47                        0x92e  
-#define MINOR_ALARM_CUSTOM48                        0x92f  
-#define MINOR_ALARM_CUSTOM49                        0x930  
-#define MINOR_ALARM_CUSTOM50                        0x931  
-#define MINOR_ALARM_CUSTOM51                        0x932  
-#define MINOR_ALARM_CUSTOM52                        0x933  
-#define MINOR_ALARM_CUSTOM53                        0x934  
-#define MINOR_ALARM_CUSTOM54                        0x935  
-#define MINOR_ALARM_CUSTOM55                        0x936  
-#define MINOR_ALARM_CUSTOM56                        0x937  
-#define MINOR_ALARM_CUSTOM57                        0x938  
-#define MINOR_ALARM_CUSTOM58                        0x939  
-#define MINOR_ALARM_CUSTOM59                        0x93a  
-#define MINOR_ALARM_CUSTOM60                        0x93b  
-#define MINOR_ALARM_CUSTOM61                        0x93c  
-#define MINOR_ALARM_CUSTOM62                        0x93d  
-#define MINOR_ALARM_CUSTOM63                        0x93e  
-#define MINOR_ALARM_CUSTOM64                        0x93f  
-#define MINOR_LOCK_HIJIACK_FINGER_ALARM         0x950       
-#define MINOR_LOCK_HIJIACK_PASSWORD_ALARM       0x951       
-#define MINOR_LOCK_PRY_DOOR_ALARM               0x952       
-#define MINOR_LOCK_LOCKED_ALARM                 0x953       
-#define MINOR_LOCK_BATTERLOW_ALARM              0x954       
-#define MINOR_LOCK_BLACKLIST_DOOR_ALARM         0x955       
-#define MINOR_LOCK_OFFLINE_ALARM                0x956       
-#define MINOR_LOCK_UNCLOSED_ALARM               0x957       
-#define MINOR_LOCK_NO_HOME_ALARM                0x958       
-#define MINOR_LOCK_MAGNETOMETER_ALARM           0x959       
-#define MINOR_LOCK_IR_DETECTOR_ALARM            0x95a       
-#define MINOR_LOCK_FP_LOCKED_ALARM              0x95b       
-#define MINOR_LOCK_PASSWORD_LOCKED_ALARM        0x95c       
-#define MINOR_LOCK_HIJIACK_ALARM              0x95d  
-#define MINOR_ALARMHOST_SHORT_CIRCUIT    	      0x1001      
-#define MINOR_ALARMHOST_BROKEN_CIRCUIT   		  0x1002       
-#define MINOR_ALARMHOST_ALARM_RESET      	      0x1003       
-#define MINOR_ALARMHOST_ALARM_NORMAL			  0x1004   	
-#define MINOR_ALARMHOST_PASSWORD_ERROR 		  0x1005		
-#define MINOR_ALARMHOST_ID_CARD_ILLEGALLY 	  0x1006		
-#define MINOR_ALARMHOST_KEYPAD_REMOVE 		  0x1007	
-#define MINOR_ALARMHOST_KEYPAD_REMOVE_RESTORE   0x1008	
-#define MINOR_ALARMHOST_BELOW_ALARM_LIMIT1 	  0x1011	
-#define MINOR_ALARMHOST_BELOW_ALARM_LIMIT2 	  0x1012    
-#define MINOR_ALARMHOST_BELOW_ALARM_LIMIT3 	  0x1013    
-#define MINOR_ALARMHOST_BELOW_ALARM_LIMIT4 	  0x1014    
-#define MINOR_ALARMHOST_ABOVE_ALARM_LIMIT1 	  0x1015    
-#define MINOR_ALARMHOST_ABOVE_ALARM_LIMIT2 	0x1016    
-#define MINOR_ALARMHOST_ABOVE_ALARM_LIMIT3 	0x1017     
-#define MINOR_ALARMHOST_ABOVE_ALARM_LIMIT4 	0x1018     
-#define MINOR_ALARMHOST_VIRTUAL_DEFENCE_BANDIT 	0x1021      
-#define MINOR_ALARMHOST_VIRTUAL_DEFENCE_FIRE 		0x1022       
-#define MINOR_ALARMHOST_VIRTUAL_DEFENCE_URGENT 		0x1023       
-#define MINOR_UPS_ALARM			0x1028      
-#define MINOR_ELECTRICITY_METER_ALARM 0x1029     
-#define MINOR_SWITCH_POWER_ALARM	  0x1030     
-#define MINOR_GAS_DETECT_SYS_ALARM	  0x1031    
-#define MINOR_TRANSFORMER_TEMPRATURE_ALARM 0x1032     
-#define MINOR_TEMP_HUMI_ALARM		0x1033   
-#define MINOR_UPS_ALARM_RESTORE	0x1034    
-#define MINOR_ELECTRICITY_METER_ALARM_RESTORE 0x1035   
-#define MINOR_SWITCH_POWER_ALARM_RESTORE	0x1036   
-#define MINOR_GAS_DETECT_SYS_ALARM_RESTORE	  0x1037   
-#define MINOR_TRANSFORMER_TEMPRATURE_ALARM_RESTORE 0x1038            
-#define MINOR_TEMP_HUMI_ALARM_RESTORE	0x1039     
-#define MINOR_WATER_LEVEL_SENSOR_ALARM 		0x1040     
-#define MINOR_WATER_LEVEL_SENSOR_ALARM_RESTORE 	0x1041  
-#define MINOR_DUST_NOISE_ALARM 	0x1042  
-#define MINOR_DUST_NOISE_ALARM_RESTORE 	0x1043     
-#define MINOR_ENVIRONMENTAL_LOGGER_ALARM 	0x1044    
-#define MINOR_ENVIRONMENTAL_LOGGER_ALARM_RESTORE 0x1045            
-#define MINOR_TRIGGER_TAMPER    0x1046     
-#define MINOR_TRIGGER_TAMPER_RESTORE     0x1047    
-#define MINOR_EMERGENCY_CALL_HELP_ALARM    0x1048       
-#define MINOR_EMERGENCY_CALL_HELP_ALARM_RESTORE 0x1049            
-#define MINOR_CONSULTING_ALARM     0x1050    
-#define MINOR_CONSULTING_ALARM_RESTORE   0x1051     
-#define MINOR_ALARMHOST_ZONE_MODULE_REMOVE      0x1052    
-#define MINOR_ALARMHOST_ZONE_MODULE_RESET     0x1053       
-#define MINOR_ALARMHOST_ALARM_WIND_SPEED_ALARM      0x1054      
-#define MINOR_ALARMHOST_ALARM_WIND_SPEED_ALARM_RESTORE   0x1055      
-#define MINOR_ALARMHOST_ALARM_GENERATE_OUTPUT_ALARM   0x1056   
-#define MINOR_ALARMHOST_ALARM_GENERATE_OUTPUT_RESTORE    0x1057     
-#define MINOR_ALARMHOST_ALARM_SOAK_ALARM      0x1058      
-#define MINOR_ALARMHOST_ALARM_SOAK_ALARM_RESTORE   0x1059  
-#define MINOR_ALARMHOST_ALARM_SOLAR_POWER_ALARM    0x1060    
-#define MINOR_ALARMHOST_ALARM_SOLAR_POWER_ALARM_RESTORE 0x1061   
-#define MINOR_ALARMHOST_ALARM_SF6_ALARM   0x1062      
-#define MINOR_ALARMHOST_ALARM_SF6_ALARM_RESTORE   0x1063    
-#define MINOR_ALARMHOST_ALARM_WEIGHT_ALARM    0x1064      
-#define MINOR_ALARMHOST_ALARM_WEIGHT_ALARM_RESTORE    0x1065   
-#define MINOR_ALARMHOST_ALARM_WEATHER_ALARM   0x1066   
-#define MINOR_ALARMHOST_ALARM_WEATHER_ALARM_RESTORE    0x1067     
-#define MINOR_ALARMHOST_ALARM_FUEL_GAS_ALARM     0x1068  
-#define MINOR_ALARMHOST_ALARM_FUEL_GAS_ALARM_RESTORE  0x1069 
-#define MINOR_ALARMHOST_ALARM_FIRE_ALARM   0x1070  
-#define MINOR_ALARMHOST_ALARM_FIRE_ALARM_RESTORE    0x1071   
-#define  MINOR_ALARMHOST_WIRELESS_OUTPUT_MODULE_REMOVE     0x1072   
-#define  MINOR_ALARMHOST_WIRELESS_OUTPUT_MODULE_RESET    0x1073  
-#define  MINOR_ALARMHOST_WIRELESS_REPEATER_MODULE_REMOVE   0x1074  
-#define  MINOR_ALARMHOST_WIRELESS_SIREN_MODULE_REMOVE     0x1075  
-#define  MINOR_ALARMHOST_WIRELESS_SIREN_MODULE_RESET     0x1076 
-#define  MINOR_RS485_DEV_ALARM     0x1077      
-#define  MINOR_RS485_DEV_RESTORE    0x1078     
-#define  MINOR_ALARMHOST_ALARM_HOST_ALARM     0x1079      
-#define  MINOR_ALARMHOST_ALARM_HOST_RESTORE    0x107a     
-#define  MINOR_AIR_CONDITION_DEV_ALARM     0x107b      
-#define  MINOR_AIR_CONDITION_DEV_RESTORE    0x107c     
-#define  MINOR_ALARMHOST_WIRELESS_REPEATER_MODULE_RESET  0x107d 
-#define	 MINOR_ALARM_ELEVATOR_BREAKDOWN     0x107e
-#define  MINOR_WATER_PRESSURE_SENSOR_ALARM      0x107f    
-#define  MINOR_FLOW_SENSOR_ALARM                0x1080    
-#define  MINOR_SENSOR_LINKAGE_ALARM                0x1081    
-#define  MINOR_SENSOR_LINKAGE_ALARM_RESTORE        0x1082    
-#define MAJOR_EXCEPTION                    0x2
-#define MINOR_SUBSYSTEM_ERROR           0x0a    
-#define MINOR_RAID_ERROR                0x20    
-#define MINOR_VI_LOST                    0x21    
-#define MINOR_ILLEGAL_ACCESS            0x22    
-#define MINOR_HD_FULL                    0x23    
-#define MINOR_HD_ERROR                    0x24    
-#define MINOR_DCD_LOST                    0x25    
-#define MINOR_IP_CONFLICT                0x26    
-#define MINOR_NET_BROKEN                0x27    
-#define MINOR_REC_ERROR                 0x28    
-#define MINOR_IPC_NO_LINK               0x29    
-#define MINOR_VI_EXCEPTION              0x2a    
-#define MINOR_IPC_IP_CONFLICT           0x2b    
-#define MINOR_SENCE_EXCEPTION           0x2c    
-#define MINOR_PIC_REC_ERROR              0x2d    
-#define MINOR_VI_MISMATCH                0x2e    
-#define MINOR_RESOLUTION_MISMATCH        0x2f    
-#define MINOR_FANABNORMAL                0x31    
-#define MINOR_FANRESUME                    0x32    
-#define MINOR_SUBSYSTEM_ABNORMALREBOOT    0x33    
-#define MINOR_MATRIX_STARTBUZZER        0x34    
-#define MINOR_NET_ABNORMAL                0x35    
-#define MINOR_MEM_ABNORMAL                0x36    
-#define MINOR_FILE_ABNORMAL                0x37    
-#define MINOR_PANEL_ABNORMAL            0x38 
-#define MINOR_PANEL_RESUME                0x39 
-#define MINOR_RS485_DEVICE_ABNORMAL        0x3a     
-#define MINOR_RS485_DEVICE_REVERT        0x3b    
-#define MINOR_SCREEN_SUBSYSTEM_ABNORMALREBOOT   0x3c            
-#define    MINOR_SCREEN_SUBSYSTEM_ABNORMALINSERT    0x3d            
-#define    MINOR_SCREEN_SUBSYSTEM_ABNORMALPULLOUT    0x3e            
-#define    MINOR_SCREEN_ABNARMALTEMPERATURE        0x3f            
-#define MINOR_HIGH_TEMPERATURE_PROTECT          0x40 
-#define MINOR_RECORD_OVERFLOW                   0x41              
-#define MINOR_DSP_ABNORMAL                      0x42              
-#define MINOR_ANR_RECORD_FAIED                 0x43         
-#define MINOR_SPARE_WORK_DEVICE_EXCEPT         0x44            
-#define MINOR_START_IPC_MAS_FAILED             0x45            
-#define MINOR_IPCM_CRASH                       0x46         
-#define MINOR_POE_POWER_EXCEPTION              0x47         
-#define MINOR_UPLOAD_DATA_CS_EXCEPTION         0x48          
-#define MINOR_DIAL_EXCEPTION                   0x49         
-#define MINOR_DEV_EXCEPTION_OFFLINE            0x50  
-#define MINOR_UPGRADEFAIL                      0x51 
-#define MINOR_AI_LOST                           0x52    
-#define MINOR_SYNC_IPC_PASSWD                   0x53    
-#define MINOR_EZVIZ_OFFLINE                        0x54    
-#define MINOR_VQD_ABNORMAL                        0x55 
-#define MINOR_ACCESSORIES_PLATE                0x57 
-#define MINOR_KMS_EXPAMSION_DISK_LOST         0x58 
-#define MINOR_ABNORMAL_PORT                 0x59 
-#define MINOR_CAMERA_ANGLE_ANOMALY          0x60
-#define MINOR_DATA_DISK_ERROE               0x61
-#define MINOR_INTELLIGENT_SYSTEM_RUNNING_ERROR     0x62
-#define MINOR_FACESNAP_RESOLUTION_OVERFLOW         0x63
-#define MINOR_SMD_RESOLUTION_OVERFLOW              0x64
-#define MINOR_AUDIO_LOSS_EXCEPTION                 0x65
-#define MINOR_SAFETY_HELMET_EXCEPTION              0x66 
-#define MINOR_VCA_PIC_LENGTH_OVERFLOW              0x67 
-#define MINOR_FACE_MODEL_EXCEPTION                 0x68
-#define MINOR_SSD_EXCEPTION                        0x69 
-#define MINOR_CLUSTER_DEVICE_OFFLINE                 0x70 
-#define MINOR_CLUSTER_CONFIG_FAILED                  0x71 
-#define MINOR_CLUSTER_DISASTER_TOLERANCE_EXCEPT      0x72 
-#define MINOR_CLUSTER_STORFULL_EXCEPTION             0x73 
-#define MINOR_CLUSTER_VERSION_EXCEPTION              0x74  
-#define MINOR_CLUSTER_OFFLINENODE_EXCEPTION          0x75   
-#define MINOR_CLUSTER_RECORDCYCLE_EXCEPTION          0x76   
-#define MINOR_CLUSTER_IPCTRANSFER_EXCEPTION          0x77   
-#define MINOR_CLUSTER_IPCONFLICT_EXCEPTION           0x78   
-#define MINOR_GET_SUB_STREAM_FAILURE                 0x79
-#define MINOR_HDD_SHM_DETECT_EXCEPTION               0x7a
-#define MINOR_DEVICE_FORTIFY_FAILURE                 0x7b
-#define MINOR_EVENT_UPLOAD_EXCEPTION                 0x7c 
-#define MINOR_LORA_EXCEPTION                         0x7d
-#define MINOR_AK_OR_SK_IS_EMPTY                      0x7e
-#define MINOR_HIGH_HD_TEMPERATURE   0x80  
-#define MINOR_LOW_HD_TEMPERATURE   0x81  
-#define MINOR_HD_IMPACT   0x82  
-#define MINOR_HD_BAD_BLOCK   0x83  
-#define MINOR_SEVERE_HD_FAILURE   0x84  
-#define MINOR_RELEASE_FAILED                         0x85 
-#define MINOR_PORT_CONFLICT                          0x86  
-#define MINOR_MODULE_STARTUP_FAILED                  0x87  
-#define MINOR_DEV_POWER_ON                     0x400  
-#define MINOR_DEV_POWER_OFF                    0x401  
-#define MINOR_WATCH_DOG_RESET                  0x402  
-#define MINOR_LOW_BATTERY                      0x403  
-#define MINOR_BATTERY_RESUME                   0x404  
-#define MINOR_AC_OFF                           0x405  
-#define MINOR_AC_RESUME                        0x406  
-#define MINOR_NET_RESUME                       0x407  
-#define MINOR_FLASH_ABNORMAL                   0x408  
-#define MINOR_CARD_READER_OFFLINE              0x409  
-#define MINOR_CARD_READER_RESUME               0x40a  
-#define MINOR_INDICATOR_LIGHT_OFF              0x40b  
-#define MINOR_INDICATOR_LIGHT_RESUME           0x40c  
-#define MINOR_CHANNEL_CONTROLLER_OFF           0x40d  
-#define MINOR_CHANNEL_CONTROLLER_RESUME        0x40e  
-#define MINOR_SECURITY_MODULE_OFF               0x40f  
-#define MINOR_SECURITY_MODULE_RESUME           0x410  
-#define MINOR_BATTERY_ELECTRIC_LOW             0x411  
-#define MINOR_BATTERY_ELECTRIC_RESUME          0x412  
-#define MINOR_LOCAL_CONTROL_NET_BROKEN           0x413  
-#define MINOR_LOCAL_CONTROL_NET_RSUME           0x414  
-#define MINOR_MASTER_RS485_LOOPNODE_BROKEN     0x415  
-#define MINOR_MASTER_RS485_LOOPNODE_RESUME     0x416  
-#define MINOR_LOCAL_CONTROL_OFFLINE            0x417  
-#define MINOR_LOCAL_CONTROL_RESUME             0x418  
-#define MINOR_LOCAL_DOWNSIDE_RS485_LOOPNODE_BROKEN  0x419  
-#define MINOR_LOCAL_DOWNSIDE_RS485_LOOPNODE_RESUME  0x41a  
-#define MINOR_DISTRACT_CONTROLLER_ONLINE       0x41b  
-#define MINOR_DISTRACT_CONTROLLER_OFFLINE      0x41c  
-#define MINOR_ID_CARD_READER_NOT_CONNECT       0x41d  
-#define MINOR_ID_CARD_READER_RESUME            0x41e  
-#define MINOR_FINGER_PRINT_MODULE_NOT_CONNECT  0x41f  
-#define MINOR_FINGER_PRINT_MODULE_RESUME       0x420  
-#define MINOR_CAMERA_NOT_CONNECT               0x421  
-#define MINOR_CAMERA_RESUME                    0x422  
-#define MINOR_COM_NOT_CONNECT                  0x423  
-#define MINOR_COM_RESUME                       0x424  
-#define MINOR_DEVICE_NOT_AUTHORIZE             0x425  
-#define MINOR_PEOPLE_AND_ID_CARD_DEVICE_ONLINE 0x426  
-#define MINOR_PEOPLE_AND_ID_CARD_DEVICE_OFFLINE 0x427 
-#define MINOR_LOCAL_LOGIN_LOCK                 0x428  
-#define MINOR_LOCAL_LOGIN_UNLOCK               0x429  
-#define MINOR_SUBMARINEBACK_COMM_BREAK         0x42a  
-#define MINOR_SUBMARINEBACK_COMM_RESUME        0x42b  
-#define MINOR_MOTOR_SENSOR_EXCEPTION           0x42c  
-#define MINOR_CAN_BUS_EXCEPTION                0x42d  
-#define MINOR_CAN_BUS_RESUME                   0x42e  
-#define MINOR_GATE_TEMPERATURE_OVERRUN         0x42f  
-#define MINOR_IR_EMITTER_EXCEPTION             0x430  
-#define MINOR_IR_EMITTER_RESUME                0x431  
-#define MINOR_LAMP_BOARD_COMM_EXCEPTION        0x432  
-#define MINOR_LAMP_BOARD_COMM_RESUME           0x433  
-#define MINOR_IR_ADAPTOR_COMM_EXCEPTION        0x434  
-#define MINOR_IR_ADAPTOR_COMM_RESUME           0x435  
-#define MINOR_PRINTER_ONLINE                    0x436  
-#define MINOR_PRINTER_OFFLINE                    0x437  
-#define MINOR_4G_MOUDLE_ONLINE       0x438  
-#define MINOR_4G_MOUDLE_OFFLINE         0x439  
-#define MINOR_DSP_START_FAILED         0x43a  
-#define MINOR_SMART_REGULATION_NOT_ALLOWED         0x43b  
-#define MINOR_AUXILIARY_BOARD_OFFLINE          0x43c  
-#define MINOR_AUXILIARY_BOARD_RESUME           0x43d  
-#define MINOR_IDCARD_SECURITY_MOUDLE_EXCEPTION 0x43e  
-#define MINOR_IDCARD_SECURITY_MOUDLE_RESUME    0x43f  
-#define MINOR_FP_PERIPHERAL_EXCEPTION          0x440  
-#define MINOR_FP_PERIPHERAL_RESUME             0x441  
-#define MINOR_EXCEPTION_CUSTOM1                 0x900  
-#define MINOR_EXCEPTION_CUSTOM2                 0x901  
-#define MINOR_EXCEPTION_CUSTOM3                 0x902  
-#define MINOR_EXCEPTION_CUSTOM4                 0x903  
-#define MINOR_EXCEPTION_CUSTOM5                 0x904  
-#define MINOR_EXCEPTION_CUSTOM6                 0x905  
-#define MINOR_EXCEPTION_CUSTOM7                 0x906  
-#define MINOR_EXCEPTION_CUSTOM8                 0x907  
-#define MINOR_EXCEPTION_CUSTOM9                 0x908  
-#define MINOR_EXCEPTION_CUSTOM10                0x909  
-#define MINOR_EXCEPTION_CUSTOM11                0x90a  
-#define MINOR_EXCEPTION_CUSTOM12                0x90b  
-#define MINOR_EXCEPTION_CUSTOM13                0x90c  
-#define MINOR_EXCEPTION_CUSTOM14                0x90d  
-#define MINOR_EXCEPTION_CUSTOM15                0x90e  
-#define MINOR_EXCEPTION_CUSTOM16                0x90f  
-#define MINOR_EXCEPTION_CUSTOM17                0x910  
-#define MINOR_EXCEPTION_CUSTOM18                0x911  
-#define MINOR_EXCEPTION_CUSTOM19                0x912  
-#define MINOR_EXCEPTION_CUSTOM20                0x913  
-#define MINOR_EXCEPTION_CUSTOM21                0x914  
-#define MINOR_EXCEPTION_CUSTOM22                0x915  
-#define MINOR_EXCEPTION_CUSTOM23                0x916  
-#define MINOR_EXCEPTION_CUSTOM24                0x917  
-#define MINOR_EXCEPTION_CUSTOM25                0x918  
-#define MINOR_EXCEPTION_CUSTOM26                0x919  
-#define MINOR_EXCEPTION_CUSTOM27                0x91a  
-#define MINOR_EXCEPTION_CUSTOM28                0x91b  
-#define MINOR_EXCEPTION_CUSTOM29                0x91c  
-#define MINOR_EXCEPTION_CUSTOM30                0x91d  
-#define MINOR_EXCEPTION_CUSTOM31                0x91e  
-#define MINOR_EXCEPTION_CUSTOM32                0x91f  
-#define MINOR_EXCEPTION_CUSTOM33                0x920  
-#define MINOR_EXCEPTION_CUSTOM34                0x921  
-#define MINOR_EXCEPTION_CUSTOM35                0x922  
-#define MINOR_EXCEPTION_CUSTOM36                0x923  
-#define MINOR_EXCEPTION_CUSTOM37                0x924  
-#define MINOR_EXCEPTION_CUSTOM38                0x925  
-#define MINOR_EXCEPTION_CUSTOM39                0x926  
-#define MINOR_EXCEPTION_CUSTOM40                0x927  
-#define MINOR_EXCEPTION_CUSTOM41                0x928  
-#define MINOR_EXCEPTION_CUSTOM42                0x929  
-#define MINOR_EXCEPTION_CUSTOM43                0x92a  
-#define MINOR_EXCEPTION_CUSTOM44                0x92b  
-#define MINOR_EXCEPTION_CUSTOM45                0x92c  
-#define MINOR_EXCEPTION_CUSTOM46                0x92d  
-#define MINOR_EXCEPTION_CUSTOM47                0x92e  
-#define MINOR_EXCEPTION_CUSTOM48                0x92f  
-#define MINOR_EXCEPTION_CUSTOM49                0x930  
-#define MINOR_EXCEPTION_CUSTOM50                0x931  
-#define MINOR_EXCEPTION_CUSTOM51                0x932  
-#define MINOR_EXCEPTION_CUSTOM52                0x933  
-#define MINOR_EXCEPTION_CUSTOM53                0x934  
-#define MINOR_EXCEPTION_CUSTOM54                0x935  
-#define MINOR_EXCEPTION_CUSTOM55                0x936  
-#define MINOR_EXCEPTION_CUSTOM56                0x937  
-#define MINOR_EXCEPTION_CUSTOM57                0x938  
-#define MINOR_EXCEPTION_CUSTOM58                0x939  
-#define MINOR_EXCEPTION_CUSTOM59                0x93a  
-#define MINOR_EXCEPTION_CUSTOM60                0x93b  
-#define MINOR_EXCEPTION_CUSTOM61                0x93c  
-#define MINOR_EXCEPTION_CUSTOM62                0x93d  
-#define MINOR_EXCEPTION_CUSTOM63                0x93e  
-#define MINOR_EXCEPTION_CUSTOM64                0x93f  
-#define MINOR_SWITCH_WIRED_NETWORK            0x950    
-#define MINOR_SWITCH_WIRELESS_NETWORK         0x951    
-#define MINOR_LOCK_ONLINE_RESUME              0x952    
-#define MINOR_SUBSYSTEM_IP_CONFLICT        0x4000        
-#define MINOR_SUBSYSTEM_NET_BROKEN        0x4001        
-#define    MINOR_FAN_ABNORMAL                0x4002        
-#define    MINOR_BACKPANEL_TEMPERATURE_ABNORMAL        0x4003        
-#define    MINOR_SDCARD_ABNORMAL            0x4004        
-#define    MINOR_SDCARD_DAMAGE                0x4005        
-#define    MINOR_POC_ABNORMAL				0x4006   
-#define MINOR_MAIN_POWER_FAULT              0x4007 
-#define MINOR_BACK_UP_POWER_FAULT           0x4008 
-#define MINOR_TAMPER_FAULT                  0x4009 
-#define MINOR_RS232_FAULT                   0x400a 
-#define MINOR_RS485_FAULT                   0x400b 
-#define MINOR_LAN_STATUS_FAULT              0x400c 
-#define MINOR_LAN_LINK1_FAULT               0x400d 
-#define MINOR_LAN_LINK2_FAULT               0x400e 
-#define MINOR_SIM_CARD_STATUS_FAULT         0x400f 
-#define MINOR_4G_LINK1_FAULT                0x4010 
-#define MINOR_4G_LINK2_FAULT                0x4011 
-#define MINOR_OTHER_FAULT                   0x4012 
-#define MINOR_FIRE_CONTROL_CONNECT_FAULT    0x4013 
-#define MINOR_SENSOR_SHORT_CIRCUIT          0x4014 
-#define MINOR_SENSOR_OPEN_CIRCUIT           0x4015 
-#define MINOR_SENSOR_MIS_CONNECT            0x4016 
-#define MINOR_SENSOR_FAULT_RESTORE          0x4017 
-#define MINOR_DEVICE_FAULT                  0x4018 
-#define MINOR_OVERVOLTAGE                   0X4019  
-#define MINOR_UNDERVOLTAGE                  0X401a  
-#define MINOR_ALARMHOST_WDT_RESET 			    0x1003    
-#define MINOR_ALARMHOST_RTC_EXCEPTION 			0x1007    
-#define MINOR_ALARMHOST_TEL_LINE_CONNECT_FAILURE 	0x100a    
-#define MINOR_ALARMHOST_TEL_LINE_CONNECT_RESTORE 	0x100b    
-#define MINOR_ALARMHOST_EXPANDER_BUS_LOSS 		0x100c    
-#define MINOR_ALARMHOST_EXPANDER_BUS_RESTORE 	0x100d    
-#define MINOR_ALARMHOST_KEYPAD_BUS_LOSS 			0x100e    
-#define MINOR_ALARMHOST_KEYPAD_BUS_RESTORE 		0x100f    
-#define MINOR_ALARMHOST_SENSOR_FAILURE 			0x1010    
-#define MINOR_ALARMHOST_SENSOR_RESTORE 			0x1011    
-#define MINOR_ALARMHOST_RS485_CONNECT_FAILURE 	0x1012    
-#define MINOR_ALARMHOST_RS485_CONNECT_RESTORE 	0x1013    
-#define	MINOR_ALARMHOST_WIRED_NETWORK_ABNORMAL 	0x1015    
-#define	MINOR_ALARMHOST_WIRED_NETWORK_RESTORE 		0x1016    
-#define	MINOR_ALARMHOST_GPRS_ABNORMAL 				0x1017    
-#define	MINOR_ALARMHOST_GPRS_RESTORE 					0x1018    
-#define	MINOR_ALARMHOST_3G_ABNORMAL 					0x1019    
-#define	MINOR_ALARMHOST_3G_RESTORE 					0x101a    
-#define	MINOR_ALARMHOST_SIM_CARD_ABNORMAL 			0x101b    
-#define	MINOR_ALARMHOST_SIM_CARD_RESTORE 			0x101c    
-#define	MINOR_FORMAT_HDD_ERROR  0x1026 
-#define	MINOR_USB_ERROR		0x1027    
-#define	MINOR_USB_RESTORE		0x1028    
-#define	MINOR_PRINT_ERROR	  0x1029    
-#define	MINOR_PRINT_RESTORE   0x1030    
-#define  MINOR_ALARMHOST_SUBSYSTEM_COMMUNICATION_ERROR    0x1031  
-#define  MINOR_MCU_RESTART    0x1035    
-#define  MINOR_GPRS_MODULE_FAULT    0x1036  
-#define  MINOR_TELEPHONE_MODULE_FAULT    0x1037     
-#define  MINOR_WIFI_ABNORMAL  0x1038    
-#define  MINOR_WIFI_RESTORE    0x1039    
-#define  MINOR_RF_ABNORMAL   0x103a    
-#define  MINOR_RF_RESTORE     0x103b   
-#define  MINOR_DETECTOR_ONLINE   0x103c    
-#define  MINOR_DETECTOR_OFFLINE    0x103d    
-#define  MINOR_DETECTOR_BATTERY_NORMAL    0x103e  
-#define  MINOR_DETECTOR_BATTERY_LOW 0x103f  
-#define  MINOR_DATA_TRAFFIC_OVERFLOW    0x1040    
-#define  MINOR_ALARMHOST_ZONE_MODULE_LOSS     0x1041    
-#define  MINOR_ALARMHOST_ZONE_MODULE_RESTORE     0x1042    
-#define  MINOR_WIRELESS_OUTPUT_LOSS     0x1043    
-#define  MINOR_WIRELESS_OUTPUT_RESTORE    0x1044    
-#define  MINOR_WIRELESS_REPEATER_LOSS    0x1045    
-#define  MINOR_WIRELESS_REPEATER_RESTORE    0x1046    
-#define  MINOR_ALARMHOST_TRIGGER_MODULE_LOSS     0x1047    
-#define  MINOR_ALARMHOST_TRIGGER_MODULE_RESTORE    0x1048    
-#define  MINOR_ALARMHOST_WIRELESS_SIREN_LOSS    0x1049    
-#define  MINOR_ALARMHOST_WIRELESS_SIREN_RESTORE     0x104a    
-#define  MINOR_TX1_SUB_SYSTEM_EXCEPTION             0x1050   
-#define MINOR_TX1_REBOOT_EXCEPTION       0x1051   
-#define MINOR_TX1_SUB_SYSTEM_LOSS      0x1052   
-#define MINOR_TX1_SUB_SYSTEM_RESTORE     0x1053   
-#define MINOR_WIRELESS_SPEED_EXCEPTION   0x1054   
-#define MAJOR_OPERATION                    0x3
-#define MINOR_VCA_MOTIONEXCEPTION        0x29  
-#define MINOR_START_DVR                    0x41    
-#define MINOR_STOP_DVR                    0x42    
-#define MINOR_STOP_ABNORMAL                0x43    
-#define MINOR_REBOOT_DVR                0x44    
-#define MINOR_LOCAL_LOGIN                0x50    
-#define MINOR_LOCAL_LOGOUT                0x51    
-#define MINOR_LOCAL_CFG_PARM            0x52    
-#define MINOR_LOCAL_PLAYBYFILE          0x53    
-#define MINOR_LOCAL_PLAYBYTIME          0x54    
-#define MINOR_LOCAL_START_REC            0x55    
-#define MINOR_LOCAL_STOP_REC            0x56    
-#define MINOR_LOCAL_PTZCTRL                0x57    
-#define MINOR_LOCAL_PREVIEW                0x58    
-#define MINOR_LOCAL_MODIFY_TIME         0x59    
-#define MINOR_LOCAL_UPGRADE             0x5a    
-#define MINOR_LOCAL_RECFILE_OUTPUT      0x5b    
-#define MINOR_LOCAL_FORMAT_HDD          0x5c    
-#define MINOR_LOCAL_CFGFILE_OUTPUT      0x5d    
-#define MINOR_LOCAL_CFGFILE_INPUT       0x5e    
-#define MINOR_LOCAL_COPYFILE            0x5f    
-#define MINOR_LOCAL_LOCKFILE            0x60    
-#define MINOR_LOCAL_UNLOCKFILE          0x61    
-#define MINOR_LOCAL_DVR_ALARM           0x62    
-#define MINOR_IPC_ADD                   0x63    
-#define MINOR_IPC_DEL                   0x64    
-#define MINOR_IPC_SET                   0x65    
-#define MINOR_LOCAL_START_BACKUP        0x66    
-#define MINOR_LOCAL_STOP_BACKUP            0x67    
-#define MINOR_LOCAL_COPYFILE_START_TIME 0x68    
-#define MINOR_LOCAL_COPYFILE_END_TIME    0x69    
-#define MINOR_LOCAL_ADD_NAS             0x6a    
-#define MINOR_LOCAL_DEL_NAS             0x6b    
-#define MINOR_LOCAL_SET_NAS             0x6c    
-#define MINOR_LOCAL_RESET_PASSWD        0x6d    
-#define MINOR_REMOTE_LOGIN                0x70    
-#define MINOR_REMOTE_LOGOUT                0x71    
-#define MINOR_REMOTE_START_REC            0x72    
-#define MINOR_REMOTE_STOP_REC            0x73    
-#define MINOR_START_TRANS_CHAN            0x74    
-#define MINOR_STOP_TRANS_CHAN            0x75    
-#define MINOR_REMOTE_GET_PARM            0x76    
-#define MINOR_REMOTE_CFG_PARM            0x77    
-#define MINOR_REMOTE_GET_STATUS         0x78    
-#define MINOR_REMOTE_ARM                0x79    
-#define MINOR_REMOTE_DISARM                0x7a    
-#define MINOR_REMOTE_REBOOT                0x7b    
-#define MINOR_START_VT                    0x7c    
-#define MINOR_STOP_VT                    0x7d    
-#define MINOR_REMOTE_UPGRADE            0x7e    
-#define MINOR_REMOTE_PLAYBYFILE         0x7f    
-#define MINOR_REMOTE_PLAYBYTIME         0x80    
-#define MINOR_REMOTE_PTZCTRL            0x81    
-#define MINOR_REMOTE_FORMAT_HDD         0x82    
-#define MINOR_REMOTE_STOP               0x83    
-#define MINOR_REMOTE_LOCKFILE            0x84    
-#define MINOR_REMOTE_UNLOCKFILE         0x85    
-#define MINOR_REMOTE_CFGFILE_OUTPUT     0x86    
-#define MINOR_REMOTE_CFGFILE_INTPUT     0x87    
-#define MINOR_REMOTE_RECFILE_OUTPUT     0x88    
-#define MINOR_REMOTE_DVR_ALARM          0x89    
-#define MINOR_REMOTE_IPC_ADD            0x8a    
-#define MINOR_REMOTE_IPC_DEL            0x8b    
-#define MINOR_REMOTE_IPC_SET            0x8c    
-#define MINOR_REBOOT_VCA_LIB            0x8d    
-#define MINOR_REMOTE_ADD_NAS            0x8e   
-#define MINOR_REMOTE_DEL_NAS            0x8f   
-#define MINOR_REMOTE_SET_NAS            0x90   
-#define MINOR_LOCAL_OPERATE_LOCK        0x9d            
-#define MINOR_LOCAL_OPERATE_UNLOCK      0x9e            
-#define MINOR_REMOTE_DELETE_HDISK       0x9a            
-#define MINOR_REMOTE_LOAD_HDISK         0x9b            
-#define MINOR_REMOTE_UNLOAD_HDISK       0x9c            
-#define MINOR_SCHEDULE_ANGLECALIBRATION 0x139            
-#define MINOR_OTHER_OPERATE             0x200    
-#define MINOR_LOCAL_START_REC_CDRW      0x91   
-#define MINOR_LOCAL_STOP_REC_CDRW       0x92   
-#define MINOR_REMOTE_START_REC_CDRW     0x93   
-#define MINOR_REMOTE_STOP_REC_CDRW      0x94   
-#define MINOR_LOCAL_PIC_OUTPUT            0x95   
-#define MINOR_REMOTE_PIC_OUTPUT            0x96   
-#define MINOR_LOCAL_INQUEST_RESUME      0x97   
-#define MINOR_REMOTE_INQUEST_RESUME     0x98   
-#define MINOR_LOCAL_ADD_FILE            0x99        
-#define MINOR_LOCAL_DEL_FILE            0x9f        
-#define MINOR_REMOTE_INQUEST_ADD_FILE   0x100       
-#define MINOR_SUBSYSTEMREBOOT           0xa0    
-#define MINOR_MATRIX_STARTTRANSFERVIDEO 0xa1    
-#define MINOR_MATRIX_STOPTRANSFERVIDEO    0xa2    
-#define MINOR_REMOTE_SET_ALLSUBSYSTEM   0xa3    
-#define MINOR_REMOTE_GET_ALLSUBSYSTEM   0xa4    
-#define MINOR_REMOTE_SET_PLANARRAY      0xa5    
-#define MINOR_REMOTE_GET_PLANARRAY      0xa6    
-#define MINOR_MATRIX_STARTTRANSFERAUDIO 0xa7    
-#define MINOR_MATRIX_STOPRANSFERAUDIO   0xa8    
-#define MINOR_LOGON_CODESPITTER         0xa9    
-#define MINOR_LOGOFF_CODESPITTER        0xaa    
-#define MINOR_START_DYNAMIC_DECODE         0xb0    
-#define MINOR_STOP_DYNAMIC_DECODE        0xb1    
-#define MINOR_GET_CYC_CFG                0xb2    
-#define MINOR_SET_CYC_CFG                0xb3    
-#define MINOR_START_CYC_DECODE            0xb4    
-#define MINOR_STOP_CYC_DECODE            0xb5    
-#define MINOR_GET_DECCHAN_STATUS        0xb6    
-#define MINOR_GET_DECCHAN_INFO            0xb7    
-#define MINOR_START_PASSIVE_DEC            0xb8    
-#define MINOR_STOP_PASSIVE_DEC            0xb9    
-#define MINOR_CTRL_PASSIVE_DEC            0xba    
-#define MINOR_RECON_PASSIVE_DEC            0xbb    
-#define MINOR_GET_DEC_CHAN_SW            0xbc    
-#define MINOR_SET_DEC_CHAN_SW            0xbd    
-#define MINOR_CTRL_DEC_CHAN_SCALE        0xbe    
-#define MINOR_SET_REMOTE_REPLAY            0xbf    
-#define MINOR_GET_REMOTE_REPLAY            0xc0    
-#define MINOR_CTRL_REMOTE_REPLAY        0xc1    
-#define MINOR_SET_DISP_CFG                0xc2    
-#define MINOR_GET_DISP_CFG                0xc3    
-#define MINOR_SET_PLANTABLE                0xc4    
-#define MINOR_GET_PLANTABLE                0xc5    
-#define MINOR_START_PPPPOE                0xc6    
-#define MINOR_STOP_PPPPOE                0xc7    
-#define MINOR_UPLOAD_LOGO                0xc8    
-#define MINOR_LOCAL_PIN                    0xc9    
-#define MINOR_LOCAL_DIAL                0xca    
-#define MINOR_SMS_CONTROL                0xcb    
-#define MINOR_CALL_ONLINE                0xcc    
-#define MINOR_REMOTE_PIN                0xcd    
-#define MINOR_REMOTE_BYPASS             0xd0    
-#define MINOR_REMOTE_UNBYPASS           0xd1    
-#define MINOR_REMOTE_SET_ALARMIN_CFG    0xd2    
-#define MINOR_REMOTE_GET_ALARMIN_CFG    0xd3    
-#define MINOR_REMOTE_SET_ALARMOUT_CFG   0xd4    
-#define MINOR_REMOTE_GET_ALARMOUT_CFG   0xd5    
-#define MINOR_REMOTE_ALARMOUT_OPEN_MAN  0xd6    
-#define MINOR_REMOTE_ALARMOUT_CLOSE_MAN 0xd7    
-#define MINOR_REMOTE_ALARM_ENABLE_CFG   0xd8    
-#define MINOR_DBDATA_OUTPUT                0xd9    
-#define MINOR_DBDATA_INPUT                0xda    
-#define MINOR_MU_SWITCH                    0xdb    
-#define MINOR_MU_PTZ                    0xdc    
-#define MINOR_DELETE_LOGO               0xdd    
-#define MINOR_REMOTE_INQUEST_DEL_FILE   0xde       
-#define MINOR_LOCAL_CONF_REB_RAID       0x101           
-#define MINOR_LOCAL_CONF_SPARE          0x102           
-#define MINOR_LOCAL_ADD_RAID            0x103           
-#define MINOR_LOCAL_DEL_RAID            0x104           
-#define MINOR_LOCAL_MIG_RAID            0x105           
-#define MINOR_LOCAL_REB_RAID            0x106           
-#define MINOR_LOCAL_QUICK_CONF_RAID     0x107           
-#define MINOR_LOCAL_ADD_VD              0x108           
-#define MINOR_LOCAL_DEL_VD              0x109           
-#define MINOR_LOCAL_RP_VD               0x10a           
-#define MINOR_LOCAL_FORMAT_EXPANDVD     0X10b           
-#define MINOR_LOCAL_RAID_UPGRADE        0X10c           
-#define MINOR_LOCAL_STOP_RAID           0x10d           
-#define MINOR_REMOTE_CONF_REB_RAID      0x111           
-#define MINOR_REMOTE_CONF_SPARE         0x112            
-#define MINOR_REMOTE_ADD_RAID           0x113           
-#define MINOR_REMOTE_DEL_RAID           0x114           
-#define MINOR_REMOTE_MIG_RAID           0x115           
-#define MINOR_REMOTE_REB_RAID           0x116           
-#define MINOR_REMOTE_QUICK_CONF_RAID    0x117           
-#define MINOR_REMOTE_ADD_VD             0x118           
-#define MINOR_REMOTE_DEL_VD             0x119           
-#define MINOR_REMOTE_RP_VD              0x11a           
-#define MINOR_REMOTE_FORMAT_EXPANDVD    0X11b           
-#define MINOR_REMOTE_RAID_UPGRADE       0X11c           
-#define MINOR_REMOTE_STOP_RAID          0x11d           
-#define MINOR_LOCAL_START_PIC_REC       0x121          
-#define MINOR_LOCAL_STOP_PIC_REC        0x122          
-#define MINOR_LOCAL_SET_SNMP            0x125           
-#define MINOR_LOCAL_TAG_OPT             0x126          
-#define MINOR_REMOTE_START_PIC_REC      0x131          
-#define MINOR_REMOTE_STOP_PIC_REC       0x132           
-#define MINOR_REMOTE_SET_SNMP           0x135            
-#define MINOR_REMOTE_TAG_OPT            0x136             
-#define MINOR_REMOTE_LOGIN_LOCK         0x137           
-#define MINOR_REMOTE_LOGIN_UNLOCK       0x138          
-#define MINOR_LOCAL_VOUT_SWITCH         0x140   
-#define MINOR_STREAM_CABAC                 0x141   
-#define MINOR_LOCAL_SPARE_OPT           0x142   
-#define MINOR_REMOTE_SPARE_OPT            0x143   
-#define MINOR_LOCAL_IPCCFGFILE_OUTPUT    0x144      
-#define MINOR_LOCAL_IPCCFGFILE_INPUT      0x145   
-#define MINOR_LOCAL_IPC_UPGRADE         0x146   
-#define MINOR_REMOTE_IPCCFGFILE_OUTPUT  0x147   
-#define MINOR_REMOTE_IPCCFGFILE_INPUT   0x148   
-#define MINOR_REMOTE_IPC_UPGRADE        0x149   
-#define MINOR_LOCAL_UNLOAD_HDISK        0x150     
-#define MINOR_LOCAL_AUDIO_MIX           0x151     
-#define MINOR_REMOTE_AUDIO_MIX          0x152     
-#define MINOR_LOCAL_TRIAL_PAUSE         0x153     
-#define MINOR_LOCAL_TRIAL_RESUME        0x154     
-#define MINOR_REMOTE_TRIAL_PAUSE        0x155     
-#define MINOR_REMOTE_TRIAL_RESUME       0x156     
-#define MINOR_REMOTE_MODIFY_VERIFICATION_CODE   0x157 
-#define MINOR_LOCAL_MAKECALL            0x180          
-#define MINOR_LOCAL_REJECTCALL          0x181          
-#define MINOR_LOCAL_ANSWERCALL          0x182          
-#define MINOR_LOCAL_HANGUPCALL          0x183          
-#define MINOR_REMOTE_MAKECALL           0x188          
-#define MINOR_REMOTE_REJECTCALL         0x189          
-#define MINOR_REMOTE_ANSWERCALL         0x18a          
-#define MINOR_REMOTE_HANGUPCALL         0x18b          
-#define MINOR_SET_MULTI_MASTER          0x201    
-#define MINOR_SET_MULTI_SLAVE           0x202    
-#define MINOR_CANCEL_MULTI_MASTER       0x203    
-#define MINOR_CANCEL_MULTI_SLAVE        0x204    
-#define MINOR_DISPLAY_LOGO                0x205    
-#define MINOR_HIDE_LOGO                 0x206    
-#define MINOR_SET_DEC_DELAY_LEVEL       0x207    
-#define MINOR_SET_BIGSCREEN_DIPLAY_AREA 0x208    
-#define MINOR_CUT_VIDEO_SOURCE          0x209    
-#define MINOR_SET_BASEMAP_AREA          0x210    
-#define MINOR_DOWNLOAD_BASEMAP          0x211    
-#define MINOR_CUT_BASEMAP               0x212    
-#define MINOR_CONTROL_ELEC_ENLARGE      0x213    
-#define MINOR_SET_OUTPUT_RESOLUTION     0x214    
-#define MINOR_SET_TRANCSPARENCY         0X215    
-#define MINOR_SET_OSD                   0x216    
-#define MINOR_RESTORE_DEC_STATUS        0x217    
-#define MINOR_SCREEN_OPEN_SCREEN        0x218   
-#define MINOR_SCREEN_CLOSE_SCREEN       0x219   
-#define MINOR_SCREEN_SWITCH_SIGNAL      0x21a   
-#define MINOR_SCREEN_MODIFY_NETWORK     0x21b   
-#define MINOR_SCREEN_MODIFY_LEDRES      0x21c   
-#define MINOR_SCREEN_SHOW_NORMAL        0x21d   
-#define MINOR_SCREEN_SHOW_TILE          0x21e   
-#define MINOR_SCREEN_DEC_NORMAL         0x21f   
-#define MINOR_SCREEN_DEC_LOWLATENCY     0x220   
-#define MINOR_SCREEN_MODIFY_SELFRES     0x221   
-#define MINOR_SCREEN_OUTPUT_POSITION    0x222   
-#define MINOR_SCREEN_IMAGE_ENHANCE      0x223   
-#define MINOR_SCREEN_JOIN_SIGNAL        0x224   
-#define MINOR_SCREEN_SIGNAL_OSD         0x225   
-#define MINOR_SCREEN_ASSOCIATED_INTERACTION 0x226   
-#define MINOR_SCREEN_MODIFY_MATRIX      0x227   
-#define MINOR_SCREEN_WND_TOP_KEEP       0x228   
-#define MINOR_SCREEN_WND_OPEN_KEEP      0x229   
-#define MINOR_SCREEN_WALL_MIRROR        0x22a   
-#define MINOR_SCREEN_UPLOAD_BASEMAP     0x22b   
-#define MINOR_SCREEN_SHOW_BASEMAP       0x22c   
-#define MINOR_SCREEN_HIDE_BASEMAP       0x22d   
-#define MINOR_SCREEN_MODIFY_SERIAL      0x22e   
-#define MINOR_SCREEN_SET_INPUT          0x251    
-#define MINOR_SCREEN_SET_OUTPUT         0x252    
-#define MINOR_SCREEN_SET_OSD            0x253    
-#define MINOR_SCREEN_SET_LOGO           0x254    
-#define MINOR_SCREEN_SET_LAYOUT         0x255    
-#define MINOR_SCREEN_PICTUREPREVIEW     0x256    
-#define MINOR_SCREEN_GET_OSD            0x257   
-#define MINOR_SCREEN_GET_LAYOUT            0x258   
-#define MINOR_SCREEN_LAYOUT_CTRL        0x259   
-#define MINOR_GET_ALL_VALID_WND            0x260    
-#define MINOR_GET_SIGNAL_WND            0x261    
-#define MINOR_WINDOW_CTRL                0x262    
-#define MINOR_GET_LAYOUT_LIST            0x263    
-#define MINOR_LAYOUT_CTRL                0x264    
-#define MINOR_SET_LAYOUT                0x265    
-#define MINOR_GET_SIGNAL_LIST            0x266    
-#define MINOR_GET_PLAN_LIST                0x267    
-#define MINOR_SET_PLAN                    0x268    
-#define MINOR_CTRL_PLAN                    0x269    
-#define MINOR_CTRL_SCREEN                0x270    
-#define MINOR_ADD_NETSIG                0x271    
-#define MINOR_SET_NETSIG                0x272    
-#define MINOR_SET_DECBDCFG                0x273    
-#define MINOR_GET_DECBDCFG                0x274    
-#define MINOR_GET_DEVICE_STATUS            0x275    
-#define MINOR_UPLOAD_PICTURE            0x276    
-#define MINOR_SET_USERPWD                0x277    
-#define MINOR_ADD_LAYOUT                0x278    
-#define MINOR_DEL_LAYOUT                0x279    
-#define MINOR_DEL_NETSIG                0x280    
-#define MINOR_ADD_PLAN                    0x281    
-#define MINOR_DEL_PLAN                    0x282    
-#define MINOR_GET_EXTERNAL_MATRIX_CFG    0x283    
-#define MINOR_SET_EXTERNAL_MATRIX_CFG    0x284    
-#define    MINOR_GET_USER_CFG                0x285    
-#define    MINOR_SET_USER_CFG                0x286    
-#define    MINOR_GET_DISPLAY_PANEL_LINK_CFG 0x287    
-#define    MINOR_SET_DISPLAY_PANEL_LINK_CFG 0x288    
-#define    MINOR_GET_WALLSCENE_PARAM        0x289        
-#define    MINOR_SET_WALLSCENE_PARAM        0x28a        
-#define    MINOR_GET_CURRENT_WALLSCENE        0x28b        
-#define    MINOR_SWITCH_WALLSCENE            0x28c        
-#define    MINOR_SIP_LOGIN                    0x28d        
-#define MINOR_VOIP_START                0x28e        
-#define MINOR_VOIP_STOP                    0x28f        
-#define MINOR_WIN_TOP                   0x290       
-#define MINOR_WIN_BOTTOM                0x291       
-#define MINOR_SET_USER_ADD_CFG                0x292    
-#define MINOR_SET_USER_MODF_CFG                0x293    
-#define MINOR_SET_USER_DEL_CFG                0x294    
-#define MINOR_LOCAL_LOAD_HDISK          0x300            
-#define MINOR_LOCAL_DELETE_HDISK        0x301            
-#define MINOR_LOCAL_MAIN_AUXILIARY_PORT_SWITCH    0X302 
-#define MINOR_LOCAL_HARD_DISK_CHECK                0x303 
-#define MINOR_LOCAL_CFG_DEVICE_TYPE        0x310    
-#define MINOR_REMOTE_CFG_DEVICE_TYPE    0x311    
-#define MINOR_LOCAL_CFG_WORK_HOT_SERVER    0x312    
-#define MINOR_REMOTE_CFG_WORK_HOT_SERVER 0x313    
-#define MINOR_LOCAL_DELETE_WORK            0x314    
-#define MINOR_REMOTE_DELETE_WORK        0x315    
-#define    MINOR_LOCAL_ADD_WORK            0x316    
-#define MINOR_REMOTE_ADD_WORK            0x317    
-#define MINOR_LOCAL_IPCHEATMAP_OUTPUT   0x318            
-#define MINOR_LOCAL_IPCHEATFLOW_OUTPUT  0x319          
-#define MINOR_REMOTE_SMS_SEND           0x350    
-#define MINOR_LOCAL_SMS_SEND            0x351   
-#define MINOR_ALARM_SMS_SEND            0x352    
-#define MINOR_SMS_RECV                  0x353     
-#define MINOR_LOCAL_SMS_SEARCH          0x354  
-#define MINOR_REMOTE_SMS_SEARCH         0x355   
-#define MINOR_LOCAL_SMS_READ            0x356   
-#define MINOR_REMOTE_SMS_READ           0x357   
-#define MINOR_REMOTE_DIAL_CONNECT       0x358   
-#define MINOR_REMOTE_DIAL_DISCONN       0x359   
-#define MINOR_LOCAL_WHITELIST_SET       0x35A   
-#define MINOR_REMOTE_WHITELIST_SET      0x35B   
-#define MINOR_LOCAL_DIAL_PARA_SET       0x35C   
-#define MINOR_REMOTE_DIAL_PARA_SET      0x35D   
-#define MINOR_LOCAL_DIAL_SCHEDULE_SET   0x35E   
-#define MINOR_REMOTE_DIAL_SCHEDULE_SET  0x35F   
-#define MINOR_PLAT_OPER                 0x360   
-#define MINOR_REMOTE_CFG_POE_WORK_MODE  0x361
-#define MINOR_LOCAL_CFG_POE_WORK_MODE   0x362
-#define MINOR_REMOTE_CFG_FACE_CONTRAST  0x363
-#define MINOR_LOCAL_CFG_FACE_CONTRAST   0x364
-#define MINOR_REMOTE_CFG_WHITELIST_FACE_CONTRAST   0x365
-#define MINOR_LOCAL_CFG_WHITELIST_FACE_CONTRAST    0x366
-#define MINOR_LOCAL_CHECK_TIME          0x367   
-#define MINOR_VCA_ONEKEY_EXPORT_PICTURE 0x368 
-#define MINOR_VCA_ONEKEY_DELETE_PICTURE 0x369 
-#define MINOR_VCA_ONEKEY_EXPORT_VIDEO   0x36a 
-#define MINOR_VCA_ONEKEY_DELETE_VIDEO   0x36b 
-#define MINOR_REMOTE_CFG_WIRELESS_DIALPARAM 0x36c 
-#define MINOR_LOCAL_CFG_WIRELESS_DIALPARAM  0x36d 
-#define MINOR_REMOTE_CFG_WIRELESS_SMSPARAM  0x36e 
-#define MINOR_LOCAL_CFG_WIRELESS_SMSPARAM   0x36f 
-#define MINOR_REMOTE_CFG_WIRELESS_SMSSElFHELP  0x370 
-#define MINOR_LOCAL_CFG_WIRELESS_SMSSElFHELP   0x371 
-#define MINOR_REMOTE_CFG_WIRELESS_NETFLOWPARAM 0x372 
-#define MINOR_LOCAL_CFG_WIRELESS_NETFLOWPARAM  0x373 
-#define MINOR_REMOTE_OPEN_DOOR          0x400   
-#define MINOR_REMOTE_CLOSE_DOOR         0x401   
-#define MINOR_REMOTE_ALWAYS_OPEN        0x402   
-#define MINOR_REMOTE_ALWAYS_CLOSE       0x403   
-#define MINOR_REMOTE_CHECK_TIME         0x404   
-#define MINOR_NTP_CHECK_TIME            0x405   
-#define MINOR_REMOTE_CLEAR_CARD         0x406   
-#define MINOR_REMOTE_RESTORE_CFG        0x407   
-#define MINOR_ALARMIN_ARM               0x408   
-#define MINOR_ALARMIN_DISARM            0x409   
-#define MINOR_LOCAL_RESTORE_CFG         0x40a   
-#define MINOR_REMOTE_CAPTURE_PIC        0x40b  
-#define MINOR_MOD_NET_REPORT_CFG        0x40c   
-#define MINOR_MOD_GPRS_REPORT_PARAM     0x40d   
-#define MINOR_MOD_REPORT_GROUP_PARAM    0x40e   
-#define    MINOR_UNLOCK_PASSWORD_OPEN_DOOR  0x40f  
-#define MINOR_AUTO_RENUMBER              0x410  
-#define MINOR_AUTO_COMPLEMENT_NUMBER     0x411  
-#define MINOR_NORMAL_CFGFILE_INPUT          0x412   
-#define MINOR_NORMAL_CFGFILE_OUTTPUT     0x413   
-#define MINOR_CARD_RIGHT_INPUT              0x414   
-#define MINOR_CARD_RIGHT_OUTTPUT          0x415   
-#define MINOR_LOCAL_USB_UPGRADE             0x416   
-#define MINOR_REMOTE_VISITOR_CALL_LADDER     0x417  
-#define MINOR_REMOTE_HOUSEHOLD_CALL_LADDER   0x418  
-#define MINOR_REMOTE_ACTUAL_GUARD            0x419  
-#define MINOR_REMOTE_ACTUAL_UNGUARD          0x41a  
-#define MINOR_REMOTE_CONTROL_NOT_CODE_OPER_FAILED     0x41b   
-#define MINOR_REMOTE_CONTROL_CLOSE_DOOR               0x41c   
-#define MINOR_REMOTE_CONTROL_OPEN_DOOR                0x41d   
-#define MINOR_REMOTE_CONTROL_ALWAYS_OPEN_DOOR         0x41e   
-#define MINOR_M1_CARD_ENCRYPT_VERIFY_OPEN             0x41f    
-#define MINOR_M1_CARD_ENCRYPT_VERIFY_CLOSE            0x420    
-#define MINOR_NFC_FUNCTION_OPEN        0x421    
-#define MINOR_NFC_FUNCTION_CLOSE       0x422    
-#define MINOR_OFFLINE_DATA_OUTPUT         0x423    
-#define MINOR_CREATE_SSH_LINK                         0x42d     
-#define MINOR_CLOSE_SSH_LINK                          0x42e     
-#define MINOR_OPERATION_CUSTOM1        0x900  
-#define MINOR_OPERATION_CUSTOM2        0x901  
-#define MINOR_OPERATION_CUSTOM3        0x902  
-#define MINOR_OPERATION_CUSTOM4        0x903  
-#define MINOR_OPERATION_CUSTOM5        0x904  
-#define MINOR_OPERATION_CUSTOM6        0x905  
-#define MINOR_OPERATION_CUSTOM7        0x906  
-#define MINOR_OPERATION_CUSTOM8        0x907  
-#define MINOR_OPERATION_CUSTOM9        0x908  
-#define MINOR_OPERATION_CUSTOM10       0x909  
-#define MINOR_OPERATION_CUSTOM11       0x90a  
-#define MINOR_OPERATION_CUSTOM12       0x90b  
-#define MINOR_OPERATION_CUSTOM13       0x90c  
-#define MINOR_OPERATION_CUSTOM14       0x90d  
-#define MINOR_OPERATION_CUSTOM15       0x90e  
-#define MINOR_OPERATION_CUSTOM16       0x90f  
-#define MINOR_OPERATION_CUSTOM17       0x910  
-#define MINOR_OPERATION_CUSTOM18       0x911  
-#define MINOR_OPERATION_CUSTOM19       0x912  
-#define MINOR_OPERATION_CUSTOM20       0x913  
-#define MINOR_OPERATION_CUSTOM21       0x914  
-#define MINOR_OPERATION_CUSTOM22       0x915  
-#define MINOR_OPERATION_CUSTOM23       0x916  
-#define MINOR_OPERATION_CUSTOM24       0x917  
-#define MINOR_OPERATION_CUSTOM25       0x918  
-#define MINOR_OPERATION_CUSTOM26       0x919  
-#define MINOR_OPERATION_CUSTOM27       0x91a  
-#define MINOR_OPERATION_CUSTOM28       0x91b  
-#define MINOR_OPERATION_CUSTOM29       0x91c  
-#define MINOR_OPERATION_CUSTOM30       0x91d  
-#define MINOR_OPERATION_CUSTOM31       0x91e  
-#define MINOR_OPERATION_CUSTOM32       0x91f  
-#define MINOR_OPERATION_CUSTOM33       0x920  
-#define MINOR_OPERATION_CUSTOM34       0x921  
-#define MINOR_OPERATION_CUSTOM35       0x922  
-#define MINOR_OPERATION_CUSTOM36       0x923  
-#define MINOR_OPERATION_CUSTOM37       0x924  
-#define MINOR_OPERATION_CUSTOM38       0x925  
-#define MINOR_OPERATION_CUSTOM39       0x926  
-#define MINOR_OPERATION_CUSTOM40       0x927  
-#define MINOR_OPERATION_CUSTOM41       0x928  
-#define MINOR_OPERATION_CUSTOM42       0x929  
-#define MINOR_OPERATION_CUSTOM43       0x92a  
-#define MINOR_OPERATION_CUSTOM44       0x92b  
-#define MINOR_OPERATION_CUSTOM45       0x92c  
-#define MINOR_OPERATION_CUSTOM46       0x92d  
-#define MINOR_OPERATION_CUSTOM47       0x92e  
-#define MINOR_OPERATION_CUSTOM48       0x92f  
-#define MINOR_OPERATION_CUSTOM49       0x930  
-#define MINOR_OPERATION_CUSTOM50       0x931  
-#define MINOR_OPERATION_CUSTOM51       0x932  
-#define MINOR_OPERATION_CUSTOM52       0x933  
-#define MINOR_OPERATION_CUSTOM53       0x934  
-#define MINOR_OPERATION_CUSTOM54       0x935  
-#define MINOR_OPERATION_CUSTOM55       0x936  
-#define MINOR_OPERATION_CUSTOM56       0x937  
-#define MINOR_OPERATION_CUSTOM57       0x938  
-#define MINOR_OPERATION_CUSTOM58       0x939  
-#define MINOR_OPERATION_CUSTOM59       0x93a  
-#define MINOR_OPERATION_CUSTOM60       0x93b  
-#define MINOR_OPERATION_CUSTOM61       0x93c  
-#define MINOR_OPERATION_CUSTOM62       0x93d  
-#define MINOR_OPERATION_CUSTOM63       0x93e  
-#define MINOR_OPERATION_CUSTOM64       0x93f  
-#define MINOR_SET_WIFI_PARAMETER               0x950    
-#define MINOR_EZVIZ_LOGIN                      0x951    
-#define MINOR_EZVIZ_LOGINOUT                   0x952    
-#define MINOR_LOCK_ADD                         0x953    
-#define MINOR_LOCK_DELETE                      0x954    
-#define MINOR_LOCK_GET_STATUS                  0x955    
-#define MINOR_LOCK_SET_TMP_PASSWORD            0x956    
-#define MINOR_LOCK_SET_SILENT_MODE             0x957    
-#define MINOR_LOCK_SET_LATE_WARNING            0x958    
-#define MINOR_LOCK_IPC_ADD                     0x959    
-#define MINOR_LOCK_IPC_REMOVE                  0x95a    
-#define MINOR_LOCK_DETECTOR_ADD                0x95b    
-#define MINOR_LOCK_DETECTOR_REMOVE             0x95c    
-#define MINOR_LOCK_MESSAGE_REMINDING_OPEN      0x95d    
-#define MINOR_LOCK_MESSAGE_REMINDING_CLOSE     0x95e    
-#define MINOR_LOCK_SET_HEART_BEAT              0x95f    
-#define MINOR_LOCK_REBOOT                      0x960        
-#define MINOR_LOCK_CLEAR_USER                  0x961        
-#define MINOR_LOCK_FORMAT                      0x962        
-#define MINOR_LOCK_FINGER_CHANGE               0x963        
-#define MINOR_LOCK_PASSWORD_CHANGE             0x964     
-#define MINOR_LOCK_CARD_CHANGE                 0x965     
-#define MINOR_LOCK_USER_CHANGE                 0x966      
-#define MINOR_LOCK_SYSTEM_CHANGE               0x967     
-#define MINOR_LOCK_CHANGE_ADD_UESR             0x968      
-#define MINOR_LOCK_CHANGE_DEL_UESR             0x969     
-#define MINOR_LOCK_CHANGE_CUSTOM_USER_NAME     0x96a    
-#define MINOR_LOCK_CHANGE_REMOTE_DEVICE        0x96b  
-#define MINOR_LOCK_CHANGE_ADD_FP               0x96c  
-#define MINOR_LOCK_CHANGE_DEL_FP               0x96d  
-#define MINOR_LOCK_CHANGE_ADD_PASSWORD         0x96e  
-#define MINOR_LOCK_CHANGE_DEL_PASSWORD         0x96f  
-#define MINOR_LOCK_CHANGE_ADD_CARD             0x970  
-#define MINOR_LOCK_CHANGE_DEL_CARD             0x971  
-#define MINOR_LOCK_NETWORK_SWITCH              0x972  
-#define MINOR_LOCK_CLEAR_NETWORK_DATA          0x973  
-#define MINOR_LOCK_CLEAR_HOST_USER             0x974  
-#define MINOR_LOCK_CLEAR_GUEST_USER            0x975  
-#define MINOR_LOCK_CLEAN_ALL_REMOTE_DEVICE     0x976   
-#define MINOR_LOCK_CLEAN_NORMAL_USER_FINGRT    0x977    
-#define MINOR_LOCK_CLEAN_ALL_CARD              0x978      
-#define MINOR_LOCK_CLEAN_ALL_PASSWORD          0x979    
-#define MINOR_START_WIRELESSSERVER             0x97a    
-#define MINOR_STOP_WIRELESSSERVER              0x97b    
-#define MINOR_EMERGENCY_CARD_AUTH_NORMAL_CARD  0x97c    
-#define MINOR_CHANGE_ALWAYS_OPEN_RIGHT         0x97d    
-#define MINOR_LOCK_DOOR_BELL_EVENT             0x97e    
-#define MINOR_SET_TRIGGERMODE_CFG          0x1001    
-#define MINOR_GET_TRIGGERMODE_CFG          0x1002    
-#define MINOR_SET_IOOUT_CFG                0x1003    
-#define MINOR_GET_IOOUT_CFG                0x1004    
-#define MINOR_GET_TRIGGERMODE_DEFAULT      0x1005    
-#define MINOR_GET_ITCSTATUS                0x1006    
-#define MINOR_SET_STATUS_DETECT_CFG        0x1007    
-#define MINOR_GET_STATUS_DETECT_CFG        0x1008    
-#define MINOR_SET_VIDEO_TRIGGERMODE_CFG    0x1009  
-#define MINOR_GET_VIDEO_TRIGGERMODE_CFG    0x100a   
-#define    MINOR_ALARMHOST_GUARD     		0x1010    
-#define    MINOR_ALARMHOST_UNGUARD 		0x1011    
-#define    MINOR_ALARMHOST_BYPASS 				0x1012    
-#define    MINOR_ALARMHOST_DURESS_ACCESS 			0x1013    
-#define    MINOR_ALARMHOST_RS485_PARAM               0x1018   
-#define    MINOR_ALARMHOST_ALARM_OUTPUT 				0x1019    
-#define    MINOR_ALARMHOST_ACCESS_OPEN 				0x101a    
-#define    MINOR_ALARMHOST_ACCESS_CLOSE 				0x101b    
-#define    MINOR_ALARMHOST_SIREN_OPEN 				0x101c    
-#define    MINOR_ALARMHOST_SIREN_CLOSE 				0x101d    
-#define    MINOR_ALARMHOST_MOD_ZONE_CONFIG 			0x101e    
-#define    MINOR_ALARMHOST_MOD_ALARMOUT_CONIFG 	0x101f    
-#define    MINOR_ALARMHOST_MOD_ANALOG_CONFIG 		0x1020    
-#define    MINOR_ALARMHOST_RS485_CONFIG 				0x1021    
-#define    MINOR_ALARMHOST_PHONE_CONFIG 				0x1022    
-#define    MINOR_ALARMHOST_ADD_ADMIN 				0x1023    
-#define    MINOR_ALARMHOST_MOD_ADMIN_PARAM 		0x1024    
-#define    MINOR_ALARMHOST_DEL_ADMIN 					0x1025    
-#define    MINOR_ALARMHOST_ADD_NETUSER 				0x1026    
-#define    MINOR_ALARMHOST_MOD_NETUSER_PARAM 		0x1027    
-#define    MINOR_ALARMHOST_DEL_NETUSER 				0x1028    
-#define    MINOR_ALARMHOST_ADD_OPERATORUSER 		0x1029    
-#define    MINOR_ALARMHOST_MOD_OPERATORUSER_PW 	0x102a    
-#define    MINOR_ALARMHOST_DEL_OPERATORUSER 		0x102b    
-#define    MINOR_ALARMHOST_ADD_KEYPADUSER 		0x102c    
-#define    MINOR_ALARMHOST_DEL_KEYPADUSER 		0x102d    
-#define    MINOR_ALARMHOST_MOD_HOST_CONFIG          0x1032    
-#define    MINOR_ALARMHOST_RESTORE_BYPASS 			0x1033    
-#define    MINOR_ALARMHOST_ALARMOUT_OPEN 			0x1034    
-#define    MINOR_ALARMHOST_ALARMOUT_CLOSE 			0x1035    
-#define    MINOR_ALARMHOST_MOD_SUBSYSTEM_PARAM 	0x1036    
-#define    MINOR_ALARMHOST_GROUP_BYPASS 				0x1037    
-#define    MINOR_ALARMHOST_RESTORE_GROUP_BYPASS 	0x1038    
-#define    MINOR_ALARMHOST_MOD_GRPS_PARAM 			0x1039    
-#define    MINOR_ALARMHOST_MOD_REPORT_MOD 			0x103b    
-#define    MINOR_ALARMHOST_MOD_GATEWAY_PARAM 		0x103c    
-#define    MINOR_STAY_ARM 	0x104c    
-#define    MINOR_QUICK_ARM 			0x104d    
-#define    MINOR_AUTOMATIC_ARM 		0x104e    
-#define    MINOR_AUTOMATIC_DISARM 		0x104f    
-#define    MINOR_KEYSWITCH_ARM 	0x1050  
-#define    MINOR_KEYSWITCH_DISARM	0x1051  
-#define    MINOR_CLEAR_ALARM	0x1052    
-#define    MINOR_MOD_FAULT_CFG		0x1053  
-#define    MINOR_MOD_EVENT_TRIGGER_ALARMOUT_CFG	0x1054  
-#define    MINOR_SEARCH_EXTERNAL_MODULE  0x1055 
-#define    MINOR_REGISTER_EXTERNAL_MODULE 0x1056  
-#define    MINOR_CLOSE_KEYBOARD_ALARM	0x1057 
-#define    MINOR_MOD_3G_PARAM		0x1058  
-#define    MINOR_MOD_PRINT_PARAM 0x1059  
-#define    MINOR_ALARMHOST_SD_CARD_FORMAT		0x1060    
-#define MINOR_ALARMHOST_SUBSYSTEM_UPGRADE  0x1061 
-#define MINOR_PLAN_ARM_CFG     0x1062 
-#define MINOR_PHONE_ARM         0x1063 
-#define MINOR_PHONE_STAY_ARM     0x1064 
-#define MINOR_PHONE_QUICK_ARM   0x1065 
-#define MINOR_PHONE_DISARM     0x1066 
-#define MINOR_PHONE_CLEAR_ALARM     0x1067 
-#define MINOR_WHITELIST_CFG     0x1068 
-#define MINOR_TIME_TRIGGER_CFG    0x1069 
-#define MINOR_CAPTRUE_CFG     0x106a 
-#define MINOR_TAMPER_CFG    0x106b 
-#define MINOR_REMOTE_KEYPAD_UPGRADE    0x106c 
-#define MINOR_ONETOUCH_AWAY_ARMING  0x106d 
-#define MINOR_ONETOUCH_STAY_ARMING     0x106e 
-#define MINOR_SINGLE_PARTITION_ARMING_OR_DISARMING  0x106f 
-#define MINOR_CARD_CONFIGURATION   0x1070 
-#define MINOR_CARD_ARMING_OR_DISARMING   0x1071 
-#define MINOR_EXPENDING_NETCENTER_CONFIGURATION    0x1072 
-#define MINOR_NETCARD_CONFIGURATION    0x1073 
-#define MINOR_DDNS_CONFIGURATION      0x1074 
-#define MINOR_RS485BUS_CONFIGURATION    0x1075 
-#define MINOR_RS485BUS_RE_REGISTRATION     0x1076 
-#define MINOR_REMOTE_OPEN_ELECTRIC_LOCK 0x1077 
-#define MINOR_REMOTE_CLOSE_ELECTRIC_LOCK 0x1078 
-#define MINOR_LOCAL_OPEN_ELECTRIC_LOCK 0x1079 
-#define MINOR_LOCAL_CLOSE_ELECTRIC_LOCK 0x107a 
-#define MINOR_OPEN_ALARM_LAMP      0x107b 
-#define MINOR_CLOSE_ALARM_LAMP      0x107c 
-#define MINOR_TEMPORARY_PASSWORD   0x107d 
-#define MINOR_HIDDNS_CONFIG     0x1082 
-#define MINOR_REMOTE_KEYBOARD_UPDATA   0x1083 
-#define MINOR_ZONE_ADD_DETECTOR      0x1084 
-#define MINOR_ZONE_DELETE_DETECTOR    0x1085 
-#define MINOR_QUERY_DETECTOR_SIGNAL   0x1086 
-#define MINOR_QUERY_DETECTOR_BATTERY  0x1087 
-#define MINOR_SET_DETECTOR_GUARD    0x1088 
-#define MINOR_SET_DETECTOR_UNGUARD   0x1089 
-#define MINOR_WIRELESS_CONFIGURATION     0x108a  
-#define MINOR_OPEN_VOICE        0x108b 
-#define MINOR_CLOSE_VOICE       0x108c 
-#define MINOR_ENABLE_FUNCTION_KEY     0x108d 
-#define MINOR_DISABLE_FUNCTION_KEY      0x108e 
-#define MINOR_READ_CARD    0x108f 
-#define MINOR_START_BROADCAST     0x1090 
-#define MINOR_STOP_BROADCAST   0x1091 
-#define MINOR_REMOTE_ZONE_MODULE_UPGRADE   0x1092 
-#define MINOR_NETWORK_MODULE_EXTEND   0x1093 
-#define MINOR_ADD_CONTROLLER 	0x1094 
-#define MINOR_DELETE_CONTORLLER 	0x1095 
-#define MINOR_REMOTE_NETWORKMODULE_UPGRADE    0x1096 
-#define MINOR_WIRELESS_OUTPUT_ADD   0x1097 
-#define MINOR_WIRELESS_OUTPUT_DEL    0x1098 
-#define MINOR_WIRELESS_REPEATER_ADD   0x1099 
-#define MINOR_WIRELESS_REPEATER_DEL    0x109a 
-#define MINOR_PHONELIST_CFG     0x109b 
-#define MINOR_RF_SIGNAL_CHECK   0x109c 
-#define MINOR_USB_UPGRADE   0x109d 
-#define MINOR_DOOR_TIME_REMINDER_CFG 0x109f 
-#define MINOR_WIRELESS_SIREN_ADD    0x1100 
-#define MINOR_WIRELESS_SIREN_DEL    0x1101 
-#define MINOR_OUT_SCALE_OPEN    0x1102 
-#define MINOR_OUT_SCALE_CLOSE    0x1103 
-#define  MINOR_ALARMHOST_4G_MODULS_START  0x1108  
-#define  MINOR_ALARMHOST_4G_MODULS_STOP  0x1109  
-#define  MINOR_EZVIZ_CLOUD_START   0x1110   
-#define  MINOR_EZVIZ_CLOUD_STOP    0x1111   
-#define  MINOR_SIPUA_GRID_START    0x1112   
-#define  MINOR_SIPUA_GRID_STOP    0x1113    
-#define MINOR_MODBUS_FILE_DOWNLOAD   0x1114  
-#define MINOR_MODBUS_FILE_UPLOAD      0x1115  
-#define MINOR_RS485_DLL_FILE_DOWNLOAD   0x1116  
-#define MINOR_RS485_DLL_FLIE_UPLOAD   0x1117  
-#define MINOR_TX1_REBOOT              0x1118   
-#define MINOR_LORA_PARAM                              0x1119   
-#define MINOR_GB28181_PLATE_CFG_PARAM                   0x111a    
-#define MINOR_GB28181_SERVER_START                0x111b    
-#define MINOR_GB28181_SERVER_STOP                0x111c    
-#define MINOR_WEB_AUTHENTICATION                 0x111d    
-#define MINOR_SADP_ENABLED                 0x111e    
-#define MINOR_HTTPS_ENABLED                 0x111f    
-#define MINOR_EZVIZ_PARAM_CFG               0x1120    
-#define MINOR_SET_MOTION_DETECTION_CFG      0x1121    
-#define MINOR_GET_MOTION_DETECTION_CFG      0x1122    
-#define MINOR_SET_SHELTER_ALARM_CFG         0x1123    
-#define MINOR_GET_SHELTER_ALARM_CFG         0x1124    
-#define MINOR_SET_VIDEO_LOSS_CFG            0x1125    
-#define MINOR_GET_VIDEO_LOSS_CFG            0x1126    
-#define MINOR_SET_ABNORMAL_CFG              0x1127    
-#define MINOR_GET_ABNORMAL_CFG              0x1128    
-#define MINOR_SET_ALARM_LINKAGE_CFG         0x1129    
-#define MINOR_GET_ALARM_LINKAGE_CFG         0x112a    
-#define MINOR_SET_NETWORK_CFG               0x112b    
-#define MINOR_GET_NETWORK_CFG               0x112c    
-#define MINOR_SET_VIDEO_MASK_CFG            0x112d    
-#define MINOR_GET_VIDEO_MASK_CFG            0x112e    
-#define MINOR_LOCAL_ADD_CAR_INFO            0x2001  
-#define MINOR_LOCAL_MOD_CAR_INFO            0x2002  
-#define MINOR_LOCAL_DEL_CAR_INFO            0x2003  
-#define MINOR_LOCAL_FIND_CAR_INFO           0x2004  
-#define MINOR_LOCAL_ADD_MONITOR_INFO        0x2005  
-#define MINOR_LOCAL_MOD_MONITOR_INFO        0x2006  
-#define MINOR_LOCAL_DEL_MONITOR_INFO        0x2007  
-#define MINOR_LOCAL_FIND_MONITOR_INFO       0x2008  
-#define MINOR_LOCAL_FIND_NORMAL_PASS_INFO   0x2009  
-#define MINOR_LOCAL_FIND_ABNORMAL_PASS_INFO 0x200a  
-#define MINOR_LOCAL_FIND_PEDESTRIAN_PASS_INFO   0x200b  
-#define MINOR_LOCAL_PIC_PREVIEW             0x200c  
-#define MINOR_LOCAL_SET_GATE_PARM_CFG       0x200d  
-#define MINOR_LOCAL_GET_GATE_PARM_CFG       0x200e  
-#define MINOR_LOCAL_SET_DATAUPLOAD_PARM_CFG 0x200f  
-#define MINOR_LOCAL_GET_DATAUPLOAD_PARM_CFG 0x2010  
-#define MINOR_LOCAL_DEVICE_CONTROL                         0x2011   
-#define MINOR_LOCAL_ADD_EXTERNAL_DEVICE_INFO               0x2012   
-#define MINOR_LOCAL_MOD_EXTERNAL_DEVICE_INFO               0x2013   
-#define MINOR_LOCAL_DEL_EXTERNAL_DEVICE_INFO               0x2014   
-#define MINOR_LOCAL_FIND_EXTERNAL_DEVICE_INFO              0x2015   
-#define MINOR_LOCAL_ADD_CHARGE_RULE                        0x2016   
-#define MINOR_LOCAL_MOD_CHARGE_RULE                        0x2017   
-#define MINOR_LOCAL_DEL_CHARGE_RULE                        0x2018   
-#define MINOR_LOCAL_FIND_CHARGE_RULE                       0x2019   
-#define MINOR_LOCAL_COUNT_NORMAL_CURRENTINFO               0x2020   
-#define MINOR_LOCAL_EXPORT_NORMAL_CURRENTINFO_REPORT       0x2021   
-#define MINOR_LOCAL_COUNT_ABNORMAL_CURRENTINFO             0x2022   
-#define MINOR_LOCAL_EXPORT_ABNORMAL_CURRENTINFO_REPORT     0x2023   
-#define MINOR_LOCAL_COUNT_PEDESTRIAN_CURRENTINFO           0x2024   
-#define MINOR_LOCAL_EXPORT_PEDESTRIAN_CURRENTINFO_REPORT   0x2025   
-#define MINOR_LOCAL_FIND_CAR_CHARGEINFO                    0x2026   
-#define MINOR_LOCAL_COUNT_CAR_CHARGEINFO                   0x2027   
-#define MINOR_LOCAL_EXPORT_CAR_CHARGEINFO_REPORT           0x2028   
-#define MINOR_LOCAL_FIND_SHIFTINFO                         0x2029   
-#define MINOR_LOCAL_FIND_CARDINFO                          0x2030   
-#define MINOR_LOCAL_ADD_RELIEF_RULE                        0x2031   
-#define MINOR_LOCAL_MOD_RELIEF_RULE                        0x2032   
-#define MINOR_LOCAL_DEL_RELIEF_RULE                        0x2033   
-#define MINOR_LOCAL_FIND_RELIEF_RULE                       0x2034   
-#define MINOR_LOCAL_GET_ENDETCFG                           0x2035   
-#define MINOR_LOCAL_SET_ENDETCFG                           0x2036   
-#define MINOR_LOCAL_SET_ENDEV_ISSUEDDATA                   0x2037   
-#define MINOR_LOCAL_DEL_ENDEV_ISSUEDDATA                   0x2038   
-#define MINOR_REMOTE_DEVICE_CONTROL                        0x2101   
-#define MINOR_REMOTE_SET_GATE_PARM_CFG                     0x2102   
-#define MINOR_REMOTE_GET_GATE_PARM_CFG                     0x2103   
-#define MINOR_REMOTE_SET_DATAUPLOAD_PARM_CFG               0x2104   
-#define MINOR_REMOTE_GET_DATAUPLOAD_PARM_CFG               0x2105   
-#define MINOR_REMOTE_GET_BASE_INFO                         0x2106   
-#define MINOR_REMOTE_GET_OVERLAP_CFG                       0x2107   
-#define MINOR_REMOTE_SET_OVERLAP_CFG                       0x2108   
-#define MINOR_REMOTE_GET_ROAD_INFO                         0x2109   
-#define MINOR_REMOTE_START_TRANSCHAN                       0x210a   
-#define MINOR_REMOTE_GET_ECTWORKSTATE                      0x210b   
-#define MINOR_REMOTE_GET_ECTCHANINFO                       0x210c   
-#define MINOR_REMOTE_ADD_EXTERNAL_DEVICE_INFO              0x210d   
-#define MINOR_REMOTE_MOD_EXTERNAL_DEVICE_INFO              0x210e   
-#define MINOR_REMOTE_GET_ENDETCFG                          0x210f   
-#define MINOR_REMOTE_SET_ENDETCFG                          0x2110   
-#define MINOR_REMOTE_ENDEV_ISSUEDDATA                      0x2111   
-#define MINOR_REMOTE_DEL_ENDEV_ISSUEDDATA                  0x2112   
-#define MINOR_REMOTE_ON_CTRL_LAMP           0x2115  
-#define MINOR_REMOTE_OFF_CTRL_LAMP          0x2116  
-#define MINOR_SET_VOICE_LEVEL_PARAM         0x2117  
-#define MINOR_SET_VOICE_INTERCOM_PARAM      0x2118  
-#define MINOR_SET_INTELLIGENT_PARAM         0x2119  
-#define MINOR_LOCAL_SET_RAID_SPEED          0x211a  
-#define MINOR_REMOTE_SET_RAID_SPEED         0x211b 
-#define MINOR_REMOTE_CREATE_STORAGE_POOL    0x211c   
-#define MINOR_REMOTE_DEL_STORAGE_POOL       0x211d    
-#define MINOR_REMOTE_DEL_PIC                0x2120   
-#define MINOR_REMOTE_DEL_RECORD             0x2121   
-#define MINOR_REMOTE_CLOUD_ENABLE           0x2123  
-#define MINOR_REMOTE_CLOUD_DISABLE          0x2124  
-#define MINOR_REMOTE_CLOUD_MODIFY_PARAM     0x2125  
-#define MINOR_REMOTE_CLOUD_MODIFY_VOLUME    0x2126  
-#define MINOR_REMOTE_GET_GB28181_SERVICE_PARAM    0x2127  
-#define MINOR_REMOTE_SET_GB28181_SERVICE_PARAM    0x2128  
-#define MINOR_LOCAL_GET_GB28181_SERVICE_PARAM     0x2129  
-#define MINOR_LOCAL_SET_GB28181_SERVICE_PARAM     0x212a  
-#define MINOR_REMOTE_SET_SIP_SERVER               0x212b  
-#define MINOR_LOCAL_SET_SIP_SERVER                0x212c  
-#define MINOR_LOCAL_BLACKWHITEFILE_OUTPUT         0x212d  
-#define MINOR_LOCAL_BLACKWHITEFILE_INPUT          0x212e  
-#define MINOR_REMOTE_BALCKWHITECFGFILE_OUTPUT     0x212f  
-#define MINOR_REMOTE_BALCKWHITECFGFILE_INPUT      0x2130  
-#define MINOR_REMOTE_CREATE_MOD_VIEWLIB_SPACE        0x2200    
-#define MINOR_REMOTE_DELETE_VIEWLIB_FILE            0x2201    
-#define MINOR_REMOTE_DOWNLOAD_VIEWLIB_FILE            0x2202    
-#define MINOR_REMOTE_UPLOAD_VIEWLIB_FILE            0x2203    
-#define MINOR_LOCAL_CREATE_MOD_VIEWLIB_SPACE        0x2204    
-#define MINOR_LOCAL_SET_DEVICE_ACTIVE   0x3000  
-#define MINOR_REMOTE_SET_DEVICE_ACTIVE  0x3001  
-#define MINOR_LOCAL_PARA_FACTORY_DEFAULT    0x3002  
-#define MINOR_REMOTE_PARA_FACTORY_DEFAULT   0x3003  
-#define MINOR_UPLAOD_STATIC_MATERIAL                0x2401  
-#define MINOR_UPLOAD_DYNAMIC_MATERIAL               0x2402  
-#define MINOR_DELETE_MATERIAL                       0x2403  
-#define MINOR_DOWNLOAD_STATIC_MATERIAL              0x2404  
-#define MINOR_COVER_STATIC_MATERIAL                 0x2405  
-#define MINOR_APPROVE_MATERIAL                      0x2406  
-#define MINOR_UPLAOD_PROGRAM                        0x2407  
-#define MINOR_DOWNLOAD_PROGRAM                      0x2408  
-#define MINOR_DELETE_PROGRAM                        0x2409  
-#define MINOR_MODIFY_PROGRAM                        0x240a  
-#define MINOR_APPROVE_PRAGRAM                       0x240b  
-#define MINOR_UPLAOD_SCHEDULE                       0x240c  
-#define MINOR_DOWNLOAD_SCHEDULE                     0x240d  
-#define MINOR_DELETE_SCHEDULE                       0x240e  
-#define MINOR_MODIFY_SCHEDULE                       0x240f  
-#define MINOR_RELEASE_SCHEDULE                      0x2410  
-#define MINOR_ADD_TERMINAL                          0x2411  
-#define MINOR_DELETE_TERMINAL                       0x2412  
-#define MINOR_MODIFY_TERMIANL_PARAM                 0x2413  
-#define MINOR_MODIFY_TERMIANL_PLAY_PARAM            0x2414  
-#define MINOR_ADD_TERMIANL_GROUP                    0x2415  
-#define MINOR_MODIFY_TERMINAL_GROUP_PARAM           0x2416  
-#define MINOR_DELETE_TERMIANL_GROUP                 0x2417  
-#define MINOR_TERMINAL_PLAY_CONTROL                 0x2418  
-#define MINOR_TERMINAL_ON_OFF_LINE                  0x2419  
-#define MINOR_SET_SWITCH_PLAN                       0x241a  
-#define MINOR_SET_VOLUME_PLAN                       0x241b  
-#define MINOR_TERMINAL_SCREENSHOT                   0x241c  
-#define MINOR_SYSTEM_TIME_CFG                       0x241d   
-#define MINOR_ADD_USER_CFG                          0x241e    
-#define MINOR_DEL_USER_CFG                          0x241f    
-#define MINOR_REMOTE_MANAGE_HDD                     0x2420   
-#define MINOR_TERMINAL_UPDATE_START                 0x2421   
-#define MINOR_SVR_RESTORE_DEFAULT_PARAM             0x2422   
-#define MINOR_SVR_REMOTE_RESTORE_FACTORY            0x2423   
-#define MINOR_SVR_REMOTE_REBOOT                     0x2424   
-#define MINOR_SVR_MODIFY_NETWORK_PARAM              0x2425   
-#define MINOR_SVR_SOFTWARE_UPGRADE                  0x2426     
-#define MINOR_BACKUP_DATA                           0xc41  
-#define MINOR_TRANSFER_DATA                         0xc42  
-#define MINOR_RESTORE_DATA                          0xc43  
-#define MINOR_SET_INPUT_PLAN                        0xc44 
-#define MINOR_TERMINAL_ADB                          0xc45
-#define MINOR_TERMINAL_VOLUME                       0xc46  
-#define MINOR_TERMINAL_LOGO                         0xc47 
-#define MINOR_TERMINAL_DEFAULT_SCHEDULE             0xc48 
-#define MINOR_TERMINAL_PASSWORD                     0xc49 
-#define MINOR_TERMINAL_IP                           0xc4a
-#define MINOR_TERMINAL_RELATE_IPC                   0xc4b
-#define MINOR_TERMINAL_SERVER                       0xc4c
-#define MINOR_TERMINAL_SADP                         0xc4d
-#define MINOR_TERMINAL_TIMEZONE                     0xc4e
-#define MINOR_TERMINAL_TEMP_PROTECT                 0xc4f
-#define MINOR_ADD_ORGANIZATION                      0xc50 
-#define MINOR_DELETE_ORGANIZATION                   0xc51 
-#define MINOR_MODIFY_ORGANIZATION                   0xc52 
-#define MINOR_WEATHER_FACTORY                       0xc53 
-#define MINOR_SADP_ENABLE                           0xc54 
-#define MINOR_SSH_ENABLE                            0xc55 
-#define MINOR_MODIFY_MATERIAL                       0xc56 
-#define MINOR_INSERT_CHARACTER                      0xc57 
-#define MINOR_TERMINAL_BACKLIGHT                    0xc58 
-#define MINOR_DOWNLOAD_MATERIAL_THUMBNAIL           0xc59 
-#define MINOR_UPLOAD_PROGRAM_THUMBNAIL              0xc5a
-#define MINOR_TDOWNLOAD_PROGRAM_THUMBNAIL           0xc5b
-#define MINOR_BATCH_DELETE_SCHEDULE_PLAN            0xc5c
-#define MINOR_REPUBLISH                             0xc5d
-#define MINOR_CLEAR_TERMINAL_PLAY_INFO              0xc5e
-#define MINOR_GET_TERMINAL_RESOLUTION               0xc5f
-#define MINOR_SET_TERMINAL_RESOLUTION               0xc60
-#define MINOR_GET_BATCH_TERMINAL_UPGRATE_PROGRESS   0xc61
-#define MINOR_GET_BATCH_PROGRESS                    0xc62
-#define MINOR_GET_TEMPLATE                          0xc64
-#define MINOR_INIT_TEMPLATE                         0xc65
-#define MINOR_GET_TERMINAL_NTP_SERVERS              0xc66
-#define MINOR_SET_TERMINAL_NTP_SERVERS              0xc67
-#define MINOR_GET_RELEASE_DETAILS                   0xc68
-#define MINOR_UPLOAD_TEMPLATE_THUMBNAIL             0xc69
-#define MINOR_DOWNLOAD_TEMPLATE_THUMBNAIL           0xc6a
-#define MINOR_ADD_TEMPLATE                          0xc6b
-#define MINOR_DELETE_TEMPLATE                       0xc6c
-#define MINOR_MODIFY_TEMPLATE                       0xc6d
-#define MINOR_ADD_SCHEDULE_PLAN                     0xc6e
-#define MINOR_MODIFY_SCHEDULE_PLAN                  0xc6f
-#define MINOR_CANCEL_SCHEDULE_RELEASE               0xc70
-#define MINOR_GET_SCHEDULE                          0xc71
-#define MINOR_ADD_INSERT                            0xc72
-#define MINOR_CANCEL_INSERT                         0xc73
-#define MINOR_SWITCH_LANGUAGE                       0xc74
-#define MINOR_SET_ADMIN_INITIAL_PASSWORD            0xc75
-#define MINOR_MODIFY_PORT                           0xc76
-#define MINOR_MODIFY_STORAGE_PATH                   0xc77
-#define MINOR_EXIT_PROGRAM                          0xc78
-#define MINOR_MODULE_STARTUP_SUCCESS                0xc79
-#define MINOR_APPROVE_SCHEDULE                      0xc80  
-#define MINOR_GENERAL_DATA_SEND                     0xc81  
-#define MINOR_REMOTE_CONFERENCE_CONFIG             0x2501  
-#define MINOR_REMOTE_TERMINAL_CONFIG               0x2502  
-#define MINOR_REMOTE_GROUP_CONFIG                  0x2503  
-#define MINOR_REMOTE_CONFERENCE_CTRL               0x2504  
-#define MINOR_REMOTE_TERMINAL_CTRL                 0x2505  
-#define MINOR_LOCAL_RESET_LOGIN_PASSWORD           0x2600    
-#define MINOR_REMOTE_RESET_LOGIN_PASSWORD          0x2601    
-#define MINOR_LOCAL_FACE_BASE_CREATE        0x2602    
-#define MINOR_REMOTE_FACE_BASE_CREATE       0x2603    
-#define MINOR_LOCAL_FACE_BASE_MODIFY        0x2604    
-#define MINOR_REMOTE_FACE_BASE_MODIFY      0x2605    
-#define MINOR_LOCAL_FACE_BASE_DELETE        0x2606    
-#define MINOR_REMOTE_FACE_BASE_DELETE       0x2607    
-#define MINOR_LOCAL_FACE_DATA_APPEND        0x2608    
-#define MINOR_REMOTE_FACE_DATA_APPEND       0x2609    
-#define MINOR_LOCAL_FACE_DATA_SEARCH       0x2610    
-#define MINOR_REMOTE_FACE_DATA_SEARCH       0x2611    
-#define MINOR_LOCAL_FACE_DATA_ANALYSIS        0x2612    
-#define MINOR_REMOTE_FACE_DATA_ANALYSIS       0x2613    
-#define MINOR_LOCAL_FACE_DATA_EDIT            0x2614    
-#define MINOR_REMOTE_FACE_DATA_EDIT           0x2615    
-#define MINOR_LOCAL_FACE_DATA_DELETE          0x2616    
-#define MINOR_REMOTE_FACE_DATA_DELET          0x2617    
-#define MINOR_LOCAL_VCA_ANALYSIS_CFG          0x2618    
-#define MINOR_REMOTE_VCA_ANALYSIS_CFG         0x2619    
-#define MINOR_LOCAL_FACE_BASE_IMPORT          0x261a    
-#define MINOR_LOCAL_FACE_BASE_EXPORT          0x261b    
-#define MINOR_REMOTE_CLUSTER_MODE_CONFIG      0x261c    
-#define MINOR_LOCAL_CLUSTER_MODE_CONFIG       0x261d    
-#define MINOR_REMOTE_CLUSTER_NETWORK_CONFIG   0x261e    
-#define MINOR_LOCAL_CLUSTER_NETWORK_CONFIG    0x261f    
-#define MINOR_REMOTE_CLUSTER_ADD_DEVICE       0x2620    
-#define MINOR_LOCAL_CLUSTER_ADD_DEVICE        0x2621    
-#define MINOR_REMOTE_CLUSTER_DEL_DEVICE       0x2622    
-#define MINOR_LOCAL_CLUSTER_DEL_DEVICE        0x2623    
-#define MINOR_REMOTE_HFPD_CFG                 0x2624  
-#define MINOR_REMOTE_FACE_CONTRAST_TASK       0x2625 
-#define MINOR_REMOTE_LFPD_CFG                 0x2626  
-#define MINOR_REMOTE_IOTCFGFILE_INPUT         0x2627
-#define MINOR_REMOTE_IOTCFGFILE_OUTPUT        0x2628
-#define MINOR_LOCAL_IOT_ADD                   0x2629
-#define MINOR_REMOTE_IOT_ADD                  0x262a
-#define MINOR_LOCAL_IOT_DEL                   0x262b
-#define MINOR_REMOTE_IOT_DEL                  0x262c
-#define MINOR_LOCAL_IOT_SET                   0x262d
-#define MINOR_REMOTE_IOT_SET                  0x262e
-#define MINOR_LOCAL_IOTCFGFILE_INPUT          0x262f 
-#define MINOR_LOCAL_IOTCFGFILE_OUTPUT         0x2630
-#define MINOR_LOCAL_VAD_CFG                   0x2631  
-#define MINOR_REMOTE_VAD_CFG                  0x2632  
-#define MINOR_LOCAL_ADDRESS_FILTER_CONFIG     0x2633    
-#define MINOR_REMOTE_ADDRESS_FILTER_CONFIG    0x2634    
-#define MINOR_LOCAL_POE_CFG                     0x2635    
-#define MINOR_REMOTE_POE_CFG                    0x2636    
-#define MINOR_LOCAL_RESET_CHANNEL_PASSWORD        0x2637    
-#define MINOR_REMOTE_RESET_CHANNEL_PASSWORD       0x2638    
-#define MINOR_LOCAL_SSD_UPGRADE_START                   0x2639    
-#define MINOR_LOCAL_SSD_UPGRADE_STOP                    0x2640    
-#define MINOR_REMOTE_SSD_UPGRADE_START                   0x2641    
-#define MINOR_REMOTE_SSD_UPGRADE_STOP                    0x2642    
-#define MINOR_LOCAL_SSD_FORMAT_START                   0x2643    
-#define MINOR_LOCAL_SSD_FORMAT_STOP                    0x2644    
-#define MINOR_REMOTE_SSD_FORMAT_START                   0x2645    
-#define MINOR_REMOTE_SSD_FORMAT_STOP                    0x2646    
-#define MINOR_LOCAL_AUTO_SWITCH_CONFIG                  0x2647    
-#define MINOR_REMOTE_AUTO_SWITCH_CONFIG                 0x2648    
-#define MINOR_LOCAL_SSD_INITIALIZATION_START            0x264a    
-#define MINOR_LOCAL_SSD_INITIALIZATION_END              0x264b    
-#define MINOR_REMOTE_SSD_INITIALIZATION_START           0x264c    
-#define MINOR_REMOTE_SSD_INITIALIZATION_END             0x264d    
-#define MINOR_REMOTE_AI_MODEL_ADD    0x2650
-#define MINOR_REMOTE_AI_MODEL_QUERY    0x2651
-#define MINOR_REMOTE_AI_MODEL_DELETE    0x2652
-#define MINOR_REMOTE_AI_MODEL_UPDATE    0x2653
-#define MINOR_REMOTE_AI_PICTURE_POLLING_TASK_ADD    0x2654
-#define MINOR_REMOTE_AI_PICTURE_POLLING_TASK_QUERY    0x2655
-#define MINOR_REMOTE_AI_PICTURE_POLLING_TASK_DELETE    0x2656
-#define MINOR_REMOTE_AI_PICTURE_POLLING_TASK_MODIFY    0x2657
-#define MINOR_REMOTE_AI_VIDEO_POLLING_TASK_ADD    0x2658
-#define MINOR_REMOTE_AI_VIDEO_POLLING_TASK_QUERY    0x2659
-#define MINOR_REMOTE_AI_VIDEO_POLLING_TASK_DELETE    0x265A
-#define MINOR_REMOTE_AI_VIDEO_POLLING_TASK_MODIFY    0x265B
-#define MINOR_REMOTE_AI_PICTURE_TASK_ADD    0x265C
-#define MINOR_REMOTE_AI_PICTURE_TASK_QUERY    0x265D
-#define MINOR_REMOTE_AI_PICTURE_TASK_DELETE    0x265E
-#define MINOR_REMOTE_AI_PICTURE_TASK_MODIFY    0x265F
-#define MINOR_REMOTE_AI_VIDEO_TASK_ADD    0x2660
-#define MINOR_REMOTE_AI_VIDEO_TASK_QUERY    0x2661
-#define MINOR_REMOTE_AI_VIDEO_TASK_DELETE    0x2662
-#define MINOR_REMOTE_AI_VIDEO_TASK_MODIFY    0x2663
-#define MINOR_REMOTE_AI_RULE_CONFIG   0x2664
-#define MINOR_STOP_SOUND                0x2700   
-#define MINOR_SELF_CHECK                0x2701   
-#define MINOR_DUTY_CHECK                0x2702   
-#define MINOR_SWITCH_SIMPLE_WORKMODE    0x2703   
-#define MINOR_SWITCH_NORMAL_WORKMODE    0x2704   
-#define MAJOR_INFORMATION               0x4     
-#define MINOR_HDD_INFO                  0xa1 
-#define MINOR_SMART_INFO                0xa2 
-#define MINOR_REC_START                 0xa3 
-#define MINOR_REC_STOP                  0xa4 
-#define MINOR_REC_OVERDUE                0xa5 
-#define MINOR_LINK_START                0xa6 
-#define MINOR_LINK_STOP                    0xa7 
-#define MINOR_NET_DISK_INFO                0xa8 
-#define MINOR_RAID_INFO                 0xa9 
-#define MINOR_RUN_STATUS_INFO           0xaa 
-#define MINOR_SPARE_START_BACKUP        0xab   
-#define MINOR_SPARE_STOP_BACKUP            0xac   
-#define MINOR_SPARE_CLIENT_INFO         0xad   
-#define MINOR_ANR_RECORD_START            0xae   
-#define MINOR_ANR_RECORD_END            0xaf   
-#define MINOR_ANR_ADD_TIME_QUANTUM        0xb0    
-#define MINOR_ANR_DEL_TIME_QUANTUM        0xb1    
-#define MINOR_PIC_REC_START             0xb3  
-#define MINOR_PIC_REC_STOP              0xb4  
-#define MINOR_PIC_REC_OVERDUE           0xb5  
-#define  MINOR_CLIENT_LOGIN             0xb6   
-#define  MINOR_CLIENT_RELOGIN            0xb7   
-#define  MINOR_CLIENT_LOGOUT            0xb8   
-#define  MINOR_CLIENT_SYNC_START        0xb9   
-#define  MINOR_CLIENT_SYNC_STOP            0xba   
-#define  MINOR_CLIENT_SYNC_SUCC            0xbb   
-#define  MINOR_CLIENT_SYNC_EXCP            0xbc   
-#define  MINOR_GLOBAL_RECORD_ERR_INFO   0xbd   
-#define  MINOR_BUFFER_STATE             0xbe   
-#define  MINOR_DISK_ERRORINFO_V2        0xbf   
-#define  MINOR_CS_DATA_EXPIRED          0xc0   
-#define  MINOR_PLAT_INFO                0xc1   
-#define  MINOR_DIAL_STAT                0xc2   
-#define MINOR_UNLOCK_RECORD             0xc3   
-#define MINOR_VIS_ALARM                 0xc4   
-#define MINOR_TALK_RECORD               0xc5   
-#define MINOR_ACCESSORIES_MESSAGE       0xc6 
-#define MINOR_KMS_EXPAMSION_DISK_INSERT 0xc7
-#define MINOR_IPC_CONNECT               0xc8
-#define MINOR_INTELLIGENT_BOARD_STATUS  0xc9
-#define MINOR_IPC_CONNECT_STATUS        0xca
-#define MINOR_AUTO_TIMING               0xcb  
-#define MINOR_EZVIZ_OPERATION           0xcc   
-#define MINOR_CLUSTER_DEVICE_ONLINE     0xcd   
-#define MINOR_CLUSTER_MGR_SERVICE_STARTUP 0xce   
-#define MINOR_CLUSTER_BUSINESS_TRANSFER 0xcf   
-#define MINOR_CLUSTER_STATUS            0xd0   
-#define MINOR_CLUSTER_CS_STATUS            0xd1   
-#define MINOR_CLUSTER_CM_STATUS            0xd2   
-#define MINOR_VOICE_START_DETECTED         0xd3  
-#define MINOR_VOICE_END_DETECTED           0xd4  
-#define MINOR_DOUBLE_VERIFICATION_PASS     0xd5  
-#define MINOR_WIRELESS_RUNNING_STATUS       0xd6  
-#define MINOR_SYSTEM_DATA_SYNCHRONIZATION       0xd7  
-#define MINOR_HD_FORMAT_START   0xd8  
-#define MINOR_HD_FORMAT_STOP   0xd9  
-#define MINOR_LIVE_DETECT_OPEN         0x400    
-#define MINOR_LIVE_DETECT_CLOSE        0x401    
-#define MINOR_CLEAR_DATA_COLLECTION    0x402    
-#define MINOR_DELETE_DATA_COLLECTION   0x403    
-#define MINOR_EXPORT_DATA_COLLECTION   0x404    
-#define MINOR_CARD_LEN_CONFIG          0x405    
-#define MINOR_DATA_BASE_INIT_FAILED   0x406    
-#define MINOR_DATA_BASE_PATCH_UPDATE   0x407    
-#define MINOR_PSAM_CARD_INSERT         0x408    
-#define MINOR_PSAM_CARD_REMOVE         0x409    
-#define MINOR_HARD_FAULT_REBOOT                0x40a  
-#define MINOR_PSAM_CARD_OCP                    0x40b  
-#define MINOR_STACK_OVERFLOW                   0x40c      
-#define MINOR_PARM_CFG                         0x40d  
-#define MAJOR_EVENT                             0x5     
-#define MINOR_LEGAL_CARD_PASS                   0x01    
-#define MINOR_CARD_AND_PSW_PASS                 0x02    
-#define MINOR_CARD_AND_PSW_FAIL                 0x03    
-#define MINOR_CARD_AND_PSW_TIMEOUT              0x04    
-#define MINOR_CARD_AND_PSW_OVER_TIME            0x05    
-#define MINOR_CARD_NO_RIGHT                     0x06    
-#define MINOR_CARD_INVALID_PERIOD               0x07    
-#define MINOR_CARD_OUT_OF_DATE                  0x08    
-#define MINOR_INVALID_CARD                      0x09    
-#define MINOR_ANTI_SNEAK_FAIL                   0x0a    
-#define MINOR_INTERLOCK_DOOR_NOT_CLOSE          0x0b    
-#define MINOR_NOT_BELONG_MULTI_GROUP            0x0c    
-#define MINOR_INVALID_MULTI_VERIFY_PERIOD       0x0d    
-#define MINOR_MULTI_VERIFY_SUPER_RIGHT_FAIL     0x0e    
-#define MINOR_MULTI_VERIFY_REMOTE_RIGHT_FAIL    0x0f    
-#define MINOR_MULTI_VERIFY_SUCCESS              0x10    
-#define MINOR_LEADER_CARD_OPEN_BEGIN            0x11    
-#define MINOR_LEADER_CARD_OPEN_END              0x12    
-#define MINOR_ALWAYS_OPEN_BEGIN                 0x13    
-#define MINOR_ALWAYS_OPEN_END                   0x14    
-#define MINOR_LOCK_OPEN                         0x15    
-#define MINOR_LOCK_CLOSE                        0x16    
-#define MINOR_DOOR_BUTTON_PRESS                 0x17    
-#define MINOR_DOOR_BUTTON_RELEASE               0x18    
-#define MINOR_DOOR_OPEN_NORMAL                  0x19    
-#define MINOR_DOOR_CLOSE_NORMAL                 0x1a    
-#define MINOR_DOOR_OPEN_ABNORMAL                0x1b    
-#define MINOR_DOOR_OPEN_TIMEOUT                 0x1c    
-#define MINOR_ALARMOUT_ON                       0x1d    
-#define MINOR_ALARMOUT_OFF                      0x1e    
-#define MINOR_ALWAYS_CLOSE_BEGIN                0x1f    
-#define MINOR_ALWAYS_CLOSE_END                  0x20    
-#define MINOR_MULTI_VERIFY_NEED_REMOTE_OPEN     0x21    
-#define MINOR_MULTI_VERIFY_SUPERPASSWD_VERIFY_SUCCESS  0x22  
-#define MINOR_MULTI_VERIFY_REPEAT_VERIFY        0x23    
-#define MINOR_MULTI_VERIFY_TIMEOUT               0x24    
-#define MINOR_DOORBELL_RINGING                  0x25    
-#define MINOR_FINGERPRINT_COMPARE_PASS          0x26    
-#define MINOR_FINGERPRINT_COMPARE_FAIL          0x27    
-#define MINOR_CARD_FINGERPRINT_VERIFY_PASS              0x28    
-#define MINOR_CARD_FINGERPRINT_VERIFY_FAIL              0x29    
-#define MINOR_CARD_FINGERPRINT_VERIFY_TIMEOUT           0x2a    
-#define MINOR_CARD_FINGERPRINT_PASSWD_VERIFY_PASS       0x2b    
-#define MINOR_CARD_FINGERPRINT_PASSWD_VERIFY_FAIL       0x2c    
-#define MINOR_CARD_FINGERPRINT_PASSWD_VERIFY_TIMEOUT    0x2d    
-#define MINOR_FINGERPRINT_PASSWD_VERIFY_PASS            0x2e    
-#define MINOR_FINGERPRINT_PASSWD_VERIFY_FAIL            0x2f    
-#define MINOR_FINGERPRINT_PASSWD_VERIFY_TIMEOUT         0x30    
-#define MINOR_FINGERPRINT_INEXISTENCE                   0x31    
-#define MINOR_CARD_PLATFORM_VERIFY                      0x32    
-#define MINOR_CALL_CENTER                               0x33    
-#define MINOR_FIRE_RELAY_TURN_ON_DOOR_ALWAYS_OPEN       0x34    
-#define MINOR_FIRE_RELAY_RECOVER_DOOR_RECOVER_NORMAL    0x35   
-#define MINOR_FACE_AND_FP_VERIFY_PASS                   0x36    
-#define MINOR_FACE_AND_FP_VERIFY_FAIL                   0x37    
-#define MINOR_FACE_AND_FP_VERIFY_TIMEOUT                0x38    
-#define MINOR_FACE_AND_PW_VERIFY_PASS                   0x39    
-#define MINOR_FACE_AND_PW_VERIFY_FAIL                   0x3a    
-#define MINOR_FACE_AND_PW_VERIFY_TIMEOUT                0x3b    
-#define MINOR_FACE_AND_CARD_VERIFY_PASS                 0x3c    
-#define MINOR_FACE_AND_CARD_VERIFY_FAIL                 0x3d    
-#define MINOR_FACE_AND_CARD_VERIFY_TIMEOUT              0x3e    
-#define MINOR_FACE_AND_PW_AND_FP_VERIFY_PASS            0x3f    
-#define MINOR_FACE_AND_PW_AND_FP_VERIFY_FAIL            0x40    
-#define MINOR_FACE_AND_PW_AND_FP_VERIFY_TIMEOUT         0x41    
-#define MINOR_FACE_CARD_AND_FP_VERIFY_PASS              0x42    
-#define MINOR_FACE_CARD_AND_FP_VERIFY_FAIL              0x43    
-#define MINOR_FACE_CARD_AND_FP_VERIFY_TIMEOUT           0x44    
-#define MINOR_EMPLOYEENO_AND_FP_VERIFY_PASS             0x45    
-#define MINOR_EMPLOYEENO_AND_FP_VERIFY_FAIL             0x46    
-#define MINOR_EMPLOYEENO_AND_FP_VERIFY_TIMEOUT          0x47    
-#define MINOR_EMPLOYEENO_AND_FP_AND_PW_VERIFY_PASS      0x48    
-#define MINOR_EMPLOYEENO_AND_FP_AND_PW_VERIFY_FAIL      0x49    
-#define MINOR_EMPLOYEENO_AND_FP_AND_PW_VERIFY_TIMEOUT   0x4a    
-#define MINOR_FACE_VERIFY_PASS                          0x4b    
-#define MINOR_FACE_VERIFY_FAIL                          0x4c    
-#define MINOR_EMPLOYEENO_AND_FACE_VERIFY_PASS           0x4d    
-#define MINOR_EMPLOYEENO_AND_FACE_VERIFY_FAIL           0x4e    
-#define MINOR_EMPLOYEENO_AND_FACE_VERIFY_TIMEOUT        0x4f    
-#define MINOR_FACE_RECOGNIZE_FAIL                       0x50    
-#define MINOR_FIRSTCARD_AUTHORIZE_BEGIN                    0x51    
-#define MINOR_FIRSTCARD_AUTHORIZE_END                    0x52    
-#define MINOR_DOORLOCK_INPUT_SHORT_CIRCUIT                0x53    
-#define MINOR_DOORLOCK_INPUT_BROKEN_CIRCUIT                0x54    
-#define MINOR_DOORLOCK_INPUT_EXCEPTION                    0x55    
-#define MINOR_DOORCONTACT_INPUT_SHORT_CIRCUIT            0x56    
-#define MINOR_DOORCONTACT_INPUT_BROKEN_CIRCUIT            0x57    
-#define MINOR_DOORCONTACT_INPUT_EXCEPTION                0x58    
-#define MINOR_OPENBUTTON_INPUT_SHORT_CIRCUIT            0x59    
-#define MINOR_OPENBUTTON_INPUT_BROKEN_CIRCUIT            0x5a    
-#define MINOR_OPENBUTTON_INPUT_EXCEPTION                0x5b    
-#define MINOR_DOORLOCK_OPEN_EXCEPTION                    0x5c    
-#define MINOR_DOORLOCK_OPEN_TIMEOUT                        0x5d    
-#define MINOR_FIRSTCARD_OPEN_WITHOUT_AUTHORIZE            0x5e    
-#define MINOR_CALL_LADDER_RELAY_BREAK                   0x5f    
-#define MINOR_CALL_LADDER_RELAY_CLOSE                   0x60    
-#define MINOR_AUTO_KEY_RELAY_BREAK                      0x61    
-#define MINOR_AUTO_KEY_RELAY_CLOSE                      0x62    
-#define MINOR_KEY_CONTROL_RELAY_BREAK                   0x63    
-#define MINOR_KEY_CONTROL_RELAY_CLOSE                   0x64    
-#define MINOR_EMPLOYEENO_AND_PW_PASS                    0x65    
-#define MINOR_EMPLOYEENO_AND_PW_FAIL                    0x66    
-#define MINOR_EMPLOYEENO_AND_PW_TIMEOUT                 0x67    
-#define MINOR_HUMAN_DETECT_FAIL                         0x68    
-#define MINOR_PEOPLE_AND_ID_CARD_COMPARE_PASS           0x69    
-#define MINOR_PEOPLE_AND_ID_CARD_COMPARE_FAIL           0x70    
-#define MINOR_CERTIFICATE_BLACK_LIST                    0x71    
-#define MINOR_LEGAL_MESSAGE                             0x72    
-#define MINOR_ILLEGAL_MESSAGE                           0x73    
-#define MINOR_DOOR_OPEN_OR_DORMANT_FAIL                 0x75   
-#define MINOR_AUTH_PLAN_DORMANT_FAIL                    0x76   
-#define MINOR_CARD_ENCRYPT_VERIFY_FAIL                  0x77   
-#define MINOR_SUBMARINEBACK_REPLY_FAIL                  0x78   
-#define MINOR_DOOR_OPEN_OR_DORMANT_OPEN_FAIL            0x82   
-#define MINOR_HEART_BEAT                                0x83    
-#define MINOR_DOOR_OPEN_OR_DORMANT_LINKAGE_OPEN_FAIL    0x84   
-#define MINOR_TRAILING                                  0x85   
-#define MINOR_REVERSE_ACCESS                            0x86   
-#define MINOR_FORCE_ACCESS                              0x87   
-#define MINOR_CLIMBING_OVER_GATE                        0x88   
-#define MINOR_PASSING_TIMEOUT                           0x89   
-#define MINOR_INTRUSION_ALARM                           0x8a   
-#define MINOR_FREE_GATE_PASS_NOT_AUTH                   0x8b   
-#define MINOR_DROP_ARM_BLOCK                            0x8c   
-#define MINOR_DROP_ARM_BLOCK_RESUME                     0x8d   
-#define MINOR_LOCAL_FACE_MODELING_FAIL                  0x8e   
-#define MINOR_STAY_EVENT                                0x8f   
-#define MINOR_PASSWORD_MISMATCH                         0x97   
-#define MINOR_EMPLOYEE_NO_NOT_EXIST                     0x98   
-#define MINOR_COMBINED_VERIFY_PASS                      0x99   
-#define MINOR_COMBINED_VERIFY_TIMEOUT                   0x9a   
-#define MINOR_VERIFY_MODE_MISMATCH                      0x9b   
-#define MINOR_PASSPORT_VERIFY_FAIL                       0xa1   
-#define MINOR_INFORMAL_MIFARE_CARD_VERIFY_FAIL           0xa2   
-#define MINOR_CPU_CARD_ENCRYPT_VERIFY_FAIL               0xa3   
-#define MINOR_NFC_DISABLE_VERIFY_FAIL                    0xa4   
-#define MINOR_LORA_MODULE_ONLINE                        0xa5    
-#define MINOR_LORA_MODULE_OFFLINE                       0xa6    
-#define MINOR_MQTT_STATUS                               0xa7    
-#define MINOR_EM_CARD_RECOGNIZE_NOT_ENABLED             0xa8   
-#define MINOR_M1_CARD_RECOGNIZE_NOT_ENABLED             0xa9   
-#define MINOR_CPU_CARD_RECOGNIZE_NOT_ENABLED            0xaa   
-#define MINOR_ID_CARD_RECOGNIZE_NOT_ENABLED             0xab   
-#define MINOR_CARD_SET_SECRET_KEY_FAIL                  0xac   
-#define MINOR_LOCAL_UPGRADE_FAIL                        0xad    
-#define MINOR_REMOTE_UPGRADE_FAIL                       0xae    
-#define MINOR_REMOTE_EXTEND_MODULE_UPGRADE_SUCC         0xaf    
-#define MINOR_REMOTE_EXTEND_MODULE_UPGRADE_FAIL         0xb0    
-#define MINOR_REMOTE_FINGER_PRINT_MODULE_UPGRADE_SUCC   0xb1    
-#define MINOR_REMOTE_FINGER_PRINT_MODULE_UPGRADE_FAIL   0xb2    
-#define MINOR_EVENT_CUSTOM1                         0x500  
-#define MINOR_EVENT_CUSTOM2                         0x501  
-#define MINOR_EVENT_CUSTOM3                         0x502  
-#define MINOR_EVENT_CUSTOM4                         0x503  
-#define MINOR_EVENT_CUSTOM5                         0x504  
-#define MINOR_EVENT_CUSTOM6                         0x505  
-#define MINOR_EVENT_CUSTOM7                         0x506  
-#define MINOR_EVENT_CUSTOM8                         0x507  
-#define MINOR_EVENT_CUSTOM9                         0x508  
-#define MINOR_EVENT_CUSTOM10                        0x509  
-#define MINOR_EVENT_CUSTOM11                        0x50a  
-#define MINOR_EVENT_CUSTOM12                        0x50b  
-#define MINOR_EVENT_CUSTOM13                        0x50c  
-#define MINOR_EVENT_CUSTOM14                        0x50d  
-#define MINOR_EVENT_CUSTOM15                        0x50e  
-#define MINOR_EVENT_CUSTOM16                        0x50f  
-#define MINOR_EVENT_CUSTOM17                        0x510  
-#define MINOR_EVENT_CUSTOM18                        0x511  
-#define MINOR_EVENT_CUSTOM19                        0x512  
-#define MINOR_EVENT_CUSTOM20                        0x513  
-#define MINOR_EVENT_CUSTOM21                        0x514  
-#define MINOR_EVENT_CUSTOM22                        0x515  
-#define MINOR_EVENT_CUSTOM23                        0x516  
-#define MINOR_EVENT_CUSTOM24                        0x517  
-#define MINOR_EVENT_CUSTOM25                        0x518  
-#define MINOR_EVENT_CUSTOM26                        0x519  
-#define MINOR_EVENT_CUSTOM27                        0x51a  
-#define MINOR_EVENT_CUSTOM28                        0x51b  
-#define MINOR_EVENT_CUSTOM29                        0x51c  
-#define MINOR_EVENT_CUSTOM30                        0x51d  
-#define MINOR_EVENT_CUSTOM31                        0x51e  
-#define MINOR_EVENT_CUSTOM32                        0x51f  
-#define MINOR_EVENT_CUSTOM33                        0x520  
-#define MINOR_EVENT_CUSTOM34                        0x521  
-#define MINOR_EVENT_CUSTOM35                        0x522  
-#define MINOR_EVENT_CUSTOM36                        0x523  
-#define MINOR_EVENT_CUSTOM37                        0x524  
-#define MINOR_EVENT_CUSTOM38                        0x525  
-#define MINOR_EVENT_CUSTOM39                        0x526  
-#define MINOR_EVENT_CUSTOM40                        0x527  
-#define MINOR_EVENT_CUSTOM41                        0x528  
-#define MINOR_EVENT_CUSTOM42                        0x529  
-#define MINOR_EVENT_CUSTOM43                        0x52a  
-#define MINOR_EVENT_CUSTOM44                        0x52b  
-#define MINOR_EVENT_CUSTOM45                        0x52c  
-#define MINOR_EVENT_CUSTOM46                        0x52d  
-#define MINOR_EVENT_CUSTOM47                        0x52e  
-#define MINOR_EVENT_CUSTOM48                        0x52f  
-#define MINOR_EVENT_CUSTOM49                        0x530  
-#define MINOR_EVENT_CUSTOM50                        0x531  
-#define MINOR_EVENT_CUSTOM51                        0x532  
-#define MINOR_EVENT_CUSTOM52                        0x533  
-#define MINOR_EVENT_CUSTOM53                        0x534  
-#define MINOR_EVENT_CUSTOM54                        0x535  
-#define MINOR_EVENT_CUSTOM55                        0x536  
-#define MINOR_EVENT_CUSTOM56                        0x537  
-#define MINOR_EVENT_CUSTOM57                        0x538  
-#define MINOR_EVENT_CUSTOM58                        0x539  
-#define MINOR_EVENT_CUSTOM59                        0x53a  
-#define MINOR_EVENT_CUSTOM60                        0x53b  
-#define MINOR_EVENT_CUSTOM61                        0x53c  
-#define MINOR_EVENT_CUSTOM62                        0x53d  
-#define MINOR_EVENT_CUSTOM63                        0x53e  
-#define MINOR_EVENT_CUSTOM64                        0x53f  
-#define MINOR_LOCK_FINGER_OPEN_DOOR          0x600    
-#define MINOR_LOCK_PASSWORD_OPEN_DOOR        0x601    
-#define MINOR_LOCK_CARD_OPEN_DOOR            0x602    
-#define MINOR_LOCK_CENTER_OPEN_DOOR          0x603    
-#define MINOR_LOCK_APP_OPEN_DOOR             0x604    
-#define MINOR_LOCK_KEY_OPEN_DOOR             0x605    
-#define MINOR_LOCK_REMOTE_DEVICE_OPEN_DOOR   0x606    
-#define MINOR_LOCK_TMP_PASSWORD_OPEN_DOOR    0x607    
-#define MINOR_LOCK_BLUETOOTH_OPEN_DOOR       0x608    
-#define MINOR_LOCK_MULTI_OPEN_DOOR           0x609 
-#define   MINOR_ALARMHOST_SCHOOLTIME_IRGI_B   0x1001     
-#define   MINOR_ALARMHOST_SCHOOLTIME_SDK     0x1002     
-#define   MINOR_ALARMHOST_SCHOOLTIME_SELFTEST    0x1003   
-#define  MINOR_ALARMHOST_SUBSYSTEM_ABNORMALINSERT   0x1004  
-#define  MINOR_ALARMHOST_SUBSYSTEM_ABNORMALPULLOUT   0x1005  
-#define  MINOR_ALARMHOST_AUTO_ARM    0x1006  
-#define  MINOR_ALARMHOST_AUTO_DISARM    0x1007  
-#define  MINOR_ALARMHOST_TIME_TIGGER_ON    0x1008  
-#define  MINOR_ALARMHOST_TIME_TIGGER_OFF   0x1009  
-#define  MINOR_ALARMHOST_AUTO_ARM_FAILD    0x100a  
-#define  MINOR_ALARMHOST_AUTO_DISARM_FAILD    0x100b  
-#define  MINOR_ALARMHOST_TIME_TIGGER_ON_FAILD   0x100c  
-#define  MINOR_ALARMHOST_TIME_TIGGER_OFF_FAILD    0x100d  
-#define  MINOR_ALARMHOST_MANDATORY_ALARM    0x100e  
-#define  MINOR_ALARMHOST_KEYPAD_LOCKED  0x100f  
-#define  MINOR_ALARMHOST_USB_INSERT   0x1010  
-#define  MINOR_ALARMHOST_USB_PULLOUT   0x1011 
-#define  MINOR_ALARMHOST_4G_MODULS_ONLINE  0x1012  
-#define  MINOR_ALARMHOST_4G_MODULS_OFFLINE  0x1013  
-#define  MINOR_EZVIZ_CLOUD_ONLINE   0x1014   
-#define  MINOR_EZVIZ_CLOUD_OFFLINE    0x1015   
-#define  MINOR_SIPUA_GRID_ONLINE     0x1016   
-#define  MINOR_SIPUA_GRID_OFFLINE    0x1017   
-#define  MINOR_INTERNET_ACCESS_CONNECTED  0x1018   
-#define  MINOR_INTERNET_ACCESS_BREAK  0x1019  
-#define  MINOR_WIRELESS_CONNECTED   0x101a  
-#define  MINOR_WIRELESS_BREAK     0x101b   
-#define  MINOR_PORT_LINK_DOWN    0x101c  
-#define  MINOR_PORT_LINK_UP    0x101d  
-#define  MINOR_POE_PORT_POWER_ON    0x101e  
-#define  MINOR_POE_PORT_POWER_OFF    0x101f  
-#define  MINOR_POE_TOTAL_POWER_MAX    0x1020  
-#define  MINNOR_POE_TOTAL_POWER_RESUME   0x1021  
+
+
   typedef enum tagALARMHOST_MAJOR_TYPE
 {
     MAJOR_ALARMHOST_ALARM = 1,
@@ -6323,1001 +415,6 @@
         MINOR_USB_INSERT,               
         MINOR_USB_PULLOUT,              
 }ALARMHOST_MINOR_TYPE;
-#define PARA_VIDEOOUT    0x1
-#define PARA_IMAGE        0x2
-#define PARA_ENCODE        0x4
-#define PARA_NETWORK    0x8
-#define PARA_ALARM        0x10
-#define PARA_EXCEPTION    0x20
-#define PARA_DECODER    0x40    
-#define PARA_RS232        0x80
-#define PARA_PREVIEW    0x100
-#define PARA_SECURITY    0x200
-#define PARA_DATETIME    0x400
-#define PARA_FRAMETYPE    0x800    
-#define PARA_DETECTION  0x1000   
-#define PARA_VCA_RULE   0x1001  
-#define PARA_VCA_CTRL   0x1002  
-#define PARA_VCA_PLATE  0x1003 
-#define PARA_CODESPLITTER 0x2000 
-#define PARA_RS485          0x2001            
-#define PARA_DEVICE          0x2002            
-#define PARA_HARDDISK      0x2003            
-#define PARA_AUTOBOOT      0x2004            
-#define PARA_HOLIDAY      0x2005            
-#define PARA_IPC          0x2006            
-#define NET_DVR_FILE_SUCCESS            1000    
-#define NET_DVR_FILE_NOFIND                1001    
-#define NET_DVR_ISFINDING                1002    
-#define    NET_DVR_NOMOREFILE                1003    
-#define    NET_DVR_FILE_EXCEPTION            1004    
-#define COMM_ALARM                           0x1100    
-#define COMM_ALARM_RULE                      0x1102     
-#define COMM_ALARM_PDC                       0x1103  
-#define COMM_ALARM_VIDEOPLATFORM             0x1104  
-#define COMM_ALARM_ALARMHOST                 0x1105  
-#define COMM_ALARM_FACE                      0x1106  
-#define COMM_RULE_INFO_UPLOAD                0x1107  
-#define COMM_ALARM_AID                       0x1110  
-#define COMM_ALARM_TPS                       0x1111  
-#define COMM_UPLOAD_FACESNAP_RESULT          0x1112  
-#define COMM_ALARM_TFS                       0x1113  
-#define COMM_ALARM_TPS_V41                   0x1114  
-#define COMM_ALARM_AID_V41                   0x1115  
-#define COMM_ALARM_VQD_EX                    0x1116     
-#define COMM_ALARM_NOTIFICATION_REPORT       0x1117  
-#define COMM_SENSOR_VALUE_UPLOAD             0x1120  
-#define COMM_SENSOR_ALARM                    0x1121  
-#define COMM_SWITCH_ALARM                    0x1122     
-#define COMM_ALARMHOST_EXCEPTION             0x1123  
-#define COMM_ALARMHOST_OPERATEEVENT_ALARM    0x1124  
-#define COMM_ALARMHOST_SAFETYCABINSTATE      0x1125     
-#define COMM_ALARMHOST_ALARMOUTSTATUS        0x1126     
-#define COMM_ALARMHOST_CID_ALARM               0x1127     
-#define    COMM_ALARMHOST_EXTERNAL_DEVICE_ALARM 0x1128     
-#define COMM_ALARMHOST_DATA_UPLOAD           0x1129     
-#define COMM_FACECAPTURE_STATISTICS_RESULT   0x112a  
-#define COMM_ALARM_WIRELESS_INFO   0x122b  
-#define COMM_SCENECHANGE_DETECTION_UPLOAD     0x1130     
-#define COMM_CROSSLINE_ALARM                 0x1131    
-#define COMM_UPLOAD_VIDEO_INTERCOM_EVENT     0x1132  
-#define COMM_ALARM_VIDEO_INTERCOM               0x1133  
-#define COMM_UPLOAD_NOTICE_DATA              0x1134  
-#define COMM_ALARM_AUDIOEXCEPTION             0x1150     
-#define COMM_ALARM_DEFOCUS                   0x1151     
-#define COMM_ALARM_BUTTON_DOWN_EXCEPTION     0x1152     
-#define COMM_ALARM_ALARMGPS                  0x1202  
-#define    COMM_TRADEINFO                       0x1500  
-#define COMM_UPLOAD_PLATE_RESULT             0x2800     
-#define COMM_ITC_STATUS_DETECT_RESULT        0x2810  
-#define COMM_IPC_AUXALARM_RESULT             0x2820  
-#define COMM_UPLOAD_PICTUREINFO              0x2900     
-#define COMM_SNAP_MATCH_ALARM                0x2902  
-#define COMM_ITS_PLATE_RESULT                0x3050  
-#define    COMM_ITS_TRAFFIC_COLLECT             0x3051  
-#define COMM_ITS_GATE_VEHICLE                0x3052  
-#define COMM_ITS_GATE_FACE                   0x3053  
-#define COMM_ITS_GATE_COSTITEM                 0x3054  
-#define COMM_ITS_GATE_HANDOVER                 0x3055  
-#define COMM_ITS_PARK_VEHICLE                0x3056  
-#define COMM_ITS_BLACKLIST_ALARM             0x3057  
-#define COMM_VEHICLE_CONTROL_LIST_DSALARM    0x3058  
-#define COMM_VEHICLE_CONTROL_ALARM           0x3059  
-#define COMM_FIRE_ALARM                      0x3060  
-#define COMM_ITS_GATE_ALARMINFO              0x3061  
-#define COMM_VEHICLE_RECOG_RESULT            0x3062  
-#define COMM_PLATE_RESULT_V50                0x3063  
-#define COMM_GATE_CHARGEINFO_UPLOAD          0x3064  
-#define COMM_TME_VEHICLE_INDENTIFICATION     0x3065  
-#define COMM_GATE_CARDINFO_UPLOAD            0x3066  
-#define COMM_LOADING_DOCK_OPERATEINFO     0x3067        
-#define COMM_ALARM_SENSORINFO_UPLOAD         0x3077     
-#define COMM_ALARM_CAPTURE_UPLOAD             0x3078     
-#define COMM_ITS_RADARINFO                   0x3079  
-#define COMM_SIGNAL_LAMP_ABNORMAL            0x3080  
-#define COMM_ALARM_TPS_REAL_TIME             0x3081  
-#define COMM_ALARM_TPS_STATISTICS            0x3082  
-#define COMM_ALARM_V30                         0x4000     
-#define COMM_IPCCFG                             0x4001     
-#define COMM_IPCCFG_V31                         0x4002     
-#define COMM_IPCCFG_V40                      0x4003  
-#define COMM_ALARM_DEVICE                    0x4004  
-#define COMM_ALARM_CVR                         0x4005  
-#define COMM_ALARM_HOT_SPARE                 0x4006  
-#define COMM_ALARM_V40                         0x4007    
-#define COMM_UPLOAD_HEATMAP_RESULT           0x4008 
-#define COMM_ALARM_DEVICE_V40                0x4009  
-#define COMM_ALARM_FACE_DETECTION            0x4010 
-#define COMM_ALARM_TARGET_LEFT_REGION        0x4011 
-#define COMM_GISINFO_UPLOAD                  0x4012 
-#define COMM_VANDALPROOF_ALARM               0x4013 
-#define COMM_PEOPLE_DETECTION_UPLOAD         0x4014 
-#define COMM_ALARM_STORAGE_DETECTION         0x4015 
-#define COMM_MVM_REGISTER                    0x4016 
-#define COMM_MVM_STATUS_INFO                 0x4017 
-#define COMM_UPLOAD_HEATMAP_RESULT_PDC           0x4018 
-#define COMM_UPLOAD_HEATMAP_RESULT_DURATION      0x4019 
-#define COMM_UPLOAD_HEATMAP_RESULT_INTERSECTION  0x4020 
-#define COMM_UPLOAD_AIOP_VIDEO               0x4021 
-#define COMM_UPLOAD_AIOP_PICTURE             0x4022 
-#define COMM_UPLOAD_AIOP_POLLING_SNAP        0x4023 
-#define COMM_UPLOAD_AIOP_POLLING_VIDEO       0x4024 
-#define    COMM_ITS_ROAD_EXCEPTION                 0x4500     
-#define    COMM_ITS_EXTERNAL_CONTROL_ALARM         0x4520  
-#define COMM_ALARM_SHIPSDETECTION             0x4521    
-#define COMM_VCA_DBD_ALARM 0x4550       
-#define COMM_VCA_ADAS_ALARM 0x4551      
-#define COMM_VEH_REALTIME_INFO 0x4552   
-#define COMM_FIREDETECTION_ALARM             0x4991 
-#define COMM_ALARM_DENSEFOGDETECTION    0x4992     
-#define COMM_VCA_ALARM                     0x4993     
-#define COMM_FACE_THERMOMETRY_ALARM        0x4994     
-#define  COMM_TAPE_ARCHIVE_ALARM        0x4996 
-#define    COMM_SCREEN_ALARM                    0x5000  
-#define COMM_DVCS_STATE_ALARM                 0x5001  
-#define COMM_ALARM_ACS                         0x5002  
-#define COMM_ALARM_FIBER_CONVERT             0x5003  
-#define COMM_ALARM_SWITCH_CONVERT             0x5004  
-#define COMM_ALARM_DEC_VCA                   0x5010  
-#define COMM_ALARM_LCD                         0x5011     
-#define COMM_CONFERENCE_CALL_ALARM             0x5012     
-#define COMM_ALARM_WALL_CONFERNECE  0x5015  
-#define COMM_DIAGNOSIS_UPLOAD                0x5100  
-#define COMM_HIGH_DENSITY_UPLOAD             0x5101  
-#define COMM_ID_INFO_ALARM                   0x5200  
-#define COMM_PASSNUM_INFO_ALARM              0x5201  
-#define COMM_PASSPORT_ALARM                   0x5202  
-#define COMM_THERMOMETRY_DIFF_ALARM          0x5211  
-#define COMM_THERMOMETRY_ALARM               0x5212  
-#define COMM_PANORAMIC_LINKAGE_ALARM         0x5213  
-#define COMM_TAG_INFO_ALARM                  0x5215  
-#define COMM_ALARM_VQD                         0x6000  
-#define COMM_PUSH_UPDATE_RECORD_INFO          0x6001  
-#define COMM_SWITCH_LAMP_ALARM               0x6002  
-#define COMM_INQUEST_ALARM             0x6005  
-#define COMM_VIDEO_PARKING_POLE_ALARM       0x6006  
-#define COMM_GPS_STATUS_ALARM                0x6010  
-#define  COMM_BASE_STATION_INFO_ALARM        0x6011  
-#define COMM_ALARM_SUBSCRIBE_EVENT           0x6012  
-#define COMM_FACESNAP_RAWDATA_ALARM          0x6015  
-#define COMM_CLUSTER_ALARM       0x6020    
-#define COMM_ISAPI_ALARM  0x6009
-#define COMM_FRAMES_PEOPLE_COUNTING_ALARM	 0x6069	 
-#define  COMM_SIGN_ABNORMAL_ALARM            0x6120 
-#define  COMM_HFPD_ALARM                     0x6121 
-#define   COMM_HCU_ALARM  0x6150  
-#define  COMM_DEV_STATUS_CHANGED             0x7000  
-#define EXCEPTION_EXCHANGE                0x8000    
-#define EXCEPTION_AUDIOEXCHANGE            0x8001    
-#define EXCEPTION_ALARM                    0x8002    
-#define EXCEPTION_PREVIEW                0x8003    
-#define EXCEPTION_SERIAL                0x8004    
-#define EXCEPTION_RECONNECT                0x8005    
-#define EXCEPTION_ALARMRECONNECT        0x8006    
-#define EXCEPTION_SERIALRECONNECT        0x8007    
-#define SERIAL_RECONNECTSUCCESS         0x8008    
-#define EXCEPTION_PLAYBACK                0x8010    
-#define EXCEPTION_DISKFMT                0x8011    
-#define EXCEPTION_PASSIVEDECODE         0x8012  
-#define EXCEPTION_EMAILTEST             0x8013  
-#define EXCEPTION_BACKUP                0x8014  
-#define PREVIEW_RECONNECTSUCCESS        0x8015  
-#define ALARM_RECONNECTSUCCESS          0x8016  
-#define RESUME_EXCHANGE                    0x8017    
-#define NETWORK_FLOWTEST_EXCEPTION      0x8018  
-#define EXCEPTION_PICPREVIEWRECONNECT    0x8019    
-#define PICPREVIEW_RECONNECTSUCCESS        0x8020    
-#define EXCEPTION_PICPREVIEW            0x8021    
-#define    EXCEPTION_MAX_ALARM_INFO        0x8022    
-#define    EXCEPTION_LOST_ALARM            0x8023  
-#define EXCEPTION_PASSIVETRANSRECONNECT 0x8024  
-#define PASSIVETRANS_RECONNECTSUCCESS   0x8025  
-#define EXCEPTION_PASSIVETRANS          0x8026  
-#define SUCCESS_PUSHDEVLOGON            0x8030  
-#define EXCEPTION_RELOGIN                0x8040    
-#define RELOGIN_SUCCESS                    0x8041    
-#define EXCEPTION_PASSIVEDECODE_RECONNNECT  0x8042  
-#define EXCEPTION_CLUSTER_CS_ARMFAILED      0x8043  
-#define EXCEPTION_RELOGIN_FAILED                0x8044   
-#define EXCEPTION_PREVIEW_RECONNECT_CLOSED      0x8045   
-#define EXCEPTION_ALARM_RECONNECT_CLOSED        0x8046   
-#define EXCEPTION_SERIAL_RECONNECT_CLOSED       0x8047   
-#define EXCEPTION_PIC_RECONNECT_CLOSED          0x8048   
-#define EXCEPTION_PASSIVE_DECODE_RECONNECT_CLOSED 0x8049 
-#define EXCEPTION_PASSIVE_TRANS_RECONNECT_CLOSED 0x804a  
-#define EXCEPTION_VIDEO_DOWNLOAD 0x804b 
-#define NET_DVR_SYSHEAD            1    
-#define NET_DVR_STREAMDATA        2    
-#define NET_DVR_AUDIOSTREAMDATA    3    
-#define NET_DVR_STD_VIDEODATA    4    
-#define NET_DVR_STD_AUDIODATA    5    
-#define NET_DVR_SDP             6   
-#define NET_DVR_CHANGE_FORWARD  10  
-#define NET_DVR_CHANGE_REVERSE  11  
-#define NET_DVR_PLAYBACK_ALLFILEEND      12  
-#define NET_DVR_VOD_DRAW_FRAME      13  
-#define NET_DVR_VOD_DRAW_DATA       14  
-#define NET_DVR_PRIVATE_DATA    112 
-#define DVR                            1                
-#define ATMDVR                        2                
-#define DVS                            3                
-#define DEC                            4                
-#define ENC_DEC                        5                
-#define DVR_HC                        6                
-#define DVR_HT                        7                
-#define DVR_HF                        8                
-#define DVR_HS                        9                
-#define DVR_HTS                        10              
-#define DVR_HB                        11              
-#define DVR_HCS                        12              
-#define DVS_A                        13              
-#define DVR_HC_S                    14              
-#define DVR_HT_S                    15              
-#define DVR_HF_S                    16              
-#define DVR_HS_S                    17              
-#define ATMDVR_S                    18              
-#define DVR_7000H                    19                
-#define DEC_MAT                        20              
-#define DVR_MOBILE                    21                
-#define DVR_HD_S                    22              
-#define DVR_HD_SL                    23                
-#define DVR_HC_SL                    24                
-#define DVR_HS_ST                    25                
-#define DVS_HW                        26              
-#define DS630X_D                    27              
-#define DS640X_HD                    28                
-#define DS610X_D                    29              
-#define IPCAM                        30                
-#define MEGA_IPCAM                    31                
-#define IPCAM_X62MF                    32                
-#define ITCCAM                      35              
-#define IVS_IPCAM                   36              
-#define ZOOMCAM                     38              
-#define IPDOME                      40              
-#define IPDOME_MEGA200              41              
-#define IPDOME_MEGA130              42              
-#define IPDOME_AI                   43              
-#define TII_IPCAM                   44              
-#define IPTC_DOME                   45              
-#define DS_2DP_Z                    46              
-#define DS_2DP                       47              
-#define ITS_WMS                      48              
-#define IPMOD                        50                
-#define TRAFFIC_YTDOME              51              
-#define TRAFFIC_RDDOME              52              
-#define IDS6501_HF_P                60              
-#define IDS6101_HF_A                61              
-#define IDS6002_HF_B                62          
-#define IDS6101_HF_B                63              
-#define IDS52XX                        64          
-#define IDS90XX                        65                
-#define IDS8104_AHL_S_HX            66          
-#define IDS8104_AHL_S_H             67              
-#define IDS91XX                        68                
-#define IIP_CAM_B                   69              
-#define IIP_CAM_F                   70              
-#define DS71XX_H                    71                
-#define DS72XX_H_S                    72                
-#define DS73XX_H_S                    73                
-#define DS72XX_HF_S                 74              
-#define DS73XX_HFI_S                75              
-#define DS76XX_H_S                    76                
-#define DS76XX_N_S                    77                
-#define DS_TP3200_EC                   78              
-#define DS81XX_HS_S                    81                
-#define DS81XX_HL_S                    82                
-#define DS81XX_HC_S                    83                
-#define DS81XX_HD_S                    84                
-#define DS81XX_HE_S                    85                
-#define DS81XX_HF_S                    86                
-#define DS81XX_AH_S                    87                
-#define DS81XX_AHF_S                88                
-#define DS90XX_HF_S                    90              
-#define DS91XX_HF_S                    91              
-#define DS91XX_HD_S                    92              
-#define IDS90XX_A                    93                
-#define IDS91XX_A                    94                
-#define DS95XX_N_S                    95              
-#define DS96XX_N_SH                    96              
-#define DS90XX_HF_SH                97              
-#define DS91XX_HF_SH                98              
-#define DS_B10_XY                   100             
-#define DS_6504HF_B10               101             
-#define DS_6504D_B10                102             
-#define DS_1832_B10                 103             
-#define DS_6401HFH_B10              104             
-#define DS_65XXHC                    105                
-#define DS_65XXHC_S                    106                
-#define DS_65XXHF                    107                
-#define DS_65XXHF_S                    108                
-#define DS_6500HF_B                 109             
-#define IVMS_6200_C                 110             
-#define IVMS_6200_B                 111             
-#define DS_72XXHV_ST15                112                
-#define DS_72XXHV_ST20                113                
-#define IVMS_6200_T                    114             
-#define IVMS_6200_BP                115             
-#define DS_81XXHC_ST                116                
-#define DS_81XXHS_ST                117                
-#define DS_81XXAH_ST                118                
-#define DS_81XXAHF_ST                119                
-#define DS_66XXDVS                    120                
-#define DS_1964_B10                 121             
-#define DS_B10N04_IN                122             
-#define DS_B10N04_OUT                123             
-#define DS_B10N04_INTEL             124             
-#define DS_6408HFH_B10E_RM          125             
-#define DS_B10N64F1_RTM             126             
-#define DS_B10N64F1D_RTM            127             
-#define DS_B10_SDS                  128             
-#define DS_B10_DS                   129             
-#define DS_6401HFH_B10V                130             
-#define DS_6504D_B10B               131             
-#define DS_6504D_B10H               132             
-#define DS_6504D_B10V               133             
-#define DS_6408HFH_B10S                134             
-#define DS_18XX_N                      135             
-#define DS_6504HF_B10F_CLASS        136                
-#define DS_18XX_PTZ                    141                
-#define DS_19AXX                    142                
-#define DS_19BXX                    143                
-#define DS_19CXX                    144                
-#define DS_19DXX                    145                
-#define DS_19XX                     146             
-#define DS_19SXX                    147                
-#define DS_1HXX                        148                
-#define DS_PEAXX                    149                
-#define DS_PWXX                     150                 
-#define DS_PMXX                     151                 
-#define DS_19DXX_S                  152                
-#define DS_PWAXX                    153                 
-#define DS_PHAXX                    154                 
-#define    DS_C10H                        161                
-#define DS_C10N_BI                    162                
-#define DS_C10N_DI                    163                
-#define DS_C10N_SI                    164                
-#define DS_C10N_DO                    165                
-#define DS_C10N_SERVER                166                
-#define IDS_8104_AHFL_S_H           171             
-#define IDS_65XX_HF_A               172             
-#define IDS90XX_HF_RH               173             
-#define IDS91XX_HF_RH               174             
-#define IDS_65XX_HF_B               175             
-#define IDS_65XX_HF_P               176             
-#define IVMS_6200_F                 177             
-#define IVMS_6200_A                 178             
-#define IVMS_6200_F_S                 179             
-#define DS90XX_HF_RH                181             
-#define DS91XX_HF_RH                182             
-#define DS78XX_S                    183             
-#define DS81XXHW_S                    185                
-#define DS81XXHW_ST                    186             
-#define DS91XXHW_ST                    187             
-#define DS91XX_ST                    188             
-#define DS81XX_ST                    189             
-#define DS81XXHX_ST                    190             
-#define DS73XXHX_ST                    191             
-#define DS81XX_SH                   192             
-#define DS81XX_SN                   193             
-#define DS96XXN_ST                  194             
-#define DS86XXN_ST                  195             
-#define DS80XXHF_ST                 196             
-#define DS90XXHF_ST                 197             
-#define DS76XXN_ST                  198             
-#define DS_9664N_RX                 199         
-#define ENCODER_SERVER                200            
-#define DECODER_SERVER              201         
-#define PCNVR_SERVER                202         
-#define CVR_SERVER                  203         
-#define DS_91XXHFH_ST                204         
-#define DS_66XXHFH                    205         
-#define    TRAFFIC_TS_SERVER            210           
-#define    TRAFFIC_VAR                    211           
-#define IPCALL                      212        
-#define SAN_SERVER                  213         
-#define DS_B11_M_CLASS                 301             
-#define DS_B12_M_CLASS                  302             
-#define DS_6504HF_B11_CLASS         303             
-#define DS_6504HF_B12_CLASS         304              
-#define  DS_6401HFH_B11V_CLASS         305     
-#define  DS_6401HFH_B12V_CLASS         306     
-#define  DS_6408HFH_B11S_CLASS         307     
-#define  DS_6408HFH_B12S_CLASS      308     
-#define  DS_6504D_B11H_CLASS        309   
-#define  DS_6504D_B11B_CLASS        310    
-#define  DS_6504D_B12B_CLASS        311       
-#define  DS_6504D_B11V_CLASS        312      
-#define  DS_6504D_B12V_CLASS        313     
-#define  DS_6401HFH_B10R_CLASS         314     
-#define  DS_6401HFH_B10D_CLASS         315     
-#define  DS_6401HFH_B10H_CLASS         316     
-#define  DS_6401HFH_B11R_CLASS         317     
-#define  DS_6401HFH_B11D_CLASS         318     
-#define  DS_6401HFH_B11H_CLASS         319     
-#define  DS_6401HFH_B12R_CLASS         320     
-#define  DS_6401HFH_B12D_CLASS         321     
-#define  DS_6401HFH_B12H_CLASS         322     
-#define  DS_65XXD_B10Ex_CLASS        323     
-#define  DS_6516HW_B10_CLASS        324     
-#define  DS_6401HFH_B10F_RX_CLASS   326        
-#define  DS_6502HW_B10F_RX_CLASS    327        
-#define  DS_6504D_B11Ex_CLASS        328     
-#define  DS_6504D_B12Ex_CLASS        329     
-#define  DS_6512_B11_CLASS            330     
-#define  DS_6512_B12_CLASS            331     
-#define  DS_6504D_B10H_CLASS        332     
-#define  DS_65XXT_B10_CLASS         333     
-#define  DS_65XXD_B10_CLASS         335     
-#define  DS_IVMSE_B10X_CLASS        336     
-#define  DS_6532D_B10ES_CLASS        337     
-#define  DS_6508HFH_B10ES_CLASS        338     
-#define  DS_82NCG_CLASS                340     
-#define  DS_82VAG_CLASS                341     
-#define  DS_1802XXF_B10_CLASS       342     
-#define  iDS_6504_B10EVAC_CLASS     343     
-#define  iDS_6504_B10EDEC_CLASS     344     
-#define  DS_6402HFH_B10EV_CLASS     345     
-#define  DS_6402HFH_B10ED_CLASS     346     
-#define  DS_6402HFH_B10EH_CLASS     347     
-#define  DS_6404HFH_B10T_RX_CLASS   348     
-#define  DS_6504D_AIO_CLASS         349        
-#define  DS_IVMST_B10_CLASS            350        
-#define  DS_6402_AIO_CLASS          351     
-#define  DS_iVMSE_AIO_CLASS         352     
-#define  DS_AIO_M_CLASS             353     
-#define  DS_6508HF_B10E_CLASS        355        
-#define  DS_6404HFH_B10ES_CLASS        356        
-#define  DS_6402HFH_B10ER_CLASS        358        
-#define  DS_6404HFH_B10T_RM_CLASS    361        
-#define  DS_6516D_B10EB_CLASS        362        
-#define  DS_6516D_B10ES_CLASS        363        
-#define  DS_6508D_B10FH_CLASS        364
-#define  DS_6508D_B10FD_CLASS        364
-#define  DS_6508D_B10FV_CLASS        364
-#define  DS_6508_B11E_CLASS            365        
-#define  DS_6402_B11ES_CLASS        366        
-#define  DS_6402_B11EV_CLASS        367        
-#define  DS_6402_B11ER_CLASS        368        
-#define  DS_6402_B11ED_CLASS        369        
-#define  DS_6402_B11EH_CLASS        370        
-#define  DS_6516D_B11EB_CLASS        371        
-#define  DS_6516D_B11ES_CLASS        372        
-#define  DS_6508_B12E_CLASS         373     
-#define     DS_6402_B12ES_CLASS        375        
-#define  DS_6402_B12EV_CLASS        376        
-#define  DS_6402_B12ER_CLASS        377        
-#define  DS_6402_B12ED_CLASS        378        
-#define  DS_6402_B12EH_CLASS        379        
-#define  DS_6516D_B12EB_CLASS        380        
-#define  DS_iVMSE_AIO_8100x_CLASS   381     
-#define  DS_iVMSE_AIO_87x_CLASS     382     
-#define  DS_6532D_B11ES_CLASS        384        
-#define  DS_6532D_B12ES_CLASS        385        
-#define  DS_B20_MSU_NP              400     
-#define  DS_6416HFH_B20S            401     
-#define  DS_6416HFH_B20_RM          402     
-#define  DS_6564D_B20D              403     
-#define  DS_6564D_B20H              404     
-#define  DS_6564D_B20V              405     
-#define  DS_B20_6516D_DEV_CLASS     406     
-#define  DS_6408HFH_B20V            407     
-#define  DS_MMC_B20_CLASS           408     
-#define  DS_CARD_CHIP_B20_CLASS     409     
-#define  DS_6564D_B20B_DEV_CLASS    410     
-#define  DS_6564D_B20S_DEV_CLASS    411     
-#define  DS_6532HF_B20B_DEV_CLASS   412     
-#define  DS_6408HFH_B20D_DEV_CLASS  413     
-#define  DS_6408HFH_B20H_DEV_CLASS  414     
-#define  DS_IVMSE_B20_CLASS            415     
-#define  DS_6402HFH_B20Y_DEV_CLASS  416     
-#define  DS_6508HW_B20_DEV_CLASS    417     
-#define  DS_B20N128Fx_B20_DEV_CLASS 418     
-#define  DS_AIO_MCU_NP_DEV_CLASS    419     
-#define  DS_6402_AIO_EV_DEV_CLASS   420     
-#define  DS_6508D_AIO_EV_DEV_CLASS  421     
-#define  DS_6508D_AIO_ED_DEV_CLASS  422     
-#define  DS_6508D_AIO_EH_DEV_CLASS  423     
-#define  DS_6508HD_B20F_DEV_CLASS    424     
-#define  DS_6402HFH_B20ES_DEV_CLASS 425     
-#define  DS_6532D_B20_DEV_CLASS     426     
-#define  DS_IVMST_B20_DEV_CLASS     427     
-#define  DS_6416HFH_B20DD_DEV_CLASS 428     
-#define  DS_6441VS_B20_DEV_CLASS    429        
-#define  DS_6404HFH_B20T_CLASS         431        
-#define  DS_FS22_B20_DEV_CLASS         432        
-#define  DS_IVMSE_B20UH_DEV_CLASS   433     
-#define  IDS_6524J_B20_DEV_CLASS    434
-#define  IDS_6532B_B20_DEV_CLASS    435
-#define DS_6404HFH_B20Fx_DEV_CLASS  436        
-#define DS_N128x_B20Fy_CLASS        437     
-#define DS_181600F_B20_CLASS        438     
-#define  DS_6904UD_B20H_CLASS       439     
-#define DS_B21_MCU_NP_CLASS         440     
-#define DS_B21_S10_x_CLASS          441     
-#define DS_6402HFH_B21D_CLASS       442     
-#define DS_6508HD_B21D_CLASS        443     
-#define DS_iVMSE_B21HW_CLASS        444     
-#define  DS_C10S                    501     
-#define  DS_C10N_SDI                551        
-#define  DS_C10N_BIW                552        
-#define  DS_C10N_DON                553        
-#define  DS_C10N_TVI                554     
-#define  DS_C10N_DI2                555     
-#define  DS_C10N_AUDIO_OUT          556     
-#define  DS_C10N_AUDIO_IN           557     
-#define  DS_C20N                    570     
-#define  DS_C20N_BNC                571     
-#define  DS_C20N_DVI                572     
-#define  DS_C20N_DP                 573     
-#define  DS_C20N_OUT                574     
-#define DS_C20N_VWMS                5351    
-#define DS_C20N_DI2                 5352    
-#define DS_C20N_DO2                 5353    
-#define DS_C20N_UHDI                5354    
-#define DS_C20N_YI2                 5355    
-#define DS_C12N_VWMS                5356    
-#define DS_C12N_DO                  5357    
-#define DS_C12N_HOE                 5358    
-#define DS_C20N_HI2             5359 
-#define DS_C20N_VI2             5360 
-#define DS_C20N_SI2             5361 
-#define DS_C20N_HO2             5362 
-#define DS_C20N_S24G            5363 
-#define DS_C20N_S24X            5364 
-#define DS_C12A_0104H           5365 
-#define DS_D1HXX                    5591    
-#define ELEVATO_BRIDGE  5751  
-#define DS_3WF01S_5NG_M  5752  
-#define DS_3WF0EC_2N_D  5753  
-#define DS_3WF0EC_5ACT  5754  
-#define DS_3WF03S_5AC    5755   
-#define DS_3WF0ES_5AC_H            5756    
-#define DS_19M00_MN                    601     
-#define DS_KH8302_A                 602  
-#define DS_KD8101_2                 603  
-#define DS_KM8301                   604  
-#define DS_KVXXXX_XX                605  
-#define DS_LHPM1D_C                 606  
-#define DS_KAM03                      607 
-#define DS64XXHD_T                    701        
-#define DS_65XXD                    703     
-#define DS63XXD_T                    704        
-#define SCE_SERVER                  705     
-#define DS_64XXHD_S                 706     
-#define DS_68XXT                    707     
-#define DS_65XXD_T                  708     
-#define DS_65XXHD_T                 709     
-#define DS_69XXUD                   710     
-#define DS_65XXUD                   711     
-#define DS_65XXUD_L                 712     
-#define DS_65XXUD_T                 713     
-#define DS_69XXHD                   5001    
-#define DS_D20XX                    750     
-#define DS_C50S                     751     
-#define DS_D50XX                    752     
-#define DS_D40                      760     
-#define DS_65VMXX                   770     
-#define DS_65VTXX                   771     
-#define DS_65VTA                    772     
-#define DS_65VT_RX                  773     
-#define DS_65VM_MCU_NP              774     
-#define DS_65VT0010                 5571    
-#define DS_65VM_MCU                 5572    
-#define DS_65VM_MPC                 5573    
-#define DS_65VT2XXYR_SF             5574    
-#define DS_65VT0XXY                 5575    
-#define DS_65VT0010Z                5576    
-#define DS_65VT0050Z                5577    
-#define DS_65VS0XXXS                5878    
-#define DS_65VS0XXXM                5579    
-#define DS_65VM00XX_X               5580    
-#define DS_CS_SERVER                800     
-#define DS_68GAP_MCU                831     
-#define DS_K260X                    850     
-#define DS_K1TXXX                   851     
-#define DS_K280X                    852     
-#define DS_K1T80X                   854     
-#define RAC_6X00                    856     
-#define DS_K2602_AX                 857     
-#define DS_K1T803F                  858     
-#define DS_K2700                    859     
-#define DS_K270X                    860     
-#define DS_K1T500S                  861     
-#define DS_K1A801F                  862     
-#define DS_K1T600X                  863     
-#define DS_K22X                     864     
-#define DS_K2M0016AX                865     
-#define DS_K2602S_AX                867     
-#define DS_K560XX                   870     
-#define DS_K260X_E                  873     
-#define DS_K5603X                   874     
-#define DS_K3M200X                  875     
-#define DS_K3M100X                  879     
-#define DS_K1T8101XT                881     
-#define DS_K1T8101XX                882     
-#define DS_K5604                    883     
-#define DS_K1T607XXXX               884     
-#define DS_K1A850X                  885     
-#define DS_K1T800X                  886     
-#define DS_K1T610XXXX               887     
-#define DS_K1T8115X                 888     
-#define DS_K1T815LC_M               889     
-#define DS_K1T606M_Z                890     
-#define DS_K5607_XXX                891     
-#define DS_K1T950MX                 893     
-#define DS_K1T331XX                 894     
-#define DS_K1T671T                  895     
-#define DS_K1T671                   896     
-#define DS_K5671                    897     
-#define DS_K1T640                   898     
-#define DS_K1A802A                  899     
-#define DS_6800M                    900     
-#define DS_68NTH                    901     
-#define DS_D60S                     902     
-#define DS_D10                      931     
-#define DS_3K0X_NM                  951     
-#define DS_3E2328                   952     
-#define DS_3E1528                   953     
-#define SCREEN_LINK_SERVER          971     
-#define DS_D51OPSXX                 972     
-#define IP_PTSYS_MEGA200            1001   
-#define IPCAM_FISHEYE               1002   
-#define IPCAM_FISHEYE_E             1003   
-#define IPCAM_BINOCULAR             1004   
-#define IPCAM_365                    1010    
-#define IPCAM_R0                    1011    
-#define IPCAM_R1                    1012    
-#define IPCAM_R2                    1013    
-#define IPCAM_R3                    1014    
-#define IPCAM_R4                    1015    
-#define IPDOME_365                    1110    
-#define IPDOME_R0                    1111    
-#define IPDOME_R1                    1112    
-#define IPDOME_R2                    1113    
-#define IPDOME_R3                    1114    
-#define IPDOME_R4                    1115    
-#define ITCCAM_R3                    1211    
-#define UAV_S                       1300    
-#define TRAFFIC_ECT                    1400  
-#define TRAFFIC_PARKING_SERVER        1401  
-#define TRAFFIC_TME                    1402  
-#define DS90XXHW_ST                    2001    
-#define DS72XXHX_SH                 2002    
-#define DS_92XX_HF_ST                2003    
-#define DS_91XX_HF_XT                2004    
-#define DS_90XX_HF_XT               2005    
-#define DS_73XXHX_SH                2006    
-#define DS_72XXHFH_ST                2007    
-#define DS_67XXHF_SATA              2008 
-#define DS_67XXHW                   2009 
-#define DS_67XXHW_SATA              2010 
-#define DS_67XXHF                   2011 
-#define DS_72XXHF_SV                2012  
-#define DS_72XXHW_SV                2013   
-#define DS_81XXHX_SH                2014   
-#define DS_71XXHX_SL                2015    
-#define DS_76XXH_ST                    2016    
-#define DS_73XXHFH_ST               2017   
-#define DS_81XXHFH_ST               2018   
-#define DS_72XXHFH_SL                2019    
-#define DS_FDXXCGA_FLT                2020    
-#define IDS_91XX_HF_ST_A            2100    
-#define IDS_91XX_HF_ST_B            2101    
-#define IDS_90XX_HF_ST_A            2102    
-#define IDS_90XX_HF_ST_B            2103    
-#define IDS_81XX_HF_ST_A            2104    
-#define IDS_81XX_HF_ST_B            2105    
-#define IDS_80XX_HF_ST_A            2106    
-#define IDS_80XX_HF_ST_B            2107    
-#define IDS_8104_AHFL_ST            2108    
-#define IDS_2CD6812F_C              2109    
-#define DS_77XXN_ST                    2201    
-#define DS_95XX_N_ST                2202    
-#define DS_85XX_N_ST                2203    
-#define DS_96XX_N_XT                2204    
-#define DS_76XX_N_SE                2205    
-#define DS_86XXSN_SX                2206    
-#define DS_71XXN_SL                    2208  
-#define CS_N1_1XX                    2209  
-#define DS_71XXN_SN                    2210    
-#define CS_N1_2XX                    2211    
-#define DS_76XX_N_SHT                2212    
-#define DS_96XXX_N_E                2213    
-#define    DS_76XXN_EX                    2214 
-#define DS_77XXN_E4                    2215
-#define DS_86XXN_E8                    2216
-#define DS_9616N_H8                 2217   
-#define DS_72XXHX_EX_GXY            2218   
-#define DS_76XXN_EX_GXY             2219   
-#define DS_72XXHXH_SH_21            2220   
-#define DS_72XXHXH_SH_31            2221  
-#define DS_73XXHXH_SH_31            2222  
-#define DS_81XXHXH_SH_31            2223  
-#define DS_71XXHXH_SH_21            2224  
-#define DS_71XXHXH_SH_31            2225  
-#define DS_NBXX_N_E1_X              2226  
-#define DS_96XXN_FX                 2230
-#define DS_86XXN_FX                 2231
-#define DS_96XXXN_HX                2232  
-#define DS_86XXN_I                    2233    
-#define DS_77XX_N_I                    2234    
-#define DS_76XX_N_I                    2235    
-#define DS_78XX_N_I                    2236    
-#define DS_96XXXN_IX                2237    
-#define DS_90XXHXH_XT               2238    
-#define PCNVR_IVMS_4200             2301    
-#define IVMS_6200_TP                2401   
-#define IVMS_6200_TF                2402   
-#define IVMS_6200_D                 2403   
-#define IDS_81XXAHW_ST              2405   
-#define IDS_81XXAHW_SP              2406   
-#define IDS_81XXAHWL_ST             2407   
-#define IDS_81XXAHWL_SP             2408   
-#define IDS_9616N_H8                2409   
-#define IVMS_6200_SMD               2500   
-#define DS_81XXAHW_ST                2501
-#define DS_81XXAHW_SP                2502
-#define DS_81XXAHWL_ST                2503
-#define DS_81XXAHWL_SP                2504
-#define DS_81XXAHGH_E4                2601    
-#define DS_6904UD_AIOE_H_CLASS      4002    
-#define DS_6402HFH_B21B_CLASS       4005    
-#define DS_6902UD_B21H_CLASS        4006    
-#define DS_6902UD_B21D_CLASS        4007    
-#define DS_6902UD_B21V_CLASS        4008    
-#define DS_6904UD_B20D_CLASS        4010    
-#define DS_6904UD_B20V_CLASS        4011    
-#define DS_AIOH_MCU_NP              4042    
-#define DS_6404HFH_AIOH_D           4043    
-#define DS_6908UD_AIOH_D            4044    
-#define DS_6908UD_AIOH_H            4045    
-#define DS_69XXUD_B                 4046    
-#define DS_6404HFH_I                4047    
-#define DS_6904UD_O                 4048    
-#define DS_C12L_0204H                4060   
-#define DS_Y10_MCU                  5771    
-#define DS_Y10_SW1                  5772    
-#define DS_6516UD_Y10D              5773    
-#define DS_6532UD_Y10D              5774    
-#define DS_6E2724_Y10               5775    
-#define DS_68SAA_AA_Y10             5776    
-#define DS_68SBA_AA_Y10             5777    
-#define DS_68SCA_AA_Y10             5778    
-#define DS_68GPU_A1_Y10             5779    
-#define DS_CPU_SERVER               5780    
-#define DS_GPU_SERVER               5781    
-#define DS_BIGDATA_SERVER           5782    
-#define DS_B80_MCU                 5821
-#define DS_B80_SW                  5822
-#define DS_B80_SR_01               5823
-#define DS_B80_AI04                5824
-#define DS_B80_ST                  5825
-#define DS_B80_D04                 5826
-#define DS_3LGCX                   5841
-#define DS_3LGRX                   5842
-#define DS_3LGT4                   5843    
-#define DS_3LGT40_N 			   5844    
-#define DS_3E11XX     5681    
-#define DS_3E13XX     5682    
-#define DS_3E15XX     5683    
-#define DS_3E11XXP     5684    
-#define DS_3E13XXP     5685    
-#define DS_3E15XXP     5686    
-#define DS_3D01R_NM     5691    
-#define DS_3D01T_NM     5692    
-#define DS_3K02_RNM     5693    
-#define IDS_90XX_HXH_XX_S            6001    
-#define IDS_90XX_HXH_XX_FA           6002    
-#define DS_81XX_SHXL_K4               6101    
-#define DS_8116THFHL_F4               6201    
-#define DS_81XXAHQ_E4                 6301    
-#define IDS_81XXAHQ_E4                6302    
-#define IDS_86XX_NX_A               7501    
-#define IDS_96XX_NX_S               7502    
-#define IDS_96XX_NX_V               7503    
-#define IDS_96XX_NX_FA              7504    
-#define IDS_86XX_NX_IX_B            7505    
-#define IDS_67XX_NX_S_X             7506    
-#define IDS_ECDXX_HE                8001
-#define IDS_ECDXX_HT                8002
-#define IDS_ECDXX_E                 8101
-#define IDS_EPTXX_HF                8201
-#define DS_2CD69XXX_I               8351    
-#define DS_TRIXX                    8471    
-#define DS_K1F600_D6EXX                  10501   
-#define DS_K1T341                   10502   
-#define DS_K1T641XXX                10503   
-#define DS_K1T642XXX                10504   
-#define DS_K1T601                   10505   
-#define DS_K1T672XXX                10506   
-#define DS_K56A0X                   10507   
-#define DS_IEXX_E_J                 11501    
-#define IDS_67XX_NX_A               12501    
-#define IDS_67XX_NX_L               12502    
-#define IDS_ENIXX_XHE               12503    
-#define IDS_67XX_NX_V               12504    
-#define IDS_67XX_NX_B               12505    
-#define DS_IE63XX_E_FA              13001 
-#define DS_DS_GPKIA                 13002 
-#define DS_DS_PURE                  13003 
-#define DS_DS_FS                    13004 
-#define DS_DS_FD                    13005 
-#define DS_DS_BLADE                 13006 
-#define DS_DS_HMCP                  13007 
-#define DS_LNX_RF                   13501 
-#define DS_PA_RADAR                 13551 
-#define DS_PERIMETER_RADAR          13552 
-#define DS_SECURITY_RADAR           13553
-#define DS_N1104X                   14001 
-#define DS_N1103X                   14002 
-#define NP_FSC201                   14003 
-#define NP_FDC240                   14004 
-#define DS_N1107                    14005 
-#define NP_FAXXX                    14006 
-#define NP_ST204_X                  14501 
-#define DEV_CLASS_DVR      1          
-#define DEV_CLASS_INTERROGATION  2    
-#define DEV_CLASS_SIMPLE_TRAIL  3    
-#define DEV_CLASS_TRAIL  4           
-#define DEV_CLASS_RECORD_PLAY  5     
-#define DEV_CLASS_ATM 6           
-#define DEV_CLASS_DVS 51          
-#define DEV_CLASS_NVR 101          
-#define DEV_CLASS_GUN 151          
-#define DEV_CLASS_BALL 152          
-#define DEV_CLASS_SNAP 153          
-#define DEV_CLASS_INTELLI_TILT 154   
-#define DEV_CLASS_FISH_EYE 155          
-#define DEV_CLASS_2DP_Z 156         
-#define DEV_CLASS_2DP 157   
-#define DEV_CLASS_PT 158   
-#define DEV_CLASS_TRI 159   
-#define DEV_CLASS_CVR 201          
-#define DEV_CLASS_B20 251          
-#define DEV_CLASS_B10 252          
-#define DEV_CLASS_DECODER 253      
-#define DEV_CLASS_MATRIXMANAGEDEVICE 254      
-#define DEV_CLASS_OTICAL 255      
-#define DEV_CLASS_CODESPITTER 256      
-#define DEV_CLASS_ALARMHOST 257      
-#define DEV_CLASS_MOVING_RING 258      
-#define DEV_CLASS_CVCS 259      
-#define DEV_CLASS_DVCS 260      
-#define DEV_CLASS_TRANSCODER 261      
-#define DEV_CLASS_LCD_SCREEN 262      
-#define DEV_CLASS_LED_SCREEN 263      
-#define DEV_CLASS_MATRIX 264      
-#define DEV_CLASS_CONFERENCE_SYSTEM 265      
-#define DEV_CLASS_INFORMATION_RELEASE_EQUIPMENT  266      
-#define DEV_CLASS_NET_GAP 267      
-#define DEV_CLASS_MERGE 268      
-#define DEV_CLASS_REAR_PROJECTION 269      
-#define DEV_CLASS_SWITCH 270      
-#define DEV_CLASS_FIBER_CONVERTER 271      
-#define DEV_CLASS_SCREEN_SERVER 272      
-#define DEV_CLASS_SCE_SERVER 273      
-#define DEV_CLASS_WIRELESS_TRANS  274    
-#define DEV_CLASS_Y10_SERIES      275    
-#define DEV_CLASS_SAFETY_MAVHINE  276    
-#define DEV_CLASS_IOTGATEWAY 277    
-#define DEV_CLASS_VIDEO_ALARM_HOST 301          
-#define DEV_CLASS_NET_ALARM_HOST 302          
-#define DEV_CLASS_ONE_KEY_ALARM 303      
-#define DEV_CLASS_WIRELESS_ALARM_HOST 304      
-#define DEV_CLASS_ALARM_MODULE 305      
-#define DEV_CLASS_HOME_ALARM_HOST 306      
-#define DEV_CLASS_HYBRID_ALARM_HOST 307      
-#define DEV_CLASS_ACCESS_CONTROL 351          
-#define DEV_CLASS_VIDEO_INTERCOM 401          
-#define DEV_CLASS_UMMANNED_AERIAL_VEHICLE 451          
-#define DEV_CLASS_MOBILE 501          
-#define DEV_CLASS_MOBILE_VEHICLE 551          
-#define DEV_CLASS_INTELLIGENT_ANALYZER 601  
-#define DEV_CLASS_INTELLIGENT_TRAFFIC_SERVER 651  
-#define DS_TP2200_EC                         652  
-#define DEV_CLASS_NVS 701          
-#define DS_TRI21A_1_P 751   
-#define DS_CLASS_FA              801 
-#define DS_CLASS_PURE            802 
-#define DS_CLASS_FS              803 
-#define DS_CLASS_FD              804 
-#define DS_CLASS_HAWK            805 
-#define DS_CLASS_BLADE           806 
-#define DS_CLASS_HMCP            807 
-#define DEV_CLASS_SMART_LOCK     851  
-#define DEV_CLASS_RADAR          901  
-#define DEV_CLASS_FIRE_CONTROL   951 
-#define DEV_CLASS_SECURITY_CHECK          1001  
-#define iDS_PT              8451  
-#define DEV_CLASS_DEFAULT 65534   
-#define DEVICE_SOFTHARDWARE_ABILITY         0x001  
-#define DEVICE_NETWORK_ABILITY              0x002  
-#define DEVICE_ENCODE_ALL_ABILITY           0x003  
-#define    DEVICE_ENCODE_CURRENT               0x004  
-#define IPC_FRONT_PARAMETER                    0x005     
-#define IPC_UPGRADE_DESCRIPTION                0x006     
-#define DEVICE_RAID_ABILITY                 0x007  
-#define DEVICE_ENCODE_ALL_ABILITY_V20       0x008     
-#define IPC_FRONT_PARAMETER_V20                0x009     
-#define DEVICE_ALARM_ABILITY                0x00a  
-#define DEVICE_DYNCHAN_ABILITY                0x00b  
-#define DEVICE_USER_ABILITY                 0x00c  
-#define DEVICE_NETAPP_ABILITY               0x00d  
-#define DEVICE_VIDEOPIC_ABILITY             0x00e  
-#define DEVICE_JPEG_CAP_ABILITY             0x00f  
-#define DEVICE_SERIAL_ABILITY               0x010  
-#define DEVICE_ABILITY_INFO                    0x011     
-#define STREAM_ABILITY                      0x012  
-#define SYSTEM_MANAGEMENT_ABILITY           0x013  
-#define IP_VIEW_DEV_ABILITY                    0x014  
-#define VCA_DEV_ABILITY                     0x100  
-#define VCA_CHAN_ABILITY                    0x110  
-#define TRANSFER_ABILITY                    0x120  
-#define MATRIXDECODER_ABILITY               0x200  
-#define VIDEOPLATFORM_ABILITY               0x210 
-#define VIDEOPLATFORM_SBUCODESYSTEM_ABILITY 0x211 
-#define WALL_ABILITY                        0x212  
-#define MATRIX_ABILITY                      0x213  
-#define DECODECARD_ABILITY                  0x220 
-#define VIDEOPLATFORM_ABILITY_V40           0x230 
-#define MATRIXMANAGEDEVICE_ABILITY          0x240 
-#define MATRIXDECODER_ABILITY_V41           0x260 
-#define DECODER_ABILITY                     0x261 
-#define DECODECARD_ABILITY_V41              0x270 
-#define CODECARD_ABILITY                    0x271  
-#define SNAPCAMERA_ABILITY                  0x300  
-#define ITC_TRIGGER_MODE_ABILITY            0x301  
-#define COMPRESSIONCFG_ABILITY              0x400  
-#define COMPRESSION_LIMIT                   0x401  
-#define PIC_CAPTURE_ABILITY                    0x402  
-#define ALARMHOST_ABILITY                   0x500 
-#define IT_DEVICE_ABILITY                   0x501  
-#define    SCREENCONTROL_ABILITY                0x600     
-#define    SCREENSERVER_ABILITY                0x610     
-#define FISHEYE_ABILITY                     0x700   
-#define LCD_SCREEN_ABILITY                    0x800    
-#define ACS_ABILITY                         0x801   
-#define MERGEDEV_ABILITY                    0x802   
-#define CAM_FUSION_ABILITY                  0x803   
-#define OPTICAL_DEV_ACCESS_ABILITY          0x805   
-#define NET_RING_ABILITY                    0x806    
-#define LED_ABILITY                            0x807    
-#define PUBLISHDEV_ABILITY                    0x80a    
-#define SCREEN_EXCHANGE_ABILITY             0x80b   
-#define REMOTE_NETMGR_FOT_ABILITY   0x80e   
-#define EXCEPTION_MAJOR_MAINBOARD_BOOT                    0x1  
-#define EXCEPTION_MINOR_PCIE_SCAN                        0x1  
-#define EXCEPTION_MINOR_DOWNLOAD_SUBBOARD                 0xa  
-#define EXCEPTION_MAJOR_SUBBOARD_BOOT                    0x2  
-#define EXCEPTION_MINOR_INEXISTENCE                       0x1  
-#define EXCEPTION_MINOR_UBOOT_DOWNLOAD                  0xa  
-#define EXCEPTION_MINOR_UBOOT_INIT                      0xe  
-#define EXCEPTION_MINOR_ROOTFS_DOWNLOAD                 0x14  
-#define EXCEPTION_MINOR_UIMAGE_DOWNLOAD                 0x19  
-#define EXCEPTION_MINOR_UBOOT_SETBOOTFLAG               0x1e  
-#define EXCEPTION_MINOR_ROOTFS_BOOT_SUBBOARD            0x23  
-#define EXCEPTION_MINOR_NEED_FILE_FINISH                0x28  
-#define EXCEPTION_MAJOR_SUBBOARD_HARDWARE                0x3  
-#define EXCEPTION_MINOR_AD                               0x1  
-#define EXCEPTION_MINOR_DA                                 0xa  
-#define EXCEPTION_MINOR_TIMER                            0xb     
-#define EXCEPTION_MAJOR_FPGA                            0x4  
-#define EXCEPTION_MINOR_IDLE                              0x1  
-#define EXCEPTION_MINOR_LANE                             0xa  
-#define EXCEPTION_MINOR_REGISTER_ALL_F                     0xe  
-#define EXCEPTION_MINOR_MEMORY_INIT_FAIL                 0x14 
-#define EXCEPTION_MAJOR_DSP                                0x5  
-#define EXCEPTION_MAJOR_ARM                                0x6  
-#define EXCEPTION_MAJOR_BACKBOARD                        0x7  
-#define EXCEPTION_MINOR_BLACKBOARD_TYPE                   0x1  
-#define EXCEPTION_MINOR_SERDES                           0xa  
-#define EXCEPTION_MINOR_CLOCK                             0xe  
-#define EXCEPTION_MINOR_SYNCH                             0x14  
-#define EXCEPTION_MAJOR_SUBBOARD_NET                    0x8  
-#define EXCEPTION_MINOR_IP_CONFLICT                       0x1  
-#define EXCEPTION_MINOR_DISCONNECT                         0x14  
-#define MAX_FIRE_ALARM_ZONE         12           
-#define MAX_FIRE_ALARM_POINT_ZONE   32           
   typedef enum tagCharEncodeType
 {
     ENUM_MEM_CHAR_ENCODE_ERR  = -1,         
@@ -7398,14 +495,14 @@ typedef struct
     NET_DVR_TIME struTime;
     WORD wMilliSec;
     BYTE byRes[14];
-}NET_DVR_CALIBRATE_TIME,*LPNET_DVR_CALIBRATE_TIME;
+}NET_DVR_CALIBRATE_TIME;
 #define    MAX_TIMESIGN_LEN    32 
 typedef  struct tagNET_DVR_TIMESIGN_CFG
 {
     DWORD  dwSize;
     BYTE  byCustomSetTimeSign[MAX_TIMESIGN_LEN];
     BYTE  byRes[96]; 
-}NET_DVR_TIMESIGN_CFG,*LPNET_DVR_TIMESIGN_CFG;
+}NET_DVR_TIMESIGN_CFG;
   typedef struct tagNET_DVR_TIME_EX
 {
     WORD wYear;
@@ -7415,7 +512,7 @@ typedef  struct tagNET_DVR_TIMESIGN_CFG
     BYTE byMinute;
     BYTE bySecond;
     BYTE byRes;
-}NET_DVR_TIME_EX,*LPNET_DVR_TIME_EX;
+}NET_DVR_TIME_EX;
 typedef struct
 {
     BYTE byStartHour;
@@ -7695,7 +792,7 @@ typedef struct tagNET_DVR_IP_VIEW_DEVCFG
     BYTE  byRes1[2];
     DWORD dwPreviewDelayTime; 
     BYTE  byRes2[64];
-}NET_DVR_IP_VIEW_DEVCFG,*LPNET_DVR_IP_VIEW_DEVCFG;
+}NET_DVR_IP_VIEW_DEVCFG;
 typedef struct tagNET_DVR_IP_VIEW_AUDIO_CFG
 {
     DWORD dwSize;    
@@ -7704,7 +801,7 @@ typedef struct tagNET_DVR_IP_VIEW_AUDIO_CFG
     WORD  wAudioPacketLen1; 
     WORD  wAudioPacketLen2; 
     BYTE  byRes[30];
-}NET_DVR_IP_VIEW_AUDIO_CFG,*LPNET_DVR_IP_VIEW_AUDIO_CFG;
+}NET_DVR_IP_VIEW_AUDIO_CFG;
 typedef struct tagNET_DVR_IP_VIEW_CALL_CFG
 {
     DWORD dwSize ;
@@ -7718,7 +815,7 @@ typedef struct tagNET_DVR_IP_VIEW_CALL_CFG
     BYTE  byRes3[3];
     BYTE  byAlarmNumber2[MAX_NUMBER_LEN]; 
     BYTE  byRes4[72];
-}NET_DVR_IP_VIEW_CALL_CFG,*LPNET_DVR_IP_VIEW_CALL_CFG;
+}NET_DVR_IP_VIEW_CALL_CFG;
 typedef struct
 {    
     DWORD     dwMaxRecordChanNum;   
@@ -8074,7 +1171,7 @@ typedef struct tagNET_DVR_SERIALSTART_V40
     DWORD  dwSerialType;    
     BYTE   bySerialNum;   
     BYTE   byRes[255];
-}NET_DVR_SERIALSTART_V40,*LPNET_DVR_SERIALSTART_V40;
+}NET_DVR_SERIALSTART_V40;
 typedef struct tagNET_DVR_DECODERCFG_V40
 {
     DWORD    dwSize;       
@@ -8091,7 +1188,7 @@ typedef struct tagNET_DVR_DECODERCFG_V40
     BYTE     bySerialNO;          
     BYTE     byWorkMode;          
     BYTE     byRes[254];         
-}NET_DVR_DECODERCFG_V40,*LPNET_DVR_DECODERCFG_V40;
+}NET_DVR_DECODERCFG_V40;
  typedef	struct tagNET_DVR_THERMOMETRYRULE_TEMPERATURE_INFO
 {
     float fMaxTemperature;
@@ -8176,7 +1273,7 @@ typedef struct
     BYTE byFlowcontrol; 
     BYTE byVirtualSerialPort;  
     BYTE byRes[3];
-}NET_DVR_USB_RS232,*LPNET_DVR_USB_RS232;
+}NET_DVR_USB_RS232;
 typedef struct 
 {
     DWORD dwSize;
@@ -8467,7 +1564,7 @@ typedef struct tagNET_DVR_STREAM_MEDIA_SERVER_CFG
     WORD    wDevPort;            
     BYTE    byTransmitType;        
     BYTE    byRes2[69];
-}NET_DVR_STREAM_MEDIA_SERVER_CFG,*LPNET_DVR_STREAM_MEDIA_SERVER_CFG;
+}NET_DVR_STREAM_MEDIA_SERVER_CFG;
 typedef struct tagNET_DVR_DEV_CHAN_INFO
 {
     NET_DVR_IPADDR     struIP;            
@@ -8484,13 +1581,13 @@ typedef struct tagNET_DVR_DEV_CHAN_INFO
     BYTE    byDomain[MAX_DOMAIN_NAME];    
     BYTE    sUserName[NAME_LEN];    
     BYTE    sPassword[PASSWD_LEN];    
-}NET_DVR_DEV_CHAN_INFO,*LPNET_DVR_DEV_CHAN_INFO;
+}NET_DVR_DEV_CHAN_INFO;
 typedef struct tagNET_DVR_PU_STREAM_CFG
 {
     DWORD                                dwSize;
     NET_DVR_STREAM_MEDIA_SERVER_CFG    struStreamMediaSvrCfg;
     NET_DVR_DEV_CHAN_INFO                struDevChanInfo;
-}NET_DVR_PU_STREAM_CFG,*LPNET_DVR_PU_STREAM_CFG;
+}NET_DVR_PU_STREAM_CFG;
  typedef struct tagNET_DVR_DDNS_STREAM_CFG
 {
     BYTE   byEnable;   
@@ -8552,7 +1649,7 @@ typedef struct tagNET_DVR_PU_STREAM_URL
     BYTE    byFactoryType;            
     BYTE    byRes;
     BYTE    strURL[URL_LEN];   
-}NET_DVR_IPCHANINFO_V40,*LPNET_DVR_IPCHANINFO_V40;
+}NET_DVR_IPCHANINFO_V40;
 #define MAX_ID_COUNT    256
 #define MAX_STREAM_ID_COUNT    1024
 #define STREAM_ID_LEN   32
@@ -9047,7 +2144,7 @@ typedef struct  tagNET_DVR_USER_V40
     DWORD dwSize;  
     DWORD dwMaxUserNum; 
     NET_DVR_USER_INFO_V40 struUser[MAX_USERNUM_V30];  
-}NET_DVR_USER_V40,*LPNET_DVR_USER_V40;
+}NET_DVR_USER_V40;
 typedef struct  tagNET_DVR_USER_V50
 {
     DWORD dwSize;  
@@ -9077,7 +2174,7 @@ typedef struct
     DWORD             dwMaxGroupNum ;    
     NET_DVR_HANDLEEXCEPTION_V41 struExceptionHandle[MAX_EXCEPTIONNUM_V30];    
     BYTE                byRes[128];          
-}NET_DVR_EXCEPTION_V40,*LPNET_DVR_EXCEPTION_V40; 
+}NET_DVR_EXCEPTION_V40; 
 typedef struct 
 {
     DWORD dwSize;
@@ -9371,7 +2468,7 @@ typedef struct    tagNET_DVR_IDENTIFICAT
     DWORD                    dwLengthPos;            
     DWORD                    dwLengthLen;            
     BYTE                    byRes3[8];              
-}NET_DVR_PACKAGE_LENGTH,* LPNET_DVR_PACKAGE_LENGTH;
+}NET_DVR_PACKAGE_LENGTH;
  typedef struct    tagNET_DVR_OSD_POSITION
 {    
     BYTE                    byPositionMode;        
@@ -9985,7 +3082,7 @@ typedef struct tagNET_MATRIX_PASSIVEMODE
     DWORD dwLocalSerialNo;          
     DWORD dwRemoteSerialNo;         
     BYTE  byRes3[8];
-} NET_DVR_MATRIX_TRAN_CHAN_INFO_V30,*LPNET_DVR_MATRIX_TRAN_CHAN_INFO_V30;
+} NET_DVR_MATRIX_TRAN_CHAN_INFO_V30;
  typedef struct tagMATRIX_TRAN_CHAN_CONFIG 
 {
     DWORD dwSize;
@@ -9993,20 +3090,20 @@ typedef struct tagNET_MATRIX_PASSIVEMODE
     BYTE  by485IsDualChan; 
     BYTE  byRes[2];           
     NET_DVR_MATRIX_TRAN_CHAN_INFO_V30 struTranInfo[MAX_SERIAL_NUM]; 
-}NET_DVR_MATRIX_TRAN_CHAN_CONFIG_V30,*LPNET_DVR_MATRIX_TRAN_CHAN_CONFIG_V30;
+}NET_DVR_MATRIX_TRAN_CHAN_CONFIG_V30;
  typedef struct  
 {
     DWORD                                dwEnable;    
     NET_DVR_STREAM_MEDIA_SERVER_CFG    streamMediaServerCfg;    
     NET_DVR_DEV_CHAN_INFO         struDevChanInfo;        
-}NET_DVR_MATRIX_CHAN_INFO_V30,*LPNET_DVR_CYC_SUR_CHAN_ELE_V30;
+}NET_DVR_MATRIX_CHAN_INFO_V30;
  typedef struct  tagMATRIX_LOOP_DECINFO_V30
 {
     DWORD                            dwSize;
     DWORD                            dwPoolTime;        
     NET_DVR_MATRIX_CHAN_INFO_V30    struchanConInfo[MAX_CYCLE_CHAN_V30];
     BYTE                               byRes[16];
-} NET_DVR_MATRIX_LOOP_DECINFO_V30,*LPNET_DVR_MATRIX_LOOP_DECINFO_V30;
+} NET_DVR_MATRIX_LOOP_DECINFO_V30;
   typedef struct tagDEC_MATRIX_CHAN_INFO_V30
 {
     DWORD    dwSize;
@@ -10019,7 +3116,7 @@ typedef struct tagNET_MATRIX_PASSIVEMODE
     DWORD   dwGetStreamMode;    
     NET_DVR_MATRIX_PASSIVEMODE      struPassiveMode;
     BYTE    byRes[32];
-}NET_DVR_MATRIX_DEC_CHAN_INFO_V30,*LPNET_DVR_MATRIX_DEC_CHAN_INFO_V30;
+}NET_DVR_MATRIX_DEC_CHAN_INFO_V30;
 #define MAX_RESOLUTIONNUM    64 
 typedef struct tagNET_DVR_MATRIX_ABILITY
 {
@@ -10050,7 +3147,7 @@ typedef struct tagNET_DVR_DISP_LOGOCFG
     BYTE        byTranslucent; 
     BYTE        byRes2[6];                
     DWORD        dwLogoSize;
-}NET_DVR_DISP_LOGOCFG,*LPNET_DVR_DISP_LOGOCFG;
+}NET_DVR_DISP_LOGOCFG;
 #define NET_DVR_ENCODER_UNKOWN 0 
 #define NET_DVR_ENCODER_H264   1 
 #define NET_DVR_ENCODER_S264   2 
@@ -10167,7 +3264,7 @@ typedef enum
     }struDiff;
     BYTE        byUnionType;
     BYTE        byScale; 
-}NET_DVR_VGA_DISP_CHAN_CFG,*LPNET_DVR_VGA_DISP_CHAN_CFG;
+}NET_DVR_VGA_DISP_CHAN_CFG;
 #define NET_DVR_MAX_DISPREGION 16 
 typedef struct
 {
@@ -10191,14 +3288,14 @@ typedef struct tagNET_DVR_DECODER_WORK_STATUS
     BYTE byAlarmOutStatus[MAX_ANALOG_ALARMOUT];       
     BYTE byAudioInChanStatus;          
     BYTE byRes[127];
-}NET_DVR_DECODER_WORK_STATUS,*LPNET_DVR_DECODER_WORK_STATUS;
+}NET_DVR_DECODER_WORK_STATUS;
 typedef struct tagNET_DVR_PASSIVEDECODE_CONTROL
 {
     DWORD    dwSize;
     DWORD    dwPlayCmd;        
     DWORD    dwCmdParam;        
     BYTE    byRes[16];
-}NET_DVR_PASSIVEDECODE_CONTROL,*LPNET_DVR_PASSIVEDECODE_CONTROL;
+}NET_DVR_PASSIVEDECODE_CONTROL;
 #define        PASSIVE_DEC_PAUSE            1    
 #define        PASSIVE_DEC_RESUME            2    
 #define     PASSIVE_DEC_FAST              3   
@@ -10222,7 +3319,7 @@ typedef struct tagNET_DVR_MATRIX_DECCHAN_CONTROL
     DWORD   dwAllCtrlType;    
     BYTE    byVolume; 
     BYTE    byRes[55];
-}NET_DVR_MATRIX_DECCHAN_CONTROL,*LPNET_DVR_MATRIX_DECCHAN_CONTROL;
+}NET_DVR_MATRIX_DECCHAN_CONTROL;
 #define MAX_SUBSYSTEM_NUM    80   
 #define MAX_SERIALLEN        36  
 #define MAX_LOOPPLANNUM        16
@@ -10256,14 +3353,14 @@ typedef struct tagNET_DVR_SUBSYSTEMINFO
     DWORD                            dwPoolTime;        
     NET_DVR_MATRIX_CHAN_INFO_V30 struChanConInfo[MAX_CYCLE_CHAN_V30];
     BYTE                               byRes[16];
-}NET_DVR_LOOPPLAN_SUBCFG,*LPNET_DVR_LOOPPLAN_SUBCFG;
+}NET_DVR_LOOPPLAN_SUBCFG;
  typedef struct tagNET_DVR_ALARMMODECFG
 {
     DWORD     dwSize;
     BYTE    byAlarmMode;
     WORD    wLoopTime;
     BYTE    byRes[9];
-}NET_DVR_ALARMMODECFG,*LPNET_DVR_ALARMMODECFG;
+}NET_DVR_ALARMMODECFG;
  typedef struct  tagNET_DVR_CODESPLITTERINFO
 {
     DWORD            dwSize;
@@ -10282,14 +3379,14 @@ typedef struct tagNET_DVR_SUBSYSTEMINFO
     WORD    wAlarmDelay;
     BYTE    byAlarmNum;
     BYTE    byRes[8];
-} NET_DVR_ASSOCIATECFG,*LPNET_DVR_ASSOCIATECFG;
+} NET_DVR_ASSOCIATECFG;
  typedef struct tagNET_DVR_DYNAMICDECODE
 {
     DWORD                            dwSize;
     NET_DVR_ASSOCIATECFG           struAssociateCfg;
     NET_DVR_PU_STREAM_CFG        struPuStreamCfg;
     BYTE                            byRes[8];
-}NET_DVR_DYNAMICDECODE,*LPNET_DVR_DYNAMICDECODE;
+}NET_DVR_DYNAMICDECODE;
  typedef struct  tagNET_DVR_DECODESCHED
 {
     NET_DVR_SCHEDTIME  struSchedTime;
@@ -10303,7 +3400,7 @@ typedef struct tagNET_DVR_SUBSYSTEMINFO
     DWORD dwSize;
     NET_DVR_DECODESCHED struDecodeSched[MAX_DAYS][DECODE_TIMESEGMENT];
     BYTE byRes[8];
-} NET_DVR_PLANDECODE,*LPNET_DVR_PLANDECODE;
+} NET_DVR_PLANDECODE;
 typedef struct 
 {    
     DWORD    dwSize;
@@ -10435,7 +3532,7 @@ typedef struct
     LONG iProxyID;    
     BYTE byVerifyMode;  
     BYTE byRes3[119];
-}NET_DVR_USER_LOGIN_INFO,*LPNET_DVR_USER_LOGIN_INFO;
+}NET_DVR_USER_LOGIN_INFO;
 typedef enum _SDK_NET_ENV
 {
     LOCAL_AREA_NETWORK = 0,
@@ -10648,13 +3745,13 @@ typedef struct tagNET_DVR_COMPRESSION_AUDIO
     DWORD  dwChannel;            
     DWORD  dwSignalStrength;    
     DWORD  dwSpeed;               
-}NET_DVR_AP_INFO,*LPNET_DVR_AP_INFO;
+}NET_DVR_AP_INFO;
  typedef struct tagNET_DVR_AP_INFO_LIST
 {
     DWORD dwSize;
     DWORD dwCount;        
     NET_DVR_AP_INFO struApInfo[WIFI_MAX_AP_COUNT];
-}NET_DVR_AP_INFO_LIST,*LPNET_DVR_AP_INFO_LIST;
+}NET_DVR_AP_INFO_LIST;
  typedef struct tagNET_DVR_WIFIETHERNET
 {    
     char sIpAddress[16];                
@@ -10668,7 +3765,7 @@ typedef struct tagNET_DVR_COMPRESSION_AUDIO
     char sSecondDns[16];                     
     char sGatewayIpAddr[16];                 
     BYTE   bRes2[8];
-}NET_DVR_WIFIETHERNET,*LPNET_DVR_WIFIETHERNET;
+}NET_DVR_WIFIETHERNET;
  typedef struct tagNET_DVR_WIFI_CFG_EX
 {
     NET_DVR_WIFIETHERNET struEtherNet;        
@@ -10733,12 +3830,12 @@ typedef struct tagNET_DVR_COMPRESSION_AUDIO
             }auth_param;
         }wpa_wpa2; 
     }key;    
-}NET_DVR_WIFI_CFG_EX,*LPNET_DVR_WIFI_CFG_EX;
+}NET_DVR_WIFI_CFG_EX;
 typedef struct tagNET_DVR_WIFI_CFG
 {
     DWORD dwSize;
     NET_DVR_WIFI_CFG_EX struWifiCfg;
-}NET_DVR_WIFI_CFG,*LPNET_DVR_WIFI_CFG;
+}NET_DVR_WIFI_CFG;
 typedef     struct  tagNET_DVR_WIFI_CONNECT_STATUS
 {
     DWORD        dwSize;
@@ -10746,12 +3843,12 @@ typedef     struct  tagNET_DVR_WIFI_CONNECT_STATUS
     BYTE        byRes1[3];        
     DWORD        dwErrorCode;    
     BYTE        byRes[244];
-}NET_DVR_WIFI_CONNECT_STATUS,*LPNET_DVR_WIFI_CONNECT_STATUS;
+}NET_DVR_WIFI_CONNECT_STATUS;
 typedef struct tagNET_DVR_WIFI_WORKMODE
 {
     DWORD dwSize;
     DWORD dwNetworkInterfaceMode; 
-}NET_DVR_WIFI_WORKMODE,*LPNET_DVR_WIFI_WORKMODE;
+}NET_DVR_WIFI_WORKMODE;
 #define VCA_MAX_POLYGON_POINT_NUM        10        
 #define MAX_RULE_NUM                    8        
 #define MAX_RULE_NUM_V42                16      
@@ -11354,7 +4451,7 @@ typedef struct tagNET_DVR_AUDIO_STEEP_DROP
     DWORD   dwCrossDirection;   
     BYTE    bySensitivity;      
     BYTE    byRes[3];            
-} NET_VCA_ADV_TRAVERSE_PLANE,*LPNET_VCA_ADV_TRAVERSE_PLANE;
+} NET_VCA_ADV_TRAVERSE_PLANE;
  typedef struct tagNET_VCA_PLAY_CELLPHONE
 {
     NET_VCA_POLYGON struRegion;
@@ -11386,7 +4483,7 @@ typedef struct tagNET_VCA_RELATE_RULE_PARAM
     BYTE  byRuleID;  
     BYTE  byRes;  
     WORD  wEventType;        
-}NET_VCA_RELATE_RULE_PARAM,*LPNET_VCA_RELATE_RULE_PARAM;
+}NET_VCA_RELATE_RULE_PARAM;
  typedef struct tagNET_VCA_COMBINED_RULE_
 {
     BYTE    byRuleSequence; 
@@ -11533,7 +4630,7 @@ typedef struct tagNET_VCA_DEV_INFO
     BYTE     byLeftDirection;
     BYTE     byTargetStatus;
     BYTE     byRes[125];
-}NET_DVR_TARGET_LEFT_REGION_ALARM,*LPNET_DVR_TARGET_LEFT_REGION_ALARM;
+}NET_DVR_TARGET_LEFT_REGION_ALARM;
 typedef struct
 {
     DWORD dwPicType;                
@@ -11634,7 +4731,7 @@ typedef struct tagNET_VCA_FILTER_STRATEGY
 {
     BYTE    byStrategy;      
     BYTE    byRes[11];       
-}NET_VCA_FILTER_STRATEGY,*LPNET_VCA_FILTER_STRATEGY;
+}NET_VCA_FILTER_STRATEGY;
 typedef struct tagNET_VCA_RULE_TRIGGER_PARAM
 {
     BYTE   byTriggerMode;   
@@ -11642,7 +4739,7 @@ typedef struct tagNET_VCA_RULE_TRIGGER_PARAM
     BYTE   byRes1[2];       
     float  fTriggerArea;    
     BYTE   byRes2[4];       
-}NET_VCA_RULE_TRIGGER_PARAM,*LPNET_VCA_RULE_TRIGGER_PARAM;
+}NET_VCA_RULE_TRIGGER_PARAM;
 typedef struct tagNET_VCA_ONE_RULE_V41
 {
     BYTE   byActive; 
@@ -11781,7 +4878,7 @@ typedef struct tagNET_DVR_OBJECT_COLOR_COND
     DWORD  dwChannel;   
     DWORD  dwObjType;   
     BYTE   byRes[64];   
-}NET_DVR_OBJECT_COLOR_COND,*LPNET_DVR_OBJECT_COLOR_COND;
+}NET_DVR_OBJECT_COLOR_COND;
 typedef struct tagNET_DVR_PIC
 {
     BYTE   byPicType;        
@@ -11792,13 +4889,13 @@ typedef struct tagNET_DVR_PIC
     DWORD  dwPicDataBuffLen; 
     BYTE*  byPicDataBuff;    
     BYTE   byRes2[40];       
-}NET_DVR_PIC,*LPNET_DVR_PIC;
+}NET_DVR_PIC;
 typedef union tagNET_DVR_OBJECT_COLOR_UNION
 {    
     NET_DVR_COLOR  struColor;   
     NET_DVR_PIC    struPicture; 
     BYTE           byRes[64];   
-}NET_DVR_OBJECT_COLOR_UNION,*LPNET_DVR_OBJECT_COLOR_UNION;
+}NET_DVR_OBJECT_COLOR_UNION;
 typedef struct tagNET_DVR_OBJECT_COLOR
 {    
     DWORD  dwSize;       
@@ -11820,13 +4917,13 @@ typedef struct tagNET_DVR_AUXAREA
     BYTE   byRes1[3];     
     NET_VCA_POLYGON struPolygon; 
     BYTE   byRes2[16];   
-}NET_DVR_AUXAREA,*LPNET_DVR_AUXAREA;
+}NET_DVR_AUXAREA;
 typedef struct tagNET_DVR_AUXAREA_LIST
 {
     DWORD     dwSize;    
     NET_DVR_AUXAREA struArea[MAX_AUXAREA_NUM]; 
     BYTE    byRes2[64];    
-}NET_DVR_AUXAREA_LIST,*LPNET_DVR_AUXAREA_LIST;
+}NET_DVR_AUXAREA_LIST;
 typedef enum tagCHAN_WORKMODE_ENUM
 {    
     ENUM_CHAN_WORKMODE_INDEPENDENT = 1,  
@@ -11838,7 +4935,7 @@ typedef struct tagNET_DVR_CHANNEL_WORKMODE
     DWORD dwSize;        
     BYTE  byWorkMode;    
     BYTE  byRes[63];     
-}NET_DVR_CHANNEL_WORKMODE,*LPNET_DVR_CHANNEL_WORKMODE;
+}NET_DVR_CHANNEL_WORKMODE;
 typedef struct tagNET_DVR_CHANNEL
 {
     BYTE   byAddress[MAX_DOMAIN_NAME];    
@@ -11848,26 +4945,26 @@ typedef struct tagNET_DVR_CHANNEL
     BYTE   sPassword[PASSWD_LEN];       
     DWORD  dwChannel;                   
     BYTE   byRes2[32];                  
-}NET_DVR_CHANNEL,*LPNET_DVR_CHANNEL;
+}NET_DVR_CHANNEL;
 typedef union tagNET_DVR_SLAVE_CHANNEL_UNION
 {
     BYTE            byRes[152];        
     DWORD           dwLocalChannel;    
     NET_DVR_CHANNEL struRemoteChannel; 
-}NET_DVR_SLAVE_CHANNEL_UNION,*LPNET_DVR_SLAVE_CHANNEL_UNION;
+}NET_DVR_SLAVE_CHANNEL_UNION;
 typedef struct tagNET_DVR_SLAVE_CHANNEL_PARAM
 {
     BYTE   byChanType;   
     BYTE   byRes1[3];    
     NET_DVR_SLAVE_CHANNEL_UNION uSlaveChannel; 
     BYTE   byRes2[64];   
-}NET_DVR_SLAVE_CHANNEL_PARAM,*LPNET_DVR_SLAVE_CHANNEL_PARAM;
+}NET_DVR_SLAVE_CHANNEL_PARAM;
 typedef struct tagNET_DVR_SLAVE_CHANNEL_CFG
 {   
     DWORD dwSize;   
     NET_DVR_SLAVE_CHANNEL_PARAM struChanParam[MAX_SLAVE_CHANNEL_NUM];
     BYTE  byRes[64];  
-}NET_DVR_SLAVE_CHANNEL_CFG,*LPNET_DVR_SLAVE_CHANNEL_CFG;
+}NET_DVR_SLAVE_CHANNEL_CFG;
 typedef enum tagVQD_EVENT_ENUM
 {    
     ENUM_VQD_EVENT_BLUR           = 1,  
@@ -11895,7 +4992,7 @@ typedef struct tagNET_DVR_VQD_EVENT_COND
     DWORD dwChannel;   
     DWORD dwEventType; 
     BYTE  byRes[64];   
-}NET_DVR_VQD_EVENT_COND,*LPNET_DVR_VQD_EVENT_COND;
+}NET_DVR_VQD_EVENT_COND;
 typedef struct tagNET_DVR_VQD_EVENT_PARAM
 { 
     BYTE   byThreshold;    
@@ -11904,7 +5001,7 @@ typedef struct tagNET_DVR_VQD_EVENT_PARAM
     BYTE   byRes1;         
     DWORD  dwTimeInterval; 
     BYTE   byRes2[64];     
-}NET_DVR_VQD_EVENT_PARAM,*LPNET_DVR_VQD_EVENT_PARAM;
+}NET_DVR_VQD_EVENT_PARAM;
 typedef struct tagNET_DVR_VQD_EVENT_RULE
 {   
     DWORD  dwSize;       
@@ -11915,20 +5012,20 @@ typedef struct tagNET_DVR_VQD_EVENT_RULE
     NET_DVR_HANDLEEXCEPTION_V30 struHandleType;  
     BYTE   byRelRecordChan[MAX_IVMS_IP_CHANNEL]; 
     BYTE   byRes2[128];    
-}NET_DVR_VQD_EVENT_RULE,*LPNET_DVR_VQD_EVENT_RULE;
+}NET_DVR_VQD_EVENT_RULE;
 typedef struct tagNET_DVR_BASELINE_SCENE
 {   
     DWORD dwSize;     
     BYTE  byEnable;   
     BYTE  byRes[63];  
-}NET_DVR_BASELINE_SCENE,*LPNET_DVR_BASELINE_SCENE;
+}NET_DVR_BASELINE_SCENE;
 typedef struct tagNET_DVR_CONTROL_BASELINE_SCENE_PARAM
 {   
     DWORD dwSize;     
     DWORD dwChannel;  
     BYTE  byCommand;  
     BYTE  byRes[127];  
-}NET_DVR_CONTROL_BASELINE_SCENE_PARAM,*LPNET_DVR_CONTROL_BASELINE_SCENE_PARAM;
+}NET_DVR_CONTROL_BASELINE_SCENE_PARAM;
 typedef struct tagNET_DVR_VQD_ALARM
 {   
     DWORD  dwSize;                
@@ -11940,7 +5037,7 @@ typedef struct tagNET_DVR_VQD_ALARM
     DWORD  dwPicDataLen;          
     BYTE   *pImage;               
     BYTE   byRes[128];            
-}NET_DVR_VQD_ALARM,*LPNET_DVR_VQD_ALARM;
+}NET_DVR_VQD_ALARM;
 typedef struct tagNET_DVR_CB_POINT
 {
     NET_VCA_POINT struPoint;     
@@ -11983,7 +5080,7 @@ typedef struct tagNET_DVR_TRACK_MODE
         DWORD dwULen[4];
         NET_DVR_MANUAL_CTRL_INFO  struManualCtrl;
     }uModeParam;
-}NET_DVR_TRACK_MODE,*LPNET_DVR_TRACK_MODE;
+}NET_DVR_TRACK_MODE;
  typedef struct tagNET_DVR_ALARM_JPEG
 {
     BYTE    byPicProType;        
@@ -12084,7 +5181,7 @@ typedef struct tagNET_DVR_PHY_RATIO
     WORD  wTrackingTime;
     NET_VCA_POLYGON struRegion;
     BYTE byRes[64];
-}NET_DVR_TRACKING,*LPNET_DVR_TRACKING;
+}NET_DVR_TRACKING;
  typedef struct tagNET_DVR_SLAVECAMERA_CALIB_V50
 {
     DWORD            dwSize;
@@ -12975,7 +6072,7 @@ typedef struct tagNET_DVR_ITS_CALIBRATION
     float  fPitchAngle;     
     float  fInclineAngle;   
     BYTE   byRes1[228];     
-}NET_DVR_BV_DIRECT_CALIBRATION,*LPNET_DVR_BV_DIRECT_CALIBRATION;
+}NET_DVR_BV_DIRECT_CALIBRATION;
 typedef struct  tagNET_DVR_PDC_LINE_CALIBRATION
 {
     NET_VCA_LINE  struCalibrationLine;
@@ -13355,7 +6452,7 @@ typedef enum tagITS_TPS_TYPE
     BYTE    byRes1[3];    
     NET_VCA_POLYGON struPolygon[MAX_REGION_NUM]; 
     BYTE    byRes2[20];    
-}NET_DVR_REGION_LIST,*LPNET_DVR_REGION_LIST;
+}NET_DVR_REGION_LIST;
 typedef struct tagNET_DVR_DIRECTION
 {
     NET_VCA_POINT struStartPoint;   
@@ -13675,7 +6772,7 @@ typedef struct tagNET_DVR_EVENT_INFO
     BYTE            byNum;        
     BYTE            byRes1[3];            
     NET_DVR_EVENT_INFO struEventInfo[MAX_RULE_NUM];    
-}NET_DVR_EVENT_INFO_LIST,*LPNET_DVR_EVENT_INFO_LIST;
+}NET_DVR_EVENT_INFO_LIST;
  typedef struct tagNET_DVR_RULE_INFO_ALARM
 {
     DWORD             dwSize;                
@@ -13715,7 +6812,7 @@ typedef struct tagNET_DVR_SCENE_CFG
     DWORD dwSize;                                          
     NET_DVR_ONE_SCENE_CFG struSceneCfg[MAX_ITS_SCENE_NUM]; 
     BYTE   byRes[40];                                      
-}NET_DVR_SCENE_CFG,*LPNET_DVR_SCENE_CFG;
+}NET_DVR_SCENE_CFG;
 typedef struct tagNET_DVR_SCENE_COND
 {
     DWORD   dwSize;       
@@ -13728,7 +6825,7 @@ typedef struct tagNET_DVR_FORENSICS_MODE
     DWORD  dwSize;      
     BYTE   byMode;      
     BYTE   byRes[23];   
-}NET_DVR_FORENSICS_MODE,*LPNET_DVR_FORENSICS_MODE;
+}NET_DVR_FORENSICS_MODE;
 typedef struct tagNET_DVR_SCENE_INFO_
 {  
     DWORD           dwSceneID;              
@@ -13737,7 +6834,7 @@ typedef struct tagNET_DVR_SCENE_INFO_
     BYTE            byRes1[3];              
     NET_DVR_PTZPOS  struPtzPos;             
     BYTE            byRes2[64] ;            
-}NET_DVR_SCENE_INFO,*LPNET_DVR_SCENE_INFO;
+}NET_DVR_SCENE_INFO;
 typedef struct tagNET_DVR_AID_ALARM_V41
 {
     DWORD              dwSize;              
@@ -13777,7 +6874,7 @@ typedef struct tagNET_DVR_TPS_ALARM_V41
     DWORD                dwStartTime;  
     DWORD                dwStopTime;    
     BYTE                   byRes[24];      
-} NET_DVR_TPS_ALARM_V41,*LPNET_DVR_TPS_ALARM_V41;
+} NET_DVR_TPS_ALARM_V41;
 #define XXX_MAJOR_VERSION      2
 #define XXX_SUB_VERSION        3
 #define XXX_REVISION_VERSION   4
@@ -13964,12 +7061,12 @@ typedef struct tagNET_DVR_CLOUDSTORAGE_COND
     DWORD  dwSize;
     DWORD  dwChannel;
     BYTE    byRes1[64];
-}NET_DVR_CLOUDSTORAGE_COND,*LPNET_DVR_CLOUDSTORAGE_COND;
+}NET_DVR_CLOUDSTORAGE_COND;
 typedef struct tagNET_DVR_POOLPARAM
 {
     DWORD  dwPoolID;
     BYTE    byRes[4];
-}NET_DVR_POOLPARAM,*LPNET_DVR_POOLPARAM;
+}NET_DVR_POOLPARAM;
  typedef struct tagNET_DVR_CLOUDSTORAGE_CFG
 {
     DWORD   dwSize;
@@ -13982,7 +7079,7 @@ typedef struct tagNET_DVR_POOLPARAM
     char    szPassword[CLOUD_PASSWD_LEN];     
     NET_DVR_POOLPARAM  struPoolInfo[16];
     BYTE    byRes2[128];
-}NET_DVR_CLOUDSTORAGE_CFG,*LPNET_DVR_CLOUDSTORAGE_CFG;
+}NET_DVR_CLOUDSTORAGE_CFG;
  typedef  struct  tagNET_DVR_PARKLAMP_COND
 { 
     DWORD  dwSize;
@@ -14158,13 +7255,13 @@ typedef struct tagNET_DVR_SMARTIR_PARAM
     BYTE  byIRDistance;
     BYTE  byShortIRDistance;
     BYTE  byLongIRDistance;
-}NET_DVR_SMARTIR_PARAM,*LPNET_DVR_SMARTIR_PARAM;
+}NET_DVR_SMARTIR_PARAM;
 typedef struct tagNET_DVR_PIRIS_PARAM
 {
     BYTE  byMode;
     BYTE  byPIrisAperture;
     BYTE  byRes[6];
-}NET_DVR_PIRIS_PARAM,*LPNET_DVR_PIRIS_PARAM;
+}NET_DVR_PIRIS_PARAM;
 typedef struct tagNET_DVR_LASER_PARAM_CFG
 {
     BYTE    byControlMode;        
@@ -14184,21 +7281,21 @@ typedef struct tagNET_DVR_LASER_PARAM_CFG
     BYTE   byRes1;
     WORD   wCompensateTime; 
     BYTE   byRes2[4];
-}NET_DVR_FFC_PARAM,*LPNET_DVR_FFC_PARAM;
+}NET_DVR_FFC_PARAM;
  typedef struct tagNET_DVR_DDE_PARAM   
 {
     BYTE  byMode;
     BYTE  byNormalLevel;
     BYTE  byExpertLevel;
     BYTE  byRes[5];
-}NET_DVR_DDE_PARAM,*LPNET_DVR_DDE_PARAM;
+}NET_DVR_DDE_PARAM;
  typedef struct tagNET_DVR_AGC_PARAM
 {
     BYTE  bySceneType;
     BYTE  byLightLevel;
     BYTE  byGainLevel; 
     BYTE  byRes[5];
-}NET_DVR_AGC_PARAM,*LPNET_DVR_AGC_PARAM;
+}NET_DVR_AGC_PARAM;
 typedef struct tagNET_DVR_SNAP_CAMERAPARAMCFG 
 {
     BYTE byWDRMode;   
@@ -14227,7 +7324,7 @@ typedef struct tagNET_DVR_SNAP_CAMERAPARAMCFG
     BYTE byPlateContrastLevel;
     BYTE byPlateSaturationLevel;
     BYTE byRes[9];
-} NET_DVR_SNAP_CAMERAPARAMCFG,*LPNET_DVR_SNAP_CAMERAPARAMCFG;
+} NET_DVR_SNAP_CAMERAPARAMCFG;
 typedef struct tagNET_DVR_OPTICAL_DEHAZE
 {
     BYTE byEnable; 
@@ -16834,7 +9931,7 @@ typedef struct tagNET_ITC_ICR_ALGAOTOSWITCH_PARAM
     NET_ITC_ICR_MANUALSWITCH_PARAM struICRManualSwitch;
     NET_ITC_ICR_TIMESWITCH_PARAM struICRTimeSwitch;
     NET_ITC_ICR_ALGAOTOSWITCH_PARAM strICRAlgorithmAutoSwitch;
-}NET_ITC_ICR_PARAM_UNION,*LPNET_ITC_ICR_PARAM_UNION;
+}NET_ITC_ICR_PARAM_UNION;
  typedef struct tagNET_ITC_ICRCFG
 {
     DWORD dwSize;
@@ -16855,7 +9952,7 @@ typedef struct
 {
     DWORD dwSize;
     NET_ITC_HANDLEEXCEPTION struSnapExceptionType[MAX_EXCEPTIONNUM_V30]; 
-}NET_ITC_EXCEPTION,*LPNET_ITC_EXCEPTION;
+}NET_ITC_EXCEPTION;
  typedef struct tagNET_DVR_TRIGCOORDINATE
 {
     WORD wTopLeftX; 
@@ -17162,13 +10259,13 @@ typedef struct  tagNET_DVR_SIGNALLAMP_DETCFG
     DWORD         dwChannel;                
     BYTE          byExternalDevType;
     BYTE          byRes[63];             
-}NET_DVR_EXDEVDET_COND,*LPNET_DVR_EXDEVDET_COND;
+}NET_DVR_EXDEVDET_COND;
  typedef struct tagNET_DVR_EXDEVDET_CFG
 {
     DWORD         dwSize; 
     BYTE          byExternalDevStatus;
     BYTE          byRes[63];
-} NET_DVR_EXDEVDET_CFG,*LPNET_DVR_EXDEVDET_CFG;
+} NET_DVR_EXDEVDET_CFG;
 #define IPC_PROTOCOL_NUM      50   
 typedef struct tagNET_DVR_PROTO_TYPE
 { 
@@ -17211,7 +10308,7 @@ typedef struct tagNET_VCA_HUMAN_FEATURE
     BYTE byRace; 
     BYTE byHat; 
     BYTE byRes[4];    
-}NET_VCA_HUMAN_FEATURE ,*LPNET_VCA_HUMAN_FEATURE;
+}NET_VCA_HUMAN_FEATURE ;
 typedef struct tagNET_DVR_OBJECT_FEATURE
 {
     BYTE  byColorRatel;            
@@ -17219,13 +10316,13 @@ typedef struct tagNET_DVR_OBJECT_FEATURE
     BYTE  byGreen;                    
     BYTE  byBlue;                   
     BYTE  byRes[32];
-}NET_DVR_OBJECT_FEATURE ,*LPNET_DVR_OBJECT_FEATURE;
+}NET_DVR_OBJECT_FEATURE ;
 typedef union tagNET_DVR_ADVANCE_COND_UNION
 {  
     BYTE                  byLen[36];  
     NET_VCA_HUMAN_FEATURE      struHumanFeature; 
     NET_DVR_OBJECT_FEATURE     struObjectFeature; 
-}NET_DVR_ADVANCE_COND_UNION,*LPNET_DVR_ADVANCE_COND_UNION;
+}NET_DVR_ADVANCE_COND_UNION;
 #define MAX_ALERTLINE_NUM    8 
   typedef struct tagNET_DVR_TRAVERSE_PLANE_SEARCHCOND
 {    
@@ -17293,7 +10390,7 @@ typedef struct tagNET_DVR_SMART_SEARCH_PARAM
     char        cStopTimeDifferenceH;    
     char        cStopTimeDifferenceM;    
     BYTE               byRes2[251];
-}NET_DVR_SMART_SEARCH_PARAM_V40,*LPNET_DVR_SMART_SEARCH_PARAM_V40;
+}NET_DVR_SMART_SEARCH_PARAM_V40;
    typedef struct tagNET_DVR_SMART_SEARCH_RET
 {
     NET_DVR_TIME struStartTime;    
@@ -17859,7 +10956,7 @@ typedef struct tagNET_DVR_TEMPERATUREALARMCFG
     NET_DVR_BOARDALARMCFG          struBoardAlarmCfg;    
     NET_DVR_HANDLEEXCEPTION_V30  struHandleException[MAX_EXCEPTIONNUM];
     BYTE                         byRes[32];
-}NET_DVR_VIDEOPLATFORMALARMCFG,*LPNET_DVR_VIDEOPLATFORMALARMCFG;
+}NET_DVR_VIDEOPLATFORMALARMCFG;
 typedef struct  tagNET_DVR_CODESPLITTERASSOCIATE
 {
     DWORD        dwSize;
@@ -17891,7 +10988,7 @@ typedef struct tagNET_DVR_MATRIXSUBSYSTEMINFO
     NET_DVR_MATRIXSUBSYSTEMINFO struInputNote;
     NET_DVR_MATRIXSUBSYSTEMINFO struOutputNote;
     BYTE   byRes3[68];    
-}NET_DVR_VIDEOPLATFORM_ALRAMINFO,*LPNET_DVR_VIDEOPLATFORM_ALRAMINFO;
+}NET_DVR_VIDEOPLATFORM_ALRAMINFO;
 #define MAX_INQUEST_PIP_NUM        3     
 #define MAX_INQUEST_CDRW_NUM    4     
 #define MAX_INQUEST_PIP_NUM_EX    16        
@@ -18547,7 +11644,7 @@ typedef struct tagNET_DVR_MB_SENSORINPARA
     DWORD    dwMaxYAcc;    
     DWORD    dwMaxZAcc;    
     BYTE    byRes[4];
-}NET_DVR_ACCELERATIONCFG,*LPNET_DVR_ACCERATIONCFG;
+}NET_DVR_ACCELERATIONCFG;
  typedef struct tagNET_DVR_GSENSORPARA
 {
     DWORD dwSize;
@@ -18562,7 +11659,7 @@ typedef struct tagNET_DVR_MB_SENSORINPARA
     DWORD dwSize;
     NET_DVR_IPADDR    struDownloadSvrIp;        
     BYTE  byRes[64];
-}NET_DVR_MB_DOWNLOADSVRPARA,*LPNET_DVR_MB_DOWNLOADSVRPARA;
+}NET_DVR_MB_DOWNLOADSVRPARA;
 typedef struct tagNET_DVR_PLATERECOG_PARA
 {
     DWORD dwSize;
@@ -19038,7 +12135,7 @@ typedef struct tagNET_DVR_485_SLOT_LIST_INFO
     BYTE        byres[3];
     BYTE        byIndex[MAX_485SLOT];            
     BYTE           byRes[64];      
-}NET_DVR_485_SLOT_LIST_INFO,* LPNET_DVR_485_SLOT_LIST_INFO;
+}NET_DVR_485_SLOT_LIST_INFO;
  typedef struct tagNET_DVR_485LIST_INFO
 {
     DWORD        dwSize;
@@ -19046,7 +12143,7 @@ typedef struct tagNET_DVR_485_SLOT_LIST_INFO
     BYTE        byres[3];
     BYTE        byIndex[MAX_485CHAN];            
     BYTE       byRes[64];      
-}NET_DVR_485LIST_INFO,*LPNET_DVR_485LIST_INFO;
+}NET_DVR_485LIST_INFO;
  typedef struct tagNET_DVR_ALARM_RS485CFG
 {
     DWORD   dwSize;                 
@@ -19157,7 +12254,7 @@ typedef struct tagNET_DVR_ALARM_DEVICE_USER
     DWORD  dwAlarmType;             
     BYTE   byAlarmInputNumber[MAX_ALARMHOST_ALARMIN_NUM];
     BYTE    byRes[160];
-}NET_DVR_ALARMHOST_ALARMINFO,*LPNET_DVR_ALARMHOST_ALARMINFO;
+}NET_DVR_ALARMHOST_ALARMINFO;
 typedef struct tagNET_DVR_SWITCH_ALARM
 {
     DWORD dwSize;
@@ -19357,7 +12454,7 @@ typedef enum _HD_DISPLAY_FORMAT
         HD_DISPLAY_FORMAT_VGA = 0x00000004, 
         HD_DISPLAY_FORMAT_HDMI = 0x00000008, 
         HD_DISPLAY_FORMAT_YPbPr = 0x00000010
-}HD_DISPLAY_FORMAT,*LPHD_DISPLAY_FORMAT;
+}HD_DISPLAY_FORMAT;
 typedef struct tagNET_DVR_DECCARD_ABILITY      
 {
     BYTE byCardType;      
@@ -19369,7 +12466,7 @@ typedef struct tagNET_DVR_DECCARD_ABILITY
     BYTE byDispFormat[8];     
     BYTE byWindowMode[4][8]; 
     BYTE byRes[35];
-} NET_DVR_DECCARD_ABILITY,*LPNET_DVR_DECCARD_ABILITY;
+} NET_DVR_DECCARD_ABILITY;
  typedef struct tagNET_DVR_DECODESVR_ABILITY
 {
     DWORD dwSize;      
@@ -19392,7 +12489,7 @@ typedef struct tagNET_DVR_DECCARD_ABILITY
     BYTE    byRes[68];
     BYTE    sUserName[NAME_LEN];    
     BYTE    sPassword[PASSWD_LEN];    
-}NET_MATRIX_DEV_CHAN_INFO,*LPNET_MATRIX_DEV_CHAN_INFO;
+}NET_MATRIX_DEV_CHAN_INFO;
  typedef struct tagNET_MATRIX_PU_STREAM_CFG
 {
     DWORD                            dwSize;
@@ -19405,7 +12502,7 @@ typedef struct tagNET_DVR_MATRIX_CAMERACFG
     DWORD                    dwInterIndex;
     BYTE                    sCamName[NAME_LEN];
     NET_MATRIX_PU_STREAM_CFG struPuStreamCfg;
-} NET_DVR_MATRIX_CAMERACFG,*LPNET_DVR_MATRIX_CAMERACFG;
+} NET_DVR_MATRIX_CAMERACFG;
  typedef struct tagNET_DVR_MATRIX_CAMERALIST
 {
     DWORD            dwSize;
@@ -19413,7 +12510,7 @@ typedef struct tagNET_DVR_MATRIX_CAMERACFG
     DWORD            dwCamNum;
     BYTE              *pBuffer;
     DWORD             dwBufLen;
-} NET_DVR_MATRIX_CAMERALIST,*LPNET_DVR_MATRIX_CAMERALIST;
+} NET_DVR_MATRIX_CAMERALIST;
  typedef struct tagNET_DVR_DISP_CHAN_INFO
 {
     NET_DVR_IPADDR    struIP;                
@@ -19424,14 +12521,14 @@ typedef struct tagNET_DVR_MATRIX_CAMERACFG
     BYTE    byRes[7];
     BYTE    sUserName[NAME_LEN];    
     BYTE    sPassword[PASSWD_LEN];    
-}NET_DVR_DISP_CHAN_INFO,*LPNET_DVR_DISP_CHAN_INFO;
+}NET_DVR_DISP_CHAN_INFO;
 typedef struct tagNET_DVR_MATRIX_MONITORCFG
 {
     DWORD                        dwGlobalIndex;
     DWORD                        dwInterIndex;
     BYTE                        sMonName[NAME_LEN];
     NET_DVR_DISP_CHAN_INFO        struDispChanCfg;
-} NET_DVR_MATRIX_MONITORCFG,*LPNET_DVR_MATRIX_MONITORCFG;
+} NET_DVR_MATRIX_MONITORCFG;
  typedef struct tagNET_DVR_MATRIX_MONITORLIST
 {
     DWORD        dwSize;
@@ -19439,7 +12536,7 @@ typedef struct tagNET_DVR_MATRIX_MONITORCFG
     DWORD        dwMonNum;
     BYTE          *pBuffer;
     DWORD         dwBufLen;
-} NET_DVR_MATRIX_MONITORLIST,*LPNET_DVR_MATRIX_MONITORLIST;
+} NET_DVR_MATRIX_MONITORLIST;
 #define     MAX_SUBMATRIX_NUM        8
 typedef struct tagNET_DVR_SUBMATRIXINFO
 {
@@ -19486,7 +12583,7 @@ typedef struct tagNET_DVR_SUBMATRIXINFO
     BYTE    bySubSystemNum;
     BYTE    byChan;
     BYTE   byRes [13];
-}NET_DVR_MATRIXCODESYSTEMINFO,*LPNET_DVR_MATRIXCODESYSTEMINFO;
+}NET_DVR_MATRIXCODESYSTEMINFO;
 typedef struct tagNET_DVR_MATRIXDECODESYSTEMINFO
 {
     BYTE    byMatrixNum;
@@ -19494,7 +12591,7 @@ typedef struct tagNET_DVR_MATRIXDECODESYSTEMINFO
     BYTE    byDispChan;
     BYTE    bySubDispChan;
     BYTE    byRes [12];
-}NET_DVR_MATRIXDECODESYSTEMINFO,*LPNET_DVR_MATRIXDECODESYSTEMINFO;
+}NET_DVR_MATRIXDECODESYSTEMINFO;
  typedef struct tagNET_DVR_MATRIXSWITCH
 {
     NET_DVR_MATRIXCODESYSTEMINFO struInputNote;
@@ -19597,13 +12694,13 @@ typedef struct tagNET_DVR_ALLSUBSYSTEMINFO_V40
     BYTE   byDevNo; 
     BYTE    bySubSystemNo;
     BYTE   byRes[30];
-} NET_DVR_SUBSYSTEM_BASIC_INFO_RESPONSE,*LPNET_DVR_SUBSYSTEM_BASIC_INFO_RESPONSE;
+} NET_DVR_SUBSYSTEM_BASIC_INFO_RESPONSE;
  typedef struct NET_DVR_CAMERA_INFO_RESPONSE
 {
     DWORD dwErrorCode; 
     DWORD dwCamId; 
     BYTE   byRes[4];
-} NET_DVR_CAMERA_INFO_RESPONSE,*LPNET_DVR_CAMERA_INFO_RESPONSE;
+} NET_DVR_CAMERA_INFO_RESPONSE;
  typedef struct NET_DVR_MONITOR_INFO_RESPONSE
 {
     DWORD dwErrorCode; 
@@ -20428,7 +13525,7 @@ typedef struct tagNET_DVR_FINDDATA_PCNVR
     BYTE   byRecogResult ;
     char   sLicense[MAX_LICENSE_LEN];    
     BYTE   byRes[12];
-}NET_DVR_FIND_PICTURE,*LPNET_DVR_FIND_PICTURE;
+}NET_DVR_FIND_PICTURE;
 #define MAX_RECORD_PICTURE_NUM  50      
  typedef struct tagNET_DVR_BACKUP_PICTURE_PARAM
 {
@@ -20542,7 +13639,7 @@ typedef struct tagNET_DVR_FINDDATA_PCNVR
         }struNotVideoPlatform;
     }struDiff;
     BYTE    byRes[120];
-}NET_DVR_VGA_DISP_CHAN_CFG_V40,*LPNET_DVR_VGA_DISP_CHAN_CFG_V40;
+}NET_DVR_VGA_DISP_CHAN_CFG_V40;
  typedef struct tagNET_DVR_V6SUBSYSTEMPARAM
 {
     BYTE        bySerialTrans;
@@ -20562,7 +13659,7 @@ typedef struct tagNET_DVR_FINDDATA_PCNVR
     BYTE byYellowIntervalTime;
     BYTE byDigTrafficLight;
     BYTE byRes[2];
-}NET_DVR_CORRECT_PARAMS,*LPNET_DVR_CORRECT_PARAMS;
+}NET_DVR_CORRECT_PARAMS;
  typedef struct tagNET_DVR_REDAREACFG
 {
     DWORD dwSize;
@@ -21113,7 +14210,7 @@ typedef struct tagNET_MATRIX_MATRIXINFO
     DWORD    dwMatrixNum;
     BYTE    *pBuffer;
     DWORD   dwBufLen;
-}NET_DVR_MATRIXLIST,*LPNET_DVR_MATRIXLIST;
+}NET_DVR_MATRIXLIST;
 typedef struct tagNET_MATRIX_UARTPARAM
 {    
     DWORD dwSize;
@@ -21147,7 +14244,7 @@ typedef struct tagNET_MATRIX_RESOURSEGROUPPARAM
     WORD  wMemNum;
     DWORD dwGlobalId[512];
     BYTE  byRes2[20];
-}NET_MATRIX_RESOURCEGROUPPARAM,*LPNET_MATRIX_RESOURSEGROUPPARAM;
+}NET_MATRIX_RESOURCEGROUPPARAM;
 typedef struct tagNET_MATRIX_USERGROUPPARAM
 {
     DWORD dwSize;
@@ -21178,7 +14275,7 @@ typedef struct tagNET_MATRIX_USERGROUPPARAM
     DWORD    dwTrunkNum;
     BYTE    *pBuffer;
     DWORD   dwBufLen;
-}NET_DVR_MATRIX_TRUNKLIST,*LPNET_DVR_MATRIX_TRUNKLIST;
+}NET_DVR_MATRIX_TRUNKLIST;
 #define MATRIX_PROTOCOL_NUM    20    
 #define KEYBOARD_PROTOCOL_NUM  20    
 typedef struct tagNET_DVR_PROTO_TYPE_EX
@@ -21352,7 +14449,7 @@ typedef struct tagNET_VCA_FACESNAP_RESULT
     char   cTimeDifferenceM;      	
     BYTE   byRes[249];
     BYTE*  pBackgroundPicpBuffer; 
-}NET_DVR_FACE_DETECTION,*LPNET_DVR_FACE_DETECTION;
+}NET_DVR_FACE_DETECTION;
  typedef struct tagNET_DVR_UPGRADE_PARAM
 {
     DWORD dwUpgradeType;
@@ -21726,7 +14823,7 @@ typedef struct tagNET_VCA_SAVE_PATH_CFG
     BYTE    sUserName[NAME_LEN];    
     BYTE    sPassword[PASSWD_LEN];    
     BYTE    byRes2[60];
-}NET_DVR_DEV_ACCESS_CFG,*LPNET_DVR_DEV_ACCESS_CFG;
+}NET_DVR_DEV_ACCESS_CFG;
 #define MAKE_RESOLUTION(_interlace_, _width_, _height_, _fps_)     (((_interlace_)<<28)     |((((_width_)>>3)&0x1ff)<<19)|     ((((_height_)>>1)&0x7ff)<<8)| ((_fps_)&0xff))
 #define GET_RES_INTERLACE(_res_) (((_res_)>>28)&0x1)
 #define GET_RES_WIDTH(_res_) ((((_res_)>>19)&0x1ff)<<3)
@@ -21792,7 +14889,7 @@ typedef struct tagNET_DVR_SCREENINFO
     BYTE  byStartChan;
     BYTE  byRes[2];
     DWORD dwSupportResolution[MAX_SDI_RES];
-}NET_DVR_SDI_INFO,*LPNET_DVR_SDI_INFO;
+}NET_DVR_SDI_INFO;
  typedef struct tagNET_DVR_MATRIX_ABILITY_V41
 {
     DWORD dwSize;
@@ -21854,7 +14951,7 @@ typedef struct tagNET_DVR_SCREENINFO
     BYTE      byRes[3];  
     NET_DVR_VIDEOEFFECT struVideoEffect;   
     BYTE    byRes2[60];
-}NET_DVR_MATRIX_VOUTCFG,*LPNET_DVR_MATRIX_VOUTCFG;
+}NET_DVR_MATRIX_VOUTCFG;
 typedef struct tagNET_DVR_DISP_CHAN_STATUS_V41
 {
     BYTE  byDispStatus;      
@@ -21877,7 +14974,7 @@ typedef struct tagNET_DVR_DECODER_WORK_STATUS_V41
     BYTE byAlarmOutStatus[32];       
     BYTE byAudioInChanStatus;          
     BYTE byRes[127];
-}NET_DVR_DECODER_WORK_STATUS_V41,*LPNET_DVR_DECODER_WORK_STATUS_V41;
+}NET_DVR_DECODER_WORK_STATUS_V41;
 typedef struct tagNET_DVR_MATRIX_DEC_REMOTE_PLAY_V41
 {
     DWORD    dwSize;
@@ -21923,7 +15020,7 @@ typedef struct tagNET_DVR_RECTCFG_SCENE
     BYTE    byColumn;
     BYTE    byRes2[5];
     NET_DVR_RECTCFG struDisp; 
-} NET_DVR_SCENEDISPCFG,*LPNET_DVR_SCENEDISPCFG;
+} NET_DVR_SCENEDISPCFG;
  typedef struct tagDEV_CHAN_INFO_SCENE
 {
     NET_DVR_IPADDR struIP;                
@@ -21936,7 +15033,7 @@ typedef struct tagNET_DVR_RECTCFG_SCENE
     BYTE    byRes[5];
     BYTE    sUserName[NAME_LEN];    
     BYTE    sPassword[PASSWD_LEN];    
-} NET_DVR_DEV_CHAN_INFO_SCENE,*LPNET_DVR_DEV_CHAN_INFO_SCENE;
+} NET_DVR_DEV_CHAN_INFO_SCENE;
 typedef struct tagSTREAM_MEDIA_SERVER_CFG_SCENE
 {
     BYTE    byValid;            
@@ -21945,26 +15042,26 @@ typedef struct tagSTREAM_MEDIA_SERVER_CFG_SCENE
     WORD    wDevPort;            
     BYTE    byTransmitType;        
     BYTE    byRes2[5];
-}NET_DVR_STREAM_MEDIA_SERVER_CFG_SCENE,*LPNET_DVR_STREAM_MEDIA_SERVER_CFG_SCENE;
+}NET_DVR_STREAM_MEDIA_SERVER_CFG_SCENE;
  typedef struct tagPU_STREAM_CFG_SCENE
 {
     NET_DVR_STREAM_MEDIA_SERVER_CFG_SCENE    streamMediaServerCfg;
     NET_DVR_DEV_CHAN_INFO_SCENE                struDevChanInfo;
-}NET_DVR_PU_STREAM_CFG_SCENE,*LPNET_DVR_PU_STREAM_CFG_SCENE;
+}NET_DVR_PU_STREAM_CFG_SCENE;
  typedef struct  tagNET_DVR_CYC_SUR_CHAN_ELE_SCENE
 {
     BYTE                            byEnable;    
     BYTE                            byRes[3];
     NET_DVR_STREAM_MEDIA_SERVER_CFG_SCENE    struStreamMediaSvrCfg;    
     NET_DVR_DEV_CHAN_INFO_SCENE            struDecChanInfo;    
-}NET_DVR_CYC_SUR_CHAN_ELE_SCENE,*LPNET_DVR_CYC_SUR_CHAN_ELE_SCENE;
+}NET_DVR_CYC_SUR_CHAN_ELE_SCENE;
 typedef struct  tagNET_DVR_MATRIX_LOOP_DECINFO_SCENE
 {
     WORD    wPoolTime;        
     BYTE    byRes1[2];
     NET_DVR_CYC_SUR_CHAN_ELE_SCENE    struChanArray[MAX_CYCLE_CHAN];
     BYTE    byRes2[4];
-} NET_DVR_MATRIX_LOOP_DECINFO_SCENE,*LPNET_DVR_MATRIX_LOOP_DECINFO_SCENE;
+} NET_DVR_MATRIX_LOOP_DECINFO_SCENE;
 typedef struct tagNET_DVR_DECODECHANCFG_SCENE
 {
     BYTE    byDecodeEnable;
@@ -21979,7 +15076,7 @@ typedef struct tagNET_DVR_DECODECHANCFG_SCENE
         NET_DVR_PU_STREAM_CFG_SCENE struSceneDynamicDecCfg; 
         NET_DVR_MATRIX_LOOP_DECINFO_SCENE struSceneCycDecCfg;
     } struDecCfg;
-}NET_DVR_DECODECHANCFG_SCENE,*LPNET_DVR_DECODECHANCFG_SCENE;
+}NET_DVR_DECODECHANCFG_SCENE;
  typedef struct tagNET_DVR_BIGSCREENCFG_SCENE
 {
     BYTE byAllValid; 
@@ -22034,7 +15131,7 @@ typedef struct tagNET_DVR_DECODECHANCFG_SCENE
     DWORD    dwWinNum;    
     BYTE    *pBuffer;    
     DWORD   dwBufLen;    
-}NET_DVR_WINLIST,*LPNET_DVR_WINLIST;
+}NET_DVR_WINLIST;
 #define MAX_LAYOUT_COUNT 16        
 typedef struct tagNET_DVR_LAYOUTCFG
 {
@@ -22196,7 +15293,7 @@ typedef struct tagNET_DVR_ANALOGINPUTSTATUS
     DWORD    dwNums;        
     BYTE    *pBuffer;    
     DWORD   dwBufLen;    
-}NET_DVR_SCREENINPUTSTATUS,*LPNET_DVR_SCREENINPUTSTATUS;
+}NET_DVR_SCREENINPUTSTATUS;
  typedef struct tagNET_DVR_SCREENALARMCFG
 {
     DWORD    dwSize;
@@ -22395,7 +15492,7 @@ typedef struct tagNET_DVR_PLAN_LIST
     BYTE        byRes1[2];
     DWORD         dwBufLen;            
     BYTE        byRes2[64];
-} NET_DVR_PLAN_LIST,*LPNET_DVR_PLAN_LIST;
+} NET_DVR_PLAN_LIST;
 typedef struct tagNET_DVR_CONTROL_PARAM
 {
     DWORD    dwSize;
@@ -22455,7 +15552,7 @@ typedef struct tagNET_DVR_ACCESS_CAMERA_INFO
     BYTE        byRes1[3];
     DWORD         dwBufLen;            
     BYTE        byRes2[64];
-} NET_DVR_INPUT_SIGNAL_LIST,*LPNET_DVR_INPUT_SIGNAL_LIST;
+} NET_DVR_INPUT_SIGNAL_LIST;
 #define PULL_DISK_SUCCESS        1   
 #define PULL_DISK_FAIL            2   
 #define PULL_DISK_PROCESSING    3   
@@ -22629,14 +15726,14 @@ typedef struct
     NET_DVR_STREAM_MEDIA_SERVER_CFG streamMediaServerCfg; 
     NET_DVR_DEV_CHAN_INFO  struDevChanInfo; 
     BYTE    sRtspUrl[128];
-}NET_DVR_MATRIX_CHAN_INFO_EX,*LPNET_DVR_MATRIX_CHAN_INFO_EX;
+}NET_DVR_MATRIX_CHAN_INFO_EX;
  typedef struct
 {
     DWORD    dwSize;
     DWORD    dwPoolTime;    
     NET_DVR_MATRIX_CHAN_INFO_EX        struchanConInfo[MAX_CYCLE_CHAN_V30];
     BYTE    byRes[16];
-}NET_DVR_MATRIX_LOOP_DECINFO_EX,*LPNET_DVR_MATRIX_LOOP_DECINFO_EX;
+}NET_DVR_MATRIX_LOOP_DECINFO_EX;
 typedef struct
 {
     DWORD dwSize;
@@ -22645,7 +15742,7 @@ typedef struct
     NET_DVR_STREAM_MEDIA_SERVER_CFG struStreamMediaSvrCfg;
     NET_DVR_DEV_CHAN_INFO struDevChanInfo;
     BYTE sRtspUrl[128];
-}NET_DVR_PU_STREAM_CFG_EX,*LPNET_DVR_PU_STREAM_CFG_EX;
+}NET_DVR_PU_STREAM_CFG_EX;
  typedef struct tagNET_DVR_MATRIX_TRUNKCFG
 {
     DWORD     dwGlobalIndex;  
@@ -22657,7 +15754,7 @@ typedef struct
     BYTE      bySubsys;   
     BYTE      byChan;     
     BYTE      byRes[255];     
-} NET_DVR_MATRIX_TRUNKCFG,*LPNET_DVR_MATRIX_TRUNKCFG;
+} NET_DVR_MATRIX_TRUNKCFG;
  typedef struct tagNET_DVR_DECSUBSYSTEMJIONSTATUS_V41
 {
     BYTE        byJoinStatus;
@@ -22684,7 +15781,7 @@ typedef struct
     DWORD dwSize;
     NET_DVR_SINGLESUBSYSTEMJOININFO_V41 struSingleSubSystemJoinInfo[MAX_SUBSYSTEM_NUM_V40];
     BYTE  byRes[48];
-}NET_DVR_ALLDECSUBSYSTEMJOININFO_V41,*LPNET_DVR_ALLDECSUBSYSTEMJOININFO_V41;
+}NET_DVR_ALLDECSUBSYSTEMJOININFO_V41;
 #define MAX_ALARMHOSTKEYBOARD 64 
 typedef struct tagNET_DVR_PUBLIC_SUB_SYSTEM
 {
@@ -22701,7 +15798,7 @@ typedef struct tagNET_DVR_PUBLIC_SUB_SYSTEM
     NET_DVR_NOAMAL_SUB_SYSTEM     struNormalSubSystem;
     NET_DVR_PUBLIC_SUB_SYSTEM        struPublicSubSystem;
     BYTE    byRes[20];    
-}NET_DVR_JOINT_SUB_SYSTEM,*LPNET_DVR_JOINT_SUB_SYSTEM;
+}NET_DVR_JOINT_SUB_SYSTEM;
 #define MAX_SUBSYSTEM_ID_LEN 16 
 #define    ACCOUNTNUM_LEN             6
 #define ACCOUNTNUM_LEN_32             32
@@ -22742,7 +15839,7 @@ typedef struct tagNET_DVR_PUBLIC_SUB_SYSTEM
     BYTE byHour;
     BYTE byMinute;
     BYTE bySecond;
-}NET_DVR_REMIND_TIME,*LPNET_DVR_REMIND_TIME;
+}NET_DVR_REMIND_TIME;
 #define    MAX_KEYBOARD_USER_NUM    256
 typedef struct tagNET_DVR_SUBSYSTEM_PARAM_EX
 {
@@ -22853,7 +15950,7 @@ typedef  struct tagNET_DVR_ALARMHOST_SAFETYCABINSTATE
     BYTE    byFaint;  
     BYTE    byManyPerson;  
     BYTE    byRes[59];  
-}NET_DVR_ALARMHOST_SAFETYCABINSTATE,*LPNET_DVR_ALARMHOST_SAFETYCABINSTATE;
+}NET_DVR_ALARMHOST_SAFETYCABINSTATE;
 typedef  struct tagNET_DVR_ALARMHOST_ALARMOUTSTATUS
 {
     DWORD    dwSize;
@@ -22862,7 +15959,7 @@ typedef  struct tagNET_DVR_ALARMHOST_ALARMOUTSTATUS
     WORD    wChan;            
     BYTE    byAlarmStatus; 
     BYTE    byRes[32];
-}NET_DVR_ALARMHOST_ALARMOUTSTATUS,*LPNET_DVR_ALARMHOST_ALARMOUTSTATUS;
+}NET_DVR_ALARMHOST_ALARMOUTSTATUS;
 typedef struct tagNET_DVR_AUDIO_PARAM
 {
     DWORD        dwSize;
@@ -22872,7 +15969,7 @@ typedef struct tagNET_DVR_AUDIO_PARAM
     DWORD        dwSamplesPerSec;    
     BYTE        byRes2[20];            
     DWORD        dwAudioSize;        
-}NET_DVR_AUDIO_PARAM,*LPNET_DVR_AUDIO_PARAM;
+}NET_DVR_AUDIO_PARAM;
 typedef struct tagNET_DVR_PREVIEWINFO
 {
     LONG lChannel;
@@ -23295,7 +16392,7 @@ typedef struct tagNET_DVR_DECCARD_ABILITY_V41
     BYTE byDispFormat[MAX_DECODE_CARD_SUPPORTDISPNUMS];   
     BYTE byWindowMode[MAX_DECODE_CARD_SUPPORTDISPNUMS][12]; 
     BYTE byRes2[36];
-} NET_DVR_DECCARD_ABILITY_V41,*LPNET_DVR_DECCARD_ABILITY_V41;
+} NET_DVR_DECCARD_ABILITY_V41;
 #define        MAX_DECODE_CARD_NUM            6   
 typedef struct tagNET_DVR_DECODESVR_ABILITY_V41
 {
@@ -23432,7 +16529,7 @@ typedef struct tagNET_DVR_STREAM_SRC_INFO
 {
     DWORD                        dwSize;
     NET_DVR_STREAM_MODE_TYPE    struStreamSrcInfo;
-}NET_DVR_STREAM_SRC_INFO,*LPNET_DVR_STREAM_SRC_INFO;
+}NET_DVR_STREAM_SRC_INFO;
  typedef struct tagNET_DVR_STREAM_SRC_INFO_V40
 {
     DWORD                    dwSize;
@@ -23441,7 +16538,7 @@ typedef struct tagNET_DVR_STREAM_SRC_INFO
     NET_DVR_STREAM_TYPE_V40_UNION    uGetStream;            
     BYTE                    byMonitorName[128];
     BYTE                    byRes[384];            
-}NET_DVR_STREAM_SRC_INFO_V40,*LPNET_DVR_STREAM_SRC_INFO_V40;
+}NET_DVR_STREAM_SRC_INFO_V40;
 typedef struct 
 {
     DWORD            dwSize;
@@ -23747,7 +16844,7 @@ typedef struct tagNET_ITC_POST_RS485_PARAM
     DWORD dwTriggerModeType;
     BYTE  byAssociateRS485No;
     BYTE  byRes[15];
-}NET_ITC_RS485_ACCESS_INFO_COND,*LPNET_ITC_RS485_ACCESS_INFO_COND;
+}NET_ITC_RS485_ACCESS_INFO_COND;
  typedef struct tagNET_ITC_RADAR_INFO_PARAM
 {
     NET_ITC_RADAR_PARAM  struRadarParam;
@@ -23766,7 +16863,7 @@ typedef struct tagNET_ITC_POST_RS485_PARAM
     BYTE  byRes[3];
     NET_ITC_ACCESS_DEVINFO_PARAM_UNION uITCAccessDevinfoParam; 
     BYTE  byRes1[12];
-}NET_ITC_RS485_ACCESS_CFG,*LPNET_ITC_RS485_ACCESS_CFG;
+}NET_ITC_RS485_ACCESS_CFG;
 typedef struct tagNET_ITC_RS485_ACCESS_INFO
 {
     DWORD dwSize;
@@ -24062,7 +17159,7 @@ typedef struct tagNET_ITC_LANE_MPR_PARAM
     NET_ITC_POLYGON struPlateRecog;
     BYTE byRelaLaneDirectionType;
     BYTE byRes1[255];
-}NET_ITC_LANE_MPR_PARAM,*LPNET_ITC_LANE_MPR_PARAM;
+}NET_ITC_LANE_MPR_PARAM;
  typedef struct tagNET_ITC_POST_MPR_PARAM
 {
     BYTE byEnable;    
@@ -24079,7 +17176,7 @@ typedef struct tagNET_ITC_LANE_MPR_PARAM
     char szSceneName[NAME_LEN]; 
     NET_VCA_LINE struSnapLine;
     BYTE byRes1[392];
-}NET_ITC_POST_MPR_PARAM,*LPNET_ITC_POST_MPR_PARAM;
+}NET_ITC_POST_MPR_PARAM;
  typedef struct tagNET_DVR_VIA_LANE_PARAM
 {
     BYTE byLaneNO;  
@@ -24088,7 +17185,7 @@ typedef struct tagNET_ITC_LANE_MPR_PARAM
     NET_ITC_LINE  struLaneLine;
     NET_ITC_POLYGON  struPlateRecog;
     BYTE byRes1[300]; 
-} NET_DVR_VIA_LANE_PARAM,*LPNET_DVR_VIA_LANE_PARAM;
+} NET_DVR_VIA_LANE_PARAM;
  typedef struct tagNET_DVR_VIA_VTCOIL_PARAM
 {
     BYTE byEnable;    
@@ -24098,7 +17195,7 @@ typedef struct tagNET_ITC_LANE_MPR_PARAM
     NET_DVR_VIA_LANE_PARAM  struLaneParam[MAX_ITC_LANE_NUM];
     NET_ITC_PLATE_RECOG_PARAM  struPlateRecog;
     BYTE byRes1[624];
-}NET_DVR_VIA_VTCOIL_PARAM,*LPNET_DVR_VIA_VTCOIL_PARAM;
+}NET_DVR_VIA_VTCOIL_PARAM;
 typedef struct tagNET_DVR_TRIGGER_COND
 {
     DWORD  dwSize;       
@@ -24106,7 +17203,7 @@ typedef struct tagNET_DVR_TRIGGER_COND
     DWORD  dwTriggerMode;
     BYTE   byDetSceneID;
     BYTE   byRes[63];    
-}NET_DVR_TRIGGER_COND,*LPNET_DVR_TRIGGER_COND;
+}NET_DVR_TRIGGER_COND;
  typedef struct tagNET_ITC_LANE_IMT_PARAM
 {
     BYTE byLaneNO;
@@ -24114,7 +17211,7 @@ typedef struct tagNET_DVR_TRIGGER_COND
     BYTE byRes[146];
     NET_ITC_LINE struLaneLine;
     BYTE byRes1[256];
-}NET_ITC_LANE_IMT_PARAM,*LPNET_ITC_LANE_IMT_PARAM;
+}NET_ITC_LANE_IMT_PARAM;
  typedef struct tagNET_ITC_POST_IMT_PARAM
 {
     BYTE byEnable;    
@@ -24125,7 +17222,7 @@ typedef struct tagNET_DVR_TRIGGER_COND
     NET_ITC_LINE struLaneBoundaryLine;
     NET_ITC_LANE_IMT_PARAM struLaneParam[MAX_ITC_LANE_NUM];    
     BYTE byRes1[1584];
-}NET_ITC_POST_IMT_PARAM,*LPNET_ITC_POST_IMT_PARAM;
+}NET_ITC_POST_IMT_PARAM;
  typedef struct tagNET_ITC_LANE_PRS_PARAM
 {
     BYTE byLaneNO;
@@ -24151,7 +17248,7 @@ typedef struct tagNET_DVR_TRIGGER_COND
     BYTE byRes2[3];
     NET_ITC_LINE struTrigLine;
     BYTE byRes1[228];
-}NET_ITC_LANE_PRS_PARAM,*LPNET_ITC_LANE_PRS_PARAM;
+}NET_ITC_LANE_PRS_PARAM;
   typedef struct tagNET_ITC_POST_PRS_PARAM
 {
     BYTE byEnable;    
@@ -24166,7 +17263,7 @@ typedef struct tagNET_DVR_TRIGGER_COND
     NET_ITC_PLATE_RECOG_PARAM struPlateRecog;
     NET_ITC_LANE_PRS_PARAM struLaneParam[MAX_ITC_LANE_NUM];    
     BYTE byRes1[440];
-}NET_ITC_POST_PRS_PARAM,*LPNET_ITC_POST_PRS_PARAM;
+}NET_ITC_POST_PRS_PARAM;
  typedef struct tagNET_IPC_LANE_HVT_PARAM
 {
     BYTE byLaneNO;
@@ -24175,7 +17272,7 @@ typedef struct tagNET_DVR_TRIGGER_COND
     NET_ITC_LINE struLaneLine;
     NET_ITC_POLYGON struPlateRecog;
     BYTE byRes1[256];
-} NET_IPC_LANE_HVT_PARAM,*LPNET_IPC_LANE_HVT_PARAM;
+} NET_IPC_LANE_HVT_PARAM;
  typedef struct _NET_ITC_PARKING_DETECTION_
 {
     BYTE        byEnable; 
@@ -24198,7 +17295,7 @@ typedef struct tagNET_DVR_TRIGGER_COND
     NET_VCA_LINE struSnapLine;
     NET_ITC_PARKING_DETECTION struParkingDetection;    
     BYTE byRes1[328];
-} NET_IPC_POST_HVT_PARAM,*LPNET_IPC_POST_HVT_PARAM;
+} NET_IPC_POST_HVT_PARAM;
 typedef struct tagNET_ITC_LANE_HVT_PARAM_V50
 {
     BYTE  byLaneNO;        
@@ -24383,7 +17480,7 @@ typedef struct tagNET_ITC_REDLIGHT_PEDESTRIAN_PARAM
     NET_ITC_PLATE_RECOG_PARAM struPlateRecog; 
     NET_ITC_INTERVAL_PARAM struInterval;
     BYTE  byRes[256];
-}NET_ITC_POST_MOBILE_PARAM,*LPNET_ITC_POST_MOBILE_PARAM;
+}NET_ITC_POST_MOBILE_PARAM;
  typedef union tagNET_ITC_TRIGGER_PARAM_UNION
 {
     DWORD  uLen[1070];            
@@ -24745,7 +17842,7 @@ typedef struct tagNET_ITC_FTP_CFG
     NET_DVR_LATITUDE_PARAM    struLatitude;     
     NET_DVR_LONGITUDE_PARAM    struLongitude; 
     BYTE byRes1[128];
-}NET_DVR_GPS_DATACFG,*LPNET_DVR_GPS_DATACFG;
+}NET_DVR_GPS_DATACFG;
  typedef enum _VCA_DATABASE_TYPE_
 {
     DATABASE_NULL = 0, 
@@ -25006,7 +18103,7 @@ typedef enum _IPC_AUX_ALARM_TYPE_
     DWORD    dwDecibelLimit; 
     NET_DVR_HANDLEEXCEPTION_V30    struHandleException;  
     BYTE    byRes2[24];
-}NET_IPC_AUDIO_LIMIT_ALARM_CFG,*LPNET_IPC_AUDIO_LIMIT_ALARM_CFG;
+}NET_IPC_AUDIO_LIMIT_ALARM_CFG;
  typedef struct tagNET_DVR_BUTTON_DOWN_ALARM_CFG
 {    
     DWORD    dwSize;
@@ -25014,7 +18111,7 @@ typedef enum _IPC_AUX_ALARM_TYPE_
     BYTE    byRes1[3]; 
     NET_DVR_HANDLEEXCEPTION_V30    struHandleException;  
     BYTE    byRes2[24];
-}NET_IPC_BUTTON_DOWN_ALARM_CFG,*LPNET_IPC_BUTTON_DOWN_ALARM_CFG;
+}NET_IPC_BUTTON_DOWN_ALARM_CFG;
  typedef struct tagNET_IPC_PIR_ALARMCFG
 {
     BYTE byAlarmName[NAME_LEN];    
@@ -25302,7 +18399,7 @@ typedef enum tagNET_DVCS_DEVICE_TYPE
     BYTE        byRes1[3];
     DWORD         dwBufLen;
     BYTE        byRes2[64];
-} NET_DVR_DEVLIST,*LPNET_DVR_DEVLIST;
+} NET_DVR_DEVLIST;
  typedef struct tagNET_DVR_DEV_BASE_INFO
 {
     DWORD  dwSize;
@@ -25311,7 +18408,7 @@ typedef enum tagNET_DVCS_DEVICE_TYPE
     BYTE   byRes1[2];
     BYTE   sDevName[NAME_LEN]; 
     BYTE   byRes2[24];
-} NET_DVR_DEV_BASE_INFO,*LPNET_DVR_DEV_BASE_INFO;
+} NET_DVR_DEV_BASE_INFO;
 typedef  struct tagNET_DVR_NETPARAM
 {    
     DWORD dwSize;
@@ -25341,7 +18438,7 @@ typedef struct tagNET_DVR_TEXTSHOW
     DWORD        dwScreenNums;
     BYTE          *pBuffer;
     DWORD         dwBufLen;
-} NET_DVR_SCREENLIST,*LPNET_DVR_SCREENLIST;
+} NET_DVR_SCREENLIST;
  typedef struct tagNET_DVR_OPERATE_DEVICE
 {
     DWORD    dwSize;
@@ -25483,7 +18580,7 @@ typedef struct tagNET_ITS_BASEINFO
     BYTE    byTvdVer[VERSION_LEN];    
     BYTE    byTldVer[VERSION_LEN];    
     BYTE    byRes[252];        
-}NET_ITS_BASEINFO,*LPNET_ITS_BASEINFO;
+}NET_ITS_BASEINFO;
 typedef struct tagNET_ITS_IMGMERGE_CFG
 {
     DWORD  dwSize;
@@ -25498,7 +18595,7 @@ typedef struct tagNET_ITS_IMGMERGE_CFG
     DWORD  dwMerageMaxSize;   
     WORD   wCloseupDeviation; 
     BYTE   byRes[30];
-}NET_ITS_IMGMERGE_CFG,*LPNET_ITS_IMGMERGE_CFG;
+}NET_ITS_IMGMERGE_CFG;
 typedef    struct    tagNET_ITS_TRAFFIC_DATA_HOST
 {
     NET_DVR_IPADDR    struHostAddr;    
@@ -25510,13 +18607,13 @@ typedef    struct    tagNET_ITS_TRAFFIC_DATA_HOST
     WORD            wUploadInterval;    
     DWORD            dwUploadTimeOut; 
     BYTE            byRes[24];
-}NET_ITS_TRAFFIC_DATA_HOST,*LPNET_ITS_TRAFFIC_DATA_HOST;
+}NET_ITS_TRAFFIC_DATA_HOST;
 typedef  struct    tagNET_ITS_UPLOAD_CFG
 {
     DWORD                  dwSize;
     NET_ITS_TRAFFIC_DATA_HOST    struRemoteDataHost1;       
     NET_ITS_TRAFFIC_DATA_HOST    struRemoteDataHost2;        
-}NET_ITS_UPLOAD_CFG,*LPNET_ITS_UPLOAD_CFG;
+}NET_ITS_UPLOAD_CFG;
  typedef struct tagNET_DVR_SYSTEM_TIME
 {
     WORD  wYear;           
@@ -25599,7 +18696,7 @@ typedef struct tagNET_ITS_PICTURE_INFO
 {
     BYTE  byIllegalInfo[MAX_ILLEGAL_LEN];
     BYTE  byRes[256];
-}NET_ITS_ILLEGAL_INFO,*LPNET_ITS_ILLEGAL_INFO;
+}NET_ITS_ILLEGAL_INFO;
 typedef struct tagNET_ITS_PLATE_RESULT
 {
     DWORD   dwSize;        
@@ -25759,7 +18856,7 @@ typedef struct tagNET_DVR_TFS_ALARM
 #endif  
     BYTE                   byVehicleHeadTailStatus;
     BYTE                   byRes[31]; 
-}NET_DVR_TFS_ALARM,*LPNET_DVR_TFS_ALARM;
+}NET_DVR_TFS_ALARM;
  typedef struct tagNET_DVR_SOFTWARE_SERVICE_CFG
 {
     DWORD       dwSize;
@@ -25799,7 +18896,7 @@ typedef struct tagNET_ITS_SINGLE_DEVICE_INFO
     NET_DVR_TIME_V30  struTriggerTime;
     BYTE   byRelateChan; 
     BYTE   byRes[3];
-}NET_ITS_SINGLE_DEVICE_INFO,*LPNET_ITS_SINGLE_DEVICE_INFO;
+}NET_ITS_SINGLE_DEVICE_INFO;
 typedef struct tagNET_ITS_ROADINFO
 {    
     DWORD     dwSize;
@@ -25811,7 +18908,7 @@ typedef struct tagNET_ITS_ROADINFO
     BYTE       byRoadInfo[48];       
     NET_ITS_SINGLE_DEVICE_INFO        struSingleDevice[ITS_MAX_DEVICE_NUM];
     BYTE     byRes[16];
-}NET_ITS_ROADINFO,*LPNET_ITS_ROADINFO;
+}NET_ITS_ROADINFO;
 typedef struct tagNET_ITS_TRAFFIC_DRIVE_CHAN
 {
     BYTE   byDriveChan;        
@@ -25823,7 +18920,7 @@ typedef struct tagNET_ITS_TRAFFIC_DRIVE_CHAN
     WORD   wAverSpeed;         
     WORD   wAverCarDis;        
     BYTE   byRes2[16];            
-}NET_ITS_TRAFFIC_DRIVE_CHAN,*LPNET_ITS_TRAFFIC_DRIVE_CHAN;
+}NET_ITS_TRAFFIC_DRIVE_CHAN;
  typedef struct tagNET_ITS_TRAFFIC_COLLECT
 {
     DWORD  dwSize;        
@@ -25838,7 +18935,7 @@ typedef struct tagNET_ITS_TRAFFIC_DRIVE_CHAN
     DWORD  dwSamplePeriod;    
     NET_ITS_TRAFFIC_DRIVE_CHAN    struDriveChan[6];         
     BYTE   byRes2[24];     
-}NET_ITS_TRAFFIC_COLLECT,*LPNET_ITS_TRAFFIC_COLLECT;
+}NET_ITS_TRAFFIC_COLLECT;
  typedef struct tagNET_ITS_OVERLAPCFG_COND
 {
     DWORD dwSize;
@@ -26068,7 +19165,7 @@ typedef struct tagNET_DVR_DAY_SCHEDULE
     BYTE byRes1[3] ;
     NET_DVR_SCHEDTIME struTime[MAX_TIMESEGMENT_V30];  
     BYTE byRes2[8];                  
-}NET_DVR_DAY_SCHEDULE ,*LPNET_DVR_DAY_SCHEDULE;
+}NET_DVR_DAY_SCHEDULE ;
 typedef struct tagNET_DVR_SCHEDULE_AUTO_TRACK_CFG
 {
     DWORD    dwSize;    
@@ -26076,7 +19173,7 @@ typedef struct tagNET_DVR_SCHEDULE_AUTO_TRACK_CFG
     BYTE    byRes1[3] ;
     NET_DVR_DAY_SCHEDULE struSchedule[MAX_DAYS];    
     BYTE    byRes2[128];
-}NET_DVR_SCHEDULE_AUTO_TRACK_CFG,*LPNET_DVR_SCHEDULE_AUTO_TRACK_CFG;
+}NET_DVR_SCHEDULE_AUTO_TRACK_CFG;
  typedef struct tagNET_DVR_I_FRAME
 {
     DWORD    dwSize;                    
@@ -26093,12 +19190,12 @@ typedef struct tagNET_DVR_SCHEDULE_AUTO_TRACK_CFG
     BYTE byRes1;
     BYTE byRebootMode; 
     BYTE byRes[11]; 
-}NET_DVR_REBOOT_TIME,*LPNET_DVR_REBOOT_TIME;
+}NET_DVR_REBOOT_TIME;
  typedef struct tagNET_DVR_AUTO_REBOOT_CFG
 {
     DWORD dwSize;
     NET_DVR_REBOOT_TIME struRebootTime;
-}NET_DVR_AUTO_REBOOT_CFG,*LPNET_DVR_AUTO_REBOOT_CFG;
+}NET_DVR_AUTO_REBOOT_CFG;
 #define NET_DVR_GPS_FINDING       0   
 #define NET_DVR_GPS_RECV          1   
 #define NET_DVR_GPS_OVER          2   
@@ -26114,7 +19211,7 @@ typedef struct tagNET_DVR_MENU_OUTPUT_MODE
     NET_DVR_IPADDR   struIP;  
     WORD        wPort;   
     BYTE        byRes[2];
-}NET_DVR_MB_IPADDR,*LPNET_DVR_MB_IPADDR;
+}NET_DVR_MB_IPADDR;
  typedef struct tagNET_DVR_MB_WVSPARA
 {
     NET_DVR_MB_IPADDR struWVSAddr;
@@ -26165,7 +19262,7 @@ typedef struct tagNET_DVR_MENU_OUTPUT_MODE
     BYTE        byIPaddress[IP_ADDR_LEN];   
     BYTE        byEssid[IW_ESSID_MAX_SIZE];  
     BYTE        byres[5];
-}NET_DVR_MB_WIFI_STATUS,*LPNET_DVR_MB_WIFI_STATUS;
+}NET_DVR_MB_WIFI_STATUS;
  typedef struct tagNET_DVR_MB_PLATFORM_STATUS
 {
     BYTE        byCurPlat;      
@@ -26200,7 +19297,7 @@ typedef struct tagNET_DVR_GPS_INFO
     DWORD   dwVehicleSpeed;        
     DWORD    dwVehicleDirection;    
     BYTE    byRes[8];            
-}NET_DVR_GPS_INFO,*LPNET_DVR_GPS_INFO; 
+}NET_DVR_GPS_INFO; 
 typedef  struct _NET_DVR_GPS_STATUS_ALARM_
 {
     DWORD       dwSize;
@@ -26221,7 +19318,7 @@ typedef struct tagNTE_DVR_GPS_DATA
     NET_DVR_GPS_INFO  struGPSInfo;      
     NET_DVR_TIME      struTime;            
     BYTE        byRes[12];             
-}NET_DVR_GPS_DATA,*LPNET_DVR_GPS_DATA;
+}NET_DVR_GPS_DATA;
 typedef struct tagNET_DVR_GET_GPS_DATA_PAPAM
 {    
     DWORD dwCmdType;              
@@ -26240,7 +19337,7 @@ typedef struct tagNET_DVR_GET_GPS_DATA_PAPAM
             BYTE  byRes[104];              
         }TimePoint;    
     }GpsDataParam;
-}NET_DVR_GET_GPS_DATA_PARAM,*LPNET_DVR_GET_GPS_DATA_PARAM;
+}NET_DVR_GET_GPS_DATA_PARAM;
 #define NET_SDK_MAX_CARD_LEN 32 
 typedef  struct _NET_DVR_TAG_INFO_ALARM_
 {
@@ -26288,7 +19385,7 @@ typedef struct
 {   
     BYTE byVcaAlarmJsonType;
     BYTE byRes[63];
-}NET_DVR_MESSAGE_CALLBACK_PARAM_V51,*LPNET_DVR_MESSAGE_CALLBACK_PARAM_V51;
+}NET_DVR_MESSAGE_CALLBACK_PARAM_V51;
  typedef enum tagNET_SDK_LOCAL_CFG_TYPE
 {
     NET_SDK_LOCAL_CFG_TYPE_TCP_PORT_BIND = 0,        
@@ -26364,7 +19461,7 @@ typedef struct
     DWORD   dwCheckOnlineTimeout;     
     DWORD   dwCheckOnlineNetFailMax;  
     BYTE    byRes[256];
-}NET_DVR_LOCAL_CHECK_DEV,*LPNET_DVR_LOCAL_CHECK_DEV;
+}NET_DVR_LOCAL_CHECK_DEV;
  typedef struct tagNET_DVR_LOCAL_PTZ_CFG
 {
     BYTE   byWithoutRecv;     
@@ -26439,21 +19536,21 @@ typedef struct tagNET_DVR_LOCAL_CERTIFICATION
     WORD wSubChannel;      
     BYTE  byBind;      
     BYTE  byRes[3];
-}NET_DVR_OPTICAL_CHANNEL_BIND,*LPNET_DVR_OPTICAL_CHANNEL_BIND;
+}NET_DVR_OPTICAL_CHANNEL_BIND;
  typedef struct tagNET_DVR_OPTICAL_CHANNEL_CFG
 {
     DWORD dwSize;
     NET_DVR_OPTICAL_CHANNEL_BIND struBindVideo;
     NET_DVR_OPTICAL_CHANNEL_BIND struBindAudio;
     BYTE  byRes[16];           
-}NET_DVR_OPTICAL_CHANNEL_CFG,*LPNET_DVR_OPTICAL_CHANNEL_CFG;
+}NET_DVR_OPTICAL_CHANNEL_CFG;
  typedef struct tagNET_DVR_OPTICAL_INFO
 {
     DWORD dwSize;
     BYTE  bySlotNum;
     BYTE  byChannel; 
     BYTE  byRes[18];
-}NET_DVR_OPTICAL_INFO,*LPNET_DVR_OPTICAL_INFO;
+}NET_DVR_OPTICAL_INFO;
 typedef struct tagNET_DVR_AUDIO_SURCHAN_CFG
 {
     DWORD dwSize;
@@ -26471,13 +19568,13 @@ typedef struct tagNET_DVR_ETHERNET_CHANNEL_INFO
     DWORD dwSize;
     BYTE byConverge[MAX_ETHERNET_PORT_NUM];
     BYTE byRes[32];
-}NET_DVR_ETHERNET_CHANNEL_INFO,*LPNET_DVR_ETHERNET_CHANNEL_INFO;
+}NET_DVR_ETHERNET_CHANNEL_INFO;
 typedef struct tagNET_DVR_SPARTAN_INFO
 {
     DWORD  dwSize;
     BYTE   bySpartanStatus; 
     BYTE   byRes[31];
-}NET_DVR_SPARTAN_INFO,*LPNET_DVR_SPARTAN_INFO;
+}NET_DVR_SPARTAN_INFO;
  typedef struct tagNET_DVR_IPADDR_FILTERCFG
 {
     DWORD dwSize;
@@ -26496,7 +19593,7 @@ typedef struct tagNET_DVR_SPARTAN_INFO
     WORD  wPicWidth; 
     WORD  wPicHeight; 
     BYTE  byLogoName[16];
-}NET_DVR_LOGO_OVERLAYCFG,*LPNET_DVR_LOGO_OVERLAYCFG;
+}NET_DVR_LOGO_OVERLAYCFG;
   typedef struct tagNET_DVR_INVALID_DISK_PARAM
 {
     NET_DVR_STRUCTHEAD    struStructHead;
@@ -26677,7 +19774,7 @@ typedef enum
     BYTE byDispFormat[MAX_CODE_CARD_SUPPORTDISPNUMS];   
     BYTE byWindowMode[MAX_CODE_CARD_SUPPORTDISPNUMS][12]; 
     BYTE byRes2[36];
-}NET_DVR_CODECARD_ABILITY,*LPNET_DVR_CODECARD_ABILITY;
+}NET_DVR_CODECARD_ABILITY;
 #define        MAX_CODE_CARD_NUM            8   
 typedef struct tagNET_DVR_CODESVR_ABILITY
 {
@@ -26697,7 +19794,7 @@ typedef struct tagNET_DVR_CODESVR_ABILITY
     DWORD  dwResolution;       
     DWORD  dwWindowMode;        
     BYTE   byRes2[64];
-}NET_DVR_CODER_SERVER_OUTPUT_CFG,*LPNET_DVR_CODER_SERVER_OUTPUT_CFG;
+}NET_DVR_CODER_SERVER_OUTPUT_CFG;
  typedef struct tagNET_DVR_DISPLAY_START_INFO 
 {
     DWORD  dwSize;
@@ -26706,14 +19803,14 @@ typedef struct tagNET_DVR_CODESVR_ABILITY
     DWORD  dwWinNum;   
     BYTE   byEnableAudio; 
     BYTE   byRes[31];
-}NET_DVR_DISPLAY_START_INFO,*LPNET_DVR_DISPLAY_START_INFO;
+}NET_DVR_DISPLAY_START_INFO;
  typedef struct tagNET_DVR_CODER_WINDOW_INFO
 {
     DWORD dwSize;
     DWORD dwDisplayChan;
     DWORD dwWinNum;     
     BYTE  byRes[16];
-}NET_DVR_CODER_WINDOW_INFO,*LPNET_DVR_CODER_WINDOW_INFO;
+}NET_DVR_CODER_WINDOW_INFO;
  typedef struct tagNET_DVR_WINDOW_STATUS
 {
     DWORD  dwSize;         
@@ -26721,7 +19818,7 @@ typedef struct tagNET_DVR_CODESVR_ABILITY
     BYTE   byDisplay;              
     BYTE   byAudio;            
     BYTE   byRes[30];                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-}NET_DVR_WINDOW_STATUS,*LPNET_DVR_WINDOW_STATUS;
+}NET_DVR_WINDOW_STATUS;
  typedef struct tagNET_DVR_RECORD_LOCK_PERCENTAGE
 {
     DWORD     dwSize;              
@@ -26806,7 +19903,7 @@ typedef struct tagNET_DVR_CODESVR_ABILITY
     NET_DVR_STRUCTHEAD     struStruceHead;
     DWORD             dwPackageInterval;    
     BYTE              byRes[32];               
-}NET_DVR_RECORD_PACK,*LPNET_DVR_RECORD_PACK;
+}NET_DVR_RECORD_PACK;
 #define NET_DVR_FIND_NAS_DIRECTORY     6161        
 #define NET_DVR_NAS_FINDING       0   
 #define NET_DVR_NAS_RECV          1   
@@ -27043,7 +20140,7 @@ typedef struct tagNET_DVR_WALLWINCFG
     DWORD dwSubWinNum;
     DWORD dwWallNo; 
     BYTE  byRes[12];
-}NET_DVR_WALLWIN_INFO,*LPNET_DVR_WALLWIN_INFO;
+}NET_DVR_WALLWIN_INFO;
  typedef struct tagNET_DVR_WALL_WIN_STATUS
 {
     DWORD dwSize ;
@@ -27077,7 +20174,7 @@ typedef struct tagNET_DVR_WALLWINCFG
     BYTE   sUserName[NAME_LEN];    
     BYTE   sPassword[PASSWD_LEN];    
     BYTE   byRes[24];
-}NET_DVR_ASSOCIATEDDEV_CHAN_INFO,*LPNET_DVR_ASSOCIATEDDEV_CHAN_INFO;
+}NET_DVR_ASSOCIATEDDEV_CHAN_INFO;
  typedef struct tagNET_DVR_WALLOUTPUTPARAM
 {
     DWORD dwSize;
@@ -27103,13 +20200,13 @@ typedef struct tagNET_DVR_WALLWINCFG
     BYTE        sUserName[NAME_LEN];    
     BYTE        sPassword[PASSWD_LEN];    
     BYTE        byRes2[36];
-}NET_DVR_SUBMATRIXSYSTEMINFO,*LPNET_DVR_SUBMATRIXSYSTEMINFO;
+}NET_DVR_SUBMATRIXSYSTEMINFO;
  typedef struct tagNET_DVR_UNITEDMATRIXSYSTEMINFO
 {
     DWORD dwSize;
     NET_DVR_SUBMATRIXSYSTEMINFO struMatrixInfo[MAX_UNITEDMATRIX_NUM]; 
     BYTE  byRes[32];
-}NET_DVR_UNITEDMATRIXSYSTEMINFO,*LPNET_DVR_UNITEDMATRIXSYSTEMINFO;
+}NET_DVR_UNITEDMATRIXSYSTEMINFO;
  typedef struct tagNET_DVR_SUBSTREAM_SWITCH_CFG
 {
     BYTE  byAutoSwitchEnable; 
@@ -27148,7 +20245,7 @@ typedef struct tagNET_DVR_WALLWINCFG
     }unionServer;  
     char        szDisplayInfo[MAX_LEDDISPLAYINFO_LEN];
     BYTE        byRes[128];
-}NET_DVR_LEDDISPLAYINFO,*LPNET_DVR_LEDDISPLAYINFO;
+}NET_DVR_LEDDISPLAYINFO;
   typedef struct tagNET_DVR_LOW_LIGHT_CFG
 {
     DWORD dwSize;
@@ -27268,7 +20365,7 @@ typedef struct tagNET_DVR_ASSOCIATE_INPUT_PARAM
     BYTE    byRes1[2];
     DWORD    dwOutputIndex;    
     BYTE    byRes2[20];
-}NET_DVR_ASSOCIATE_OUTPUT_PARAM,*LPNET_DVR_ASSOCIATE_OUTPUT_PARAM;
+}NET_DVR_ASSOCIATE_OUTPUT_PARAM;
  typedef struct tagNET_DVR_VCS_USER_INFO
 {
     DWORD   dwSize;
@@ -27293,7 +20390,7 @@ typedef struct tagNET_DVR_ASSOCIATE_INPUT_PARAM
     WORD    wDevPort;            
     BYTE    byTransmitType;        
     BYTE    byRes2[69];
-}NET_DVR_STREAM_MEDIA_SERVER_CFG_V41,*LPNET_DVR_STREAM_MEDIA_SERVER_CFG_V41;
+}NET_DVR_STREAM_MEDIA_SERVER_CFG_V41;
 typedef struct tagNET_DVR_DEV_CHAN_INFO_V41
 {
     BYTE    byAddress[MAX_DOMAIN_NAME];    
@@ -27310,7 +20407,7 @@ typedef struct tagNET_DVR_DEV_CHAN_INFO_V41
     BYTE    byRes;   
     BYTE    sUserName[NAME_LEN];    
     BYTE    sPassword[PASSWD_LEN];    
-}NET_DVR_DEV_CHAN_INFO_V41,*LPNET_DVR_DEV_CHAN_INFO_V41;
+}NET_DVR_DEV_CHAN_INFO_V41;
  typedef struct tagNET_DVR_DEV_CHAN_INFO_EX
 {
     BYTE   byChanType;              
@@ -27331,7 +20428,7 @@ typedef struct tagNET_DVR_DEV_CHAN_INFO_V41
     BYTE    byRes[2];   
     BYTE    sUserName[NAME_LEN];    
     BYTE    sPassword[PASSWD_LEN];    
-}NET_DVR_DEV_CHAN_INFO_EX,*LPNET_DVR_DEV_CHAN_INFO_EX;
+}NET_DVR_DEV_CHAN_INFO_EX;
  typedef struct tagNET_DVR_STREAM_MEDIA_SERVER
 {    
     BYTE   byValid; 
@@ -27340,7 +20437,7 @@ typedef struct tagNET_DVR_DEV_CHAN_INFO_V41
     WORD   wDevPort;            
     BYTE   byTransmitType;        
     BYTE   byRes2[5];
-}NET_DVR_STREAM_MEDIA_SERVER,*LPNET_DVR_STREAM_MEDIA_SERVER;
+}NET_DVR_STREAM_MEDIA_SERVER;
  typedef struct tagNET_DVR_DEV_DDNS_INFO
 {
     BYTE   byDevAddress[MAX_DOMAIN_NAME];    
@@ -27358,24 +20455,24 @@ typedef struct tagNET_DVR_DEV_CHAN_INFO_V41
     BYTE   sPassword[PASSWD_LEN];    
     WORD   wDevPort;                
     BYTE   byRes2[2];
-}NET_DVR_DEV_DDNS_INFO,*LPNET_DVR_DEV_DDNS_INFO;
+}NET_DVR_DEV_DDNS_INFO;
  typedef struct tagNET_DVR_DEC_STREAM_DEV_EX
 {
     NET_DVR_STREAM_MEDIA_SERVER    struStreamMediaSvrCfg;
     NET_DVR_DEV_CHAN_INFO_EX                struDevChanInfo;
-}NET_DVR_DEC_STREAM_DEV_EX,*LPNET_DVR_DEC_STREAM_DEV_EX;
+}NET_DVR_DEC_STREAM_DEV_EX;
 typedef struct tagNET_DVR_DEC_DDNS_DEV
 {
     NET_DVR_DEV_DDNS_INFO struDdnsInfo;
     NET_DVR_STREAM_MEDIA_SERVER struMediaServer;
-}NET_DVR_DEC_DDNS_DEV,*LPNET_DVR_DEC_DDNS_DEV;
+}NET_DVR_DEC_DDNS_DEV;
  typedef union tagNET_DVR_DEC_STREAM_MODE
 {
     NET_DVR_DEC_STREAM_DEV_EX struDecStreamDev;
     NET_DVR_PU_STREAM_URL struUrlInfo;
     NET_DVR_DEC_DDNS_DEV struDdnsDecInfo;
     BYTE byRes[300];    
-}NET_DVR_DEC_STREAM_MODE,*LPNET_DVR_DEC_STREAM_MODE;
+}NET_DVR_DEC_STREAM_MODE;
  typedef struct tagNET_DVR_PU_STREAM_CFG_V41
 {
     DWORD dwSize;
@@ -27386,14 +20483,14 @@ typedef struct tagNET_DVR_DEC_DDNS_DEV
     DWORD  dwDecDelayTime;
     BYTE   sStreamPassword[STREAM_PASSWD_LEN];  
 	BYTE  byRes2[48];
-}NET_DVR_PU_STREAM_CFG_V41,*LPNET_DVR_PU_STREAM_CFG_V41;
+}NET_DVR_PU_STREAM_CFG_V41;
  typedef struct  tagNET_DVR_MATRIX_CHAN_INFO_V41
 {
     BYTE byEnable; 
     BYTE byStreamMode;
     BYTE byRes[2];
     NET_DVR_DEC_STREAM_MODE uDecStreamMode;
-}NET_DVR_MATRIX_CHAN_INFO_V41,*LPNET_DVR_MATRIX_CHAN_INFO_V41;
+}NET_DVR_MATRIX_CHAN_INFO_V41;
  typedef struct  tagNET_DVR_MATRIX_LOOP_DECINFO_V41
 {
     DWORD                            dwSize;
@@ -27416,7 +20513,7 @@ typedef struct tagNET_DVR_DEC_DDNS_DEV
     DWORD   dwGetStreamMode;    
     NET_DVR_MATRIX_PASSIVEMODE    struPassiveMode;
     BYTE    byRes2[32];
-}NET_DVR_MATRIX_DEC_CHAN_INFO_V41,*LPNET_DVR_MATRIX_DEC_CHAN_INFO_V41;
+}NET_DVR_MATRIX_DEC_CHAN_INFO_V41;
  typedef struct tagNet_DVR_IP_ADDRESS
 {
     BYTE    byDevAddress[MAX_DOMAIN_NAME];    
@@ -27497,7 +20594,7 @@ typedef struct tagNET_DVR_DEC_DDNS_DEV
     DWORD dwSize;
     NET_DVR_COLOR  struColor;      
     BYTE byRes[32];
-}NET_DVR_DISPLAY_EFFECT_CFG,*LPNET_DVR_DISPLAY_EFFECT_CFG;
+}NET_DVR_DISPLAY_EFFECT_CFG;
 typedef struct tagNET_DVR_TRUNK_USE_STATE
 {
     DWORD        dwSize;
@@ -27540,7 +20637,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     BYTE  byFaintToUnlock; 
     BYTE  byOvertimeToUnlock;  
     BYTE  byRes[13];
-}NET_DVR_SAFETYCABIN_WORK_MODE,*LPNET_DVR_SAFETYCABIN_WORK_MODE;
+}NET_DVR_SAFETYCABIN_WORK_MODE;
  typedef struct tagNET_DVR_SAFETYCABIN_PERSON_SIGNAL_CFG
 {
     DWORD dwSize;
@@ -27554,13 +20651,13 @@ typedef struct tagNET_DVR_PTZ_STATUS
     BYTE  byFollowDetectorSensitivity;  
     BYTE  byManyPersonSensitivity;    
     BYTE  byRes2[28];  
-}NET_DVR_SAFETYCABIN_PERSON_SIGNAL_CFG,*LPNET_DVR_SAFETYCABIN_PERSON_SIGNAL_CFG;    
+}NET_DVR_SAFETYCABIN_PERSON_SIGNAL_CFG;    
  typedef struct tagNET_DVR_ETHERNET_IPV6_COND
 {
     DWORD        dwSize;
     BYTE  byMACAddr[MACADDR_LEN]; 
     BYTE  byRes[64];      
-}NET_DVR_ETHERNET_IPV6_COND,*LPNET_DVR_ETHERNET_IPV6_COND;
+}NET_DVR_ETHERNET_IPV6_COND;
  typedef struct tagNET_DVR_ETHERNET_IPV6_CFG
 {
     DWORD        dwSize;
@@ -27568,7 +20665,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     BYTE  byRes1[3]; 
     BYTE  byIPv6[MAX_IPV6_LEN]; 
     BYTE  byRes[64];      
-}NET_DVR_ETHERNET_IPV6_CFG,*LPNET_DVR_ETHERNET_IPV6_CFG;
+}NET_DVR_ETHERNET_IPV6_CFG;
  typedef struct  
 {
     BYTE byHour;
@@ -27577,7 +20674,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     BYTE byRes;
     WORD wMilliSecond; 
     BYTE byRes1[2];
-}NET_DVR_DAYTIME,*LPNET_DVR_DAYTIME;
+}NET_DVR_DAYTIME;
  typedef struct
 {
     NET_DVR_DAYTIME  struStartTime; 
@@ -27607,7 +20704,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     NET_DVR_SCHEDULE_DAYTIME struScheduleTime;
     NET_DVR_MOTION_MULTI_AREAPARAM struMotionMultiAreaParam[MAX_MULTI_AREA_NUM];
     BYTE byRes1[60];
-}NET_DVR_MOTION_MULTI_AREA,*LPNET_DVR_MOTION_MULTI_AREA; 
+}NET_DVR_MOTION_MULTI_AREA; 
  typedef struct
 {
     BYTE byMotionScope[64][96];        
@@ -27634,7 +20731,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     DWORD     dwRelRecordChan[MAX_CHANNUM_V40];     
     BYTE  byDiscardFalseAlarm; 
     BYTE  byRes[127]; 
-}NET_DVR_MOTION_V40,*LPNET_DVR_MOTION_V40;
+}NET_DVR_MOTION_V40;
  typedef struct
 {
     DWORD dwEnableHideAlarm;                
@@ -27647,7 +20744,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     DWORD   dwRelAlarmOut[MAX_ALARMOUT_V40]; 
     NET_DVR_SCHEDTIME struAlarmTime[MAX_DAYS][MAX_TIMESEGMENT_V30]; 
     BYTE  byRes[64]; 
-}NET_DVR_HIDEALARM_V40,*LPNET_DVR_HIDEALARM_V40; 
+}NET_DVR_HIDEALARM_V40; 
  typedef struct
 {
     DWORD dwEnableVILostAlarm;                
@@ -27657,7 +20754,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     NET_DVR_SCHEDTIME struAlarmTime[MAX_DAYS][MAX_TIMESEGMENT_V30]; 
     BYTE    byVILostAlarmThreshold;    
     BYTE    byRes[63]; 
-}NET_DVR_VILOST_V40,*LPNET_DVR_VILOST_V40;    
+}NET_DVR_VILOST_V40;    
  typedef struct
 {
     NET_DVR_COLOR      struColor[MAX_TIMESEGMENT_V30];
@@ -27699,7 +20796,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     WORD    wTiltAngleTopLeftX;    
     WORD    wTiltAngleTopLeftY;  
     BYTE    byRes[108];
-}NET_DVR_PICCFG_V40,*LPNET_DVR_PICCFG_V40;
+}NET_DVR_PICCFG_V40;
  typedef struct  
 {
     DWORD                   dwSize; 
@@ -27710,7 +20807,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     NET_DVR_CAMERAPARAMCFG_EX   struDayIspAdvanceParam;
     NET_DVR_CAMERAPARAMCFG_EX   struNightIspAdvanceParam;
     BYTE   byRes1[512];
-}NET_DVR_ISP_CAMERAPARAMCFG,*LPNET_DVR_ISP_CAMERAPARAMCFG;
+}NET_DVR_ISP_CAMERAPARAMCFG;
  typedef struct
 {
     DWORD       dwSize; 
@@ -27727,7 +20824,7 @@ typedef struct tagNET_DVR_PTZ_STATUS
     BYTE        byPowerSavingControl;
     BYTE        byCaptureWithSupplimentLightEnabled;
     BYTE        byRes[244];
-}NET_DVR_DEVSERVER_CFG,*LPNET_DVR_DEVSERVER_CFG;
+}NET_DVR_DEVSERVER_CFG;
  typedef struct tagNET_DVR_GBT28181_ACCESS_CFG
 {
     DWORD       dwSize;
@@ -27752,13 +20849,13 @@ typedef struct tagNET_DVR_PTZ_STATUS
     DWORD      dwAutoAllocChannelID ; 
     char       szDeviceDomain[MAX_SIPSERVER_ADDRESS_LEN] ;
     BYTE       byRes4[116];
-}NET_DVR_GBT28181_ACCESS_CFG,*LPNET_DVR_GBT28181_ACCESS_CFG;
+}NET_DVR_GBT28181_ACCESS_CFG;
 typedef struct tagNET_DVR_GBT28181_CHANINFO_CFG
 {
     DWORD                   dwSize;
     char    szVideoChannelNumID[MAX_COMPRESSIONID_LEN];
     BYTE             byRes[256];
-}NET_DVR_GBT28181_CHANINFO_CFG,*LPNET_DVR_GBT28181_CHANINFO_CFG;
+}NET_DVR_GBT28181_CHANINFO_CFG;
 typedef struct tagNET_DVR_ALARMIN_INFO
 {
     NET_DVR_STREAM_INFO struStreamInfo;
@@ -27770,7 +20867,7 @@ typedef struct tagNET_DVR_GBT28181_ALARMINCFG
     DWORD                   dwSize;
     char    szAlarmInNumID[MAX_COMPRESSIONID_LEN];
     BYTE             byRes[256];
-}NET_DVR_GBT28181_ALARMINCFG,*LPNET_DVR_GBT28181_ALARMINCFG;
+}NET_DVR_GBT28181_ALARMINCFG;
  typedef struct tagNET_DVR_CAMERA_SETUPCFG
 {
     DWORD dwSize;
@@ -27799,13 +20896,13 @@ typedef struct tagNET_DVR_SCHEDDATE
     BYTE   byStartDay;     
     BYTE   byStopMonth;    
     BYTE   byStopDay;      
-}NET_DVR_SCHEDDATE,*LPNET_DVR_SCHEDDATE;
+}NET_DVR_SCHEDDATE;
 typedef struct tagNET_DVR_OUTPUT_SCHEDULE
 {   
     NET_DVR_SCHEDTIME struTime;  
     BYTE byState;                
     BYTE byRes[11];              
-} NET_DVR_OUTPUT_SCHEDULE ,*LPNET_DVR_OUTPUT_SCHEDULE;
+} NET_DVR_OUTPUT_SCHEDULE ;
 typedef struct tagNET_DVR_ONE_OUTPUT_SCHEDULE_RULE
 {   
     BYTE                     byEnable;    
@@ -27813,13 +20910,13 @@ typedef struct tagNET_DVR_ONE_OUTPUT_SCHEDULE_RULE
     NET_DVR_SCHEDDATE        struDate;    
     NET_DVR_OUTPUT_SCHEDULE  struOutputSchedule[MAX_TIMESEGMENT_V30];  
     BYTE                     byRes2[16];  
-}NET_DVR_ONE_OUTPUT_SCHEDULE_RULE,*LPNET_DVR_ONE_OUTPUT_SCHEDULE_RULE;
+}NET_DVR_ONE_OUTPUT_SCHEDULE_RULE;
 typedef struct tagNET_DVR_OUTPUT_SCHEDULE_RULECFG
 {   
     DWORD  dwSize; 
     NET_DVR_ONE_OUTPUT_SCHEDULE_RULE struOutputRule[MAX_RULE_NUM]; 
     BYTE   byRes[64];  
-}NET_DVR_OUTPUT_SCHEDULE_RULECFG,*LPNET_DVR_OUTPUT_SCHEDULE_RULECFG;
+}NET_DVR_OUTPUT_SCHEDULE_RULECFG;
 typedef struct tagNET_DVR_TPS_ALARMCFG
 {
     DWORD dwSize;
@@ -27885,12 +20982,12 @@ typedef    struct    tagNET_ITS_REMOTE_COMMAND
     BYTE            byRes;     
     DWORD           dwCode;       
     BYTE            byRes1[128];
-}NET_ITS_REMOTE_COMMAND,*LPNET_ITS_REMOTE_COMMAND;
+}NET_ITS_REMOTE_COMMAND;
  typedef  struct    tagNET_ITS_REMOTE_CONTROL_
 {
     DWORD          dwSize;
     NET_ITS_REMOTE_COMMAND    struRemoteCommand;   
-}NET_ITS_REMOTE_CONTROL,*LPNET_ITS_REMOTE_CONTROL;
+}NET_ITS_REMOTE_CONTROL;
 typedef struct tagNET_ITS_ECT_CHANNELSTATE
 {
     DWORD dwSize;
@@ -28132,7 +21229,7 @@ typedef enum tagEXTERNAL_DEVICES_STATUS
     int iLineVolBC;            
     int iLineVolCA;            
     int iAverageLineVol;    
-} NET_DVR_LINE_VOLTAGE,*LPNET_DVR_LINE_VOLTAGE;
+} NET_DVR_LINE_VOLTAGE;
 typedef struct tagNET_DVR_CURRENT
 {
     int iPhaseACurrent;            
@@ -28530,7 +21627,7 @@ typedef struct tagNET_DVR_ALARMHOST_TEMP_HUMIDITY_SENSOR_LIMIT_VALUE
 {
     NET_DVR_ALARMHOST_UPS_LIMIT_VALUE struUpsLimitValue;
     NET_DVR_ALARMHOST_TEMP_HUMIDITY_SENSOR_LIMIT_VALUE struTempHumidityLimitValue;
-}NET_DVR_EXTERNAL_DEVICE_LIMIT_VALUE_UNION,*LPNET_DVR_EXTERNAL_DEVICE_LIMIT_VALUE_UNION;
+}NET_DVR_EXTERNAL_DEVICE_LIMIT_VALUE_UNION;
  typedef struct tagNET_DVR_ALARMHOST_EXTERNAL_DEVICE_LIMIT_VALUE
 {
     DWORD dwSize;
@@ -28645,7 +21742,7 @@ typedef struct tagNET_DVR_DETECT_FACE
     DWORD       dwGroup ;             
     NET_DVR_MULTI_STREAM_COMPRESSIONCFG_COND  struMultiStreamCfg; 
     BYTE         byRes[64] ;        
-}NET_DVR_MUL_STREAM_CHANNEL_GROUP,*LPNET_DVR_MUL_STREAM_CHANNEL_GROUP;
+}NET_DVR_MUL_STREAM_CHANNEL_GROUP;
  typedef struct tagNET_DVR_CHANNEL_GROUP
 {
     DWORD        dwSize;       
@@ -28661,7 +21758,7 @@ typedef struct tagNET_DVR_DETECT_FACE
     NET_DVR_SCHEDTIME  struSchedTime; 
     BYTE   byDetSceneID;
     BYTE   byRes[15];
-}NET_DVR_TIME_DETECTION,*LPNET_DVR_TIME_DETECTION;
+}NET_DVR_TIME_DETECTION;
 typedef struct tagNET_DVR_GUARD_COND
 {
     DWORD  dwSize;
@@ -28669,7 +21766,7 @@ typedef struct tagNET_DVR_GUARD_COND
     BYTE   byRelateType; 
     BYTE   byGroupNo;  
     BYTE   byRes[62];
-}NET_DVR_GUARD_COND,*LPNET_DVR_GUARD_COND;
+}NET_DVR_GUARD_COND;
 typedef struct tagNET_DVR_GUARD_CFG
 {
     DWORD  dwSize;
@@ -28681,7 +21778,7 @@ typedef struct tagNET_DVR_GUARD_CFG
     NET_DVR_TIME_DETECTION  struHolidayTime[MAX_TIMESEGMENT_V30]; 
     BYTE   byDirection;
     BYTE   byRes[87];
-}NET_DVR_GUARD_CFG,*LPNET_DVR_GUARD_CFG;
+}NET_DVR_GUARD_CFG;
 typedef    struct  tagNET_DVR_SNAPINFO_COND_
 {
     DWORD    dwSize; 
@@ -28697,7 +21794,7 @@ typedef struct tagNET_DVR_SNAPINFOCFG
     BYTE  byRes1[2];
     DWORD dwPicSize;
     BYTE  byRes2[128];
-}NET_DVR_SNAPINFOCFG,*LPNET_DVR_SNAPINFOCFG;
+}NET_DVR_SNAPINFOCFG;
 typedef enum _PTZ_TRACK_MODE_
 {
     PTZ_TRACK_MODE_ALWAYS  = 1,   
@@ -28713,7 +21810,7 @@ typedef struct _NET_DVR_PTZ_TRACK_PARAM_
     BYTE  byRes1; 
     DWORD dwTrackTime; 
     BYTE  byRes2[256]; 
-}NET_DVR_PTZ_TRACK_PARAM,*LPNET_DVR_PTZ_TRACK_PARAM;
+}NET_DVR_PTZ_TRACK_PARAM;
  typedef struct tagNET_VCA_TRAVERSE_PLANEPARAM
 {
     DWORD dwSize;
@@ -28771,7 +21868,7 @@ typedef struct tagNET_DVR_ROI_DETECT_COND
     BYTE    byRoiDetectType; 
     BYTE    byRoiDetectTrackType;
     BYTE    byRes[30];
-}NET_DVR_ROI_DETECT_COND,*LPNET_DVR_ROI_DETECT_COND;
+}NET_DVR_ROI_DETECT_COND;
 typedef struct tagNET_DVR_ROI_FIX_RECT_CFG
 {
     BYTE  byEnableFixRoi; 
@@ -28793,7 +21890,7 @@ typedef struct tagNET_DVR_ROI_TRACK_RECT_CFG
     DWORD                        uLen[128];   
     NET_DVR_ROI_FIX_RECT_CFG    strRoiFixRectCfg;
     NET_DVR_ROI_TRACK_RECT_CFG  strRoiTrackRectCfg;
-}NET_DVR_ROI_DETECT_UNION,*LPNET_DVR_ROI_DETECT_UNION;
+}NET_DVR_ROI_DETECT_UNION;
  typedef struct tagNET_DVR_ROI_DETECT_CFG
 {
     DWORD      dwSize;  
@@ -28811,7 +21908,7 @@ typedef struct tagNET_VCA_DEFOCUSPARAM
     BYTE  byRes1[2];
     NET_DVR_HANDLEEXCEPTION_V40 struHandleException;  
     BYTE byRes2[24];
-}NET_VCA_DEFOCUSPARAM,*LPNET_VCA_DEFOCUSPARAM;
+}NET_VCA_DEFOCUSPARAM;
  typedef struct tagNET_PTZ_INFO_EX
 {
     float fPan;
@@ -28841,7 +21938,7 @@ typedef struct tagNET_DVR_PRESET_NAME
     WORD  wAction;  
     WORD  wActionNum; 
     BYTE byres[12];
-}NET_DVR_SCHEDTASK,* LPNET_DVR_SCHEDTASK;
+}NET_DVR_SCHEDTASK;
 typedef struct tagNET_DVR_TIME_TASK
 {
     DWORD dwSize;
@@ -28850,7 +21947,7 @@ typedef struct tagNET_DVR_TIME_TASK
     NET_DVR_SCHEDTASK struTask[MAX_DAYS][MAX_SCH_TASKS_NUM];    
     DWORD dwParkTime;   
     BYTE byRes1[64];
-}NET_DVR_TIME_TASK,*LPNET_DVR_TIME_TASK;
+}NET_DVR_TIME_TASK;
 typedef struct tagNET_DVR_CHANNEL_INDEX
 {
     DWORD dwSize;                 
@@ -28891,7 +21988,7 @@ typedef struct tagNET_DVR_FISHEYE_STREAM_STATUS_
     DWORD  dwSize;        
     BYTE   byStreamMode;  
     BYTE   byRes[63];     
-}NET_DVR_FISHEYE_STREAM_STATUS,*LPNET_DVR_FISHEYE_STREAM_STATUS;
+}NET_DVR_FISHEYE_STREAM_STATUS;
 typedef struct tagNET_DVR_CALLBACK_TYPE_DATA
 {   
     DWORD  dwChannel;      
@@ -28899,7 +21996,7 @@ typedef struct tagNET_DVR_CALLBACK_TYPE_DATA
     DWORD  dwDataLen;      
     BYTE*  pData;          
     BYTE   byRes[64];      
-}NET_DVR_CALLBACK_TYPE_DATA,*LPNET_DVR_CALLBACK_TYPE_DATA;
+}NET_DVR_CALLBACK_TYPE_DATA;
 typedef struct tagNET_DVR_DRAG_POS_PARAM
 {
     DWORD          dwChannel;      
@@ -28907,7 +22004,7 @@ typedef struct tagNET_DVR_DRAG_POS_PARAM
     NET_VCA_POINT  struToPoint;    
     NET_VCA_POINT  struOriPoint;   
     BYTE           byRes[56];      
-}NET_DVR_DRAG_POS_PARAM,*LPNET_DVR_DRAG_POS_PARAM;
+}NET_DVR_DRAG_POS_PARAM;
 typedef struct tagNET_DVR_QUERY_STATUS
 {
     DWORD      dwSize;
@@ -29207,7 +22304,7 @@ typedef enum tagNET_DVR_IPC_ENUM_UNIFY
                     BYTE    bySwitchTime;
                     BYTE    bySameSource ; 
                     BYTE    byRes[32];        
-}NET_DVR_PREVIEW_SWITCH_CFG,* LPNET_DVR_PREVIEW_SWITCH_CFG;
+}NET_DVR_PREVIEW_SWITCH_CFG;
  typedef struct tagNET_DVR_USER_COND
 {    
     char        szUserName[NAME_LEN];
@@ -29538,7 +22635,7 @@ typedef struct tagNET_DVR_IPC_CFG_FILE_PARAM
     NET_DVR_TIME struDiagnoseTime;    
     BYTE     byScoreValue;       
     BYTE     byRes[27];
-}NET_DVR_VQD_DIAGNOSE_EXCEPTION_INFO,*LPNET_DVR_VQD_DIAGNOSE_EXCEPTION_INFO;
+}NET_DVR_VQD_DIAGNOSE_EXCEPTION_INFO;
   typedef struct tagNET_DVR_VQD_DIAGNOSE_INFO
 {
     DWORD  dwSize ;        
@@ -29549,7 +22646,7 @@ typedef struct tagNET_DVR_IPC_CFG_FILE_PARAM
     DWORD dwSize;
     BYTE  byDecStatus[MAX_SUBSYSTEM_NUM_V40]; 
     BYTE  byRes[32];
-}NET_DVR_DEC_RESOURCE_LIST,*LPNET_DVR_DEC_RESOURCE_LIST;
+}NET_DVR_DEC_RESOURCE_LIST;
  typedef struct tagNET_DVR_DEC_APPLICANT_INFO
 {
     DWORD dwSize;
@@ -29558,7 +22655,7 @@ typedef struct tagNET_DVR_IPC_CFG_FILE_PARAM
     NET_DVR_IPADDR  struIP;   
     WORD  wPort;         
     BYTE  byRes[18];
-}NET_DVR_DEC_APPLICANT_INFO,*LPNET_DVR_DEC_APPLICANT_INFO;
+}NET_DVR_DEC_APPLICANT_INFO;
  typedef struct tagNET_DVR_DEC_RESOURCE_INFO
 {
     DWORD dwSize;
@@ -29570,14 +22667,14 @@ typedef struct tagNET_DVR_IPC_CFG_FILE_PARAM
     BYTE  sUserName[NAME_LEN];    
     BYTE  sPassword[PASSWD_LEN];    
     BYTE  byRes2[32];
-}NET_DVR_DEC_RESOURCE_INFO,*LPNET_DVR_DEC_RESOURCE_INFO;
+}NET_DVR_DEC_RESOURCE_INFO;
  typedef struct tagNET_DVR_DEC_CHAN_COND
 {
     DWORD dwSize;
     DWORD dwSlotNum; 
     DWORD dwDecChan; 
     BYTE  byRes[16];
-}NET_DVR_DEC_CHAN_COND,*LPNET_DVR_DEC_CHAN_COND;
+}NET_DVR_DEC_CHAN_COND;
  typedef struct tagNET_DVR_DEC_YUV_CFG
 {
     DWORD dwSize;
@@ -29590,7 +22687,7 @@ typedef struct tagNET_DVR_IPC_CFG_FILE_PARAM
     BYTE  byRes2[3];
     DWORD dwAudioAddr;  
     BYTE  byRes3[16];
-}NET_DVR_DEC_YUV_CFG,*LPNET_DVR_DEC_YUV_CFG;
+}NET_DVR_DEC_YUV_CFG;
  typedef struct tagNET_DVR_INPUT_INFO
 {
     DWORD        dwSize;
@@ -29627,18 +22724,18 @@ typedef struct tagNET_DVR_ALARM_SENSOR_POINT_CFG
     DWORD        dwIPChanOsd;            
     char         szOSDUnit[MAX_OSD_UNIT_LEN];   
     BYTE        byRes[16];
-}NET_DVR_ALARM_SENSOR_POINT_CFG,*LPNET_DVR_ALARM_SENSOR_POINT_CFG;
+}NET_DVR_ALARM_SENSOR_POINT_CFG;
 typedef struct tagNET_DVR_ALARM_SWITCH_POINT_CFG
 {
 	DWORD     dwIPCChanOsd;
     BYTE        byRes[60];
-}NET_DVR_ALARM_SWITCH_POINT_CFG,*LPNET_DVR_ALARM_SWITCH_POINT_CFG;
+}NET_DVR_ALARM_SWITCH_POINT_CFG;
 typedef union tagNET_DVR_ALARM_POINT_PARAM_UNION
 {
     BYTE    byLength[64]; 
     NET_DVR_ALARM_SENSOR_POINT_CFG struSensor;    
     NET_DVR_ALARM_SWITCH_POINT_CFG struSwitch;    
-}NET_DVR_ALARM_POINT_PARAM_UNION,*LPNET_DVR_ALARM_POINT_PARAM_UNION;
+}NET_DVR_ALARM_POINT_PARAM_UNION;
 typedef struct tagNET_DVR_ALARM_POINT_CFG
 {
     DWORD        dwSize;
@@ -29688,7 +22785,7 @@ typedef struct _NET_DVR_SEARCH_CONDITION
     DWORD    dwSize;
     BYTE    byDataUploadMode;    
     BYTE    byRes[31];
-}NET_DVR_ALARMHOST_ALARM_MODE_CFG,*LPNET_DVR_ALARMHOST_ALARM_MODE_CFG;
+}NET_DVR_ALARMHOST_ALARM_MODE_CFG;
   typedef struct tagNET_DVR_ALARMHOST_POINT_VALUE
 {
     BYTE    byChanType;        
@@ -29700,12 +22797,12 @@ typedef struct _NET_DVR_SEARCH_CONDITION
     DWORD     dwPointNo;        
     int        iValue;            
     BYTE    byRes[16];
-}NET_DVR_ALARMHOST_POINT_VALUE,*LPNET_DVR_ALARMHOST_POINT_VALUE;
+}NET_DVR_ALARMHOST_POINT_VALUE;
  typedef union tagNET_DVR_ALARMHOST_DATA_UNION
 {
     BYTE    byLength[40];
     NET_DVR_ALARMHOST_POINT_VALUE struPointValue;    
-}NET_DVR_ALARMHOST_DATA_UNION,*LPNET_DVR_ALARMHOST_DATA_UNION;
+}NET_DVR_ALARMHOST_DATA_UNION;
  typedef struct tagNET_DVR_ALARMHOST_DATA_UPLOAD
 {
     DWORD        dwSize;
@@ -29725,13 +22822,13 @@ typedef struct _NET_DVR_SEARCH_CONDITION
     DWORD  dwSize;
     BYTE byAudioOutVolume;
     BYTE byRes[63];
-}NET_DVR_AUDIOOUT_VOLUME,*LPNET_DVR_AUDIOOUT_VOLUME;
+}NET_DVR_AUDIOOUT_VOLUME;
  typedef struct tagNET_DVR_FUZZY_UPGRADE
 {
     DWORD  dwSize;
     char  sUpgradeInfo[MAX_UPGRADE_INFO_LEN];
     BYTE  byRes[64];
-}NET_DVR_FUZZY_UPGRADE,*LPNET_DVR_FUZZY_UPGRADE;
+}NET_DVR_FUZZY_UPGRADE;
  typedef struct tagNET_DVR_RS485_WORK_MODE
 {
     DWORD dwSize;
@@ -29870,7 +22967,7 @@ typedef  union _NET_DVR_POS_PROTOCOL_UNION
     NET_DVR_POS_GENERIC struGeneric;
     NET_DVR_POS_AVE struAve;
     NET_DVR_POS_NUCLEUS struNUCLEUS;
-}NET_DVR_POS_PROTOCOL_UNION,*LPNET_DVR_POS_PROTOCOL_UNION;
+}NET_DVR_POS_PROTOCOL_UNION;
  typedef enum tagNET_DVR_CHARSET_ENUM  
 {
     ENUM_UTF8 =0,
@@ -29984,14 +23081,14 @@ typedef struct    tagNET_DVR_DEVICE_LAN_ENCODE
     DWORD    dwRelRecordChanNum ;     
     DWORD    dwRelRecordChan[MAX_CHANNUM_V30];
     BYTE    byRes2[128];
-}NET_DVR_SCENECHANGE_DETECTION,*LPNET_DVR_SCENECHANGE_DETECTION;
+}NET_DVR_SCENECHANGE_DETECTION;
  typedef struct tagNET_DVR_SCENECHANGE_DETECTION_RESULT
 {
     DWORD            dwSize;          
     NET_VCA_DEV_INFO struDevInfo;    
     WORD      wDevInfoIvmsChannelEx;     
     BYTE             byRes[126];      
-}NET_DVR_SCENECHANGE_DETECTION_RESULT,*LPNET_DVR_SCENECHANGE_DETECTION_RESULT;
+}NET_DVR_SCENECHANGE_DETECTION_RESULT;
  typedef enum
 {
     PREVIEW_MOD = 0,
@@ -30018,7 +23115,7 @@ typedef struct tagNET_DVR_PARK_INFO
     DWORD dwSize;
     NET_DVR_STREAM_INFO struStreamID; 
     NET_DVR_STREAM_SRC_INFO struStreamSrcInfo; 
-}NET_DVR_STREAM_SRC_CFG,*LPNET_DVR_STREAM_SRC_CFG;
+}NET_DVR_STREAM_SRC_CFG;
  typedef struct tagNET_DVR_ENCODEINFO
 {
     BYTE  byFormatType; 
@@ -30061,7 +23158,7 @@ typedef struct tagNET_DVR_PARK_INFO
     BYTE  byDisplayMode; 
     BYTE  byEnableVcaDec; 
     BYTE  byRes[61];
-}NET_DVR_DEV_WORK_MODE,*LPNET_DVR_DEV_WORK_MODE;
+}NET_DVR_DEV_WORK_MODE;
   typedef struct tagNET_DVR_PASSIVETRANSINFO 
 {
     DWORD dwSize;
@@ -30084,7 +23181,7 @@ typedef struct tagNET_DVR_PARK_INFO
     BYTE  byRes1;
     DWORD dwBaseMapNo;     
     BYTE  byRes2[64];
-}NET_DVR_BASEMAP_CONTROL_CFG,*LPNET_DVR_BASEMAP_CONTROL_CFG;
+}NET_DVR_BASEMAP_CONTROL_CFG;
  typedef struct tagNET_DVR_VIRTUAL_SCREEN_CFG
 {
     DWORD dwSize;
@@ -30109,13 +23206,13 @@ typedef struct tagNET_DVR_PARK_INFO
     BYTE   sPicName[NAME_LEN];
     BYTE   byUsed; 
     BYTE   byRes[31];
-}NET_DVR_BASEMAP_PIC_INFO,*LPNET_DVR_BASEMAP_PIC_INFO;
+}NET_DVR_BASEMAP_PIC_INFO;
  typedef struct tagNET_DVR_MATRIX_LOGO_INFO
 {
     DWORD  dwSize;
     DWORD  dwLogoSize;
     BYTE   byRes[32];
-}NET_DVR_MATRIX_LOGO_INFO,*LPNET_DVR_MATRIX_LOGO_INFO;
+}NET_DVR_MATRIX_LOGO_INFO;
  typedef struct tagNET_DVR_MATRIX_LOGO_CFG
 {
     DWORD  dwSize;
@@ -30125,7 +23222,7 @@ typedef struct tagNET_DVR_PARK_INFO
     BYTE   byLogoName[NAME_LEN];  
     DWORD  dwLogoNo;    
     BYTE   byRes2[28];
-}NET_DVR_MATRIX_LOGO_CFG,*LPNET_DVR_MATRIX_LOGO_CFG;
+}NET_DVR_MATRIX_LOGO_CFG;
  typedef struct tagNET_DVR_WIN_LOGO_CFG
 {
     DWORD  dwSize;
@@ -30137,7 +23234,7 @@ typedef struct tagNET_DVR_PARK_INFO
     BYTE   byFlash;  
     BYTE   byTranslucent; 
     BYTE   byRes2[34];                
-}NET_DVR_WIN_LOGO_CFG,*LPNET_DVR_WIN_LOGO_CFG;    
+}NET_DVR_WIN_LOGO_CFG;    
   typedef struct tagNET_DVR_BIG_SCREEN_AUDIO_CFG
 {
     DWORD dwSize;
@@ -30158,7 +23255,7 @@ typedef struct tagNET_DVR_PARK_INFO
     DWORD           dwSize;          
     DWORD           dwChannel;;     
     BYTE            byRes[16];      
-}NET_DVR_RESUME_INITRACKPOS_CFG,*LPNET_DVR_RESUME_INITRACKPOS_CFG;
+}NET_DVR_RESUME_INITRACKPOS_CFG;
  typedef  struct tagNet_DVR_TEST_SELFCHECK_RESULT   
 {
     DWORD   dwSize;     
@@ -30213,19 +23310,19 @@ typedef struct tagNET_DVR_BARRIERGATE_COND
 {
     BYTE  byLaneNo;
     BYTE  byRes[3];
-}NET_DVR_BARRIERGATE_COND,*LPNET_DVR_BARRIERGATE_COND;
+}NET_DVR_BARRIERGATE_COND;
  typedef struct tagNET_DVR_VEHICLE_CONTROL
 {
     BYTE   byGateOperateType;
     BYTE   byRes1 ;
     WORD   wAlarmOperateType;
     BYTE   byRes2[8];
-}NET_DVR_VEHICLE_CONTROL,*LPNET_DVR_VEHICLE_CONTROL;
+}NET_DVR_VEHICLE_CONTROL;
  typedef struct tagNET_DVR_RELAY_PARAM
 {
     BYTE   byAccessDevInfo;
     BYTE   byRes[3];
-}NET_DVR_RELAY_PARAM,*LPNET_DVR_RELAY_PARAM;
+}NET_DVR_RELAY_PARAM;
 typedef struct tagNET_DVR_ENTRANCE_CFG
 {
     DWORD   dwSize;
@@ -30241,7 +23338,7 @@ typedef struct tagNET_DVR_ENTRANCE_CFG
     BYTE  byParkingDetectEnabled;
     BYTE  byParkingDetectJudgeTime;
     BYTE    byRes2[61];
-}NET_DVR_ENTRANCE_CFG,*LPNET_DVR_ENTRANCE_CFG;
+}NET_DVR_ENTRANCE_CFG;
 typedef struct tagNET_DVR_BARRIERGATE_CFG
 {
     DWORD dwSize;
@@ -30267,7 +23364,7 @@ typedef struct  tagNET_DVR_VEHICLE_CONTROL_LIST_INFO
     NET_DVR_TIME_V30  struStopTime;
     char        sOperateIndex[MAX_OPERATE_INDEX_LEN]; 
     BYTE  byRes1[224]; 
-} NET_DVR_VEHICLE_CONTROL_LIST_INFO,*LPNET_DVR_VEHICLE_CONTROL_LIST_INFO;
+} NET_DVR_VEHICLE_CONTROL_LIST_INFO;
 typedef struct tagNET_DVR_VEHICLE_CONTROL_COND
 {
     DWORD  dwChannel;
@@ -30278,7 +23375,7 @@ typedef struct tagNET_DVR_VEHICLE_CONTROL_COND
     BYTE   byRes1[3];
     DWORD  dwDataIndex;
     BYTE   byRes[116];
-}NET_DVR_VEHICLE_CONTROL_COND,*LPNET_DVR_VEHICLE_CONTROL_COND;
+}NET_DVR_VEHICLE_CONTROL_COND;
 typedef struct
 {
     DWORD    dwSize; 
@@ -30303,13 +23400,13 @@ typedef struct tagNET_DVR_VEHICLE_CONTROL_ALARM
     BYTE  byRes3[2];
     char    *pPicData;
     BYTE  byRes2[48];
-}NET_DVR_VEHICLE_CONTROL_ALARM,*LPNET_DVR_VEHICLE_CONTROL_ALARM;
+}NET_DVR_VEHICLE_CONTROL_ALARM;
 typedef struct tagNET_DVR_FIRE_ALARM
 {
     DWORD            dwSize;
     NET_DVR_TIME_V30 struAlarmTime;
     BYTE             byRes[128];
-}NET_DVR_FIRE_ALARM,*LPNET_DVR_FIRE_ALARM;
+}NET_DVR_FIRE_ALARM;
 typedef struct
 {
     DWORD dwSize;
@@ -30331,7 +23428,7 @@ typedef struct tagNET_DVR_GATELAMP_INFO
     BYTE  byLaneNo; 
     BYTE  byBrightlampCtrl;
     BYTE  byRes[14]; 
-}NET_DVR_GATELAMP_INFO,*LPNET_DVR_GATELAMP_INFO;
+}NET_DVR_GATELAMP_INFO;
 #define  MATRIX_MAX_OUTPUT_NUM      256              
 typedef struct tagNET_DVR_MATRIX_BASE_CFG
 {
@@ -30360,7 +23457,7 @@ typedef struct tagNET_DVR_EXTERNAL_DEVCOND
     BYTE   byExternalDevTpye;
     BYTE   byRelativeIndex;
     BYTE   byRes[30];
-}NET_DVR_EXTERNAL_DEVCOND,*LPNET_DVR_EXTERNAL_DEVCOND;
+}NET_DVR_EXTERNAL_DEVCOND;
  typedef struct tagNET_DVR_EXTERNAL_DEVCFG
 {
     DWORD         dwSize;
@@ -30413,7 +23510,7 @@ typedef struct tagNET_DVR_EXTERNAL_DEVSTATUS
     BYTE   byRelativeIndex;
     BYTE   byOnline;
     BYTE   byRes[125];
-}NET_DVR_EXTERNAL_DEVSTATUS,*LPNET_DVR_EXTERNAL_DEVSTATUS;
+}NET_DVR_EXTERNAL_DEVSTATUS;
 typedef struct tagNET_DVR_ENTRANCEDET_CFG
 {
     DWORD   dwSize;        
@@ -30421,20 +23518,20 @@ typedef struct tagNET_DVR_ENTRANCEDET_CFG
     BYTE   byDetCycle;
     BYTE   byDevCtrlCode;
     BYTE   byRes[61];
-}NET_DVR_ENTRANCEDET_CFG,*LPNET_DVR_ENTRANCEDET_CFG;
+}NET_DVR_ENTRANCEDET_CFG;
 typedef struct tagNET_DVR_ENTRANCEDEV_COMMAND
 {
     DWORD  dwSize; 
     BYTE   byDevCtrlCode;
     BYTE   byManualIssuedData;
     BYTE   byRes[62];
-}NET_DVR_ENTRANCEDEV_COMMAND,*LPNET_DVR_ENTRANCEDEV_COMMAND;
+}NET_DVR_ENTRANCEDEV_COMMAND;
 typedef struct tagNET_DVR_ENISSUED_DATADEL
 {
     DWORD   dwSize; 
     BYTE   byDevCtrlCode;
     BYTE   byRes[27];
-}NET_DVR_ENISSUED_DATADEL,*LPNET_DVR_ENISSUED_DATADEL;
+}NET_DVR_ENISSUED_DATADEL;
 typedef  struct  _tagNET_ITS_PASSVEHICLE_COST_ITEM
 {
     DWORD   dwSize;        
@@ -30501,7 +23598,7 @@ typedef struct  _tagNET_ITS_HANDOVER_INFO
     BYTE  byPicSize;                
     BYTE  byPicQuality;            
     BYTE  byRes[62];
-}NET_DVR_MOBILE_CAPTUREPIC_CFG,*LPNET_DVR_MOBILE_CAPTUREPIC_CFG;
+}NET_DVR_MOBILE_CAPTUREPIC_CFG;
  typedef struct tagNET_DVR_CMS_PARAM
 {
     DWORD         dwSize;
@@ -30578,7 +23675,7 @@ typedef struct tagNET_DVR_HEATMAP_RESULT
     BYTE   byRes1[2];
     DWORD  dwTotalTime;
     BYTE   byRes[112];
-}NET_DVR_HEATMAP_RESULT,*LPNET_DVR_HEATMAP_RESULT;
+}NET_DVR_HEATMAP_RESULT;
 typedef struct tagNET_DVR_HEATMAP_QUERY_COND
 {
     DWORD   dwSize;
@@ -30590,7 +23687,7 @@ typedef struct tagNET_DVR_HEATMAP_QUERY_COND
     BYTE    byHeatMapInfoType;
     BYTE    byStatisticalModel;
     BYTE    byRes[124];
-}NET_DVR_HEATMAP_QUERY_COND,*LPNET_DVR_HEATMAP_QUERY_COND;
+}NET_DVR_HEATMAP_QUERY_COND;
 typedef struct tagNET_DVR_HEATMAP_INFO
 {
     DWORD  dwSize;
@@ -30606,7 +23703,7 @@ typedef struct tagNET_DVR_HEATMAP_INFO
     BYTE*  pArrayBuffer;
     BYTE   byArrayUnitType;
     BYTE   byRes[107];
-}NET_DVR_HEATMAP_INFO,*LPNET_DVR_HEATMAP_INFO;
+}NET_DVR_HEATMAP_INFO;
   typedef struct tagNET_DVR_PDC_QUERY_COND
 {
     DWORD   dwSize;
@@ -30635,7 +23732,7 @@ typedef struct tagNET_DVR_HEATMAP_INFO
     BYTE    byAgeGroup;
     BYTE    byGlasses;  
     BYTE    byRes[96];
-}NET_DVR_PDC_QUERY_COND,*LPNET_DVR_PDC_QUERY_COND;
+}NET_DVR_PDC_QUERY_COND;
  typedef struct tagNET_DVR_PROGRAM_INFO
 {
     DWORD   dwProgramNo; 
@@ -30720,7 +23817,7 @@ typedef struct tagNET_DVR_POSINFO_OVERLAY
     BYTE  byRecogPlateType;
     BYTE  byUploadPlate;
     BYTE  byRes[62];
-}NET_DVR_MOBILE_PLATE_RECOGCFG,*LPNET_DVR_MOBILE_PLATE_RECOGCFG;
+}NET_DVR_MOBILE_PLATE_RECOGCFG;
  typedef struct tagNET_DVR_MOBILE_RADAR_CFG
 {    
     DWORD  dwSize;
@@ -30735,7 +23832,7 @@ typedef struct tagNET_DVR_POSINFO_OVERLAY
     BYTE   byCaptureNum;   
     BYTE   byUploadPlate;  
     BYTE   byRes[61];
-}NET_DVR_MOBILE_RADAR_CFG,*LPNET_DVR_MOBILE_RADAR_CFG;
+}NET_DVR_MOBILE_RADAR_CFG;
  typedef struct tagNET_DVR_MOBILE_LOCALPLATECHK_CFG
 {
     DWORD       dwSize;
@@ -30744,7 +23841,7 @@ typedef struct tagNET_DVR_POSINFO_OVERLAY
     BYTE  byCheckHint; 
     BYTE  byUploadBlackCar; 
     BYTE  byRes[64];
-}NET_DVR_MOBILE_LOCALPLATECHK_CFG,*LPNET_DVR_MOBILE_LOCALPLATECHK_CFG;
+}NET_DVR_MOBILE_LOCALPLATECHK_CFG;
  typedef struct tagNET_DVR_VEHICLE_CHECK
 {
     DWORD dwSize;
@@ -30758,7 +23855,7 @@ typedef struct tagNET_DVR_POSINFO_OVERLAY
     BYTE  byRes1[3];
     char sCustomInfo[64];
     BYTE  byRes2[128]; 
-}NET_DVR_VEHICLE_CHECK,*LPNET_DVR_VEHICLE_CHECK;
+}NET_DVR_VEHICLE_CHECK;
  typedef enum _LONG_CFG_SEND_DATA_TYPE_ENUM_
 {
     ENUM_DVR_VEHICLE_CHECK = 1, 
@@ -30785,12 +23882,12 @@ typedef struct tagNET_DVR_POSINFO_OVERLAY
     BYTE  byRes[3];
     DWORD dwContinueWorkTime;
     BYTE  byRes1[8];
-}NET_DVR_WIPER_CONTINUEWORK_PARAM,*LPNET_DVR_WIPER_CONTINUEWORK_PARAM;
+}NET_DVR_WIPER_CONTINUEWORK_PARAM;
  typedef union tagNET_DVR_WIPERMODE_PARAM_UNION
 {
     BYTE uLen[16];
     NET_DVR_WIPER_CONTINUEWORK_PARAM struWiperContinueWorkParam; 
-}NET_DVR_WIPERMODE_PARAM_UNION,*LPNET_DVR_WIPERMODE_PARAM_UNION;
+}NET_DVR_WIPERMODE_PARAM_UNION;
  typedef struct tagNET_DVR_WIPERINFO_CFG
 {
     DWORD dwSize;
@@ -30799,13 +23896,13 @@ typedef struct tagNET_DVR_POSINFO_OVERLAY
     WORD  wSensitivity;
     BYTE  byRes[20];
     NET_DVR_WIPERMODE_PARAM_UNION ustruWiperModeParam;
-}NET_DVR_WIPERINFO_CFG,*LPNET_DVR_WIPERINFO_CFG;
+}NET_DVR_WIPERINFO_CFG;
 typedef struct tagNET_DVR_AUTOFOCUS_TESTCFG
 { 
        DWORD     dwSize;
     DWORD     dwChannel;            
     BYTE      byRes[24];            
-}NET_DVR_AUTOFOCUS_TESTCFG,*LPNET_DVR_AUTOFOCUS_TESTCFG;
+}NET_DVR_AUTOFOCUS_TESTCFG;
   typedef struct tagNET_DVR_VIDEO_OUT_CFG
 {    
     BYTE    byDisplayMode;        
@@ -30879,7 +23976,7 @@ typedef struct tagNET_DVR_SIMULATE_SCREEN_REMOTE_CTRL
     BYTE        byControlType;    
     BYTE       byControlParam; 
     BYTE        byRes[14];
-}NET_DVR_SIMULATE_SCREEN_REMOTE_CTRL,*LPNET_DVR_SIMULATE_SCREEN_REMOTE_CTRL;
+}NET_DVR_SIMULATE_SCREEN_REMOTE_CTRL;
 typedef struct tagNET_DVR_SCREEN_SIGNAL_CFG
 {
     DWORD    dwSize;    
@@ -30939,7 +24036,7 @@ typedef struct tagNET_DVR_DEFOG_LCD
     BYTE    byDefogModel;     
     BYTE    byDefogLevel;     
     BYTE    byRes[33];
-}NET_DVR_DEFOG_LCD,*LPNET_DVR_DEFOG_LCD;
+}NET_DVR_DEFOG_LCD;
 typedef struct tagNET_DVR_SCREEN_WALL_CFG
 {
     DWORD    dwSize;
@@ -31033,13 +24130,13 @@ typedef struct  tagNET_DVR_UPLOAD_RECORD_INFO
     char       cStopTimeDifferenceH;    
     char       cStopTimeDifferenceM;    
     BYTE              byRes[120];
-}NET_DVR_UPLOAD_RECORD_INFO,*LPNET_DVR_UPLOAD_RECORD_INFO;
+}NET_DVR_UPLOAD_RECORD_INFO;
 typedef struct tagNET_DVR_IOOUT_COND
 {
     DWORD dwSize;
     BYTE  bySyncOutputNo;
     BYTE  byRes[63];
-}NET_DVR_IOOUT_COND,*LPNET_DVR_IOOUT_COND;
+}NET_DVR_IOOUT_COND;
 typedef struct tagNET_DVR_IOOUT_CFG
 {
     DWORD  dwSize;
@@ -31061,14 +24158,14 @@ typedef struct tagNET_DVR_IOOUT_CFG
         }struStrobeLamp;    
     }uWorkModeInfo;
     BYTE   byRes2[128];
-}NET_DVR_IOOUT_CFG,*LPNET_DVR_IOOUT_CFG;
+}NET_DVR_IOOUT_CFG;
 typedef struct tagNET_DVR_SIGNAL_SYNCCFG
 {
     DWORD  dwSize;
     WORD   wPhase;
     BYTE   byLineLock;
     BYTE   byRes[125];
-}NET_DVR_SIGNAL_SYNCCFG,*LPNET_DVR_SIGNAL_SYNCCFG;
+}NET_DVR_SIGNAL_SYNCCFG;
 typedef struct
 {
     DWORD    dwSize; 
@@ -31084,7 +24181,7 @@ typedef struct
     BYTE    byRes2;
     BYTE    byOperateCode[NET_SDK_MAX_OPERATE_CODE_LEN];  
     BYTE    byRes[344];
-}NET_DVR_EZVIZ_ACCESS_CFG,*LPNET_DVR_EZVIZ_ACCESS_CFG;
+}NET_DVR_EZVIZ_ACCESS_CFG;
  typedef struct tagNET_DVR_ALARM_RELATE_COND
 {
     DWORD  dwSize;
@@ -31093,14 +24190,14 @@ typedef struct
     BYTE  byRes[2];
     DWORD  dwChannel;
     BYTE  byRes1[64];
-}NET_DVR_ALARM_RELATE_COND,*LPNET_DVR_ALARM_RELATE_COND;
+}NET_DVR_ALARM_RELATE_COND;
  typedef struct tagNET_DVR_ALARM_RELATE_CFG
 {
     DWORD   dwSize;
     DWORD   dwMaxRelateChanNum ; 
     DWORD   dwRelateChan[MAX_CHANNUM_V40];
     BYTE    byRes1[256];
-}NET_DVR_ALARM_RELATE_CFG,*LPNET_DVR_ALARM_RELATE_CFG;
+}NET_DVR_ALARM_RELATE_CFG;
  typedef struct tagNET_DVR_PTZ_BASICPARAMCFG
 {
     DWORD  dwSize;
@@ -31113,7 +24210,7 @@ typedef struct
     BYTE   byManualControlSpeed;
     BYTE   byPTZMotionTrack;
     BYTE   byRes[124]; 
-}NET_DVR_PTZ_BASICPARAMCFG,*LPNET_DVR_PTZ_BASICPARAMCFG;
+}NET_DVR_PTZ_BASICPARAMCFG;
  typedef struct tagNET_DVR_PTZ_OSDCFG
 {
     DWORD  dwSize;
@@ -31122,13 +24219,13 @@ typedef struct
     BYTE   byPresetStatus;
     BYTE   byPositionDisplayFormat;
     BYTE   byRes[124]; 
-}NET_DVR_PTZ_OSDCFG,*LPNET_DVR_PTZ_OSDCFG;
+}NET_DVR_PTZ_OSDCFG;
  typedef struct tagNET_DVR_PTZ_POWEROFFMEMCFG
 {
     DWORD  dwSize;
     BYTE   byResumeTimePoint; 
     BYTE   byRes[127]; 
-}NET_DVR_PTZ_POWEROFFMEMCFG,*LPNET_DVR_PTZ_POWEROFFMEMCFG;
+}NET_DVR_PTZ_POWEROFFMEMCFG;
  typedef struct tagNET_DVR_PTZ_LIMITCOND
 {
     DWORD  dwSize;
@@ -31142,7 +24239,7 @@ typedef struct
     BYTE   byEnable;
     BYTE   byLimitStatus; 
     BYTE   byRes[122]; 
-}NET_DVR_PTZ_LIMITCFG,*LPNET_DVR_PTZ_LIMITCFG;
+}NET_DVR_PTZ_LIMITCFG;
  typedef struct tagNET_DVR_PTZ_LIMITCTRL
 {
     DWORD  dwSize;
@@ -31150,19 +24247,19 @@ typedef struct
     BYTE   byLimitMode; 
     BYTE   byWorkMode ;
     BYTE   byRes[122]; 
-}NET_DVR_PTZ_LIMITCTRL,*LPNET_DVR_PTZ_LIMITCTRL;
+}NET_DVR_PTZ_LIMITCTRL;
  typedef struct tagNET_DVR_PTZ_LOCKCFG
 {
     DWORD   dwSize;
     BYTE   byWorkMode ;
     BYTE   byRes[123]; 
-}NET_DVR_PTZ_LOCKCFG,*LPNET_DVR_PTZ_LOCKCFG;
+}NET_DVR_PTZ_LOCKCFG;
  typedef struct tagNET_DVR_PTZLOCKINFO_COND
 {
     DWORD   dwSize;
     DWORD   dwChannel ;
     BYTE    byRes[64];
-}NET_DVR_PTZLOCKINFO_COND,*LPNET_DVR_PTZLOCKINFO_COND;
+}NET_DVR_PTZLOCKINFO_COND;
  typedef struct tagNET_DVR_PTZLOCKINFO
 {
     DWORD   dwSize;
@@ -31175,7 +24272,7 @@ typedef struct
     DWORD  dwChan;
     WORD   wRouteNo;
     BYTE   byRes[30];
-}NET_DVR_CRUISEPOINT_COND,*LPNET_DVR_CRUISEPOINT_COND;
+}NET_DVR_CRUISEPOINT_COND;
  typedef struct
 {
     WORD    wPresetNo;    
@@ -31183,7 +24280,7 @@ typedef struct
     BYTE    bySpeed;    
     BYTE    bySupport256PresetNo;
     BYTE    byRes[6];
-}NET_DVR_CRUISEPOINT_PARAM,*LPNET_DVR_CRUISEPOINT_PARAM;
+}NET_DVR_CRUISEPOINT_PARAM;
  typedef struct
 {
     DWORD  dwSize;
@@ -31243,13 +24340,13 @@ typedef struct
     DWORD dwDisplayNo;
     BYTE  byDispChanType;
      BYTE  byRes[11];
-}NET_DVR_DISPLAYPARAM,*LPNET_DVR_DISPLAYPARAM;
+}NET_DVR_DISPLAYPARAM;
  typedef struct tagNET_DVR_DISPLAYCFG
 {
     DWORD  dwSize;
     NET_DVR_DISPLAYPARAM struDisplayParam[MAX_DISPLAY_NUM] ;
     BYTE  byRes[128];
-}NET_DVR_DISPLAYCFG,*LPNET_DVR_DISPLAYCFG;
+}NET_DVR_DISPLAYCFG;
  typedef struct tagNET_DVR_VIDEOWALLDISPLAYPOSITION
 {
     DWORD   dwSize;
@@ -31260,7 +24357,7 @@ typedef struct
     DWORD   dwDisplayNo;
     NET_DVR_RECTCFG_EX struRectCfg;
     BYTE    byRes2[64];
-}NET_DVR_VIDEOWALLDISPLAYPOSITION,*LPNET_DVR_VIDEOWALLDISPLAYPOSITION;
+}NET_DVR_VIDEOWALLDISPLAYPOSITION;
 typedef struct tagNET_DVR_VIDEOWALLWINDOWPOSITION
 {
     DWORD dwSize;
@@ -31274,7 +24371,7 @@ typedef struct tagNET_DVR_VIDEOWALLWINDOWPOSITION
    DWORD dwXCoordinate; 
    DWORD dwYCoordinate; 
    BYTE  byRes2[36];
-}NET_DVR_VIDEOWALLWINDOWPOSITION,*LPNET_DVR_VIDEOWALLWINDOWPOSITION;
+}NET_DVR_VIDEOWALLWINDOWPOSITION;
  typedef struct tagNET_DVR_VIDEO_WALL_INFO
 {
     DWORD dwSize;
@@ -31283,7 +24380,7 @@ typedef struct tagNET_DVR_VIDEOWALLWINDOWPOSITION
     DWORD   dwDestWallNo; 
     DWORD   dwDestSceneNo;
     BYTE    byRes[12];
-}NET_DVR_VIDEO_WALL_INFO,*LPNET_DVR_VIDEO_WALL_INFO;
+}NET_DVR_VIDEO_WALL_INFO;
  typedef struct tagNET_DVR_VIRTUALLED_PARAM 
 {
     DWORD   dwSize;
@@ -31314,20 +24411,20 @@ typedef struct tagNET_DVR_VIDEOWALLWINDOWPOSITION
     BYTE    byAlignmentY; 
     BYTE    byFontType; 
     BYTE    byRes2[90];
-}NET_DVR_VIRTUALLED_PARAM,*LPNET_DVR_VIRTUALLED_PARAM;
+}NET_DVR_VIRTUALLED_PARAM;
  typedef struct tagNET_DVR_IMAGE_CUT_MODE
 {
     DWORD dwSize;
     BYTE  byCutMode;  
     BYTE  byRes[31];
-}NET_DVR_IMAGE_CUT_MODE,*LPNET_DVR_IMAGE_CUT_MODE;
+}NET_DVR_IMAGE_CUT_MODE;
  typedef struct tagNET_DVR_USING_SERIALPORT
 { 
     DWORD  dwSize ;
     DWORD  dwSerialPort; 
     BYTE byProtocolType; 
     BYTE byRes[31];
-}NET_DVR_USING_SERIALPORT,*LPNET_DVR_USING_SERIALPORT;
+}NET_DVR_USING_SERIALPORT;
  typedef struct tagNET_DVR_VIDEOWALLSCENECFG
 {
     DWORD dwSize;
@@ -31352,7 +24449,7 @@ typedef struct tagNET_DVR_VIDEOWALLWINDOWPOSITION
     BYTE  byRes1[2];
     DWORD dwWallNo; 
     BYTE byRes2[56];
-}NET_DVR_SHOW_CONTROL_INFO,*LPNET_DVR_SHOW_CONTROL_INFO;
+}NET_DVR_SHOW_CONTROL_INFO;
  typedef struct tagNET_DVR_BUF_INFO
 {
     void*   pBuf;    
@@ -31446,7 +24543,7 @@ typedef struct tagNET_DVR_STREAM_ATTACHINFO_CFG
     DWORD dwSize;          
     BYTE  byStreamWithVca; 
     BYTE  byRes[127];      
-}NET_DVR_STREAM_ATTACHINFO_CFG,*LPNET_DVR_STREAM_ATTACHINFO_CFG;
+}NET_DVR_STREAM_ATTACHINFO_CFG;
  typedef struct tagNET_DVR_SUBSYSTEM_NETCFG
 {
     DWORD  dwSize;    
@@ -31483,7 +24580,7 @@ typedef struct tagNET_DVR_INITIALPOSITIONCTRL
     DWORD  dwChan;
     BYTE   byWorkMode ;
     BYTE   byRes[127]; 
-}NET_DVR_INITIALPOSITIONCTRL,*LPNET_DVR_INITIALPOSITIONCTRL;
+}NET_DVR_INITIALPOSITIONCTRL;
 typedef struct tagNET_DVR_PRIVACY_MASKS_COND
 {
     DWORD  dwSize;
@@ -31512,7 +24609,7 @@ typedef struct tagNET_DVR_PRIVACY_MASKS_ENABLECFG
     DWORD  dwSize;
     BYTE   byEnable;
     BYTE   byRes[127]; 
-}NET_DVR_PRIVACY_MASKS_ENABLECFG,*LPNET_DVR_PRIVACY_MASKS_ENABLECFG;
+}NET_DVR_PRIVACY_MASKS_ENABLECFG;
 typedef struct tagNET_DVR_SMARTTRACKCFG
 {
     DWORD dwSize;
@@ -31520,19 +24617,19 @@ typedef struct tagNET_DVR_SMARTTRACKCFG
     BYTE  byRes[3];
     DWORD dwDuration;
     BYTE  byRes1[124];
-}NET_DVR_SMARTTRACKCFG,*LPNET_DVR_SMARTTRACKCFG;
+}NET_DVR_SMARTTRACKCFG;
 typedef struct tagNET_DVR_ZOOMRATIOCTRL
 {
     DWORD  dwSize;
     DWORD  dwChan;
     BYTE   byRes[128]; 
-}NET_DVR_ZOOMRATIOCTRL,*LPNET_DVR_ZOOMRATIOCTRL;
+}NET_DVR_ZOOMRATIOCTRL;
 typedef struct tagNET_DVR_DIAL_SWITCH_CFG
 {
     DWORD  dwSize;
     DWORD  dwSwitchState;
     BYTE   byRes[28]; 
-}NET_DVR_DIAL_SWITCH_CFG,*LPNET_DVR_DIAL_SWITCH_CFG;
+}NET_DVR_DIAL_SWITCH_CFG;
  typedef struct tagNET_ALARM_RECORDFILE_LOSS 
 {
     NET_DVR_TIME_EX struInspectStart; 
@@ -31691,7 +24788,7 @@ typedef struct tagNET_DVR_DIAL_SWITCH_CFG
     BYTE    byRes1[3];
     DWORD  dwStreamType;   
     BYTE    byRes[12];     
-}NET_DVR_RECORD_PUBLISH_INFO,*LPNET_DVR_RECORD_PUBLISH_INFO;
+}NET_DVR_RECORD_PUBLISH_INFO;
   typedef struct tagNET_DVR_PUBLISH_CFG
 {
     DWORD  dwSize;  
@@ -31718,7 +24815,7 @@ typedef struct tagNET_DVR_DIAL_SWITCH_CFG
     BYTE    bySchedulePublish;  
     BYTE    sFileName[COURSE_NAME_LEN];  
     BYTE    byRes[31];
-}NET_DVR_ONEKEY_PUBLISH_CFG,*LPNET_DVR_ONEKEY_PUBLISH_CFG;
+}NET_DVR_ONEKEY_PUBLISH_CFG;
  typedef struct  tagNET_DVR_COURSE_RECORDING_INFO
 {
     DWORD    dwSize;  
@@ -31746,7 +24843,7 @@ typedef struct tagNET_DVR_CURRICULUM_CFG
     WORD         wYear;        
     BYTE        byMonth;        
     BYTE         byDay;        
-}NET_DVR_DATE,*LPNET_DVR_DATE;
+}NET_DVR_DATE;
  typedef struct _NET_DVR_PPT_DETECT_CFG_
 {
     DWORD    dwSize ;
@@ -31760,7 +24857,7 @@ typedef struct tagNET_DVR_CURRICULUM_CFG
     WORD    wHeight;
     DWORD   dwChangePixelNum;
     BYTE    byRes[28];
-}NET_DVR_PPT_DETECT_CFG,*LPNET_DVR_PPT_DETECT_CFG;
+}NET_DVR_PPT_DETECT_CFG;
  typedef struct _NET_DVR_SCREEN_SWITCH_
 {
     DWORD dwSize;
@@ -31771,7 +24868,7 @@ typedef struct tagNET_DVR_CURRICULUM_CFG
     DWORD    dwSize ;
     BYTE    byChan[MAX_PPT_CHAN]; 
     BYTE    byRes[32];
-}NET_DVR_PPT_CHANNEL_CFG,*LPNET_DVR_PPT_CHANNEL_CFG;
+}NET_DVR_PPT_CHANNEL_CFG;
  typedef struct tagNET_DVR_BACKUP_RECORD_INFO
 {
     BYTE   byEnable;   
@@ -31791,7 +24888,7 @@ typedef struct tagNET_DVR_INDOOR_UNIT_DEVICEID
     WORD  wRoomNumber;    
     WORD  wDevIndex;      
     BYTE  byRes[122];     
-}NET_DVR_INDOOR_UNIT_DEVICEID,*LPNET_DVR_INDOOR_UNIT_DEVICEID;
+}NET_DVR_INDOOR_UNIT_DEVICEID;
 typedef struct tagNET_DVR_OUTDOOR_UNIT_DEVICEID
 {
     WORD wPeriod;  
@@ -31800,19 +24897,19 @@ typedef struct tagNET_DVR_OUTDOOR_UNIT_DEVICEID
     SHORT wFloorNumber;  
     WORD wDevIndex;  
     BYTE byRes[118]; 
-}NET_DVR_OUTDOOR_UNIT_DEVICEID,*LPNET_DVR_OUTDOOR_UNIT_DEVICEID;
+}NET_DVR_OUTDOOR_UNIT_DEVICEID;
 typedef struct tagNET_DVR_OUTDOOR_FENCE_DEVICEID
 {
     WORD wPeriod;  
     WORD wDevIndex;  
     BYTE byRes[124]; 
-}NET_DVR_OUTDOOR_FENCE_DEVICEID,*LPNET_DVR_OUTDOOR_FENCE_DEVICEID;
+}NET_DVR_OUTDOOR_FENCE_DEVICEID;
 typedef struct tagNET_DVR_MANAGE_UNIT_DEVICEID
 {
     WORD wPeriod; 
     WORD wDevIndex;  
     BYTE byRes[124]; 
-}NET_DVR_MANAGE_UNIT_DEVICEID,*LPNET_DVR_MANAGE_UNIT_DEVICEID;
+}NET_DVR_MANAGE_UNIT_DEVICEID;
 typedef union tagNET_DVR_VIDEO_INTERCOM_UNIT_DEVICEID_UNION
 {   
     BYTE byLen[128] ; 
@@ -31822,7 +24919,7 @@ typedef union tagNET_DVR_VIDEO_INTERCOM_UNIT_DEVICEID_UNION
     NET_DVR_OUTDOOR_FENCE_DEVICEID struFenceUnit; 
     NET_DVR_OUTDOOR_UNIT_DEVICEID  struVillaOutdoorUnit;  
     NET_DVR_OUTDOOR_UNIT_DEVICEID  struAgainConfirmUnit;  
-}NET_DVR_VIDEO_INTERCOM_UNIT_DEVICEID_UNION,*LPNET_DVR_VIDEO_INTERCOM_UNIT_DEVICEID_UNION;
+}NET_DVR_VIDEO_INTERCOM_UNIT_DEVICEID_UNION;
 typedef struct tagNET_DVR_VIDEO_INTERCOM_DEVICEID_CFG
 {   
     DWORD dwSize; 
@@ -31831,7 +24928,7 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_DEVICEID_CFG
     BYTE byRes1[2];  
     NET_DVR_VIDEO_INTERCOM_UNIT_DEVICEID_UNION uVideoIntercomUnit; 
     BYTE byRes2[128]; 
-}NET_DVR_VIDEO_INTERCOM_DEVICEID_CFG,*LPNET_DVR_VIDEO_INTERCOM_DEVICEID_CFG;
+}NET_DVR_VIDEO_INTERCOM_DEVICEID_CFG;
 typedef enum tagPRIVILEGE_PASSWORD_TYPE_ENUM
 {    
     ENUM_PRIVILEGE_PASSWORD_ENGINEERING = 1, 
@@ -31851,7 +24948,7 @@ typedef struct tagNET_DVR_PRIVILEGE_PASSWORD_CFG
     BYTE   byOldPassword[PASSWD_LEN];  
     BYTE   byNewPassword[PASSWD_LEN]; 
     BYTE   byRes2[128]; 
-}NET_DVR_PRIVILEGE_PASSWORD_CFG,*LPNET_DVR_PRIVILEGE_PASSWORD_CFG;
+}NET_DVR_PRIVILEGE_PASSWORD_CFG;
 typedef struct tagNET_DVR_INDOOR_UNIT_OPERATION_TIME_CFG
 {
     DWORD dwMaxMonitoringTime; 
@@ -31859,27 +24956,27 @@ typedef struct tagNET_DVR_INDOOR_UNIT_OPERATION_TIME_CFG
     DWORD dwCallForwardingTime; 
     DWORD dwRingDurationTime; 
     BYTE  byRes[112];
-}NET_DVR_INDOOR_UNIT_OPERATION_TIME_CFG,*LPNET_DVR_INDOOR_UNIT_OPERATION_TIME_CFG;
+}NET_DVR_INDOOR_UNIT_OPERATION_TIME_CFG;
 typedef struct tagNET_DVR_OUTDOOR_UNIT_OPERATION_TIME_CFG
 {
     DWORD dwMaxMessageTime; 
     DWORD dwMaxTalkTime; 
     BYTE   byRes[120]; 
-}NET_DVR_OUTDOOR_UNIT_OPERATION_TIME_CFG,*LPNET_DVR_OUTDOOR_UNIT_OPERATION_TIME_CFG;
+}NET_DVR_OUTDOOR_UNIT_OPERATION_TIME_CFG;
 typedef struct tagNET_DVR_MANAGE_UNIT_OPERATION_TIME_CFG
 {
     DWORD dwMaxMonitoringTime;  
     DWORD dwMaxRingTime;        
     DWORD dwMaxTalkTime;        
     BYTE  byRes[116];           
-}NET_DVR_MANAGE_UNIT_OPERATION_TIME_CFG,*LPNET_DVR_MANAGE_UNIT_OPERATION_TIME_CFG;
+}NET_DVR_MANAGE_UNIT_OPERATION_TIME_CFG;
 typedef union tagNET_DVR_VIDEO_INTERCOM_OPERATION_TIME_UNION
 {   
     BYTE byLen[128]; 
     NET_DVR_INDOOR_UNIT_OPERATION_TIME_CFG struIndoorUnit; 
     NET_DVR_OUTDOOR_UNIT_OPERATION_TIME_CFG struOutdoorUnit; 
     NET_DVR_MANAGE_UNIT_OPERATION_TIME_CFG struManageUnit; 
-}NET_DVR_VIDEO_INTERCOM_OPERATION_TIME_UNION,*LPNET_DVR_VIDEO_INTERCOM_OPERATION_TIME_UNION;
+}NET_DVR_VIDEO_INTERCOM_OPERATION_TIME_UNION;
 typedef struct tagNET_DVR_VIDEO_INTERCOM_OPERATION_TIME_CFG
 {   
     DWORD dwSize; 
@@ -31887,7 +24984,7 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_OPERATION_TIME_CFG
     BYTE byRes1[3];  
     NET_DVR_VIDEO_INTERCOM_OPERATION_TIME_UNION uVideoIntercomUnit; 
     BYTE byRes2[128]; 
-}NET_DVR_VIDEO_INTERCOM_OPERATION_TIME_CFG,*LPNET_DVR_VIDEO_INTERCOM_OPERATION_TIME_CFG;
+}NET_DVR_VIDEO_INTERCOM_OPERATION_TIME_CFG;
 typedef struct tagNET_DVR_INDOOR_UNIT_RELATEDEV
 {
     NET_DVR_IPADDR struOutdoorUnit; 
@@ -31901,7 +24998,7 @@ typedef struct tagNET_DVR_INDOOR_UNIT_RELATEDEV
     NET_DVR_IPADDR struIndoorUnit; 
     BYTE  byManageCenterID[32];  
     BYTE           byRes[268];       
-}NET_DVR_INDOOR_UNIT_RELATEDEV,*LPNET_DVR_INDOOR_UNIT_RELATEDEV;
+}NET_DVR_INDOOR_UNIT_RELATEDEV;
 typedef struct tagNET_DVR_OUTDOOR_UNIT_RELATEDEV
 {   
     NET_DVR_IPADDR struMainOutdoorUnit; 
@@ -31909,7 +25006,7 @@ typedef struct tagNET_DVR_OUTDOOR_UNIT_RELATEDEV
     NET_DVR_IPADDR struSIPServer;     
     BYTE           byManageCenterID[32];   
     BYTE           byRes[560];       
-}NET_DVR_OUTDOOR_UNIT_RELATEDEV,*LPNET_DVR_OUTDOOR_UNIT_RELATEDEV;
+}NET_DVR_OUTDOOR_UNIT_RELATEDEV;
 typedef struct tagNET_DVR_AGAIN_RELATEDEV
 {   
     NET_DVR_IPADDR   struSIPServer;       
@@ -31919,12 +25016,12 @@ typedef struct tagNET_DVR_AGAIN_RELATEDEV
     NET_DVR_IPADDR   struIndoorUnit; 
     NET_DVR_IPADDR struAgainAddr; 
     BYTE             byRes[444];
-}NET_DVR_AGAIN_RELATEDEV,*LPNET_DVR_AGAIN_RELATEDEV;
+}NET_DVR_AGAIN_RELATEDEV;
 typedef struct tagNET_DVR_MANAGE_UNIT_RELATEDEV
 {
     NET_DVR_IPADDR  struSIPServer;     
     BYTE   byRes[880];       
-}NET_DVR_MANAGE_UNIT_RELATEDEV,*LPNET_DVR_MANAGE_UNIT_RELATEDEV;
+}NET_DVR_MANAGE_UNIT_RELATEDEV;
 typedef union tagNET_DVR_VIDEO_INTERCOM_UNIT_RELATEDEV_UNION
 {   
     DWORD dwRes[256] ; 
@@ -31933,7 +25030,7 @@ typedef union tagNET_DVR_VIDEO_INTERCOM_UNIT_RELATEDEV_UNION
     NET_DVR_MANAGE_UNIT_RELATEDEV struManageUnit; 
     NET_DVR_OUTDOOR_UNIT_RELATEDEV  struVillaUnit;      
     NET_DVR_AGAIN_RELATEDEV           struAgainUnit;      
-}NET_DVR_VIDEO_INTERCOM_UNIT_RELATEDEV_UNION,*LPNET_DVR_VIDEO_INTERCOM_UNIT_RELATEDEV_UNION;
+}NET_DVR_VIDEO_INTERCOM_UNIT_RELATEDEV_UNION;
 typedef struct tagNET_DVR_VIDEO_INTERCOM_RELATEDEV_CFG
 {   
     DWORD dwSize; 
@@ -31941,7 +25038,7 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_RELATEDEV_CFG
     BYTE byRes1[3];  
     NET_DVR_VIDEO_INTERCOM_UNIT_RELATEDEV_UNION uVideoIntercomUnit; 
     BYTE byRes2[128]; 
-}NET_DVR_VIDEO_INTERCOM_RELATEDEV_CFG,*LPNET_DVR_VIDEO_INTERCOM_RELATEDEV_CFG;
+}NET_DVR_VIDEO_INTERCOM_RELATEDEV_CFG;
  typedef struct tagNET_DVR_CONTROL_GATEWAY
 {
     DWORD dwSize; 
@@ -31954,13 +25051,13 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_RELATEDEV_CFG
     BYTE  byRes3[3];
     BYTE  byPassword[PASSWD_LEN];       
     BYTE  byRes2[108]; 
-}NET_DVR_CONTROL_GATEWAY,*LPNET_DVR_CONTROL_GATEWAY;
+}NET_DVR_CONTROL_GATEWAY;
 typedef struct tagNET_DVR_NOTICE_PIC
 {
     BYTE*  pPicData; 
     DWORD dwPicDataLen; 
     BYTE   byRes[32]; 
-}NET_DVR_NOTICE_PIC,*LPNET_DVR_NOTICE_PIC;
+}NET_DVR_NOTICE_PIC;
 typedef struct tagNET_DVR_NOTICE_DATA
 {
     DWORD dwSize; 
@@ -31973,13 +25070,13 @@ typedef struct tagNET_DVR_NOTICE_DATA
     BYTE   byRes1[2]; 
     NET_DVR_NOTICE_PIC struNoticePic[MAX_NOTICE_PIC_NUM]; 
     BYTE   byRes2[128]; 
-}NET_DVR_NOTICE_DATA,*LPNET_DVR_NOTICE_DATA;
+}NET_DVR_NOTICE_DATA;
 typedef struct tagNET_DVR_OPERATION_AUTH
 {
     DWORD dwSize; 
     BYTE   byPassword[PASSWD_LEN]; 
     BYTE   byRes[128]; 
-}NET_DVR_OPERATION_AUTH,*LPNET_DVR_OPERATION_AUTH;
+}NET_DVR_OPERATION_AUTH;
 typedef enum tagUNLOCK_TYPE_ENUM
 {    
     ENUM_UNLOCK_PASSWORD = 1, 
@@ -32007,12 +25104,12 @@ typedef struct tagNET_DVR_UNLOCK_RECORD_INFO
     BYTE   byLockName[LOCK_NAME_LEN]; 
     BYTE   byEmployeeNo[NET_SDK_EMPLOYEE_NO_LEN]; 
     BYTE   byRes[136]; 
-}NET_DVR_UNLOCK_RECORD_INFO,*LPNET_DVR_UNLOCK_RECORD_INFO;
+}NET_DVR_UNLOCK_RECORD_INFO;
 typedef struct tagNET_DVR_NOTICEDATA_RECEIPT_INFO
 {
     BYTE   byNoticeNumber[MAX_NOTICE_NUMBER_LEN]; 
     BYTE   byRes[224];  
-}NET_DVR_NOTICEDATA_RECEIPT_INFO,*LPNET_DVR_NOTICEDATA_RECEIPT_INFO;
+}NET_DVR_NOTICEDATA_RECEIPT_INFO;
 typedef struct tagNET_DVR_AUTH_INFO
 {
     BYTE   byAuthResult; 
@@ -32042,7 +25139,7 @@ typedef union tagNET_DVR_VIDEO_INTERCOM_EVENT_INFO_UINON
     NET_DVR_AUTH_INFO struAuthInfo; 
     NET_DVR_UPLOAD_PLATE_INFO struUploadPlateInfo; 
     NET_DVR_SEND_CARD_INFO struSendCardInfo; 
-}NET_DVR_VIDEO_INTERCOM_EVENT_INFO_UINON,*LPNET_DVR_VIDEO_INTERCOM_EVENT_INFO_UINON;
+}NET_DVR_VIDEO_INTERCOM_EVENT_INFO_UINON;
 typedef struct tagNET_DVR_VIDEO_INTERCOM_EVENT
 {
     DWORD dwSize; 
@@ -32054,14 +25151,14 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_EVENT
     NET_DVR_VIDEO_INTERCOM_EVENT_INFO_UINON uEventInfo; 
     DWORD dwIOTChannelNo;    
     BYTE  byRes2[252]; 
-}NET_DVR_VIDEO_INTERCOM_EVENT,*LPNET_DVR_VIDEO_INTERCOM_EVENT;
+}NET_DVR_VIDEO_INTERCOM_EVENT;
 typedef struct tagNET_DVR_ZONE_ALARM_INFO
 {
     BYTE   byZoneName[NAME_LEN]; 
     DWORD  dwZonendex; 
     BYTE   byZoneType; 
     BYTE   byRes[219];  
-}NET_DVR_ZONE_ALARM_INFO,*LPNET_DVR_ZONE_ALARM_INFO;
+}NET_DVR_ZONE_ALARM_INFO;
 typedef struct tagNET_DVR_LOCK_ALARM_INFO
 {
     DWORD   dwLockID;   
@@ -32072,7 +25169,7 @@ typedef struct tagNET_DVR_LOCK_ALARM_INFO
     BYTE byLen[256]; 
     NET_DVR_ZONE_ALARM_INFO struZoneAlarm; 
     NET_DVR_LOCK_ALARM_INFO struLockAlarm;  
-}NET_DVR_VIDEO_INTERCOM_ALARM_INFO_UNION,*LPNET_DVR_VIDEO_INTERCOM_ALARM_INFO_UNION;
+}NET_DVR_VIDEO_INTERCOM_ALARM_INFO_UNION;
 typedef struct tagNET_DVR_VIDEO_INTERCOM_ALARM
 {
     DWORD dwSize;  
@@ -32085,7 +25182,7 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_ALARM
     BYTE  byRes3[2]; 
     DWORD dwIOTChannelNo;    
     BYTE  byRes2[248]; 
-}NET_DVR_VIDEO_INTERCOM_ALARM,*LPNET_DVR_VIDEO_INTERCOM_ALARM;
+}NET_DVR_VIDEO_INTERCOM_ALARM;
  typedef struct tagNET_DVR_PEOPLE_REGION
 {
     BYTE byID;
@@ -32096,7 +25193,7 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_ALARM
     DWORD  dwPicLen;
     char*  pPicBuffer;
     BYTE byRes1[24];
-}NET_DVR_PEOPLE_REGION,*LPNET_DVR_PEOPLE_REGION;
+}NET_DVR_PEOPLE_REGION;
  typedef struct tagNET_DVR_PEOPLE_DETECTION_RESULT
 {
     DWORD     dwSize;
@@ -32106,7 +25203,7 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_ALARM
     NET_DVR_PEOPLE_REGION  struPeopleRegion[MAX_PEOPLE_DETECTION_NUM];
     BYTE  byPeopleAlarmType; 
     BYTE  byRes[255];
-}NET_DVR_PEOPLE_DETECTION_RESULT,*LPNET_DVR_PEOPLE_DETECTION_RESULT;
+}NET_DVR_PEOPLE_DETECTION_RESULT;
  typedef    struct tagNET_DVR_SUPPLEMENTLIGHT
 {
     BYTE        byEnable;
@@ -32120,13 +25217,13 @@ typedef struct tagNET_DVR_VIDEO_INTERCOM_ALARM
     BYTE        byBrightnessRegulatMode;
     BYTE        byMaxBrightness;
     BYTE        byRes[58];
-}NET_DVR_SUPPLEMENTLIGHT,*LPNET_DVR_SUPPLEMENTLIGHT;
+}NET_DVR_SUPPLEMENTLIGHT;
  typedef    struct tagNET_DVR_EXTERNALDEVICE
 {
     DWORD        dwSize;
     NET_DVR_SUPPLEMENTLIGHT struSupplementLight;
     BYTE        byRes[512];
-}NET_DVR_EXTERNALDEVICE,*LPNET_DVR_EXTERNALDEVICE;
+}NET_DVR_EXTERNALDEVICE;
 typedef    struct tagNET_DVR_TEMPERATURE_TRIGGER_COND
 {
     DWORD     dwSize;
@@ -32149,7 +25246,7 @@ typedef    struct tagNET_DVR_BUILTIN_SUPPLEMENTLIGHT
     BYTE        byLowBrightnessLimit;
     BYTE        byWhiteLightBrightness;
     BYTE        byRes1[254];
-}NET_DVR_BUILTIN_SUPPLEMENTLIGHT,*LPNET_DVR_BUILTIN_SUPPLEMENTLIGHT;
+}NET_DVR_BUILTIN_SUPPLEMENTLIGHT;
 typedef struct tagNET_DVR_OIS_CFG
 {
     DWORD        dwSize;
@@ -32439,7 +25536,7 @@ typedef struct tagNET_DVR_DOOR_CFG
     DWORD   dwSize;
     BYTE    szDevNumber[MAX_DEV_NUMBER_LEN];    
     BYTE    byRes[64];                          
-}NET_DVR_VIS_DEV_INFO,*LPNET_DVR_VIS_DEV_INFO;
+}NET_DVR_VIS_DEV_INFO;
  typedef struct tagNET_DVR_VIS_REGISTER_INFO
 {
     DWORD       dwSize;
@@ -32452,7 +25549,7 @@ typedef struct tagNET_DVR_DOOR_CFG
     NET_DVR_TIME_EX struRegisterTime;                 
     BYTE        byRegisterType;                     
     BYTE        byRes[127];                         
-}NET_DVR_VIS_REGISTER_INFO,*LPNET_DVR_VIS_REGISTER_INFO;
+}NET_DVR_VIS_REGISTER_INFO;
  typedef struct tagNET_DVR_CALLER_INFO
 {
     DWORD dwSize;          
@@ -32467,7 +25564,7 @@ typedef struct tagNET_DVR_DOOR_CFG
     BYTE   byRes1[2];     
     BYTE   byVoipNo[16];   
     BYTE   byRes[80];     
-}NET_DVR_CALLER_INFO,*LPNET_DVR_CALLER_INFO;
+}NET_DVR_CALLER_INFO;
  typedef struct tagNET_DVR_CALL_STATUS
 {
     DWORD dwSize;          
@@ -32482,14 +25579,14 @@ typedef struct tagNET_DVR_DOOR_CFG
     BYTE       byDeviceID; 
     BYTE    byLockNum; 
     BYTE    byRes[5]; 	   
-}NET_DVR_SERVER_DEVICE_CFG,*LPNET_DVR_SERVER_DEVICE_CFG;
+}NET_DVR_SERVER_DEVICE_CFG;
  typedef struct tagNET_DVR_SERVER_DEVICE_INFO
 {
     DWORD   dwSize;  
     DWORD     dwDeviceNum; 
     NET_DVR_SERVER_DEVICE_CFG    struDeviceCfg[MAX_SERVER_DEVICE_NUMBER];   
     BYTE    byRes[200];        
-}NET_DVR_SERVER_DEVICE_INFO,*LPNET_DVR_SERVER_DEVICE_INFO;
+}NET_DVR_SERVER_DEVICE_INFO;
  typedef struct tagNET_DVR_VIDEO_CALL_PARAM
 {
     DWORD    dwSize;
@@ -32502,7 +25599,7 @@ typedef struct tagNET_DVR_DOOR_CFG
     WORD  wDevIndex; 
     BYTE    byUnitType; 
     BYTE    byRes[115];     
-}NET_DVR_VIDEO_CALL_PARAM,*LPNET_DVR_VIDEO_CALL_PARAM;
+}NET_DVR_VIDEO_CALL_PARAM;
 #define MAX_SCREEN_ADDRESS_LEN 16 
 #define MAX_DAY_TIME_POINT 8   
 #define MAX_TIME_POINT     16  
@@ -32519,7 +25616,7 @@ typedef struct tagNET_DVR_DOOR_CFG
     BYTE byScreenAddress[MAX_SCREEN_ADDRESS_LEN]; 
     NET_DVR_DEV_IP_INFO struIPInfo; 
     BYTE byRes[100];
-}NET_DVR_SCREEN_BASE_INFO,*LPNET_DVR_SCREEN_BASE_INFO;
+}NET_DVR_SCREEN_BASE_INFO;
  typedef struct tagNET_DVR_SCREEN_INDEX_CFG
 {
     DWORD dwSize;
@@ -32528,7 +25625,7 @@ typedef struct tagNET_DVR_DOOR_CFG
     BYTE byRes1[2];
     NET_DVR_SCREEN_BASE_INFO struScreenBaseInfo; 
     BYTE byRes[32];
-}NET_DVR_SCREEN_INDEX_CFG,*LPNET_DVR_SCREEN_INDEX_CFG;
+}NET_DVR_SCREEN_INDEX_CFG;
 typedef struct tagNET_DVR_SIMULATE_REMOTE_CTRL
 {
     BYTE        byControlType;    
@@ -32589,20 +25686,20 @@ typedef struct tagNET_DVR_AREA_ZOOM_CFG
     BYTE byRes1[1];
     NET_DVR_RECTCFG_EX struRectCfg; 
     BYTE byRes2[32];
-}NET_DVR_MSC_SPLICE_CFG,*LPNET_DVR_MSC_SPLICE_CFG;
+}NET_DVR_MSC_SPLICE_CFG;
  typedef struct tagNET_DVR_MSC_SCREEN_INTERFACE_CFG
 {
     DWORD dwSize;
     BYTE  byInterfaceType;    
     BYTE  byNoSignalPic;        
     BYTE  byRes[30];       
-}NET_DVR_MSC_SCREEN_INTERFACE_CFG,*LPNET_DVR_MSC_SCREEN_INTERFACE_CFG;
+}NET_DVR_MSC_SCREEN_INTERFACE_CFG;
 typedef struct tagNET_DVR_MSC_SCREEN_BACKLIGHT_CFG
 {
     DWORD dwSize;
     BYTE byBacklight; 
     BYTE byRes[15];
-}NET_DVR_MSC_SCREEN_BACKLIGHT_CFG,*LPNET_DVR_MSC_SCREEN_BACKLIGHT_CFG;
+}NET_DVR_MSC_SCREEN_BACKLIGHT_CFG;
 typedef struct tagNET_DVR_MSC_SCREEN_PIP_CFG
 {
     DWORD dwSize;
@@ -32612,7 +25709,7 @@ typedef struct tagNET_DVR_MSC_SCREEN_PIP_CFG
     BYTE    byRes1;
     NET_DVR_RECTCFG_EX  struPosition;    
     BYTE    byRes2[16];
-}NET_DVR_MSC_SCREEN_PIP_CFG,*LPNET_DVR_MSC_SCREEN_PIP_CFG;
+}NET_DVR_MSC_SCREEN_PIP_CFG;
  typedef struct tagNET_DVR_SCREEN_WORK_STATE
 {
     DWORD dwSize;
@@ -32624,13 +25721,13 @@ typedef struct tagNET_DVR_MSC_SCREEN_PIP_CFG
     int            iTemperature; 
     BYTE             byTempState;     
     BYTE           byRes[31];
-}NET_DVR_SCREEN_WORK_STATE,*LPNET_DVR_SCREEN_WORK_STATE;
+}NET_DVR_SCREEN_WORK_STATE;
 typedef struct tagNET_DVR_BOOT_LOGO_CFG
 {
     DWORD dwSize;
     BYTE byEnable; 
     BYTE byRes[31];    
-}NET_DVR_BOOT_LOGO_CFG,*LPNET_DVR_BOOT_LOGO_CFG;
+}NET_DVR_BOOT_LOGO_CFG;
 typedef struct tagNET_DVR_LCD_AUDIO_CFG
 {
     DWORD   dwSize;
@@ -32656,7 +25753,7 @@ typedef union tagNET_DVR_MSC_SCREEN_PARAM
     NET_DVR_BOOT_LOGO_CFG struBootLogoCfg; 
     NET_DVR_LCD_AUDIO_CFG struAudioCfg; 
     BYTE byRes[256];
-}NET_DVR_MSC_SCREEN_PARAM,*LPNET_DVR_MSC_SCREEN_PARAM;
+}NET_DVR_MSC_SCREEN_PARAM;
  typedef struct tagNET_DVR_MSC_SCREEN_PARAM_CFG
 {
     DWORD dwSize;
@@ -32664,7 +25761,7 @@ typedef union tagNET_DVR_MSC_SCREEN_PARAM
     BYTE byRes1[3];
     NET_DVR_MSC_SCREEN_PARAM struParam; 
     BYTE byRes2[32];
-}NET_DVR_MSC_SCREEN_PARAM_CFG,*LPNET_DVR_MSC_SCREEN_PARAM_CFG;
+}NET_DVR_MSC_SCREEN_PARAM_CFG;
  typedef struct tagNET_DVR_MSC_SCREEN_REMOTE_CFG
 {
     DWORD dwSize;
@@ -32673,7 +25770,7 @@ typedef union tagNET_DVR_MSC_SCREEN_PARAM
     NET_DVR_RECTCFG_EX struRectCfg; 
     NET_DVR_MSC_SCREEN_PARAM_CFG struScreenParam; 
     BYTE byRes2[32];
-}NET_DVR_MSC_SCREEN_REMOTE_CFG,*LPNET_DVR_MSC_SCREEN_REMOTE_CFG;
+}NET_DVR_MSC_SCREEN_REMOTE_CFG;
  typedef struct tagNET_DVR_MSC_SCREEN_PARAM_COND
 {
     DWORD dwSize;
@@ -32682,7 +25779,7 @@ typedef union tagNET_DVR_MSC_SCREEN_PARAM
     BYTE byRes1[2];
     NET_DVR_RECTCFG_EX struRectCfg; 
     BYTE byRes2[32];
-}NET_DVR_MSC_SCREEN_PARAM_COND,*LPNET_DVR_MSC_SCREEN_PARAM_COND;
+}NET_DVR_MSC_SCREEN_PARAM_COND;
  typedef struct tagNET_DVR_SWITCH_DAY_TIME
 {
     BYTE byEnable; 
@@ -32690,7 +25787,7 @@ typedef union tagNET_DVR_MSC_SCREEN_PARAM
     BYTE byRes1[2];
     NET_DVR_DAYTIME struTimePoint; 
     BYTE byRes2[8];
-}NET_DVR_SWITCH_DAY_TIME,*LPNET_DVR_SWITCH_DAY_TIME;
+}NET_DVR_SWITCH_DAY_TIME;
  typedef struct tagNET_DVR_SWITCH_TIME_POINT
 {
     BYTE byEnable; 
@@ -32698,14 +25795,14 @@ typedef union tagNET_DVR_MSC_SCREEN_PARAM
     BYTE byRes1[2];
     NET_DVR_SYSTEM_TIME struTimePoint; 
     BYTE byRes2[16];
-}NET_DVR_SWITCH_TIME_POINT,*LPNET_DVR_SWITCH_TIME_POINT;
+}NET_DVR_SWITCH_TIME_POINT;
  typedef struct tagNET_DVR_TIME_SWITCH_CFG
 {
     DWORD dwSize;
     NET_DVR_SWITCH_DAY_TIME struSwitchDayTime[MAX_DAYS][MAX_DAY_TIME_POINT]; 
     NET_DVR_SWITCH_TIME_POINT struSwitchTimePoint[MAX_TIME_POINT]; 
     BYTE byRes[64];
-}NET_DVR_TIME_SWITCH_CFG,*LPNET_DVR_TIME_SWITCH_CFG;
+}NET_DVR_TIME_SWITCH_CFG;
  typedef struct tagNET_DVR_VIDEO_WALL_AREA
 {
     DWORD dwSize;
@@ -32719,7 +25816,7 @@ typedef union tagNET_DVR_MSC_SCREEN_PARAM
     DWORD dwSize;
     DWORD dwDelayTime; 
     BYTE byRes[32];
-}NET_DVR_DELAY_TIME,*LPNET_DVR_DELAY_TIME;
+}NET_DVR_DELAY_TIME;
 typedef enum _BV_CALIBRATION_TYPE_ENUM_
 {
     ENUM_BV_CALIBRATION_NONE    = 0, 
@@ -32732,29 +25829,29 @@ typedef struct tagNET_DVR_BV_SAMPLE_CALIB_POINT
     BYTE  byRes1[3];     
     NET_VCA_POINT struPoint;  
     BYTE  byRes2[16];    
-}NET_DVR_BV_SAMPLE_CALIB_POINT,*LPET_DVR_BV_SAMPLE_CALIB_POINT;
+}NET_DVR_BV_SAMPLE_CALIB_POINT;
 typedef struct tagNET_DVR_BV_SAMPLE_CALIB_BEGIN_PARAM
 {
     DWORD  dwCameraHeight;  
     DWORD  dwHumanHeight;  
     BYTE    byRes[248];      
-}NET_DVR_BV_SAMPLE_CALIB_BEGIN_PARAM,*LPNET_DVR_BV_SAMPLE_CALIB_BEGIN_PARAM;
+}NET_DVR_BV_SAMPLE_CALIB_BEGIN_PARAM;
 typedef struct tagNET_DVR_BV_SAMPLE_CALIB_SET_PARAM
 {
     NET_DVR_BV_SAMPLE_CALIB_POINT struCalibPoint; 
     BYTE byRes[228]; 
-}NET_DVR_BV_SAMPLE_CALIB_SET_PARAM,*LPNET_DVR_BV_SAMPLE_CALIB_SET_PARAM;
+}NET_DVR_BV_SAMPLE_CALIB_SET_PARAM;
 typedef struct tagNET_DVR_BV_SAMPLE_CALIB_END_PARAM
 {
     BYTE byRes[256]; 
-}NET_DVR_BV_SAMPLE_CALIB_END_PARAM,*LPNET_DVR_BV_SAMPLE_CALIB_END_PARAM;
+}NET_DVR_BV_SAMPLE_CALIB_END_PARAM;
 typedef union tagNET_DVR_BV_SAMPLE_CALIB_PARAM_UNION
 {   
     BYTE byRes[256]; 
     NET_DVR_BV_SAMPLE_CALIB_BEGIN_PARAM struCalibBegin; 
     NET_DVR_BV_SAMPLE_CALIB_SET_PARAM struCalibSet; 
     NET_DVR_BV_SAMPLE_CALIB_END_PARAM struCalibEnd; 
-}NET_DVR_BV_SAMPLE_CALIB_PARAM_UNION,*LPNET_DVR_BV_SAMPLE_CALIB_PARAM_UNION;
+}NET_DVR_BV_SAMPLE_CALIB_PARAM_UNION;
 typedef enum _BV_SAMPLE_CALIB_CMD_ENUM
 {
     ENUM_BV_SAMPLE_CALIB_BEGIN    = 1,   
@@ -32769,7 +25866,7 @@ typedef struct tagNET_DVR_BV_SAMPLE_CALIBRATION
     BYTE    byRes1[3];    
     NET_DVR_BV_SAMPLE_CALIB_PARAM_UNION uCalibParam; 
     BYTE    byRes2[256] ;  
-}NET_DVR_BV_SAMPLE_CALIBRATION,*LPNET_DVR_BV_SAMPLE_CALIBRATION;
+}NET_DVR_BV_SAMPLE_CALIBRATION;
 typedef struct tagNET_DVR_BV_SAMPLE_CALIB_CFG
 {
     DWORD  dwSize;             
@@ -32779,7 +25876,7 @@ typedef struct tagNET_DVR_BV_SAMPLE_CALIB_CFG
     NET_DVR_BV_SAMPLE_CALIB_POINT struCalibPoint[MAX_SAMPLE_NUM]; 
     NET_DVR_BV_SAMPLE_CALIB_POINT struCalibPointEx[MAX_SAMPLE_NUM_EX]; 
     BYTE  byRes[60]; 
-}NET_DVR_BV_SAMPLE_CALIB_CFG,*LPNET_DVR_BV_SAMPLE_CALIB_CFG;
+}NET_DVR_BV_SAMPLE_CALIB_CFG;
 typedef struct tagNET_DVR_BINOC_RECTIFY_PARAM
 {   
     float   fCamInternalMatrix[3][3];  
@@ -32801,13 +25898,13 @@ typedef struct _tagNET_DVR_BV_CORRECT_PARAM
     DWORD dwOriImgWidth; 
     DWORD dwOriImgHeight; 
     BYTE    byRes[196]; 
-} NET_DVR_BV_CORRECT_PARAM,*LPNET_DVR_BV_CORRECT_PARAM;
+} NET_DVR_BV_CORRECT_PARAM;
 typedef struct tagNET_DVR_OUTPUT_VIDEO_TYPE
 {
     DWORD  dwSize;     
     BYTE   byType;     
     BYTE   byRes[63];  
-}NET_DVR_OUTPUT_VIDEO_TYPE,*LPNET_DVR_OUTPUT_VIDEO_TYPE;
+}NET_DVR_OUTPUT_VIDEO_TYPE;
 #define MAX_CHECK_485CHAN        64    
  typedef struct tagNET_DVR_DEVICE_SELF_CHECK_STATE
 {
@@ -32835,13 +25932,13 @@ typedef struct tagNET_DVR_COMPLETE_RESTORE_INFO_
     BYTE        sPicName[NAME_LEN];  
     BYTE        byUseType;    
     BYTE        byRes[91];
-}NET_DVR_UPLOAD_PICTURE_INFO,*LPNET_DVR_UPLOAD_PICTURE_INFO;
+}NET_DVR_UPLOAD_PICTURE_INFO;
 #define  MAX_UPLOADFILE_URL_LEN      240
  typedef struct  tagNET_DVR_UPLOAD_FILE_RET
 {
     BYTE  sUrl[MAX_UPLOADFILE_URL_LEN] ;   
     BYTE byRes[260];
-} NET_DVR_UPLOAD_FILE_RET,*LPNET_DVR_UPLOAD_FILE_RET;
+} NET_DVR_UPLOAD_FILE_RET;
  typedef struct tagNET_DVR_FACE_EXTRA_INFO
 {
     NET_VCA_RECT struVcaRect[MAX_FACE_PIC_NUM];  
@@ -32866,7 +25963,7 @@ typedef union tagNET_DVR_PIC_EXTRA_INFO_UNION
     BYTE   byEventSearchStatus; 
     BYTE   byRes[75];        
     NET_DVR_PIC_EXTRA_INFO_UNION  uPicExtraInfo; 
-}NET_DVR_FIND_PICTURE_V40,*LPNET_DVR_FIND_PICTURE_V40;
+}NET_DVR_FIND_PICTURE_V40;
  typedef struct    tagNET_DVR_FIND_PICTURE_V50   
 {
     char        sFileName[PICTURE_NAME_LEN];
@@ -32923,7 +26020,7 @@ typedef union tagNET_DVR_PIC_EXTRA_INFO_UNION
     BYTE        byRes1[1];
     NET_DVR_REGIONENTRANCE_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_REGION_ENTRANCE_DETECTION,*LPNET_DVR_REGION_ENTRANCE_DETECTION;
+}NET_DVR_REGION_ENTRANCE_DETECTION;
  typedef struct tagNET_DVR_SMART_REGION_COND
 {
     DWORD dwSize; 
@@ -32953,7 +26050,7 @@ typedef union tagNET_DVR_PIC_EXTRA_INFO_UNION
     NET_DVR_PTZTRACKCHAN_INFO struPtzTrackInfo[MAX_CHANNUM_V40]; 
     BYTE        byDirection;
     BYTE        byRes2[255];
-}NET_DVR_EVENT_TRIGGER,*LPNET_DVR_EVENT_TRIGGER;
+}NET_DVR_EVENT_TRIGGER;
  typedef    struct tagNET_DVR_EVENT_SCHEDULE
 {
     DWORD        dwSize;
@@ -32961,7 +26058,7 @@ typedef union tagNET_DVR_PIC_EXTRA_INFO_UNION
     NET_DVR_SCHEDTIME struHolidayAlarmTime[MAX_TIMESEGMENT_V30]; 
     BYTE         bySceneID[MAX_DAYS][MAX_TIMESEGMENT_V30];
     BYTE         byRes[72];
-}NET_DVR_EVENT_SCHEDULE,*LPNET_DVR_EVENT_SCHEDULE;
+}NET_DVR_EVENT_SCHEDULE;
  typedef struct  tagNET_DVR_ANR_ARMING_HOST
 {
     DWORD   dwSize;
@@ -32987,7 +26084,7 @@ typedef union tagNET_DVR_PIC_EXTRA_INFO_UNION
     BYTE        byRes1[1];
     NET_DVR_REGIONEXITING_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_REGION_EXITING_DETECTION,*LPNET_DVR_REGION_EXITING_DETECTION;
+}NET_DVR_REGION_EXITING_DETECTION;
  typedef struct tagNET_DVR_LOITERING_REGION
 {
     NET_VCA_POLYGON struRegion;
@@ -33002,7 +26099,7 @@ typedef union tagNET_DVR_PIC_EXTRA_INFO_UNION
     BYTE        byRes1[3];
     NET_DVR_LOITERING_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_LOITERING_DETECTION,*LPNET_DVR_LOITERING_DETECTION;
+}NET_DVR_LOITERING_DETECTION;
  typedef struct tagNET_DVR_GROUPDETECTION_REGION
 {
     NET_VCA_POLYGON struRegion;
@@ -33034,7 +26131,7 @@ typedef struct tagNET_DVR_POS_HIDDEN_INFORMATION
     BYTE        byRes1[3];
     NET_DVR_GROUPDETECTION_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_GROUP_DETECTION,*LPNET_DVR_GROUP_DETECTION;
+}NET_DVR_GROUP_DETECTION;
  typedef struct tagNET_DVR_RAPIDMOVE_REGION
 {
     NET_VCA_POLYGON struRegion;
@@ -33049,7 +26146,7 @@ typedef struct tagNET_DVR_POS_HIDDEN_INFORMATION
     BYTE        byRes1[3];
     NET_DVR_RAPIDMOVE_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_RAPIDMOVE_DETECTION,*LPNET_DVR_RAPIDMOVE_DETECTION;
+}NET_DVR_RAPIDMOVE_DETECTION;
  typedef struct tagNET_DVR_PARKING_REGION
 {
     NET_VCA_POLYGON struRegion;
@@ -33064,7 +26161,7 @@ typedef struct tagNET_DVR_POS_HIDDEN_INFORMATION
     BYTE        byRes1[3];
     NET_DVR_PARKING_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_PARKING_DETECTION,*LPNET_DVR_PARKING_DETECTION;
+}NET_DVR_PARKING_DETECTION;
  typedef struct tagNET_DVR_UNATTENDED_BAGGAGE_REGION
 {
     NET_VCA_POLYGON struRegion;
@@ -33081,7 +26178,7 @@ typedef struct tagNET_DVR_POS_HIDDEN_INFORMATION
     BYTE        byRes1[3];
     NET_DVR_UNATTENDED_BAGGAGE_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_UNATTENDED_BAGGAGE_DETECTION,*LPNET_DVR_UNATTENDED_BAGGAGE_DETECTION;
+}NET_DVR_UNATTENDED_BAGGAGE_DETECTION;
  typedef struct tagNET_DVR_ATTENDED_BAGGAGE_REGION
 {
     NET_VCA_POLYGON struRegion;
@@ -33098,7 +26195,7 @@ typedef struct tagNET_DVR_POS_HIDDEN_INFORMATION
     BYTE        byRes1[3];
     NET_DVR_ATTENDED_BAGGAGE_REGION    struRegion[MAX_REGION_NUM];
     BYTE        byRes2[128];
-}NET_DVR_ATTENDED_BAGGAGE_DETECTION,*LPNET_DVR_ATTENDED_BAGGAGE_DETECTION;
+}NET_DVR_ATTENDED_BAGGAGE_DETECTION;
  typedef struct tagNET_DVR_REGION_CLIP_COND
 {
     DWORD dwSize; 
@@ -33144,7 +26241,7 @@ typedef struct tagNET_DVR_WIRELESSDIAL_CFG
     NET_DVR_SCHEDTIME struAlarmTime[MAX_DAYS][MAX_TIMESEGMENT_V30]; 
     NET_DVR_SCHEDTIME   struHolidayAlarmTime[MAX_TIMESEGMENT_V30];  
     BYTE        byRes[128];
-}NET_DVR_WIRELESSDIAL_SCHEDULE,*LPNET_DVR_WIRELESSDIAL_SCHEDULE;
+}NET_DVR_WIRELESSDIAL_SCHEDULE;
 #define MAX_LENGTH_32   32
 typedef    struct tagNET_DVR_WIRELESSDIAL_STATUS
 {
@@ -33158,14 +26255,14 @@ typedef    struct tagNET_DVR_WIRELESSDIAL_STATUS
     NET_DVR_IPADDR    struGatewayIPMask;  
     NET_DVR_IPADDR    struDnsServerIpAddr; 
     BYTE        byRes[256];    
-}NET_DVR_WIRELESSDIAL_STATUS,*LPNET_DVR_WIRELESSDIAL_STATUS;
+}NET_DVR_WIRELESSDIAL_STATUS;
  typedef    struct tagNET_DVR_WIRELESSDIAL_CONNECT
 {
     DWORD        dwSize;
     DWORD       dwInterface; 
     BYTE        byEnableConnect; 
     BYTE        byRes[255];
-}NET_DVR_WIRELESSDIAL_CONNECT_PARAM,*LPNET_DVR_WIRELESSDIAL_CONNECT_PARAM;
+}NET_DVR_WIRELESSDIAL_CONNECT_PARAM;
   typedef    struct tagNET_DVR_LITESTORAGE
 {
     DWORD        dwSize;
@@ -33178,13 +26275,13 @@ typedef    struct tagNET_DVR_WIRELESSDIAL_STATUS
     BYTE        byDefMediumStorageTime; 
     BYTE        byDefHighStorageTime; 
     BYTE       byRes1[61];
-}NET_DVR_LITESTORAGE,*LPNET_DVR_LITESTORAGE;
+}NET_DVR_LITESTORAGE;
  typedef struct tagNET_DVR_CALIBRATION
 {
     DWORD            dwSize;
     NET_VCA_POLYGON  struRegion;
     BYTE        byRes[64];
-}NET_DVR_CALIBRATION,*LPNET_DVR_CALIBRATION;
+}NET_DVR_CALIBRATION;
  typedef    struct    tagNET_DVR_STD_CONFIG
 {
     void*        lpCondBuffer;        
@@ -33199,7 +26296,7 @@ typedef    struct tagNET_DVR_WIRELESSDIAL_STATUS
     DWORD       dwXmlSize;      
     BYTE        byDataType;     
     BYTE        byRes[23];
-}NET_DVR_STD_CONFIG,*LPNET_DVR_STD_CONFIG;
+}NET_DVR_STD_CONFIG;
  typedef    struct    DWORDtagNET_DVR_STD_ABILITY
 {
     void*        lpCondBuffer;    
@@ -33210,7 +26307,7 @@ typedef    struct tagNET_DVR_WIRELESSDIAL_STATUS
     DWORD        dwStatusSize;    
     DWORD        dwRetSize;        
     BYTE        byRes[32];        
-}NET_DVR_STD_ABILITY,*LPNET_DVR_STD_ABILITY;
+}NET_DVR_STD_ABILITY;
  typedef struct tagNET_DVR_STD_CONTROL
 {
     void*        lpCondBuffer;    
@@ -33428,7 +26525,7 @@ typedef struct
     WORD   wPort;  
     BYTE   byPortState;  
     BYTE   byRes[61];     
-}NET_DVR_T1TEST_PARAMCFG,*LPNET_DVR_T1TEST_PARAMCFG;
+}NET_DVR_T1TEST_PARAMCFG;
 #define CARD_PARAM_CARD_VALID       0x00000001 
 #define CARD_PARAM_VALID            0x00000002  
 #define CARD_PARAM_CARD_TYPE        0x00000004  
@@ -33474,7 +26571,7 @@ typedef struct
     BYTE    byArmRight[MAX_ALARMHOST_ALARMIN_NUM]; 
     BYTE    byDisarmRight[MAX_ALARMHOST_ALARMIN_NUM];  
     BYTE    byRes[256];                              
-}NET_DVR_PHONE_DOOR_RIGHT_CFG,*LPNET_DVR_PHONE_DOOR_RIGHT_CFG;
+}NET_DVR_PHONE_DOOR_RIGHT_CFG;
  typedef struct tagNET_DVR_MULTI_DOOR_INTERLOCK_CFG
 {
     DWORD dwSize;
@@ -33829,7 +26926,7 @@ typedef struct
     BYTE    byRes3[2];
        BYTE    byVoChanNo[JUDGE_MAX_VIDEOOUT_NUM];          
     BYTE    byRes[255]; 
-}NET_DVR_AUDIO_ACTIVATION_CFG,*LPNET_DVR_AUDIO_ACTIVATION_CFG;
+}NET_DVR_AUDIO_ACTIVATION_CFG;
  typedef struct tagNET_DVR_INFRARED_OUTPUT_CTRL_CFG
 {
     DWORD  dwSize;       
@@ -33843,14 +26940,14 @@ typedef struct
 {
     char   sCmdName[MAX_IR_CMD_NAME_LEN];  
     BYTE   byRes[8];         
-} NET_DVR_INFRARED_CMD_INFO,*LPNET_DVR_INFRARED_CMD_INFO;
+} NET_DVR_INFRARED_CMD_INFO;
   typedef struct tagNET_DVR_INFRARED_LEARN_CODE_CFG_
 {
     DWORD  dwSize;  
     BYTE      sIROutName[MAX_IR_CMD_NAME_LEN];  
     NET_DVR_INFRARED_CMD_INFO  struIRCmdInfo[MAX_IR_CMD_NUM];  
     BYTE   byRes[256];
-} NET_DVR_INFRARED_CMD_NAME_CFG,*LPNET_DVR_INFRARED_CMD_NAME_CFG;
+} NET_DVR_INFRARED_CMD_NAME_CFG;
  typedef enum tagIR_LEARN_SEND_DATA_TYPE_ENUM
 { 
     ENUM_SENDDATA = 0x0, 
@@ -33869,7 +26966,7 @@ typedef struct
     DWORD  dwSize;       
     BYTE   bySaveLearnInfo;      
     BYTE   byRes[255];
-} NET_DVR_INFRARED_LEARN_END,*LPNET_DVR_INFRARED_LEARN_END;
+} NET_DVR_INFRARED_LEARN_END;
 #define MAX_VIDEOIN_TYPE_NUM  10    
  typedef struct tagNET_DVR_VIDEOIN_TYPE_INFO
 {
@@ -33946,7 +27043,7 @@ typedef  struct _NET_DVR_REMOTE_PLAY_
     BYTE     byLampState2[LAMP_STATE_NAME];   
     BYTE     byLampState3[LAMP_STATE_NAME];   
     BYTE     byRes[32];
-}NET_DVR_LAMP_STATUS,*LPNET_DVR_LAMP_STATUS;
+}NET_DVR_LAMP_STATUS;
  typedef  struct _NET_DVR_LAMP_OUT
 {
     DWORD        dwSize;
@@ -34133,7 +27230,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     BYTE   sPicName[NAME_LEN];
     BYTE   byUsed; 
     BYTE   byRes[31];
-}NET_DVR_OUTPUT_PIC_INFO,*LPNET_DVR_OUTPUT_PIC_INFO;
+}NET_DVR_OUTPUT_PIC_INFO;
  typedef struct tagNET_DVR_OUTPUT_PIC_CFG
 {
     DWORD dwSize;
@@ -34146,7 +27243,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     BYTE   byRes2[2];                
     DWORD  dwOutputPicWinNo; 
     BYTE   byRes3[28];
-}NET_DVR_OUTPUT_PIC_CFG,*LPNET_DVR_OUTPUT_PIC_CFG;
+}NET_DVR_OUTPUT_PIC_CFG;
  typedef struct tagNET_DVR_OUTPUT_OSD_CFG
 {
     DWORD   dwSize;
@@ -34158,7 +27255,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     NET_DVR_RECTCFG_EX struRect;
     DWORD dwOsdWinNo; 
     BYTE     byRes2[32];                
-}NET_DVR_OUTPUT_OSD_CFG,*LPNET_DVR_OUTPUT_OSD_CFG;
+}NET_DVR_OUTPUT_OSD_CFG;
  typedef struct tagNET_DVR_CHAN_RELATION_RESOURCE
 {
     DWORD dwSize;
@@ -34229,7 +27326,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     BYTE    byStreamEncryption;     
     BYTE    byAntiAttack;          
     BYTE    byRes[26];
-}NET_DVR_SECURITY_CFG,*LPNET_DVR_SECURITY_CFG;
+}NET_DVR_SECURITY_CFG;
  typedef struct tagNET_DVR_PASSWORD_MANAGE_CFG
 {
     DWORD    dwSize;
@@ -34237,7 +27334,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     BYTE     byLockCount;      
     DWORD  dwLockTime;       
     BYTE     byRes1[128];        
-} NET_DVR_PASSWORD_MANAGE_CFG,*LPNET_DVR_PASSWORD_MANAGE_CFG;
+} NET_DVR_PASSWORD_MANAGE_CFG;
   typedef struct tagNET_DVR_UNLOCK_INFO
 {
     DWORD    dwSize;
@@ -34246,7 +27343,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     BYTE    byRes1[2];
     NET_DVR_IPADDR struIPAddr;        
     BYTE     byRes[64];
-} NET_DVR_UNLOCK_INFO,*LPNET_DVR_UNLOCK_INFO;
+} NET_DVR_UNLOCK_INFO;
  typedef  struct  tagNET_DVR_LOCKED_INFO
 {
     DWORD    dwSize;
@@ -34254,7 +27351,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     BYTE    byRes1[3];
     NET_DVR_IPADDR struIPAddress;
     BYTE    byRes[20];    
-} NET_DVR_LOCKED_INFO,*LPNET_DVR_LOCKED_INFO;
+} NET_DVR_LOCKED_INFO;
   typedef struct tagNET_DVR_VEHICLE_PARA
 {
     BYTE  sLicense[MAX_LICENSE_LEN];
@@ -34287,7 +27384,7 @@ typedef struct tagNET_DVR_OUTPUT_PIC_INFO
     NET_VCA_HUMAN_FEATURE    struHumaFeature; 
     NET_DVR_FACE_PIC_DATA_INFO   struHumaPic;     
     NET_DVR_BEHAVIOUR_COND   struBehaviourCond;  
-}NET_DVR_SMARTSEARCH_PIC_UNION,*LPNET_DVR_SMARTSEARCH_PIC_UNION;
+}NET_DVR_SMARTSEARCH_PIC_UNION;
  typedef struct tagNET_DVR_SMART_SEARCH_PIC_PARA  
 {
     DWORD                dwChanNo;               
@@ -34309,20 +27406,20 @@ typedef struct tagNET_DVR_FACE_SUB_PIC_INFO
     DWORD          dwSimilarity;   
     NET_VCA_RECT   struVcaRect;    
     BYTE           byRes2[236];   
-}NET_DVR_FACE_SUB_PIC_INFO ,*LPNET_DVR_FACE_SUB_PIC_INFO;
+}NET_DVR_FACE_SUB_PIC_INFO ;
   typedef struct tagNET_DVR_BEHAVIOR_INFO
 {
     NET_VCA_RECT struVcaRect;
     WORD         wPeopleNum;       
     BYTE         byRes2[238];   
-}NET_DVR_BEHAVIOR_INFO ,*LPNET_DVR_BEHAVIOR_INFO;
+}NET_DVR_BEHAVIOR_INFO ;
  typedef union tagNET_DVR_PIC_FEATURE_UNION
 {  
     BYTE                         byLen[256];         
     NET_DVR_PLATE_INFO              struPlateInfo;      
     NET_DVR_FACE_SUB_PIC_INFO       struFaceSubInfo;    
     NET_DVR_BEHAVIOR_INFO           struBehavior;       
-}NET_DVR_PIC_FEATURE_UNION,*LPNET_DVR_PIC_FEATURE_UNION;
+}NET_DVR_PIC_FEATURE_UNION;
  typedef struct tagNET_DVR_SMART_SEARCH_PIC_RET
 {
     char                sFileName[PICTURE_NAME_LEN];
@@ -34340,13 +27437,13 @@ typedef struct tagNET_DVR_FACE_SUB_PIC_INFO
 {
     BYTE  byHearSound;   
     BYTE  byRes[31];     
-}NET_DVR_T1TEST_SEND_DATA_BUZZER,*LPNET_DVR_T1TEST_SEND_DATA_BUZZER;
+}NET_DVR_T1TEST_SEND_DATA_BUZZER;
   typedef union NET_DVR_T1TEST_DATA_UNION
 {
     BYTE  byUnionLen[32];
     NET_DVR_T1TEST_SEND_DATA_BUZZER struBuzzer;  
     NET_DVR_TIME_V30  struCurTime;   
-}NET_DVR_T1TEST_DATA_UNION,*LPNET_DVR_T1TEST_DATA_UNION;
+}NET_DVR_T1TEST_DATA_UNION;
   typedef struct tagNET_DVR_T1TEST_SEND_DATA
 {
     DWORD     dwSize;     
@@ -34354,7 +27451,7 @@ typedef struct tagNET_DVR_FACE_SUB_PIC_INFO
     BYTE  byRes1[3];
     NET_DVR_T1TEST_DATA_UNION uSendData;  
     BYTE  byRes[64];
-}NET_DVR_T1TEST_SEND_DATA,*LPNET_DVR_T1TEST_SEND_DATA;
+}NET_DVR_T1TEST_SEND_DATA;
  typedef struct tagNET_DVR_PIC_MODEL_CFG  
 {
     DWORD       dwSize;    
@@ -34376,7 +27473,7 @@ typedef struct tagNET_DVR_FACE_SUB_PIC_INFO
     BYTE  byFilterQValue;      
     BYTE  byStaticFilterNum;   
     BYTE  byRes[16];
-}NET_DVR_AUTO_LIMIT_WAVE_CFG,*LPNET_DVR_AUTO_LIMIT_WAVE_CFG;
+}NET_DVR_AUTO_LIMIT_WAVE_CFG;
  typedef struct _NET_DVR_DSP_PARAMETER_CFG
 {
     BYTE  byFBCEnable;         
@@ -34391,7 +27488,7 @@ typedef struct tagNET_DVR_FACE_SUB_PIC_INFO
     NET_DVR_AUTO_LIMIT_WAVE_CFG  struLimitWave;  
     NET_DVR_DSP_PARAMETER_CFG  struDSPParameter;  
     BYTE   byRes[40];
-}NET_DVR_MIX_AUDIOIN_CFG,*LPNET_DVR_MIX_AUDIOIN_CFG;
+}NET_DVR_MIX_AUDIOIN_CFG;
  typedef struct tagNET_DVR_MIX_AUDIOOUT_CFG
 {
     DWORD   dwSize;  
@@ -34411,7 +27508,7 @@ typedef struct tagNET_DVR_FACE_SUB_PIC_INFO
     int     iOutputGainEx;      
     BYTE    bySoundQualityHanding;      
     BYTE    byRes[55];
-}NET_DVR_MIX_AUDIOOUT_CFG,*LPNET_DVR_MIX_AUDIOOUT_CFG;
+}NET_DVR_MIX_AUDIOOUT_CFG;
 #define MAX_AUDIOOUT_PRO_TYPE                8    
 typedef struct tagNET_DVR_VOLUME_CFG
 {
@@ -34423,7 +27520,7 @@ typedef struct tagNET_DVR_VOLUME_CFG
     BYTE    byEnableFBC[MAX_AUDIOOUT_PRO_TYPE];    
     WORD    wVolumeEx[MAX_AUDIOOUT_PRO_TYPE];      
     BYTE    byRes[4];     
-}NET_DVR_VOLUME_CFG,*LPNET_DVR_VOLUME_CFG;
+}NET_DVR_VOLUME_CFG;
  typedef struct tagNET_DVR_VIDEOOUT_RESOLUTION_CFG  
 {
     DWORD       dwSize;    
@@ -34435,7 +27532,7 @@ typedef struct tagNET_DVR_VOLUME_CFG
     BYTE   szDomainAddr[MAX_DOMAIN_NAME];  
     WORD   wPort;
     BYTE   byRes[2];
-}NET_DVR_ADDR_DOMAIN_INFO,*LPNET_DVR_ADDR_DOMAIN_INFO;
+}NET_DVR_ADDR_DOMAIN_INFO;
 #define MAX_CENTERNUM_V40     6    
 typedef struct tagNET_DVR_ALARMCENTER_NETCFG
 {
@@ -34481,7 +27578,7 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE  byRes1[30];
     BYTE  byFingerData[MAX_FINGER_PRINT_LEN];        
     BYTE  byRes[64];
-}NET_DVR_FINGER_PRINT_CFG,*LPNET_DVR_FINGER_PRINT_CFG;
+}NET_DVR_FINGER_PRINT_CFG;
  typedef struct tagNET_DVR_FINGER_PRINT_STATUS
 {
     DWORD       dwSize;
@@ -34494,7 +27591,7 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE  byErrorMsg[ERROR_MSG_LEN]; 
     DWORD dwCardReaderNo;  
     BYTE  byRes[24];
-}NET_DVR_FINGER_PRINT_STATUS,*LPNET_DVR_FINGER_PRINT_STATUS;
+}NET_DVR_FINGER_PRINT_STATUS;
   typedef struct tagNET_DVR_FINGER_PRINT_INFO_COND
 {
     DWORD       dwSize;
@@ -34504,7 +27601,7 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE  byFingerPrintID;     
     BYTE  byCallbackMode;     
     BYTE  byRes1[26];          
-}NET_DVR_FINGER_PRINT_INFO_COND,*LPNET_DVR_FINGER_PRINT_INFO_COND;
+}NET_DVR_FINGER_PRINT_INFO_COND;
  typedef struct tagNET_DVR_FINGER_PRINT_CFG_V50
 {
     DWORD       dwSize;
@@ -34552,7 +27649,7 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE  byEnableCardReader[MAX_CARD_READER_NUM_512];  
     BYTE  byFingerPrintID[MAX_FINGER_PRINT_NUM];        
     BYTE  byRes1[34];          
-}NET_DVR_FINGER_PRINT_BYCARD,*LPNET_DVR_FINGER_PRINT_BYCARD;
+}NET_DVR_FINGER_PRINT_BYCARD;
  typedef struct tagNET_DVR_FINGER_PRINT_BYREADER
 {
     DWORD dwCardReaderNo;  
@@ -34560,13 +27657,13 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE  byRes1[3];       
     BYTE  byCardNo[ACS_CARD_NO_LEN]; 
     BYTE  byRes[548];          
-}NET_DVR_FINGER_PRINT_BYREADER,*LPNET_DVR_FINGER_PRINT_BYREADER;
+}NET_DVR_FINGER_PRINT_BYREADER;
  typedef union tagNET_DVR_DEL_FINGER_PRINT_MODE
 {
     BYTE   uLen[588];   
     NET_DVR_FINGER_PRINT_BYCARD       struByCard;     
     NET_DVR_FINGER_PRINT_BYREADER     struByReader;   
-}NET_DVR_DEL_FINGER_PRINT_MODE,*LPNET_DVR_DEL_FINGER_PRINT_MODE;
+}NET_DVR_DEL_FINGER_PRINT_MODE;
  typedef struct tagNET_DVR_FINGER_PRINT_INFO_CTRL
 {
     DWORD       dwSize;
@@ -34574,7 +27671,7 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE  byRes1[3];       
     NET_DVR_DEL_FINGER_PRINT_MODE struProcessMode;  
     BYTE  byRes[64];          
-}NET_DVR_FINGER_PRINT_INFO_CTRL,*LPNET_DVR_FINGER_PRINT_INFO_CTRL;
+}NET_DVR_FINGER_PRINT_INFO_CTRL;
  typedef struct tagNET_DVR_FINGER_PRINT_BYCARD_V50
 {
     BYTE  byCardNo[ACS_CARD_NO_LEN]; 
@@ -34838,14 +27935,14 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     WORD          wMainEventType;                     
     WORD          wSubEventType;                      
     BYTE          byRes[28];
-}NET_DVR_EVENT_LINKAGE_INFO,*LPNET_DVR_EVENT_LINKAGE_INFO;
+}NET_DVR_EVENT_LINKAGE_INFO;
  typedef  union tagNET_DVR_EVETN_CARD_LINKAGE_UNION
 {
     BYTE                           byCardNo[ACS_CARD_NO_LEN];          
     NET_DVR_EVENT_LINKAGE_INFO  struEventLinkage;                   
     BYTE                           byMACAddr[MACADDR_LEN];          
     BYTE  byEmployeeNo[NET_SDK_EMPLOYEE_NO_LEN]; 
-}NET_DVR_EVETN_CARD_LINKAGE_UNION,*LPNET_DVR_EVETN_CARD_LINKAGE_UNION;
+}NET_DVR_EVETN_CARD_LINKAGE_UNION;
  typedef struct tagNET_DVR_EVENT_CARD_LINKAGE_CFG
 {
     DWORD            dwSize;    
@@ -34865,7 +27962,7 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE           byRes3[29];                         
     BYTE           byReaderBuzzer[MAX_CARD_READER_NUM_512]; 
     BYTE           byRes[128];                           
-}NET_DVR_EVENT_CARD_LINKAGE_CFG,*LPNET_DVR_EVENT_CARD_LINKAGE_CFG;
+}NET_DVR_EVENT_CARD_LINKAGE_CFG;
  typedef struct tagNET_DVR_EVENT_LINKAGE_CARD_CFG_V50
 {
     DWORD            dwSize;    
@@ -34936,7 +28033,7 @@ typedef struct tagNET_DVR_FINGER_PRINT_CFG
     BYTE   byIsStartAddr; 
     BYTE   byHostNo;      
     BYTE   byRes[34];     
-}NET_DVR_ANTI_SNEAK_HOST_INFO,*LPNET_DVR_ANTI_SNEAK_HOST_INFO;
+}NET_DVR_ANTI_SNEAK_HOST_INFO;
  typedef struct tagNET_DVR_ANTI_SNEAK_HOST_READER_INFO
 {
     BYTE  byAntiSnealHostNo;   
@@ -35159,7 +28256,7 @@ typedef struct tagNET_DVR_VEHICLE_RECOG_TASK_INFO
     }unionServer;
     WORD                    wInterval;    
     BYTE                    byRes3[514];
-}NET_DVR_CENTER_SERVER_CFG,*LPNET_DVR_CENTER_SERVER_CFG;
+}NET_DVR_CENTER_SERVER_CFG;
  typedef struct tagNET_DVR_SINGLE_CHANNEL_LINKAGE_CFG_
 {
     BYTE    byDDNSType;        
@@ -35187,13 +28284,13 @@ typedef struct tagNET_DVR_VEHICLE_RECOG_TASK_INFO
     BYTE    sPassword[PASSWD_LEN];
     DWORD    dwChannel;                    
     BYTE    byRes3[32];
-}NET_DVR_SINGLE_CHANNEL_LINKAGE_CFG,*LPNET_DVR_SINGLE_CHANNEL_LINKAGE_CFG;
+}NET_DVR_SINGLE_CHANNEL_LINKAGE_CFG;
  typedef struct tagNET_DVR_REGION_CHANNEL_LINKAGE_CFG_
 {
     DWORD    dwSize;
     NET_DVR_SINGLE_CHANNEL_LINKAGE_CFG struLinkChannels[MAX_ZONE_LINKAGE_CHAN_NUM];    
     BYTE    byRes[64];
-}NET_DVR_ZONE_CHANNEL_LINKAGE_CFG,*LPNET_DVR_ZONE_CHANNEL_LINKAGE_CFG;
+}NET_DVR_ZONE_CHANNEL_LINKAGE_CFG;
  typedef struct tagNET_DVR_SINGLE_ASSOCIATED_CHAN_CFG
 {
     BYTE    byDevSerialNo[SERIALNO_LEN];    
@@ -35239,7 +28336,7 @@ typedef struct tagNET_DVR_SENSOR_INFO_UPLOAD
     float   fActualValue;
     char    szDescription[MAX_DESCRIPTION_LEN ]; 
     BYTE    byRes1[128];
-}NET_DVR_SENSOR_INFO_UPLOAD,*LPNET_DVR_SENSOR_INFO_UPLOAD;
+}NET_DVR_SENSOR_INFO_UPLOAD;
 typedef struct tagNET_DVR_CAPTURE_UPLOAD
 {
     DWORD dwSize; 
@@ -35249,7 +28346,7 @@ typedef struct tagNET_DVR_CAPTURE_UPLOAD
     DWORD   dwPicLen;
     BYTE    *pBuffer;    
     BYTE    byRes[124];
-}NET_DVR_CAPTURE_UPLOAD,*LPNET_DVR_CAPTURE_UPLOAD;
+}NET_DVR_CAPTURE_UPLOAD;
 typedef struct tagNET_DVR_PANORAMIC_LINKAGE
 {
     DWORD   dwSize;
@@ -35368,7 +28465,7 @@ typedef struct tagNET_DVR_FIREDETECTION_ALARM
     char    cTimeDifferenceH;         
     char    cTimeDifferenceM;      	
     BYTE    byRes[49];
-} NET_DVR_FIREDETECTION_ALARM,*LPNET_DVR_FIREDETECTION_ALARM;
+} NET_DVR_FIREDETECTION_ALARM;
 typedef struct tagNET_DVR_SMOKEDETECTION_CFG
 {
     BYTE    byEnable;
@@ -35408,7 +28505,7 @@ typedef struct tagNET_DVR_SMOKEDETECTION_CFG
     BYTE    byRes[33];
     NET_DVR_ALARMSTRATEGY_PARAM struAlarmStrategy;
     NET_DVR_SMOKEDETECTION_CFG struSmokeCfg;
-}NET_DVR_FIREDETECTION_CFG,*LPNET_DVR_FIREDETECTION_CFG;
+}NET_DVR_FIREDETECTION_CFG;
  typedef  struct tagNET_DVR_THERMALPOWER_PARAM
 {
     DWORD   dwSize;
@@ -35436,7 +28533,7 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     DWORD  dwMonitorID;  
     BYTE   byIsNeedGroup;  
     BYTE   byRes [127];
-}NET_DVR_AREA_MONITOR_COND,*LPNET_DVR_AREA_MONITOR_COND;
+}NET_DVR_AREA_MONITOR_COND;
  typedef struct tagNET_DVR_DEL_MONITOR_COND
 {
     DWORD  dwSize;  
@@ -35444,7 +28541,7 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     DWORD  dwAreaID;   
     DWORD  dwMonitorID;   
     BYTE   byRes[64];
-}NET_DVR_DEL_MONITOR_COND,*LPNET_DVR_DEL_MONITOR_COND;
+}NET_DVR_DEL_MONITOR_COND;
  typedef struct tagNET_DVR_BLACKLIST_ALARM_COND
 {
     DWORD       dwSize;         
@@ -35494,7 +28591,7 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     BYTE            byRes1[3];            
     NET_DVR_ADDR_DOMAIN_INFO struStorageAddr;   
     BYTE            byRes[256];
-}NET_DVR_SINGLE_BLACKLIST_GROUP_RECORD,*LPNET_DVR_SINGLE_BLACKLIST_GROUP_RECORD;
+}NET_DVR_SINGLE_BLACKLIST_GROUP_RECORD;
  typedef struct tagNET_DVR_BLACKLIST_GROUP_RECORD_COND
 {
     DWORD          dwSize;   
@@ -35507,14 +28604,14 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     DWORD            dwRecordNum;            
     NET_DVR_SINGLE_BLACKLIST_GROUP_RECORD struRecord[MAX_GROUP_RECORD_NUM]; 
     BYTE            byRes[256];
-}NET_DVR_BLACKLIST_GROUP_RECORD_CFG,*LPNET_DVR_BLACKLIST_GROUP_RECORD_CFG;
+}NET_DVR_BLACKLIST_GROUP_RECORD_CFG;
  typedef struct tagNET_DVR_BLACKLIST_GROUP_CFG  
 {
     DWORD          dwSize;   
     DWORD            dwGroupNum;            
     NET_DVR_BLACKLIST_GROUP_INFO struGroup[MAX_GROUP_RECORD_NUM]; 
     BYTE            byRes[256];
-}NET_DVR_BLACKLIST_GROUP_CFG,*LPNET_DVR_BLACKLIST_GROUP_CFG;
+}NET_DVR_BLACKLIST_GROUP_CFG;
  typedef struct tagNET_DVR_BLACKLIST_GROUP_COND
 {
     DWORD        dwSize;   
@@ -35548,7 +28645,7 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     BYTE   byRes1;
     NET_DVR_HISTORICAL_QUERY_PARAM struHistoricalQueryParam; 
     BYTE   byRes[64];
-}NET_DVR_SENSOR_COND,*LPNET_DVR_SENSOR_COND;
+}NET_DVR_SENSOR_COND;
  typedef  struct  tagNET_DVR_SENSOR_CFG
 {
     DWORD  dwSize; 
@@ -35570,7 +28667,7 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     float  fActualValue;  
     BYTE   byUnit[SENSORUNIT_LEN];   
     BYTE   byRes[220];
-}NET_DVR_SENSOR_CFG,*LPNET_DVR_SENSOR_CFG;
+}NET_DVR_SENSOR_CFG;
  typedef    struct tagNET_DVR_SENSOR_SWITCH_COND
 {
     DWORD     dwSize;
@@ -35578,7 +28675,7 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     BYTE     byDeviceID; 
     BYTE     bySwitch; 
     BYTE     byRes[125];
-}NET_DVR_SENSOR_SWITCH_COND,*LPNET_DVR_SENSOR_SWITCH_COND;
+}NET_DVR_SENSOR_SWITCH_COND;
  typedef struct tagNET_DVR_GB28181_SERVICE_CFG
 {
     DWORD  dwSize;     
@@ -35591,13 +28688,13 @@ typedef struct tagNET_DVR_AREA_MONITOR_COND
     BYTE   byAutoAddIpc;            
     BYTE   byAuthPasswdEx[MAX_PASSWD_LEN_EX];   
     BYTE   byRes[190];                
-}NET_DVR_GB28181_SERVICE_CFG,*LPNET_DVR_GB28181_SERVICE_CFG;
+}NET_DVR_GB28181_SERVICE_CFG;
 typedef    struct    tagNET_DVR_ACTIVATECFG
 {
     DWORD   dwSize;    
     BYTE    sPassword[PASSWD_LEN];    
     BYTE    byRes[108];
-}NET_DVR_ACTIVATECFG,*LPNET_DVR_ACTIVATECFG;
+}NET_DVR_ACTIVATECFG;
  typedef struct tagNET_DVR_IPDEVICE_ACTIVATE_CFG
 {
     DWORD       dwSize;    
@@ -35623,7 +28720,7 @@ typedef    struct    tagNET_DVR_ACTIVATECFG
             BYTE    byRes[344];
         }struAddrInfo;
     }unActivateDeviceInfo;
-}NET_DVR_IPDEVICE_ACTIVATE_CFG,*LPNET_DVR_IPDEVICE_ACTIVATE_CFG;
+}NET_DVR_IPDEVICE_ACTIVATE_CFG;
  typedef struct tagNET_DVR_DIGITAL_CHANNEL_SECURITY_STATUS_
 {
     DWORD  dwSize;
@@ -35795,7 +28892,7 @@ typedef struct tagNET_DVR_SENSOR_PARAM
     float       fHorWidth;
     float       fVerWidth;
     float       fFold;
-}NET_DVR_SENSOR_PARAM,*LPNET_DVR_SENSOR_PARAM;
+}NET_DVR_SENSOR_PARAM;
  typedef struct tagNET_DVR_LLI_PARAM
 {
     float fSec;
@@ -35860,7 +28957,7 @@ typedef struct tagNET_DVR_GIS_UPLOADINFO
     NET_DVR_SENSOR_PARAM  struSensorParam;
     NET_DVR_PTZPOS_PARAM  struPtzPos; 
     BYTE  byRes[256];
-}NET_DVR_GIS_UPLOADINFO,*LPNET_DVR_GIS_UPLOADINFO;
+}NET_DVR_GIS_UPLOADINFO;
 typedef struct  tagNET_DVR_VANDALPROOF_ALARM
 {
     DWORD        dwSize;
@@ -35868,7 +28965,7 @@ typedef struct  tagNET_DVR_VANDALPROOF_ALARM
     DWORD        dwAbsTime; 
     NET_VCA_DEV_INFO    struDevInfo;
     BYTE  byRes[256];
-}NET_DVR_VANDALPROOF_ALARM,*LPNET_DVR_VANDALPROOF_ALARM;
+}NET_DVR_VANDALPROOF_ALARM;
 typedef    struct tagNET_DVR_CENTRALIZEDCTRL_CFG
 {
     DWORD        dwSize;
@@ -35881,7 +28978,7 @@ typedef    struct tagNET_DVR_CENTRALIZEDCTRL_CFG
     DWORD       dwTimeOut;
     BYTE        byControlType;
     BYTE        byRes[127];
-}NET_DVR_CENTRALIZEDCTRL_CFG,*LPNET_DVR_CENTRALIZEDCTRL_CFG;
+}NET_DVR_CENTRALIZEDCTRL_CFG;
 typedef struct tagNET_DVR_GIS_INFO
 {
     DWORD  dwSize;
@@ -35904,7 +29001,7 @@ typedef struct tagNET_DVR_GIS_INFO
     float   fMinVerticalValue;
     float   fMaxVerticalValue;
     BYTE  byRes[220];
-}NET_DVR_GIS_INFO,*LPNET_DVR_GIS_INFO;
+}NET_DVR_GIS_INFO;
 typedef    struct tagNET_DVR_CRUISE_PARAM
 {
     DWORD    dwSize;
@@ -36045,33 +29142,33 @@ typedef    struct tagNET_DVR_VANDALPROOFALARM_CFG
     BYTE    byVoiceWarningEnabled;
     BYTE    byEnable;
     BYTE    byRes[124];
-}NET_DVR_VANDALPROOFALARM_CFG,*LPNET_DVR_VANDALPROOFALARM_CFG;
+}NET_DVR_VANDALPROOFALARM_CFG;
  typedef    struct tagNET_DVR_AZIMUTHINFO
 {
     DWORD        dwSize;
     float       fDegree;
     BYTE        byAzimuth; 
     BYTE        byRes[127];
-}NET_DVR_AZIMUTHINFO,*LPNET_DVR_AZIMUTHINFO;
+}NET_DVR_AZIMUTHINFO;
 typedef    struct tagNET_DVR_COMPASS_COND
 {
     DWORD        dwSize;
     DWORD        dwChannel;
     BYTE        byRes[128];
-}NET_DVR_COMPASS_COND,*LPNET_DVR_COMPASS_COND;
+}NET_DVR_COMPASS_COND;
  typedef    struct tagNET_DVR_POSITION_CFG
 {
     DWORD     dwSize;
     BYTE     bySoftWorkMode;
     BYTE     byRes[127];
-}NET_DVR_POSITION_CFG,*LPNET_DVR_POSITION_CFG;
+}NET_DVR_POSITION_CFG;
  typedef    struct tagNET_DVR_STREAMING_COND
 {
     DWORD        dwSize;
     DWORD        dwChannel;
     BYTE        byStreamType;
     BYTE        byRes[127];
-}NET_DVR_STREAMING_COND,*LPNET_DVR_STREAMING_COND;
+}NET_DVR_STREAMING_COND;
 typedef    struct tagNET_DVR_SATELLITETIME_CFG
 {
     DWORD        dwSize;
@@ -36079,7 +29176,7 @@ typedef    struct tagNET_DVR_SATELLITETIME_CFG
     BYTE        byRes;
     WORD        wTimeInterval;
     BYTE        byRes1[124];
-}NET_DVR_SATELLITETIME_CFG,*LPNET_DVR_SATELLITETIME_CFG;
+}NET_DVR_SATELLITETIME_CFG;
 #define MAX_SIGNAL_JOINT_NUM       64  
 typedef struct tagNET_DVR_SIGNAL_JOINT_CFG
 {
@@ -36146,7 +29243,7 @@ typedef struct tagNET_DVR_SIGNAL_JOINT_CFG
     BYTE    byWallNo; 
     BYTE    byEnable; 
     BYTE    byRes[13];
-}NET_DVR_AUDIO_CONTROL_INFO,*LPNET_DVR_AUDIO_CONTROL_INFO;
+}NET_DVR_AUDIO_CONTROL_INFO;
    typedef struct  tagNET_DVR_INPUTSTREAM_PTZCFG_PARAM 
 {
     DWORD    dwSize;
@@ -36250,7 +29347,7 @@ typedef struct tagNET_DVR_PLATE_RESULT_V50
     NET_DVR_SCHEDTIME struTime;
     BYTE byAlarmType;
     BYTE byRes[3];
-}NET_DVR_NORMAL_SCHEDTIME,*LPNET_DVR_NORMAL_SCHEDTIME;
+}NET_DVR_NORMAL_SCHEDTIME;
  typedef struct tagNET_DVR_SUBSYSTEM_ALARM
 {
     DWORD dwSize;
@@ -36258,7 +29355,7 @@ typedef struct tagNET_DVR_PLATE_RESULT_V50
     BYTE byNormalSchedTimeOn; 
     BYTE byMandatoryAlarm;
     BYTE byRes[254];
-}NET_DVR_SUBSYSTEM_ALARM,*LPNET_DVR_SUBSYSTEM_ALARM;
+}NET_DVR_SUBSYSTEM_ALARM;
 #define MAX_WHITELIST_PHONE_NUM      16
  typedef struct _NET_DVR_ALARM_PHONECFG
 {
@@ -36288,7 +29385,7 @@ typedef struct tagNET_DVR_PLATE_RESULT_V50
     char    sModelInfo[32];            
     char    sDeviceVersionInfo[32];    
     BYTE    byRes[128];                
-}NET_DVR_MODULE_INFO,*LPNET_DVR_MODULE_INFO;
+}NET_DVR_MODULE_INFO;
  typedef struct tagNET_DVR_ALARMHOST_DETECTOR_INFO
 {
     DWORD		dwSize;
@@ -36305,19 +29402,19 @@ typedef struct tagNET_DVR_PLATE_RESULT_V50
     NET_DVR_OUTPUT_SCHEDULE    struOutputSchedule[MAX_TIMESEGMENT_V30];
     BYTE                       byTriggerIndex[MAX_ALARMHOST_ALARMOUT_NUM];
     BYTE                       byRes2[64];
-}NET_DVR_ONE_OUTPUT_SCHEDULE_RULE_V40,*LPNET_DVR_ONE_OUTPUT_SCHEDULE_RULE_V40;
+}NET_DVR_ONE_OUTPUT_SCHEDULE_RULE_V40;
 typedef struct tagNET_DVR_OUTPUT_SCHEDULE_RULECFG_V40
 {   
     DWORD  dwSize; 
     NET_DVR_ONE_OUTPUT_SCHEDULE_RULE_V40 struOutputRule[MAX_RULE_NUM]; 
     BYTE   byRes[64];  
-}NET_DVR_OUTPUT_SCHEDULE_RULECFG_V40,*LPNET_DVR_OUTPUT_SCHEDULE_RULECFG_V40;
+}NET_DVR_OUTPUT_SCHEDULE_RULECFG_V40;
 typedef struct tagNET_DVR_ONE_OUTPUT_SCH_RULECFG_V40
 {
     DWORD        dwSize; 
     NET_DVR_ONE_OUTPUT_SCHEDULE_RULE_V40 struOutputRule;
     BYTE        byRes[256];  
-}NET_DVR_ONE_OUTPUT_SCH_RULECFG_V40,*LPNET_DVR_ONE_OUTPUT_SCH_RULECFG_V40;
+}NET_DVR_ONE_OUTPUT_SCH_RULECFG_V40;
  typedef struct tagNET_DVR_ALARM_CAPTRUE_CFG
 {
     DWORD        dwSize;
@@ -36338,7 +29435,7 @@ typedef struct tagNET_DVR_ONE_OUTPUT_SCH_RULECFG_V40
     BYTE bySubSystem[32];
     BYTE byMandatoryAlarm;
     BYTE byRes[63];
-}NET_DVR_PRIOR_SCHEDTIME,*LPNET_DVR_PRIOR_SCHEDTIME;
+}NET_DVR_PRIOR_SCHEDTIME;
  typedef struct tagNET_DVR_TAMPER_ALARMIN_PARAM
 {
     DWORD   dwSize;
@@ -36407,7 +29504,7 @@ typedef struct tagNET_DVR_ONE_OUTPUT_SCH_RULECFG_V40
     DWORD    dwDevNo;    
     BYTE    byDevType;    
     BYTE    byRes[131];
-}NET_DVR_AUXILIARY_DEV_UPGRADE_PARAM,*LPNET_DVR_AUXILIARY_DEV_UPGRADE_PARAM;
+}NET_DVR_AUXILIARY_DEV_UPGRADE_PARAM;
  typedef struct tagNET_DVR_CALL_ROOM_CFG
 {
     DWORD    dwSize;
@@ -36417,12 +29514,12 @@ typedef struct tagNET_DVR_ONE_OUTPUT_SCH_RULECFG_V40
     BYTE  byRes1[3];
     BYTE  byCalledName[64];    
     BYTE  byRes[60];
-}NET_DVR_CALL_ROOM_CFG,*LPNET_DVR_CALL_ROOM_CFG;
+}NET_DVR_CALL_ROOM_CFG;
  typedef struct tagNET_DVR_VIDEO_CALL_COND
 {
     DWORD    dwSize;
     BYTE    byRes[128];
-}NET_DVR_VIDEO_CALL_COND,*LPNET_DVR_VIDEO_CALL_COND;
+}NET_DVR_VIDEO_CALL_COND;
 typedef struct tagNET_DVR_INQUEST_CASE_INFO
 {
     DWORD    dwSize;
@@ -36477,7 +29574,7 @@ typedef struct tagNET_DVR_INQUEST_CASE_INFO
     BYTE   byRes1;
     DWORD  dwPlayScheduleNo; 
     BYTE   byRes[120];
-}NET_DVR_FACECAPTURE_STATISTICS_COND,*LPNET_DVR_FACECAPTURE_STATISTICS_COND;
+}NET_DVR_FACECAPTURE_STATISTICS_COND;
  typedef struct tagNET_DVR_AGEGROUP_PARAM_
 {
     DWORD   dwTeenage;
@@ -36521,7 +29618,7 @@ typedef struct tagNET_DVR_INQUEST_CASE_INFO
     DWORD   dwMale;
     DWORD    dwFemale;
     BYTE   byRes[64];
-}NET_DVR_SEXGROUP_PARAM,*LPNET_DVR_SEXGROUP_PARAM;
+}NET_DVR_SEXGROUP_PARAM;
  typedef struct tagNET_DVR_FACECAPTURE_STATISTICS_RESULT_
 {
     DWORD dwSize;
@@ -36534,7 +29631,7 @@ typedef struct tagNET_DVR_INQUEST_CASE_INFO
     NET_DVR_SEXGROUP_PARAM  struSexGroupParam;
     NET_DVR_PROGRAM_INFO struProgramInfo;        
     BYTE   byRes1[76];
-}NET_DVR_FACECAPTURE_STATISTICS_RESULT,*LPNET_DVR_FACECAPTURE_STATISTICS_RESULT;
+}NET_DVR_FACECAPTURE_STATISTICS_RESULT;
 typedef struct tagNET_DVR_TRAFFIC_DATA_QUERY_COND_
 {
     DWORD  dwSize;
@@ -36558,7 +29655,7 @@ typedef struct tagNET_DVR_TRAFFIC_DATA_QUERY_COND_
     BYTE   byDataType;
     BYTE   byExecuteCtrl;
     BYTE   byRes[254];
-}NET_DVR_TRAFFIC_DATA_QUERY_COND,*LPNET_DVR_TRAFFIC_DATA_QUERY_COND;
+}NET_DVR_TRAFFIC_DATA_QUERY_COND;
 typedef struct tagNET_DVR_TRAFFIC_PICTURE_PARAM_
 {
     NET_DVR_TIME_V30     struRelativeTime; 
@@ -36566,7 +29663,7 @@ typedef struct tagNET_DVR_TRAFFIC_PICTURE_PARAM_
     char szPicName[PICTURE_NAME_LEN];
     BYTE  byPicType;
     BYTE  byRes[63];
-}NET_DVR_TRAFFIC_PICTURE_PARAM,*LPNET_DVR_TRAFFIC_PICTURE_PARAM;
+}NET_DVR_TRAFFIC_PICTURE_PARAM;
 typedef struct tagNET_DVR_TRAFFIC_DATA_QUERY_RESULT_
 {
     DWORD  dwSize;
@@ -36586,7 +29683,7 @@ typedef struct tagNET_DVR_TRAFFIC_DATA_QUERY_RESULT_
     BYTE  byDataType;
     BYTE  byRes[253];
     NET_DVR_TRAFFIC_PICTURE_PARAM struTrafficPic[MAX_TRAFFIC_PICTURE_NUM];
-}NET_DVR_TRAFFIC_DATA_QUERY_RESULT,*LPNET_DVR_TRAFFIC_DATA_QUERY_RESULT;
+}NET_DVR_TRAFFIC_DATA_QUERY_RESULT;
 typedef struct tagNET_DVR_TRAFFIC_FLOW_QUERY_COND_
 {
     DWORD  dwSize;
@@ -36597,7 +29694,7 @@ typedef struct tagNET_DVR_TRAFFIC_FLOW_QUERY_COND_
     NET_DVR_TIME_V30 struEndTime;
     BYTE   byLaneNo;
     BYTE   byRes[255];
-}NET_DVR_TRAFFIC_FLOW_QUERY_COND,*LPNET_DVR_TRAFFIC_FLOW_QUERY_COND;
+}NET_DVR_TRAFFIC_FLOW_QUERY_COND;
 typedef struct tagNET_DVR_TRAFFIC_FLOW_QUERY_RESULT_
 {
     DWORD  dwSize;
@@ -36607,7 +29704,7 @@ typedef struct tagNET_DVR_TRAFFIC_FLOW_QUERY_RESULT_
     DWORD  dwFlow;
     BYTE   byLaneNo;
     BYTE   byRes[511];
-}NET_DVR_TRAFFIC_FLOW_QUERY_RESULT,*LPNET_DVR_TRAFFIC_FLOW_QUERY_RESULT;
+}NET_DVR_TRAFFIC_FLOW_QUERY_RESULT;
 typedef struct tagNET_DVR_PIC_INFO
 {
     BYTE   byPicType;        
@@ -36617,7 +29714,7 @@ typedef struct tagNET_DVR_PIC_INFO
     DWORD  dwPicDataLen;     
     char*  byPicDataBuff;    
     BYTE   byRes2[32];       
-}NET_DVR_PIC_INFO,*LPNET_DVR_PIC_INFO;
+}NET_DVR_PIC_INFO;
  typedef struct tagNET_DVR_VCA_RULE_COLOR_CFG
 {
     DWORD       dwSize;
@@ -36627,14 +29724,14 @@ typedef struct tagNET_DVR_PIC_INFO
     BYTE       byRes1;      
     NET_DVR_PIC_INFO  struPicInfo;  
     BYTE     byRes[64];
-}NET_DVR_VCA_RULE_COLOR_CFG,*LPNET_DVR_VCA_RULE_COLOR_CFG;
+}NET_DVR_VCA_RULE_COLOR_CFG;
  typedef struct tagNET_DVR_VCA_RULE_COLOR_COND
 {
     DWORD        dwSize;
     DWORD     dwChannel;     
     BYTE        byRuleID;       
     BYTE        byRes[127];
-}NET_DVR_VCA_RULE_COLOR_COND,*LPNET_DVR_VCA_RULE_COLOR_COND;
+}NET_DVR_VCA_RULE_COLOR_COND;
 typedef struct tagNET_DVR_LLDP_PORT_CFG
 {
     BYTE byCardNo;      
@@ -36958,7 +30055,7 @@ typedef enum _EN_SWITCH_CONVERT_ALARM
     BYTE       byRelRecordChan[MAX_IVMS_IP_CHANNEL];    
     NET_DVR_SCHEDTIME struAlarmTime[MAX_DAYS][MAX_TIMESEGMENT_V30];
     BYTE       byRes[256];
-}NET_DVR_SWITCH_LAMP_CFG,*LPNET_DVR_SWITCH_LAMP_CFG;
+}NET_DVR_SWITCH_LAMP_CFG;
  typedef struct tagNET_DVR_SWITCH_LAMP_ALARM
 {
     DWORD        dwSize;
@@ -36969,13 +30066,13 @@ typedef enum _EN_SWITCH_CONVERT_ALARM
     DWORD               dwPicDataLen;       
     char*               pPicData;           
     BYTE                byRes[64];
-}NET_DVR_SWITCH_LAMP_ALARM,*LPNET_DVR_SWITCH_LAMP_ALARM;
+}NET_DVR_SWITCH_LAMP_ALARM;
 typedef struct tagNET_DVR_RS485_CASCADE_CFG
 {
     DWORD    dwSize; 
     BYTE    byDevAddr;    
     BYTE    byRes[131];
-}NET_DVR_RS485_CASCADE_CFG,*LPNET_DVR_RS485_CASCADE_CFG;
+}NET_DVR_RS485_CASCADE_CFG;
 typedef struct tagNET_DVR_PRIVATE_PROTOCOL_CFG
 {
     DWORD          dwSize;   
@@ -36995,19 +30092,19 @@ typedef struct tagNET_DVR_PRIVATE_PROTOCOL_CFG
     char         szIndexCode[MAX_INDEX_CODE_LEN];
     DWORD        dwSecretKeyLen;
     char         szSecretKey[MAX_SECRETKEY_LEN];
-}NET_DVR_PRIVATE_PROTOCOL_CFG,*LPNET_DVR_PRIVATE_PROTOCOL_CFG;
+}NET_DVR_PRIVATE_PROTOCOL_CFG;
 typedef struct tagNET_DVR_DEBUG_CMD
 {
     DWORD     dwSize;
     char  szDebugCMD[MAX_DEBUGCMD_LEN];
     BYTE  byRes[400];
-}NET_DVR_DEBUG_CMD,*LPNET_DVR_DEBUG_CMD;
+}NET_DVR_DEBUG_CMD;
 typedef struct tagNET_DVR_DEBUG_INFO
 {
     DWORD     dwSize;
     char  szDebugInfo[MAX_DEBUGINFO_LEN];
     BYTE  byRes[32];
-}NET_DVR_DEBUG_INFO,*LPNET_DVR_DEBUG_INFO;
+}NET_DVR_DEBUG_INFO;
 #define MAX_SSID_LEN    32   
 #define MAX_WS_PASSWD_LEN    64   
 typedef    struct tagNET_DVR_WIRELESSSERVER
@@ -37022,13 +30119,13 @@ typedef    struct tagNET_DVR_WIRELESSSERVER
     BYTE        byDefaultPassword;
     BYTE      	byWifiApModeType;
     BYTE        byRes[254];
-}NET_DVR_WIRELESSSERVER,*LPNET_DVR_WIRELESSSERVER;
+}NET_DVR_WIRELESSSERVER;
  typedef    struct tagNET_DVR_CONNECTDEV_COND
 {
     DWORD       dwSize;
     DWORD        dwChannel;
     BYTE        byRes[128];
-}NET_DVR_CONNECTDEV_COND,*LPNET_DVR_CONNECTDEV_COND;
+}NET_DVR_CONNECTDEV_COND;
  typedef    struct tagNET_DVR_CONNECTDEV_CFG
 {
     DWORD       dwSize;
@@ -37038,7 +30135,7 @@ typedef    struct tagNET_DVR_WIRELESSSERVER
     NET_DVR_IPADDR    struDVRIP;
     NET_DVR_TIME  struConnectTime;
     BYTE        byRes1[256];
-}NET_DVR_CONNECTDEV_CFG,*LPNET_DVR_CONNECTDEV_CFG;
+}NET_DVR_CONNECTDEV_CFG;
  typedef struct tagNET_DVR_GIS_SERVER_INFO
 {
     BYTE  byUserName[NAME_LEN];
@@ -37056,7 +30153,7 @@ typedef    struct tagNET_DVR_WIRELESSSERVER
     DWORD dwBaseMapNo;     
     NET_DVR_GIS_SERVER_INFO struGisServer;    
     BYTE  byRes2[64];
-}NET_DVR_BASEMAP_CONTROL_CFG_V40,*LPNET_DVR_BASEMAP_CONTROL_CFG_V40;
+}NET_DVR_BASEMAP_CONTROL_CFG_V40;
  typedef struct tagNET_DVR_VIDEO_IMG_DB_CFG
 {    
     DWORD        dwSize;                   
@@ -37251,7 +30348,7 @@ typedef struct tagNET_DVR_BACKGROUND_PIC_CFG
     WORD     wPicHeight;    
     BYTE          byPicName[MAX_PIC_NAME_LEN];   
     BYTE         byRes[128];
-}NET_DVR_BACKGROUND_PIC_CFG,*LPNET_DVR_BACKGROUND_PIC_CFG;
+}NET_DVR_BACKGROUND_PIC_CFG;
  typedef struct tagNET_DVR_BACKGROUND_PIC_INFO
 {
     DWORD   dwSize;                              
@@ -37259,7 +30356,7 @@ typedef struct tagNET_DVR_BACKGROUND_PIC_CFG
     BYTE    byRes1[3];
     BYTE    byPicID[MAX_ID_LEN_128];
     BYTE    byRes[300];         
-}NET_DVR_BACKGROUND_PIC_INFO,*LPNET_DVR_BACKGROUND_PIC_INFO;
+}NET_DVR_BACKGROUND_PIC_INFO;
 typedef struct tagNET_DVR_BACKGROUND_PIC_PRARAM
 {
     DWORD       dwSize;
@@ -37270,7 +30367,7 @@ typedef struct tagNET_DVR_BACKGROUND_PIC_PRARAM
     char          szPicName[MAX_PIC_NAME_LEN];   
     BYTE        byPicType;   
     BYTE        byRes[303];
-}NET_DVR_BACKGROUND_PIC_PRARAM,*LPNET_DVR_BACKGROUND_PIC_PRARAM;
+}NET_DVR_BACKGROUND_PIC_PRARAM;
 typedef    struct tagNET_DVR_LOWPOWER
 {
     DWORD        dwSize;
@@ -37279,7 +30376,7 @@ typedef    struct tagNET_DVR_LOWPOWER
     BYTE        byRes[6];
     NET_DVR_SCHEDULE_DAYTIME  struSchedTime;
     BYTE        byRes1[256];
-}NET_DVR_LOWPOWER,*LPNET_DVR_LOWPOWER;
+}NET_DVR_LOWPOWER;
  typedef struct tagNET_DVR_POINT
 {
     DWORD dwX;    
@@ -37290,21 +30387,21 @@ typedef    struct tagNET_DVR_ZOOMLINKAGE
     DWORD        dwSize;
     BYTE          byEnable;
     BYTE       byRes[255];
-}NET_DVR_ZOOMLINKAGE,*LPNET_DVR_ZOOMLINKAGE;
+}NET_DVR_ZOOMLINKAGE;
  typedef struct tagNET_DVR_ONLINEUPGRADE_STATUS
 {
     DWORD   dwSize;
     BYTE    byUpgradeStatus;
     BYTE    byProgress; 
     BYTE    byRes[250];
-}NET_DVR_ONLINEUPGRADE_STATUS,*LPNET_DVR_ONLINEUPGRADE_STATUS;
+}NET_DVR_ONLINEUPGRADE_STATUS;
  typedef    struct tagNET_DVR_FIRMWARECODE_COND
 {
     DWORD  dwSize;
     DWORD  dwStartIndex;    
     DWORD  dwMaxNum;    
     BYTE   byRes[52];
-}NET_DVR_FIRMWARECODE_COND,*LPNET_DVR_FIRMWARECODE_COND;
+}NET_DVR_FIRMWARECODE_COND;
  typedef    struct    tagNET_DVR_FIRMWARECODE
 {
     WORD  wIndex;
@@ -37312,26 +30409,26 @@ typedef    struct tagNET_DVR_ZOOMLINKAGE
     BYTE  byCode[MAX_IDCODE_LEN];
     BYTE  byVersion[MAX_VERSIIN_LEN];
     BYTE  byRes[12];
-}NET_DVR_FIRMWARECODE,*LPNET_DVR_FIRMWARECODE;
+}NET_DVR_FIRMWARECODE;
  typedef    struct    tagNET_DVR_FIRMWARECODE_LIST
 {
     DWORD  dwSize;
     DWORD  dwValidCodeNum;    
     NET_DVR_FIRMWARECODE  struCode[MAX_IDCODE_NUM];
     BYTE   byRes[64];
-}NET_DVR_FIRMWARECODE_LIST,*LPNET_DVR_FIRMWARECODE_LIST;
+}NET_DVR_FIRMWARECODE_LIST;
  typedef struct tagNET_DVR_ONLINEUPGRADE_SERVER 
 {
     DWORD  dwSize;
     BYTE   byConnectStatus;    
     BYTE   byRes[1019];
-}NET_DVR_ONLINEUPGRADE_SERVER,*LPNET_DVR_ONLINEUPGRADE_SERVER;
+}NET_DVR_ONLINEUPGRADE_SERVER;
  typedef struct tagNET_DVR_ONLINEUPGRADE_VERSION_COND
 {
     DWORD  dwSize;
     BYTE   byCheckFromSvr; 
     BYTE   byRes[59];
-}NET_DVR_ONLINEUPGRADE_VERSION_COND,*LPNET_DVR_ONLINEUPGRADE_VERSION_COND;
+}NET_DVR_ONLINEUPGRADE_VERSION_COND;
  typedef struct tagNET_DVR_ONLINEUPGRADE_VERSION_RET
 {
     DWORD  dwSize;
@@ -37339,20 +30436,20 @@ typedef    struct tagNET_DVR_ZOOMLINKAGE
     BYTE   byNewVersion[MAX_VERSIIN_LEN];  
     BYTE   byChangeLog[SDK_LEN_2048];  
     BYTE   byRes[971];
-}NET_DVR_ONLINEUPGRADE_VERSION_RET,*LPNET_DVR_ONLINEUPGRADE_VERSION_RET;
+}NET_DVR_ONLINEUPGRADE_VERSION_RET;
  typedef struct tagNET_DVR_RECOMMEN_VERSION_COND
 {
     DWORD  dwSize;
     BYTE   byFirmwareCode[MAX_IDCODE_LEN]; 
     BYTE   byFirmwareVersion[MAX_VERSIIN_LEN];
     BYTE   byRes[60];
-}NET_DVR_RECOMMEN_VERSION_COND,*LPNET_DVR_RECOMMEN_VERSION_COND;
+}NET_DVR_RECOMMEN_VERSION_COND;
  typedef struct tagNET_DVR_RECOMMEN_VERSION_RET
 {
     DWORD  dwSize;
     BYTE   byRecommenUpgrade;  
     BYTE   byRes[123];
-}NET_DVR_RECOMMEN_VERSION_RET,*LPNET_DVR_RECOMMEN_VERSION_RET;
+}NET_DVR_RECOMMEN_VERSION_RET;
 typedef    struct tagNET_DVR_THSCREEN
 {
     DWORD  dwSize;
@@ -37364,7 +30461,7 @@ typedef    struct tagNET_DVR_THSCREEN
     BYTE   byRes1;
     WORD   wInterval;
     BYTE   byRes2[254];
-}NET_DVR_THSCREEN,*LPNET_DVR_THSCREEN;
+}NET_DVR_THSCREEN;
  typedef    struct tagNET_DVR_SENSOR_ADJUSTMENT
 {
     DWORD        dwSize;
@@ -37382,7 +30479,7 @@ typedef    struct tagNET_DVR_THSCREEN
     WORD    wGex;
     WORD    wBex;
     BYTE     byRes2[114];
-}NET_DVR_SENSOR_ADJUSTMENT,*LPNET_DVR_SENSOR_ADJUSTMENT;
+}NET_DVR_SENSOR_ADJUSTMENT;
  typedef    struct tagNET_DVR_SENSOR_ADJUSTMENT_INFO
 {
     DWORD        dwSize;
@@ -37400,20 +30497,20 @@ typedef    struct tagNET_DVR_THSCREEN
     WORD    wGex;
     WORD    wBex;
     BYTE     byRes1[114];
-}NET_DVR_SENSOR_ADJUSTMENT_INFO,*LPNET_DVR_SENSOR_ADJUSTMENT_INFO;
+}NET_DVR_SENSOR_ADJUSTMENT_INFO;
  typedef    struct tagNET_DVR_SENSOR_RESET
 {
     DWORD        dwSize;
     BYTE     bySensorNo;
     BYTE     byRes[127];
-}NET_DVR_SENSOR_RESET,*LPNET_DVR_SENSOR_RESET;
+}NET_DVR_SENSOR_RESET;
  typedef    struct tagNET_DVR_PANORAMAIMAGE
 {
     DWORD        dwSize;
     BYTE     byFusionMode;
     BYTE     byPreviewMode;
     BYTE     byRes[126];
-}NET_DVR_PANORAMAIMAGE,*LPNET_DVR_PANORAMAIMAGE;
+}NET_DVR_PANORAMAIMAGE;
  typedef struct tagNET_DVR_RELOCATE_INFO
 {
     DWORD        dwSize;
@@ -37646,7 +30743,7 @@ typedef struct tagNET_DVR_WIN_ROAM_SWITCH_CFG
     DWORD dwSize;
     BYTE  byEnableRoam;    
     BYTE  byRes[31];
-}NET_DVR_WIN_ROAM_SWITCH_CFG,*LPNET_DVR_WIN_ROAM_SWITCH_CFG;
+}NET_DVR_WIN_ROAM_SWITCH_CFG;
  typedef struct tagNET_DVR_LED_OUTPUT_CFG
 {
     DWORD dwSize;
@@ -37829,7 +30926,7 @@ typedef struct tagNET_DVR_WIN_ROAM_SWITCH_CFG
     NET_DVR_LED_RECV_REGISTOR struSecondRegistor;    
     NET_DVR_LED_RECV_REGISTOR struThirdRegistor;    
     BYTE byRes2[64];
-}NET_DVR_LED_RECV_ADVANCED_CFG,*LPNET_DVR_LED_RECV_ADVANCED_CFG;
+}NET_DVR_LED_RECV_ADVANCED_CFG;
  typedef struct tagNET_DVR_LED_CHECK_COND
 {
     DWORD dwSize;
@@ -37861,13 +30958,13 @@ typedef struct tagNET_DVR_QUERY_COUNTRYID_COND
     char    szSvrAddr[MAX_DOMAIN_NAME];
     char    szClientVersion[CLIENT_VERSION_LEN];
     BYTE    byRes[382];
-}NET_DVR_QUERY_COUNTRYID_COND,*LPNET_DVR_QUERY_COUNTRYID_COND;
+}NET_DVR_QUERY_COUNTRYID_COND;
 typedef struct tagNET_DVR_QUERY_COUNTRYID_RET
 {
     char    szResolveSvrAddr[MAX_DOMAIN_NAME];
     char    szAlarmSvrAddr[MAX_DOMAIN_NAME];
     BYTE    byRes[1024];
-}NET_DVR_QUERY_COUNTRYID_RET,*LPNET_DVR_QUERY_COUNTRYID_RET;
+}NET_DVR_QUERY_COUNTRYID_RET;
 typedef struct tagNET_DVR_QUERY_SERVERTYPE_COND
 {
     WORD    wSvrType;    
@@ -37888,14 +30985,14 @@ typedef struct tagNET_DVR_QUERY_DDNS_COND
     char    szDevSerial[SERIALNO_LEN];    
     char    szClientVersion[CLIENT_VERSION_LEN];
     BYTE    byRes[272];        
-}NET_DVR_QUERY_DDNS_COND,*LPNET_DVR_QUERY_DDNS_COND;
+}NET_DVR_QUERY_DDNS_COND;
 typedef struct tagNET_DVR_QUERY_DDNS_RET
 {
     char    szDevIP[SDK_MAX_IP_LEN];    
     WORD    wCmdPort;        
     WORD    wHttpPort;        
     BYTE    byRes[460];
-}NET_DVR_QUERY_DDNS_RET,*LPNET_DVR_QUERY_DDNS_RET;
+}NET_DVR_QUERY_DDNS_RET;
 typedef struct tagNET_DVR_CHECK_DDNS_RET
 {
     BYTE    byDevStatus;        
@@ -37903,7 +31000,7 @@ typedef struct tagNET_DVR_CHECK_DDNS_RET
     NET_DVR_QUERY_DDNS_RET    struQueryRet;    
     WORD    wRegionID;        
     BYTE    byRes2[508];
-}NET_DVR_CHECK_DDNS_RET,*LPNET_DVR_CHECK_DDNS_RET;
+}NET_DVR_CHECK_DDNS_RET;
 typedef struct tagNET_DVR_QUERY_IPSERVER_COND
 {
     char    szResolveSvrAddr[MAX_DOMAIN_NAME];
@@ -37911,19 +31008,19 @@ typedef struct tagNET_DVR_QUERY_IPSERVER_COND
     char    szDevNickName[MAX_DOMAIN_NAME];    
     char    szDevSerial[SERIALNO_LEN];    
     BYTE    byRes[334];        
-}NET_DVR_QUERY_IPSERVER_COND,*LPNET_DVR_QUERY_IPSERVER_COND;
+}NET_DVR_QUERY_IPSERVER_COND;
 typedef struct tagNET_DVR_QUERY_IPSERVER_RET
 {
     char    szDevIP[SDK_MAX_IP_LEN];    
     WORD    wCmdPort;        
     BYTE    byRes[462];
-}NET_DVR_QUERY_IPSERVER_RET,*LPNET_DVR_QUERY_IPSERVER_RET;
+}NET_DVR_QUERY_IPSERVER_RET;
  typedef struct tagNET_DVR_CURRENT_VALID_PORT
 {
     DWORD  dwSize;
     WORD   wHTTPPort;
     BYTE   byRes[122];
-}NET_DVR_CURRENT_VALID_PORT,*LPNET_DVR_CURRENT_VALID_PORT;
+}NET_DVR_CURRENT_VALID_PORT;
  typedef struct tagNET_DVR_AUDIO_CHANNEL
 {
     DWORD  dwChannelNum;                
@@ -37957,14 +31054,14 @@ typedef    struct tagNET_DVR_REVISE_GPS_CFG
     DWORD         dwSize;
     WORD        wWidth;
     BYTE        byRes[126];
-}NET_DVR_PDC_RECOMMEND,*LPNET_DVR_PDC_RECOMMEND;
+}NET_DVR_PDC_RECOMMEND;
  typedef    struct tagNET_DVR_FLASHSTORAGE_REMOVE
 {
     DWORD         dwSize;
     DWORD       dwChannel;
     BYTE        byPDCRemoveEnable;
     BYTE        byRes[127];
-}NET_DVR_FLASHSTORAGE_REMOVE,*LPNET_DVR_FLASHSTORAGE_REMOVE;
+}NET_DVR_FLASHSTORAGE_REMOVE;
 typedef struct tagNET_DVR_PARKING_CARD
 {
     DWORD  dwSize;
@@ -37977,7 +31074,7 @@ typedef struct tagNET_DVR_PARKING_CARD
     NET_DVR_TIME_V30 struStartTime;
     NET_DVR_TIME_V30 struEndTime;
     BYTE  byRes[128];
-}NET_DVR_PARKING_CARD,*LPNET_DVR_PARKING_CARD;
+}NET_DVR_PARKING_CARD;
 typedef struct tagNET_DVR_GATE_CARDINFO
 {
     DWORD     dwSize;
@@ -38031,7 +31128,7 @@ typedef struct tagNET_DVR_GATE_CHARGEINFO
     BYTE  byChargeRuleId; 
     BYTE  byVehicleType;
     BYTE  byRes[127];
-}NET_DVR_GATE_CHARGEINFO,*LPNET_DVR_GATE_CHARGEINFO;
+}NET_DVR_GATE_CHARGEINFO;
 typedef struct tagNET_DVR_PARKING_CARD_CTRL_PARAM
 {
     DWORD  dwSize;
@@ -38039,7 +31136,7 @@ typedef struct tagNET_DVR_PARKING_CARD_CTRL_PARAM
     BYTE  byCardType;
     BYTE  byDeleteALL;
     BYTE  byRes[62];
-}NET_DVR_PARKING_CARD_CTRL_PARAM,*LPNET_DVR_PARKING_CARD_CTRL_PARAM;
+}NET_DVR_PARKING_CARD_CTRL_PARAM;
 typedef struct tagNET_DVR_TME_VEHICLE_RESULT_
 {
     DWORD   dwSize;
@@ -38108,20 +31205,20 @@ typedef struct tagNET_DVR_PARKING_VEHICLE
     BYTE    byVehicleType;
     BYTE    byPlateColor;
     BYTE    byRes[126];
-}NET_DVR_PARKING_VEHICLE,*LPNET_DVR_PARKING_VEHICLE;
+}NET_DVR_PARKING_VEHICLE;
 typedef    struct tagNET_DVR_CHARGEACCOUNT_CFG
 {
     DWORD   dwSize;
     float   fAccount;
     BYTE    byRes[128];
-}NET_DVR_CHARGEACCOUNT_CFG,*LPNET_DVR_CHARGEACCOUNT_CFG;
+}NET_DVR_CHARGEACCOUNT_CFG;
 typedef    struct tagNET_DVR_PXMULTICTRL_CFG
 {
     DWORD        dwSize;
     DWORD        dwMultiChansWaitTime;
     BYTE         byMultiChansCapEnabled;
     BYTE        byRes[127];
-}NET_DVR_PXMULTICTRL_CFG,*LPNET_DVR_PXMULTICTRL_CFG;
+}NET_DVR_PXMULTICTRL_CFG;
 typedef    struct tagNET_DVR_PXOFFLINE_CFG
 {
     DWORD   dwSize;
@@ -38134,14 +31231,14 @@ typedef    struct tagNET_DVR_PXOFFLINE_CFG
     BYTE    byVehCardmatch;
     BYTE    bySingleInSingleOut;
     BYTE    byRes[126];
-}NET_DVR_PXOFFLINE_CFG,*LPNET_DVR_PXOFFLINE_CFG;
+}NET_DVR_PXOFFLINE_CFG;
  typedef    struct tagNET_DVR_PARKINGSAPCE_CFG
 {
     DWORD    dwSize;
     DWORD     dwTotalParkingLot;
     DWORD    dwCurrParkingLot;
     BYTE    byRes[128];
-}NET_DVR_PARKINGSAPCE_CFG,*LPNET_DVR_PARKINGSAPCE_CFG;
+}NET_DVR_PARKINGSAPCE_CFG;
  typedef    struct tagNET_DVR_PAPERCHARGEINFO_CFG
 {
     DWORD   dwSize;
@@ -38153,7 +31250,7 @@ typedef    struct tagNET_DVR_PXOFFLINE_CFG
     DWORD   dwPaymentOutFailureTime;
     BYTE    byVehicleOutEnabled; 
     BYTE    byRes[128];
-}NET_DVR_PAPERCHARGEINFO_CFG,*LPNET_DVR_PAPERCHARGEINFO_CFG;
+}NET_DVR_PAPERCHARGEINFO_CFG;
 typedef    struct tagNET_DVR_ILLEGALCARDFILTERING_CFG
 {
     DWORD   dwSize;
@@ -38165,7 +31262,7 @@ typedef    struct tagNET_DVR_ILLEGALCARDFILTERING_CFG
     BYTE    byVerifyKeyWriteCardEnabled;
     BYTE    byNoplateTakeCardEnabled;
     BYTE    byRes[126];
-}NET_DVR_ILLEGALCARDFILTERING_CFG,*LPNET_DVR_ILLEGALCARDFILTERING_CFG;
+}NET_DVR_ILLEGALCARDFILTERING_CFG;
 typedef struct tagNET_DVR_TME_CHARGERULE_COND
 {
     DWORD   dwSize; 
@@ -38183,7 +31280,7 @@ typedef    struct tagNET_DVR_LEDDISPLAY_CFG
     BYTE    byRes1;
     DWORD   dwShowTime;
     BYTE    byRes[128];
-}NET_DVR_LEDDISPLAY_CFG,*LPNET_DVR_LEDDISPLAY_CFG;
+}NET_DVR_LEDDISPLAY_CFG;
 typedef    struct tagNET_DVR_VOICEBROADCAST_CFG
 {
     DWORD        dwSize;
@@ -38191,7 +31288,7 @@ typedef    struct tagNET_DVR_VOICEBROADCAST_CFG
     BYTE       byBroadcastNum;
     BYTE       byIntervalTime;
     BYTE        byRes[126];
-}NET_DVR_VOICEBROADCAST_CFG,*LPNET_DVR_VOICEBROADCAST_CFG;
+}NET_DVR_VOICEBROADCAST_CFG;
 typedef    struct tagNET_DVR_PAPERPRINTFORMAT_CFG
 {
     DWORD        dwSize;
@@ -38200,19 +31297,19 @@ typedef    struct tagNET_DVR_PAPERPRINTFORMAT_CFG
     char        sPhoneNum[MAX_PHONE_NUM_LEN];
     BYTE        byPrintInTimeEnabled; 
     BYTE        byRes[127];
-}NET_DVR_PAPERPRINTFORMAT_CFG,*LPNET_DVR_PAPERPRINTFORMAT_CFG;
+}NET_DVR_PAPERPRINTFORMAT_CFG;
 typedef    struct tagNET_DVR_LOCKGATE_TIME_CFG
 {
     char        sBeginTime[LEN_32];
     char        sEndTime[LEN_32];
     BYTE        byRes[64];
-}NET_DVR_LOCKGATE_TIME_CFG,*LPNET_DVR_LOCKGATE_TIME_CFG;
+}NET_DVR_LOCKGATE_TIME_CFG;
 typedef    struct tagNET_DVR_LOCKGATE_CFG
 {
     DWORD        dwSize;
     NET_DVR_LOCKGATE_TIME_CFG struTime[LOCKGATE_TIME_NUM]; 
     BYTE        byRes[128];
-}NET_DVR_LOCKGATE_CFG,*LPNET_DVR_LOCKGATE_CFG;
+}NET_DVR_LOCKGATE_CFG;
 typedef struct NET_DVR_PARKING_DATASTATE_INFO
 {
     DWORD   dwSize;
@@ -38220,7 +31317,7 @@ typedef struct NET_DVR_PARKING_DATASTATE_INFO
     DWORD   dwParkingNum; 
     DWORD   dwUpdataSerialNum; 
     BYTE    byRes[256];
-} NET_DVR_PARKING_DATASTATE_INFO,*LPNET_DVR_PARKING_DATASTATE_INFO;
+} NET_DVR_PARKING_DATASTATE_INFO;
 typedef    struct tagNET_DVR_EPTZ_CFG
 {
     DWORD dwSize;
@@ -38347,7 +31444,7 @@ typedef struct tagNET_DVR_WPA_CFG
     NET_DVR_WEP_CFG  struWEPCfg; 
     NET_DVR_WPA_CFG  struWPACfg; 
     BYTE    byRes[256];
-} NET_DVR_WIRELESS_SECURITY_CFG,*LPNET_DVR_WIRELESS_SECURITY_CFG;
+} NET_DVR_WIRELESS_SECURITY_CFG;
 typedef struct tagNET_DVR_WIRELESSSERVER_FULLVERSION_CFG
 {
     DWORD    dwSize;
@@ -38416,7 +31513,7 @@ typedef struct tagNET_DVR_WIRELESSSERVER_FULLVERSION_CFG
     DWORD      dwRepPoolID;    
     WORD      wReplication;    
     BYTE       byRes [178];
-}NET_DVR_START_FILE_TO_CLOUD_COND,*LPNET_DVR_START_FILE_TO_CLOUD_COND;
+}NET_DVR_START_FILE_TO_CLOUD_COND;
  typedef  struct     tagNET_DVR_START_PICTURE_FROM_CLOUD_COND
 {
     DWORD       dwSize;
@@ -38446,13 +31543,13 @@ typedef struct tagNET_DVR_WIRELESSSERVER_FULLVERSION_CFG
     DOWNLOAD_DATA_CB    fnDownloadFileCallBack;    
     void*   pUser;    
     BYTE    byRes [372];
-}NET_DVR_START_PICTURE_FROM_CLOUD_COND,*LPNET_DVR_START_PICTURE_FROM_CLOUD_COND;
+}NET_DVR_START_PICTURE_FROM_CLOUD_COND;
  typedef     struct    tagNET_DVR_START_PICTURE_FROM_CLOUD_RET
 {
     DWORD       dwSize;
     DWORD       dwFileCount;    
     BYTE        byRes[120];
-}NET_DVR_START_PICTURE_FROM_CLOUD_RET,*LPNET_DVR_START_PICTURE_FROM_CLOUD_RET;
+}NET_DVR_START_PICTURE_FROM_CLOUD_RET;
  typedef  struct 
 {
     DWORD       dwSize;
@@ -38460,7 +31557,7 @@ typedef struct tagNET_DVR_WIRELESSSERVER_FULLVERSION_CFG
     DWORD       dwPicLen;    
     BYTE        byPicType;    
     BYTE        byRes[107];
-}NET_DVR_PICTURE_FROM_CLOUD_RET,*LPNET_DVR_PICTURE_FROM_CLOUD_RET;
+}NET_DVR_PICTURE_FROM_CLOUD_RET;
  typedef struct tagNET_DVR_ACS_EXTERNAL_DEV_CFG
 {
     DWORD dwSize;
@@ -38723,7 +31820,7 @@ typedef struct tagNET_DVR_PLAYING_INFO
     DWORD   dwSize; 
     DWORD  dwChannel;
     BYTE   byRes [128];
-}NET_DVR_ONLINEUSER_COND,*LPNET_DVR_ONLINEUSER_COND;
+}NET_DVR_ONLINEUSER_COND;
  typedef struct tagNET_DVR_ONLINEUSER_CFG 
 {
     DWORD   dwSize; 
@@ -38735,7 +31832,7 @@ typedef struct tagNET_DVR_PLAYING_INFO
     NET_DVR_TIME_V30  struLoginTime;
     char   szUserName[NAME_LEN];
     BYTE   byRes1[128];
-}NET_DVR_ONLINEUSER_CFG,*LPNET_DVR_ONLINEUSER_CFG;
+}NET_DVR_ONLINEUSER_CFG;
 typedef    struct tagNET_DVR_STORAGE_DETECTION
 {
     DWORD    dwSize;
@@ -38745,7 +31842,7 @@ typedef    struct tagNET_DVR_STORAGE_DETECTION
     WORD    wBadBlocks;
     BYTE    byRemainingLife; 
     BYTE    byRes[125];
-}NET_DVR_STORAGE_DETECTION,*LPNET_DVR_STORAGE_DETECTION;
+}NET_DVR_STORAGE_DETECTION;
 typedef struct tagNET_DVR_STORAGE_DETECTION_ALARM
 {
     DWORD   dwSize;
@@ -38759,7 +31856,7 @@ typedef struct tagNET_DVR_STORAGE_DETECTION_ALARM
     BYTE    byRes1[3];
     float   fResidualLife; 
     BYTE    byRes[118];
-}NET_DVR_STORAGE_DETECTION_ALARM,*LPNET_DVR_STORAGE_DETECTION_ALARM;
+}NET_DVR_STORAGE_DETECTION_ALARM;
 typedef    struct tagNET_DVR_STORAGE_RWLOCK
 {
     DWORD   dwSize;
@@ -38768,20 +31865,20 @@ typedef    struct tagNET_DVR_STORAGE_RWLOCK
     char    szPassWD[PASSWD_LEN]; 
     char    szOriginalPassWD[PASSWD_LEN]; 
     BYTE    byRes1[128];
-}NET_DVR_STORAGE_RWLOCK,*LPNET_DVR_STORAGE_RWLOCK;
+}NET_DVR_STORAGE_RWLOCK;
 typedef    struct tagNET_DVR_STORAGE_UNLOCK
 {
     DWORD   dwSize;
     char    szPassWD[PASSWD_LEN]; 
     BYTE    byRes1[128];
-}NET_DVR_STORAGE_UNLOCK,*LPNET_DVR_STORAGE_UNLOCK;
+}NET_DVR_STORAGE_UNLOCK;
   typedef    struct tagNET_DVR_PTZTRACKSTATUS
 {
     DWORD        dwSize;
     BYTE          byID;
     BYTE      byLinkageType;
     BYTE      byRes[254];
-}NET_DVR_PTZTRACKSTATUS,*LPNET_DVR_PTZTRACKSTATUS;
+}NET_DVR_PTZTRACKSTATUS;
 #define MAX_PROXY_COUNT 32
  typedef struct tagNET_DVR_SOCKS_PROXY_PARA
 {
@@ -38812,7 +31909,7 @@ typedef    struct tagNET_DVR_MANUALRANGING_CFG
     DWORD        dwSize;
     BYTE        byEnabled;  
     BYTE        byRes[127];
-}NET_DVR_MANUALRANGING_CFG,*LPNET_DVR_MANUALRANGING_CFG;
+}NET_DVR_MANUALRANGING_CFG;
  typedef struct tagNET_DVR_VIDEO_INTERCOM_ALARM_CFG
 {
     DWORD           dwSize;            
@@ -38851,7 +31948,7 @@ typedef    struct tagNET_DVR_MANUALRANGING_CFG
     DEV_WORK_STATE_CB    fnStateCB;
     void*                pUserData;
     BYTE                byRes[60];
-}NET_DVR_CHECK_DEV_STATE,*LPNET_DVR_CHECK_DEV_STATE;
+}NET_DVR_CHECK_DEV_STATE;
 #define COURSE_NAME_LEN_128                128    
 #define INSTRUCTOR_NAME_LEN_64            64    
 #define MAX_UUID_LEN            64    
@@ -38864,7 +31961,7 @@ typedef    struct tagNET_DVR_COURSE_LIST_COND
     BYTE                       byInstructorName[INSTRUCTOR_NAME_LEN_64]; 
     BYTE                   byCourseType; 
     BYTE                    byRes[603];
-}NET_DVR_COURSE_LIST_COND,*LPNET_DVR_COURSE_LIST_COND;
+}NET_DVR_COURSE_LIST_COND;
  typedef struct  tagNET_DVR_COURSE_CFG
 {
     DWORD            dwSize;
@@ -38927,7 +32024,7 @@ typedef struct tagNET_DVR_SCREEN_POINT
 {
     WORD wX; 
     WORD wY; 
-}NET_DVR_SCREEN_POINT,*LPNET_DVR_SCREEN_POINT;
+}NET_DVR_SCREEN_POINT;
  typedef struct tagNET_DVR_MOUSE_PARAM
 {
     BYTE byMouseEvent;                   
@@ -39026,7 +32123,7 @@ typedef struct tagNET_DVR_SCREEN_POINT
     BYTE byRes[32];
     NET_DVR_PPT_RESPONSE_PARAM  struPPTParam;  
     NET_DVR_FILE_RESPONSE_PARAM    struFileParam; 
-}NET_DVR_SCREEN_RESPONSE_PARAM,*LPNET_DVR_SCREEN_RESPONSE_PARAM;
+}NET_DVR_SCREEN_RESPONSE_PARAM;
  typedef struct tagNET_DVR_SCREEN_RESPONSE_CMD
 {
     DWORD dwSize;
@@ -39160,7 +32257,7 @@ typedef    struct tagNET_DVR_TMEVOICE_CFG
     char      sInfo[MAX_TMEVOICE_LEN]; 
     char      sFileName[MAX_TMEVOICE_LEN]; 
     BYTE      byRes[64];
-}NET_DVR_TMEVOICE_CFG,*LPNET_DVR_TMEVOICE_CFG;
+}NET_DVR_TMEVOICE_CFG;
 typedef struct tagNET_DVR_INPUT_BOARD_CFG
 {
     DWORD    dwSize;
@@ -39213,13 +32310,13 @@ typedef struct tagNET_DVR_RING_UPLOAD_CFG
     DWORD     dwRingSize;   
     BYTE        byRingType;   
     BYTE        byRes[363];
-}NET_DVR_RING_UPLOAD_CFG,*LPNET_DVR_RING_UPLOAD_CFG;
+}NET_DVR_RING_UPLOAD_CFG;
  typedef struct tagNET_DVR_RING_SEARCH_COND
 {
     DWORD        dwSize;
     DWORD        dwRingID; 
     BYTE        byRes[300];
-}NET_DVR_RING_SEARCH_COND,*LPNET_DVR_RING_SEARCH_COND;
+}NET_DVR_RING_SEARCH_COND;
  typedef struct tagNET_DVR_RING_SEARCH_CFG
 {
     DWORD        dwSize;
@@ -39228,13 +32325,13 @@ typedef struct tagNET_DVR_RING_UPLOAD_CFG
     DWORD     dwRingSize;   
     BYTE        byRingType;   
     BYTE        byRes[303];
-}NET_DVR_RING_SEARCH_CFG,*LPNET_DVR_RING_SEARCH_CFG;
+}NET_DVR_RING_SEARCH_CFG;
 typedef struct tagNET_DVR_ALARMCTRL_CFG
 {
     DWORD   dwSize;
     BYTE    byListenPicUploadEnabled;
     BYTE    byRes [259];
-}NET_DVR_ALARMCTRL_CFG,*LPNET_DVR_ALARMCTRL_CFG;
+}NET_DVR_ALARMCTRL_CFG;
  typedef struct tagNET_DVR_VEHICLEFLOW_COND
 {
     DWORD dwSize;
@@ -40903,7 +34000,7 @@ typedef struct tagNET_DVR_TRANS_AUDIO_INFO
     char   sAudioName[AUDIO_FILE_NAME_LEN];  
     BYTE   byAudioFormat;	               
     BYTE   byRes[127];
-}NET_DVR_TRANS_AUDIO_INFO,*LPNET_DVR_TRANS_AUDIO_INFO;
+}NET_DVR_TRANS_AUDIO_INFO;
  typedef struct _NET_AIOP_POLLING_VIDEO_HEAD_
 {
     DWORD dwSize;			

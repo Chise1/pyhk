@@ -50,7 +50,7 @@ int test()
     // 注册设备
     LONG lUserID;
     NET_DVR_DEVICEINFO_V30 struDeviceInfo;
-    lUserID = NET_DVR_Login_V30("192.168.1.32", 8000, "admin", "admin1234", &struDeviceInfo);
+    lUserID = NET_DVR_Login_V30("192.168.10.35", 8000, "admin", "admin1234", &struDeviceInfo);
     if (lUserID < 0)
     {
         printf("Login error, % d\n", NET_DVR_GetLastError());

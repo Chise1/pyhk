@@ -713,3 +713,25 @@
 
 1582634626 /usr/include/boost/exception
 
+1582635005 source:/home/cs/Desktop/pyhk/pyhk/py_hk_test_wrap.cxx
+	<Python.h>
+	<Python.h>
+	<string.h>
+	<string>
+	<iostream>
+	<exception>
+	<vector>
+	<map>
+	"pythread.h"
+	<stdexcept>
+	"HCNetSDK.h"
+	"py_hk.h"
+	"py_hk_test_wrap.h"
+
+1582634926 /home/cs/Desktop/pyhk/pyhk/py_hk.h
+	"HCNetSDK.h"
+
+1582635005 /home/cs/Desktop/pyhk/pyhk/py_hk_test_wrap.h
+	<map>
+	<string>
+

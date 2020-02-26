@@ -70,7 +70,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../test_login/incCn/DataType.h" />
+		<Unit filename="../test_login/incCn/DecodeCardSdk.h" />
+		<Unit filename="../test_login/incCn/HCNetSDK.h" />
+		<Unit filename="../test_login/incCn/plaympeg4.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="rljc.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

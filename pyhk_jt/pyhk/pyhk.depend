@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1582728941 source:/home/cs/Desktop/pyhk_jt/pyhk/pyhk.cpp
+	<stdio.h>
+	<iostream>
+	<HCNetSDK.h>
+	"string.h"
+	"pyhk.h"
+
+1582427395 /home/cs/Desktop/pyhk_jt/pyhk/include/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+
+1582728952 /home/cs/Desktop/pyhk_jt/pyhk/pyhk.h
+	<HCNetSDK.h>
+

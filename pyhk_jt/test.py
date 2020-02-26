@@ -1,2 +1,0 @@
-import pyhk
-pyhk.m()

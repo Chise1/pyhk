@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/libpyhk" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/pyhk" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -15,10 +15,53 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-fPIC" />
+					<Add directory="include" />
+					<Add directory="/usr/local/include" />
+					<Add directory="/usr/include/python3.6" />
+					<Add directory="/usr/include/boost" />
+					<Add directory="hk_callback" />
 				</Compiler>
+				<Linker>
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libAudioRender.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCAlarm.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCCore.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCCoreDevCfg.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCDisplay.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCGeneralCfgMgr.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCIndustry.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCPlayBack.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCPreview.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libHCVoiceTalk.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libNPQos.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libPlayCtrl.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libStreamTransClient.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libSuperRender.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libSystemTransform.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libanalyzedata.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libcrypto.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libhcnetsdk.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libhpr.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libiconv2.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libssl.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/libz.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCAlarm.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCCoreDevCfg.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCDisplay.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCGeneralCfgMgr.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCIndustry.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCPlayBack.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCPreview.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libHCVoiceTalk.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libStreamTransClient.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libSystemTransform.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libanalyzedata.so" />
+					<Add library="/home/cs/Desktop/pyhk/pyhk/lib/HCNetSDKCom/libiconv2.so" />
+					<Add directory="lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/libpyhk" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/pyhk" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -36,7 +79,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="py_hk.cpp" />
+		<Unit filename="py_hk.h" />
+		<Unit filename="py_hk_test_wrap.cxx" />
+		<Unit filename="py_hk_test_wrap.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

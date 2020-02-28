@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\repository_python\pyhk\comprehensive_test\dll_test\base.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  dll_test.vcxproj -> D:\repository_python\pyhk\comprehensive_test\comprehensive_test\x64\Debug\dll_test.exe

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1581671671 source:/home/cs/Documents/pyhk/swig_test/test_in_out/t.cpp
+	"t.h"
+
+1581671671 /home/cs/Documents/pyhk/swig_test/test_in_out/t.h
+

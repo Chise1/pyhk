@@ -95,14 +95,17 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
+try:
+    import weakref
+    weakref_proxy = weakref.proxy
+except __builtin__.Exception:
+    weakref_proxy = lambda x: x
 
-def init(ip: 'char *', usr: 'char *', password: 'char *') -> "void":
-    return _pyhk.init(ip, usr, password)
-init = _pyhk.init
 
-def release() -> "void":
-    return _pyhk.release()
-release = _pyhk.release
+
+def test() -> "int":
+    """test() -> int"""
+    return _pyhk.test()
 # This file is compatible with both classic and new-style classes.
 
 

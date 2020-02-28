@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1581506815 source:/home/cs/Documents/pyhk/pyhk/py_hk.cpp
+1581579735 source:/home/cs/Documents/pyhk/pyhk/py_hk.cpp
 	<iostream>
 	<time.h>
 	<cstdio>
@@ -9,16 +9,401 @@
 	<unistd.h>
 	<pthread.h>
 
-1581501868 /home/cs/Documents/pyhk/pyhk/include/HCNetSDK.h
+1581565009 >
+
+1581559696 /home/cs/Documents/pyhk/pyhk/include/HCNetSDK.h
 	<winsock2.h>
 	<windows.h>
 
-1581506931 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
+1582106098 source:/home/cs/Documents/pyhk/pyhk/py_hk_wrap.cxx
+	<Python.h>
+	<Python.h>
+	<string.h>
+	<string>
+	<iostream>
+	<exception>
+	<vector>
+	<map>
+	"pythread.h"
+	<stdexcept>
+	"HCNetSDK.h"
+	<limits.h>
+	<float.h>
+	<math.h>
+	"py_hk_wrap.h"
+
+1582106098 p.h"
+
+1573123442 /usr/include/python3.6/Python.h
+	"patchlevel.h"
+	"pyconfig.h"
+	"pymacconfig.h"
+	<limits.h>
+	<stdio.h>
+	<string.h>
+	<errno.h>
+	<stdlib.h>
+	<unistd.h>
+	<crypt.h>
+	<stddef.h>
+	<assert.h>
+	"pyport.h"
+	"pymacro.h"
+	"pyatomic.h"
+	"pymath.h"
+	"pytime.h"
+	"pymem.h"
+	"object.h"
+	"objimpl.h"
+	"typeslots.h"
+	"pyhash.h"
+	"pydebug.h"
+	"bytearrayobject.h"
+	"bytesobject.h"
+	"unicodeobject.h"
+	"longobject.h"
+	"longintrepr.h"
+	"boolobject.h"
+	"floatobject.h"
+	"complexobject.h"
+	"rangeobject.h"
+	"memoryobject.h"
+	"tupleobject.h"
+	"listobject.h"
+	"dictobject.h"
+	"odictobject.h"
+	"enumobject.h"
+	"setobject.h"
+	"methodobject.h"
+	"moduleobject.h"
+	"funcobject.h"
+	"classobject.h"
+	"fileobject.h"
+	"pycapsule.h"
+	"traceback.h"
+	"sliceobject.h"
+	"cellobject.h"
+	"iterobject.h"
+	"genobject.h"
+	"descrobject.h"
+	"warnings.h"
+	"weakrefobject.h"
+	"structseq.h"
+	"namespaceobject.h"
+	"codecs.h"
+	"pyerrors.h"
+	"pystate.h"
+	"pyarena.h"
+	"modsupport.h"
+	"pythonrun.h"
+	"pylifecycle.h"
+	"ceval.h"
+	"sysmodule.h"
+	"osmodule.h"
+	"intrcheck.h"
+	"import.h"
+	"abstract.h"
+	"bltinmodule.h"
+	"compile.h"
+	"eval.h"
+	"pyctype.h"
+	"pystrtod.h"
+	"pystrcmp.h"
+	"dtoa.h"
+	"fileutils.h"
+	"pyfpe.h"
+
+1573123442 
+
+1573123442 /usr/include/python3.6/patchlevel.h
+
+1573123442 /usr/include/python3.6/pyconfig.h
+	<x86_64-linux-gnu/python3.6m/pyconfig.h>
+	<x86_64-linux-gnux32/python3.6m/pyconfig.h>
+	<i386-linux-gnu/python3.6m/pyconfig.h>
+	<aarch64-linux-gnu/python3.6m/pyconfig.h>
+	<alpha-linux-gnu/python3.6m/pyconfig.h>
+	<arm-linux-gnueabihf/python3.6m/pyconfig.h>
+	<arm-linux-gnueabi/python3.6m/pyconfig.h>
+	<hppa-linux-gnu/python3.6m/pyconfig.h>
+	<ia64-linux-gnu/python3.6m/pyconfig.h>
+	<m68k-linux-gnu/python3.6m/pyconfig.h>
+	<mipsisa32r6el-linux-gnu/python3.6m/pyconfig.h>
+	<mipsisa64r6el-linux-gnuabin32/python3.6m/pyconfig.h>
+	<mipsisa64r6el-linux-gnuabi64/python3.6m/pyconfig.h>
+	<mipsisa32r6-linux-gnu/python3.6m/pyconfig.h>
+	<mipsisa64r6-linux-gnuabin32/python3.6m/pyconfig.h>
+	<mipsisa64r6-linux-gnuabi64/python3.6m/pyconfig.h>
+	<mipsel-linux-gnu/python3.6m/pyconfig.h>
+	<mips64el-linux-gnuabin32/python3.6m/pyconfig.h>
+	<mips64el-linux-gnuabi64/python3.6m/pyconfig.h>
+	<mips-linux-gnu/python3.6m/pyconfig.h>
+	<mips64-linux-gnuabin32/python3.6m/pyconfig.h>
+	<mips64-linux-gnuabi64/python3.6m/pyconfig.h>
+	<or1k-linux-gnu/python3.6m/pyconfig.h>
+	<powerpc-linux-gnuspe/python3.6m/pyconfig.h>
+	<powerpc64le-linux-gnu/python3.6m/pyconfig.h>
+	<powerpc64-linux-gnu/python3.6m/pyconfig.h>
+	<powerpc-linux-gnu/python3.6m/pyconfig.h>
+	<s390x-linux-gnu/python3.6m/pyconfig.h>
+	<s390-linux-gnu/python3.6m/pyconfig.h>
+	<sh4-linux-gnu/python3.6m/pyconfig.h>
+	<sparc64-linux-gnu/python3.6m/pyconfig.h>
+	<sparc-linux-gnu/python3.6m/pyconfig.h>
+	<riscv64-linux-gnu/python3.6m/pyconfig.h>
+	<riscv32-linux-gnu/python3.6m/pyconfig.h>
+	<x86_64-kfreebsd-gnu/python3.6m/pyconfig.h>
+	<i386-kfreebsd-gnu/python3.6m/pyconfig.h>
+	<i386-gnu/python3.6m/pyconfig.h>
+
+1573123442 python3.6m/pyconfig.h>
+
+1573123442 /usr/include/python3.6/pymacconfig.h
+
+1573123442 /usr/include/python3.6/pyport.h
+	"pyconfig.h"
+	<inttypes.h>
+	<stdlib.h>
+	<ieeefp.h>
+	<math.h>
+	<sys/time.h>
+	<time.h>
+	<sys/time.h>
+	<time.h>
+	<sys/select.h>
+	<sys/stat.h>
+	<stat.h>
+	<sys/types.h>
+	<sys/termio.h>
+	<termios.h>
+	<osreldate.h>
+	<ctype.h>
+	<wctype.h>
+	<android/api-level.h>
+
+1573123442 pi-level.h>
+
+1573123442 /usr/include/python3.6/pymacro.h
+
+1573123442 /usr/include/python3.6/pyatomic.h
+	"dynamic_annotations.h"
+	"pyconfig.h"
+	<stdatomic.h>
+
+1573123442 .h>
+
+1573123442 /usr/include/python3.6/dynamic_annotations.h
+
+1573123442 /usr/include/python3.6/pymath.h
+	"pyconfig.h"
+
+1581563877 h"
+
+1573123442 /usr/include/python3.6/pytime.h
+	"pyconfig.h"
+	"object.h"
+
+1573123442 /usr/include/python3.6/object.h
+
+1573123442 /usr/include/python3.6/pymem.h
+	"pyport.h"
+
+1573123442 /usr/include/python3.6/objimpl.h
+	"pymem.h"
+
+1573123442 /usr/include/python3.6/typeslots.h
+
+1573123442 /usr/include/python3.6/pyhash.h
+
+1573123442 /usr/include/python3.6/pydebug.h
+
+1573123442 /usr/include/python3.6/bytearrayobject.h
+	<stdarg.h>
+
+1573123442 /usr/include/python3.6/bytesobject.h
+	<stdarg.h>
+
+1573123442 /usr/include/python3.6/unicodeobject.h
+	<stdarg.h>
+	<ctype.h>
+	<time.h>
+	<wchar.h>
+
+1573123442 /usr/include/python3.6/longobject.h
+
+1573123442 /usr/include/python3.6/longintrepr.h
+
+1573123442 /usr/include/python3.6/boolobject.h
+
+1573123442 /usr/include/python3.6/floatobject.h
+
+1573123442 /usr/include/python3.6/complexobject.h
+
+1573123442 /usr/include/python3.6/rangeobject.h
+
+1573123442 /usr/include/python3.6/memoryobject.h
+
+1573123442 /usr/include/python3.6/tupleobject.h
+
+1573123442 /usr/include/python3.6/listobject.h
+
+1573123442 /usr/include/python3.6/dictobject.h
+
+1573123442 /usr/include/python3.6/odictobject.h
+
+1573123442 /usr/include/python3.6/enumobject.h
+
+1573123442 /usr/include/python3.6/setobject.h
+
+1573123442 /usr/include/python3.6/methodobject.h
+
+1573123442 /usr/include/python3.6/moduleobject.h
+
+1573123442 /usr/include/python3.6/funcobject.h
+
+1573123442 /usr/include/python3.6/classobject.h
+
+1573123442 /usr/include/python3.6/fileobject.h
+
+1573123442 /usr/include/python3.6/pycapsule.h
+
+1573123442 /usr/include/python3.6/traceback.h
+	"pystate.h"
+
+1573123442 "
+
+1573123442 /usr/include/python3.6/pystate.h
+
+1573123442 /usr/include/python3.6/sliceobject.h
+
+1573123442 /usr/include/python3.6/cellobject.h
+
+1573123442 /usr/include/python3.6/iterobject.h
+
+1573123442 /usr/include/python3.6/genobject.h
+
+1573123442 /usr/include/python3.6/descrobject.h
+
+1573123442 /usr/include/python3.6/warnings.h
+
+1573123442 /usr/include/python3.6/weakrefobject.h
+
+1573123442 /usr/include/python3.6/structseq.h
+
+1573123442 /usr/include/python3.6/namespaceobject.h
+
+1573123442 /usr/include/python3.6/codecs.h
+
+1573123442 /usr/include/python3.6/pyerrors.h
+	<stdarg.h>
+
+1573123442 /usr/include/python3.6/pyarena.h
+
+1573123442 /usr/include/python3.6/modsupport.h
+	<stdarg.h>
+
+1573123442 /usr/include/python3.6/pythonrun.h
+
+1573123442 /usr/include/python3.6/pylifecycle.h
+
+1573123442 /usr/include/python3.6/ceval.h
+
+1573123442 /usr/include/python3.6/sysmodule.h
+
+1573123442 /usr/include/python3.6/osmodule.h
+
+1573123442 /usr/include/python3.6/intrcheck.h
+
+1573123442 /usr/include/python3.6/import.h
+
+1573123442 /usr/include/python3.6/abstract.h
+
+1573123442 /usr/include/python3.6/bltinmodule.h
+
+1573123442 /usr/include/python3.6/compile.h
+	"code.h"
+
+1573123442 /usr/include/python3.6/code.h
+
+1573123442 /usr/include/python3.6/eval.h
+
+1573123442 /usr/include/python3.6/pyctype.h
+
+1573123442 /usr/include/python3.6/pystrtod.h
+
+1573123442 /usr/include/python3.6/pystrcmp.h
+
+1573123442 /usr/include/python3.6/dtoa.h
+
+1573123442 /usr/include/python3.6/fileutils.h
+
+1573123442 /usr/include/python3.6/pyfpe.h
+	<signal.h>
+	<setjmp.h>
+	<math.h>
+
+1581579735 /home/cs/Documents/pyhk/pyhk/py_hk.h
+	"HCNetSDK.h"
+
+1581564033 source:/home/cs/Documents/pyhk/pyhk/HCNetSDK.cpp
+	"HCNetSDK.h"
+
+1581565009 /home/cs/Documents/pyhk/pyhk/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+
+1581563877 source:/home/cs/Documents/pyhk/pyhk/HCNetSDK_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
 	<stdexcept>
-	"py_hk.h"
+	"HCNetSDK.h"
+
+1582103897 source:/home/cs/Documents/pyhk/pyhk/hk_callback/hk_callback_wrap.cxx
+	<Python.h>
+	<Python.h>
+	<string.h>
+	<string>
+	<iostream>
+	<exception>
+	<vector>
+	<map>
+	"pythread.h"
+	<stdexcept>
+	<winsock2.h>
+	<windows.h>
+	"hk_callback_wrap.h"
+
+1582103897 ck_wrap.h"
+
+1581479467 /usr/include/boost/exception
+
+1573123442 /usr/include/python3.6/pythread.h
+
+1582103897 /home/cs/Documents/pyhk/pyhk/hk_callback/hk_callback_wrap.h
+	<map>
+	<string>
+
+1582106098 /home/cs/Documents/pyhk/pyhk/py_hk_wrap.h
+	<map>
+	<string>
+
+1582630507 source:/home/cs/Desktop/pyhk/pyhk/py_hk_wrap.cxx
+	<Python.h>
+	<Python.h>
+	<string.h>
+	<string>
+	<iostream>
+	<exception>
+	<vector>
+	<map>
+	"pythread.h"
+	<stdexcept>
+	"HCNetSDK.h"
+	<limits.h>
+	<float.h>
+	<math.h>
+	"py_hk_wrap.h"
 
 1573123442 /usr/include/python3.6/Python.h
 	"patchlevel.h"
@@ -316,5 +701,37 @@
 	<setjmp.h>
 	<math.h>
 
-1581506828 /home/cs/Documents/pyhk/pyhk/py_hk.h
+1573123442 /usr/include/python3.6/pythread.h
+
+1582427395 /home/cs/Desktop/pyhk/pyhk/include/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+
+1582630507 /home/cs/Desktop/pyhk/pyhk/py_hk_wrap.h
+	<map>
+	<string>
+
+1582634626 /usr/include/boost/exception
+
+1582635005 source:/home/cs/Desktop/pyhk/pyhk/py_hk_test_wrap.cxx
+	<Python.h>
+	<Python.h>
+	<string.h>
+	<string>
+	<iostream>
+	<exception>
+	<vector>
+	<map>
+	"pythread.h"
+	<stdexcept>
+	"HCNetSDK.h"
+	"py_hk.h"
+	"py_hk_test_wrap.h"
+
+1582634926 /home/cs/Desktop/pyhk/pyhk/py_hk.h
+	"HCNetSDK.h"
+
+1582635005 /home/cs/Desktop/pyhk/pyhk/py_hk_test_wrap.h
+	<map>
+	<string>
 

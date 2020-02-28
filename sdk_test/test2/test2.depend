@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1582701246 source:/home/cs/Desktop/pyhk/sdk_test/test2/main.cpp
+	<stdio.h>
+	<iostream>
+	<HCNetSDK.h>
+	"string.h"
+	<unistd.h>
+	<stdio.h>
+	<iostream>
+	"HCNetSDK.h"
+
+1582377750 /home/cs/Desktop/pyhk/sdk_test/test_login/incCn/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+
+1582438319 /home/cs/Desktop/pyhk/sdk_test/test2/HCNetSDK.h
+	<winsock2.h>
+	<windows.h>
+
+1582699334 source:/home/cs/Desktop/pyhk/sdk_test/test2/rljc.cpp
+	<iostream>
+	"HCNetSDK.h"
+

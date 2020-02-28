@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="test_login" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/test_login" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="incCn" />
+				</Compiler>
+				<Linker>
+					<Add library="lib/HCNetSDKCom/libHCAlarm.so" />
+					<Add library="lib/HCNetSDKCom/libHCCoreDevCfg.so" />
+					<Add library="lib/HCNetSDKCom/libHCDisplay.so" />
+					<Add library="lib/HCNetSDKCom/libHCGeneralCfgMgr.so" />
+					<Add library="lib/HCNetSDKCom/libHCIndustry.so" />
+					<Add library="lib/HCNetSDKCom/libHCPlayBack.so" />
+					<Add library="lib/HCNetSDKCom/libHCPreview.so" />
+					<Add library="lib/HCNetSDKCom/libHCVoiceTalk.so" />
+					<Add library="lib/HCNetSDKCom/libStreamTransClient.so" />
+					<Add library="lib/HCNetSDKCom/libSystemTransform.so" />
+					<Add library="lib/HCNetSDKCom/libanalyzedata.so" />
+					<Add library="lib/HCNetSDKCom/libiconv2.so" />
+					<Add library="lib/libAudioRender.so" />
+					<Add library="lib/libHCAlarm.so" />
+					<Add library="lib/libHCCore.so" />
+					<Add library="lib/libHCCoreDevCfg.so" />
+					<Add library="lib/libHCDisplay.so" />
+					<Add library="lib/libHCGeneralCfgMgr.so" />
+					<Add library="lib/libHCIndustry.so" />
+					<Add library="lib/libHCPlayBack.so" />
+					<Add library="lib/libHCPreview.so" />
+					<Add library="lib/libHCVoiceTalk.so" />
+					<Add library="lib/libNPQos.so" />
+					<Add library="lib/libPlayCtrl.so" />
+					<Add library="lib/libStreamTransClient.so" />
+					<Add library="lib/libSuperRender.so" />
+					<Add library="lib/libSystemTransform.so" />
+					<Add library="lib/libanalyzedata.so" />
+					<Add library="lib/libcrypto.so" />
+					<Add library="lib/libhcnetsdk.so" />
+					<Add library="lib/libhpr.so" />
+					<Add library="lib/libiconv2.so" />
+					<Add library="lib/libssl.so" />
+					<Add library="lib/libz.so" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/test_login" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

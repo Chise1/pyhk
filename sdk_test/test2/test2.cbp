@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="test2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/test2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../test_login/incCn" />
+				</Compiler>
+				<Linker>
+					<Add library="../test_login/lib/libAudioRender.so" />
+					<Add library="../test_login/lib/libHCAlarm.so" />
+					<Add library="../test_login/lib/libHCCore.so" />
+					<Add library="../test_login/lib/libHCCoreDevCfg.so" />
+					<Add library="../test_login/lib/libHCDisplay.so" />
+					<Add library="../test_login/lib/libHCGeneralCfgMgr.so" />
+					<Add library="../test_login/lib/libHCIndustry.so" />
+					<Add library="../test_login/lib/libHCPlayBack.so" />
+					<Add library="../test_login/lib/libHCPreview.so" />
+					<Add library="../test_login/lib/libHCVoiceTalk.so" />
+					<Add library="../test_login/lib/libNPQos.so" />
+					<Add library="../test_login/lib/libPlayCtrl.so" />
+					<Add library="../test_login/lib/libStreamTransClient.so" />
+					<Add library="../test_login/lib/libSuperRender.so" />
+					<Add library="../test_login/lib/libSystemTransform.so" />
+					<Add library="../test_login/lib/libanalyzedata.so" />
+					<Add library="../test_login/lib/libcrypto.so" />
+					<Add library="../test_login/lib/libhcnetsdk.so" />
+					<Add library="../test_login/lib/libhpr.so" />
+					<Add library="../test_login/lib/libiconv2.so" />
+					<Add library="../test_login/lib/libssl.so" />
+					<Add library="../test_login/lib/libz.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCAlarm.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCCoreDevCfg.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCDisplay.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCGeneralCfgMgr.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCIndustry.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCPlayBack.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCPreview.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libHCVoiceTalk.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libStreamTransClient.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libSystemTransform.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libanalyzedata.so" />
+					<Add library="../test_login/lib/HCNetSDKCom/libiconv2.so" />
+					<Add directory="../test_login/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/test2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="../test_login/incCn/DataType.h" />
+		<Unit filename="../test_login/incCn/DecodeCardSdk.h" />
+		<Unit filename="../test_login/incCn/HCNetSDK.h" />
+		<Unit filename="../test_login/incCn/plaympeg4.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="rljc.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
